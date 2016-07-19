@@ -7,4 +7,8 @@ Para funcionar, JEA le permite crear puntos de conexión restringidos con una co
 
 1. Los usuarios que se conectan a ellos se "ejecutan como" una cuenta virtual con privilegios que existe mientras dure esta sesión remota.  De forma predeterminada, esta cuenta virtual es miembro del grupo de administradores integrado, así como un administrador de dominio en los controladores de dominio (Nota: Estos permisos son configurables). Al conectarse como un usuario y ejecutarse como un usuario con privilegios diferente, puede permitir que usuarios sin privilegios realicen tareas administrativas específicas sin concederles derechos administrativos en sus sistemas.
 2. El punto de conexión está bloqueado.  Esto significa que PowerShell se ejecuta en modo sin lenguaje.  Solo determinados comandos, scripts y ejecutables son visibles para el usuario.
-3. A los distintos usuarios que se conectan se les presenta un conjunto diferente de funcionalidades según la pertenencia a grupos.  Puede proporcionar a distintos roles distintas funcionalidades en el mismo punto de conexión.<!--HONumber=Mar16_HO2-->
+3. A los distintos usuarios que se conectan se les presenta un conjunto diferente de funcionalidades según la pertenencia a grupos.  Puede proporcionar a distintos roles distintas funcionalidades en el mismo punto de conexión.
+
+<!--HONumber=Jun16_HO4-->
+
+

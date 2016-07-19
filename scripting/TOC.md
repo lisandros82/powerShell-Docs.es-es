@@ -75,8 +75,6 @@
 ### [¿Dónde puedo aprender más?](getting-started/more-powershell-learning.md)
 
 ## [Aspectos fundamentales de PowerShell](core-powershell/core-powershell.md)
-### [Guía de scripting](core-powershell/scripting-guide.md)
-### [Guía del lenguaje](core-powershell/language-guide.md)
 ### [Módulos principales](core-powershell/core-modules.md)
 ####  [Módulo Archive](core-powershell/core-modules/Microsoft.PowerShell.Archive-Module.md)
 ####  [Módulo Core](core-powershell/core-modules/Microsoft.PowerShell.Core-Module.md)
@@ -112,6 +110,8 @@
 ####  [Introducción a PowerShell ISE](core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
 ####  [Módulo ISE](core-powershell/ise/ISE-Module.md)
 ####  [Métodos abreviados de teclado para PowerShell ISE](core-powershell/ise/Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md)
+####  [El objeto PowerShell Tab](core-powershell/ise/The-PowerShellTab-Object.md)
+####  [El objeto PowerShell Tab Collection](core-powershell/ise/The-PowerShellTabCollection-Object.md)
 ####  [Finalidad del modelo de objetos de scripting de PowerShell ISE](core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 ####  [La jerarquía del modelo de objetos de ISE](core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)
 ####  [El objeto ISE Add On Tool](core-powershell/ise/The-ISEAddOnTool-Object.md)
@@ -124,8 +124,6 @@
 ### [Consola](core-powershell/console-guide.md)
 ####  [Referencia de la línea de comandos de consola](core-powershell/console/PowerShell.exe-Command-Line-Help.md)
 ####  [Cómo usar la finalización con tabulación en el panel de scripts y en el panel de consola](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
-####  [El objeto PowerShell Tab](core-powershell/ise/The-PowerShellTab-Object.md)
-####  [El objeto PowerShell Tab Collection](core-powershell/ise/The-PowerShellTabCollection-Object.md)
 ####  [Usar expansión de pestañas](core-powershell/console/Using-Tab-Expansion.md)
 
 ### [Ejecutar comandos remotos](core-powershell/Running-Remote-Commands.md)
@@ -144,6 +142,6 @@
 ## [Glosario de PowerShell](Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -41,4 +41,8 @@ Los nuevos cmdlets agregados permiten enumerar los espacios de ejecución actual
 Ahora puede establecer la conexión con cualquier proceso del equipo que tenga Windows PowerShell cargado. Para ello, inicie una sesión interactiva con el proceso, como lo haría con una sesión remota interactiva ejecutando el cmdlet Enter-PSSession:
 
 -   Enter-PSHostProcess
--   Exit-PSHostProcess<!--HONumber=Mar16_HO2-->
+-   Exit-PSHostProcess
+
+<!--HONumber=Jun16_HO4-->
+
+
