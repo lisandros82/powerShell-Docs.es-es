@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: d367048eab0ba3fd67baed2ee27332ce0827d5ac
-ms.openlocfilehash: a09f228cf232ff9d7cf2ba20c73808fd92c9d560
+ms.sourcegitcommit: 02ef02d4eeeaa5e080b74ec220812d3b5316f244
+ms.openlocfilehash: 369b6379c3ddc4b7ccd1000aec9b0b002e1934b3
 
 ---
 
@@ -296,7 +296,7 @@ SRV1   5          6/23/2016 4:36:51 PM  Success                                 
 
 ### Obtención de detalles de los eventos de DSC
 
-El cmdlet Trace-xDscOperation1 devuelve un objeto que contiene una colección de eventos, sus tipos de eventos y la salida de mensajes que genera una operación de DSC concreta. Normalmente, si se encuentra algún error en cualquiera de las operaciones mediante Get-xDscOperation`, se realizará un seguimiento de dicha operación para averiguar cuál de los eventos provocó el error.
+Normalmente, si se encuentra algún error en cualquiera de las operaciones mediante `Trace-xDscOperation1 cmdlet returns an object containing a collection of events, their event types, and the message output generated from a particular DSC operation. Typically, when you find a failure in any of the operations using `Get-xDscOperation`, se realizará un seguimiento de dicha operación para averiguar cuál de los eventos provocó el error.
 
 Utilice el parámetro `SequenceID` para obtener los eventos de una operación específica de un equipo concreto. Por ejemplo, si en `SequenceID` especifica 9, `Trace-xDscOperaion` obtiene el seguimiento de la operación de DSC que era la novena desde la última operación:
 
@@ -627,6 +627,6 @@ onlyProperty                            PSComputerName
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

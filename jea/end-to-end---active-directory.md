@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Active Directory de principio a fin
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 0a262e2c83174db7041d3cf35d97542b1cac4386
+translationtype: Human Translation
+ms.sourcegitcommit: 5954eb797df43de6f132a434ecad7049ee0221fb
+ms.openlocfilehash: 204909c16d5e3e2099f6ba4247929d61445cd654
 
 ---
 
@@ -70,7 +71,7 @@ Tenga en cuenta que se trata básicamente de un ejemplo y que los requisitos de 
 Ahora que tiene la lista de acciones, debe considerar detenidamente las capacidades de cada comando.
 Hay dos razones importantes para hacerlo:
 
-1.  Es fácil exponer a los usuarios más funcionalidades de las previstas.
+1.  Es fácil proporcionar a los usuarios más funcionalidades de las previstas.
 Por ejemplo, `Set-ADUser` es un comando increíblemente eficaz y flexible.
 Probablemente no le interese exponer todo lo que puede hacer para ayudar a los usuarios del departamento de soporte técnico.  
 
@@ -82,25 +83,25 @@ Para obtener más información sobre este tema, consulte la sección Consideraci
 
 Después de revisar cada comando, decide restringir lo siguiente:
 
-1.  `Set-ADUser` solo se debe poder ejecutar con el parámetro "-Title".
+1.  `Set-ADUser` solo se debe poder ejecutar con el parámetro -Title
 
 2.  `Add-ADGroupMember` y `Remove-ADGroupMember` solo deben funcionar con determinados grupos.
 
 ### Paso 3: confirmar que las tareas funcionan con JEA
 En realidad, el uso de estos cmdlets podría no ser sencillo en el entorno de JEA restringido.
-JEA se ejecuta en el modo *Sin lenguaje* que, entre otras cosas, impide que los usuarios usen variables.
+JEA se ejecuta en el modo *NoLanguage* que, entre otras cosas, impide que los usuarios usen variables.
 Para asegurarse de que los usuarios finales tengan una experiencia sin problemas, es importante comprobar ciertas cosas.
 
 Por ejemplo, considere el comando `Set-ADAccountPassword`.
-El parámetro "-NewPassword" requiere una cadena segura.
+El parámetro -NewPassword requiere una cadena segura.
 A menudo, los usuarios crean una cadena segura y la pasan como variable (como puede verse más abajo):
 
 ```PowerShell
-$newPassword = (Read-Host -Prompt "Specify a new password" -AsSecureString)
+$newPassword = Read-Host -Prompt "Specify a new password" -AsSecureString
 Set-ADAccountPassword -Identity mollyd -NewPassword $newPassword -Reset
 ```
 
-Pero el modo Sin lenguaje impide el uso de variables.
+Pero el modo *NoLanguage* impide el uso de variables.
 Puede evitar esta restricción de dos maneras:
 
 1.  Puede requerir a los usuarios que ejecuten el comando sin asignar variables.
@@ -124,7 +125,7 @@ Lo colocaremos en el módulo Contoso_AD_Module que creó en la última sección.
 
 1. En PowerShell ISE, abra "Contoso_AD_Module.psm1".
 ```PowerShell
-ISE 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1'
+ise 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1'
 ```
 
 2. Pulse Ctrl+J para abrir el menú de fragmentos de código.
@@ -165,7 +166,7 @@ Ahora, los usuarios pueden llamar simplemente a `Reset-ContosoUserPassword` y no
 En la sección [Creación de funcionalidades de rol](#role-capability-creation), creó un archivo de funcionalidad de rol en blanco.
 En esta sección, rellenará los valores de ese archivo.
 
-En primer lugar, abra el archivo de funcionalidad de rol en ISE.
+En primer lugar, abra el archivo de funcionalidad de rol en PowerShell ISE.
 ```PowerShell
 ise 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\RoleCapabilities\ADHelpDesk.psrc'
 ```
@@ -193,7 +194,7 @@ Hay algunos aspectos que debe tener en cuenta sobre lo anterior:
 1.  PowerShell intentará cargar automáticamente los módulos necesarios para la funcionalidad de rol.
 Podría tener que mostrar explícitamente los nombres de los módulos en el campo "ModulesToImport" si experimenta problemas con un módulo porque no se carga automáticamente.
 
-2.  Si no está seguro de si un comando es un cmdlet o una función, ejecute `Get-Command` y observe el valor "CommandType".
+2.  Si no está seguro de si un comando es un cmdlet o una función, ejecute `Get-Command` y observe la propiedad "CommandType"
 
 3.  ValidatePattern permite usar una expresión regular para restringir los argumentos del parámetro si no resulta sencillo definir un conjunto de valores permitidos.
 No puede definir ValidatePattern y ValidateSet para un solo parámetro.
@@ -210,7 +211,7 @@ Modifique los campos siguientes en el archivo PSSC.
 Si trabaja en su propio entorno, debe reemplazar "CONTOSO\JEA_NonAdmins_Helpdesk" por su propio usuario o grupo sin privilegios de administrador.
 ```PowerShell
 # OLD: Description = ''
-Description = 'An endpoint for active directory tasks.'
+Description = 'An endpoint for Active Directory tasks.'
 
 # OLD: SessionType = 'Default'
 SessionType = 'RestrictedRemoteServer'
@@ -266,12 +267,12 @@ Para más información, vea `Get-Help about_Language_Modes`.
 Para más información, vea `Get-Help about_Functions`.
 
 **ValidateSet/ValidatePattern**: al exponer un comando, puede restringir los argumentos válidos para parámetros específicos.
-ValidateSet es una lista específica de comandos válidos.
+ValidateSet es una lista específica de argumentos válidos.
 ValidatePattern es una expresión regular con la que deben coincidir los argumentos de ese parámetro.
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

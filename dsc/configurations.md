@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 29676d0bf51adf9176753d0056efe76687a40600
+ms.sourcegitcommit: 59bf4cff540dabeeb77038ea84177f7c6bac2b4b
+ms.openlocfilehash: e5412a3168a18d1dbd117ed8b3eb6dd42a8d8f70
 
 ---
 
@@ -72,10 +72,11 @@ En este ejemplo, especifique el nombre del nodo, pasando como parámetro $Comput
 Antes de que se pueda establecer una configuración, debe compilarla en un documento MOF. Para ello, llame a la configuración, como lo haría con una función de PowerShell.
 >__Nota:__ Para llamar a una configuración, la función debe estar en el ámbito global (como ocurre con cualquier otra función de PowerShell). Puede conseguirlo si precede el script con el operador punto ".", o si ejecuta el script de configuración presionando F5 o haciendo clic en el botón __Ejecutar Script__ del ISE. Para anteponer el operador punto al script, ejecute el comando `. .\myConfig.ps1`, donde `myConfig.ps1` es el nombre del archivo de script que contiene la configuración.
 
-Cuando llama a la configuración, se crea:
+Cuando llama a la configuración:
 
-- Una carpeta en el directorio actual con el mismo nombre que la configuración.
-- Un archivo denominado _NodeName_.mof en el nuevo directorio, donde _NodeName_ es el nombre del nodo de destino de la configuración. Si hay más de un nodo, se creará un archivo MOF por cada nodo.
+- Resuelve todas las variables 
+- Crea una carpeta en el directorio actual con el mismo nombre que la configuración.
+- Crea un archivo denominado _NodeName_.mof en el directorio nuevo, donde _NodeName_ es el nombre del nodo de destino de la configuración. Si hay más de un nodo, se creará un archivo MOF por cada nodo.
 
 >__Nota__: El archivo MOF contiene toda la información de configuración del nodo de destino. Por este motivo, es importante protegerlo adecuadamente. Para obtener más información, consulte [Proteger el archivo MOF](secureMOF.md).
 
@@ -136,6 +137,6 @@ En la actualidad, DSC incluye 12 recursos como parte del módulo PSDesiredStateC
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

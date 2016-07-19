@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "Recreación del punto de conexión de la demostración"
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: dabb5023012e90ace3fbc5f347c17821abd92595
+translationtype: Human Translation
+ms.sourcegitcommit: d20ea8418cb7389d756de94ea752cf604b8d07af
+ms.openlocfilehash: acd2cfbd038250a26236c875d0e8b03a32cd84f9
 
 ---
 
@@ -63,7 +64,7 @@ Abra el archivo en PowerShell ISE o en su editor de texto preferido.
 ise "$env:ProgramData\JEAConfiguration\JEADemo2.pssc"
 ```
 
-Actualice los campos siguientes en el archivo con los valores indicados (no olvide reemplazarlos en su propio grupo de seguridad no administrador):
+Actualice los campos siguientes en el archivo con los valores inferiores (recuerde reemplazarlos en su propio grupo de seguridad no administrador):
 
 ```PowerShell
 # OLD: SessionType = 'Default'
@@ -91,7 +92,7 @@ El efecto neto de estos valores es un punto de partida seguro y mínimo para con
 Define quién puede hacer qué como una cuenta con privilegios.
 Con este campo, puede especificar la funcionalidad disponible para cualquier usuario que se conecte en función de la pertenencia al grupo.
 Este es el núcleo de la funcionalidad RBAC de JEA.
-En este ejemplo, expone la funcionalidad de rol "de demostración" creada previamente a los miembros del grupo "Contoso\JEA_NonAdmin_Operator".
+En este ejemplo, expone el cmdlet RoleCapability "Maintenance" creado con anterioridad a los miembros del grupo "Contoso\JEA_NonAdmin_Operator".
 
 3.  El campo *RunAsVirtualAccount* indica que PowerShell debe "ejecutarse como" una cuenta virtual en este punto de conexión.
 De forma predeterminada, la cuenta virtual es miembro del grupo de administradores integrado.
@@ -124,7 +125,7 @@ Enhorabuena, ha configurado el punto de conexión de JEA.
 
 ## Probar el punto de conexión
 Vuelva a ejecutar los pasos enumerados en la sección [Uso de JEA](using-jea.md) con el nuevo punto de conexión para confirmar que funciona según lo previsto.
-Asegúrese de usar el nombre nuevo del punto de conexión (JEADemo2) al proporcionar el nombre de la configuración a Enter-PSSession.
+Asegúrese de usar el nombre nuevo del punto de conexión (JEADemo2) al proporcionar el nombre de la configuración a `Enter-PSSession`.
 
 ```PowerShell
 Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdminCred
@@ -152,6 +153,6 @@ Para obtener más información sobre las transcripciones, consulte esta [entrada
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

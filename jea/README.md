@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "ARCHIVO LÉAME"
 ms.technology: powershell
-ms.sourcegitcommit: 47593773fb0f34e0b52d35617522d7b1db7f48e6
-ms.openlocfilehash: 1cecf1b6bf5a55ed785c8ff43bdd4a0a41e96cd0
+translationtype: Human Translation
+ms.sourcegitcommit: d4e46653ff31ea7cda71f1c92b12ce5f2811b8a7
+ms.openlocfilehash: e24757029fd3ac9a70f710a7a755c35f440f087c
 
 ---
 
@@ -53,7 +54,7 @@ Esta guía incluye una rápida introducción con un punto de conexión de JEA pr
 Revise brevemente por qué debería interesarle JEA.
 
 2.  [Requisitos previos](prerequisites.md)  
-Explica cómo configurar su entorno.
+Explica cómo configurar su entorno
 
 3.  [Uso de JEA](using-jea.md)  
 Ayuda a entender la experiencia de usuario de JEA.
@@ -91,6 +92,6 @@ Incluso permite generar funcionalidades de rol basadas en los registros de Power
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: ce8d6c1c9e8005c5c4792ae0fa4c5030bb9a92ed
+ms.sourcegitcommit: bda348e6597f31b8dfa2014e5c34c5d3bc7bca15
+ms.openlocfilehash: 10123359213df7180388d9251e032c2bbb673143
 
 ---
 
@@ -31,6 +31,10 @@ Service [string] #ResourceName
     [ DependsOn = [string[]] ]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
     [ State = [string] { Running | Stopped }  ]
+    [ Description = [string] ]
+    [ DisplayName = [string] ]
+    [ Ensure = [string] { Absent | Present } ]
+    [ Path = [string] ]
 }
 ```
 
@@ -44,21 +48,33 @@ Service [string] #ResourceName
 | DependsOn| Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
 | StartupType| Indica el tipo de inicio del servicio. Los valores permitidos para esta propiedad son: **Automatic**, **Disabled** y **Manual**.| 
 | Estado| Indica el estado que quiere garantizar para el servicio.| 
+| Descripción | Indica la descripción del servicio de destino.| 
+| DisplayName | Indica el nombre para mostrar del servicio de destino.| 
+| Ensure | Indica si el servicio de destino existe en el sistema. Establezca esta propiedad en **Absent** para asegurarse de que el servicio de destino no exista. Si la establece en **Present** (el valor predeterminado), se asegura de que el servicio de destino existe.|
+| Ruta | Indica la ruta de acceso al archivo binario para un nuevo servicio.| 
 
 ## Ejemplo
 
 ```powershell
-Service ServiceExample
+configuration ServiceTest
 {
-    Name = "TermService"
-    StartupType = "Manual"
-    State = "Running"
-} 
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Node localhost
+    {
+
+        Service ServiceExample
+        {
+            Name        = "TermService"
+            StartupType = "Manual"
+            State       = "Running"
+        } 
+    }
+}
 ```
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

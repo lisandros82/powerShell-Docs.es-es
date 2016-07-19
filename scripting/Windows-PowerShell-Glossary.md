@@ -1,12 +1,19 @@
 ---
 title: Glosario de Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
+translationtype: Human Translation
+ms.sourcegitcommit: ea25f98e60050a52fc1d72c7e529985855eeed36
+ms.openlocfilehash: ab41246eda58eb384500daa1f99aa9a8f9e019e1
+
 ---
+
 # Glosario de Windows PowerShell
 
 
@@ -15,7 +22,7 @@ ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 |módulo binario|Módulo de Windows PowerShell cuyo módulo raíz es un archivo de módulo binario (.dll). Un módulo binario puede o no incluir un manifiesto de módulo.|
 |parámetro común|Parámetro que el motor de Windows PowerShell agrega a todos los cmdlets y a las funciones avanzadas.|
 |usar el operador punto|En Windows PowerShell, iniciar un comando escribiendo un punto y un espacio antes del comando. Los comandos que usan el operador punto se ejecutan en el ámbito actual en lugar de en un nuevo ámbito. Las variables, los alias, las funciones o las unidades que crea el comando se crean en el ámbito actual y están disponibles para los usuarios cuando se completa el comando.|
-|módulo dinámico|Módulo que solo existe en memoria. El cmdlet Import-PSSession crea módulos dinámicos.|
+|módulo dinámico|Módulo que solo existe en memoria. Los cmdlets New-Module e Import-PSSession permiten crear módulos dinámicos.|
 |parámetro dinámico|Parámetro que se agrega a un cmdlet, una función o un script de Windows PowerShell en determinadas condiciones. Los cmdlets, las funciones, los proveedores y los scripts pueden agregar parámetros dinámicos.|
 |archivo de formato|Archivo XML de Windows PowerShell con la extensión .format.ps1xml que define cómo Windows PowerShell muestra un objeto según su tipo de .NET Framework.|
 |estado de sesión global|Estado de sesión que contiene los datos que son accesibles para el usuario de una sesión de Windows PowerShell.|
@@ -51,11 +58,12 @@ ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 |Proveedor de Windows PowerShell|Programa basado en Microsoft .NET Framework que hace que los datos de un almacén de datos especializado estén disponibles en Windows PowerShell, de modo que pueda verlos y administrarlos.|
 |Script de Windows PowerShell|Script escrito en el lenguaje de Windows PowerShell.|
 |Archivo de script de Windows PowerShell|Archivo que tiene la extensión .ps1 y que contiene un script escrito en el lenguaje de Windows PowerShell.|
-|Complemento de Windows PowerShell|Recurso que define un conjunto de cmdlets, proveedores y tipos de Microsoft .NET Framework que se pueden agregar al entorno de Windows PowerShell.|
-|Flujo de trabajo de Windows PowerShell|Un flujo de trabajo es una secuencia de pasos conectados y programados que realizan tareas de larga duración o requieren la coordinación de varios pasos a través en varios dispositivos o nodos administrados. El flujo de trabajo de Windows PowerShell permite a los profesionales de TI y desarrolladores crear secuencias de actividades de administración de varios dispositivos o tareas únicas dentro de un flujo de trabajo, como flujos de trabajo. El flujo de trabajo de Windows PowerShell permite adaptar y ejecutar scripts de Windows PowerShell y archivos XAML como flujos de trabajo.|
+|Complemento de Windows PowerShell.|Recurso que define un conjunto de cmdlets, proveedores y tipos de Microsoft .NET Framework que se pueden agregar al entorno de Windows PowerShell.|
+|Flujo de trabajo de Windows PowerShell|Un flujo de trabajo es una secuencia de pasos conectados y programados que realizan tareas de larga duración o requieren la coordinación de varios pasos en varios dispositivos o nodos administrados. El flujo de trabajo de Windows PowerShell permite a los profesionales de TI y desarrolladores crear secuencias de actividades de administración de varios dispositivos o tareas únicas dentro de un flujo de trabajo, como flujos de trabajo. El flujo de trabajo de Windows PowerShell permite adaptar y ejecutar scripts de Windows PowerShell y archivos XAML como flujos de trabajo.|
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jul16_HO1-->
 
 

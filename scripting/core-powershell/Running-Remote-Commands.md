@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 translationtype: Human Translation
-ms.sourcegitcommit: 593f0c2ca72e00f19c395c1dae31798d5a5f652d
-ms.openlocfilehash: 75d41569b18e61342809eebcc76b7899ec6363fa
+ms.sourcegitcommit: 0f77e2d13a26c58d2a4813e57a76ba54dbcaac46
+ms.openlocfilehash: 48385de53964217b2f7d263d85bfb99b1dbf6507
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 75d41569b18e61342809eebcc76b7899ec6363fa
 Puede ejecutar comandos en un equipo o en cientos de ellos usando un solo comando de Windows PowerShell. Windows PowerShell admite la informática remota a través de varias tecnologías, como WS\-Management, RPC y WMI.
 
 ## Comunicación remota sin configuración
-Muchos de los cmdlets de Windows PowerShell tienen un parámetro ComputerName que les permite recopilar datos y cambiar la configuración de uno o más equipos remotos. Usan distintas tecnologías de comunicación y muchos de ellos funcionan con todos los sistemas operativos de Windows que Windows PowerShell admite sin necesidad de ninguna configuración especial.
+Muchos de los cmdlets de Windows PowerShell tienen un parámetro ComputerName que les permite recopilar datos y cambiar la configuración de uno o más equipos remotos. Usan distintas tecnologías de comunicación y muchos de ellos funcionan con todos los sistemas operativos de Windows que Windows PowerShell admite sin necesidad de ninguna configuración especial.
 
 Estos cmdlets son:
 
@@ -30,7 +30,7 @@ Estos cmdlets son:
 
 -   [Get-EventLog](https://technet.microsoft.com/en-us/library/dd315250.aspx)
 
--   [Get-Hotfix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
+-   [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
 
 -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
 
@@ -45,7 +45,7 @@ Estos cmdlets son:
 Normalmente, los cmdlets que admiten la comunicación remota sin una configuración especial tienen un parámetro ComputerName y carecen de un parámetro Session. Para encontrar estos cmdlets en la sesión, escriba:
 
 ```
-get-command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
+Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
 ```
 
 ## Comunicación remota de Windows PowerShell
@@ -59,7 +59,7 @@ Después de configurar la comunicación remota de Windows PowerShell, tendrá a
 Para iniciar una sesión interactiva con un único equipo remoto, use el cmdlet [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx). Por ejemplo, para iniciar una sesión interactiva con el equipo remoto Server01, escriba:
 
 ```
-enter-pssession Server01
+Enter-PSSession Server01
 ```
 
 El símbolo del sistema cambia para mostrar el nombre del equipo al que está conectado. Desde ese momento, cualquier comando que escriba en el símbolo del sistema se ejecutará en el equipo remoto y los resultados se mostrarán en el equipo local.
@@ -67,7 +67,7 @@ El símbolo del sistema cambia para mostrar el nombre del equipo al que está co
 Para finalizar la sesión interactiva, escriba:
 
 ```
-exit-pssession
+Exit-PSSession
 ```
 
 Para obtener más información sobre los cmdlets \-PSSession y Exit\-PSSession, consulte [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) y [Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx).
@@ -77,7 +77,7 @@ Para ejecutar cualquier comando en uno o varios equipos remotos, use el cmdlet [
 Por ejemplo, para ejecutar un comando [Get-UICulture](https://technet.microsoft.com/en-us/library/dd347742.aspx) en los equipos remotos Server01 y Server02, escriba:
 
 ```
-invoke-command -computername Server01, Server02 {get-UICulture}
+Invoke-Command -ComputerName Server01, Server02 {Get-UICulture}
 ```
 
 El resultado se muestra en su equipo.
@@ -97,7 +97,7 @@ Para ejecutar un script en uno o varios equipos remotos, use el parámetro FileP
 Por ejemplo, el siguiente comando ejecuta el script DiskCollect.ps1 en los equipos remotos Server01 y Server02.
 
 ```
-invoke-command -computername Server01, Server02 -filepath c:\Scripts\DiskCollect.ps1
+Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
 Para obtener más información sobre el cmdlet Invoke\-Command, consulte [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx).
@@ -108,7 +108,7 @@ Para ejecutar una serie de comandos relacionados que comparten datos, cree una s
 Por ejemplo, el comando siguiente crea una sesión remota en el equipo Server01 y otra sesión remota en el equipo Server02. Guarda los objetos de la sesión en la variable $s.
 
 ```
-$s = new-pssession -computername Server01, Server02
+$s = New-PSSession -ComputerName Server01, Server02
 ```
 
 Ahora que las sesiones se han establecido, puede ejecutar cualquier comando en ellas. Y, como las sesiones son persistentes, puede recopilar datos en un solo comando y usarlos en un comando posterior.
@@ -116,20 +116,20 @@ Ahora que las sesiones se han establecido, puede ejecutar cualquier comando en e
 Por ejemplo, el siguiente comando ejecuta un comando Get\-Hotfix en las sesiones de la variable $s y guarda los resultados en la variable $h. La variable $h se crea en cada una de las sesiones en $s, pero no existe en la sesión local.
 
 ```
-invoke-command -session $s {$h = get-hotfix}
+Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
 Ahora puede usar los datos de la variable $h en los siguientes comandos, como en el siguiente. Los resultados se muestran en el equipo local.
 
 ```
-invoke-command -session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"} }
+Invoke-Command -Session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"}}
 ```
 
 ### Comunicación remota avanzada
 La administración remota de Windows PowerShell empieza aquí. Con los cmdlets que se instalan con Windows PowerShell puede, entre otras muchas cosas, establecer y configurar sesiones remotas desde extremos tanto locales como remotos, crear sesiones personalizadas y restringidas, dejar que los usuarios importen comandos desde una sesión remota que se ejecutan implícitamente en la sesión remota o configurar la seguridad de una sesión remota.
 
 Para facilitar la configuración remota, Windows PowerShell incluye un proveedor WSMan. La unidad WSMAN: que este proveedor crea permite desplazarse por una jerarquía de valores de configuración en el equipo local y en los equipos remotos.
-Para obtener más información sobre el proveedor de WSMan, consulte [Proveedor de WSMan](https://technet.microsoft.com/en-us/library/dd819476.aspx) y   [About WS-Management Cmdlets (Acerca de los cmdlets de WS-Management)](https://technet.microsoft.com/en-us/library/dd819481.aspx). También puede escribir "get\-help wsman" en la consola de Windows PowerShell.
+Para más información sobre el proveedor de WSMan, consulte [Proveedor de WSMan](https://technet.microsoft.com/en-us/library/dd819476.aspx) y   [About WS-Management Cmdlets (Acerca de los cmdlets de WS-Management)](https://technet.microsoft.com/en-us/library/dd819481.aspx). También puede escribir "Get\-Help wsman" en la consola de Windows PowerShell.
 
 Para obtener más información, consulte:
 - [Acerca de las Preguntas más frecuentes sobre el acceso remoto](https://technet.microsoft.com/en-us/library/dd315359.aspx)
@@ -154,6 +154,6 @@ Para obtener ayuda con los errores de comunicación remota, consulte [about_Remo
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

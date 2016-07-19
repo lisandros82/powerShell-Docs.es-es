@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 7facb78962411d7b96ef6741e3ffa153d5537a0d
-ms.openlocfilehash: e1827e102a9b35ea214f89395f7ff3c5e0a58506
+ms.sourcegitcommit: 67ef350559f9b3d17232f3c93d67634b3e939c60
+ms.openlocfilehash: b1addddd50368fadcbb2581673d3ebc7cad8e32a
 
 ---
 
@@ -62,7 +62,7 @@ Cuando un cliente se conecta a un servidor de dominio mediante su dirección IP,
       
 Sin embargo, el protocolo NTLM no garantiza la identidad del servidor. De la misma forma que con todos los protocolos que usan NTLM para la autenticación, un atacante con acceso a una cuenta de equipo unido a un dominio podría invocar el controlador de dominio para procesar una clave de sesión NTLM y, por tanto, suplantar el servidor.
 
-La autenticación basada en NTLM está deshabilitada de forma predeterminada, pero puede permitirse al configurar SSL en el servidor de destino o el valor WinRM TrustedHosts.
+La autenticación basada en NTLM está deshabilitada de forma predeterminada, pero puede permitirse al configurar SSL en el servidor de destino o el valor WinRM TrustedHosts del cliente.
     
 #### Uso de certificados SSL para validar la identidad del servidor durante las conexiones basadas en NTLM
 
@@ -121,6 +121,6 @@ Para obtener más información acerca de los ataques de robo de credenciales, co
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

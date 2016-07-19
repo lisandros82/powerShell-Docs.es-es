@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: d7bd873cde4a4bda12490d69acdd5e2b0ba8cdec
+ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
+ms.openlocfilehash: 0fe5e7d9679d44bb50c897badf8c6517b95049e2
 
 ---
 
@@ -40,7 +40,7 @@ WindowsProcess [string] #ResourceName
 |  Propiedad  |  Descripción   | 
 |---|---| 
 | Argumentos| Indica una cadena de argumentos que se pasa al proceso tal cual. Si necesita pasar varios argumentos, colóquelos en esta cadena.| 
-| Ruta| Indica la ruta de acceso del ejecutable del proceso. Si establece esta propiedad como el nombre del ejecutable, DSC buscará en la variable __Path__. Si proporciona un nombre de dominio completo, el proceso debe existir ahí porque DSC no comprobará la variable __Path__ en este caso.| 
+| Ruta| La ruta de acceso al ejecutable del proceso. Si este es el nombre de archivo del ejecutable (no la ruta de acceso completa), el recurso de DSC buscará la variable **Path** del entorno (`$env:Path`) para buscar el archivo ejecutable. Si el valor de esta propiedad es una ruta completa, DSC no usará la variable de entorno **Path** para buscar el archivo y generará un error si la ruta de acceso no existe. No se permiten rutas de acceso relativas.| 
 | Credential| Indica las credenciales para iniciar el proceso.| 
 | Ensure| Indica si existe el proceso. Establezca esta propiedad en "Present" para asegurarse de que el proceso exista. De lo contrario, establézcala en "Absent". El valor predeterminado es "Present".| 
 | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`` .| 
@@ -52,6 +52,6 @@ WindowsProcess [string] #ResourceName
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 
