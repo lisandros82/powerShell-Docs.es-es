@@ -32653,9 +32653,9 @@
       "ArchiveFileCommit": "56ad952c7b331cba0d13e06fccd6844d497b91d5",
       "ArchiveFileDateTime": "2016-07-19T13:10:55.3675928Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.es-es\\live\\ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.es-es.xlf",
+      "BilingualFileCommit": "8d6d3cdf43e30240f02b0ede1a769665d63c3451",
+      "BilingualDateTime": "2016-07-19T14:30:23.2908235Z",
       "BilingualException": null
     },
     "8a10903c421f62311a28c9f32e352bba75f21052": {
@@ -33284,9 +33284,9 @@
       "ArchiveFileCommit": "56ad952c7b331cba0d13e06fccd6844d497b91d5",
       "ArchiveFileDateTime": "2016-07-19T13:10:55.3675928Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.es-es\\live\\using-module.dfdedb618ec7d188918f7f3f705c8c39bbb26521.es-es.xlf",
+      "BilingualFileCommit": "8d6d3cdf43e30240f02b0ede1a769665d63c3451",
+      "BilingualDateTime": "2016-07-19T14:30:23.2908235Z",
       "BilingualException": null
     },
     "387ebc0467b9f154444292f391af0f4b77123639": {
