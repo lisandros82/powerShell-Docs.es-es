@@ -1,6 +1,6 @@
 ---
 title: "Notas de la versión 5.1 de WMF (versión preliminar)"
-ms.date: 2016-05-16
+ms.date: 2016-07-27
 keywords: PowerShell, DSC, WMF
 description: 
 ms.topic: article
@@ -9,28 +9,32 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 9c763f92b8e342b0208204f997c079c725891933
-ms.openlocfilehash: d25a22b0448e82a85e45c302a998abc35bd4c1b6
+ms.sourcegitcommit: 5eb9eae6257cdb57f4f778b5dddf5aa7ef9d10bb
+ms.openlocfilehash: 12f2c084ab92134b733ee037c3d9fbd512af2e4c
 
 ---
 
-# Notas de la versión de Windows Management Framework (WMF) 5.1 (versión preliminar) #
+# Notas de la versión preliminar de Windows Management Framework (WMF) 5.1 #
 
-> Nota: Esta información es preliminar y está sujeta a cambios.
+La versión preliminar de WMF 5.1 incluye los componentes de PowerShell, WMI, WinRM e inventario y licencias de software (SIL) que se lanzan con Windows Server 2016. WMF 5.1 puede instalarse en Windows 7, Windows 8.1, Windows Server 2008 R2, 2012 y 2012 R2 y proporciona una serie de mejoras con respecto a WMF 5.0 RTM, incluidos:
 
-Los documentos de esta sección se aplican a próxima versión preliminar de WMF 5.1. La fecha de lanzamiento de la versión preliminar WMF 5.1 está por determinar. Este contenido es preliminar y se actualizará con frecuencia durante las próximas semanas. 
+- Nuevos cmdlets: usuarios locales y grupos; Get-ComputerInfo
+- En las mejoras de PowerShellGet se incluyen la aplicación de módulos firmados y la instalación de módulos JEA
+- PackageManagement ha agregado compatibilidad con contenedores, configuración de CBS, configuración basada en EXE y paquetes de CAB
+- Mejoras de depuración para las clases DSC y PowerShell
+- Mejoras de seguridad, incluido el cumplimiento de módulos firmados por catálogos procedentes del servidor de extracción y al usar cmdlets de PowerShellGet
+- Respuestas a varios problemas y varias solicitudes de usuarios
 
-Vamos a hacer que este contenido pronto sea en directo para proporcionar información a los usuarios que tengan acceso a las primeras versiones de Windows Server 2016. La mayoría de la información de estos documentos también se aplican a las versiones preliminares de Windows Server 2016, con la excepción de las secciones de instalación, configuración y compatibilidad que pertenecen solo a WMF.
+**Notas importantes:**
+
+- **La versión preliminar de WMF 5.1 requiere Windows Management Framework 4.6**. La instalación se realizará correctamente, pero se producirá un error en las características clave si no está instalado .NET 4.6. Las instrucciones están disponibles en el tema [Instalación y configuración de WMF 5.1 (versión preliminar)](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/install-configure). 
+- **La versión preliminar de WMF 5.1 no admite implementaciones** de producción en este momento. Está diseñado para proporcionar información anticipada sobre qué hay en la versión y darle la oportunidad de enviar comentarios al equipo de PowerShell.
+- La versión preliminar de WMF 5.1 puede instalarse directamente sobre WMF 5.0.
+- Es un problema conocido que, actualmente, se necesita WMF 4.0 para instalar la versión preliminar de WMF 5.1 en Windows 7 y Windows Server 2008. Se espera retirar este requisito antes de la versión final.
+- Instalar las versiones futuras de WMF 5.1, incluida la versión RTM, requerirá desinstalar la versión preliminar de WMF 5.1.
 
 
 
-
-
-
-
-
-
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Jul16_HO5-->
 
 

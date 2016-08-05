@@ -9,27 +9,31 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 26da6c80568327faadc6746099ac9869f2018fcf
-ms.openlocfilehash: 8a10903c421f62311a28c9f32e352bba75f21052
+ms.sourcegitcommit: 0a53817d6af625822d9183d2a0d5bc7bf4d2b264
+ms.openlocfilehash: 058d18deeb3d4926970ea25a157f92ad14836e4b
 
 ---
 
 # Instalación y configuración de WMF 5.1 (versión preliminar) #
 
-***Nota:*** 
-*Este contenido es un marcador de posición. Los siguientes vínculos apuntan a WMF 5.0 y se actualizarán cuando se liberen los archivos binarios.*
+## Instalar .NET 4.6
+Debe instalar .NET Framework 4.6 para usar WMF 5.1. Es necesario para habilitar las nuevas características de firma de catálogo, que afectan a varias áreas de carga de módulo y script en WMF 5.1. 
+
+[.NET Framework 4.6 está disponible como KB 3045560](https://support.microsoft.com/en-us/kb/3045560). Las instrucciones de instalación están disponibles en la ubicación de descarga.
+
+> **Nota:** Es un problema conocido que el instalador de la versión preliminar de WMF 5.1 no detecta el requisito de .NET 4.6, por lo que podrá instalar la versión preliminar de WMF 5.1 antes de instalar .NET 4.6. Nuestras pruebas han demostrado que puede instalar .NET 4.6 después de instalar la versión preliminar de WMF 5.1. La versión final de WMF 5.1 comprobará correctamente este requisito previo antes de la instalación. 
+
+## Descargar e instalar la versión preliminar de WMF 5.1
 
 Descargue el paquete WMF 5.1 para el sistema operativo y la arquitectura en la que se va a instalar en:
 
-| Sistema operativo       | Arquitectura | Nombre del paquete              |
-|------------------------|--------------|---------------------------|
-| Windows Server 2012 R2 | x64      | [Win8.1AndW2K12R2-KB3156422-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
-| Windows Server 2012    | x64      | [W2K12-KB3156423-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) |
-| Windows Server 2008 R2 | x64      | [Win7AndW2K8R2-KB3156424-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504) |
-| Windows 8.1            | x64          | [Win8.1AndW2K12R2-KB3156422-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
-| Windows 8.1            | x86          | [Win8.1-KB3156422-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963) |
-| Windows 7 SP1          | x64          | [Win7AndW2K8R2-KB3156424-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504) |
-| Windows 7 SP1          | x86          | [Win7-KB3156424-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962) |
+| Sistema operativo       | Requisitos previos | Vínculos de paquete             |
+|------------------------|---------------|---------------------------|
+| Windows Server 2012 R2 | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) | [Win8.1AndW2K12R2-KB3156422-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823586)|
+| Windows Server 2012    | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) | [W2K12-KB3156423-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823587)|
+| Windows Server 2008 R2 | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) </br> [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) </br> Actualización de seguridad para la [firma de código SHA-2](https://technet.microsoft.com/en-us/library/security/3033929) | [Win7AndW2K8R2-KB3156424-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823588) |
+| Windows 8.1            | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) | **x64:** [Win8.1AndW2K12R2-KB3156422-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823586) </br> **x86:** [Win8.1-KB3156422-x86.msu](http://go.microsoft.com/fwlink/?LinkID=823589) |
+| Windows 7 SP1          | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) </br> [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) </br> Actualización de seguridad para la [firma de código SHA-2](https://technet.microsoft.com/en-us/library/security/3033929) | **x64:** [Win7AndW2K8R2-KB3156424-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823588) </br> **x86:** [Win7-KB3156424-x86.msu](http://go.microsoft.com/fwlink/?LinkID=823590) |
 
 
 ## Instalación de WMF 5.1 desde el Explorador de Windows (o el Explorador de archivos en Windows Server 2012 R2 o Windows 8.1)
@@ -55,12 +59,14 @@ Descargue el paquete WMF 5.1 para el sistema operativo y la arquitectura en la q
 La instalación de WMF 5.1 en Windows Server 2008 SP1 o Windows 7 SP1, requiere la instalación de:
 - Service Pack más reciente.
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
+- WMF 5.1 requiere [Microsoft .NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560). Puede instalar Microsoft .NET Framework 4.6 mediante las instrucciones que se proporcionan en la ubicación de descarga.
+- Actualización de seguridad para la [firma de código SHA-2](https://technet.microsoft.com/en-us/library/security/3033929). Es necesaria para usar los nuevos cmdlets de PowerShell para los archivos de catálogo de Windows. 
 
 > **Dependencia de WinRM**: la configuración de estado deseado (DSC) de Windows PowerShell depende de WinRM. WinRM no está habilitado de forma predeterminada en Windows Server 2008 R2 y Windows 7. Para habilitar WinRM, en una sesión de Windows PowerShell con permisos elevados, ejecute `Set-WSManQuickConfig`.
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Jul16_HO5-->
 
 
