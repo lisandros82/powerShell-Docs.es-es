@@ -22,7 +22,7 @@ Problemas de WMF 5.0
 WMF 5.1
 ----------
 
-* El usuario puede utilizar la `ModuleSpecification`tabla hash[ ](https://msdn.microsoft.com/en-us/library/jj136290(v=vs.85).aspx). Esta tabla hash tiene el mismo formato que `Get-Module -FullyQualifiedName`
+* El usuario puede utilizar la `ModuleSpecification`[tabla hash](https://msdn.microsoft.com/en-us/library/jj136290(v=vs.85).aspx). Esta tabla hash tiene el mismo formato que `Get-Module -FullyQualifiedName`
 
 **Ejemplo:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
@@ -32,6 +32,6 @@ WMF 5.1
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 
