@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 50ebc8a737b50aba5a5af49716b59905da74669a
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 28bc665c3ffb1b74a2ff922584c31a8657842a0f
 
 ---
 
 # Usar métodos y clases estáticas
-No todas las clases de .NET Framework se pueden crear mediante **New\-Object**. Por ejemplo, si intenta crear un objeto **System.Environment** o **System.Math** con **New\-Object**, obtendrá los siguientes mensajes de error:
+No todas las clases de .NET Framework se pueden crear mediante **New-Object**. Por ejemplo, si intenta crear un objeto **System.Environment** o **System.Math** con **New-Object**, obtendrá los siguientes mensajes de error:
 
 ```
 PS> New-Object System.Environment
@@ -33,7 +33,7 @@ At line:1 char:11
 Estos errores se producen porque no hay ninguna manera de crear un nuevo objeto desde estas clases. Estas clases son bibliotecas de métodos y propiedades de referencia que no cambian el estado. No es necesario crearlas, simplemente úselas. Las clases y métodos de este tipo se denominan *clases estáticas* porque no se crean, destruyen ni modifican. Para aclarar esto, proporcionaremos algunos ejemplos que usan clases estáticas.
 
 ### Obtener datos del entorno con System.Environment
-Normalmente, el primer paso para trabajar con un objeto en Windows PowerShell es usar Get\-Member para averiguar qué miembros contiene. Con las clases estáticas, el proceso es un poco diferente, porque la clase real no es un objeto.
+Normalmente, el primer paso para trabajar con un objeto en Windows PowerShell es usar Get-Member para averiguar qué miembros contiene. Con las clases estáticas, el proceso es un poco diferente, porque la clase real no es un objeto.
 
 #### Hacer referencia a la clase System.Environment estática
 Para hacer referencia a una clase estática incluya el nombre de la clase entre corchetes. Por ejemplo, para hacer referencia a **System.Environment** escriba el nombre entre corchetes. Al hacerlo, se mostrará alguna información de tipo genérico:
@@ -47,11 +47,11 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> Como mencionamos anteriormente, Windows PowerShell antepone '**System.**' automáticamente a los nombres de tipos cuando se usa **New\-Object**. Lo mismo ocurre cuando se usa un nombre de tipo entre corchetes, por lo que **\[System.Environment] se puede especificar como ****\[Environment]**.
+> Como mencionamos anteriormente, Windows PowerShell antepone '**System.**' automáticamente a los nombres de tipos cuando usa **New-Object**. Lo mismo ocurre cuando se usa un nombre de tipo entre corchetes, por lo que **\[System.Environment] se puede especificar como ****\[Environment]**.
 
 La clase **System.Environment** contiene información general sobre el entorno de trabajo para el proceso actual, que es powershell.exe al trabajar en Windows PowerShell.
 
-Si intenta ver los detalles de esta clase escribiendo **\[System.Environment] | Get\-Member**, el tipo de objeto se indica como **System.RuntimeType**, no como **System.Environment**:
+Si intenta ver los detalles de esta clase escribiendo **\[System.Environment] | Get-Member**, el tipo de objeto se indica como **System.RuntimeType**, no como **System.Environment**:
 
 ```
 PS> [System.Environment] | Get-Member
@@ -59,7 +59,7 @@ PS> [System.Environment] | Get-Member
    TypeName: System.RuntimeType
 ```
 
-Para ver los miembros estáticos con Get\-Member, especifique el parámetro **Static**:
+Para ver los miembros estáticos con Get-Member, especifique el parámetro **Static**:
 
 ```
 PS> [System.Environment] | Get-Member -Static
@@ -118,7 +118,7 @@ False
 ```
 
 ### Operaciones matemáticas con System.Math
-La clase estática System.Math es útil para realizar algunas operaciones matemáticas. Los miembros importantes de **System.Math** son principalmente métodos, que se pueden mostrar mediante **Get\-Member**.
+La clase estática System.Math es útil para realizar algunas operaciones matemáticas. Los miembros importantes de **System.Math** son principalmente métodos, que podemos mostrar mediante **Get-Member**.
 
 > [!NOTE]
 > System.Math tiene varios métodos con el mismo nombre, pero se distinguen por el tipo de sus parámetros.
@@ -190,6 +190,6 @@ PS> [System.Math]::Truncate(-9.3)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

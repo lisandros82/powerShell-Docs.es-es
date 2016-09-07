@@ -1,12 +1,19 @@
 ---
-title: Uso de Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Uso de Windows PowerShell"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 994e6c89f6fc20b95691f010deb3c48062cef310
+
 ---
+
 # Uso de Windows PowerShell
 Windows PowerShell® es un lenguaje de scripting y shell de línea de comandos basado en tareas diseñado especialmente para la administración del sistema. Basado en .NET Framework, Windows PowerShell ayuda a los profesionales de TI y a los usuarios avanzados a controlar y automatizar la administración tanto del sistema operativo Windows como de las aplicaciones que se ejecutan en Windows.
 
@@ -62,13 +69,15 @@ En los siguientes temas se detalla cómo puede obtener la Ayuda más reciente de
 
 -   Cmdlet [Update-Help](http://technet.microsoft.com/library/hh849720.aspx). Cmdlet de Windows PowerShell que descarga e instala las versiones más recientes de los temas de Ayuda correspondientes a los módulos de Windows PowerShell.
 
-    Para más información sobre el sistema de ayuda actualizable de Windows PowerShell, incluido cómo instalarla en equipos aislados de red, consulte [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx) (Acerca de la ayuda actualizable), [Save-Help](http://technet.microsoft.com/library/hh849724.aspx) (Ayuda para guardar) y [Supporting Updatable Help](http://msdn.microsoft.com/library/hh852754.aspx) (Compatibilidad con la ayuda actualizable)..
+    Para más información sobre el sistema de ayuda actualizable de Windows PowerShell, incluido cómo instalarla en equipos aislados de red, vea [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx) (Acerca de la ayuda actualizable), [Save-Help](http://technet.microsoft.com/library/hh849724.aspx) (Ayuda para guardar) y [Supporting Updatable Help](http://msdn.microsoft.com/library/hh852754.aspx) (Compatibilidad con la ayuda actualizable).
 
 -   cmdlet [Get-Help](http://technet.microsoft.com/library/hh849696(v=wps.630).aspx). Cmdlet de Windows PowerShell que puede usar para obtener información sobre los cmdlets y proveedores instalados en el sistema.
 
--   Si se suscribe a la siguiente fuente RSS, recibirá notificaciones sobre las actualizaciones de archivos de Ayuda publicados: [http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions).
+-   Si se suscribe a la siguiente fuente RSS, recibirá notificaciones sobre las actualizaciones de archivos de Ayuda publicados: [http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions).
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO4-->
 
 

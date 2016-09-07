@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
 translationtype: Human Translation
-ms.sourcegitcommit: 35dafe18719cd26977966a26d2781fc99cbf4097
-ms.openlocfilehash: d0f5fb26844edd4e07265a8c7d638f30a51244f7
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: a031bad99e8aca1d7598f99e157723bf4360cf56
 
 ---
 
@@ -19,7 +19,7 @@ Windows PowerShell es un shell de línea de comandos de Windows diseñado especi
 
 A diferencia de la mayoría de los shells, que aceptan y devuelven texto, Windows PowerShell se basa en .NET Framework Common Language Runtime (CLR) y .NET Framework, y acepta y devuelve objetos de .NET Framework. Este cambio fundamental en el entorno aporta herramientas y métodos completamente nuevos para la administración y configuración de Windows.
 
-Windows PowerShell presenta el concepto de cmdlet (pronunciado "command\-let"), una sencilla herramienta de línea de comandos de función única integrada en el shell. Puede usar cada cmdlet por separado, pero su eficacia se aprecia cuando estas sencillas herramientas se usan juntas para realizar tareas complejas. Windows PowerShell incluye más de cien cmdlets principales básicos. Además, puede escribir sus propios cmdlets y compartirlos con otros usuarios.
+Windows PowerShell presenta el concepto de cmdlet (pronunciado "command-let"), una sencilla herramienta de línea de comandos de función única integrada en el shell. Puede usar cada cmdlet por separado, pero su eficacia se aprecia cuando estas sencillas herramientas se usan juntas para realizar tareas complejas. Windows PowerShell incluye más de cien cmdlets principales básicos. Además, puede escribir sus propios cmdlets y compartirlos con otros usuarios.
 
 Al igual que muchos de los shells, Windows PowerShell le proporciona acceso al sistema de archivos en el equipo. Además, los *proveedores* de Windows PowerShell permiten acceder a otros almacenes de datos, como el Registro y los almacenes de certificados de firma digital, tan fácilmente como se accede al sistema de archivos.
 
@@ -29,7 +29,7 @@ En este tema:
 
 -   [Requisitos del sistema de Windows PowerShell](../setup/Windows-PowerShell-System-Requirements.md)
 
--   [Instalar Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
+-   [Instalación de Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 
 -   [Iniciar Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
 
@@ -38,6 +38,6 @@ En este tema:
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 4812092dea24fa61245af7e06d1c5924ec812218
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 05255e63ae34e239003e5847c9f3b7fb2f4e3a0a
 
 ---
 
@@ -73,7 +73,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### GoToMatch\(\)
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. 
 
- Mueve el símbolo de intercalación al carácter coincidente si la propiedad **CanGoToMatch** del objeto del editor es **$true**, lo que ocurre cuando el símbolo de intercalación está inmediatamente antes de un paréntesis, corchete o llave de apertura \- \(,\[,{ \- o inmediatamente después de un paréntesis, corchete o llave de cierre \- \),\],}.  El símbolo de intercalación se coloca delante de un carácter de apertura o después de un carácter de cierre. Si la propiedad **CanGoToMatch** es **$false**, el método no hace nada. Consulte [CanGoToMatch](#cangotomatch).
+ Mueve el símbolo de intercalación al carácter coincidente si la propiedad **CanGoToMatch** del objeto del editor es **$true**, lo que ocurre cuando el símbolo de intercalación está inmediatamente antes de un paréntesis, corchete o llave de apertura \(,\[,{ - o inmediatamente después de un paréntesis, corchete o llave de cierre - \),\],}.  El símbolo de intercalación se coloca delante de un carácter de apertura o después de un carácter de cierre. Si la propiedad **CanGoToMatch** es **$false**, el método no hace nada. Consulte [CanGoToMatch](#cangotomatch).
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -84,7 +84,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Reemplaza la selección por texto o inserta texto en la posición del símbolo de intercalación actual.
 
- **text** \- Cadena El texto que se inserta.
+ **text** (cadena); el texto que se inserta.
 
  Vea [Ejemplo de scripting](#example) más adelante en este tema.
 
@@ -93,13 +93,13 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Selecciona el texto de los parámetros **startLine**, **startColumn**, **endLine** y **endColumn**.
 
- **startLine** \- Entero La línea donde comienza la selección.
+ **startLine** (entero); la línea donde comienza la selección.
 
- **startColumn** \- Entero La columna de la línea de inicio en que comienza la selección.
+ **startColumn** (entero); la columna de la línea de inicio en que comienza la selección.
 
- **endLine** \- Entero La línea en que acaba la selección.
+ **endLine** (entero); la línea en que acaba la selección.
 
- **endColumn** \- Entero La columna de la línea de fin en que acaba la selección.
+ **endColumn** (entero); la columna de la línea de fin en que acaba la selección.
 
  Vea [Ejemplo de scripting](#example) más adelante en este tema.
 
@@ -121,9 +121,9 @@ $psIse.CurrentFile.Editor.SelectCaretLine()
 
  Establece la posición del símbolo de intercalación en el número de línea y el número de columna. Produce una excepción si el número de línea del símbolo de intercalación o el número de columna del símbolo de intercalación están fuera de sus  intervalos válidos respectivos.
 
- **lineNumber** \- Entero El número de línea del símbolo de intercalación.
+ **lineNumber** (entero); el número de línea del símbolo de intercalación.
 
- **columnNumber** \- Entero El número de columna del símbolo de intercalación.
+ **columnNumber** (entero); el número de columna del símbolo de intercalación.
 
 ```
 # Set the CaretPosition.
@@ -146,7 +146,7 @@ $psIse.CurrentFile.Editor.ToggleOutliningExpansion()
 ###  <a name="CanGoToMatch"></a> CanGoToMatch
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. 
 
- Propiedad booleana de solo lectura que indica si el símbolo de intercalación está al lado de un paréntesis, corchete o llave: \-, \(\), {}. Si el símbolo de intercalación está inmediatamente antes del carácter de apertura o inmediatamente después del carácter de cierre de un par, el valor de esta propiedad es **$true**. Si no, es **$false**.
+ Propiedad booleana de solo lectura que indica si el símbolo de intercalación está al lado de paréntesis, corchetes o llaves, \(\), \[\] o {}. Si el símbolo de intercalación está inmediatamente antes del carácter de apertura o inmediatamente después del carácter de cierre de un par, el valor de esta propiedad es **$true**. Si no, es **$false**.
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -157,7 +157,7 @@ $psIse.CurrentFile.Editor.CanGoToMatch
 ###  <a name="CaretColumn"></a> CaretColumn
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
- Propiedad de solo lectura que obtiene al número de columna que corresponde a la posición del símbolo de intercalación.
+ Propiedad de solo lectura que obtiene el número de columna que corresponde a la posición del símbolo de intercalación.
 
 ```
 # Get the CaretColumn.
@@ -242,7 +242,7 @@ $myEditor.Clear()
 $myEditor.InsertText($selection.ToLower())
 ```
 
-## Consulte también
+## Véase también
  [The ISEFile Object (El objeto ISEFile)](The-ISEFile-Object.md) 
  [The PowerShellTab Object (El objeto PowerShellTab)](The-PowerShellTab-Object.md) 
  [The Windows PowerShell ISE Scripting Object Model (El modelo de objetos de scripting de Windows PowerShell ISE)](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
@@ -253,6 +253,6 @@ $myEditor.InsertText($selection.ToLower())
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

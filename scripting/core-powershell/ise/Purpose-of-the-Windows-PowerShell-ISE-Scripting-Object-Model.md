@@ -1,12 +1,19 @@
 ---
 title: Finalidad del modelo de objetos de scripting de Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 16bd9de4e5636431a192dc3d49e3310c816b997f
+
 ---
+
 # Finalidad del modelo de objetos de scripting de Windows PowerShell ISE
   Los objetos están asociados con la forma y la función de Windows PowerShell Integrated Scripting Environment (ISE). La referencia del modelo de objeto proporciona detalles sobre los métodos y las propiedades de los miembros que estos objetos exponen. Se proporcionan ejemplos que muestran cómo puede utilizar scripts para acceder directamente a estos métodos y propiedades. El modelo de objetos de scripting facilita el siguiente intervalo de tareas.
 
@@ -63,7 +70,7 @@ ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
 ## Automatización de tareas
  Puede utilizar el modelo de objetos de scripting para crear métodos abreviados de teclado para operaciones frecuentes.
 
-## Consulte también
+## Véase también
  [La jerarquía del modelo de objetos de ISE](The-ISE-Object-Model-Hierarchy.md) 
  [Referencia del modelo de objetos de ISE de Windows PowerShell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
  [El modelo de objetos de scripting de ISE de Windows PowerShell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
@@ -71,6 +78,7 @@ ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

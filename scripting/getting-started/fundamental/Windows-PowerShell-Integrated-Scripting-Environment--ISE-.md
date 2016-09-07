@@ -1,12 +1,19 @@
 ---
 title: Entorno de scripting integrado (ISE) de Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 061e22c26853664c89adc023d43802628859b9a6
+
 ---
+
 # Entorno de scripting integrado (ISE) de Windows PowerShell
 El Entorno de scripting integrado (ISE ) de Windows PowerShell es uno de los dos hosts para el motor y el lenguaje de Windows PowerShell. Puede escribir, ejecutar y probar scripts de maneras que no están disponibles en la consola de Windows PowerShell. El ISE agrega color de sintaxis, finalización con tabulación, IntelliSense, depuración visual y ayuda contextual.
 
@@ -28,13 +35,13 @@ Ahora, la **lista Usados más recientemente** forma parte del menú Abrir archiv
 
 **Panel de consola combinado**. En versiones anteriores del ISE, los paneles de comandos y salida eran independientes. Ahora se combinan en un solo panel que representa más directamente lo que se ve en la consola de Windows Powershell.
 
-**Modificadores de línea de comandos** Varios modificadores de línea de comandos nuevos le ofrecen un mayor control sobre el funcionamiento del ISE. –NoProfile inicia el ISE sin ejecutar un script de perfil. –Help abre una ventana de ayuda con el ISE. –mta inicia el ISE en "modo de contenedor multiproceso". El modo predeterminado es el de uniproceso.
+**Modificadores de la línea de comandos**. Varios modificadores de la línea de comandos nuevos ofrecen un mayor control sobre el funcionamiento del ISE. –NoProfile inicia el ISE sin ejecutar un script de perfil. –Help abre una ventana de ayuda con el ISE. –mta inicia el ISE en "modo de contenedor multiproceso". El modo predeterminado es el de uniproceso.
 
 Las **nuevas características del editor** facilitan la creación y lectura del código:
 
 -   **Color de la sintaxis XML**. El editor de ISE colorea ahora la sintaxis XML de la misma manera que la sintaxis de código de Windows PowerShell.
 
--   **Coincidencia de llaves**. Windows PowerShell ISE resalta las llaves coincidentes para que pueda asegurarse de tener la cantidad correcta de llaves de cierre según la cantidad de llaves de apertura. Use CTRL-[ para ubicar la llave de cierre que coincida con la llave de apertura en la que se encuentra en cursor.
+-   **Coincidencia de llaves**. Windows PowerShell ISE resalta las llaves coincidentes para que pueda asegurarse de tener la cantidad correcta de llaves de cierre según la cantidad de llaves de apertura. Use CTRL-\[ para ubicar la llave de cierre que coincida con la llave de apertura en la que se encuentra en cursor.
 
 -   **Vista Esquema**. Puede contraer o expandir las secciones del código haciendo clic en los signos más y menos del margen izquierdo. De este modo, podrá encontrar fácilmente el código que busca en un script largo.
 
@@ -46,7 +53,7 @@ Las **nuevas características del editor** facilitan la creación y lectura del 
 
 -   **Copia y pegado de texto enriquecido**. Al copia texto del ISE en el Portapapeles, se incluye la información de fuente, tamaño y de color del texto seleccionado.
 
--   **Selección de bloques**. Para seleccionar un fragmento de texto en forma de bloque, puede mantener presionada la tecla ALT y seleccionar texto en el panel de scripts con el mouse, o bien presionar **Alt+Mayús+Flecha**..
+-   **Selección de bloques**. Para seleccionar un fragmento de texto en forma de bloque, puede mantener presionada la tecla ALT y seleccionar texto en el panel de scripts con el ratón, o bien presionar **Alt+Mayús+Flecha**.
 
 ### Agregado en PowerShell 2.0 (Windows Server 2008 R2, Windows 7)
 El ISE se introdujo con PowerShell 2.0.
@@ -62,6 +69,7 @@ El ISE está disponible en cualquier equipo que puede ejecutar Windows PowerShel
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

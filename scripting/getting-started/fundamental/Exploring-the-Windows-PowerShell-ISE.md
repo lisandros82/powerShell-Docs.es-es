@@ -1,12 +1,19 @@
 ---
-title: Explorar Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Explorar Windows PowerShell ISE"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: c1f285a1d1beb35c931c17f5944d7ec697cb152e
+
 ---
+
 # Explorar Windows PowerShell ISE
 Puede utilizar el Entorno de scripting integrado (ISE) de PowerShell® Windows para crear, ejecutar y depurar scripts y comandos. Windows PowerShell ISE consta de la barra de menús, las pestañas de Windows PowerShell, la barra de herramientas, las pestañas de script, un panel de scripts, un panel de consola, una barra de estado, un control deslizante de tamaño de texto y la ayuda contextual.
 
@@ -14,7 +21,7 @@ Puede utilizar el Entorno de scripting integrado (ISE) de PowerShell® Windows p
 > A partir de Windows PowerShell ISE 3.0, los paneles de comandos y de salida se combinan en un único panel de consola.
 
 ## Barra de menús
-La barra de menús contiene los menús **Archivo**, **Edición**, **Ver**, **Herramientas**, **Depurar**, **Complementos** y **Ayuda**. Los botones de los menús permiten realizar tareas relacionadas con la escritura y ejecución de scripts y la ejecución de comandos en Windows PowerShell ISE. Además, se puede colocar una [herramienta de complemento](../../core-powershell/ise/The-ISEAddOnTool-Object.md) en la barra de menús mediante la ejecución de scripts que usan el [modelo de objetos de scripting de Windows PowerShell ISE](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)..
+La barra de menús contiene los menús **Archivo**, **Edición**, **Ver**, **Herramientas**, **Depurar**, **Complementos** y **Ayuda**. Los botones de los menús permiten realizar tareas relacionadas con la escritura y ejecución de scripts y la ejecución de comandos en Windows PowerShell ISE. Además, se puede colocar una [herramienta de complemento](../../core-powershell/ise/The-ISEAddOnTool-Object.md) en la barra de menús mediante la ejecución de scripts que usan el [modelo de objetos de scripting de Windows PowerShell ISE](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md).
 
 > [!NOTE]
 > En Windows PowerShell ISE 2.0, no existían los menús **Herramientas** y **Complementos**.
@@ -68,10 +75,12 @@ Aumenta o disminuye el tamaño del texto en la pantalla.
 ## Ayuda
 La ayuda de Windows PowerShell ISE está disponible en la biblioteca de TechNet en Internet. Para abrir la Ayuda, haga clic en **Ayuda de Windows PowerShell ISE** en el menú **Ayuda** o presione la tecla F1 en cualquier lugar excepto cuando el cursor esté en el nombre de un cmdlet en el panel de scripts o en panel de consola. Desde el menú **Ayuda** también puede ejecutar el cmdlet Update-Help y mostrar la ventana Comandos, que le muestra todos los parámetros de un cmdlet para ayudarle a construir comandos, lo que permite rellenar los parámetros en un formulario fácil de usar.
 
-## Consulte también
+## Véase también
 [Usar Windows PowerShell ISE](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO4-->
 
 

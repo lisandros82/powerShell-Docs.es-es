@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: ee5e88ece27add955fcef3a9df0a441a08251e77
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: d54139714552943901f565a8525bb478ed308f09
 
 ---
 
@@ -74,7 +74,7 @@ Si ha especificado su propio nombre de sitio web personalizado, agregue el pará
 
     -   En la pantalla **Inicio** de Windows, haga clic con el botón derecho en **Windows PowerShell** y, luego, en **Ejecutar como administrador**.
 
-2.  Escriba lo siguiente y presione **Entrar**, donde *computer\_name* representa un servidor remoto del que desea quitar Windows PowerShell Web Access. El parámetro <span class="code">–Restart</span> reinicia automáticamente los servidores de destino, si es necesario para la eliminación.
+2.  Escriba lo siguiente y luego presione **Entrar**, donde *computer_name* representa un servidor remoto del que desea quitar Windows PowerShell Web Access. El parámetro <span class="code">–Restart</span> reinicia automáticamente los servidores de destino, si es necesario para la eliminación.
 
     [Copiar](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_7b534520-f292-471f-89e3-a1079c03e369'); "Copiar al Portapapeles.")
 
@@ -159,7 +159,7 @@ Los procedimientos de esta sección le ayudarán a desinstalar tanto la aplicaci
 
 6.  En la página **Confirmar selecciones de eliminación**, haga clic en **Quitar**.
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Consulte también</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Véase también</span></a>
 <a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -219,6 +219,6 @@ Los scripts y el código de terceros vinculados a este sitio web o a los que est
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

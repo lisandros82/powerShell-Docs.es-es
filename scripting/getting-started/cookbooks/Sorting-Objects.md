@@ -9,15 +9,15 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 72d0c66e8fe1c87561af89821e16032f25c3b1b5
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 88753c43124cfce3581af2259449be5f01579ae8
 
 ---
 
 # Ordenar objetos
-Mediante el cmdlet **Sort\-Object** se pueden organizar los datos que se muestran para facilitar su examen. **Sort\-Object** toma el nombre de una o varias propiedades por los que se ordena y devuelve los datos ordenados por los valores de dichas propiedades.
+Podemos organizar los datos mostrados para examinarlos más fácilmente mediante el cmdlet **Sort-Object**. **Sort-Object** toma el nombre de una o varias propiedades para la ordenación, y devuelve los datos ordenados por los valores de esas propiedades.
 
-Considere el problema de enumerar instancias de Win32\_SystemDriver. Si queremos ordenar por **State** y luego por **Name**, podemos escribir lo siguiente para hacerlo:
+Considere el problema de enumerar instancias de Win32_SystemDriver. Si queremos ordenar por **State** y luego por **Name**, podemos escribir lo siguiente para hacerlo:
 
 ```
 Get-WmiObject -Class Win32_SystemDriver | Sort-Object -Property State,Name | Format-Table -Property Name,State,Started,DisplayName -AutoSize -Wrap
@@ -58,6 +58,6 @@ Wanarp         Running    True Remote Access IP ARP Driver
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

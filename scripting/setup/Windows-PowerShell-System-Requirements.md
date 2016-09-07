@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 translationtype: Human Translation
-ms.sourcegitcommit: 1ae9150b226147c039acf0738690de4da8686a71
-ms.openlocfilehash: e2e129c1c90ab7561861a7d9c71fb654569d5712
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: b5b797ed09f9f43bfd0259e4af8b3754655d7c84
 
 ---
 
@@ -47,12 +47,12 @@ Windows PowerShell 4.0 requiere la instalación completa de Microsoft .NET Frame
 
 Windows PowerShell 3.0 requiere la instalación completa de Microsoft .NET Framework 4. Windows 8 y Windows Server 2012 incluyen Microsoft .NET Framework 4.5 de manera predeterminada, con lo que se cumple este requisito.
 
-Para instalar Microsoft .NET Framework 4.5 (dotNetFx45\_Full\_setup.exe), consulte [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919) en el Centro de descarga de Microsoft.
+Para instalar Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe), vea [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919) en el Centro de descarga de Microsoft.
 
-Para realizar la instalación completa de Microsoft .NET Framework 4 (dotNetFx40\_Full\_setup.exe), consulte [Microsoft .NET Framework 4 (Instalador web)](http://go.microsoft.com/fwlink/?LinkID=212931) en el Centro de descarga de Microsoft.
+Para realizar la instalación completa de Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe), vea [Microsoft .NET Framework 4 (instalador web)](http://go.microsoft.com/fwlink/?LinkID=212931) en el Centro de descarga de Microsoft.
 
-## WS\-Management 3.0
-Windows PowerShell 3.0 y Windows PowerShell 4.0 requieren WS\-Management 3.0, que admite el servicio WinRM y el protocolo WSMan. Este programa está incluido en Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0 y Windows Management Framework 3.0.
+## WS-Management 3.0
+Windows PowerShell 3.0 y Windows PowerShell 4.0 requieren WS-Management 3.0, que admite el servicio WinRM y el protocolo WSMan. Este programa está incluido en Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0 y Windows Management Framework 3.0.
 
 ## Instrumental de administración de Windows 3.0
 Windows PowerShell 3.0 y Windows PowerShell 4.0 requiere Instrumental de administración de Windows 3.0 (WMI). Este programa está incluido en Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0 y Windows Management Framework 3.0. Si este programa no está instalado en el equipo, las características que requieren WMI, como los comandos CIM, no se ejecutan.
@@ -107,7 +107,7 @@ Windows PowerShell 2.0, Windows PowerShell 3.0 y Windows PowerShell 4.0 se ejecu
 
 Además, el servicio **WinRM** no está presente en Windows PE.
 
-## Consulte también
+## Véase también
 [Introducción a Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 
 [Instalación de Windows PowerShell](Installing-Windows-PowerShell.md)
@@ -117,6 +117,6 @@ Además, el servicio **WinRM** no está presente en Windows PE.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

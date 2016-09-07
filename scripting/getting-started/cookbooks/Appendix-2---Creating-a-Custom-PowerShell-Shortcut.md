@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 24e9b67cf51b99156db3f0bdfb446996b9d3df76
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: ceec1038516ddd4c29df770d14981c0a69437498
 
 ---
 
@@ -19,15 +19,15 @@ El siguiente procedimiento describe cómo crear un acceso directo a Windows Powe
 
 1.  Crear un acceso directo que apunte a Powershell.exe.
 
-2.  Haga clic con el botón derecho en el acceso directo y, después, haga clic en \-Propiedades**.
+2.  Haga clic con el botón derecho en el acceso directo y, después, haga clic en **Propiedades**.
 
 3.  Haga clic en la pestaña **Opciones**.
 
 4.  En la sección **Editar opciones**, active la casilla **Edición rápida**.
 
-    Esta opción permite seleccionar texto en la ventana de la consola de Windows PowerShell arrastrando el botón izquierdo del ratón, así como copiar texto en el Portapapeles presionando ENTRAR o haciendo clic con el botón derecho.
+    Esta configuración permite seleccionar texto en la ventana de la consola de Windows PowerShell arrastrando el botón izquierdo del ratón, así como copiar texto en el Portapapeles presionando ENTRAR o haciendo clic con el botón derecho.
 
-5.  En la sección **Editar opciones**, active la casilla **Modo de inserción**. Esta opción permite hacer clic con el botón derecho en la ventana de la consola para pegar texto automáticamente desde el Portapapeles.
+5.  En la sección **Editar opciones**, active la casilla **Modo de inserción**. Esta configuración permite hacer clic con el botón derecho en la ventana de la consola para pegar texto automáticamente desde el Portapapeles.
 
 6.  En la sección **Historial de comandos**, escriba o seleccione un número entre 1 y 999 en el cuadro **Tamaño del búfer**. Esta acción establece el número de comandos escritos que se mantendrán en el búfer de la consola.
 
@@ -46,6 +46,6 @@ El siguiente procedimiento describe cómo crear un acceso directo a Windows Powe
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

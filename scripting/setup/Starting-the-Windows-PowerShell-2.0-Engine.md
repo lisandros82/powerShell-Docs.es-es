@@ -1,12 +1,19 @@
 ---
 title: Iniciar el motor de Windows PowerShell 2.0
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 094c3c9f240457fc884031e7d82dcdc1e81e582d
+
 ---
+
 # Iniciar el motor de Windows PowerShell 2.0
 En esta sección se explica cómo iniciar el motor de Windows PowerShell 2.0 en Windows 8.1, Windows Server 2012 R2, Windows 8 y Windows Server 2012, que incluyen el motor de Windows PowerShell 2.0, y en otros sistemas que tienen instalado Windows PowerShell 2.0, Windows PowerShell 3.0 y Windows PowerShell 4.0.
 
@@ -15,9 +22,9 @@ Windows PowerShell 4.0 y Windows PowerShell 3.0 están diseñados para ser compa
 Muchos programas que requieren el motor de Windows PowerShell 2.0 lo inician automáticamente. Estas instrucciones se incluyen para las situaciones excepcionales en que necesite iniciar el motor de forma manual.
 
 ## Instalar y habilitar los programas requeridos
-Antes de iniciar el motor de Windows PowerShell 2.0, habilite el motor de Windows PowerShell 2.0 y Microsoft .NET Framework 3.5 con Service Pack 1. Para obtener instrucciones, consulte [Installing Windows PowerShell](Installing-Windows-PowerShell.md) (Instalación de Windows PowerShell)..
+Antes de iniciar el motor de Windows PowerShell 2.0, habilite el motor de Windows PowerShell 2.0 y Microsoft .NET Framework 3.5 con Service Pack 1. Para obtener instrucciones, consulte [instalar Windows PowerShell](Installing-Windows-PowerShell.md).
 
-Los sistemas con [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) o Windows Management Framework 3.0 instalado tienen todos los componentes necesarios. No es necesario realizar ninguna otra configuración. Para más información sobre cómo instalar [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) o Windows Management Framework 3.0, consulte [Installing Windows PowerShell](Installing-Windows-PowerShell.md) (Instalación de Windows PowerShell)..
+Los sistemas con [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) o Windows Management Framework 3.0 instalado tienen todos los componentes necesarios. No es necesario realizar ninguna otra configuración. Para más información sobre cómo instalar [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) o Windows Management Framework 3.0, vea [Installing Windows PowerShell](Installing-Windows-PowerShell.md) (Instalación de Windows PowerShell).
 
 ## Iniciar el motor de Windows PowerShell 2.0
 Al iniciar Windows PowerShell, se inicia la versión más reciente de forma predeterminada. Para iniciar Windows PowerShell con el motor de Windows PowerShell 2.0, use el parámetro Version de PowerShell.exe. Puede ejecutar el comando en cualquier símbolo del sistema, incluidos Windows PowerShell y Cmd.exe.
@@ -33,7 +40,7 @@ Se trata de una tarea avanzada que suele realizarla un administrador del sistema
 
 El siguiente procedimiento usa el parámetro **PSVersion** del cmdlet [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) para crear una configuración de sesión que use el motor de Windows PowerShell 2.0. También puede usar el parámetro **PowerShellVersion** del cmdlet [New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866) para crear un archivo de configuración de sesión para una sesión que cargue el motor de Windows PowerShell 2.0 y el parámetro **PSVersion** del cmdlet [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) para cambiar una configuración de sesión para que use el motor de Windows PowerShell 2.0.
 
-Para más información sobre los archivos de configuración de sesión, consulte [about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8). Para más información sobre las configuraciones de sesión, incluida la de configuración y seguridad, consulte [about_Session_Configurations [v4]](https://technet.microsoft.com/en-us/library/a2fbe12a-350c-4d04-be50-24102824e3ab)..
+Para más información sobre los archivos de configuración de sesión, vea [about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8). Para obtener información sobre las configuraciones de sesión, incluida la de configuración y seguridad,vea [about_Session_Configurations [v4]](https://technet.microsoft.com/en-us/library/a2fbe12a-350c-4d04-be50-24102824e3ab).
 
 #### Iniciar una sesión de Windows PowerShell 2.0
 
@@ -64,10 +71,11 @@ El comando siguiente inicia un trabajo en segundo plano con el motor de Windows 
 Start-Job {Get-Process} -PSVersion 2.0
 ```
 
-Para más información sobre los trabajos en segundo plano, consulte [about_Jobs [v4]](https://technet.microsoft.com/en-us/library/7362512a-8a4e-4575-b2ea-a740e5c4f002)..
+Para más información sobre los trabajos en segundo plano, consulte [about_Jobs [v4]](https://technet.microsoft.com/en-us/library/7362512a-8a4e-4575-b2ea-a740e5c4f002).
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

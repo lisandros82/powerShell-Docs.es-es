@@ -1,14 +1,21 @@
 ---
-title: Métodos abreviados de teclado para Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Métodos abreviados de teclado para Windows PowerShell ISE"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 596bbd2a5c272918171833310fc8c8aa5353adb1
+
 ---
+
 # Métodos abreviados de teclado para Windows PowerShell ISE
-Utilice los siguientes métodos abreviados de teclado para realizar acciones en Windows PowerShell® Integrated Scripting Environment (ISE). Windows PowerShell ISE está disponible como parte de los sistemas operativos Windows Server y cliente de Windows, pero también se puede instalar en algunos sistemas operativos anteriores de Windows como parte del [paquete de descarga de Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881)..
+Utilice los siguientes métodos abreviados de teclado para realizar acciones en Windows PowerShell® Integrated Scripting Environment (ISE). Windows PowerShell ISE está disponible como parte de los sistemas operativos Windows Server y cliente de Windows, pero también se puede instalar en algunos sistemas operativos anteriores de Windows como parte del [paquete de descarga de Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881).
 
 ## Métodos abreviados de teclado para editar texto
 Puede usar los siguientes métodos abreviados de teclado cuando edite texto.
@@ -16,13 +23,13 @@ Puede usar los siguientes métodos abreviados de teclado cuando edite texto.
 |Acción|Métodos abreviados de teclado.|Usar en|
 |----------|----------------------|----------|
 |**Ayuda**|F1|Panel de scripts **Importante:** Puede especificar que la ayuda de F1 proceda de la biblioteca de TechNet en la ayuda descargada o web (Update-Help). Para realizar la selección, haga clic en **Herramientas**, **Opciones** y, a continuación, en la pestaña **Configuración General**, active o desactive **Usar Ayuda local en lugar de contenido en línea.**|
-|**Copiar**|CTRL+C|Panel de scripts, Panel de comandos y Panel de salida|
+|**Copiar**|Ctrl+C|Panel de scripts, Panel de comandos y Panel de salida|
 |**Cortar**|CTRL+X|Panel de scripts, Panel de comandos|
 |**Expandir o contraer la esquematización**|CTRL+M|Panel de scripts|
 |**Buscar en el script**|CTRL+F|Panel de scripts|
 |**Buscar siguiente en el script**|F3|Panel de scripts|
 |**Buscar anterior en el script**|MAYÚS+F3|Panel de scripts|
-|**Buscar llave que coincida**|CTRL+]|Panel de scripts|
+|**Buscar llave que coincida**|CTRL +]|Panel de scripts|
 |**Pegar**|CTRL+V|Panel de scripts, Panel de comandos|
 |**Rehacer**|CTRL+Y|Panel de scripts, Panel de comandos|
 |**Reemplazar en el script**|CTRL+H|Panel de scripts|
@@ -40,9 +47,9 @@ Puede usar los siguientes métodos abreviados de teclado cuando ejecute scripts 
 |**Abrir**|CTRL+O|
 |**Ejecutar**|F5|
 |**Ejecutar selección**|F8|
-|**Detener la ejecución**|CTRL+INTERRUMPIR CTRL+C se puede usar cuando el contexto no es ambiguo (cuando no hay ningún texto seleccionado).|
-|**Pestaña** (para el siguiente script)|CTRL+TAB **Nota:** La pestaña para el siguiente script solo funciona si tiene una sola pestaña de Windows PowerShell abierta, o bien si tiene más de una abierta pero el foco está en el panel de scripts.|
-|**Pestaña** (para el script anterior)|CTRL+MAYÚS+TAB **Nota:** La pestaña para el script anterior solo funciona si tiene una sola pestaña de Windows PowerShell abierta, o bien si tiene más de una abierta pero el foco está en el panel de scripts.|
+|**Detener la ejecución**|CTRL+INTER. CTRL+C se puede usar cuando el contexto no es ambiguo (cuando no hay ningún texto seleccionado).|
+|**Tabulación** (para el siguiente script)|CTRL+TAB **Nota:** La pestaña para el siguiente script solo funciona si tiene una sola pestaña de Windows PowerShell abierta, o bien si tiene más de una abierta pero el foco está en el panel de scripts.|
+|**Tabulación** (para el script anterior)|CTRL+MAYÚS+TAB **Nota:** La pestaña para el script anterior solo funciona si tiene una sola pestaña de Windows PowerShell abierta, o bien si tiene más de una abierta pero el foco está en el panel de scripts.|
 
 ## Métodos abreviados de teclado para personalizar la vista
 Puede usar los siguientes métodos abreviados de teclado cuando personalice la vista en Windows PowerShell ISE. Son accesibles desde todos los paneles de la aplicación.
@@ -108,11 +115,12 @@ Puede usar los siguientes métodos abreviados de teclado para iniciar la consola
 |**Salir**|ALT+F4|
 |**Iniciar PowerShell.exe** (consola de Windows PowerShell)|CTRL+MAYÚS+P|
 
-## Consulte también
+## Véase también
 [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts (Lista completa de métodos abreviados de teclado de Windows PowerShell ISE)](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

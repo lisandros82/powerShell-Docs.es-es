@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
 translationtype: Human Translation
-ms.sourcegitcommit: c6b87ed59a16ccb147fdd3d98e48cfa1c0aa748d
-ms.openlocfilehash: d1f3c08451b385c56d0c4e084dce8fa5795c278e
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 1779b9de13a30a43236e24793e5196261a7db77f
 
 ---
 
@@ -28,10 +28,10 @@ Este comando bloquea inmediatamente la estación de trabajo. Usa *rundll32.exe*,
 
 Si se bloquea una estación de trabajo mientras Cambio rápido de usuario está habilitado, como en Windows XP, el equipo muestra la pantalla de inicio de sesión de usuario, en lugar de iniciar el protector de pantalla del usuario actual.
 
-Para apagar sesiones concretas en un servidor de Terminal Server, use la herramienta de línea de comandos **tsshutdn.exe**.
+Para cerrar sesiones determinadas en un servidor de Terminal Server, use la herramienta de línea de comandos **tsshutdn.exe**.
 
 ### Cerrar la sesión actual
-Puede usar varias técnicas diferentes para cerrar una sesión en el sistema local. La manera más sencilla es usar la herramienta de línea de comandos **logoff.exe** de Escritorio remoto/Terminal Services (para más información, en el símbolo del sistema de Windows PowerShell, escriba** logoff /?**). Para cerrar la sesión activa actualmente, escriba **logoff** sin argumentos.
+Puede usar varias técnicas diferentes para cerrar una sesión en el sistema local. La manera más sencilla es usar la herramienta de línea de comandos **logoff.exe** de Escritorio remoto/Terminal Services (para obtener más información, en el símbolo del sistema de Windows PowerShell, escriba **logoff /?**). Para cerrar la sesión activa actualmente, escriba **logoff** sin argumentos.
 
 También puede usar la herramienta **shutdown.exe** con su opción de cierre de sesión:
 
@@ -39,18 +39,18 @@ También puede usar la herramienta **shutdown.exe** con su opción de cierre de 
 shutdown.exe -l
 ```
 
-Una tercera opción es usar WMI. La clase Win32\_OperatingSystem tiene un método Win32Shutdown. Al invocar el método con la marca 0 se inicia el cierre de sesión:
+Una tercera opción es usar WMI. La clase Win32_OperatingSystem tiene un método Win32Shutdown. Al invocar el método con la marca 0 se inicia el cierre de sesión:
 
 ```
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
 ```
 
-Para más información y otras características del método Win32Shutdown, consulte "Win32Shutdown Method of the Win32\_OperatingSystem Class" (Método Win32Shutdown de la clase Win32_OperatingSystem) en MSDN.
+Para obtener más información y otras características del método Win32Shutdown, vea "Win32Shutdown Method of the Win32_OperatingSystem Class" (Método Win32Shutdown de la clase Win32_OperatingSystem) en MSDN.
 
 ### Apagar o reiniciar un equipo
 Apagar y reiniciar equipos suelen ser los mismos tipos de tarea. Las herramientas que apagan un equipo generalmente también lo reinician, y viceversa. Hay dos opciones sencillas para reiniciar un equipo desde Windows PowerShell. Use Tsshutdn.exe o Shutdown.exe con los argumentos apropiados. Puede obtener información de uso detallada en **tsshutdn.exe /?** o **shutdown.exe /?**.
 
-También puede realizar las operaciones de apagar y reiniciar mediante el uso de **Win32\_OperatingSystem** directamente desde Windows PowerShell.
+También puede realizar las operaciones de apagar y reiniciar mediante **Win32_OperatingSystem** directamente desde Windows PowerShell.
 
 Para apagar el equipo, use el método Win32Shutdown con la marca **1**.
 
@@ -67,6 +67,6 @@ Para reiniciar el sistema operativo, use el método Win32Shutdown con la marca *
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

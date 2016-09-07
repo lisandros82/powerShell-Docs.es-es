@@ -1,3 +1,18 @@
+---
+title: Uso de la consola de Windows PowerShell basada en web
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 9c633d457db9d15621285b2662244c4190550f63
+
+---
+
 #  Uso de la consola de Windows PowerShell basada en web
 
 Actualizado: 24 de junio de 2013
@@ -74,7 +89,7 @@ Para usar la consola de Windows PowerShell Web Access basada en web, los explora
 
 ------------------------------------------------------------------------
 
-El administrador de Windows PowerShell Web Access debe proporcionar una dirección URL que es la dirección del sitio web de la puerta de enlace de Windows PowerShell Web Access de la organización. De manera predeterminada, la dirección de este sitio web es https://&lt;nombre\_servidor&gt;/pswa. Antes de iniciar sesión en Windows PowerShell Web Access, asegúrese de contar con el nombre o la dirección IP del equipo remoto que desea administrar. Debe ser un usuario autorizado en el equipo remoto, y el equipo debe estar configurado para admitir la administración remota. Para más información sobre de la configuración del equipo para que admita la administración remota, consulte el tema sobre cómo [Enable and Use Remote Commands in Windows PowerShell](https://technet.microsoft.com/magazine/ff700227.aspx) (Habilitación y uso de comandos remotos en Windows PowerShell). El método más simple de configurar el equipo para que admita la administración remota consiste en ejecutar el cmdlet **Enable-PSRemoting -force** en el equipo, en una sesión de Windows PowerShell abierta con permisos del usuario elevados (**Ejecutar como administrador**).).
+El administrador de Windows PowerShell Web Access debe proporcionar una dirección URL que es la dirección del sitio web de la puerta de enlace de Windows PowerShell Web Access de la organización. De manera predeterminada, la dirección de este sitio web es https://&lt;nombre_servidor&gt;/pswa. Antes de iniciar sesión en Windows PowerShell Web Access, asegúrese de contar con el nombre o la dirección IP del equipo remoto que desea administrar. Debe ser un usuario autorizado en el equipo remoto, y el equipo debe estar configurado para admitir la administración remota. Para más información sobre de la configuración del equipo para que admita la administración remota, consulte el tema sobre cómo [Enable and Use Remote Commands in Windows PowerShell](https://technet.microsoft.com/magazine/ff700227.aspx) (Habilitación y uso de comandos remotos en Windows PowerShell). El método más sencillo de configurar el equipo para que admita la administración remota consiste en ejecutar el cmdlet **Enable-PSRemoting -force** en el equipo, en una sesión de Windows PowerShell abierta con permisos del usuario elevados (**Ejecutar como administrador**).
 
 ### Para iniciar sesión en Windows PowerShell Web Access
 
@@ -94,23 +109,23 @@ El administrador de Windows PowerShell Web Access debe proporcionar una direcci�
     <tbody>
     <tr class="odd">
     <td><ul>
-    <li><p>Si el equipo de destino se encuentra en un grupo de trabajo, use la siguiente sintaxis para proporcionar su nombre de usuario e iniciar sesión en el equipo:&lt;<em>nombre_grupo_trabajo</em>&gt;\&lt;<em>nombre_usuario.</em>&gt;.</p></li>
+    <li><p>Si el equipo de destino se encuentra en un grupo de trabajo, usa la siguiente sintaxis para proporcionar el nombre de usuario e iniciar sesión en el equipo:&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;.</p></li>
     <li><p>Si el equipo de destino es el servidor de puerta de enlace, puede especificar <strong>localhost</strong> en el campo <strong>Nombre de equipo</strong>.</p></li>
-    <li><p>Si el equipo de destino es el servidor de puerta de enlace y el servidor de puerta de enlace se encuentra en un grupo de trabajo, puede usar <strong>localhost</strong> en el campo <strong>Nombre de equipo</strong>, pero no use localhost\&lt;<em>nombre_usuario</em>&gt; en el campo <strong>Nombre de usuario</strong>. Tiene que usar &lt;<em>nombre_grupo_trabajo</em>&gt;\&lt;<em>nombre_usuario.</em>&gt;.</p></li>
+    <li><p>Si el equipo de destino es el servidor de puerta de enlace, y el servidor de puerta de enlace se encuentra en un grupo de trabajo, puede usar <strong>localhost</strong> en el campo <strong>Nombre de equipo</strong>, pero no use localhost\&lt;<em>user_name</em>&gt; en el campo <strong>Nombre de usuario</strong>. Tiene que usar &lt;<em>workgroup name</em>&gt;\&lt;<em>user_name</em>&gt;.</p></li>
     </ul></td>
     </tr>
     </tbody>
     </table>
 
-3.  La sección **Configuración de conexión opcional** está relacionada con los requisitos de autorización del equipo remoto que desea administrar. Para más información sobre los parámetros equivalentes a la configuración de conexión opcional, consulte la [ayuda del cmdlet Enter-PSSession](https://technet.microsoft.com/library/dd315384.aspx)..
+3.  La sección **Configuración de conexión opcional** está relacionada con los requisitos de autorización del equipo remoto que desea administrar. Para más información sobre los parámetros equivalentes a la configuración de conexión opcional, vea la [ayuda del cmdlet Enter-PSSession](https://technet.microsoft.com/library/dd315384.aspx).
 
     Por lo general, las credenciales que use para pasar a través de la puerta de enlace de Windows PowerShell Web Access serán las mismas que reconoce el equipo remoto que desea administrar. No obstante, si desea usar credenciales diferentes de las especificadas en el paso 2 para administrar el equipo remoto, expanda la sección **Configuración de conexión opcional** y proporcione las credenciales alternativas. De lo contrario, vaya al paso 6.
 
-4.  Si el administrador de Windows PowerShell Web Access ha creado una configuración de sesión personalizada para los usuarios de Windows PowerShell Web Access, escriba el nombre de la configuración de sesión en el campo **Nombre de la configuración**. Para más información sobre las configuraciones de sesión, consulte el tema [about\_Session\_Configurations](https://technet.microsoft.com/library/dd819508.aspx) (Acerca de las configuraciones de sesión) en el sitio web de Microsoft.
+4.  Si el administrador de Windows PowerShell Web Access ha creado una configuración de sesión personalizada para los usuarios de Windows PowerShell Web Access, escriba el nombre de la configuración de sesión en el campo **Nombre de la configuración**. Para más información sobre las configuraciones de sesión, vea el tema [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx) (Acerca de las configuraciones de sesión) en el sitio web de Microsoft.
 
 5.  Deje el **Tipo de autenticación** establecido en **Predeterminado**, a menos que el administrador de Windows PowerShell Web Access le haya dado otras indicaciones.
 
-6.  Haga clic en **Iniciar sesión**..
+6.  Haga clic en **Iniciar sesión**.
 
 <a href="" id="BKMK_timeout"></a>
 
@@ -129,7 +144,7 @@ Una sesión de Windows PowerShell basada en web se cerrará si el usuario:
 
 -   Intenta iniciar sesión para administrar otro equipo remoto en la misma sesión del explorador o en una nueva pestaña de la misma sesión del explorador. (Esto no se aplica si el servidor de puerta de enlace está ejecutando Windows Server 2012 R2; si Windows PowerShell Web Access se ejecuta en Windows Server 2012 R2 se permiten las sesiones de varios usuarios en pestañas nuevas de la misma sesión del explorador.) Para más información sobre cómo usar más de una sesión activa en el mismo equipo, consulte el tema sobre cómo conectarse a varios equipos de destino simultáneamente en la sección [Limitaciones de la consola basada en web](#BKMK_limits) en este tema.
 
--   No se hay ninguna actividad en la sesión durante 20 minutos. El administrador de la puerta de enlace puede personalizar el período de tiempo de espera de inactividad. Para obtener más información, consulte [Session management](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt) (Administración de sesiones)..
+-   No se hay ninguna actividad en la sesión durante 20 minutos. El administrador de la puerta de enlace puede personalizar el período de tiempo de espera de inactividad. Para obtener más información, vea [Session management](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt) (Administración de sesiones).
 
     -   Si está desconectado de una sesión en la consola basada en web debido a un error de red u otros apagados o errores no planificados y no porque haya cerrado las sesiones usted mismo, las sesiones de Windows PowerShell Web Access continúan ejecutándose, conectadas al equipo de destino, hasta que venza el período de tiempo de espera del cliente. De forma predeterminada, este período de tiempo de espera es de 20 minutos y lo configura el Administrador de puerta de enlace. La sesión se desconecta después de los 20 minutos predeterminados o después del período de tiempo de espera especificado por el administrador de la puerta de enlace, el que sea más corto.
 
@@ -304,7 +319,7 @@ La mayoría de las funcionalidades del host de Windows PowerShell están disponi
 
     -   Cambiar el alto y el ancho de la ventana de la consola mediante un cmdlet
 
-        La ventana de la consola de Windows PowerShell Web Access se puede configurar mediante cmdlets, de la siguiente manera. En el siguiente ejemplo, un usuario cambia el ancho de la consola de Windows PowerShell Web Access a **20**..
+        La ventana de la consola de Windows PowerShell Web Access se puede configurar mediante cmdlets, de la siguiente manera. En el siguiente ejemplo, un usuario cambia el ancho de la consola de Windows PowerShell Web Access a **20**.
 
         [Copiar](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_778d5e55-9195-4bd7-b313-d1fbca7876e4'); "Copiar al Portapapeles.")
 
@@ -317,9 +332,9 @@ La mayoría de las funcionalidades del host de Windows PowerShell están disponi
 
         Puede cambiar el alto de la consola de modo similar.
 
-        En el [blog del equipo de Windows PowerShell](http://blogs.msdn.com/b/powershell/), encontrará más ejemplos para personalizar la visualización de la consola..
+        En el [blog del equipo de Windows PowerShell](http://blogs.msdn.com/b/powershell/), encontrará más ejemplos para personalizar la visualización de la consola.
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Consulte también</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Véase también</span></a>
 <a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -333,14 +348,11 @@ La mayoría de las funcionalidades del host de Windows PowerShell están disponi
 <span>Mostrar:</span> heredado protegido
 
 <span class="stdr-votetitle">¿Le resultó útil esta página?</span>
-Sí
-No
+Sí No
 
 ¿Algún otro comentario?
 
-<span class="stdr-count"><span class="stdr-charcnt">1500</span> caracteres restantes</span>
-Enviar
-Omitir esto
+<span class="stdr-count"><span class="stdr-charcnt">1500</span> caracteres restantes</span> Enviar Omitir esto
 
 <span class="stdr-thankyou">Gracias.</span> <span class="stdr-appreciate">Apreciamos sus comentarios.</span>
 
@@ -348,8 +360,7 @@ Omitir esto
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> Comentarios del sitio</a>
-Comentarios del sitio
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> Comentarios del sitio</a> Comentarios del sitio
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -384,6 +395,8 @@ Los scripts y el código de terceros vinculados a este sitio web o a los que est
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO4-->
 
 

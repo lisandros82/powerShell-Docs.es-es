@@ -1,12 +1,19 @@
 ---
 title: El objeto ISEFile
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: c1744841e23aa9c2fedf3eb92230ef422c36f0cd
+
 ---
+
 # El objeto ISEFile
   Un objeto **ISEFile** representa un archivo en el Entorno de scripting integrado (ISE) de Windows PowerShellÂ®. Es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEFile. Este tema enumera sus métodos de miembro y propiedades de miembro. **$psISE.CurrentFile** y los archivos de la colección de archivos en una pestaña de PowerShell son todas las instancias de la clase Microsoft.PowerShell.Host.ISE.ISEFile.
 
@@ -17,8 +24,8 @@ ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 
  Guarda el archivo en disco.
 
- **\[saveEncoding\]**: [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) opcional
- Un parámetro de codificación de carácter opcional que se utilizará para el archivo guardado. El valor predeterminado es **UTF8**..
+ **\[saveEncoding\]**: [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) optional
+. Un parámetro de codificación de carácter opcional que se utilizará para el archivo guardado. El valor predeterminado es **UTF8**.
 
  **Excepciones**
  -   **System.IO.IOException**: no se pudo guardar el archivo.
@@ -36,16 +43,15 @@ $myfile.Encoding
 
 ```
 
-###  <a name="saveas"></a> SaveAs\(nombre_de_archivo, \[saveEncoding\]\)
+###  <a name="saveas"></a> SaveAs\(nombre de archivo, \[saveEncoding\]\)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Guarda el archivo con el nombre de archivo y codificación especificados.
 
- **nombre_de_archivo**: cadena.
- El nombre que se utilizará para guardar el archivo.
+ **filename**: cadena. El nombre que se utilizará para guardar el archivo.
 
- **\[saveEncoding\]**: [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) opcional
- Un parámetro de codificación de carácter opcional que se utilizará para el archivo guardado. El valor predeterminado es **UTF8**..
+ **\[saveEncoding\]**: [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) optional
+. Un parámetro de codificación de carácter opcional que se utilizará para el archivo guardado. El valor predeterminado es **UTF8**.
 
  **Excepciones**
  -   **System.ArgumentNullException**: el parámetro **nombre_de_archivo** es null.
@@ -79,7 +85,7 @@ $psIse.CurrentFile.DisplayName
 ###  <a name="Editor"></a> Editor
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
- La propiedad de solo lectura que obtiene el [objeto editor](The-ISEEditor-Object.md) que se utiliza para el archivo especificado.
+ La propiedad de solo lectura que obtiene el [objeto de editor](The-ISEEditor-Object.md) que se utiliza para el archivo especificado.
 
 ```
 # Gets the editor and the text.
@@ -134,8 +140,8 @@ $psISE.CurrentFile.IsUntitled
 
 ```
 
-## Consulte también
- [ISEFileCollectionObject](The-ISEFileCollection-Object.md) 
+## Véase también
+ [El objeto ISEFileCollection](The-ISEFileCollection-Object.md) 
  [El modelo de objetos de scripting de ISE de Windows PowerShell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
  [Referencia del modelo de objetos de ISE de Windows PowerShell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
  [La jerarquía del modelo de objetos de ISE](The-ISE-Object-Model-Hierarchy.md)
@@ -143,6 +149,7 @@ $psISE.CurrentFile.IsUntitled
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

@@ -1,12 +1,19 @@
 ---
 title: El objeto ISEMenuItem
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: e067519d58ca381fc4e5c746fe9bbd16bdc68c60
+
 ---
+
 # El objeto ISEMenuItem
   Un objeto **ISEMenuItem** es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEMenuItem. Todos los objetos de menú **Complementos** son instancias de la clase **Microsoft.PowerShell.Host.ISE.ISEMenuItem**.
 
@@ -82,7 +89,7 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 
 ```
 
-## Consulte también
+## Véase también
  [El objeto ISEMenuItemCollection](The-ISEMenuItemCollection-Object.md) 
  [El modelo de objetos de scripting de ISE de Windows PowerShell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
  [Referencia del modelo de objetos de ISE de Windows PowerShell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
@@ -91,6 +98,7 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

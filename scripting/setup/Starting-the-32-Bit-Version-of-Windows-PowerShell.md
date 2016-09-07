@@ -9,15 +9,15 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 12b31890-2609-4a76-8c24-0ebe78084f50
 translationtype: Human Translation
-ms.sourcegitcommit: b6ab9bfdd779a865c1f543bf16e91ec17b43c4b0
-ms.openlocfilehash: 41bbdd302aa3aa0d253bc4c820fdbbeb1b827ccc
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
 
 ---
 
 # Iniciar la versión de 32 bits de Windows PowerShell
-Al instalar Windows PowerShell en un equipo de 64 bits, **Windows PowerShell (x86)**, se instala una versión de 32 bits de Windows PowerShell además de la versión de 64 bits. Al ejecutar Windows PowerShell, la versión de 64 bits se ejecuta de manera predeterminada.
+Al instalar Windows PowerShell en un equipo de 64 bits, **Windows PowerShell (x86)**, se instala una versión de 32 bits de Windows PowerShell además de la versión de 64 bits. Al ejecutar Windows PowerShell, la versión de 64 bits se ejecuta de forma predeterminada.
 
-En cambio, en ocasiones deberá ejecutar **Windows PowerShell (x86)**, como cuando usa un módulo que requiere la versión de 32 bits o cuando se conecta de forma remota a un equipo de 32 bits.
+Sin embargo, en ocasiones deberá ejecutar **Windows PowerShell (x86)**, como cuando usa un módulo que requiere la versión 32 bits o cuando se conecta de forma remota a un equipo de 32 bits.
 
 Para iniciar una versión de 32 bits de Windows PowerShell, use uno de los procedimientos siguientes.
 
@@ -63,6 +63,6 @@ Para iniciar una versión de 32 bits de Windows PowerShell, use uno de los proce
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

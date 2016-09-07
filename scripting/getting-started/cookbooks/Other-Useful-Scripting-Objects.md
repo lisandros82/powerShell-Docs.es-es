@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
 translationtype: Human Translation
-ms.sourcegitcommit: ebf9d61bd67cc352d6d6404a9b592f856c99759e
-ms.openlocfilehash: c68e6d7d26a8a9b1e32a35e82dd705d95480c9bf
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 83aa2ceb63497c7a12ec80d4b1472327284acf5b
 
 ---
 
@@ -33,7 +33,7 @@ psUnsupportedConsoleApplications
 ```
 
 ### $psLocalHelp
- Se trata de un objeto de diccionario que mantiene una asignación contextual entre los temas de Ayuda y sus vínculos asociados en el archivo de Ayuda HTML compilado local. Se utiliza para buscar la Ayuda local para un tema determinado. Puede agregar o eliminar los temas de esta lista. En el ejemplo de código siguiente se muestran algunos pares clave\-valor de ejemplo que se encuentran en **$psLocalHelp**.
+ Se trata de un objeto de diccionario que mantiene una asignación contextual entre los temas de Ayuda y sus vínculos asociados en el archivo de Ayuda HTML compilado local. Se utiliza para buscar la Ayuda local para un tema determinado. Puede agregar o eliminar los temas de esta lista. En el ejemplo de código siguiente se muestran algunos pares clave-valor de ejemplo que se encuentran en **$psLocalHelp**.
 
 ```
 # See the local help map
@@ -45,8 +45,8 @@ $psLocalHelp | Format-List
 
 |||
 |-|-|
-|Clave: Agregar\-equipo|Valor: WindowsPowerShellHelp.chm::\/html\/093f660c\-b8d5\-43cf\-aa0c\-54e5e54e76f9.htm|
-|Clave: Agregar\-contenido|Valor : WindowsPowerShellHelp.chm::\/html\/0c836a1b\-f389\-4e9a\-9325\-0f415686d194.htm|
+|Clave: Add-Computer|Valor: WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm|
+|Clave: Add-Content|Valor: WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm|
 
  El siguiente script agrega una entrada a la lista.
 
@@ -66,8 +66,8 @@ $psOnlineHelp | Format-List
 
 |||
 |-|-|
-|Clave: Agregar\-equipo|Valor : http:\/\/go.microsoft.com\/fwlink\/p\/?LinkID\=135194|
-|Clave: Agregar\-contenido|Valor : http:\/\/go.microsoft.com\/fwlink\/p\/?LinkID\=113278|
+|Clave: Add-Computer|Valor: http://go.microsoft.com/fwlink/p/?LinkID=135194|
+|Clave: Add-Content|Valor: http://go.microsoft.com/fwlink/p/?LinkID=113278|
 
  El siguiente script agrega una entrada a la lista.
 
@@ -75,13 +75,13 @@ $psOnlineHelp | Format-List
 $psOnlineHelp.Add("get-myNoun","http://www.mydomain.com/MyNoun.html")
 ```
 
-## Consulte también
+## Véase también
  [El modelo de objetos de scripting de ISE de Windows PowerShell](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

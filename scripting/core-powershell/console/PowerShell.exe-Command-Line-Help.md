@@ -1,12 +1,19 @@
 ---
-title: Ayuda de línea de comandos de PowerShell.exe
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Ayuda para la línea de comandos de PowerShell.exe"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: e4635890a5433e199d5ddbce0ac1475a134ecd57
+
 ---
+
 # Ayuda de línea de comandos de PowerShell.exe
 Inicia una sesión de Windows PowerShell. Puede usar PowerShell.exe para iniciar una sesión de Windows PowerShell desde la línea de comandos de otra herramienta, como Cmd.exe, o usarlo en la línea de comandos de Windows PowerShell para iniciar una nueva sesión. Use los parámetros para personalizar la sesión.
 
@@ -36,12 +43,12 @@ PowerShell[.exe] -Help | -? | /?
 ## Parámetros
 
 ### -EncodedCommand <Base64EncodedCommand>
-Acepta una versión de cadena codificada en base 64 de un comando. Use este parámetro para enviar comandos a Windows PowerShell que requieran comillas complejas o llaves.
+Acepta una versión de cadena con codificación Base 64 de un comando. Use este parámetro para enviar comandos a Windows PowerShell que requieran comillas complejas o llaves.
 
 ### -ExecutionPolicy <ExecutionPolicy>
-Establece la directiva de ejecución predeterminada para la sesión actual y la guarda en la variable de entorno $env:PSExecutionPolicyPreference. Este parámetro no modifica la directiva de ejecución de Windows PowerShell establecida en el Registro. Para más información sobre las directivas de ejecución de Windows PowerShell, incluida una lista de los valores válidos, consulte about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
+Establece la directiva de ejecución predeterminada para la sesión actual y la guarda en la variable de entorno $env:PSExecutionPolicyPreference. Este parámetro no modifica la directiva de ejecución de Windows PowerShell establecida en el Registro. Para más información sobre las directivas de ejecución de Windows PowerShell, incluida una lista de los valores válidos, vea about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
 
-### -File <FilePath> [<Parameters>]
+### -File <FilePath> \[<Parameters>]
 Ejecuta el script especificado en el ámbito local ("origen de puntos"), para que las funciones y variables que crea el script estén disponibles en la sesión actual. Escriba la ruta de acceso del archivo de script y los parámetros. **File** debe ser el último parámetro del comando, puesto que todos los caracteres escritos después del nombre de parámetro **File** se interpretan como la ruta de acceso de archivo de script seguido de los parámetros de los parámetros del script y sus valores.
 
 Puede incluir los parámetros de un script, así como los valores de parámetro, en el valor del parámetro **File**. Por ejemplo: `-File .\Get-Script.ps1 -Domain Central`
@@ -82,7 +89,7 @@ Inicia la versión especificada de Windows PowerShell. La versión que especifiq
 
 Si Windows PowerShell 3.0 no está instalado, el único valor válido es "2.0". Otros valores se omiten.
 
-Para más información, consulte "Instalación de Windows PowerShell" en [Introducción a Windows PowerShell [antiguo MSDN]](https://technet.microsoft.com/en-us/library/69555d95-b481-43e1-86e7-b46d68b3e2dd)..
+Para más información, consulte "Instalación de Windows PowerShell" en [Introducción a Windows PowerShell [antiguo MSDN]](https://technet.microsoft.com/en-us/library/69555d95-b481-43e1-86e7-b46d68b3e2dd).
 
 ### -WindowStyle <Window style>
 Establece el estilo de ventana de la sesión. Los valores válidos son Normal, Minimizada, Maximizada y Oculta.
@@ -90,7 +97,7 @@ Establece el estilo de ventana de la sesión. Los valores válidos son Normal, M
 ### -Command
 Ejecuta los comandos especificados (y todos los parámetros) como si se hubiesen escrito en el símbolo del sistema de Windows PowerShell y, después, se cierra, a menos que se especifique el parámetro NoExit.
 
-El valor del comando puede ser "-", una cadena o un bloque de scripts. Si el valor de Command es "-", el texto del comando se lee de la entrada estándar.
+El valor del comando puede ser "-", una cadena. o un bloque de scripts. Si el valor de Command es "-", el texto del comando se lee de la entrada estándar.
 
 Los bloques de scripts deben incluirse entre llaves ({}). Puede especificar un bloque de scripts solo cuando ejecute PowerShell.exe en Windows PowerShell. Los resultados del script se devuelven al shell principal como objetos XML deserializados, no como objetos activos.
 
@@ -130,6 +137,7 @@ powershell.exe -encodedCommand $encodedCommand
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 
