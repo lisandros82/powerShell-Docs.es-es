@@ -9,8 +9,8 @@ ms.date: 2016-06-22
 title: Active Directory de principio a fin
 ms.technology: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 5954eb797df43de6f132a434ecad7049ee0221fb
-ms.openlocfilehash: 204909c16d5e3e2099f6ba4247929d61445cd654
+ms.sourcegitcommit: 33e92c7fd6039a1e3f5f784470c7bd0e43a7f030
+ms.openlocfilehash: e7ea3957ce3bbd3ce0fc072a82cd108606f05614
 
 ---
 
@@ -27,7 +27,7 @@ Esta sección le guiará por el proceso de creación de una configuración de se
 Para seguir esta sección paso a paso, debe trabajar en un controlador de dominio.
 Si no tiene acceso al controlador de dominio, no se preocupe.
 Intente seguir los pasos trabajando en otro escenario o rol con el que esté familiarizado.
-Si quiere configurar rápidamente un nuevo controlador de dominio, consulte la sección [Creación de un controlador de dominio](#creating-a-domain-controller) del apéndice.
+Si quiere configurar rápidamente un nuevo controlador de dominio, consulte el apéndice [Creación de un controlador de dominio](.\creating-a-domain-controller.md).
 
 ## Pasos para crear una nueva funcionalidad de rol y configuración de sesión
 
@@ -163,7 +163,7 @@ Set-ADUser -Identity $Identity -ChangePasswordAtLogon
 Ahora, los usuarios pueden llamar simplemente a `Reset-ContosoUserPassword` y no tienen que recordar la sintaxis para crear una cadena segura de insertada.
 
 ## Paso 4: editar el archivo de funcionalidad de rol
-En la sección [Creación de funcionalidades de rol](#role-capability-creation), creó un archivo de funcionalidad de rol en blanco.
+En la sección [Creación de funcionalidades de rol](./role-capabilities.md#role-capability-creation), creó un archivo de funcionalidad de rol en blanco.
 En esta sección, rellenará los valores de ese archivo.
 
 En primer lugar, abra el archivo de funcionalidad de rol en PowerShell ISE.
@@ -273,6 +273,6 @@ ValidatePattern es una expresión regular con la que deben coincidir los argumen
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

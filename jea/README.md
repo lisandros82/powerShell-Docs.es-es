@@ -9,8 +9,8 @@ ms.date: 2016-06-22
 title: "ARCHIVO LÉAME"
 ms.technology: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: bd7f637d0889fd0f56c3fa653389819341d2ccff
-ms.openlocfilehash: bfee5ef59a4085f0350ff454f634fc0bf5d6d837
+ms.sourcegitcommit: 8149f656f0aacbb23cacc8a1a9b45ed59866b92f
+ms.openlocfilehash: 7bb5635832e912b39ec387e8ac93ada24a434ff8
 
 ---
 
@@ -83,7 +83,7 @@ Descubra cómo auditar e informar sobre todas las acciones y la infraestructura 
 
 ## Empiece a crear sus propios puntos de conexión de JEA
 Es fácil crear un punto de conexión de JEA: lo único que necesita es un sistema habilitado para JEA y un editor de texto (como PowerShell ISE).
-Se recomienda que, para empezar, cree archivos esqueleto mediante `New-PSRoleCapabilityFile -Path <path>` y `New-PSSessionCapabilityFile -Path <Path>` sin ningún otro argumento.
+Se recomienda que, para empezar, cree archivos esqueleto mediante [`New-PSRoleCapabilityFile -Path <path>`](https://technet.microsoft.com/library/mt631422.aspx)y [`New-PSSessionConfigurationFile -Path <Path>`](https://technet.microsoft.com/library/mt631422.aspx) sin ningún otro argumento.
 Estos archivos esqueleto contienen todos los campos de configuración aplicables, junto con comentarios útiles que explican para qué puede usarse cada campo.
 
 Para facilitar la creación de puntos de conexión de JEA, consulte el [JEA Toolkit Helper](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx) (Asistente para el kit de herramientas de JEA), que proporciona una GUI con la que puede crear archivos de configuración de sesión y funcionalidad de rol.
@@ -92,6 +92,6 @@ Incluso permite generar funcionalidades de rol basadas en los registros de Power
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

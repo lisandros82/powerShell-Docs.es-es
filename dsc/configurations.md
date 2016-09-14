@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 59bf4cff540dabeeb77038ea84177f7c6bac2b4b
-ms.openlocfilehash: e5412a3168a18d1dbd117ed8b3eb6dd42a8d8f70
+ms.sourcegitcommit: 6c5f3d3321b7e50215cf58267e1864b7da827764
+ms.openlocfilehash: d84bb35ada3588367436e6f5e3c6696b90c3661b
 
 ---
 
@@ -129,14 +129,14 @@ En la actualidad, DSC incluye 12 recursos como parte del módulo PSDesiredStateC
 * __ModuleName__ es la manera recomendada de usar __Import-DscResource__. Acepta el nombre del módulo que contiene los recursos que se importarán (así como una matriz de cadenas de nombres de módulo). 
 * __Name__ es el nombre del recurso que se importará. Este no es el nombre descriptivo que [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) devuelve como "Name", sino el nombre de clase que se usa al definir el esquema del recurso (que [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) devuelve como __ResourceType__). 
 
-## Consulte también
-* [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
+## Véase también
+* [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
 * [Recursos de DSC](resources.md)
 * [Configuración del administrador de configuración local](metaConfig.md)
 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 
