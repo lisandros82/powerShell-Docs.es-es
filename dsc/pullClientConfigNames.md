@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 32ff157c7c8366cf0c9847dec4815d2d4b9cc5fa
+ms.sourcegitcommit: b617ae80ae6a555e531469efde07e443d83c51d8
+ms.openlocfilehash: 02721f0f6f68cc78ae0430205d06f079e3e7465a
 
 ---
 
@@ -25,7 +25,7 @@ El script siguiente configura el LCM para que extraiga configuraciones de un ser
 
 ```powershell
 [DSCLocalConfigurationManager()]
-configuration PullClientConfigID
+configuration PullClientConfigNames
 {
     Node localhost
     {
@@ -44,18 +44,22 @@ configuration PullClientConfigID
         }      
     }
 }
-PullClientConfigID
+PullClientConfigNames
 ```
 
 En el script, el bloque **ConfigurationRepositoryWeb** define el servidor de extracción. La propiedad **ServerURL** especifica el punto de conexión del servidor de extracción.
 
-La propiedad **RegistrationKey** es una clave compartida entre todos los nodos de cliente de un servidor de extracción y ese servidor de extracción. El mismo valor se almacena en un archivo en el servidor de extracción. La propiedad **ConfigurationNames** especifica el nombre de la configuración prevista para el nodo de cliente. En el servidor de extracción, el archivo MOF de configuración de este nodo de cliente debe denominarse *ConfigurationNames*.mof, donde *ConfigurationNames* coincide con el valor de la propiedad **ConfigurationNames** establecida en este metaconfiguración.
+La propiedad **RegistrationKey** es una clave compartida entre todos los nodos de cliente de un servidor de extracción y ese servidor de extracción. El mismo valor se almacena en un archivo en el servidor de extracción. 
 
-Después de que se ejecute este script, se crea una nueva carpeta de salida denominada **PullClientConfigID** y se coloca un archivo MOF de metaconfiguración en ella. En este caso, el nombre del archivo MOF de metaconfiguración será `localhost.meta.mof`.
+La propiedad **ConfigurationNames** es una matriz que especifica el nombre de la configuración prevista para el nodo de cliente. En el servidor de extracción, el archivo MOF de configuración de este nodo de cliente debe denominarse *ConfigurationNames*.mof, donde *ConfigurationNames* coincide con el valor de la propiedad **ConfigurationNames** establecida en este metaconfiguración.
 
-Para aplicar la configuración, llame al cmdlet **Set-DscLocalConfigurationManager**, con el valor de **Path** establecido en la ubicación del archivo MOF de metaconfiguración. Por ejemplo: `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`
+>**Nota**: Si se especifica más de un valor en **ConfigurationNames**, también debe especificar bloques **PartialConfiguration** en la configuración. Para obtener información sobre las configuraciones parciales, consulte [Configuraciones parciales de la configuración de estado deseado de PowerShell](partialConfigs.md).
 
-> **Nota**: Las claves de registro solo funcionan con servidores de extracción web. Deberá seguir usando el elemento **ConfigurationID** con un servidor de extracción SMB. Para obtener información sobre cómo configurar un servidor de extracción mediante **ConfigurationID**, consulte [Configuración de un cliente de extracción con el id. de configuración](pullClientConfigID.md)
+Después de que se ejecute este script, se crea una nueva carpeta de salida denominada **PullClientConfigNames** y se coloca un archivo MOF de metaconfiguración en ella. En este caso, el nombre del archivo MOF de metaconfiguración será `localhost.meta.mof`.
+
+Para aplicar la configuración, llame al cmdlet **Set-DscLocalConfigurationManager**, con el valor de **Path** establecido en la ubicación del archivo MOF de metaconfiguración. Por ejemplo: `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigNames –Verbose.`
+
+> **Nota**: Las claves de registro solo funcionan con servidores de extracción web. Deberá seguir usando el elemento **ConfigurationID** con un servidor de extracción SMB. Para obtener información sobre cómo configurar un servidor de extracción mediante **ConfigurationID**, consulte [Configuración de un cliente de extracción con el id. de configuración](PullClientConfigNames.md)
 
 ## Servidores de informes y recursos
 
@@ -63,7 +67,7 @@ Si solo especifica un bloque **ConfigurationRepositoryWeb** o **ConfigurationRep
 
 ```powershell
 [DSCLocalConfigurationManager()]
-configuration PullClientConfigID
+configuration PullClientConfigNames
 {
     Node localhost
     {
@@ -80,17 +84,14 @@ configuration PullClientConfigID
             RegistrationKey = 'fbc6ef09-ad98-4aad-a062-92b0e0327562'
         }
         
-        
-
         ReportServerWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
         }
     }
 }
-PullClientConfigID
+PullClientConfigNames
 ```
-
 
 También puede especificar servidores de incorporación de cambios diferentes para los recursos y los informes. Para especificar un servidor de recursos, utilice un bloque **ResourceRepositoryWeb** (para un servidor de extracción web) o un bloque **ResourceRepositoryShare** (para un servidor de extracción SMB).
 Para especificar un servidor de informes, utilice un bloque **ReportRepositoryWeb**. Un servidor de informes no puede ser un servidor SMB.
@@ -98,7 +99,7 @@ La metaconfiguración siguiente configura un cliente de extracción para que obt
 
 ```powershell
 [DSCLocalConfigurationManager()]
-configuration PullClientConfigID
+configuration PullClientConfigNames
 {
     Node localhost
     {
@@ -128,17 +129,17 @@ configuration PullClientConfigID
         }
     }
 }
-PullClientConfigID
+PullClientConfigNames
 ```
 
-## Consulte también
+## Véase también
 
-* [Configuración de un cliente de incorporación de cambios con el id. de configuración](pullClientConfigID.md)
+* [Configuración de un cliente de incorporación de cambios con el id. de configuración](PullClientConfigNames.md)
 * [Configuración de un servidor de extracción web de DSC](pullServer.md)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

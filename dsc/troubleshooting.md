@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 02ef02d4eeeaa5e080b74ec220812d3b5316f244
-ms.openlocfilehash: 369b6379c3ddc4b7ccd1000aec9b0b002e1934b3
+ms.sourcegitcommit: 7fb70aba7d4c3c44cc89b5f8c4f6ff5aeb3b14c9
+ms.openlocfilehash: 4830be14b105485c50446f06e9d36491b4c4fe44
 
 ---
 
@@ -445,18 +445,17 @@ SRV2   OPERATIONAL  6/24/2016 11:36:56 AM Consistency engine was run successfull
 SRV2   OPERATIONAL  6/24/2016 11:36:56 AM Job runs under the following LCM setting. ...
 SRV2   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull completed successfully.
 SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCach...
+```
 
+## Los recursos no se actualizan: restablecer la memoria caché
 
+El motor de DSC almacena en caché los recursos implementados como un módulo de PowerShell por motivos de eficiencia. Sin embargo, esto puede provocar problemas cuando está creando un recurso y probándolo al mismo tiempo, ya que DSC cargará la versión en caché hasta que se reinicie el proceso. La única manera de conseguir que DSC cargue la versión más reciente es detener explícitamente el proceso que hospeda el motor de DSC.
 
-## My resources won’t update: How to reset the cache
+De forma similar, cuando se ejecuta `Start-DscConfiguration`, después de agregar y modificar un recurso personalizado, es posible que la modificación no se ejecute a menos que (o hasta que) se reinicie el equipo. Esto se debe a que DSC se ejecuta en el proceso host del proveedor de WMI (WmiPrvSE) y, normalmente, existen muchas instancias de WmiPrvSE que se ejecutan a la vez. Al reiniciar, el proceso de host se reinicia y la memoria caché se borra.
 
-The DSC engine caches resources implemented as a PowerShell module for efficiency purposes. However, this can cause problems when you are authoring a resource and testing it simultaneously because DSC will load the cached version until the process is restarted. The only way to make DSC load the newer version is to explicitly kill the process hosting the DSC engine.
+Para reciclar la configuración de correctamente y borrar la memoria caché sin necesidad de reiniciar, debe detener y después reiniciar el proceso del host. Esto puede hacerse por instancia, en cuyo caso se identifica el proceso, se detiene y se reinicia. O bien, puede usar `DebugMode`, como se muestra a continuación, para volver a cargar el recurso de DSC de PowerShell.
 
-Similarly, when you run `Start-DscConfiguration`, after adding and modifying a custom resource, the modification may not execute unless, or until, the computer is rebooted. This is because DSC runs in the WMI Provider Host Process (WmiPrvSE), and usually, there are many instances of WmiPrvSE running at once. When you reboot, the host process is restarted and the cache is cleared.
-
-To successfully recycle the configuration and clear the cache without rebooting, you must stop and then restart the host process. This can be done on a per instance basis, whereby you identify the process, stop it, and restart it. Or, you can use `DebugMode`, as demonstrated below, to reload the PowerShell DSC resource.
-
-To identify which process is hosting the DSC engine and stop it on a per instance basis, you can list the process ID of the WmiPrvSE which is hosting the DSC engine. Then, to update the provider, stop the WmiPrvSE process using the commands below, and then run **Start-DscConfiguration** again.
+Para identificar el proceso que hospeda el motor de DSC y detenerlo por instancia, puede mostrar el identificador de proceso del elemento WmiPrvSE que hospeda el motor de DSC. A continuación, para actualizar el proveedor, detenga el proceso WmiPrvSE mediante los comandos siguientes y luego ejecute de nuevo **Start-DscConfiguration**.
 
 ```powershell
 ###
@@ -613,7 +612,7 @@ onlyProperty                            PSComputerName
 14                                      localhost
 ```
 
-## Consulte también
+## Véase también
 
 ### Referencia
 * [Recurso de DSC Log](logResource.md)
@@ -627,6 +626,6 @@ onlyProperty                            PSComputerName
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 
