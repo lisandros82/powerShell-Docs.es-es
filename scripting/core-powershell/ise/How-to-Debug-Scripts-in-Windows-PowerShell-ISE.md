@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 6dc6d8f9-8978-46e9-a92f-169af37e2817
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: ca0fee919b89628527a00b17e49fec1012f6f43a
+ms.sourcegitcommit: 4a2dc517d4c57d5480a4b4e6f9be93a432a9632b
+ms.openlocfilehash: 30cc1671518fe5f134556443dca7ae46e9be3fea
 
 ---
 
@@ -33,82 +33,82 @@ Puede establecer tres tipos de puntos de interrupción en el entorno de depuraci
 
 3.  **Punto de interrupción de comando.** El script se pausa cada vez que el comando designado está a punto de ejecutarse durante la operación del script. Puede incluir parámetros para filtrar aún más el punto de interrupción solo para operación deseada. El comando también puede ser una función que ha creado.
 
-De estos, en el entorno de depuración Windows PowerShell ISE, solo se pueden establecer puntos de interrupción de línea usando el menú o los métodos abreviados de teclado. Los otros dos tipos de puntos de interrupción se pueden establecer, pero debe hacerse desde el panel de consola mediante el cmdlet [Set-PSBreakpoint [m2]](https://technet.microsoft.com/en-us/library/88d2d9ad-17dc-44ae-99aa-f841125b9dc8). En esta sección se describe cómo puede realizar la depuración de tareas en Windows PowerShell ISE mediante los menús, cuando están disponibles, y ejecutar una serie más amplia de comandos desde el panel de consola usando scripts.
+De estos, en el entorno de depuración Windows PowerShell ISE, solo se pueden establecer puntos de interrupción de línea usando el menú o los métodos abreviados de teclado. Los otros dos tipos de puntos de interrupción se pueden establecer, pero debe hacerse desde el panel de consola mediante el cmdlet [Set-PSBreakpoint](https://technet.microsoft.com/library/88d2d9ad-17dc-44ae-99aa-f841125b9dc8). En esta sección se describe cómo puede realizar la depuración de tareas en Windows PowerShell ISE mediante los menús, cuando están disponibles, y ejecutar una serie más amplia de comandos desde el panel de consola usando scripts.
 
 ### Para establecer un punto de interrupción
 Solo se puede establecer un punto de interrupción en un script después de guardarlo. Haga clic con el botón derecho en la línea donde desee establecer un punto de interrupción y después haga clic en **Alternar punto de interrupción**. O bien, haga clic en la línea donde desee establecer un punto de interrupción y presione **F9** o, en el menú **Depurar**, haga clic en **Alternar punto de interrupción**.
 
-El script siguiente es un ejemplo de cómo establecer un punto de interrupción de variable desde el panel de consola mediante el cmdlet [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420).
+El script siguiente es un ejemplo de cómo establecer un punto de interrupción de variable desde el panel de consola mediante el cmdlet [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420).
 
-```
+``` PowerShell
 # This command sets a breakpoint on the Server variable in the Sample.ps1 script.
-set-psbreakpoint -script sample.ps1 -variable Server
+Set-PSBreakpoint -Script sample.ps1 -Variable Server
 ```
 
 ### Enumerar todos los puntos de interrupción
 Muestra todos los puntos de interrupción de la sesión actual de Windows PowerShell®.
 
-En el menú **Depurar**, haga clic en **Mostrar puntos de interrupción**. El script siguiente es un ejemplo de cómo enumerar todos los puntos de interrupción desde el panel de consola mediante el cmdlet [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6).
+En el menú **Depurar**, haga clic en **Mostrar puntos de interrupción**. El script siguiente es un ejemplo de cómo enumerar todos los puntos de interrupción desde el panel de consola mediante el cmdlet [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6).
 
-```
+``` PowerShell
 # This command lists all breakpoints in the current session. 
-get-psbreakpoint
+Get-PSBreakpoint
 ```
 
 ### Quitar un punto de interrupción
-Al quitar un punto de interrupción, este se elimina.  Si piensa que podría querer usarlo más adelante, considere la posibilidad de [deshabilitarlo](#bkmk_disable) en su lugar.  Haga clic con el botón derecho en la línea donde desee quitar un punto de interrupción y después haga clic en **Alternar punto de interrupción**. O bien, haga clic en la línea donde desee quitar un punto de interrupción y, en el menú **Depurar**, haga clic en **Alternar punto de interrupción**. El script siguiente es un ejemplo de cómo quitar un punto de interrupción con un identificador especificado en el panel de consola mediante el cmdlet [Remove-PSBreakpoint](https://technet.microsoft.com/en-us/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6).
+Al quitar un punto de interrupción, este se elimina.  Si piensa que podría querer usarlo más adelante, considere la posibilidad de [deshabilitarlo](#bkmk_disable) en su lugar.  Haga clic con el botón derecho en la línea donde desee quitar un punto de interrupción y después haga clic en **Alternar punto de interrupción**. O bien, haga clic en la línea donde desee quitar un punto de interrupción y, en el menú **Depurar**, haga clic en **Alternar punto de interrupción**. El script siguiente es un ejemplo de cómo quitar un punto de interrupción con un identificador especificado en el panel de consola mediante el cmdlet [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6).
 
-```
+``` PowerShell
 # This command deletes the breakpoint with breakpoint ID 2.
-remove-psbreakpoint -id 2
+Remove-PSBreakpoint -Id 2
 ```
 
 ### Quitar todos los puntos de interrupción
 Para quitar todos los puntos de interrupción definidos en la sesión actual, en el menú **Depurar**, haga clic en **Quitar todos los puntos de interrupción**.
 
-El script siguiente es un ejemplo de cómo quitar todos los puntos de interrupción del panel de consola mediante el cmdlet [Remove-PSBreakpoint](https://technet.microsoft.com/en-us/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6).
+El script siguiente es un ejemplo de cómo quitar todos los puntos de interrupción del panel de consola mediante el cmdlet [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6).
 
-```
+``` PowerShell
 # This command deletes all of the breakpoints in the current session.
-get-psbreakpoint | remove-psbreakpoint
+Get-PSBreakpoint | Remove-PSBreakpoint
 ```
 
 ### <a name="bkmk_disable"></a>Deshabilitar un punto de interrupción
-Al deshabilitar un punto de interrupción, este no se quita; permanece desactivado hasta que se vuelve a habilitar.  Para deshabilitar un punto de interrupción de línea específico, haga clic con el botón derecho en la línea donde desee deshabilitar un punto de interrupción y luego haga clic en **Deshabilitar punto de interrupción**. O bien, haga clic en la línea donde desee deshabilitar un punto de interrupción y presione **F9** o, en el menú **Depurar**, haga clic en **Deshabilitar punto de interrupción**. El script siguiente es un ejemplo de cómo quitar un punto de interrupción con un identificador especificado del panel de consola mediante el cmdlet [Disable-PSBreakpoint](https://technet.microsoft.com/en-us/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8).
+Al deshabilitar un punto de interrupción, este no se quita; permanece desactivado hasta que se vuelve a habilitar.  Para deshabilitar un punto de interrupción de línea específico, haga clic con el botón derecho en la línea donde desee deshabilitar un punto de interrupción y luego haga clic en **Deshabilitar punto de interrupción**. O bien, haga clic en la línea donde desee deshabilitar un punto de interrupción y presione **F9** o, en el menú **Depurar**, haga clic en **Deshabilitar punto de interrupción**. El script siguiente es un ejemplo de cómo quitar un punto de interrupción con un identificador especificado del panel de consola mediante el cmdlet [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8).
 
-```
+``` PowerShell
 # This command disables the breakpoint with breakpoint ID 0.
-disable-psbreakpoint -id 0
+Disable-PSBreakpoint -Id 0
 ```
 
 ### Deshabilitar todos los puntos de interrupción
-Al deshabilitar un punto de interrupción, este no se quita; permanece desactivado hasta que se vuelve a habilitar.  Para deshabilitar todos los puntos de interrupción de la sesión actual, en el menú **Depurar**, haga clic en **Deshabilitar todos los puntos de interrupción**. El script siguiente es un ejemplo de cómo deshabilitar todos los puntos de interrupción desde el panel de consola mediante el cmdlet [Disable-PSBreakpoint](https://technet.microsoft.com/en-us/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8).
+Al deshabilitar un punto de interrupción, este no se quita; permanece desactivado hasta que se vuelve a habilitar.  Para deshabilitar todos los puntos de interrupción de la sesión actual, en el menú **Depurar**, haga clic en **Deshabilitar todos los puntos de interrupción**. El script siguiente es un ejemplo de cómo deshabilitar todos los puntos de interrupción desde el panel de consola mediante el cmdlet [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8).
 
-```
+``` PowerShell
 # This command disables all breakpoints in the current session. 
 # You can abbreviate this command as: "gbp | dbp".
-get-psbreakpoint | disable-psbreakpoint
+Get-PSBreakpoint | Disable-PSBreakpoint
 ```
 
 ### Habilitar un punto de interrupción
-Para habilitar un punto de interrupción específico, haga clic con el botón derecho en la línea donde desee habilitar un punto de interrupción y después haga clic en **Habilitar punto de interrupción**. O bien, haga clic en la línea donde desee habilitar un punto de interrupción y presione **F9** o, en el menú **Depurar**, haga clic en **Habilitar punto de interrupción**. El script siguiente es un ejemplo de cómo habilitar puntos de interrupción desde el panel de consola mediante el cmdlet [Enable-PSBreakpoint](https://technet.microsoft.com/en-us/library/739e1091-3b3f-405f-a428-bec7543e5df0).
+Para habilitar un punto de interrupción específico, haga clic con el botón derecho en la línea donde desee habilitar un punto de interrupción y después haga clic en **Habilitar punto de interrupción**. O bien, haga clic en la línea donde desee habilitar un punto de interrupción y presione **F9** o, en el menú **Depurar**, haga clic en **Habilitar punto de interrupción**. El script siguiente es un ejemplo de cómo habilitar puntos de interrupción desde el panel de consola mediante el cmdlet [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0).
 
-```
+``` PowerShell
 # This command enables breakpoints with breakpoint IDs 0, 1, and 5.
-enable-psbreakpoint -id 0, 1, 5
+Enable-PSBreakpoint -Id 0, 1, 5
 ```
 
 ### Habilitar todos los puntos de interrupción
-Para habilitar todos los puntos de interrupción definidos en la sesión actual, en el menú **Depurar**, haga clic en **Habilitar todos los puntos de interrupción**. El script siguiente es un ejemplo de cómo habilitar todos los puntos de interrupción desde el panel de consola mediante el cmdlet [Enable-PSBreakpoint](https://technet.microsoft.com/en-us/library/739e1091-3b3f-405f-a428-bec7543e5df0).
+Para habilitar todos los puntos de interrupción definidos en la sesión actual, en el menú **Depurar**, haga clic en **Habilitar todos los puntos de interrupción**. El script siguiente es un ejemplo de cómo habilitar todos los puntos de interrupción desde el panel de consola mediante el cmdlet [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0).
 
-```
+``` PowerShell
 # This command enables all breakpoints in the current session. 
 # You can abbreviate the command by using their aliases: "gbp | ebp".
-get-psbreakpoint | enable-psbreakpoint
+Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
 ## <a name="bkmk_2"></a>Cómo administrar una sesión de depuración
-Antes de iniciar la depuración, debe establecer uno o varios puntos de interrupción. No se puede establecer un punto de interrupción si no se guarda el script que desea depurar. Para obtener instrucciones acerca de cómo establecer un punto de interrupción, vea [Cómo administrar los puntos de interrupción](#bkmk_1) o [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). Después de iniciar la depuración, no se puede editar un script hasta que la depuración se detenga. Un script con uno o más puntos de interrupción establecidos se guarda automáticamente antes de ejecutarse.
+Antes de iniciar la depuración, debe establecer uno o varios puntos de interrupción. No se puede establecer un punto de interrupción si no se guarda el script que desea depurar. Para obtener instrucciones acerca de cómo establecer un punto de interrupción, vea [Cómo administrar los puntos de interrupción](#bkmk_1) o [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420). Después de iniciar la depuración, no se puede editar un script hasta que la depuración se detenga. Un script con uno o más puntos de interrupción establecidos se guarda automáticamente antes de ejecutarse.
 
 ### Para iniciar la depuración
 Presione **F5** o haga clic en el icono **Ejecutar script** en la barra de herramientas, o bien, en el menú **Depurar**, haga clic en **Ejecutar o continuar**. El script se ejecuta hasta que encuentra el primer punto de interrupción. Detiene la operación en este punto y resalta la línea en la que se produce la pausa.
@@ -127,13 +127,12 @@ Presione **MAYÚS-F5** o, en el menú **Depurar**, haga clic en **Detener el dep
 ## <a name="bkmk_3"></a>Cómo depurar paso a paso por procedimientos, por instrucciones y para salir durante la depuración
 La ejecución paso a paso es el proceso de ejecutar una instrucción cada vez. Puede detenerse en una línea de código y examinar los valores de las variables y el estado del sistema. En la tabla siguiente se describen las tareas de depuración comunes, como la depuración paso a paso por procedimientos, por instrucciones y para salir.
 
-||||
-|-|-|-|
-|**Tarea de depuración**|**Descripción**|**Cómo llevarla a cabo en PowerShell ISE**|
-|**Depurar paso a paso por instrucciones**|Ejecuta la instrucción actual y, luego, se detiene en la instrucción siguiente. Si la instrucción actual es una llamada de función o script, el depurador ejecuta la depuración paso a paso por instrucciones en la función o el script. De lo contrario, se detiene en la siguiente instrucción.|Presione **F11** o, en el menú **Depurar**, haga clic en **Paso a paso por instrucciones**. También puede escribir **S** en el panel de consola y presionar **ENTRAR**.|
-|**Depurar paso a paso por procedimientos**|Ejecuta la instrucción actual y, luego, se detiene en la instrucción siguiente. Si la instrucción actual es una llamada de función o script, el depurador ejecuta la función o el script completo y se detiene en la siguiente instrucción después de la llamada de función.|Presione **F10** o, en el menú **Depurar**, haga clic en **Paso a paso por procedimientos**. También puede escribir **V** en el panel de consola y presionar **ENTRAR**.|
-|**Depurar paso a paso para salir**|Sale de la función actual y sube un nivel si la función está anidada. Si se encuentra en el cuerpo principal, el script se ejecuta hasta el final o hasta el punto de interrupción siguiente. Las instrucciones omitidas se ejecutan, pero no se depuran paso a paso.|Presione **MAYÚS+F11** o, en el menú **Depurar**, haga clic en **Paso a paso para salir**. También puede escribir **O** en el panel de consola y presionar **ENTRAR**.|
-|**Continuar**|Continúa la ejecución hasta el final o hasta el punto de interrupción siguiente. Las funciones omitidas y las invocaciones se ejecutan, pero no se ejecutan paso a paso.|Presione **F5** o, en el menú **Depurar**, haga clic en **Ejecutar o continuar**. También puede escribir **C** en el panel de consola y presionar **ENTRAR**.|
+| Tarea de depuración | Descripción | Cómo llevarla a cabo en PowerShell ISE |
+| --- | --- | --- |
+| **Depurar paso a paso por instrucciones** | Ejecuta la instrucción actual y, luego, se detiene en la instrucción siguiente. Si la instrucción actual es una llamada de función o script, el depurador ejecuta la depuración paso a paso por instrucciones en la función o el script. De lo contrario, se detiene en la siguiente instrucción. | Presione **F11** o, en el menú **Depurar**, haga clic en **Paso a paso por instrucciones**. También puede escribir **S** en el panel de consola y presionar **ENTRAR**. |
+| **Depurar paso a paso por procedimientos** | Ejecuta la instrucción actual y, luego, se detiene en la instrucción siguiente. Si la instrucción actual es una llamada de función o script, el depurador ejecuta la función o el script completo y se detiene en la siguiente instrucción después de la llamada de función. | Presione **F10** o, en el menú **Depurar**, haga clic en **Paso a paso por procedimientos**. También puede escribir **V** en el panel de consola y presionar **ENTRAR**. |
+| **Depurar paso a paso para salir** | Sale de la función actual y sube un nivel si la función está anidada. Si se encuentra en el cuerpo principal, el script se ejecuta hasta el final o hasta el punto de interrupción siguiente. Las instrucciones omitidas se ejecutan, pero no se depuran paso a paso. | Presione **MAYÚS+F11** o, en el menú **Depurar**, haga clic en **Paso a paso para salir**. También puede escribir **O** en el panel de consola y presionar **ENTRAR**. |
+| **Continuar** | Continúa la ejecución hasta el final o hasta el punto de interrupción siguiente. Las funciones omitidas y las invocaciones se ejecutan, pero no se ejecutan paso a paso. | Presione **F5** o, en el menú **Depurar**, haga clic en **Ejecutar o continuar**. También puede escribir **C** en el panel de consola y presionar **ENTRAR**. |
 
 ## <a name="bkmk_4"></a>Cómo mostrar los valores de variables durante la depuración
 Puede mostrar los valores actuales de las variables en el script mientras realiza la depuración paso a paso del código.
@@ -168,7 +167,7 @@ Si intenta mostrar el valor de cualquiera de estas variables, obtendrá el valor
 
 Por ejemplo, para mostrar el valor de la variable $MyInvocation, en el script, asigne el valor a una nueva variable, como $scriptname y, a continuación, mantenga el puntero encima o escriba la variable $scriptname para mostrar su valor.
 
-```
+``` PowerShell
 #In MyScript.ps1
 $scriptname = $MyInvocation.MyCommand.Path
 
@@ -183,6 +182,6 @@ C:\ps-test\MyScript.ps1
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

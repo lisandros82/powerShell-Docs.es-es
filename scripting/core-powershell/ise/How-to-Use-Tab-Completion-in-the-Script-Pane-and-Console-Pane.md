@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 07f7fb6b4e5d94de31551566ca8faff263817383
+ms.sourcegitcommit: b14aaee5a66a80295420fe9b517ba1fc652c86bf
+ms.openlocfilehash: 290d9237e20b35ec603f0967854b1e0d193e6cbb
 
 ---
 
@@ -26,15 +26,15 @@ En el panel de comandos o el panel de scripts, escriba algunos caracteres de un 
 ## Para completar automáticamente la entrada de un parámetro de cmdlet
 En el panel de comandos o el panel de scripts, escriba un cmdlet seguido por un guion y, después, presione la tecla TAB.
 
-Por ejemplo, escriba `get-process -` y, a continuación, presione TAB varias veces para mostrar cada uno de los parámetros del cmdlet de uno en uno.
+Por ejemplo, escriba `Get-Process -` y, a continuación, presione TAB varias veces para mostrar cada uno de los parámetros del cmdlet de uno en uno.
 
-## Consulte también
-[Using Windows PowerShell ISE (Usar Windows PowerShell ISE)](using-the-windows-powershell-ise.md)
-[How to Create a PowerShell Tab (Cómo crear una pestaña de PowerShell)](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
-
-
+## Véase también
+- [Utilizar ISE de Windows PowerShell](using-the-windows-powershell-ise.md)
+- [Cómo crear una pestaña de PowerShell](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Sep16_HO3-->
 
 

@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 387ebc0467b9f154444292f391af0f4b77123639
+ms.sourcegitcommit: f413ba6470985622e55bb4bd175d7c5d4b94c7d9
+ms.openlocfilehash: e545d49381a92ef3f7cc6a27316cbfc3a036a8c9
 
 ---
 
@@ -18,13 +18,18 @@ ms.openlocfilehash: 387ebc0467b9f154444292f391af0f4b77123639
 
 > Nota: Esta información es preliminar y está sujeta a cambios.
 
-##Problemas de Pester
+##Pester
 En esta versión, hay dos problemas que deben tenerse en cuenta cuando se utilice Pester en Nano Server:
 
-* La realización de pruebas en el propio Pester puede provocar errores debido a las diferencias entre FULL CLR y CORE CLR. En concreto, el método Validate no está disponible en el tipo XmlDocument. Se sabe que seis pruebas que intentan validar el esquema de los registros de salida de nunit generan un error. 
+* La realización de pruebas en el propio Pester puede provocar errores debido a las diferencias entre FULL CLR y CORE CLR. En concreto, el método Validate no está disponible en el tipo XmlDocument. Se sabe que seis pruebas que intentan validar el esquema de los registros de salida de NUnit generan un error. 
 * En la actualidad, una prueba de cobertura de código genera un error porque el recurso de DSC *WindowsFeature* no existe en Nano Server. Sin embargo, estos errores suelen ser poco preocupantes y pueden ignorarse.
 
+##Validación de operaciones 
 
-<!--HONumber=Jul16_HO3-->
+* Se producirá un error de Update-Help para el módulo Microsoft.PowerShell.Operation.Validation porque el URI de ayuda no funciona.
+
+
+
+<!--HONumber=Sep16_HO3-->
 
 

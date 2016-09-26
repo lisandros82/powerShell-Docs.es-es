@@ -9,13 +9,13 @@ ms.date: 2016-06-22
 title: dificultades comunes de las funcionalidades de rol
 ms.technology: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 0e221c840f083ce0b8ecbcbb34c184bcdbc0c73e
+ms.sourcegitcommit: 2c42f8d6eaadee43a3baff1811aafb6b5c1a9be3
+ms.openlocfilehash: 2b2dfd9c39fe5d7bf4a52032653108729715e6bf
 
 ---
 
 ### Dificultades comunes de las funcionalidades de rol
-Es posible que se encuentre con algunas dificultades comunes cuando lleve a cabo este proceso usted mismo.
+Es posible que se encuentre con algunas dificultades comunes si realiza este proceso usted mismo.
 A continuación se incluye una guía rápida en la que se explica cómo identificar y corregir estos problemas al modificar o crear un punto de conexión nuevo:
 
 #### Funciones frente a Cmdlets
@@ -33,6 +33,6 @@ De este modo, puede permitir que los usuarios sigan trabajando con archivos, cla
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

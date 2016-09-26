@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 901cf8190252ac344182bf49d550a8adade559a0
-ms.openlocfilehash: c66b8d6abf4886143f71c0de823cbfde86d875ba
+ms.sourcegitcommit: 140f60bf7344eae57e2b5d364464bc0b7c1a2220
+ms.openlocfilehash: 5d37938869a71bea0d8a6349e680411b7d0200d9
 
 ---
 
@@ -65,7 +65,7 @@ Aparte de especificar servidores de incorporación de cambios y configuraciones 
 |----------- |------- |--------------- | 
 | ConfigurationModeFrequencyMins| UInt32| La frecuencia, en minutos, con que se comprueba y aplica la configuración actual. Esta propiedad se omite si la propiedad ConfigurationMode se establece en ApplyOnly. El valor predeterminado es 15. <br> __Nota__: O bien el valor de esta propiedad debe ser un múltiplo del valor de la propiedad __RefreshFrequencyMins__, o bien el valor de la propiedad __RefreshFrequencyMins__ debe ser un múltiplo del valor de esta propiedad.| 
 | RebootNodeIfNeeded| bool| Establezca esta propiedad en __$true__ para reiniciar automáticamente el nodo después de aplicar una configuración que requiera un reinicio. De lo contrario, tendrá que reiniciar manualmente el nodo de configuración que lo requiera. El valor predeterminado es __$false__.| 
-| ConfigurationMode| cadena | Especifica la forma en que el LCM aplica realmente la configuración a los nodos de destino. Los valores posibles son __"ApplyOnly"__, __"ApplyandMonitior"(default)__ y __"ApplyandAutoCorrect"__. <ul><li>__"ApplyOnly"__: DSC aplica la configuración y no hace nada más, a menos que se inserte una nueva configuración en el nodo de destino o se extraiga una nueva configuración de un servidor. Después de la aplicación inicial de una nueva configuración, DSC no comprueba si hay un desplazamiento con respecto a un estado configurado previamente.</li><li> __ApplyAndMonitor__: este es el valor predeterminado. El LCM aplica las nuevas configuraciones. Después de la aplicación inicial de una nueva configuración, si el nodo de destino se desplaza del estado deseado, DSC notifica la discrepancia en los registros.</li><li>__ApplyAndAutoCorrect__: DSC aplica cualquier configuración nueva. Después de la aplicación inicial de una nueva configuración, si el nodo de destino se desplaza del estado deseado, DSC notifica la discrepancia en los registros y después vuelve a aplicar la configuración actual.</li></ul>| 
+| ConfigurationMode| cadena | Especifica la forma en que el LCM aplica realmente la configuración a los nodos de destino. Los valores posibles son __"ApplyOnly"__, __"ApplyandMonitior"(default)__ y __"ApplyandAutoCorrect"__. <ul><li>__"ApplyOnly"__: DSC aplica la configuración y no hace nada más, a menos que se inserte una nueva configuración en el nodo de destino o se extraiga una nueva configuración de un servidor. Después de la aplicación inicial de una nueva configuración, DSC no comprueba si hay un desplazamiento con respecto a un estado configurado previamente. Tenga en cuenta que DSC intentará aplicar la configuración hasta que lo consiga antes de que __ApplyOnly__ surta efecto. </li><li> __ApplyAndMonitor__: este es el valor predeterminado. El LCM aplica las nuevas configuraciones. Después de la aplicación inicial de una nueva configuración, si el nodo de destino se desplaza del estado deseado, DSC notifica la discrepancia en los registros. Tenga en cuenta que DSC intentará aplicar la configuración hasta que lo consiga antes de que __ApplyAndMonitor__ surta efecto.</li><li>__ApplyAndAutoCorrect__: DSC aplica cualquier configuración nueva. Después de la aplicación inicial de una nueva configuración, si el nodo de destino se desplaza del estado deseado, DSC notifica la discrepancia en los registros y después vuelve a aplicar la configuración actual.</li></ul>| 
 | ActionAfterReboot| cadena| Especifica lo que ocurre tras un reinicio durante la aplicación de una configuración. Los valores posibles son __"ContinueConfiguration(default)"__ y __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: continúe aplicando la configuración actual después de reiniciar el equipo.</li><li>__StopConfiguration__: detenga la configuración actual después de reiniciar el equipo.</li></ul>| 
 | RefreshMode| cadena| Especifica cómo obtiene el LCM las configuraciones. Los valores posibles son __"Disabled"__, __"Push(default)"__ y __"Pull"__. <ul><li>__Disabled__: las configuraciones DSC se deshabilitan para este nodo.</li><li> __Push__: las configuraciones se inician con una llamada al cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx). La configuración se aplica inmediatamente al nodo. Este es el valor predeterminado.</li><li>__Pull:__ el nodo se configura para comprobar con regularidad si existen configuraciones en un servidor de incorporación de cambios. Si esta propiedad se establece en __Pull__, se debe especificar un servidor de extracción en un bloque __ConfigurationRepositoryWeb__ o __ConfigurationRepositoryShare__. Para más información sobre los servidores de incorporación de cambios, consulte [Configuración de un servidor de incorporación de cambios de DSC](pullServer.md).</li></ul>| 
 | CertificateID| cadena| Un GUID que especifique un certificado utilizado para proteger las credenciales para acceder a la configuración. Para más información, consulte [Want to secure credentials in Windows PowerShell Desired State Configuration?](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx) (¿Quiere proteger las credenciales de configuración de estado deseado de Windows PowerShell?).| 
@@ -98,7 +98,7 @@ Para definir un servidor de configuración basado en web, cree un bloque **Confi
 |AllowUnsecureConnection|bool|Establézcala en **$TRUE** para permitir conexiones desde el nodo al servidor sin autenticación. Establézcala en **$FALSE** para que se requiera autenticación.|
 |CertificateID|cadena|Un GUID que representa el certificado utilizado para autenticar el servidor.|
 |ConfigurationNames|String[]|Una matriz de nombres de configuraciones que el nodo de destino extraerá. Solo se utilizan si el nodo se registra con el servidor de incorporación de cambios mediante un elemento **RegistrationKey**. Para más información, consulte [Configuración de un cliente de incorporación de cambios con nombres de configuración](pullClientConfigNames.md).|
-|RegistrationKey|cadena|Un GUID que registra el nodo con el servidor de extracción. Para más información, consulte [Configuración de un cliente de incorporación de cambios con nombres de configuración](pullClientConfigNames.md).|
+|RegistrationKey|cadena|Un GUID que registra el nodo con el servidor de extracción. Para más información, consulte [Configuración de un cliente de extracción con nombres de configuración](pullClientConfigNames.md).|
 |ServerURL|cadena|La dirección URL del servidor de configuración.|
 
 Para definir un servidor de configuración basado en SMB, cree un bloque **ConfigurationRepositoryShare**. Un bloque **ConfigurationRepositoryShare** define las siguientes propiedades.
@@ -150,7 +150,7 @@ Para definir una configuración parcial, cree un bloque **PartialConfiguration**
 |RefreshMode|cadena|Especifica cómo obtiene el LCM esta configuración parcial. Los valores posibles son __"Disabled"__, __"Push(default)"__ y __"Pull"__. <ul><li>__Disabled__: esta configuración parcial está deshabilitada.</li><li> __Push__: la configuración parcial se inserta en el nodo con una llamada al cmdlet [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx). Cuando todas las configuraciones parciales del nodo se han insertado o extraído de un servidor, es posible iniciar la configuración con una llamada a `Start-DscConfiguration –UseExisting`. Este es el valor predeterminado.</li><li>__Pull__: el nodo se configura para comprobar con regularidad si existe una configuración parcial en un servidor de extracción. Si esta propiedad se establece en __Pull__, debe especificar un servidor de extracción en una propiedad __ConfigurationSource__. Para más información sobre los servidores de incorporación de cambios, consulte [Configuración de un servidor de incorporación de cambios de DSC](pullServer.md).</li></ul>|
 |ResourceModuleSource|string[]|Una matriz de los nombres de los servidores de recursos desde los que se descargarán los recursos necesarios para esta configuración parcial. Estos nombres deben hacer referencia a los servidores de recursos definidos previamente en bloques **ResourceRepositoryWeb** y **ResourceRepositoryShare**.|
 
-## Consulte también 
+## Véase también 
 
 ### Conceptos
 [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
@@ -167,6 +167,6 @@ Para definir una configuración parcial, cree un bloque **PartialConfiguration**
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

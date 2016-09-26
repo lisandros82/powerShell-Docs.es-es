@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 44d67705-87c7-4a69-a53e-6471fdebb757
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d48ea75b99ef3d20c3e180ccec7f35adf6290a63
+ms.sourcegitcommit: 117b3fe541b7a92479e9c68e07fa21fc8add9678
+ms.openlocfilehash: 4588577c0c05fadee6b443e2fa4c32049cf99ac3
 
 ---
 
 # Cómo usar el panel de consola en Windows PowerShell ISE
-El panel de consola del Entorno integrado de scripting (ISE) de Windows PowerShell® funciona exactamente igual que la ventana de consola estándar de Windows PowerShell ISE.
+El panel de consola del Entorno de scripting integrado (ISE) de Windows PowerShell® funciona exactamente igual que la ventana de consola independiente de Windows PowerShell ISE.
 
 Para ejecutar un comando en el panel de consola, escriba un comando y, a continuación, presione ENTRAR. Para escribir varios comandos que quiera ejecutar en secuencia, escriba MAYÚS+ENTRAR entre comandos. Consulte [Cómo usar la finalización con tabulación en el panel de scripts y en el panel de consola](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) para obtener ayuda sobre la escritura de los comandos.
 
@@ -35,6 +35,6 @@ A partir de Windows PowerShell v3, el panel de salida se combinó con el panel d
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

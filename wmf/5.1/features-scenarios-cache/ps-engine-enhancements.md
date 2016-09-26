@@ -2,8 +2,8 @@
 title: Mejoras en el motor de PowerShell
 author: jasonsh
 translationtype: Human Translation
-ms.sourcegitcommit: 6813902aec214aee9ede27ff79dd291364e9f443
-ms.openlocfilehash: f864850128f118704d7545b09110835ab1d51b8e
+ms.sourcegitcommit: 47c963343c541d0f2ace194f365de5fcd809ccc5
+ms.openlocfilehash: 1b35a25312b44d14ec8771be9e17aaa43e270b61
 
 ---
 
@@ -19,7 +19,7 @@ El rendimiento ha mejorado en algunas áreas importantes:
 1. Inicio
 2. La canalización en cmdlets como ForEach-Object y Where-Object es aproximadamente un 50 % más rápido 
 
-Algunas mejoras del ejemplo (los resultados pueden variar en función del hardware): 
+Algunas mejoras de ejemplo (los resultados pueden variar en función del hardware): 
 
 | Escenario | Tiempo de 5.0 (ms) | Tiempo de 5.1 (ms) |
 | -------- | :---------------: | :---------------: |
@@ -49,7 +49,7 @@ WMF 5.1 cambia este comportamiento para usar `$env:PSModulePath` completamente. 
 
 ### El redireccionamiento de archivos deja de integrar como parte del código `-Encoding Unicode` ###
 
-En todas las versiones anteriores de PowerShell, era imposible controlar la codificación de archivos utilizada por el operador de redireccionamiento de archivos (p. ej., `get-childitem > out.txt` porque PowerShell agregó `-Encoding Unicode`).
+En todas las versiones anteriores de PowerShell, era imposible controlar la codificación de archivos usada por el operador de redireccionamiento de archivos (p. ej., `Get-ChildItem > out.txt` porque PowerShell agregó `-Encoding Unicode`).
 
 A partir de WMF 5.1, se puede cambiar la codificación de archivos del redireccionamiento mediante el establecimiento de `$PSDefaultParameterValues`, p. ej.
 
@@ -73,7 +73,7 @@ Este nuevo enlazador ha mejorado considerablemente el rendimiento, pero también
 En el ejemplo siguiente:
 
 ```
-$obj = new-object -com wscript.shell
+$obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
@@ -100,7 +100,7 @@ En el ejemplo anterior, WMF 5 escribió incorrectamente Scripting.Dictionary en 
 
 ### `[ordered]` no se permitía en las clases ###
 
-WMF5 introdujo clases con una validación de los literales de tipo que se usan en las clases.  `[ordered]` parece un literal de tipo, pero no es un verdadero tipo .Net.  WMF5 informaba incorrectamente de un error en `[ordered]` dentro de una clase:
+WMF5 introdujo clases con una validación de los literales de tipo que se usan en las clases.  `[ordered]` parece un literal de tipo, pero no es un verdadero tipo .NET.  WMF5 informaba incorrectamente de un error en `[ordered]` dentro de una clase:
 
 ```
 class CThing
@@ -123,6 +123,6 @@ Get-Help no proporciona una manera de especificar de qué versión desea obtener
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

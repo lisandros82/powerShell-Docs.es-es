@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 596bbd2a5c272918171833310fc8c8aa5353adb1
+ms.sourcegitcommit: 466b7169b81d773cc226adbf853b46fdb956c2f1
+ms.openlocfilehash: 852b927ba0f5edffa5c7943b45e0e7b1bdd273f5
 
 ---
 
 # Métodos abreviados de teclado para Windows PowerShell ISE
-Utilice los siguientes métodos abreviados de teclado para realizar acciones en Windows PowerShell® Integrated Scripting Environment (ISE). Windows PowerShell ISE está disponible como parte de los sistemas operativos Windows Server y cliente de Windows, pero también se puede instalar en algunos sistemas operativos anteriores de Windows como parte del [paquete de descarga de Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881).
+Use los siguientes métodos abreviados de teclado para realizar acciones en el Entorno de scripting integrado (ISE) de Windows PowerShell®. Windows PowerShell ISE está disponible como parte de los sistemas operativos Windows Server y cliente de Windows, pero también se puede instalar en algunos sistemas operativos anteriores de Windows como parte del [paquete de descarga de Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881).
 
 ## Métodos abreviados de teclado para editar texto
 Puede usar los siguientes métodos abreviados de teclado cuando edite texto.
@@ -121,6 +121,6 @@ Puede usar los siguientes métodos abreviados de teclado para iniciar la consola
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

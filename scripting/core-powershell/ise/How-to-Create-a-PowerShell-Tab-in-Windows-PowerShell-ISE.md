@@ -1,19 +1,26 @@
 ---
-title: Cómo crear una pestaña de PowerShell en Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Cómo crear una pestaña de PowerShell en Windows PowerShell ISE"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
+translationtype: Human Translation
+ms.sourcegitcommit: d015dfae1990c66ea75aa45004b366d1609fb36f
+ms.openlocfilehash: 460ab6d82b694266d31b09779866f746b56c9f51
+
 ---
+
 # Cómo crear una pestaña de PowerShell en Windows PowerShell ISE
 Las pestañas del Entorno de scripting integrado de Windows PowerShell® permiten crear y usar varios entornos de ejecución simultáneamente dentro de la misma aplicación. Cada pestaña de PowerShell corresponde a una sesión o un entorno de ejecución independiente.
 
 > [!NOTE]
 > Las variables, las funciones y los alias que se crean en una pestaña no se mantienen en otra. Son sesiones diferentes de Windows PowerShell.
 
-Use los pasos siguientes para abrir o cerrar una pestaña en Windows PowerShell. Para cambiar el nombre de una pestaña, configure la propiedad [DisplayName](https://technet.microsoft.com/en-us/library/a9b58556-951b-4f48-b3ae-b351b7564360#Displayname) del objeto de scripting Tab de Windows PowerShell.
+Use los pasos siguientes para abrir o cerrar una pestaña en Windows PowerShell. Para cambiar el nombre de una pestaña, configure la propiedad [DisplayName](The-PowerShellTab-Object.md#Displayname) del objeto de scripting Tab de Windows PowerShell.
 
 ## Para crear y usar una nueva pestaña de PowerShell
 En el menú **Archivo**, haga clic en **Nueva pestaña de PowerShell**. La nueva pestaña de PowerShell se abre siempre como la ventana activa. Las pestañas de PowerShell se numeran de forma incremental en el orden en que se abren. Cada pestaña está asociada a su propia ventana de la consola de Windows PowerShell. Puede tener hasta 32 pestañas de PowerShell con su propia sesión abierta a la vez (este valor se limita a 8 en Windows PowerShell ISE 2.0).
@@ -32,14 +39,15 @@ Para cerrar una pestaña, puede usar cualquiera de las técnicas siguientes:
 
 -   En el menú **Archivo**, haga clic en **Cerrar pestaña de PowerShell**, o bien haga clic en el botón Cerrar (**X**) en una pestaña activa para cerrarla.
 
-Si tiene archivos sin guardar abiertos en la pestaña de PowerShell que está cerrando, se le pedirá que los guarde o los descarte. Para más información sobre cómo guardar un script, consulte [Cómo guardar un script](https://technet.microsoft.com/en-us/library/162f594d-efd3-4234-9960-45e56e6eadc8)..
+Si tiene archivos sin guardar abiertos en la pestaña de PowerShell que está cerrando, se le pedirá que los guarde o los descarte. Para obtener más información acerca de cómo guardar un script, consulte [Cómo guardar un script](https://technet.microsoft.com/library/162f594d-efd3-4234-9960-45e56e6eadc8).
 
-## Consulte también
-[Usar Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-[Cómo usar el panel de consola en Windows PowerShell ISE](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+## Véase también
+- [Usar Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
+- [Cómo usar el panel de consola en Windows PowerShell ISE](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Sep16_HO3-->
 
 

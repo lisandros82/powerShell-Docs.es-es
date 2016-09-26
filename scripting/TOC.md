@@ -74,8 +74,8 @@
 
 ### [¿Dónde puedo aprender más?](getting-started/more-powershell-learning.md)
 
-## [Aspectos fundamentales de PowerShell](core-powershell/core-powershell.md)
-### [Módulos principales](core-powershell/core-modules.md)
+## [PowerShell común](core-powershell/core-powershell.md)
+### [Módulos comunes](core-powershell/core-modules.md)
 ####  [Módulo Archive](core-powershell/core-modules/Microsoft.PowerShell.Archive-Module.md)
 ####  [Módulo Core](core-powershell/core-modules/Microsoft.PowerShell.Core-Module.md)
 ####  [Lista de referencia de módulos principales](core-powershell/core-modules/Windows-PowerShell-5.0.md)
@@ -106,6 +106,7 @@
 ####  [Depuración de scripts en PowerShell ISE](core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
 ####  [Uso de perfiles en PowerShell ISE](core-powershell/ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
 ####  [Uso del panel de consola en PowerShell ISE](core-powershell/ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+####  [Cómo usar la finalización con tabulación en el panel de scripts y en el panel de consola](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 ####  [Cómo escribir y ejecutar scripts en Windows PowerShell ISE](core-powershell/ise/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)
 ####  [Introducción a PowerShell ISE](core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
 ####  [Módulo ISE](core-powershell/ise/ISE-Module.md)
@@ -123,7 +124,6 @@
 
 ### [Consola](core-powershell/console-guide.md)
 ####  [Referencia de la línea de comandos de consola](core-powershell/console/PowerShell.exe-Command-Line-Help.md)
-####  [Cómo usar la finalización con tabulación en el panel de scripts y en el panel de consola](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 ####  [Usar expansión de pestañas](core-powershell/console/Using-Tab-Expansion.md)
 
 ### [Ejecutar comandos remotos](core-powershell/Running-Remote-Commands.md)
@@ -142,6 +142,6 @@
 ## [Glosario de PowerShell](Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 
