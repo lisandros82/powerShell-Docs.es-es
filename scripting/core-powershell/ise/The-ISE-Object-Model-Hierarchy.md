@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 0be8d29495d913dfdb084b920bd7c3c65f98f2b2
+ms.sourcegitcommit: 53d9bf77ef39c878d3e729548181d91f01a50ea2
+ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 ---
 
@@ -213,12 +213,12 @@ ms.openlocfilehash: 0be8d29495d913dfdb084b920bd7c3c65f98f2b2
  El objeto **$psISE.PowerShellTabs** es una instancia de la clase [PowerShellTabCollection](The-PowerShellTabCollection-Object.md). Es una colección de todas las pestañas de PowerShell abiertas actualmente que representan los entornos de ejecución de Windows PowerShell disponibles en el equipo local o en equipos remotos conectados. Cada miembro de la colección es una instancia de la clase [PowerShellTab](The-PowerShellTab-Object.md).
 
 ## Véase también
- [El modelo de objetos de scripting de ISE de Windows PowerShell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
- [Referencia del modelo de objetos de ISE de Windows PowerShell](Windows-PowerShell-ISE-Object-Model-Reference.md)
+- [El modelo de objetos de scripting de ISE de Windows PowerShell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Referencia del modelo de objetos de ISE de Windows PowerShell](Windows-PowerShell-ISE-Object-Model-Reference.md)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Sep16_HO4-->
 
 

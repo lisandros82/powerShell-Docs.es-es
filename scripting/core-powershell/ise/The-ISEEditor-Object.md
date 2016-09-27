@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 05255e63ae34e239003e5847c9f3b7fb2f4e3a0a
+ms.sourcegitcommit: 0f045cbeaa8116b15ba6e24210e66348b82e063a
+ms.openlocfilehash: 020c94511ab5c0b4a19611967071e071242fadad
 
 ---
 
@@ -24,10 +24,9 @@ ms.openlocfilehash: 05255e63ae34e239003e5847c9f3b7fb2f4e3a0a
 
  Borra el texto en el editor.
 
-```
+```PowerShell
 # Clears the text in the Console pane.
-$psIse.CurrentPowerShellTab.ConsolePane.Clear()
-
+$psISE.CurrentPowerShellTab.ConsolePane.Clear()
 ```
 
 ### EnsureVisible\(int lineNumber\)
@@ -38,10 +37,9 @@ $psIse.CurrentPowerShellTab.ConsolePane.Clear()
  **lineNumber**
 : número de la línea que se debe hacer visible.
 
-```
+```PowerShell
 # Scrolls the text in the Script pane so that the fifth line is in view. 
-$psIse.CurrentFile.Editor.EnsureVisible(5)
-
+$psISE.CurrentFile.Editor.EnsureVisible(5)
 ```
 
 ### Focus\(\)
@@ -49,7 +47,7 @@ $psIse.CurrentFile.Editor.EnsureVisible(5)
 
  Establece el foco en el editor.
 
-```
+```PowerShell
 # Sets focus to the Console pane. 
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
@@ -65,9 +63,9 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
  **Returns**
 : longitud de la línea que corresponde al número de línea especificado.
 
-```
+```PowerShell
 # Gets the length of the first line in the text of the Command pane. 
-$psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
+$psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
 
 ### GoToMatch\(\)
@@ -75,7 +73,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Mueve el símbolo de intercalación al carácter coincidente si la propiedad **CanGoToMatch** del objeto del editor es **$true**, lo que ocurre cuando el símbolo de intercalación está inmediatamente antes de un paréntesis, corchete o llave de apertura \(,\[,{ - o inmediatamente después de un paréntesis, corchete o llave de cierre - \),\],}.  El símbolo de intercalación se coloca delante de un carácter de apertura o después de un carácter de cierre. Si la propiedad **CanGoToMatch** es **$false**, el método no hace nada. Consulte [CanGoToMatch](#cangotomatch).
 
-```
+```PowerShell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
 ```
 
@@ -108,12 +106,11 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Selecciona toda la línea de texto que contiene actualmente el símbolo de intercalación.
 
-```
+```PowerShell
 # First, set the caret position on line 5.
-$psIse.CurrentFile.Editor.SetCaretPosition(5,1) 
+$psISE.CurrentFile.Editor.SetCaretPosition(5,1) 
 # Now select that entire line of text
-$psIse.CurrentFile.Editor.SelectCaretLine()
-
+$psISE.CurrentFile.Editor.SelectCaretLine()
 ```
 
 ### SetCaretPosition\( lineNumber, columnNumber \)
@@ -125,9 +122,9 @@ $psIse.CurrentFile.Editor.SelectCaretLine()
 
  **columnNumber** (entero); el número de columna del símbolo de intercalación.
 
-```
+```PowerShell
 # Set the CaretPosition.
-$psIse.CurrentFile.Editor.SetCaretPosition(5,1)
+$psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 ```
 
 ### ToggleOutliningExpansion\(\)
@@ -135,10 +132,9 @@ $psIse.CurrentFile.Editor.SetCaretPosition(5,1)
 
  Hace que todas las secciones de esquema se expandan o se contraigan.
 
-```
+```PowerShell
 # Toggle the outlining expansion
-$psIse.CurrentFile.Editor.ToggleOutliningExpansion()
-
+$psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ```
 
 ## Propiedades
@@ -148,10 +144,9 @@ $psIse.CurrentFile.Editor.ToggleOutliningExpansion()
 
  Propiedad booleana de solo lectura que indica si el símbolo de intercalación está al lado de paréntesis, corchetes o llaves, \(\), \[\] o {}. Si el símbolo de intercalación está inmediatamente antes del carácter de apertura o inmediatamente después del carácter de cierre de un par, el valor de esta propiedad es **$true**. Si no, es **$false**.
 
-```
+```PowerShell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
-$psIse.CurrentFile.Editor.CanGoToMatch
-
+$psISE.CurrentFile.Editor.CanGoToMatch
 ```
 
 ###  <a name="CaretColumn"></a> CaretColumn
@@ -159,10 +154,9 @@ $psIse.CurrentFile.Editor.CanGoToMatch
 
  Propiedad de solo lectura que obtiene el número de columna que corresponde a la posición del símbolo de intercalación.
 
-```
+```PowerShell
 # Get the CaretColumn.
-$psIse.CurrentFile.Editor.CaretColumn
-
+$psISE.CurrentFile.Editor.CaretColumn
 ```
 
 ###  <a name="CaretLine"></a> CaretLine
@@ -170,10 +164,9 @@ $psIse.CurrentFile.Editor.CaretColumn
 
  Propiedad de solo lectura que obtiene el número de la línea que contiene el símbolo de intercalación.
 
-```
+```PowerShell
 # Get the CaretLine.
-$psIse.CurrentFile.Editor.CaretLine
-
+$psISE.CurrentFile.Editor.CaretLine
 ```
 
 ###  <a name="caretlinetext"></a> CaretLineText
@@ -181,10 +174,9 @@ $psIse.CurrentFile.Editor.CaretLine
 
  Propiedad de solo lectura que obtiene la línea de texto completa que contiene el símbolo de intercalación.
 
-```
+```PowerShell
 # Get all of the text on the line that contains the caret.
-$psIse.CurrentFile.Editor.CaretLineText
-
+$psISE.CurrentFile.Editor.CaretLineText
 ```
 
 ###  <a name="LineCount"></a> LineCount
@@ -192,10 +184,9 @@ $psIse.CurrentFile.Editor.CaretLineText
 
  Propiedad de solo lectura que obtiene el recuento de líneas del editor.
 
-```
+```PowerShell
 # Get the LineCount.
-$psIse.CurrentFile.Editor.LineCount
-
+$psISE.CurrentFile.Editor.LineCount
 ```
 
 ###  <a name="SelectedText"></a> SelectedText
@@ -214,13 +205,12 @@ $psIse.CurrentFile.Editor.LineCount
 
 ##  <a name="example"></a> Ejemplo de scripting
 
-```
-
+```PowerShell
 # This illustrates how you can use the length of a line to
 # select the entire line and shows how you can make it lowercase. 
 # You must run this in the Console pane. It will not run in the Script pane.
 # Begin by getting a variable that points to the editor.
-$myEditor=$psIse.CurrentFile.Editor
+$myEditor = $psISE.CurrentFile.Editor
 # Clear the text in the current file editor.
 $myEditor.Clear()
 
@@ -253,6 +243,6 @@ $myEditor.InsertText($selection.ToLower())
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Sep16_HO4-->
 
 
