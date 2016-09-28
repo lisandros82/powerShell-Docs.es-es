@@ -9,14 +9,18 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: f413ba6470985622e55bb4bd175d7c5d4b94c7d9
-ms.openlocfilehash: e545d49381a92ef3f7cc6a27316cbfc3a036a8c9
+ms.sourcegitcommit: 3dde62efa7ba595ed5160cc81b4e2b17a54e52a2
+ms.openlocfilehash: d4c9e88ddd6cfaec611527d19d00cbd4db9f5d1d
 
 ---
 
 #Problemas conocidos de WMF 5.1 (versión preliminar) #
 
 > Nota: Esta información es preliminar y está sujeta a cambios.
+
+##Inicio del acceso directo de PowerShell como administrador
+Al instalar WMF, si intenta iniciar PowerShell como administrador desde el acceso directo, puede obtener el mensaje "Error no especificado".
+Vuelva a abrir el acceso directo como no administrador y dicho acceso directo funcionará ahora incluso como administrador.
 
 ##Pester
 En esta versión, hay dos problemas que deben tenerse en cuenta cuando se utilice Pester en Nano Server:
@@ -30,6 +34,6 @@ En esta versión, hay dos problemas que deben tenerse en cuenta cuando se utilic
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 
