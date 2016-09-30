@@ -361,7 +361,7 @@ Windows PowerShell 4.0 incluye las siguientes características nuevas.
 
 -   El cmdlet **Get-Process** tiene un nuevo parámetro de modificador, **IncludeUserName**.
 
--   Se ha agregado un nuevo cmdlet, **Get-FileHash**, que devuelve un hash de archivo en uno de los distintos formatos especificados para un archivo.
+-   Se ha agregado un nuevo cmdlet, **Get-FileHash**, que devuelve un hash de archivo en uno de los distintos formatos de un archivo concreto.
 
 -   En Windows PowerShell 4.0, si un módulo usa la clave **DefaultCommandPrefix** en su manifiesto, o si el usuario importa un módulo con el parámetro **Prefix**, la propiedad **ExportedCommands** del módulo muestra los comandos en el módulo con el prefijo. Cuando se ejecutan comandos usando la sintaxis de módulo completo (nombreDelMódulo\\nombreDelComando), los nombres de comando deben incluir el prefijo.
 
