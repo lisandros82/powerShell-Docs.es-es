@@ -83,6 +83,6 @@ Para ver los certificados de cifrado del documento en el proveedor de certificad
 dir -DocumentEncryptionCert
 ```
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

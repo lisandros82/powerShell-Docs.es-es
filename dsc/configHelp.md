@@ -94,12 +94,12 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-## Consulte también
+## Véase también
 * [Configuraciones DSC](configurations.md)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

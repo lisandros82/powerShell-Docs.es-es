@@ -10,6 +10,6 @@ Hemos mejorado el lenguaje de PowerShell para la definición de clases y otros t
 -   Depuración de tipos mediante el lenguaje de PowerShell.
 -   Generación y control de excepciones mediante mecanismos formales y en el nivel correcto.
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

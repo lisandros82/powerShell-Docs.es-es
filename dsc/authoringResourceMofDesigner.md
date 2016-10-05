@@ -179,7 +179,7 @@ PS C:\> Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $En
 
 La herramienta Diseñador de recursos expone un cmdlet más que puede utilizarse para probar la validez de un esquema MOF que se escribió manualmente. Llame al cmdlet **Test-xDscSchema** y pase la ruta de acceso de un esquema de recursos MOF como un parámetro. El cmdlet mostrará los errores en el esquema.
 
-### Consulte también
+### Véase también
 
 #### Conceptos
 [Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md)
@@ -190,6 +190,6 @@ La herramienta Diseñador de recursos expone un cmdlet más que puede utilizarse
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: ede565ef23c36a195f137e9949b215c6632a7e26
-ms.openlocfilehash: 9e3052353dd54568eb2dfaf5af5efde7faafd03a
+ms.sourcegitcommit: 0e830804616ff23412e0d6ff69c38e2ea20228e5
+ms.openlocfilehash: c5d3cb1045e67d4913fbbad13938e8f95a43cacf
 
 ---
 
@@ -34,9 +34,9 @@ configuration PartialConfigDemo
     Node localhost
     {
         
-           PartialConfiguration OSInstall
+           PartialConfiguration ServiceAccountConfig
         {
-            Description = 'Configuration for the Base OS'
+            Description = 'Configuration to add the SharePoint service account to the Administrators group.'
             RefreshMode = 'Push'
         }
            PartialConfiguration SharePointConfig
@@ -49,7 +49,7 @@ configuration PartialConfigDemo
 PartialConfigDemo 
 ```
 
-El valor **RefreshMode** de cada configuración parcial se establece en "Push". Los nombres de los bloques **PartialConfiguration** (en este caso, "OSInstall" y "SharePointConfig") deben coincidir exactamente con los nombres de las configuraciones que se inserten en el nodo de destino.
+El valor **RefreshMode** de cada configuración parcial se establece en "Push". Los nombres de los bloques **PartialConfiguration** (en este caso, "ServiceAccountConfig" y "SharePointConfig") deben coincidir exactamente con los nombres de las configuraciones que se inserten en el nodo de destino.
 
 ### Publicación e inicialización de las configuraciones parciales del modo de inserción
 ![Estructura de la carpeta PartialConfig](./images/PartialConfig1.jpg)
@@ -85,12 +85,12 @@ Configuration PartialConfigDemoConfigNames
         {
             ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'    
             RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38     
-            ConfigurationNames              = @("OSInstall", "SharePointConfig")
+            ConfigurationNames              = @("ServiceAccountConfig", "SharePointConfig")
         }     
         
-        PartialConfiguration Part1 
+        PartialConfiguration ServiceAccountConfig 
         {
-            Description                     = "OSInstall"
+            Description                     = "ServiceAccountConfig"
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv") 
         }
  
@@ -98,7 +98,7 @@ Configuration PartialConfigDemoConfigNames
         {
             Description                     = "SharePointConfig"
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
-            DependsOn                       = '[PartialConfiguration]OSInstall'
+            DependsOn                       = '[PartialConfiguration]ServiceAccountConfig'
         }
    
 }
@@ -125,7 +125,7 @@ configuration PartialConfigDemoConfigID
             
         }
         
-           PartialConfiguration OSInstall
+           PartialConfiguration ServiceAccountConfig
         {
             Description                     = 'Configuration for the Base OS'
             ConfigurationSource             = '[ConfigurationRepositoryWeb]CONTOSO-PullSrv'
@@ -135,7 +135,7 @@ configuration PartialConfigDemoConfigID
         {
             Description                     = 'Configuration for the Sharepoint Server'
             ConfigurationSource             = '[ConfigurationRepositoryWeb]CONTOSO-PullSrv'
-            DependsOn                       = '[PartialConfiguration]OSInstall'
+            DependsOn                       = '[PartialConfiguration]ServiceAccountConfig'
             RefreshMode                     = 'Pull'
         }
     }
@@ -143,7 +143,7 @@ configuration PartialConfigDemoConfigID
 PartialConfigDemo 
 ```
 
-Puede extraer configuraciones parciales de más de un servidor de extracción; solo sería necesario definir cada servidor de extracción y, después, hacer referencia al servidor de extracción adecuado en cada bloque PartialConfiguration.
+Puede extraer configuraciones parciales de más de un servidor de extracción; solo sería necesario definir cada servidor de extracción y, después, hacer referencia al servidor de extracción adecuado en cada bloque **PartialConfiguration**.
 
 Después de crear la metaconfiguración, debe ejecutar para crear un documento de configuración (archivo MOF) y, a continuación, llame a [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621(v=wps.630).aspx) para configurar el LCM.
 
@@ -152,8 +152,8 @@ Después de crear la metaconfiguración, debe ejecutar para crear un documento d
 Los documentos de configuración parcial deben ubicarse en la carpeta especificada en el valor **ConfigurationPath** del archivo `web.config` del servidor de extracción (normalmente `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Los documentos de configuración deben nombrarse del modo siguiente: `ConfigurationName.mof`, donde _ConfigurationName_ es el nombre de la configuración parcial. En el ejemplo, los documentos de configuración deben nombrarse del modo siguiente:
 
 ```
-OSInstall.mof
-OSInstall.mof.checksum
+ServiceAccountConfig.mof
+ServiceAccountConfig.mof.checksum
 SharePointConfig.mof
 SharePointConfig.mof.checksum
 ```
@@ -163,8 +163,8 @@ SharePointConfig.mof.checksum
 Los documentos de configuración parcial deben ubicarse en la carpeta especificada en el valor **ConfigurationPath** del archivo `web.config` del servidor de extracción (normalmente `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Los documentos de configuración deben tener el siguiente nombre: _ConfigurationName_. _ConfigurationID_`.mof`, donde _ConfigurationName_ es el nombre de la configuración parcial y _ConfigurationID_ es el identificador de configuración definido en el LCM del nodo de destino. En el ejemplo, los documentos de configuración deben nombrarse del modo siguiente:
 
 ```
-OSInstall.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
-OSInstall.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
+ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
+ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
 SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
 SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
 ```
@@ -177,7 +177,7 @@ Cuando se haya configurado el LCM en el nodo de destino y se hayan creado los do
 
 ## Configuraciones parciales en los modos de inserción y extracción mixtos
 
-También puede mezclar los modos de inserción y extracción para las configuraciones parciales. Es decir, podría tener una configuración parcial que se haya extraído de un servidor de extracción, mientras que otra configuración parcial se inserta. Trate cada configuración parcial como prefiera, según su modo de actualización, como se describe en las secciones anteriores. Por ejemplo, la metaconfiguración siguiente describe el mismo ejemplo, con la configuración parcial del sistema operativo en el modo de extracción y la configuración parcial de SharePoint en el modo de inserción.
+También puede mezclar los modos de inserción y extracción para las configuraciones parciales. Es decir, podría tener una configuración parcial que se haya extraído de un servidor de extracción, mientras que otra configuración parcial se inserta. Trate cada configuración parcial como prefiera, según su modo de actualización, como se describe en las secciones anteriores. Por ejemplo, la metaconfiguración siguiente describe el mismo ejemplo, con la configuración parcial de la cuenta de servicio en el modo de extracción y la configuración parcial de SharePoint en el modo de inserción.
 
 ### Modos de inserción y extracción mixtos mediante ConfigurationNames
 
@@ -198,12 +198,12 @@ Configuration PartialConfigDemoConfigNames
         {
             ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'    
             RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38     
-            ConfigurationNames              = @("OSInstall", "SharePointConfig")
+            ConfigurationNames              = @("ServiceAccountConfig", "SharePointConfig")
         }     
         
-        PartialConfiguration OSInstall 
+        PartialConfiguration ServiceAccountConfig 
         {
-            Description                     = "OSInstall"
+            Description                     = "ServiceAccountConfig"
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
             RefreshMode                     = 'Pull' 
         }
@@ -211,7 +211,7 @@ Configuration PartialConfigDemoConfigNames
         PartialConfiguration SharePointConfig
         {
             Description                     = "SharePointConfig"
-            DependsOn                       = '[PartialConfiguration]OSInstall'
+            DependsOn                       = '[PartialConfiguration]ServiceAccountConfig'
             RefreshMode                     = 'Push'
         }
    
@@ -239,7 +239,7 @@ configuration PartialConfigDemo
             
         }
         
-           PartialConfiguration OSInstall
+           PartialConfiguration ServiceAccountConfig
         {
             Description             = 'Configuration for the Base OS'
             ConfigurationSource     = '[ConfigurationRepositoryWeb]CONTOSO-PullSrv'
@@ -248,7 +248,7 @@ configuration PartialConfigDemo
            PartialConfiguration SharePointConfig
         {
             Description             = 'Configuration for the Sharepoint Server'
-            DependsOn               = '[PartialConfiguration]OSInstall'
+            DependsOn               = '[PartialConfiguration]ServiceAccountConfig'
             RefreshMode             = 'Push'
         }
     }
@@ -256,14 +256,14 @@ configuration PartialConfigDemo
 PartialConfigDemo 
 ```
 
-Tenga en cuenta que el valor de **RefreshMode** especificado en el bloque Settings es "Pull", pero el valor de **RefreshMode** para configuración parcial de OSInstall es "Push".
+Tenga en cuenta que el valor de **RefreshMode** especificado en el bloque Settings es "Pull", pero el valor de **RefreshMode** para configuración parcial de SharePointConfig es "Push".
 
-Asigne un nombre y localice los archivos MOF de configuración tal y como se ha descrito anteriormente para sus modos de actualización correspondientes. Llame a **Publish-DSCConfiguration** para publicar la configuración parcial de `SharePointInstall` y, o bien esperar a que se extraiga la configuración `OSInstall` del servidor de extracción, o bien forzar una actualización mediante una llamada a [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx).
+Asigne un nombre y localice los archivos MOF de configuración tal y como se ha descrito anteriormente para sus modos de actualización correspondientes. Llame a **Publish-DSCConfiguration** para publicar la configuración parcial de `SharePointConfig` y, o bien espere a que se extraiga la configuración `ServiceAccountConfig` del servidor de extracción, o bien fuerce una actualización mediante una llamada a [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx).
 
-## Configuración parcial de OSInstall de ejemplo
+## Configuración parcial de ServiceAccountConfig de ejemplo
 
 ```powershell
-Configuration OSInstall
+Configuration ServiceAccountConfig
 {
     Param (
         [Parameter(Mandatory,
@@ -294,7 +294,7 @@ Configuration OSInstall
         }
     }
 }
-OSInstall
+ServiceAccountConfig
 
 ```
 ## Configuración parcial de SharePointConfig de ejemplo
@@ -321,15 +321,16 @@ Configuration SharePointConfig
 }
 SharePointConfig
 ```
-##Consulte también 
+##Véase también 
 
 **Conceptos**
 [Servidores de extracción de la configuración de estado deseado de Windows PowerShell](pullServer.md) 
+
 [Configuración del administrador de configuración local de Windows](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

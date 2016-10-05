@@ -281,7 +281,7 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-### Consulte también
+### Véase también
 #### Conceptos
 [Escribir un recurso de DSC personalizado con MOF](authoringResourceMOF.md)
 #### Otros recursos
@@ -290,6 +290,6 @@ $env: psmodulepath (folder)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 90d57af0c8b90e709769525455ae39557b9c7176
+ms.sourcegitcommit: be3659b02cb1bc58cc13aa9d8f92946b2afa37b1
+ms.openlocfilehash: 8a7774b36f15ff790c31d4c1a8bc69be257b8508
 
 ---
 
@@ -28,9 +28,9 @@ WMF 5.1 cambia este comportamiento para usar `$env:PSModulePath` completamente. 
 
 ### El redireccionamiento de archivos deja de integrar como parte del código `-Encoding Unicode` ###
 
-En todas las versiones anteriores de PowerShell, era imposible controlar la codificación de archivos utilizada por el operador de redireccionamiento de archivos (p. ej., `get-childitem > out.txt` porque PowerShell agregó `-Encoding Unicode`).
+En todas las versiones anteriores de PowerShell, era imposible controlar la codificación de archivos usada por el operador de redireccionamiento de archivos (p. ej., `Get-ChildItem > out.txt` porque PowerShell agregó `-Encoding Unicode`).
 
-A partir de WMF 5.1, se puede cambiar la codificación de archivos del redireccionamiento mediante el establecimiento de `$PSDefaultParameterValues`, p. ej.
+A partir de WMF 5.1, se puede cambiar la codificación de archivos del redireccionamiento mediante el establecimiento de `$PSDefaultParameterValues`:
 
 ```
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
@@ -44,15 +44,14 @@ Este error se ha corregido en WMF 5.1.
 
 ### Se han corregido algunos problemas con objetos COM ###
 
-WMF 5.0 introdujo un nuevo enlazador COM para invocar métodos en objetos COM y acceder a propiedades de objetos COM.
-Este nuevo enlazador ha mejorado considerablemente el rendimiento, pero también ha presentado algunos errores que se han corregido en WMF 5.1.
+WMF 5.0 introdujo un nuevo enlazador COM para invocar métodos en objetos COM y acceder a propiedades de objetos COM. Este nuevo enlazador ha mejorado considerablemente el rendimiento, pero también ha presentado algunos errores que se han corregido en WMF 5.1.
 
 #### Las conversiones de argumentos no siempre se realizaban correctamente ####
 
 En el ejemplo siguiente:
 
 ```
-$obj = new-object -com wscript.shell
+$obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
@@ -74,13 +73,14 @@ function Get-COMDictionary
 $x = Get-COMDictionary
 ```
 
-En el ejemplo anterior, WMF 5.0 escribió incorrectamente Scripting.Dictionary en la canalización, en lugar de enumerar los pares clave/valor.
+En el ejemplo anterior, WMF 5.0 escribió incorrectamente Scripting.Dictionary en la canalización, en lugar de enumerar los pares clave-valor.
 
-Este cambió también permite solucionar los [problemas 1752224 en Connect](https://connect.microsoft.com/PowerShell/feedback/details/1752224)
+Este cambio también permite solucionar el [problema 1752224 en Connect](https://connect.microsoft.com/PowerShell/feedback/details/1752224)
 
 ### `[ordered]` no se permitía en las clases ###
 
-WMF5 introdujo clases con una validación de los literales de tipo que se usan en las clases.  `[ordered]` parece un literal de tipo, pero no es un verdadero tipo .Net.  WMF5 informaba incorrectamente de un error en `[ordered]` dentro de una clase:
+WMF 5.0 introdujo clases con una validación de los literales de tipo que se usan en las clases.  
+`[ordered]` parece un literal de tipo, pero no es un verdadero tipo .NET. WMF 5.0 informaba incorrectamente de un error en `[ordered]` dentro de una clase:
 
 ```
 class CThing
@@ -99,10 +99,10 @@ Antes de WMF 5.1, si había varias versiones de un módulo instaladas y todas co
 
 WMF 5.1 corrige este problema, para lo que devuelve la ayuda de la versión más reciente del tema.
 
-Get-Help no proporciona una forma de especificar para qué versión se desea la ayuda. Para solucionar este problema, navegue hasta el directorio modules y vea la ayuda directamente con una herramienta como su editor favorito. 
+`Get-Help` no proporciona una forma de especificar para qué versión se quiere la ayuda. Para solucionar este problema, navegue hasta el directorio modules y vea la ayuda directamente con una herramienta como su editor favorito. 
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -129,6 +129,6 @@ Nota: También puede habilitar la transcripción de PowerShell de todo el sistem
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

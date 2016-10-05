@@ -35,6 +35,6 @@ La configuración de estado deseado (DSC) de Windows PowerShell incluye un conju
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 
