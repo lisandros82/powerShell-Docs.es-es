@@ -1,8 +1,23 @@
+---
+title: "Configuración de un cliente de extracción mediante id. de configuración"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: f6569220fbafdba49bac9ac9dca3e6036a7aad08
+
+---
+
 # Configuración de un cliente de extracción mediante id. de configuración
 
 > Se aplica a: Windows PowerShell 5.0
 
-Es necesario indicar a cada nodo de destino que debe usar el modo de extracción y se le debe facilitar la dirección URL donde puede establecer contacto con el servidor de extracción para obtener las configuraciones. Para ello, tendrá que configurar el administrador de configuración local (LCM) con la información necesaria. Para configurar el LCM, debe crear un tipo especial de configuración, haya sido decorado con el atributo **DSCLocalConfigurationManager**. Para más información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local](metaConfig.md)..
+Es necesario indicar a cada nodo de destino que debe usar el modo de extracción y se le debe facilitar la dirección URL donde puede establecer contacto con el servidor de extracción para obtener las configuraciones. Para ello, tendrá que configurar el administrador de configuración local (LCM) con la información necesaria. Para configurar el LCM, debe crear un tipo especial de configuración, decorado con el atributo **DSCLocalConfigurationManager**. Para más información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local](metaConfig.md).
 
 > **Nota**: Este tema se aplica a PowerShell 5.0. Para obtener información sobre cómo configurar un cliente de incorporación de cambios en PowerShell 4.0, consulte [Configuración de un cliente de incorporación de cambios con el id. de configuración de PowerShell 4.0](pullClientConfigID4.md).
 
@@ -43,7 +58,7 @@ El script establece la propiedad **ConfigurationID** del LCM en un GUID que se h
 
 ## Servidor de extracción SMB
 
-Para configurar un cliente que extraiga configuraciones de un servidor SMB, use un bloque **ConfigurationRepositoryShare**. En un bloque **ConfigurationRepositoryShare**, especifique la ruta de acceso al servidor mediante el establecimiento de la propiedad **SourcePath**. La metaconfiguración siguiente configura el nodo de destino para que se extraiga de un servidor de incorporación de cambios SMB denominado **SMBPullServer**..
+Para configurar un cliente que extraiga configuraciones de un servidor SMB, use un bloque **ConfigurationRepositoryShare**. En un bloque **ConfigurationRepositoryShare**, especifique la ruta de acceso al servidor mediante el establecimiento de la propiedad **SourcePath**. La metaconfiguración siguiente configura el nodo de destino para que se extraiga de un servidor de incorporación de cambios SMB denominado **SMBPullServer**.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -70,12 +85,9 @@ PullClientConfigID
 
 ## Servidores de informes y recursos
 
-Si solo especifica un bloque **ConfigurationRepositoryWeb** o **ConfigurationRepositoryShare** en su configuración del LCM (como en el ejemplo anterior), el cliente de incorporación de cambios extraerá 
-recursos del servidor especificado, pero no le enviará informes. Puede utilizar un solo servidor de incorporación de cambios para configuraciones, recursos e informes, pero debe crear un 
-bloque **ReportRepositoryWeb** para configurar los informes. 
+Si solo especifica un bloque **ConfigurationRepositoryWeb** o **ConfigurationRepositoryShare** en la configuración del LCM (como en el ejemplo anterior), el cliente de extracción extraerá recursos del servidor especificado, pero no le enviará informes. Puede usar un solo servidor de extracción para configuraciones, recursos e informes, pero debe crear un bloque **ReportRepositoryWeb** para configurar los informes. 
 
-En el ejemplo siguiente se muestra una metaconfiguration que configura un cliente para que extraiga configuraciones y recursos, y envíe informes de datos, a un único
-servidor de incorporación de cambios.
+En el siguiente ejemplo se muestra una metaconfiguración que configura un cliente para que envíe informes de datos y extraiga configuraciones y recursos a un único servidor de extracción.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -107,8 +119,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-También puede especificar servidores de incorporación de cambios diferentes para los recursos y los informes. Para especificar un servidor de recursos, use un bloque **ResourceRepositoryWeb** (para un servidor de incorporación de cambios web) o un 
-bloque **ResourceRepositoryShare** (para un servidor de incorporación de cambios SMB).
+También puede especificar servidores de incorporación de cambios diferentes para los recursos y los informes. Para especificar un servidor de recursos, utilice un bloque **ResourceRepositoryWeb** (para un servidor de extracción web) o un bloque **ResourceRepositoryShare** (para un servidor de extracción SMB).
 Para especificar un servidor de informes, utilice un bloque **ReportRepositoryWeb**. Un servidor de informes no puede ser un servidor SMB.
 La metaconfiguración siguiente configura un cliente de extracción para que obtenga sus configuraciones de **CONTOSO-PullSrv** y sus recursos de **CONTOSO-ResourceSrv**, y para que envíe los informes a **CONTOSO-ReportSrv**:
 
@@ -146,11 +157,13 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-## Consulte también
+## Véase también
 
 * [Configuración de un cliente de incorporación de cambios con nombres de configuración](pullClientConfigNames.md)
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

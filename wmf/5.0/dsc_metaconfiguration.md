@@ -4,6 +4,6 @@ El atributo `DscLocalConfigurationManager` designa un bloque de configuración c
 
 Para más información, consulte [Configuración del administrador de configuración local](https://msdn.microsoft.com/powershell/dsc/metaconfig).
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

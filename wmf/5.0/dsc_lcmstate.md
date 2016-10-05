@@ -10,6 +10,6 @@ Hemos realizado mejoras en la exposición de detalles sobre el estado de LCM. El
 También hemos agregado una propiedad LCMStateDetail que contiene más información sobre el estado.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

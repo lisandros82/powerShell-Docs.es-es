@@ -103,13 +103,13 @@ Después de llamar a [Enable-DscDebug](https://technet.microsoft.com/en-us/libra
 >**Nota:** Reiniciar no cambia el estado de depuración del LCM. Si está habilitada la depuración, iniciar una configuración seguirá interrumpiendo el depurador tras reiniciar.
 
 
-## Consulte también
+## Véase también
 - [Escribir un recurso de DSC personalizado con MOF](authoringResourceMOF.md) 
 - [Escribir un recurso de DSC personalizado con clases de PowerShell](authoringResourceClass.md)
 
 
 
 
-<!--HONumber=Jul16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

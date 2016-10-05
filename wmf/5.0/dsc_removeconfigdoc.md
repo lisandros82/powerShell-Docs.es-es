@@ -4,6 +4,6 @@ Cuando se entrega un documento de configuración a DSC, el documento pasa por va
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

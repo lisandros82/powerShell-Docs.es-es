@@ -40,7 +40,7 @@ Esta sección contiene los temas de Ayuda del módulo **PSWorkflow**; en ellos e
 
 [about_Suspend-Workflow](https://technet.microsoft.com/en-us/library/be2ded75-1eca-493e-96c1-758f92b5f199)
 
-## Consulte también
+## Véase también
 [Introducción al flujo de trabajo de Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=252592)
 [Writing a Windows PowerShell Workflow (Escritura de un flujo de trabajo de Windows PowerShell)](https://technet.microsoft.com/en-us/library/2551ceed-836f-4275-9fc0-ea68446d6a35)
 [Windows PowerShell 5.0](../core-modules/Windows-PowerShell-5.0.md)
@@ -50,6 +50,6 @@ Esta sección contiene los temas de Ayuda del módulo **PSWorkflow**; en ellos e
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -154,7 +154,7 @@ Agradecimientos especiales a:
 - Serge Nikalaichyk, que creó el módulo **cNtfsAccessControl**. El origen de este módulo se encuentra en https://github.com/SNikalaichyk/cNtfsAccessControl.
 
 ## Vea también
-- [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
+- [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
 - [Establecer configuraciones](enactingConfigurations.md)
 - [Configuración de un cliente de extracción mediante id. de configuración](pullClientConfigID.md)
 
@@ -162,6 +162,6 @@ Agradecimientos especiales a:
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

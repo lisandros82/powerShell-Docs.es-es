@@ -4,6 +4,6 @@ En esta versión le permitimos toda la flexibilidad que necesita para la extracc
 
 Para más información, consulte [Configuración de un cliente de extracción mediante id. de configuración](https://msdn.microsoft.com/powershell/dsc/pullclientconfigid) o [Configuración de un cliente de extracción mediante nombres de configuración](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

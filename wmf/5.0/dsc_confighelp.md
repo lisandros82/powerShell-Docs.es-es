@@ -4,6 +4,6 @@ Ahora puede usar la ayuda basada en comentarios dentro de las configuraciones de
 
 Para más información, consulte [Escribir ayuda para configuraciones de DSC](https://msdn.microsoft.com/powershell/dsc/confighelp).
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

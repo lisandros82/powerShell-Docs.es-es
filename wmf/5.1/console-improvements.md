@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 221b8095c15a810c032bd93aafe8ec886af233d9
+ms.sourcegitcommit: 749c1ca8bc617014dffacecce7d14a55adc38036
+ms.openlocfilehash: 2a17fdd4092adf734398f38bec915d53c1b3e566
 
 ---
 
@@ -51,12 +51,12 @@ Tenga en cuenta que las secuencias de escape VT100 solo se admiten a partir de l
 
 En versiones anteriores, a partir de PowerShell con `powershell -File -` se requería cuando se redirigía stdin y deseaba especificar los comandos de forma interactiva.
 
-Con WMF 5.1, este opción, que es difícil de detectar, no es necesaria, y podrá iniciar PowerShell sin opciones, por ejemplo, `powershell`.
+Con WMF 5.1 ya no es necesaria esta opción, que es difícil de detectar. Puede iniciar PowerShell sin opciones, por ejemplo, `powershell`.
 
-Tenga en cuenta que PSReadline no admite stdin redirigido y la experiencia de edición de línea de comandos integrada con stdin redirigido es extremadamente limitada, por ejemplo, las teclas de dirección no funcionan.  Una futura versión de PSReadline debería solucionar este problema.   
+Tenga en cuenta que PSReadline actualmente no admite stdin redirigido y la experiencia de edición de línea de comandos integrada con stdin redirigido es extremadamente limitada, por ejemplo, las teclas de dirección no funcionan. Una futura versión de PSReadline debería solucionar este problema.   
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

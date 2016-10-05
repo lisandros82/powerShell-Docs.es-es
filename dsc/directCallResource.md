@@ -54,7 +54,7 @@ $result.ItemValue | fl
 
 >**Nota:** No se admite llamar directamente a métodos de recursos compuestos. En su lugar, llame a los métodos de los recursos subyacentes que forman el recurso compuesto.
 
-## Consulte también
+## Véase también
 - [Escribir un recurso de DSC personalizado con MOF](authoringResourceMOF.md) 
 - [Escribir un recurso de DSC personalizado con clases de PowerShell](authoringResourceClass.md)
 - [Depuración de recursos de DSC](debugResource.md)
@@ -62,6 +62,6 @@ $result.ItemValue | fl
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

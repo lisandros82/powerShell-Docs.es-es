@@ -74,7 +74,7 @@ Configuration SimpleMetaConfigurationForPull
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-## Consulte también
+## Véase también
 
 - [Configuración de un servidor de extracción web de DSC](pullServer.md)
 - [Configuración de un servidor de incorporación de cambios SMB de DSC](pullServerSMB.md)
@@ -82,6 +82,6 @@ SimpleMetaConfigurationForPull -Output "."
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

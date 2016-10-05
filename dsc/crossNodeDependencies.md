@@ -59,7 +59,7 @@ Configuration JoinDomain
 
 >**Nota:** De manera predeterminada, los recursos de WaitForXXX lo intentan una vez y después se produce un error. Aunque no es necesario, normalmente la intención será especificar un recuento y un intervalo de reintentos.
 
-## Consulte también
+## Véase también
 * [Configuraciones DSC](configurations.md)
 * [Recursos de DSC](resources.md)
 * [Configuración del administrador de configuración local](metaConfig.md)
@@ -67,6 +67,6 @@ Configuration JoinDomain
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

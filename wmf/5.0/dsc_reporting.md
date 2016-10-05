@@ -4,6 +4,6 @@ Se puede enviar información detallada sobre el estado de configuración de DSC 
 
 Para más información, consulte [Uso de un servidor de informes de DSC](https://msdn.microsoft.com/powershell/dsc/reportserver).
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

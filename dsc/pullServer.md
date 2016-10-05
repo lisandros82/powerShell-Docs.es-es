@@ -180,13 +180,13 @@ En los temas siguientes se describe en detalle cómo configurar los clientes de 
 
 
 ## Vea también
-* [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
+* [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
 * [Establecer configuraciones](enactingConfigurations.md)
 * [Uso de un servidor de informes de DSC](reportServer.md)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

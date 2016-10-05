@@ -4,6 +4,6 @@ Con los recursos integrados WaitFor\* (`WaitForAll`, `WaitForAny` y `WaitForSome
 
 Para más información, consulte [Especificación de dependencias entre nodos](https://msdn.microsoft.com/powershell/dsc/crossnodedependencies)
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

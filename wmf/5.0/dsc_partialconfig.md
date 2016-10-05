@@ -3,6 +3,6 @@
 WMF 5.0 le ayuda a entregar documentos de configuración a un nodo en fragmentos. Para más información, consulte [Configuraciones parciales](https://msdn.microsoft.com/powershell/dsc/partialconfigs).
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 
