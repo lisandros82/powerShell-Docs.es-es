@@ -127,12 +127,12 @@ Las siguientes características de DSC no están disponibles actualmente en Nano
  
 Debido a un conjunto limitado de bibliotecas CLR y API de Windows disponibles en Nano Server, los recursos de DSC que funcionan en la versión CLR completa de Windows no funcionan necesariamente en Nano Server. Pruebas de un extremo a otro antes de implementar los recursos personalizados de DSC en un entorno de producción.
 
-## Consulte también
+## Véase también
 - [Getting Started with Nano Server (Introducción a Nano Server)](https://technet.microsoft.com/en-us/library/mt126167.aspx)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

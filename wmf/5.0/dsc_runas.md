@@ -4,6 +4,6 @@ WMF 5.0 incluye compatibilidad para ejecutar **cualquier** recurso de DSC con un
 
 Para más información, consulte [DSC de ejecución con las credenciales de usuario](https://msdn.microsoft.com/powershell/dsc/runasuser).
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

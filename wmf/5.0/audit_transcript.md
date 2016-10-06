@@ -7,6 +7,6 @@ Además de extenderse para la transcripción, la propia funcionalidad de transcr
 Las opciones de transcripción (incluida la habilitación de una transcripción de todo el sistema) pueden configurarse con la opción de Directiva de grupo **Activar la transcripción de PowerShell** (en Plantillas administrativas -> Componentes de Windows -> Windows PowerShell).
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

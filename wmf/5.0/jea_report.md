@@ -33,6 +33,6 @@ Para informar sobre las _acciones_ que los usuarios emprendieron durante una ses
 1. Habilitar las transcripciones de "consentimiento temporal" para ese punto de conexión de JEA y consulte el directorio de transcripción para obtener un registro completo de las acciones de cada usuario
 2. Active el registro del módulo de PowerShell e inspeccione los registros de eventos de PowerShell.
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

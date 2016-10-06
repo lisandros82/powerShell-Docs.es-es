@@ -1,5 +1,5 @@
 ---
-title: "Información general sobre la configuración de estado deseado de Windows PowerShell"
+title: "Información general sobre la configuración de estado deseado de Windows PowerShell"
 ms.date: 2016-05-16
 keywords: powershell,DSC
 description: 
@@ -13,7 +13,7 @@ ms.openlocfilehash: 1a796658eb30bdf5c37ea3677f94767260a34b45
 
 ---
 
-# Información general sobre la configuración de estado deseado de Windows PowerShell 
+# Información general sobre la configuración de estado deseado de Windows PowerShell 
 
 > Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -47,7 +47,7 @@ DSC es una plataforma declarativa que se usa para la configuración, implementac
 
 DSC también incluye una serie de nuevas palabras clave, cmdlets y herramientas del lenguaje que permiten la creación de configuraciones, ayudan a crear recursos de DSC, a invocar configuraciones y a administrar el LCM. Muchos de estos cmdlets se pueden encontrar en Windows 8.1 como parte del módulo PSDesiredStateConfiguration (entre los que se incluyen `Start-DscConfiguration`, `Set-DscLocalConfigurationManager` y `Get-DscResource`). xDscResourceDesigner (que se encuentra en la [Galería de PowerShell](https://www.powershellgallery.com/packages/xDSCResourceDesigner/)) es una recopilación de cmdlets que simplifican el desarrollo de los recursos de DSC.
 
-## Consulte también
+## Véase también
 * [Configuraciones DSC](configurations.md)
 * [Recursos de DSC](resources.md)
 * [Configuración del administrador de configuración local](metaConfig.md)
@@ -55,6 +55,6 @@ DSC también incluye una serie de nuevas palabras clave, cmdlets y herramientas 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

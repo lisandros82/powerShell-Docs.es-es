@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 01d7ac9815a8650f36150e36b4f6942f451dc368
+ms.sourcegitcommit: a1dde68414fd9754a15adb42642646f87adb0823
+ms.openlocfilehash: 9611a7da48a849b52821ac2890e1ea60441a75e3
 
 ---
 
@@ -32,41 +32,41 @@ A partir de la versión 5.1, PowerShell está disponible en diferentes ediciones
 
 ## Cmdlets del catálogo  
 
-Hemos agregado dos nuevos cmdlets en el módulo [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) para generar y validar los archivos de catálogo de Windows.  
+Hemos agregado dos nuevos cmdlets en el módulo [Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) para generar y validar los archivos de catálogo de Windows.  
 
 ###New-FileCatalog 
 --------------------------------
 
-Este cmdlet permite crear un archivo de catálogo de Windows para un conjunto de carpetas y archivos. Este archivo de catálogo contiene hashes para todos los archivos de las rutas de acceso especificadas. Los usuarios pueden distribuir el conjunto de carpetas junto con el correspondiente archivo de catálogo que representa a esas carpetas. Esta información es útil para validar si se han realizado cambios en las carpetas desde que se creó el catálogo.    
+New-FileCatalog crea un archivo de catálogo de Windows para un conjunto de carpetas y archivos. Este archivo de catálogo contiene hashes para todos los archivos de las rutas de acceso especificadas. Los usuarios pueden distribuir el conjunto de carpetas junto con el correspondiente archivo de catálogo que representa a esas carpetas. Esta información es útil para validar si se han realizado cambios en las carpetas desde que se creó el catálogo.    
 
 ```PowerShell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 Se admiten las versiones 1 y 2 del catálogo. La versión 1, utiliza el algoritmo hash SHA1 para crear los hashes de archivo y la versión 2 utiliza SHA256. La versión 2 del catálogo no es compatible con *Windows Server 2008 R2* o *Windows 7*. Deberá utilizar la versión 2 del catálogo en *Windows 8*, *Windows Server 2012* y sistemas operativos posteriores.  
 
-![](../../images/NewFileCatalog.jpg)
+![](../images/NewFileCatalog.jpg)
 
 Esto crea el archivo de catálogo. 
 
-![](../../images/CatalogFile1.jpg)  
+![](../images/CatalogFile1.jpg)  
 
-![](../../images/CatalogFile2.jpg) 
+![](../images/CatalogFile2.jpg) 
 
-Para comprobar la integridad del archivo de catálogo (Pester.cat en el ejemplo anterior) fírmelo mediante el cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx).   
+Para comprobar la integridad del archivo de catálogo (Pester.cat en el ejemplo anterior), fírmelo mediante el cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx).   
 
 
 ###Test-FileCatalog 
 --------------------------------
 
-Este cmdlet permite validar el catálogo que representa un conjunto de carpetas. 
+Test-FileCatalog valida el catálogo que representa un conjunto de carpetas. 
 
 ```PowerShell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-![](../../images/TestFileCatalog.jpg)
+![](../images/TestFileCatalog.jpg)
 
-Este cmdlet compara los hashes y rutas de acceso relativas de los archivos que se encuentran en el *catálogo* con los de los que están en el *disco*. Si se detecta cualquier error de coincidencia entre los hashes y las rutas de acceso de los archivos devuelve el estado *ValidationFailed*. Los usuarios pueden recuperar toda esta información mediante la marca *-Detailed*. También muestra el estado de firma del catálogo en el campo *Firma* lo cual es igual que llamar al cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) en el archivo de catálogo. El usuario también puede omitir cualquier archivo durante la validación mediante el parámetro *FilesToSkip -*. 
+Este cmdlet compara los hashes y rutas de acceso relativas de los archivos que se encuentran en el *catálogo* con los de los que están en el *disco*. Si se detecta cualquier error de coincidencia entre los hashes y las rutas de acceso de los archivos devuelve el estado *ValidationFailed*. Los usuarios pueden recuperar toda esta información mediante el parámetro *-Detailed*. También muestra el estado de firma del catálogo en la propiedad *Signature*, lo que equivale a llamar al cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) en el archivo de catálogo. El usuario también puede omitir cualquier archivo durante la validación mediante el parámetro *FilesToSkip -*. 
 
 
 ## Caché de análisis de módulo ##
@@ -75,22 +75,20 @@ A partir de WMF 5.1, PowerShell proporciona control sobre el archivo que se util
 De manera predeterminada, esta caché se almacena en el archivo `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`.
 La caché normalmente se lee en el inicio al buscar un comando y se escribe en un subproceso en segundo plano después de que se importa un módulo.
 
-Para cambiar la ubicación predeterminada de la caché, establezca la variable de entorno PSModuleAnalysisCachePath antes de iniciar PowerShell. Los cambios en esta variable de entorno solo afectarán a los procesos secundarios.
-El valor debe asignar un nombre a una ruta de acceso completa (nombre de archivo incluido) en la que PowerShell tiene permiso para crear y escribir archivos.
-Para deshabilitar la caché del archivo, establezca este valor en una ubicación no válida, como por ejemplo:
+Para cambiar la ubicación predeterminada de la memoria caché, establezca la variable de entorno `$env:PSModuleAnalysisCachePath` antes de iniciar PowerShell. Los cambios en esta variable de entorno solo afectarán a los procesos secundarios. El valor debe asignar un nombre a una ruta de acceso completa (nombre de archivo incluido) en la que PowerShell tiene permiso para crear y escribir archivos. Para deshabilitar la caché del archivo, establezca este valor en una ubicación no válida, como por ejemplo:
 
 ```PowerShell
 $env:PSModuleAnalysisCachePath = 'nul'
 ```
 
-Esto establece la ruta de acceso en un dispositivo no válido. Si PowerShell no puede escribir en la ruta de acceso, se devuelve ningún error, pero puede se pueden ver informes del error a través de un seguimiento:
+Esto establece la ruta de acceso en un dispositivo no válido. Si PowerShell no puede escribir en la ruta de acceso, no se devuelve ningún error, pero se pueden ver informes del error a través de un seguimiento:
 
 ```PowerShell
 Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
 ```
 
 Al escribir en la caché, PowerShell buscará si hay módulos que no existen, con el fin de evitar que la caché sea demasiado grande.
-A veces no se desea que se realicen estas comprobaciones, en cuyo caso se pueden desactivar estableciendo
+A veces no interesa que se realicen estas comprobaciones, en cuyo caso se pueden desactivar estableciendo:
 
 ```PowerShell
 $env:PSDisableModuleAnalysisCacheCleanup = 1
@@ -105,26 +103,20 @@ En WMF 5.1, `using module` se comporta de la misma forma que las restantes const
 
 En WMF 5.1:
 
-* Puede utilizar la `ModuleSpecification`tabla hash[ ](https://msdn.microsoft.com/en-us/library/jj136290(v=vs.85).aspx). Esta tabla hash tiene el mismo formato que `Get-Module -FullyQualifiedName`.
+* Puede usar la [tabla hash](https://msdn.microsoft.com/en-us/library/jj136290(v=vs.85).aspx) `ModuleSpecification`. Esta tabla hash tiene el mismo formato que `Get-Module -FullyQualifiedName`.
 
 **Ejemplo:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
 * Si hay varias versiones del módulo de multiplicar, PowerShell usa la **misma lógica de resolución** que `Import-Module` y no devuelve ningún error (el mismo comportamiento que `Import-Module` y `Import-DscResource`).
 
 
-
-
-
-
-
-
 ##Mejoras en Pester
-En WMF 5.1, se actualizó la versión de Pester que se incluye con PowerShell desde la versión 3.3.5 a 3.4.0, con la adición de confirmación de https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, lo que permite un mejor comportamiento para Pester en Nano. 
+En WMF 5.1, se actualizó la versión de Pester que se incluye con PowerShell de la versión 3.3.5 a la 3.4.0, con la adición de confirmación https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, lo que permite un mejor comportamiento para Pester en Nano Server. 
 
 Puede revisar los cambios en las versiones 3.3.5 a 3.4.0 inspeccionando el archivo ChangeLog.md en: https://github.com/pester/Pester/blob/master/CHANGELOG.md
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

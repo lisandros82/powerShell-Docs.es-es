@@ -19,6 +19,6 @@ En esta versión, hemos corregido los siguientes problemas conocidos de WMF 5.0:
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

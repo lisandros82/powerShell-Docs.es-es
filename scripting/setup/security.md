@@ -1,12 +1,18 @@
 ---
-title: Módulo de seguridad
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: security
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
-ms.assetid:
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 6bdf3f658ed75b48be6df217b6a0b4ad5951c935
+
 ---
+
 # Módulo de seguridad
 Esta sección contiene los temas de Ayuda del módulo **Microsoft.PowerShell.Security**. El módulo **Microsoft.PowerShell.Security** contiene los cmdlets y el [proveedor de certificados [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d) que administran las características de seguridad de Windows PowerShell, incluidas las directivas de ejecución. El módulo **Microsoft.PowerShell.Security** se instala con Windows PowerShell.
 
@@ -17,12 +23,14 @@ Esta sección contiene los temas de Ayuda del módulo **Microsoft.PowerShell.Sec
 
 [Proveedor de certificados [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d)
 
-## Consulte también
+## Véase también
 [Windows PowerShell 5.0](../core-powershell/core-modules/Windows-PowerShell-5.0.md)
-[Conceptos básicos de Windows PowerShell](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-[Scripting con Windows PowerShell](../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+[Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
+[Scripting con Windows PowerShell](../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

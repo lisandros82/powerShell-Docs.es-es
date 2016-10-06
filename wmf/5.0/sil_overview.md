@@ -11,6 +11,6 @@ Estos datos no se envían a Microsoft como parte de la funcionalidad de la carac
 Para más información y documentación acerca de los cmdlets de Registro de inventario de software, consulte los recursos en línea de Windows Server 2012 R2 en <http://technet.microsoft.com/library/dn383584.aspx>.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

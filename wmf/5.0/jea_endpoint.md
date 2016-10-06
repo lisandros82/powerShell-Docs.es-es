@@ -138,6 +138,6 @@ Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 Después de conectarse a la sesión de JEA, estará limitado a ejecutar la comandos de la lista de permitidos en las funcionalidades de rol a las que tenga acceso. Si intenta ejecutar cualquier comando no permitido para su rol, se producirá un error.
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

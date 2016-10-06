@@ -202,6 +202,6 @@ Ahora, el script de configuración generará el archivo MOF sin errores ni adver
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

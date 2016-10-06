@@ -222,7 +222,7 @@ InDesiredState    : True
 
 Tenga en cuenta que estos ejemplos están diseñados para ofrecerle una idea de lo que puede hacer con los datos del informe. Para obtener una introducción sobre cómo trabajar con JSON en PowerShell, vea [Playing with JSON and PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/) (Experimentos con JSON y PowerShell).
 
-## Consulte también
+## Véase también
 - [Configuración del administrador de configuración local](metaConfig.md)
 - [Configuración de un servidor de extracción web de DSC](pullServer.md)
 - [Configuración de un cliente de extracción mediante nombres de configuración](pullClientConfigNames.md)
@@ -230,6 +230,6 @@ Tenga en cuenta que estos ejemplos están diseñados para ofrecerle una idea de 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

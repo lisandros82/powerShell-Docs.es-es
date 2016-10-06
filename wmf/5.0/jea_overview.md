@@ -9,6 +9,6 @@ Para funcionar, JEA le permite crear puntos de conexión restringidos con una co
 2. El punto de conexión está bloqueado.  Esto significa que PowerShell se ejecuta en modo sin lenguaje.  Solo determinados comandos, scripts y ejecutables son visibles para el usuario.
 3. A los distintos usuarios que se conectan se les presenta un conjunto diferente de funcionalidades según la pertenencia a grupos.  Puede proporcionar a distintos roles distintas funcionalidades en el mismo punto de conexión.
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

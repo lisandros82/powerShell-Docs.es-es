@@ -5,7 +5,7 @@
 ### [Mejoras en la configuración de estado deseado (DSC)](5.1/DSC-improvements.md)
 ### [Mejoras en la consola de PowerShell](5.1/console-improvements.md)
 ### [Mejoras en el motor de PowerShell](5.1/engine-improvements.md)
-### [Mejoras en la administración de paquetes](5/1/package-management-improvements.md)
+### [Mejoras en la administración de paquetes](5.1/package-management-improvements.md)
 ### [Errores corregidos en WMF 5.1](5.1/bugfixes.md)
 ## [Instalación y configuración](5.1/install-configure.md)
 ## [Problemas conocidos](5.1/known-issues.md)
@@ -34,7 +34,7 @@
 ##### [Ayuda y soporte técnico para la configuración de DSC](5.0/dsc_confighelp.md)
 ##### [Mejoras de creación mediante PowerShell ISE](5.0/dsc_authoring.md)
 ##### [Tolerancia de recursos duplicados idénticos en una configuración](5.0/dsc_identicalduplicate.md)
-##### [La palabra clave Import-DscResource admite el parámetro -moduleversion](5.0/dsc_importdscresource.md)
+##### [La palabra clave Import-DscResource admite el parámetro -ModuleVersion](5.0/dsc_importdscresource.md)
 ##### [Compatibilidad de WOW64 con la palabra clave Configuration](5.0/dsc_wow64.md)
 #### [Recursos]()
 ##### [Recursos de DSC basados en clases](5.0/dsc_classbasedresource.md)
@@ -46,7 +46,7 @@
 ##### [Configurar el nodo con varios fragmentos de configuración](5.0/dsc_partialconfig.md)
 ###### [Soporte para los modos mixtos RefreshMode](5.0/dsc_partialconfig_mixedmode.md)
 ##### [Configurar el motor de DSC con el nuevo atributo](5.0/dsc_metaconfiguration.md)
-##### [Información detallada acerca del estado de LCM](5.0/dsc_lcmstate.md)
+##### [Información detallada sobre el estado de LCM](5.0/dsc_lcmstate.md)
 ##### [Las frecuencias de RefreshMode y ConfigurationMode no tienen que ser múltiplos una de la otra](5.0/dsc_freqnomultiple.md)
 ##### [Valor adicional de la propiedad RefreshMode](5.0/dsc_refreshmode.md)
 #### [Cmdlets]()
@@ -56,16 +56,16 @@
 ##### [Entregar un documento de configuración sin aplicar](5.0/dsc_publishconfig.md)
 ##### [Quitar documentos de DSC](5.0/dsc_removeconfigdoc.md)
 ##### [Estado coherente unificado y representación de estado](5.0/dsc_statestatus.md)
-##### [El cmdlet Set-DscLocalConfigurationManager admite el parámetro -force](5.0/dsc_setdsclcm.md)
+##### [El cmdlet Set-DscLocalConfigurationManager admite el parámetro -Force](5.0/dsc_setdsclcm.md)
 #### [Modo de extracción]()
 ##### [Extracción a petición de configuraciones de DSC](5.0/dsc_updateconfig.md)
 ##### [Separación de los identificadores de nodo y de configuración](5.0/dsc_nodeid.md)
-##### [Separación de los repositorios de informes, configuración y recursos](5.0/dsc_repository.md)
+##### [Separación de los repositorios de configuración, recursos e informes](5.0/dsc_repository.md)
 ##### [Notificar el estado de configuración a una ubicación central](5.0/dsc_reporting.md)
 ### [Auditar el uso de PowerShell mediante la transcripción y el registro](5.0/audit_overview.md)
 #### [Opciones de transcripción mejoradas](5.0/audit_transcript.md)
 #### [Seguimiento y registro de scripts](5.0/audit_script.md)
-#### [Cmdlets de sintaxis de mensajes de cifrado (CMS)](5.0/audit_cms.md)\
+#### [Cmdlets de sintaxis de mensajes de cifrado (CMS)](5.0/audit_cms.md)
 ### [Detección, instalación e inventario de software con PackageManagement](5.0/oneget_overview.md)
 #### [Cmdlets PackageManagement](5.0/oneget_cmdlets.md)
 ### [Detección, instalación e inventario del módulo de PowerShell con PowerShellGet](5.0/psget_module_overview.md)
@@ -75,7 +75,7 @@
 #### [Cmdlets de PowerShellGet para la administración de módulos](5.0/psget_modulecmdlets.md)
 ### [Detección, instalación y administración de scripts de PowerShell con PowerShellGet](5.0/psget_script_overview.md)
 #### [Cmdlets de PowerShellGet para la administración de scripts](5.0/psget_scriptcmdlets.md)
-### [Cmdlets nuevos y actualizados basados en los comentarios de la comunidad ](5.0/feedback_cmdlets.md)
+### [Cmdlets nuevos y actualizados basados en los comentarios de la comunidad](5.0/feedback_cmdlets.md)
 #### [Vínculos simbólicos mediante cmdlets Item](5.0/feedback_symbolic.md)
 #### [Cmdlets Archive](5.0/feedback_archive.md)
 #### [Cmdlets Clipboard](5.0/feedback_clipboard.md)
@@ -94,6 +94,6 @@
 ### [Registro de inventario de software (SIL)](5.0/sil_overview.md)
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 
