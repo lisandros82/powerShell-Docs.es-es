@@ -22,9 +22,9 @@ ms.openlocfilehash: 8e7dd69fc5ba29e719aec353afcac2471ecb2352
 
 | Versión de sistema operativo | [Versión preliminar de WMF 5.1*]() | [WMF 5.0]() | [WMF 4.0]() |  [WMF 3.0]() | [WMF 2.0]() |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
-| Windows Server 2016 | Se envía en la caja * | Se envía en la caja * |  |  |  |
-| Windows 10 | Se envía en la caja * | Se envía en la caja *  | | | |  
-| Windows Server 2012 R2| ?? | Sí | Se envía en la caja |  |  |
+| Windows Server 2016 | Se envía en la caja* | Se envía en la caja* |  |  |  |
+| Windows 10 | Se envía en la caja* | Se envía en la caja*  | | | |  
+| Windows Server 2012 R2| ?? | Sí | Se envía en la caja |  |  |
 | Windows 8.1 | ?? | Sí |  Se envía en la caja |  |  |
 | Windows Server 2012 | ?? | Sí | Sí |  Se envía en la caja | |
 | Windows 8 |  |  |  | Se envía en la caja | |
@@ -39,6 +39,6 @@ ms.openlocfilehash: 8e7dd69fc5ba29e719aec353afcac2471ecb2352
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 
