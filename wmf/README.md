@@ -47,7 +47,7 @@ Para más información acerca de las diversas mejoras en PowerShell y en otros c
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
 | Windows Server 2016 | Se envía en la caja* | Se envía en la caja* |  |  |  |
 | Windows 10 | Se envía en la caja* | Se envía en la caja*  | | | |  
-| Windows Server 2012 R2| ?? | Sí | Se envía en la caja |  |  |
+| Windows Server 2012 R2| ?? | Sí | Se envía en la caja |  |  |
 | Windows 8.1 | ?? | Sí |  Se envía en la caja |  |  |
 | Windows Server 2012 | ?? | Sí | Sí |  Se envía en la caja | |
 | Windows 8 |  |  |  | Se envía en la caja | |
@@ -62,6 +62,6 @@ Para más información acerca de las diversas mejoras en PowerShell y en otros c
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 
