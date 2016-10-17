@@ -1,7 +1,7 @@
 ---
 title: Recurso GroupSet de DSC
 ms.date: 2016-05-16
-keywords: powershell, DSC, built-in, resource
+keywords: recurso, integrado, DSC, PowerShell
 description: Proporciona un mecanismo para administrar grupos locales en el nodo de destino.
 ms.topic: article
 author: eslesar
@@ -86,6 +86,6 @@ GroupSetTest -ConfigurationData $cd
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

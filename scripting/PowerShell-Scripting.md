@@ -8,12 +8,26 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 32b4e11f150fe0374472d2d4c75f8de6c3575abb
-ms.openlocfilehash: 8ef9ea5b00c9c0ac0d14370a39d1ed7970e65cc3
+ms.sourcegitcommit: b38cfd053cc2356fa7ca99605dbd84190d342327
+ms.openlocfilehash: fc6307be4dafb378350b6d9667b2b6aca0e2e6d4
 
 ---
 
-#  Scripting de PowerShell
+#  PowerShell
+
+Windows PowerShell, basado en .NET Framework, es un lenguaje de scripting y shell de línea de comandos basado en tareas. Está diseñado específicamente para que los administradores del sistema y los usuarios avanzados automaticen rápidamente la administración de varios sistemas operativos (Linux, OSX, Unix y Windows) y los procesos relacionados con las aplicaciones que se ejecutan en dichos sistemas operativos.
+
+###  PowerShell es ahora de código abierto
+
+El código fuente base de PowerShell ahora está disponible en GitHub y admite las contribuciones de la comunidad. Consulte [PowerShell](https://github.com/powershell/powershell).
+
+Puede empezar con los fragmentos que necesita en [Get PowerShell](https://github.com/PowerShell/PowerShell#get-powershell) (Obtener PowerShell)
+o, si lo prefiere, con el paseo introductorio incluido en esta [introducción](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell).
+
+>  **Nota:**  
+>  Todos los vínculos de PowerShell en GitHub le llevarán a GitHub.
+
+#  Documentación
 
 La recopilación de documentación está organizada en 4 secciones principales:
 
@@ -34,20 +48,19 @@ En esta sección:
 -  Una serie de “[recetas básicas para &lt;usar la herramienta&gt;](getting-started/cookbooks/basic-cookbooks-reference.md)”, con instrucciones para ejecutar tareas estándar en los archivos, el sistema de archivos, el registro, los procesos, los servicios y otros temas habituales similares.
 -  Una guía con otras fuentes para [aprender a usar PowerShell](getting-started/more-powershell-learning.md).
 
-##  [Aspectos fundamentales de PowerShell](core-powershell/core-powershell.md)
-Esta sección contiene todas las guías detalladas de PowerShell y material de referencia.  
+##  [PowerShell común](core-powershell/core-powershell.md)
+Esta sección contiene todo el material de referencia de PowerShell.  
 Encuentre en esta sección:
--  La [guía de módulos principales de Windows PowerShell](core-powershell/core-modules.md)
--  La [guía del Entorno de scripting integrado (ISE) de PowerShell](core-powershell/ise-guide.md)
--  La [guía de la ventana de consola de PowerShell](core-powershell/console-guide.md)
--  La [guía de administración remota de PowerShell](core-powershell/Running-Remote-Commands.md)
--  La [guía de flujos de trabajo de PowerShell](core-powershell/workflows-guide.md)
--  La [guía de acceso web de PowerShell](core-powershell/web-access.md)
+-  Los [módulos comunes de PowerShell](core-powershell/core-modules.md)
+-  El [entorno de scripting integrado \(ISE\) de PowerShell](core-powershell/ise-guide.md)
+-  La [ventana de consola de PowerShell](core-powershell/console-guide.md)
+-  La [administración remota de PowerShell](core-powershell/Running-Remote-Commands.md)
+-  Los [flujos de trabajo de PowerShell](core-powershell/workflows-guide.md)
+-  El [acceso web de PowerShell](core-powershell/web-access.md)
 -  El [glosario de PowerShell](Windows-PowerShell-Glossary.md)
 
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

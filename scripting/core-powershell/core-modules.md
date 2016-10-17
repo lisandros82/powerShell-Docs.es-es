@@ -1,6 +1,21 @@
-#  La guía de módulos principales de Windows PowerShell
+---
+title: "módulos principales"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: ab536969fac8ded0e540da3eb138448b4f444f67
+ms.openlocfilehash: 3bee547fc53d1164d3cbf17f033083d4f1099ae7
 
-Los módulos principales de PowerShell proporcionan la funcionalidad básica de PowerShell.
+---
+
+#  Los módulos comunes de PowerShell
+
+Los módulos comunes de PowerShell proporcionan la funcionalidad básica de PowerShell.
 Las áreas principales que se tratan estos módulos son:
 
 -  [Módulo Archive](core-modules/Microsoft.PowerShell.Archive-Module.md)
@@ -21,6 +36,7 @@ Las áreas principales que se tratan estos módulos son:
 -  [Módulo Utility](core-modules/Microsoft.PowerShell.Utility-Module.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,12 +1,19 @@
 ---
-title: Módulo PSWorkflowUtility
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Módulo PSWorkflowUtility"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: c62a363a-caa2-4b6e-a079-d6e8543bc4c6
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 62cb6e90637373791e66ad1f94af085de00e4666
+
 ---
+
 # Módulo PSWorkflowUtility
 Esta sección contiene los temas de Ayuda del módulo **PSWorkflowUtility**; en ellos encontrará comandos con los que se administra la característica Workflow de Windows PowerShell. El módulo **PSWorkflowUtility** se instala con Windows PowerShell.
 
@@ -19,14 +26,16 @@ Esta sección contiene los temas de Ayuda del módulo **PSWorkflowUtility**; en 
 
 [about_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)
 
-## Consulte también
+## Véase también
 [Introducción al flujo de trabajo de Windows PowerShell](https://technet.microsoft.com/en-us/library/jj134242.aspx)
-[Escribir un flujo de trabajo de Windows PowerShell](https://technet.microsoft.com/en-us/library/jj574157.aspx)
+[Writing a Windows PowerShell Workflow (Escribir un flujo de trabajo de Windows PowerShell)](https://technet.microsoft.com/en-us/library/jj574157.aspx)
 [Windows PowerShell 5.0](../core-modules/Windows-PowerShell-5.0.md)
 [Acerca de temas principales de Windows PowerShell](../core-modules/Windows-PowerShell-Core-About-Topics.md)
-[Scripting con Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+[Scripting con Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

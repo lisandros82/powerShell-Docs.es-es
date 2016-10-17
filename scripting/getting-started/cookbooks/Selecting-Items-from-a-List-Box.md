@@ -1,12 +1,19 @@
 ---
 title: Seleccionar elementos de un cuadro de lista
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 7e8fd05cfedd500c51f2d7e4f6adbb7d1f27cb00
+
 ---
+
 # Seleccionar elementos de un cuadro de lista
 Use Windows PowerShell 3.0 (y versiones posteriores) para crear un cuadro de diálogo donde los usuarios puedan seleccionar elementos de un control de cuadro de lista.
 
@@ -172,13 +179,14 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## Consulte también
-[Hey Scripting Guy: Why don’t these PowerShell GUI examples work? (Hey Scripting Guy: ¿Por qué estos ejemplos de GUI de PowerShell no funcionan?)](http://go.microsoft.com/fwlink/?LinkId=506644)
+## Véase también
+[Hey Scripting Guy: Why don't these PowerShell GUI examples work? (Hey Scripting Guy: ¿Por qué no funcionan estos ejemplos de GUI de PowerShell?)](http://go.microsoft.com/fwlink/?LinkId=506644)
 [GitHub: Dave Wyatt's WinFormsExampleUpdates (GitHub: WinFormsExampleUpdates de Dave Wyatt)](https://github.com/dlwyatt/WinFormsExampleUpdates)
 [Windows PowerShell Tip of the Week: Selecting Items from a List Box (Sugerencia de la semana de Windows PowerShell: Seleccionar elementos de un cuadro de lista)](http://technet.microsoft.com/library/ff730949.aspx)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

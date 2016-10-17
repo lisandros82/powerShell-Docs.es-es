@@ -1,12 +1,19 @@
 ---
 title: El objeto PowerShellTabCollection
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 4456b1e165130fd52249ffdbd7c22ff591061a8e
+
 ---
+
 # El objeto PowerShellTabCollection
   El objeto de colección **PowerShellTab** es una colección de objetos **PowerShellTab**. Cada objeto **PowerShellTab** funciona como un entorno de runtime independiente. Es una instancia de la clase Microsoft.PowerShell.Host.ISE.PowerShellTabs. Un ejemplo es el objeto **$psISE.PowerShellTabs**.
 
@@ -28,7 +35,7 @@ $newTab.DisplayName="Brand New Tab"
  Quita la pestaña especificada por el parámetro **psTab**.
 
  **psTab**
- La pestaña de PowerShell que se quitará.
+ Pestaña de PowerShell que se quitará.
 
 ```
 
@@ -45,7 +52,7 @@ $psISE.PowerShellTabs.Remove($newTab)
  Selecciona la pestaña de PowerShell especificada por el parámetro **psTab** para que sea la pestaña activa de PowerShell.
 
  **psTab**
- La pestaña de PowerShell que se seleccionará.
+ Pestaña de PowerShell que se seleccionará.
 
 ```
 # Save the current tab in a variable and rename it
@@ -58,7 +65,7 @@ $newTab.DisplayName="Brand New Tab"
 $psISE.PowerShellTabs.SelectedPowerShellTab=$oldtab
 ```
 
-## Consulte también
+## Véase también
  [El objeto PowerShellTab](The-PowerShellTab-Object.md) 
  [El modelo de objetos de scripting de ISE de Windows PowerShell](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
  [Referencia del modelo de objetos de ISE de Windows PowerShell](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
@@ -67,6 +74,7 @@ $psISE.PowerShellTabs.SelectedPowerShellTab=$oldtab
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 
