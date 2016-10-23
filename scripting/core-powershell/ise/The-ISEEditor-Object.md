@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: a735582afc1293108cfa16d4137648e0e65b564f
+ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
+ms.openlocfilehash: 9453e0ec5ce2c43a3f140e70db6f30e55c211d64
 
 ---
 
@@ -233,16 +233,16 @@ $myEditor.InsertText($selection.ToLower())
 ```
 
 ## Véase también
- [The ISEFile Object (El objeto ISEFile)](The-ISEFile-Object.md) 
- [The PowerShellTab Object (El objeto PowerShellTab)](The-PowerShellTab-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model (El modelo de objetos de scripting de Windows PowerShell ISE)](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference (Referencia del modelo de objetos de Windows PowerShell ISE)](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [La jerarquía del modelo de objetos de ISE](The-ISE-Object-Model-Hierarchy.md)
+- [El objeto ISEFile](The-ISEFile-Object.md) 
+- [El objeto PowerShellTab](The-PowerShellTab-Object.md) 
+- [El modelo de objetos de scripting de ISE de Windows PowerShell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Referencia del modelo de objetos de ISE de Windows PowerShell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [La jerarquía del modelo de objetos de ISE](The-ISE-Object-Model-Hierarchy.md)
 
   
 
 
 
-<!--HONumber=Oct16_HO2-->
+<!--HONumber=Oct16_HO3-->
 
 
