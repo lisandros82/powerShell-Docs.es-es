@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_faqs
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 96d38c487a311852a0f670b7d3de4929fab68e4d
+
+---
+
 # Preguntas más frecuentes
 
 ## ¿Qué es un módulo de PowerShell?
@@ -158,6 +175,9 @@ Consulte [Administrar propietarios de elementos en PowerShellGallery.com](Managi
 
 Recomendamos que la comunidad de PowerShell colabore para resolver los conflictos que puedan surgir entre los propietarios de elementos.  Hemos diseñado un [proceso de resolución de conflictos](psgallery_dispute_resolution.md) que le pedimos que siga antes de que tengan que intervenir los administradores de PowerShellGallery.com.
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

@@ -1,3 +1,19 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: psgalleryint_status
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 49f15c88a3bb0e52ed53555f8f59737a622a3b87
+
+---
 
 Estado de la Galería de PowerShell
 =========================
@@ -11,6 +27,7 @@ __Pasos siguientes__: si ha usado el vínculo Póngase en contacto con nosotros 
 
 
 
-<!--HONumber=Sep16_HO2-->
+
+<!--HONumber=Oct16_HO2-->
 
 

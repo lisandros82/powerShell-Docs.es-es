@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_dispute_resolution
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 6d7015a14f0d0a75bc28e201dceefe6c9c682b31
+
+---
+
 # Resolución de conflictos
 
 Este documento contiene el proceso recomendado de resolución de conflictos para que los miembros de la comunidad ayuden a resolver conflictos con otros editores de Galería de PowerShell.
@@ -29,6 +46,8 @@ Si detecta un elemento que infringe cualquiera de los puntos anteriores, haga cl
 **Esta directiva está sujeta a cambios a la entera discreción de la Galería de PowerShell.**
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

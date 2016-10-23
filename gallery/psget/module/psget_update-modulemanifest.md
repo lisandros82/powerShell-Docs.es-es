@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: psget_update modulemanifest
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 9ade4e89a28b777266f48556c910092bfab67227
+
+---
+
 # Update-ModuleManifest
 Actualiza un archivo de manifiesto de módulo.
 
@@ -6,7 +23,7 @@ Actualiza un archivo de manifiesto de módulo.
 El cmdlet Update-ModuleManifest actualiza un archivo de manifiesto de módulo (.psd1).
 
 ### Notas
-    - DscResourcesToExport is only supported on the latest PowerShell version 5.0. We won’t be able to update the field if you are running on lower versions of PowerShell.
+    - DscResourcesToExport solo se admite en la versión más reciente de PowerShell 5.0. No podremos actualizar el campo si está ejecutando versiones anteriores de PowerShell.
 
 ## Sintaxis de cmdlet
 ```powershell
@@ -107,6 +124,7 @@ PrivateData = @{
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Oct16_HO2-->
 
 

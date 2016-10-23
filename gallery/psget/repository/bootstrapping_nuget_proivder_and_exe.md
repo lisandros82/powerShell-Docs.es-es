@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: bootstrapping_nuget_proivder_and_exe
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 0e0e1287dbe0912e90dfeabee8e22cdf78d9e82a
+
+---
+
 # Arrancar el proveedor de NuGet y NuGet.exe para operaciones de publicación con un solo mensaje de solicitud y arrancar solo el proveedor de NuGet para operaciones que no son de publicación
 
 NuGet.exe se ha quitado del proveedor más reciente de NuGet. Para publicar un módulo o un script, PowerShellGet necesita NuGet.exe para crear y publicar un archivo .nupkg en el repositorio. Se necesita el proveedor de NuGet para operaciones que no son de publicación, como buscar, instalar, actualizar y guardar.
@@ -84,6 +101,9 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'C:\LocalGallery'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

@@ -1,8 +1,25 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_status
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 69df41ae0a9dfd9fb71655cf6334f60f1d39ae94
+
+---
+
 Estado de la Galería de PowerShell
 =========================
 
 
-## 10/8/2016 - Resuelto: No se pueden enviar correos electrónicos a cgadmin@microsoft.com
+## 10/8/2016 - Resuelto: no se pueden enviar correos electrónicos a cgadmin@microsoft.com
 
 __Resumen del impacto__: entre los días 5/8/2016 y 10/8/2016, los clientes no pudieron enviar correos electrónicos a cgadmin@microsoft.com ni usar la característica Póngase en contacto con nosotros.  
 __Causa principal__: los ingenieros identificaron que la causa era un cambio de configuración de la cuenta de correo electrónico.  
@@ -60,6 +77,8 @@ __Mitigación__: los ingenieros han deshabilitado Azure CDN en la Galería de Po
 __Pasos siguientes__: investigar la causa principal subyacente y desarrollar una solución para evitar incidencias futuras.
 
 
-<!--HONumber=Sep16_HO2-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

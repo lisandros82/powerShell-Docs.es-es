@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_items_tab
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 6edf1451cb869f0b9400b353b3143c99c3568382
+
+---
+
 Pestaña Elementos
 ==========
 
@@ -35,6 +52,9 @@ La lista desplegable Ordenar por permite a los usuarios ordenar los resultados s
 El cuadro de búsqueda permite a los usuarios buscar elementos por palabras clave.  
 Consulte [Search Syntax](./psgallery_search_syntax.md) (Sintaxis de búsqueda) para obtener más información.
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

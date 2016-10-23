@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: Administrar propietarios de elementos
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 00fe57762c6b2bb690255ecaea642f97124f4328
+
+---
+
 # Administrar propietarios de elementos
 
 La propiedad de un elemento en la Galería de PowerShell está definida por la persona que publicó el elemento en la Galería.
@@ -67,6 +84,9 @@ Si llegamos a la conclusión de que usted debe ser el propietario del elemento, 
 Solo lo haremos después de comprobar que debe ser propietario. Este proceso de comprobación varía según las circunstancias.
 En ocasiones, usaremos la dirección URL del proyecto del elemento para ponernos en contacto con el propietario del proyecto, pero también podemos usar Twitter, el correo electrónico u otros medios para ponernos en contacto con el propietario del proyecto.
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 
