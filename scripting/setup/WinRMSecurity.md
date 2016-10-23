@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 67ef350559f9b3d17232f3c93d67634b3e939c60
-ms.openlocfilehash: b1addddd50368fadcbb2581673d3ebc7cad8e32a
+ms.sourcegitcommit: 4ddd5099ce33263d43dcbad0930e654b573a8937
+ms.openlocfilehash: fa7e5c84ac82fa72836536ece507f1751e099077
 
 ---
 
@@ -86,10 +86,6 @@ Este es el modo más seguro de autenticación, pero dado que el equipo remoto no
 
 Hay varias formas de evitar este problema:
 
-### Delegación limitada de Kerberos
-
-Para servidores de confianza alta, puede habilitar [Delegación limitada de Kerberos](https://technet.microsoft.com/en-us/library/cc995228.aspx). Esto permite que el servidor remoto suplante el usuario autenticado en una lista especificada de equipos y servicios.
-
 ### Confianza entre equipos remotos
 
 Si confía en los usuarios conectados de forma remota a *Server1* a los recursos de *Server2*, puede conceder a *Server1* acceso explícito a esos recursos.
@@ -121,6 +117,6 @@ Para obtener más información acerca de los ataques de robo de credenciales, co
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO2-->
 
 
