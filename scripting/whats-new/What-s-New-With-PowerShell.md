@@ -8,13 +8,13 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: edb3be980d23cafb8c9b9923a7153308481e6c67
+ms.sourcegitcommit: 18949229d4d9e3867cdc265c3fd958d2598186b4
+ms.openlocfilehash: 77ac8a58f87371a176ca7a3613c1f319aa69baff
 
 ---
 
 # Novedades de PowerShell
-Windows PowerShell® 5.0 incluye nuevas características importantes que amplían y mejoran su uso, y permiten controlar y administrar entornos basados en Windows de forma más sencilla y completa.
+Windows PowerShell® 5.0 incluye nuevas características importantes que amplían y mejoran su uso, y permiten controlar y administrar entornos basados en Windows de forma más sencilla y completa.  Las principales mejoras se encuentran en las áreas de Configuración de estado deseado, seguridad, rendimiento, comunicación remota y mejoras del lenguaje.
 
 Windows PowerShell 5.0 es compatible con versiones anteriores. Los cmdlets, proveedores, módulos, complementos, scripts, funciones y perfiles diseñados para Windows PowerShell 4.0, Windows PowerShell 3.0 y Windows PowerShell 2.0 suelen funcionar en Windows PowerShell 5.0 sin tener que cambiar nada.
 
@@ -35,6 +35,6 @@ Windows PowerShell 5.0 está instalado de manera predeterminada en Windows Serve
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 

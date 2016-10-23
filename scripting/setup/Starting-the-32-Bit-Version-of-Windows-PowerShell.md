@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 12b31890-2609-4a76-8c24-0ebe78084f50
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
+ms.sourcegitcommit: fa0a541965b4121b8e8ac677b3c38e6f316b4553
+ms.openlocfilehash: 4e6a0e7f8935b905d1cb19576541d1b532fcba21
 
 ---
 
@@ -21,7 +21,7 @@ Sin embargo, en ocasiones deberá ejecutar **Windows PowerShell (x86)**, como cu
 
 Para iniciar una versión de 32 bits de Windows PowerShell, use uno de los procedimientos siguientes.
 
-#### In Windows Server® 2012 R2
+#### En Windows Server® 2012 R2
 
 -   En la pantalla **Inicio**, escriba **Windows PowerShell (x86)**. Haga clic en el icono **Windows PowerShell x86**.
 
@@ -31,7 +31,7 @@ Para iniciar una versión de 32 bits de Windows PowerShell, use uno de los proce
 
 -   Mediante la línea de comandos, escriba: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### En Windows Server 2012
+#### En Windows Server® 2012
 
 -   En la página **Inicio**, escriba **Powershell** y, después, haga clic en **Windows PowerShell (x86)**.
 
@@ -41,7 +41,7 @@ Para iniciar una versión de 32 bits de Windows PowerShell, use uno de los proce
 
 -   Mediante la línea de comandos, escriba: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### En Windows 8.1
+#### En Windows® 8.1
 
 -   En la pantalla **Inicio**, escriba **Windows PowerShell (x86)**. Haga clic en el icono **Windows PowerShell x86**.
 
@@ -51,7 +51,7 @@ Para iniciar una versión de 32 bits de Windows PowerShell, use uno de los proce
    
 -   Mediante la línea de comandos, escriba: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### En Windows 8
+#### En Windows® 8
 
 -   En la pantalla **Inicio**, mueva el cursor a la esquina superior derecha, haga clic en **Configuración**, haga clic en **Mosaicos** y, a continuación, mueva el control deslizante **Mostrar herramientas administrativas** a Sí. A continuación, escriba **PowerShell** y haga clic en **Windows PowerShell (x86)**.
 
@@ -63,6 +63,6 @@ Para iniciar una versión de 32 bits de Windows PowerShell, use uno de los proce
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 

@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: a5f3025ff222d4a27c0da074df9e84d82c51a46f
-ms.openlocfilehash: 7bbfc31fdebdde83ac1784373b51af40b1dc9492
+ms.sourcegitcommit: 8e486891a4e5db20389d6ae65d00c42e1308af35
+ms.openlocfilehash: 4ab20cdcac6f10dc9ecab6d85b38f413e0ade8b0
 
 ---
 
@@ -150,6 +150,8 @@ Una vez completada la configuración del servidor de incorporación de cambios, 
 ### Formato del paquete de módulo de recursos de DSC
 Cada módulo de recursos se debe comprimir y se le debe asignar un nombre de acuerdo con el siguiente patrón **{Module Name}_{Module Version}.zip**. Por ejemplo, un módulo denominado xWebAdminstration con una versión de módulo de 3.1.2.0 se denominaría 'xWebAdministration_3.2.1.0.zip'. Cada versión de un módulo debe incluirse en un solo archivo ZIP. Dado que solo hay una versión de un recurso en cada archivo ZIP, no se admite el formato de módulo que se agrega en WMF 5.0 con compatibilidad con varias versiones de módulo en un único directorio. Esto significa que antes de empaquetar los módulos de recursos de DSC para su uso con el servidor de incorporación de cambios, deberá realizar un pequeño cambio en la estructura de directorios. El formato predeterminado de los módulos que contienen recursos de DSC en WMF 5.0 es '{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'. Antes de empaquetar el servidor de extracción, quite la carpeta **{Module version}** para que la ruta de acceso se convierta en '{Module Folder}\DscResources\{DSC Resource Folder}\'. Con este cambio, comprima la carpeta según lo descrito anteriormente y coloque estos archivos ZIP en la carpeta **ModulePath**.
 
+Use `new-dscchecksum {module zip file}` para crear un archivo de suma de comprobación para el módulo que acaba de agregar.
+
 ### Formato de archivo MOF de configuración 
 Un archivo de configuración MOF debe emparejarse con un archivo de suma de comprobación para que un LCM de un nodo de destino pueda validar la configuración. Para crear una suma de comprobación, llame al cmdlet [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx). El cmdlet toma un parámetro **Path** que especifica la carpeta donde se encuentra el MOF de configuración. El cmdlet crea un archivo de suma de comprobación denominado `ConfigurationMOFName.mof.checksum`, donde `ConfigurationMOFName` es el nombre del archivo mof de configuración. Si hay más de un archivo MOF de configuración en la carpeta especificada, se crea una suma de comprobación para cada una de las configuraciones de la carpeta. Coloque los archivos MOF y sus archivos asociados de suma de comprobación en la carpeta **ConfigurationPath**.
 
@@ -187,6 +189,6 @@ En los temas siguientes se describe en detalle cómo configurar los clientes de 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO2-->
 
 

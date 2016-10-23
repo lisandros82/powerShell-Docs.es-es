@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
 translationtype: Human Translation
-ms.sourcegitcommit: 457451343b51891e336b0df6f979c285fb6144eb
-ms.openlocfilehash: 0a8f19693085b9b878fae60953a2cdc358ba8f4c
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 575ee3b8279ad50920df17ff92d4f65467d83830
 
 ---
 
@@ -54,7 +54,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  Selecciona la pestaña de PowerShell que el parámetro **psTab** especifica.
 
- **psTab** (Microsoft.PowerShell.Host.ISE.PowerShellTab). La petaña de PowerShell que se seleccionará.
+ **psTab** (Microsoft.PowerShell.Host.ISE.PowerShellTab). La pestaña de PowerShell que se seleccionará.
 
 ```PowerShell
       $newTab = $psISE.PowerShellTabs.Add()
@@ -87,6 +87,6 @@ $psISE.PowerShellTabs.Remove($newTab)
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 

@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 13fdac5369d70289d7a0b5115a04879f707e47fc
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 4334a1ff099072c2287af299d65caed3f16032fe
 
 ---
 
@@ -117,7 +117,7 @@ $UninstallableApplications = Get-ChildItem -Path Uninstall:
 ```
 
 > [!NOTE]
-> Aquí usamos un nombre de variable largo para mayor claridad. En la realidad, no es necesario usar nombres largos. Aunque se puede recurrir a la finalización con tabulación en los nombres de variables, también se pueden usar nombres de 1–2 caracteres para acelerar el proceso. Los nombres más largos y descriptivos son muy útiles cuando se está desarrollando código para reutilizarlo.
+> Aquí usamos un nombre de variable largo para mayor claridad. En la realidad, no es necesario usar nombres largos. Aunque se puede recurrir a la finalización con tabulación en los nombres de variables, también se pueden usar nombres de 1-2 caracteres para acelerar el proceso. Los nombres más largos y descriptivos son muy útiles cuando se está desarrollando código para reutilizarlo.
 
 Para ver los valores de las entradas del Registro en las claves del Registro bajo Uninstall, use el método GetValue en las claves del Registro. El valor del método es el nombre de la entrada del Registro.
 
@@ -186,6 +186,6 @@ Para actualizar una aplicación, es necesario conocer su nombre y la ruta de acc
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 

@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: c1744841e23aa9c2fedf3eb92230ef422c36f0cd
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 9063e17928c433db8c3c9d26d41d31c2675e413c
 
 ---
 
 # El objeto ISEFile
-  Un objeto **ISEFile** representa un archivo en el Entorno de scripting integrado (ISE) de Windows PowerShellÂ®. Es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEFile. Este tema enumera sus métodos de miembro y propiedades de miembro. **$psISE.CurrentFile** y los archivos de la colección de archivos en una pestaña de PowerShell son todas las instancias de la clase Microsoft.PowerShell.Host.ISE.ISEFile.
+  Un objeto **ISEFile** representa un archivo en el Entorno de scripting integrado (ISE) de Windows PowerShell®. Es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEFile. Este tema enumera sus métodos de miembro y propiedades de miembro. **$psISE.CurrentFile** y los archivos de la colección de archivos en una pestaña de PowerShell son todas las instancias de la clase Microsoft.PowerShell.Host.ISE.ISEFile.
 
 ## Métodos
 
@@ -24,8 +24,8 @@ ms.openlocfilehash: c1744841e23aa9c2fedf3eb92230ef422c36f0cd
 
  Guarda el archivo en disco.
 
- **\[saveEncoding\]**: [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) optional
-. Un parámetro de codificación de carácter opcional que se utilizará para el archivo guardado. El valor predeterminado es **UTF8**.
+ **\[saveEncoding\]**: [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) opcional.
+ Un parámetro de codificación de carácter opcional que se usará para el archivo guardado. El valor predeterminado es **UTF8**.
 
  **Excepciones**
  -   **System.IO.IOException**: no se pudo guardar el archivo.
@@ -50,8 +50,8 @@ $myfile.Encoding
 
  **filename**: cadena. El nombre que se utilizará para guardar el archivo.
 
- **\[saveEncoding\]**: [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) optional
-. Un parámetro de codificación de carácter opcional que se utilizará para el archivo guardado. El valor predeterminado es **UTF8**.
+ **\[saveEncoding\]**: [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) opcional.
+ Un parámetro de codificación de carácter opcional que se usará para el archivo guardado. El valor predeterminado es **UTF8**.
 
  **Excepciones**
  -   **System.ArgumentNullException**: el parámetro **nombre_de_archivo** es null.
@@ -150,6 +150,6 @@ $psISE.CurrentFile.IsUntitled
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 

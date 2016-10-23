@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: c1f285a1d1beb35c931c17f5944d7ec697cb152e
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: 09e9006286ca960efafe7badd250f0357b21f608
 
 ---
 
 # Explorar Windows PowerShell ISE
-Puede utilizar el Entorno de scripting integrado (ISE) de PowerShell® Windows para crear, ejecutar y depurar scripts y comandos. Windows PowerShell ISE consta de la barra de menús, las pestañas de Windows PowerShell, la barra de herramientas, las pestañas de script, un panel de scripts, un panel de consola, una barra de estado, un control deslizante de tamaño de texto y la ayuda contextual.
+Puede usar el Entorno de scripting integrado (ISE) de Windows PowerShell® para crear, ejecutar y depurar scripts y comandos. Windows PowerShell ISE consta de la barra de menús, las pestañas de Windows PowerShell, la barra de herramientas, las pestañas de script, un panel de scripts, un panel de consola, una barra de estado, un control deslizante de tamaño de texto y la ayuda contextual.
 
 > [!NOTE]
 > A partir de Windows PowerShell ISE 3.0, los paneles de comandos y de salida se combinan en un único panel de consola.
@@ -76,11 +76,11 @@ Aumenta o disminuye el tamaño del texto en la pantalla.
 La ayuda de Windows PowerShell ISE está disponible en la biblioteca de TechNet en Internet. Para abrir la Ayuda, haga clic en **Ayuda de Windows PowerShell ISE** en el menú **Ayuda** o presione la tecla F1 en cualquier lugar excepto cuando el cursor esté en el nombre de un cmdlet en el panel de scripts o en panel de consola. Desde el menú **Ayuda** también puede ejecutar el cmdlet Update-Help y mostrar la ventana Comandos, que le muestra todos los parámetros de un cmdlet para ayudarle a construir comandos, lo que permite rellenar los parámetros en un formulario fácil de usar.
 
 ## Véase también
-[Usar Windows PowerShell ISE](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [Usar Windows PowerShell ISE](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 

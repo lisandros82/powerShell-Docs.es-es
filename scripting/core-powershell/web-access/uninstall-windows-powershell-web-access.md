@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d54139714552943901f565a8525bb478ed308f09
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 ---
 
@@ -74,17 +74,17 @@ Si ha especificado su propio nombre de sitio web personalizado, agregue el pará
 
     -   En la pantalla **Inicio** de Windows, haga clic con el botón derecho en **Windows PowerShell** y, luego, en **Ejecutar como administrador**.
 
-2.  Escriba lo siguiente y luego presione **Entrar**, donde *computer_name* representa un servidor remoto del que desea quitar Windows PowerShell Web Access. El parámetro <span class="code">–Restart</span> reinicia automáticamente los servidores de destino, si es necesario para la eliminación.
+2.  Escriba lo siguiente y luego presione **Entrar**, donde *computer_name* representa un servidor remoto del que desea quitar Windows PowerShell Web Access. El parámetro <span class="code">-Restart</span> reinicia automáticamente los servidores de destino, si es necesario para la eliminación.
 
     [Copiar](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_7b534520-f292-471f-89e3-a1079c03e369'); "Copiar al Portapapeles.")
 
-        Uninstall-WindowsFeature –Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
+        Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
 
     Para quitar roles y características de un VHD sin conexión, debe agregar los parámetros <span class="code">-ComputerName</span> y <span class="code">-VHD</span> . El parámetro <span class="code">-ComputerName</span> contiene el nombre del servidor en el que se montará el VHD y el parámetro <span class="code">-VHD</span> contiene la ruta de acceso al archivo VHD en el servidor especificado.
 
     [Copiar](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_5d8f91ee-b91a-4653-b7df-e745187fd72d'); "Copiar al Portapapeles.")
 
-        Uninstall-WindowsFeature –Name WindowsPowerShellWebAccess –VHD <path> -ComputerName <computer_name> -Restart
+        Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -Restart
 
 3.  Para comprobar la eliminación de Windows PowerShell Web Access una vez finalizada, abra la página **Todos los servidores** del Administrador del servidor, seleccione un servidor del cual se haya quitado la característica y visualice el icono **Roles y características** en la página del servidor seleccionado. También puede ejecutar el cmdlet <span class="code">Get-WindowsFeature</span> destinado al servidor seleccionado (Get-WindowsFeature -ComputerName &lt;*computer\_name*&gt;) para ver una lista de los roles y las características instalados en el servidor.
 
@@ -219,6 +219,6 @@ Los scripts y el código de terceros vinculados a este sitio web o a los que est
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 

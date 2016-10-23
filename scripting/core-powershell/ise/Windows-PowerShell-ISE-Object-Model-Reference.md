@@ -9,15 +9,15 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 9bfb74ba438dd27fc2799263fc12a20edd2bb8cb
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: c60a7adb5cce55392d5dc09c7ca357bfc4c73e15
 
 ---
 
 # Referencia del modelo de objetos de ISE de Windows PowerShell
   
 ## Referencia del modelo de objetos
- En esta sección se brinda una referencia sobre las clases subyacentes que definen los diversos objetos en Entorno de scripting integrado (ISE) de Windows PowerShell®. Para ver los objetos organizados en la jerarquía, consulte [La jerarquía del modelo de objetos de ISE](The-ISE-Object-Model-Hierarchy.md).
+ En esta sección, se proporciona una referencia sobre las clases subyacentes que definen los diversos objetos en Entorno de scripting integrado (ISE) de Windows PowerShell®. Para ver los objetos organizados en la jerarquía, consulte [La jerarquía del modelo de objetos de ISE](The-ISE-Object-Model-Hierarchy.md).
 
  [El objeto ISEAddOnTool](The-ISEAddOnTool-Object.md)
  Ejemplos: $psISE.CurrentVisibleHorizontalTool, $psISE.CurrentVisibleVerticalTool.
@@ -51,12 +51,12 @@ ms.openlocfilehash: 9bfb74ba438dd27fc2799263fc12a20edd2bb8cb
  Ejemplo: $psISE.PowerShellTabs.
 
 ## Véase también
- [El modelo de objetos de scripting de ISE de Windows PowerShell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [El modelo de objetos de scripting de ISE de Windows PowerShell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO2-->
 
 

@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 6e58c298725254a84819856070b9702340fcf81d
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: c378e9f38c6cc9ea94ce07c320d7a42dd3f102b5
 
 ---
 
@@ -150,11 +150,11 @@ Windows PowerShell ISE admite las siguientes opciones de codificación: ASCII, B
 Windows PowerShell ISE no cambia la codificación de los scripts creados en otros editores, aunque se usen los comandos Guardar o Guardar como en Windows PowerShell ISE.
 
 ## Véase también
-[Usar Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
+- [Usar Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 

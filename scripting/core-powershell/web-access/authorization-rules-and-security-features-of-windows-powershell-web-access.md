@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: dc50a729855a71d61c187da9d698bd294f740546
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: f62b1e0ec9f26e1b2bcb364c78a2ce39467655a5
 
 ---
 
@@ -212,15 +212,15 @@ Los cmdlets de Windows PowerShell Web Access admiten un carácter comodín: un a
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_1079478f-cd51-4d35-8022-4b532a9d57a4'); "Copy to clipboard.")
 
-        Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
+        Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
     Esta regla de autorización concede a un usuario específico acceso a un equipo de la red al que tiene acceso normalmente, con acceso a una configuración de sesión determinada en el ámbito de las necesidades de cmdlet y scripting típicas del usuario. En el siguiente ejemplo, se concede acceso a un usuario llamado <span class="code">JSmith</span> en el dominio <span class="code">Contoso</span> para administrar el equipo <span class="code">Contoso_214</span> y usar una configuración de sesión llamada <span class="code">NewAdminsOnly</span>.
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4e760377-e401-4ef4-988f-7a0aec1b2a90'); "Copy to clipboard.")
 
-        Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
+        Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  Compruebe que se ha creado la regla ejecutando el cmdlet **Get-PswaAuthorizationRule** o **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;. Por ejemplo, **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**.
+4.  Compruebe que se ha creado la regla ejecutando el cmdlet **Get-PswaAuthorizationRule** o **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;. Por ejemplo, **Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**.
 
 #### Para quitar una regla de autorización
 
@@ -265,7 +265,7 @@ Cada sesión de Windows PowerShell usa una configuración de sesión. Si esta no
 
 -   Algunos administradores proporcionan a determinados usuarios más acceso que a otros. Por ejemplo, un administrador crea dos grupos de usuarios, **Admins** y **BasicSupport**. También crea un punto de conexión con un espacio de ejecución restringido llamado **PswaEndpoint** y define las dos reglas siguientes: **Admins,\*,\*** y **BasicSupport,\*,PswaEndpoint**. La primera regla proporciona a todos los usuarios del grupo **Admin** acceso a todos los equipos y la segunda regla proporciona a todos los usuarios del grupo **BasicSupport** acceso únicamente a los equipos con **PswaEndpoint**.
 
--   Un administrador ha configurado un entorno de prueba privado y desea conceder a todos los usuarios de red autorizados acceso a todos los equipos de la red a los que tienen acceso normalmente, con acceso a todas las configuraciones de sesión a las que tienen acceso normalmente. Como se trata de un entorno de prueba privado, el administrador crea una regla de autorización que no es segura. El administrador ejecuta el cmdlet <span class="code">Add-PswaAuthorizationRule \* \* \*</span>, que usa el carácter comodín **\*** para representar a todos los usuarios, todos los equipos y todas las configuraciones. Esta regla es equivalente a la siguiente: <span class="code">Add-PswaAuthorizationRule –UserName \* -ComputerName \* -ConfigurationName \*</span>.
+-   Un administrador ha configurado un entorno de prueba privado y desea conceder a todos los usuarios de red autorizados acceso a todos los equipos de la red a los que tienen acceso normalmente, con acceso a todas las configuraciones de sesión a las que tienen acceso normalmente. Como se trata de un entorno de prueba privado, el administrador crea una regla de autorización que no es segura. El administrador ejecuta el cmdlet <span class="code">Add-PswaAuthorizationRule \* \* \*</span>, que usa el carácter comodín **\*** para representar a todos los usuarios, todos los equipos y todas las configuraciones. Esta regla es equivalente a la siguiente: <span class="code">Add-PswaAuthorizationRule -UserName \* -ComputerName \* -ConfigurationName \*</span>.
 
     <table>
     <colgroup>
@@ -287,7 +287,7 @@ Cada sesión de Windows PowerShell usa una configuración de sesión. Si esta no
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_8d183d3d-1c19-44b8-9297-530b0efc7c79'); "Copy to clipboard.")
 
-        Add-PswaAuthorizationRule –userName PswaServer\chrisLocal –computerName srv1.contoso.com –configurationName Microsoft.PowerShell
+        Add-PswaAuthorizationRule -userName PswaServer\chrisLocal -computerName srv1.contoso.com -configurationName Microsoft.PowerShell
 
     En el ejemplo de regla anterior, se autentica a Chris en el servidor de puerta de enlace y, a continuación, se autoriza su acceso a *srv1*. En la página de inicio de sesión, Chris debe proporcionar un segundo conjunto de credenciales en el área **Configuración de conexión opcional** (*contoso\\chris*). El servidor de puerta de enlace usa el conjunto de credenciales adicional para autenticarlo en el equipo de destino, *srv1.contoso.com*.
 
@@ -428,6 +428,6 @@ Los scripts y el código de terceros vinculados a este sitio web o a los que est
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 

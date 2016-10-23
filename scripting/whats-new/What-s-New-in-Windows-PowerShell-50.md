@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 666590df32157a7477d385961dd5665094275868
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 9e012dd8218a256e4236c2263babefd29ecdb016
 
 ---
 
@@ -38,7 +38,7 @@ Muchas actualizaciones y mejoras en la configuración de estado deseado (DSC) de
 
     -   [Get-DscResource](http://technet.microsoft.com/library/dn521625.aspx) es más rápido (especialmente en el ISE).
 
-    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) tiene un nuevo parámetro, –UseExisting, que vuelve a aplicar la última configuración aplicada.
+    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) tiene un nuevo parámetro, -UseExisting, que vuelve a aplicar la última configuración aplicada.
 
     -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) -Force se ha corregido.
 
@@ -170,9 +170,9 @@ Muchas actualizaciones y mejoras en la configuración de estado deseado (DSC) de
 
 -   New-Item, Remove-Item y Get-ChildItem se han mejorado para admitir la creación y administración de [vínculos simbólicos](http://en.wikipedia.org/wiki/Symbolic_link). El parámetro **ItemType** de New-Item acepta un nuevo valor, **SymbolicLink**. Ahora puede crear vínculos simbólicos en una única línea ejecutando el cmdlet New-Item.
 
--   Get-ChildItem también tiene un nuevo parámetro -Depth, que se usa con el parámetro –Recurse para limitar la recursión. Por ejemplo, Get-ChildItem –Recurse –Depth 2 devuelve resultados de la carpeta actual, de todas las carpetas secundarias dentro de la carpeta actual y de todas las carpetas dentro de las carpetas secundarias.
+-   Get-ChildItem también tiene un nuevo parámetro -Depth, que se usa con el parámetro -Recurse para limitar la recursión. Por ejemplo, Get-ChildItem -Recurse -Depth 2 devuelve resultados de la carpeta actual, de todas las carpetas secundarias dentro de la carpeta actual y de todas las carpetas dentro de las carpetas secundarias.
 
--   Copy-Item permite ahora copiar archivos o carpetas de una sesión de Windows PowerShell en otra, lo que significa que puede copiar archivos en sesiones conectadas a equipos remotos (incluidos los equipos que ejecutan [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) y que, por tanto, no tienen ninguna otra interfaz). Para copiar archivos, especifique los identificadores de PSSession como el valor de los nuevos parámetros -FromSession y -ToSession, y agregue –Path y –Destination para especificar la ruta de acceso de origen y el destino, respectivamente. Por ejemplo, Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
+-   Copy-Item permite ahora copiar archivos o carpetas de una sesión de Windows PowerShell en otra, lo que significa que puede copiar archivos en sesiones conectadas a equipos remotos (incluidos los equipos que ejecutan [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) y que, por tanto, no tienen ninguna otra interfaz). Para copiar archivos, especifique los identificadores de PSSession como el valor de los nuevos parámetros -FromSession y -ToSession, y agregue -Path y -Destination para especificar la ruta de acceso de origen y el destino, respectivamente. Por ejemplo, Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
 
 -   La transcripción de Windows PowerShell se mejoró para aplicarse a todas las aplicaciones de hospedaje (como Windows PowerShell ISE) en lugar de solo al host de consola (**powershell.exe**). Las opciones de transcripción (incluida la habilitación de una transcripción de todo el sistema) pueden configurarse habilitando la opción de directiva de grupo **Activar la transcripción de PowerShell**, que se encuentra en Plantillas administrativas/Componentes de Windows/Windows PowerShell.
 
@@ -190,7 +190,7 @@ Muchas actualizaciones y mejoras en la configuración de estado deseado (DSC) de
 
 -   Un nuevo cmdlet, New-TemporaryFile, permite crear un archivo temporal como parte del scripting. De forma predeterminada, el nuevo archivo temporal se crea en ```C:\Users\<user name>\AppData\Local\Temp```.
 
--   Los cmdlets Out-File, Add-Content y Set-Content tienen ahora un nuevo parámetro –NoNewline, que omite una nueva línea después de la salida.
+-   Los cmdlets Out-File, Add-Content y Set-Content tienen ahora un nuevo parámetro -NoNewline, que omite una nueva línea después de la salida.
 
 -   El cmdlet New-Guid aprovecha la clase Guid de .NET Framework para generar un GUID, que resulta útil al escribir scripts o recursos de DSC.
 
@@ -212,7 +212,7 @@ Muchas actualizaciones y mejoras en la configuración de estado deseado (DSC) de
 
 -   Los resultados del cmdlet Get-Command muestran ahora una columna Version; se ha agregado una nueva propiedad Version a la clase CommandInfo. Get-Command muestra comandos de varias versiones del mismo módulo. La propiedad Version también forma parte de las clases derivadas de CmdletInfo: CmdletInfo y ApplicationInfo.
 
--   Get-Command tiene un nuevo parámetro, -ShowCommandInfo, que devuelve información de ShowCommand como PSObjects. Esta funcionalidad es especialmente útil cuando se ejecuta Show-Command en Windows PowerShell ISE mediante la comunicación remota de Windows PowerShell. El parámetro –ShowCommandInfo reemplaza la función Get-SerializedCommand existente en el módulo Microsoft.PowerShell.Utility, pero el script Get-SerializedCommand sigue estando disponible para admitir el scripting de nivel inferior.
+-   Get-Command tiene un nuevo parámetro, -ShowCommandInfo, que devuelve información de ShowCommand como PSObjects. Esta funcionalidad es especialmente útil cuando se ejecuta Show-Command en Windows PowerShell ISE mediante la comunicación remota de Windows PowerShell. El parámetro -ShowCommandInfo reemplaza la función Get-SerializedCommand existente en el módulo Microsoft.PowerShell.Utility, pero el script Get-SerializedCommand sigue estando disponible para admitir el scripting de nivel inferior.
 
 -   Un nuevo cmdlet Get-ItemPropertyValue permite obtener el valor de una propiedad sin usar la notación de puntos. Por ejemplo, en las versiones anteriores de Windows PowerShell, puede ejecutar el comando siguiente para obtener el valor de la propiedad de base de la aplicación de la clave del registro de PowerShellEngine: **(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase**. A partir de Windows PowerShell 5.0, puede ejecutar **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**.
 
@@ -367,7 +367,7 @@ Windows PowerShell 4.0 incluye las siguientes características nuevas.
 
 -   El valor de **$PSVersionTable.PSVersion** se ha actualizado a 4.0.
 
--   El comportamiento del operador **Where()** ha cambiado. `Collection.Where('property –match name')` Ya no se admite que se acepte una expresión de cadena con el formato `"Property –CompareOperator Value"`. Sin embargo, el operador **Where()** sí sigue aceptando expresiones de cadena con formato de bloque de script.
+-   El comportamiento del operador **Where()** ha cambiado. `Collection.Where('property -match name')` Ya no se admite que se acepte una expresión de cadena con el formato `"Property -CompareOperator Value"`. Sin embargo, el operador **Where()** sí sigue aceptando expresiones de cadena con formato de bloque de script.
 
 ### <a name="BKMK_ise"></a>Nuevas características del Entorno de scripting integrado (ISE) de Windows PowerShell
 
@@ -433,7 +433,7 @@ Windows PowerShell 4.0 incluye las siguientes características nuevas.
 
 -   **Get-Module** muestra ahora las versiones de módulo en una columna **Version**.
 
--   Remove-Item –Recurse ahora quita los elementos de las subcarpetas, como es de esperar.
+-   Remove-Item -Recurse ahora quita los elementos de las subcarpetas, como es de esperar.
 
 -   Se agregó una propiedad **UserName** a los objetos de salida **Get-Process**.
 
@@ -441,7 +441,7 @@ Windows PowerShell 4.0 incluye las siguientes características nuevas.
 
 -   Ahora, **Add-Member** surte efecto en las tablas hash, aun cuando no se haya tenido acceso a esas tablas hash.
 
--   **Select-Object –Expand** ya no genera un error o una excepción si el valor de la propiedad es null o está vacío.
+-   **Select-Object -Expand** ya no genera un error o una excepción si el valor de la propiedad es NULL o está vacío.
 
 -   **Get-Process** se puede usar ahora en una canalización con otros comandos que obtienen la propiedad **ComputerName** de los objetos.
 
@@ -759,6 +759,6 @@ A fin de mejorar la capacidad de Windows PowerShell 3.0 de interpretar y tratar 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 

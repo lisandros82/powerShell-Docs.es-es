@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 061e22c26853664c89adc023d43802628859b9a6
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: bfb36e6313379080ee071ec1df41992b945d2d83
 
 ---
 
@@ -19,7 +19,7 @@ El Entorno de scripting integrado (ISE ) de Windows PowerShell es uno de los dos
 
 El ISE permite ejecutar comandos en un panel de consola, pero también admite paneles que se pueden usar para ver simultáneamente el código fuente del script y otras herramientas que pueden conectarse al ISE. También puede abrir varias ventanas de script al mismo tiempo, lo cual es especialmente útil cuando se depura un script que usa las funciones definidas en otros scripts o módulos.
 
-## <a name="BKMK_NEW"></a>Novedades
+## Novedades
 Estas son algunas de las características que se agregaron al ISE en las versiones más recientes de PowerShell.
 
 ### Agregado en PowerShell 3.0 (Windows Server 2012, Windows 8)
@@ -35,7 +35,7 @@ Ahora, la **lista Usados más recientemente** forma parte del menú Abrir archiv
 
 **Panel de consola combinado**. En versiones anteriores del ISE, los paneles de comandos y salida eran independientes. Ahora se combinan en un solo panel que representa más directamente lo que se ve en la consola de Windows Powershell.
 
-**Modificadores de la línea de comandos**. Varios modificadores de la línea de comandos nuevos ofrecen un mayor control sobre el funcionamiento del ISE. –NoProfile inicia el ISE sin ejecutar un script de perfil. –Help abre una ventana de ayuda con el ISE. –mta inicia el ISE en "modo de contenedor multiproceso". El modo predeterminado es el de uniproceso.
+**Modificadores de la línea de comandos**. Varios modificadores de la línea de comandos nuevos ofrecen un mayor control sobre el funcionamiento del ISE. -NoProfile inicia el ISE sin ejecutar un script de perfil. -Help abre una ventana de ayuda con el ISE. -mta inicia el ISE en "modo de contenedor multiproceso". El modo predeterminado es el de uniproceso.
 
 Las **nuevas características del editor** facilitan la creación y lectura del código:
 
@@ -64,12 +64,12 @@ El ISE está disponible en cualquier equipo que puede ejecutar Windows PowerShel
 > [!NOTE]
 > Dado que Windows PowerShell ISE requiere una interfaz gráfica de usuario, no puede ejecutar la opción Server Core de Windows Server.
 
-## <a name="BKMK_LINKS"></a>Vea también
-[Uso del Entorno de scripting integrado de Windows PowerShell](http://technet.microsoft.com/library/cc732148.aspx)
+## Vea también
+- [Uso del Entorno de scripting integrado de Windows PowerShell](http://technet.microsoft.com/library/cc732148.aspx)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 

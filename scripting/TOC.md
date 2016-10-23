@@ -12,7 +12,7 @@
 #### [Iniciar PowerShell en versiones anteriores de Windows](setup/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
 ### [Instalar el motor de Windows PowerShell 2.0](setup/Installing-the-Windows-PowerShell-2.0-Engine.md)
 ### [Iniciar el motor de Windows PowerShell 2.0](setup/Starting-the-Windows-PowerShell-2.0-Engine.md)
-### [Instalar el SDK de Windows PowerShell](https://msdn.microsoft.com/en-us/library/ff458115.aspx)
+### [Instalar el SDK de Windows PowerShell](setup/Installing-the-Windows-PowerShell-SDK.md)
 ### [Seguridad](setup/security.md)
 #### [Consideraciones de seguridad de comunicación remota de PowerShell](setup/WinRMSecurity.md)
 ### [Accesibilidad](setup/Accessibility-in-Windows-PowerShell-ISE.md)
@@ -41,7 +41,7 @@
 ####  [Cambiar el estado del equipo](getting-started/cookbooks/Changing-Computer-State.md)
 ####  [Recopilar información acerca de los equipos](getting-started/cookbooks/Collecting-Information-About-Computers.md)
 ####  [Alias de compatibilidad](getting-started/cookbooks/Appendix-1---Compatibility-Aliases.md)
-####  [Crear objetos de .NET y COM (New-Object)](getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md)
+####  [Crear objetos .NET y COM (New-Object)](getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md)
 ####  [Crear un cuadro de entrada personalizado](getting-started/cookbooks/Creating-a-Custom-Input-Box.md)
 ####  [Crear un acceso directo de PowerShell personalizado](getting-started/cookbooks/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md)
 ####  [Crear un selector de fecha gráfico](getting-started/cookbooks/Creating-a-Graphical-Date-Picker.md)
@@ -49,7 +49,7 @@
 ####  [Administración de procesos con cmdlets de proceso](getting-started/cookbooks/Managing-Processes-with-Process-Cmdlets.md)
 ####  [Administración de servicios](getting-started/cookbooks/Managing-Services.md)
 ####  [Administrar unidades de Windows PowerShell](getting-started/cookbooks/Managing-Windows-PowerShell-Drives.md)
-####  [Administración de la ubicación actual](getting-started/cookbooks/Managing-Current-Location.md)
+####  [Administrar la ubicación actual](getting-started/cookbooks/Managing-Current-Location.md)
 ####  [Manipular elementos directamente](getting-started/cookbooks/Manipulating-Items-Directly.md)
 ####  [Cuadros de lista de selección múltiple](getting-started/cookbooks/Multiple-selection-List-Boxes.md)
 ####  [Otros objetos de scripting útiles](getting-started/cookbooks/Other-Useful-Scripting-Objects.md)
@@ -64,7 +64,7 @@
 ####  [Usar comandos de formato para cambiar la vista de salida](getting-started/cookbooks/Using-Format-Commands-to-Change-Output-View.md)
 ####  [Usar métodos y clases estáticas](getting-started/cookbooks/Using-Static-Classes-and-Methods.md)
 ####  [Ver la estructura del objeto (Get-Member)](getting-started/cookbooks/Viewing-Object-Structure--Get-Member-.md)
-####  [Trabajar con carpetas de archivos y claves del Registro](getting-started/cookbooks/Working-With-Files-Folders-and-Registry-Keys.md)
+####  [Trabajar con archivos, carpetas y claves del Registro](getting-started/cookbooks/Working-With-Files-Folders-and-Registry-Keys.md)
 ####  [Trabajar con archivos y carpetas](getting-started/cookbooks/Working-with-Files-and-Folders.md)
 ####  [Trabajar con objetos](getting-started/cookbooks/Working-with-Objects.md)
 ####  [Trabajar con impresoras](getting-started/cookbooks/Working-with-Printers.md)
@@ -142,6 +142,6 @@
 ## [Glosario de PowerShell](Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Oct16_HO2-->
 
 
