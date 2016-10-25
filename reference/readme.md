@@ -1,11 +1,27 @@
+---
+author: jpjofre
+description: 
+keywords: powershell, cmdlet
+manager: carolz
+ms.date: 2016-10-12
+ms.prod: powershell
+ms.technology: powershell
+ms.topic: conceptual
+title: Referencia de PowerShell
+translationtype: Human Translation
+ms.sourcegitcommit: 644c0b9071a31a9731452ae4f909dd1718347322
+ms.openlocfilehash: 81a43a673285ba00710b4bbe450ecf316951746b
+
+---
+
 #  Referencia de PowerShell
 
 El material de referencia se organiza según las versiones de lanzamiento.
 
-- [3.0](3.0/ToC.md)
-- [4.0](4.0/ToC.md)
-- [5.0](5.0/ToC.md)
-- [5.1](5.1/ToC.md)
+- 3.0
+- 4.0
+- 5.0
+- 5.1
 
 El contenido de cada versión está organizado por espacio de nombres y hay una carpeta distinta para los temas de ayuda.
 
@@ -30,6 +46,7 @@ Con el tiempo, los espacios de nombres aparecían como:
 - PSScriptAnalyzer, introducido en 3.0
 - PSWorkflow, introducido en 3.0
 - PSWorkflowUtility, introducido en 3.0
+
 
 
 <!--HONumber=Oct16_HO2-->
