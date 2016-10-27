@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "b776228ef1ecc767daf3e837e801e3535d26d56f",
-  "LastTranslatedCommit": "0a557251a71d15a81ebb52e1da34544312bf4224",
+  "LastTranslatedCommit": "b22c399ffbf8f683f3ad109852564a82d2fc37c9",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
       "FileHash": "81efeb79a70df604ef8c126c0ebd17b4f4711a44",
@@ -33273,14 +33273,14 @@
       "TargetFilePath": null,
       "HandbackFilePath": null,
       "HandbackFileCommit": null,
-      "HandbackDateTime": "2016-07-22T12:31:31.0919235Z",
+      "HandbackDateTime": "2016-10-27T10:58:34.4413989Z",
       "HandbackException": {
-        "internal_error_code": "handback_transform_failed",
-        "internal_error_message": "Handback file: C:\\ol\\master\\PSD.handback\\7f42c4\\ol-handback\\PowerShell\\powerShell-Docs.es-es\\live\\PesterUpdates.1e4976b79d08b1906a0f335de1892decc168f7a5.es-es.xlf failed.",
+        "internal_error_code": "skeleton_or_source_cache_file_not_found",
+        "internal_error_message": "The skeleton or source cache file of dd7905bfd221201919d028ec158cd5ef349335e2 is not found.",
         "internal_error_retriable": false,
-        "exception_message": "Fail to transform from xliff to markdown with invalid metadata: Invalid yaml header when parsing:\ntitle: Pester updated to version 3.4.0 author:jaimeo contributor: jkeithb contributor: Keith Bankston (expert is Jim Truher)\nError message: (Line: 1, Col: 65, Idx: 64) - (Line: 1, Col: 65, Idx: 64): Mapping values are not allowed in this context.",
-        "exception_type": "System.IO.InvalidDataException",
-        "stack_trace": "   at Microsoft.OpenLocalization.Transformer.TransformerClient.XliffToMarkdown(Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\TransformerClient.cs:line 119\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.XliffToMarkdown(String skeletonFile, String xliffFile, String mdfile, Boolean useJavascriptTransformer) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 92\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass7_0.<GetHandbackFiles>b__1(String file) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandbackCore.cs:line 420",
+        "exception_message": "The skeleton or source cache file of dd7905bfd221201919d028ec158cd5ef349335e2 is not found.",
+        "exception_type": "Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException",
+        "stack_trace": null,
         "extended_information": null
       },
       "HandbackFailureTimes": 1,
