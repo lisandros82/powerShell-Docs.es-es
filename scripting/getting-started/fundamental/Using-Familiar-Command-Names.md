@@ -9,12 +9,12 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: b567510b9a39bfa62e64e62752a1a7d2002cf6b9
+ms.sourcegitcommit: 0c22cc16f5c5becacfc07a6332c0b949f9da40e0
+ms.openlocfilehash: dc235dee1af01c1f3d29118e4824d6a2b49b113a
 
 ---
 
-# Usar nombres de comando conocidos
+# <a name="using-familiar-command-names"></a>Usar nombres de comando conocidos
 Mediante un mecanismo denominado *alias*, Windows PowerShell permite a los usuarios hacer referencia a los comandos con nombres alternativos. El aliasing permite a los usuarios con experiencia en otros shells reutilizar los nombres de comandos comunes que ya conocen para realizar operaciones similares en Windows PowerShell. Aunque no trataremos en detalle los alias de Windows PowerShell, puede usarlos para empezar a trabajar con Windows PowerShell.
 
 El aliasing asocia un nombre de comando que escribe a otro comando. Por ejemplo, Windows PowerShell tiene una función interna denominada **Clear-Host** que borra la ventana de salida. Si escribe el comando **cls** o **clear** en un símbolo del sistema, Windows PowerShell interpreta que se trata de un alias de la función **Clear-Host** y ejecuta la función **Clear-Host**.
@@ -46,14 +46,14 @@ Alias           cls                             Clear-Host
 
 Para que los ejemplos sean más legibles, la Guía de usuario de Windows PowerShell suele evitar el uso de alias. Sin embargo, saber más sobre los alias con antelación puede resultarle útil si trabaja con fragmentos de código arbitrarios de código de Windows PowerShell de otro origen o desea definir sus propios alias. En el resto de esta sección se tratarán los alias estándar y cómo definir sus propios alias.
 
-### Interpretar los alias estándar
+### <a name="interpreting-standard-aliases"></a>Interpretar los alias estándar
 A diferencia de los alias descritos anteriormente, que se diseñaron para ofrecer compatibilidad con los nombres de otras interfaces, los alias integrados en Windows PowerShell están diseñados generalmente para ofrecer brevedad. Estos nombres más cortos pueden escribirse rápidamente, pero son imposibles de leer si no sabe a qué hacen referencia.
 
 Windows PowerShell intenta compensar la claridad y la brevedad proporcionando un conjunto de alias estándar que se basan en nombres abreviados para nombres y verbos comunes. Esto permite un conjunto principal de alias para cmdlets comunes que son legibles si se conocen los nombres abreviados. Por ejemplo, en los alias estándar, el verbo **Get** se abrevia a **g**, el verbo **et** se abrevia a **s**, el nombre **Item** se abrevia a **i**, el nombre **Location** se abrevia a **l** y el nombre Command se abrevia a **cm**.
 
 Este es un breve ejemplo para ilustrar cómo funciona. El alias estándar de Get-Item procede de la combinación de **g** de Get e **i** de Item: **gi**. El alias estándar de Set-Item procede de la combinación de **s** de Set e **i** de Item: **si**. El alias estándar de Get-Location procede de la combinación de **g** de Get y **l** de Location: **gl**. El alias estándar de Set-Location procede de la combinación de **s** de Set y **l** de Location: **sl**. El alias estándar de Get-Command procede de la combinación de **g** de Get y **cm** de Command: **gcm**. No existe un cmdlet Set-Command, pero si lo hubiera, podríamos adivinar que el alias estándar proviene de **s** de Set y **cm** de Command: **scm**. Además, las personas que conozcan los alias de Windows PowerShell que se encuentren **scm** podrán adivinar que el alias hace referencia a Set-Command.
 
-### Crear nuevos alias
+### <a name="creating-new-aliases"></a>Crear nuevos alias
 Puede crear sus propios alias mediante el cmdlet Set-Alias. Por ejemplo, las siguientes instrucciones crean los alias de cmdlet estándar que se describen en Interpretar los alias estándar:
 
 ```
@@ -66,12 +66,16 @@ Set-Alias -Name gcm -Value Get-Command
 
 Internamente, Windows PowerShell usa estos comandos durante el inicio, pero estos alias no se pueden cambiar. Si intenta ejecutar realmente uno de estos comandos, obtendrá un error que indicará que no se puede modificar el alias. Por ejemplo:
 
-<pre>PS> Set-Alias -Name gi -Value Get-Item Set-Alias : No se puede escribir en el alias gi porque es de solo lectura o constante y no se puede escribir en él.
-En línea:1 carácter:10 + Set-Alias  <<<< -Name gi -Value Get-Item</pre>
+```
+PS> Set-Alias -Name gi -Value Get-Item
+Set-Alias : Alias is not writeable because alias gi is read-only or constant and cannot be written to.
+At line:1 char:10
++ Set-Alias  <<<< -Name gi -Value Get-Item
+```
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 

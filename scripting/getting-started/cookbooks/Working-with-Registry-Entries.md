@@ -14,10 +14,10 @@ ms.openlocfilehash: cdc7f45c9fa8a6bf748a52b460a1ac190d283971
 
 ---
 
-# Trabajar con entradas del Registro
+# <a name="working-with-registry-entries"></a>Trabajar con entradas del Registro
 Las entradas del Registro son propiedades de claves y, como tales, no se pueden examinar de forma directa, de modo que es preciso adoptar un enfoque ligeramente diferente al trabajar con ellas.
 
-### Enumerar entradas del Registro
+### <a name="listing-registry-entries"></a>Enumerar entradas del Registro
 Existen muchas formas de examinar entradas del Registro. La más sencilla consiste en obtener los nombres de propiedad asociados a una clave. Por ejemplo, para ver los nombres de las entradas de la clave del Registro **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion**, use **Get-Item**. Las claves del Registro tienen una propiedad con el nombre genérico "Property" que es una lista de entradas del Registro en la clave. Con el siguiente comando se selecciona la propiedad Property y se expanden los elementos de forma que se muestran en una lista:
 
 ```
@@ -80,7 +80,7 @@ ProgramFilesDir     : C:\Program Files
 
 La expansión de la ruta de acceso funciona tal como lo hace en el sistema de archivos, así que desde esta ubicación se puede obtener la lista de **ItemProperty** de **HKLM:\\SOFTWARE\\Microsoft\\Windows\\Help** mediante **Get-ItemProperty -Path ..\\Help**.
 
-### Obtener una sola entrada del Registro
+### <a name="getting-a-single-registry-entry"></a>Obtener una sola entrada del Registro
 Si quiere recuperar una entrada específica de una clave del Registro, puede usar uno de los diversos métodos posibles existentes. En este ejemplo se encuentra el valor de **DevicePath** en **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion**.
 
 Con **Get-ItemProperty**, use el parámetro **Path** para especificar el nombre de la clave y el parámetro **Name** para especificar el nombre de la entrada **DevicePath**.
@@ -121,7 +121,7 @@ PS> (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windo
 %SystemRoot%\inf
 ```
 
-### Crear entradas del Registro
+### <a name="creating-new-registry-entries"></a>Crear entradas del Registro
 Para agregar una nueva entrada denominada "PowerShellPath" a la clave **CurrentVersion**, use **New-ItemProperty** con la ruta de acceso a la clave, el nombre de la entrada y el valor de la entrada. En este ejemplo, tomaremos el valor de la variable de Windows PowerShell **$PSHome**, que almacena la ruta de acceso al directorio de instalación de Windows PowerShell.
 
 Puede agregar la nueva entrada a la clave usando el siguiente comando; este comando también devolverá información sobre la nueva entrada:
@@ -159,7 +159,7 @@ New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SO
 
 Un valor de entrada del Registro preexistente también se puede sobrescribir si se agrega el parámetro **Force** a cualquier comando **New-ItemProperty**.
 
-### Cambiar el nombre de entradas del Registro
+### <a name="renaming-registry-entries"></a>Cambiar el nombre de entradas del Registro
 Para cambiar el nombre de la entrada **PowerShellPath** a "PSHome," use **Rename-ItemProperty**:
 
 ```
@@ -172,7 +172,7 @@ Para mostrar el valor cuyo nombre ha cambiado, agregue el parámetro **PassThru*
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
-### Eliminar entradas del Registro
+### <a name="deleting-registry-entries"></a>Eliminar entradas del Registro
 Para eliminar las entradas del Registro PSHome y PowerShellPath, use **Remove-ItemProperty**:
 
 ```
@@ -183,6 +183,6 @@ Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 
