@@ -9,21 +9,21 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 763b406f-2d89-4b45-b689-3d5b28f26022
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 130368e634668b7229f1c1423c946ae4b0a65466
+ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
+ms.openlocfilehash: c4a8103deb3b3fc5e9e755cebeb8fe00e6f02869
 
 ---
 
 # Módulo PSLocalAccount5
 Esta sección contiene los temas de Ayuda del módulo **PSLocalAccounts5**.
 
-## Véase también
-[Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
-[Scripting con Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+## Consulte también
+- [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
+- [Scripting con Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO3-->
 
 
