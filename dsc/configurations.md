@@ -8,12 +8,12 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6c5f3d3321b7e50215cf58267e1864b7da827764
-ms.openlocfilehash: d84bb35ada3588367436e6f5e3c6696b90c3661b
+ms.sourcegitcommit: 49ddf6faf98a51f7ad5252e9563b1543478ed113
+ms.openlocfilehash: 567ab9528402c7d39d80a997bc14b6c6992cf772
 
 ---
 
-# Configuraciones DSC
+# <a name="dsc-configurations"></a>Configuraciones DSC
 
 >Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -37,7 +37,7 @@ Configuration MyDscConfiguration {
 
 Guarde el script como un archivo .ps1.
 
-## Sintaxis de la configuración
+## <a name="configuration-syntax"></a>Sintaxis de la configuración
 
 Un script de configuración consta de las partes siguientes:
 
@@ -68,7 +68,7 @@ Configuration MyDscConfiguration {
 
 En este ejemplo, especifique el nombre del nodo, pasando como parámetro $ComputerName cuando [compile la configuración](# Compiling the configuration). El nombre se establece como el valor predeterminado "localhost".
 
-## Compilación de la configuración
+## <a name="compiling-the-configuration"></a>Compilación de la configuración
 Antes de que se pueda establecer una configuración, debe compilarla en un documento MOF. Para ello, llame a la configuración, como lo haría con una función de PowerShell.
 >__Nota:__ Para llamar a una configuración, la función debe estar en el ámbito global (como ocurre con cualquier otra función de PowerShell). Puede conseguirlo si precede el script con el operador punto ".", o si ejecuta el script de configuración presionando F5 o haciendo clic en el botón __Ejecutar Script__ del ISE. Para anteponer el operador punto al script, ejecute el comando `. .\myConfig.ps1`, donde `myConfig.ps1` es el nombre del archivo de script que contiene la configuración.
 
@@ -102,7 +102,7 @@ Mode                LastWriteTime         Length Name
 -a----       10/23/2015   4:32 PM           2842 MyTestNode.mof
 ```      
 
-## Uso de DependsOn
+## <a name="using-dependson"></a>Uso de DependsOn
 Una palabra clave de DSC bastante útil es __DependsOn__. Normalmente (aunque no necesariamente siempre), DSC aplica a los recursos en el orden en que aparecen en la configuración. Sin embargo, __DependsOn__ especifica qué recursos dependen de otros recursos y el LCM se asegura de que se apliquen en el orden correcto, independientemente del orden en que se definan las instancias de los recursos. Por ejemplo, una configuración puede especificar que una instancia del recurso __User__ depende de la existencia de una instancia de __Group__:
 
 ```powershell
@@ -123,20 +123,20 @@ Configuration DependsOnExample {
 }
 ```
 
-## Uso de nuevos recursos en la configuración
+## <a name="using-new-resources-in-your-configuration"></a>Uso de nuevos recursos en la configuración
 Si ha ejecutado los ejemplos anteriores, habrá observado que se le mostró una advertencia respecto a que se estaba utilizando un recurso sin importarlo explícitamente.
 En la actualidad, DSC incluye 12 recursos como parte del módulo PSDesiredStateConfiguration. Otros recursos de los módulos externos deben colocarse en `$env:PSModulePath` para que el LCM los reconozca. Un cmdlet nuevo, [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), puede utilizarse para determinar qué recursos están instalados en el sistema y están disponibles para que el LCM los use. Cuando estos módulos se hayan colocado en `$env:PSModulePath` y [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) los reconozca correctamente, es necesario que se carguen en la configuración. __Import-DscResource__ es una palabra clave dinámica que solo puede reconocerse dentro de un bloque __Configuration__ (es decir, no es un cmdlet). __Import-DscResource__ admite dos parámetros:
 * __ModuleName__ es la manera recomendada de usar __Import-DscResource__. Acepta el nombre del módulo que contiene los recursos que se importarán (así como una matriz de cadenas de nombres de módulo). 
 * __Name__ es el nombre del recurso que se importará. Este no es el nombre descriptivo que [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) devuelve como "Name", sino el nombre de clase que se usa al definir el esquema del recurso (que [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) devuelve como __ResourceType__). 
 
-## Véase también
-* [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
+## <a name="see-also"></a>Véase también
+* [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
 * [Recursos de DSC](resources.md)
 * [Configuración del administrador de configuración local](metaConfig.md)
 
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 
