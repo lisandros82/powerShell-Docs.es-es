@@ -3,13 +3,15 @@
 # [Configuraciones](configurations.md)
 ## [Establecer configuraciones](enactingConfigurations.md)
 ## [Uso de recursos con varias versiones](sxsResource.md)
-## [DSC de ejecución con las credenciales de usuario](runAsUser.md)
-## [Especificación de dependencias entre nodos](crossNodeDependencies.md)
+## [Ejecución de DSC con las credenciales de usuario](runAsUser.md)
+## [Especificación de las dependencias entre nodos](crossNodeDependencies.md)
 ## [Datos de configuración](configData.md)
 ### [Opciones de credenciales en los datos de configuración](configDataCredentials.md)
-## [Proteger el archivo MOF de configuración](secureMOF.md)
+## [Protección del archivo MOF de configuración](secureMOF.md)
 ## [Configuraciones parciales](partialConfigs.md)
-## [Escribir ayuda para configuraciones de DSC](configHelp.md)
+## [Escritura de ayuda para configuraciones de DSC](configHelp.md)
+## [Configuración de máquinas virtuales en el arranque inicial mediante DSC](bootstrapDsc.md)
+### [Clave del Registro DSCAutomationHostEnabled](DSCAutomationHostEnabled.md)
 
 # [Recursos](resources.md)
 ## [Recursos integrados](builtInResource.md)
@@ -30,7 +32,7 @@
 #### [Recurso basado en MOF de C#](authoringResourceMofCS.md)
 ### [Recursos personalizados basados en clases](authoringResourceClass.md)
 ### [Recursos compuestos](authoringResourceComposite.md)
-### [Escribir un recurso de DSC de instancia única (procedimiento recomendado)](singleInstance.md)
+### [Escritura de un recurso de DSC de instancia única (procedimiento recomendado)](singleInstance.md)
 ### [Lista de comprobación de creación de recursos](resourceAuthoringChecklist.md)
 ## [Depuración de recursos de DSC](debugResource.md)
 ## [Llamada directa a los métodos de recursos de DSC](directCallResource.md)
@@ -40,7 +42,7 @@
 
 # El modelo de extracción de DSC
 ## [Configuración de un servidor de extracción web](pullServer.md)
-## [Configuración de un servidor de incorporación de cambios SMB de DSC](pullServerSMB.md)
+## [Configuración de un servidor de extracción SMB de DSC](pullServerSMB.md)
 ## [Configuración de un cliente de extracción](pullClient.md)
 ### [Configuración de un cliente de extracción mediante nombres de configuración](pullClientConfigNames.md)
 ### [Configuración de un cliente de extracción mediante id. de configuración](pullClientConfigID.md)
@@ -49,7 +51,7 @@
 
 # [Solución de problemas de DSC](troubleshooting.md)
 
-# [Uso de DSC on Nano Server](nanoDsc.md)
+# [Uso de DSC en Nano Server](nanoDsc.md)
 
 # DSC en Linux
 ## [Introducción a DSC para Linux](lnxGettingStarted.md)
@@ -91,6 +93,6 @@
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO4-->
 
 

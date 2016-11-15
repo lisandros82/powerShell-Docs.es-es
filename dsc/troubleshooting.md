@@ -8,18 +8,18 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: c7b198d6206c57ef663ea5f4c8cef5ab5678a823
-ms.openlocfilehash: d06b330e3a64705e2f86230e8a9e344e85b8d4be
+ms.sourcegitcommit: 99c1ea706ca5c3fb008065e98cc99fef463b1011
+ms.openlocfilehash: caf661fe58faf8cf24c789b408505051429df3f4
 
 ---
 
-# Solución de problemas de DSC
+# <a name="troubleshooting-dsc"></a>Solución de problemas de DSC
 
 >Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Este tema describen las distintas formas de solucionar problemas de DSC cuando surgen.
 
-## Uso de Get-DscConfigurationStatus
+## <a name="using-getdscconfigurationstatus"></a>Uso de Get-DscConfigurationStatus
 
 El cmdlet [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) obtiene información acerca del estado de la configuración de un nodo de destino. Se devuelve un objeto enriquecido que incluye información detallada sobre si la configuración de ejecución era correcta o no. Ya puede adentrarse en el objeto para descubrir los detalles sobre la configuración de ejecución como:
 
@@ -46,7 +46,7 @@ Get-DscConfigurationStatus  -All
                             [<CommonParameters>]
 ```
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 ```powershell
 PS C:\> $Status = Get-DscConfigurationStatus 
@@ -79,11 +79,11 @@ StartDate               :   11/24/2015  3:44:56
 PSComputerName          :
 ```
 
-## El script no se ejecuta: uso de registros de DSC para diagnosticar errores de scripts
+## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>El script no se ejecuta: uso de registros de DSC para diagnosticar errores de scripts
 
 Como sucede con todo el software de Windows, DSC registra los errores y eventos en [registros](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx) que se pueden ver en el [Visor de eventos](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer). Examinar estos registros puede ayudarle a entender el motivo del error de una operación determinada y cómo evitar los errores en el futuro. La escritura de scripts de configuración puede ser complicada, por lo que para que sea más fácil realizar un seguimiento de los errores a medida que se crea, utilice el recurso de registro de DSC para hacer un seguimiento del progreso de la configuración en el registro de eventos DSC Analytic.
 
-## ¿Dónde se encuentran los registros de eventos de DSC?
+## <a name="where-are-dsc-event-logs"></a>¿Dónde se encuentran los registros de eventos de DSC?
 
 En el Visor de eventos, los eventos de DSC se encuentran en: **Registros de aplicaciones y servicios/Microsoft/Windows/Configuración de estado deseado**.
 
@@ -103,7 +103,7 @@ Como se muestra arriba, el nombre del registro primario de DSC es **Microsoft->W
 wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
 ```
 
-## ¿Qué contienen los registros de DSC?
+## <a name="what-do-dsc-logs-contain"></a>¿Qué contienen los registros de DSC?
 
 Los registros de DSC se dividen en los tres canales de registro según la importancia del mensaje. El registro operativo de DSC contiene todos los mensajes de error y puede utilizarse para identificar un problema. El registro analítico tiene un mayor volumen de eventos y puede identificar dónde se han producido errores. Este canal también contiene los mensajes detallados (si existen). El registro de depuración contiene registros que pueden ayudarle a entender cómo se produjeron los errores. Los mensajes de los eventos de DSC se estructuran de forma que cada mensaje de evento comienza por un identificador de trabajo que representa de forma única una operación de DSC. En el ejemplo siguiente intenta obtener el mensaje desde el primer evento registrado en el registro operativo de DSC.
 
@@ -120,7 +120,7 @@ Los eventos de DSC se registran en una estructura determinada que permite al usu
 **Id. de trabajo: <Guid>**
 **<Event Message>**
 
-## Recopilación de eventos de una operación de DSC única
+## <a name="gathering-events-from-a-single-dsc-operation"></a>Recopilación de eventos de una operación de DSC única
 
 Los registros de eventos de DSC contienen los eventos que han generado diferentes operaciones de DSC. Sin embargo, normalmente solo le interesarán los detalles sobre una operación determinada. Todos los registros de DSC se pueden agrupar según la propiedad de identificador de trabajo, que es única para cada operación de DSC. El identificador de trabajo se muestra como el primer valor de propiedad de todos los eventos de DSC. En los siguientes pasos se explica cómo acumular todos los eventos en una estructura de matriz agrupada.
 
@@ -185,7 +185,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 Puede extraer los datos en la variable `$SeparateDscOperations` con [Where-Object](https://technet.microsoft.com/library/ee177028.aspx). A continuación se muestran cinco escenarios en los que podría querer extraer los datos para la solucionar problemas de DSC:
 
-### 1: Errores de operaciones
+### <a name="1-operations-failures"></a>1: Errores de operaciones
 
 Todos los eventos tienen [niveles de gravedad](https://msdn.microsoft.com/library/dd996917(v=vs.85)). Esta información puede usarse para identificar los eventos de error:
 
@@ -196,9 +196,9 @@ Count Name                      Group
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
 ```
 
-### 2: Detalles de las operaciones que se ejecutaron en última media hora
+### <a name="2-details-of-operations-run-in-the-last-half-hour"></a>2: Detalles de las operaciones que se ejecutaron en última media hora
 
-`TimeCreated`, una propiedad de todos los eventos de Windows, indica la hora en que se ha creado el evento. Se puede hacer una comparación de esta propiedad con un objeto de fecha y hora determinado para filtrar todos los eventos:
+`TimeCreated`, una propiedad de todos los eventos de Windows, indica la hora en que se creó el evento. Se puede hacer una comparación de esta propiedad con un objeto de fecha y hora determinado para filtrar todos los eventos:
 
 ```powershell
 PS C:\> $DateLatest = (Get-Date).AddMinutes(-30)
@@ -208,7 +208,7 @@ Count Name                      Group
     1 {6CEC5B09-5BB0-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord}   
 ```
 
-### 3: Mensajes de la operación más reciente
+### <a name="3-messages-from-the-latest-operation"></a>3: Mensajes de la operación más reciente
 
 La operación más reciente se almacena en el primer índice del grupo de matrices `$SeparateDscOperations`. Si se consultan los mensajes del grupo del índice 0, se devuelven todos los mensajes para la operación más reciente:
 
@@ -230,7 +230,7 @@ Displaying messages from built-in DSC resources:
  Message : [INCH-VM]:                            [] Consistency check completed. 
 ```
 
-### 4: Mensajes de error registrados para operaciones con errores recientes
+### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4: Mensajes de error registrados para operaciones con errores recientes
 
 `$SeparateDscOperations[0].Group` contiene un conjunto de eventos para la operación más reciente. Ejecute el cmdlet `Where-Object` para filtrar los eventos según su nombre para mostrar del nivel. Los resultados se almacenan en la variable `$myFailedEvent`, que se puede analizar en más profundidad para obtener el mensaje de evento:
 
@@ -245,9 +245,9 @@ rameter to specify a configuration file and create a current configuration first
 Error Code : 1 
 ```
 
-### 5: Todos los eventos que ha generado un identificador de trabajo determinado.
+### <a name="5-all-events-generated-for-a-particular-job-id"></a>5: Todos los eventos que ha generado un identificador de trabajo determinado.
 
-`$SeparateDscOperations` es una matriz de grupos, cada uno de los cuales tiene como nombre el id. de trabajo único. Al ejecutar el cmdlet `Where-Object`, puede extraer esos grupos de eventos que tienen un identificador de trabajo determinado:
+`$SeparateDscOperations` es una matriz de grupos, cada uno de los cuales tiene como nombre el identificador de trabajo único. Al ejecutar el cmdlet `Where-Object`, puede extraer esos grupos de eventos que tienen un identificador de trabajo determinado:
 
 ```powershell
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
@@ -262,11 +262,11 @@ TimeCreated                     Id LevelDisplayName Message
 12/2/2013 4:33:24 PM          4120 Information      Job {847A5619-5BB2-11E3-BF41-00155D553612} : ...  
 ```
 
-## Uso de xDscDiagnostics para analizar registros de DSC
+## <a name="using-xdscdiagnostics-to-analyze-dsc-logs"></a>Uso de xDscDiagnostics para analizar registros de DSC
 
 **xDscDiagnostics** es un módulo de PowerShell que consta de varias funciones que pueden ayudar a analizar los errores de DSC en la máquina. Estas funciones pueden ayudar a identificar todos los eventos locales de las operaciones de DSC anteriores o los eventos de DSC de los equipos remotos (con credenciales válidas). Aquí, el término operación de DSC se utiliza para definir una única ejecución de DSC desde el inicio hasta el final. Por ejemplo, `Test-DscConfiguration` sería una operación de DSC independiente. De forma similar, todos los demás cmdlets de DSC (como `Get-DscConfiguration`, `Start-DscConfiguration`, etc.) podrían identificarse uno a uno como operaciones de DSC independientes. Las funciones se explican en [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics). Puede obtener ayuda si ejecuta `Get-Help <cmdlet name>`.
 
-### Obtención de detalles de las operaciones de DSC 
+### <a name="getting-details-of-dsc-operations"></a>Obtención de detalles de las operaciones de DSC 
 
 La función `Get-xDscOperation` permite buscar los resultados de las operaciones de DSC que se ejecutan en uno o varios equipos, y devuelve un objeto que contiene la colección de eventos que ha producido cada operación de DSC. Por ejemplo, en la salida siguiente, se ejecutaron tres comandos. El primero se realizó correctamente y los otros dos no. Estos resultados se resumen en la salida de `Get-xDscOperation`.
 
@@ -294,9 +294,9 @@ SRV1   4          6/23/2016 4:36:54 PM  Success  5c06402a-399b-11e6-9165-00155d3
 SRV1   5          6/23/2016 4:36:51 PM  Success                                        {@{Message=; TimeC...
 ```
 
-### Obtención de detalles de los eventos de DSC
+### <a name="getting-details-of-dsc-events"></a>Obtención de detalles de los eventos de DSC
 
-El cmdlet `Trace-xDscOperation1` devuelve un objeto que contiene una colección de eventos, sus tipos de eventos y la salida del mensaje generado a partir de una determinada operación de DSC. Normalmente, cuando encuentre un error en cualquiera de las operaciones con `Get-xDscOperation`, realizará un seguimiento de esa operación para averiguar qué evento provocó el error.
+El cmdlet `Trace-xDscOperation` devuelve un objeto que contiene una colección de eventos, sus tipos de eventos y la salida del mensaje generado a partir de una determinada operación de DSC. Normalmente, cuando encuentre un error en cualquiera de las operaciones con `Get-xDscOperation`, realizará un seguimiento de esa operación para averiguar qué evento provocó el error.
 
 Utilice el parámetro `SequenceID` para obtener los eventos de una operación específica de un equipo concreto. Por ejemplo, si en `SequenceID` especifica 9, `Trace-xDscOperaion` obtiene el seguimiento de la operación de DSC que era la novena desde la última operación:
 
@@ -401,7 +401,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 Idealmente, primero deberá utilizar `Get-xDscOperation` para enumerar las últimas configuraciones DSC que se han ejecutado en las máquinas. A continuación, puede examinar cualquier operación única (mediante su valor de SequenceID o JobID) con `Trace-xDscOperation` para descubrir lo que hizo en segundo plano.
 
-### Obtención de eventos de un equipo remoto
+### <a name="getting-events-for-a-remote-computer"></a>Obtención de eventos de un equipo remoto
 
 Utilice el parámetro `ComputerName` del cmdlet `Trace-xDscOperation` para obtener los detalles de los eventos de un equipo remoto. Para ello, antes es preciso crear una regla de firewall que permita la administración remota en el equipo remoto:
 
@@ -447,7 +447,7 @@ SRV2   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull co
 SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCach...
 ```
 
-## Los recursos no se actualizan: restablecer la memoria caché
+## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>Los recursos no se actualizan: restablecer la memoria caché
 
 El motor de DSC almacena en caché los recursos implementados como un módulo de PowerShell por motivos de eficiencia. Sin embargo, esto puede provocar problemas cuando está creando un recurso y probándolo al mismo tiempo, ya que DSC cargará la versión en caché hasta que se reinicie el proceso. La única manera de conseguir que DSC cargue la versión más reciente es detener explícitamente el proceso que hospeda el motor de DSC.
 
@@ -471,7 +471,7 @@ Select-Object -ExpandProperty HostProcessIdentifier
 Get-Process -Id $dscProcessID | Stop-Process
 ```
 
-## Uso de DebugMode
+## <a name="using-debugmode"></a>Uso de DebugMode
 
 Puede configurar el administrador de configuración de local (LCM) de DSC para que utilice `DebugMode` y siempre se borre la memoria caché cuando se reinicie el proceso de host. Cuando se establece en **TRUE**, provoca que el motor siempre vuelva a cargar el recurso de DSC de PowerShell. Cuando haya terminado de escribir el recurso, se puede volver a establecer en **FALSE** y el motor volverá al comportamiento de almacenamiento en caché de los módulos.
 
@@ -612,20 +612,20 @@ onlyProperty                            PSComputerName
 14                                      localhost
 ```
 
-## Véase también
+## <a name="see-also"></a>Véase también
 
-### Referencia
+### <a name="reference"></a>Referencia
 * [Recurso de DSC Log](logResource.md)
 
-### Conceptos
+### <a name="concepts"></a>Conceptos
 * [Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md)
 
-### Otros recursos
-* [Cmdlets de configuración de estado deseado de Windows PowerShell](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
+### <a name="other-resources"></a>Otros recursos
+* [Cmdlets de configuración de estado deseado (DSC) de Windows PowerShell](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
 
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO4-->
 
 
