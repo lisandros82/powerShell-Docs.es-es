@@ -8,12 +8,12 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 0dc83a1b69f26a25874c819a2f3a027ed7966895
-ms.openlocfilehash: f0aed5bb627825b74fe4df29cbe2f0bc53f90c23
+ms.sourcegitcommit: be32b4acbfca788532e1b173809a7879ac4ecba0
+ms.openlocfilehash: 68a203ea1c445c3d0269c48ec92c02c407bcd5e1
 
 ---
 
-# Proteger el archivo MOF
+# <a name="securing-the-mof-file"></a>Proteger el archivo MOF
 
 >Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ DSC indica a los nodos de destino la configuración que deben tener mediante el 
 
 >**Nota:** En este tema se describen los certificados usados para el cifrado. Para el cifrado, un certificado autofirmado es suficiente, porque la clave privada se mantiene siempre secreta y el cifrado no implica la confianza del documento. Los certificados autofirmados *no* deben usarse con fines de autenticación. Debe usar un certificado de una entidad de certificación de confianza (CA) para fines de autenticación.
 
-## Requisitos previos
+## <a name="prerequisites"></a>Requisitos previos
 
 Para cifrar correctamente las credenciales utilizadas para proteger una configuración DSC, asegúrese de que disponer de lo siguiente:
 
@@ -30,7 +30,7 @@ Para cifrar correctamente las credenciales utilizadas para proteger una configur
 * **Cada uno de los nodos de destino tiene un certificado de cifrado guardado en su almacén personal**. En Windows PowerShell, la ruta de acceso al almacén es Cert:\LocalMachine\My. En los ejemplos de este tema se usa la plantilla de "autenticación de estación de trabajo", que puede encontrar (junto con otras plantillas de certificado) en las [Plantillas de certificado predeterminadas](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).
 * Si va a ejecutar esta configuración en un equipo distinto al nodo de destino, **exporte la clave pública del certificado** y luego impórtela en el equipo desde el que se va a ejecutar la configuración. Asegúrese de que solo se exporte la clave **public**; mantenga la clave privada segura.
 
-## Proceso general
+## <a name="overall-process"></a>Proceso general
 
  1. Configure los certificados, las claves y las huellas digitales, asegurándose de que cada nodo de destino tenga copias del certificado y de que el equipo de configuración tenga la huella digital y la clave pública.
  2. Cree un bloque de datos de configuración que contenga la ruta de acceso y la huella digital de la clave pública.
@@ -39,7 +39,7 @@ Para cifrar correctamente las credenciales utilizadas para proteger una configur
 
 ![Diagrama1](images/CredentialEncryptionDiagram1.png)
 
-## Requisitos de certificados
+## <a name="certificate-requirements"></a>Requisitos de certificados
 
 Para representar el cifrado de credenciales, se requiere que un certificado de clave pública esté disponible en el _nodo de destino_ en el que **confíe** el equipo usado para crear la configuración de DSC.
 Este certificado de clave pública tiene requisitos específicos que debe usar para el cifrado de credenciales de DSC:
@@ -56,7 +56,7 @@ Este certificado de clave pública tiene requisitos específicos que debe usar p
   
 Cualquier certificado existente en el _nodo de destino_ que cumpla estos criterios puede usarse para proteger las credenciales de DSC.
 
-## Creación de certificados
+## <a name="certificate-creation"></a>Creación de certificados
 
 Existen dos enfoques que puede realizar para crear y usar el certificado de cifrado necesario (par de claves pública y privada).
 
@@ -66,7 +66,7 @@ Existen dos enfoques que puede realizar para crear y usar el certificado de cifr
 Se recomienda el método 1 porque la clave privada que se usa para descifrar las credenciales en el MOF permanece en el nodo de destino en todo momento.
 
 
-### Creación del certificado en el nodo de destino
+### <a name="creating-the-certificate-on-the-target-node"></a>Creación del certificado en el nodo de destino
 
 La clave privada debe mantenerse secreta, ya que se usa para descifrar el MOF en el **nodo de destino**. La forma más sencilla de hacerlo es crear el certificado de clave privada en el **nodo de destino** y copiar el **certificado de clave pública** en el equipo que se usa para crear la configuración de DSC en un archivo MOF.
 En el ejemplo siguiente:
@@ -74,7 +74,7 @@ En el ejemplo siguiente:
  2. exporta el certificado de clave pública al **nodo de destino**.
  3. importa el certificado de clave pública en **mi** almacén de certificados en el **nodo de creación**.
 
-#### En el nodo de destino: creación y exportación de certificados
+#### <a name="on-the-target-node-create-and-export-the-certificate"></a>En el nodo de destino: creación y exportación de certificados
 >Nodo de creación: Windows Server 2016 y Windows 10
 
 ```powershell
@@ -119,13 +119,13 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 Una vez exportado, el ```DscPublicKey.cer``` tendría que copiarse en el **nodo de creación**.
 
-#### En el nodo de creación: importación de la clave pública del certificado
+#### <a name="on-the-authoring-node-import-the-certs-public-key"></a>En el nodo de creación: importación de la clave pública del certificado
 ```powershell
 # Import to the my store
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-### Creación del certificado en el nodo de creación
+### <a name="creating-the-certificate-on-the-authoring-node"></a>Creación del certificado en el nodo de creación
 Como alternativa, se puede crear el certificado de cifrado en el **nodo de creación**, exportarlo con la **clave privada** como archivo PFX y después importarlo en el **nodo de destino**.
 Este es el método actual para implementar el cifrado de credenciales de DSC en _Nano Server_.
 Aunque el PFX está protegido con una contraseña, debe estar protegido durante el tránsito.
@@ -136,7 +136,7 @@ En el ejemplo siguiente:
  4. importa el certificado de clave privada en el almacén de certificados raíz en el **nodo de creación**.
    - debe agregarse al almacén raíz, de forma que este será de confianza para el **nodo de destino**.
 
-#### En el nodo de creación: creación y exportación de certificados
+#### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>En el nodo de creación: creación y exportación de certificados
 >Nodo de destino: Windows Server 2016 y Windows 10
 
 ```powershell
@@ -170,7 +170,6 @@ New-SelfsignedCertificateEx `
     -FriendlyName 'DSC Credential Encryption certificate' `
     -Exportable `
     -StoreLocation 'LocalMachine' `
-    -StoreName 'My' `
     -KeyLength 2048 `
     -ProviderName 'Microsoft Enhanced Cryptographic Provider v1.0' `
     -AlgorithmName 'RSA' `
@@ -190,14 +189,14 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-#### En el nodo de destino: importación de la clave privada del certificado raíz de confianza
+#### <a name="on-the-target-node-import-the-certs-private-key-as-a-trusted-root"></a>En el nodo de destino: importación de la clave privada del certificado raíz de confianza
 ```powershell
 # Import to the root store so that it is trusted
 $mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
 Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation Cert:\LocalMachine\Root -Password $mypwd > $null
 ```
 
-## Datos de configuración
+## <a name="configuration-data"></a>Datos de configuración
 
 El bloque de datos de configuración define los nodos de destino en los que operará, si se cifrarán las credenciales o no, los medios de cifrado y otra información. Para más información sobre el bloque de datos de configuración, consulte [Separación de los datos de entorno y configuración](configData.md).
 
@@ -231,7 +230,7 @@ $ConfigData= @{
 ```
 
 
-## Script de configuración
+## <a name="configuration-script"></a>Script de configuración
 
 En el script de configuración, utilice el parámetro `PsCredential` para garantizar que las credenciales se almacenen durante el menor tiempo posible. Al ejecutar el ejemplo facilitado, DSC pedirá las credenciales y luego cifrará el archivo MOF con el elemento CertificateFile que esté asociado con el nodo de destino en el bloque de datos de configuración. Este ejemplo de código copia un archivo desde un recurso compartido que está protegido para un usuario.
 
@@ -257,7 +256,7 @@ configuration CredentialEncryptionExample
 }
 ```
 
-## Configuración del descifrado
+## <a name="setting-up-decryption"></a>Configuración del descifrado
 
 Antes de que [`Start-DscConfiguration`](https://technet.microsoft.com/en-us/library/dn521623.aspx) pueda funcionar, debe indicar al administrador de configuración local en cada nodo de destino qué certificado se usará para descifrar las credenciales, mediante el recurso CertificateID para comprobar la huella digital del certificado. Esta función de ejemplo encontrará el certificado local adecuado (es posible que deba personalizarlo para que encuentre el certificado exacto que quiere utilizar):
 
@@ -304,7 +303,7 @@ configuration CredentialEncryptionExample
 }
 ```
 
-## Ejecución de la configuración
+## <a name="running-the-configuration"></a>Ejecución de la configuración
 
 En este punto, puede ejecutar la configuración, lo que dará como resultado dos archivos:
 
@@ -329,7 +328,7 @@ La configuración de DSC también se puede aplicar mediante un servidor de incor
 
 Consulte [Setting up a DSC pull client](pullClient.md) (Configuración de un cliente de extracción de DSC) para obtener más información sobre cómo aplicar configuraciones de DSC mediante un servidor de incorporación de cambios de DSC.
 
-## Ejemplo de módulo de cifrado de credenciales
+## <a name="credential-encryption-module-example"></a>Ejemplo de módulo de cifrado de credenciales
 
 Este es un ejemplo completo que incorpora todos estos pasos, además de un cmdlet de aplicación auxiliar que exporta y copia las claves públicas:
 
@@ -450,6 +449,6 @@ Start-CredentialEncryptionExample
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -8,18 +8,18 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 4c802002c6a03a27d02221dd713677911a77c30b
+ms.sourcegitcommit: 49ddf6faf98a51f7ad5252e9563b1543478ed113
+ms.openlocfilehash: 9090f4be2987b8a56ba4d839f54e05082a8bcfa0
 
 ---
 
-# Establecer configuraciones
+# <a name="enacting-configurations"></a>Establecer configuraciones
 
 >Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Hay dos maneras de establecer las configuraciones de la configuración de estado deseado (DSC) de PowerShell: el modo de inserción y el modo de extracción.
 
-## Modo de inserción
+## <a name="push-mode"></a>Modo de inserción
 
 ![Modo de inserción](images/Push.png "How push mode works")
 
@@ -27,10 +27,10 @@ El modo de inserción se refiere a un usuario que aplica activamente una configu
 
 Después de crear y compilar una configuración, puede establecerla en el modo de inserción con una llamada al cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx), estableciendo el parámetro -Path del cmdlet en la ruta de acceso donde se encuentra el MOF de configuración. Por ejemplo, si el MOF de configuración está ubicado en `C:\DSC\Configurations\localhost.mof`, se aplicaría a la máquina local con el comando siguiente: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
-> __Nota__: De forma predeterminada, DSC ejecuta una configuración como un trabajo en segundo plano. Para ejecutar la configuración de forma interactiva, llame a [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) con el parámetro __-Wait__.
+> __Nota__: De forma predeterminada, DSC ejecuta una configuración como un trabajo en segundo plano. Para ejecutar la configuración de forma interactiva, llame a [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) con el parámetro __-Wait__.
 
 
-## Modo de extracción
+## <a name="pull-mode"></a>Modo de extracción
 
 ![Modo de extracción](images/Pull.png "How pull mode works")
 
@@ -49,6 +49,6 @@ En los temas siguientes se explica cómo configurar los clientes y servidores de
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 
