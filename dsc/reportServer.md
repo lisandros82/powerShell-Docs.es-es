@@ -8,12 +8,12 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 59793e1701740dc783439cf1408c6efabd53cbcf
-ms.openlocfilehash: d541f37723d77cf0b52012bae143dc7d64efd65d
+ms.sourcegitcommit: 1e7bc38f03dd72fc29d004eb92bf130c416e490a
+ms.openlocfilehash: f7f2699287e76970d0b2565f7bbd45a5d75ac93a
 
 ---
 
-# Uso de un servidor de informes de DSC
+# <a name="using-a-dsc-report-server"></a>Uso de un servidor de informes de DSC
 
 > Se aplica a: Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: d541f37723d77cf0b52012bae143dc7d64efd65d
 
 El administrador de configuración local (LCM) de un nodo se puede configurar para enviar informes sobre su estado de configuración a un servidor de extracción, que puede consultarse posteriormente para recuperar los datos. Cada vez que el nodo comprueba y aplica una configuración, envía un informe al servidor de informes. Estos informes se almacenan en una base de datos en el servidor y se pueden recuperar mediante una llamada al servicio web de informes. Cada informe contiene información como qué configuraciones se han aplicado y si lo han hecho correctamente, los recursos usados, los errores que se han producido y las horas de inicio y finalización.
 
-## Configuración de un nodo para enviar informes
+## <a name="configuring-a-node-to-send-reports"></a>Configuración de un nodo para enviar informes
 
 Puede indicar a un nodo que envíe informes a un servidor mediante un bloque **ReportServerWeb** en la configuración del LCM del nodo (para más información sobre cómo configurar el LCM, vea [Configuración del administrador de configuración local](metaConfig.md)). El servidor al que el nodo envía los informes debe estar configurado como un servidor de extracción web (no puede enviar informes a un recurso compartido SMB). Para obtener información sobre la configuración de un servidor de extracción, consulte [Configuración de un servidor de extracción web de DSC](pullServer.md). El servidor de informes puede ser el mismo servicio desde el que el nodo extrae configuraciones y obtiene recursos, o puede ser un servicio diferente.
  
@@ -94,7 +94,7 @@ PullClientConfig
 
 >**Nota:** Puede asignar el nombre que quiera al servicio web al configurar un servidor de incorporación de cambios, pero la propiedad **ServerURL** debe coincidir con el nombre del servicio.
 
-## Obtener datos de informes
+## <a name="getting-report-data"></a>Obtener datos de informes
 
 Los informes enviados al servidor de extracción se introducen en una base de datos del servidor. Los informes están disponibles a través de llamadas al servicio web. Para recuperar los informes para un nodo específico, envíe una solicitud HTTP al servicio web de informes de la forma siguiente: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentID = MyNodeAgentId)/Reports` donde `MyNodeAgentId` es el valor AgentId del nodo para el que desea obtener informes. Puede obtener el valor de AgentId de un nodo mediante una llamada a [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) en ese nodo.
 
@@ -105,8 +105,8 @@ El script siguiente devuelve los informes para el nodo en el que se ejecuta:
 ```powershell
 function GetReport
 {
-    param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCReportServer.svc")
-    $requestUri = "$serviceURL/Nodes(AgentId= '$AgentId')/Reports"
+    param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc")
+    $requestUri = "$serviceURL/Node(ConfigurationId= '$AgentId')/StatusReports"
     $request = Invoke-WebRequest -Uri $requestUri  -ContentType "application/json;odata=minimalmetadata;streaming=true;charset=utf-8" `
                -UseBasicParsing -Headers @{Accept = "application/json";ProtocolVersion = "2.0"} `
                -ErrorAction SilentlyContinue -ErrorVariable ev
@@ -115,7 +115,7 @@ function GetReport
 }
 ```
     
-## Visualización de los datos de los informes
+## <a name="viewing-report-data"></a>Visualización de los datos de los informes
 
 Si establece una variable como el resultado de la función **GetReport**, puede ver los campos individuales de un elemento de la matriz que se devuelve:
 
@@ -222,7 +222,7 @@ InDesiredState    : True
 
 Tenga en cuenta que estos ejemplos están diseñados para ofrecerle una idea de lo que puede hacer con los datos del informe. Para obtener una introducción sobre cómo trabajar con JSON en PowerShell, vea [Playing with JSON and PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/) (Experimentos con JSON y PowerShell).
 
-## Véase también
+## <a name="see-also"></a>Véase también
 - [Configuración del administrador de configuración local](metaConfig.md)
 - [Configuración de un servidor de extracción web de DSC](pullServer.md)
 - [Configuración de un cliente de extracción mediante nombres de configuración](pullClientConfigNames.md)
@@ -230,6 +230,6 @@ Tenga en cuenta que estos ejemplos están diseñados para ofrecerle una idea de 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO3-->
 
 
