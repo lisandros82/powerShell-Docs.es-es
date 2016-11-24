@@ -14,7 +14,7 @@ ms.openlocfilehash: edafde9188cad3b21d0cd2b30cfaaf1bede9b195
 
 ---
 
-#  <a name="powershell-reference"></a>Referencia de PowerShell
+#  Referencia de PowerShell
 
 El material de referencia se organiza según las versiones de lanzamiento.
 
@@ -50,6 +50,6 @@ Con el tiempo, los espacios de nombres aparecían como:
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 
