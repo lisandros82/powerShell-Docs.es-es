@@ -8,18 +8,22 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: b617ae80ae6a555e531469efde07e443d83c51d8
-ms.openlocfilehash: 02721f0f6f68cc78ae0430205d06f079e3e7465a
+ms.sourcegitcommit: 7f0d3167538afb1e7f0003466254059372319789
+ms.openlocfilehash: 03db9843209038f7a14b46cf8a27316f1c63a819
 
 ---
 
-# Configuración de un cliente de extracción mediante nombres de configuración
+# <a name="setting-up-a-pull-client-using-configuration-names"></a>Configuración de un cliente de extracción mediante nombres de configuración
 
 > Se aplica a: Windows PowerShell 5.0
 
-Es necesario indicar a cada nodo de destino que debe usar el modo de extracción y se le debe facilitar la dirección URL donde puede establecer contacto con el servidor de extracción para obtener las configuraciones. Para ello, tendrá que configurar el administrador de configuración local (LCM) con la información necesaria. Para configurar el LCM, cree un tipo especial de configuración, decorada con el atributo **DSCLocalConfigurationManager**. Para más información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local](metaConfig.md).
+Es necesario indicar a cada nodo de destino que debe usar el modo de extracción y se le debe facilitar la dirección URL donde puede establecer contacto con el servidor de extracción para obtener las configuraciones.
+Para ello, tendrá que configurar el administrador de configuración local (LCM) con la información necesaria.
+Para configurar el LCM, debe crear un tipo especial de configuración, decorado con el atributo **DSCLocalConfigurationManager**.
+Para más información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local](metaConfig.md).
 
-> **Nota**: Este tema se aplica a PowerShell 5.0. Para obtener información sobre cómo configurar un cliente de extracción en PowerShell 4.0, consulte [Configuración de un cliente de extracción con el id. de configuración de PowerShell 4.0](pullClientConfigID4.md).
+> **Nota**: Este tema se aplica a PowerShell 5.0.
+Para obtener información sobre cómo configurar un cliente de extracción en PowerShell 4.0, consulte [Configuración de un cliente de extracción con el id. de configuración de PowerShell 4.0](pullClientConfigID4.md).
 
 El script siguiente configura el LCM para que extraiga configuraciones de un servidor denominado "CONTOSO-PullSrv":
 
@@ -32,7 +36,7 @@ configuration PullClientConfigNames
         Settings
         {
             RefreshMode = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
@@ -40,30 +44,42 @@ configuration PullClientConfigNames
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
             RegistrationKey = '140a952b-b9d6-406b-b416-e0f759c9c0e4'
             ConfigurationNames = @('ClientConfig')
-            
-        }      
+        }
     }
 }
 PullClientConfigNames
 ```
 
-En el script, el bloque **ConfigurationRepositoryWeb** define el servidor de extracción. La propiedad **ServerURL** especifica el punto de conexión del servidor de extracción.
+En el script, el bloque **ConfigurationRepositoryWeb** define el servidor de extracción.
+La propiedad **ServerURL** especifica el punto de conexión del servidor de extracción.
 
-La propiedad **RegistrationKey** es una clave compartida entre todos los nodos de cliente de un servidor de extracción y ese servidor de extracción. El mismo valor se almacena en un archivo en el servidor de extracción. 
+La propiedad **RegistrationKey** es una clave compartida entre todos los nodos de cliente de un servidor de extracción y ese servidor de extracción.
+El mismo valor se almacena en un archivo en el servidor de extracción.
 
-La propiedad **ConfigurationNames** es una matriz que especifica el nombre de la configuración prevista para el nodo de cliente. En el servidor de extracción, el archivo MOF de configuración de este nodo de cliente debe denominarse *ConfigurationNames*.mof, donde *ConfigurationNames* coincide con el valor de la propiedad **ConfigurationNames** establecida en este metaconfiguración.
+La propiedad **ConfigurationNames** es una matriz que especifica el nombre de la configuración prevista para el nodo de cliente.
+En el servidor de extracción, el archivo MOF de configuración de este nodo de cliente debe denominarse *ConfigurationNames*.mof, donde *ConfigurationNames* coincide con el valor de la propiedad **ConfigurationNames** establecida en este metaconfiguración.
 
->**Nota**: Si se especifica más de un valor en **ConfigurationNames**, también debe especificar bloques **PartialConfiguration** en la configuración. Para obtener información sobre las configuraciones parciales, consulte [Configuraciones parciales de la configuración de estado deseado de PowerShell](partialConfigs.md).
+>**Nota**: Si se especifica más de un valor en **ConfigurationNames**, también debe especificar bloques **PartialConfiguration** en la configuración.
+Para obtener información sobre las configuraciones parciales, consulte [Configuraciones parciales de la configuración de estado deseado de PowerShell](partialConfigs.md).
 
-Después de que se ejecute este script, se crea una nueva carpeta de salida denominada **PullClientConfigNames** y se coloca un archivo MOF de metaconfiguración en ella. En este caso, el nombre del archivo MOF de metaconfiguración será `localhost.meta.mof`.
+Después de que se ejecute este script, se crea una nueva carpeta de salida denominada **PullClientConfigNames** y se coloca un archivo MOF de metaconfiguración en ella.
+En este caso, el nombre del archivo MOF de metaconfiguración será `localhost.meta.mof`.
 
-Para aplicar la configuración, llame al cmdlet **Set-DscLocalConfigurationManager**, con el valor de **Path** establecido en la ubicación del archivo MOF de metaconfiguración. Por ejemplo: `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigNames –Verbose.`
+Para aplicar la configuración, llame al cmdlet **Set-DscLocalConfigurationManager**, con el valor de **Path** establecido en la ubicación del archivo MOF de metaconfiguración.
 
-> **Nota**: Las claves de registro solo funcionan con servidores de extracción web. Deberá seguir usando el elemento **ConfigurationID** con un servidor de extracción SMB. Para obtener información sobre cómo configurar un servidor de extracción mediante **ConfigurationID**, consulte [Configuración de un cliente de extracción con el id. de configuración](PullClientConfigNames.md)
+```powershell
+Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigNames –Verbose.
+```
 
-## Servidores de informes y recursos
+> **Nota**: Las claves de registro solo funcionan con servidores de extracción web.
+Deberá seguir usando el elemento **ConfigurationID** con un servidor de extracción SMB.
+Para obtener información sobre cómo configurar un servidor de extracción mediante **ConfigurationID**, consulte [Configuración de un cliente de extracción con el id. de configuración](PullClientConfigNames.md)
 
-Si solo especifica un bloque **ConfigurationRepositoryWeb** o **ConfigurationRepositoryShare** en la configuración del LCM (como en el ejemplo anterior), el cliente de extracción extraerá recursos del servidor especificado, pero no le enviará informes. Puede usar un solo servidor de extracción para configuraciones, recursos e informes, pero debe crear un bloque **ReportRepositoryWeb** para configurar los informes. En el siguiente ejemplo se muestra una metaconfiguración que configura un cliente para que envíe informes de datos y extraiga configuraciones y recursos a un único servidor de extracción.
+## <a name="resource-and-report-servers"></a>Servidores de informes y recursos
+
+Si solo especifica un bloque **ConfigurationRepositoryWeb** o **ConfigurationRepositoryShare** en la configuración del LCM (como en el ejemplo anterior), el cliente de extracción extraerá recursos del servidor especificado, pero no le enviará informes.
+Puede usar un solo servidor de extracción para configuraciones, recursos e informes, pero debe crear un bloque **ReportRepositoryWeb** para configurar los informes.
+En el siguiente ejemplo se muestra una metaconfiguración que configura un cliente para que envíe informes de datos y extraiga configuraciones y recursos a un único servidor de extracción.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -74,7 +90,7 @@ configuration PullClientConfigNames
         Settings
         {
             RefreshMode = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
 
@@ -83,7 +99,7 @@ configuration PullClientConfigNames
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
             RegistrationKey = 'fbc6ef09-ad98-4aad-a062-92b0e0327562'
         }
-        
+
         ReportServerWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
@@ -93,8 +109,10 @@ configuration PullClientConfigNames
 PullClientConfigNames
 ```
 
-También puede especificar servidores de incorporación de cambios diferentes para los recursos y los informes. Para especificar un servidor de recursos, utilice un bloque **ResourceRepositoryWeb** (para un servidor de extracción web) o un bloque **ResourceRepositoryShare** (para un servidor de extracción SMB).
-Para especificar un servidor de informes, utilice un bloque **ReportRepositoryWeb**. Un servidor de informes no puede ser un servidor SMB.
+También puede especificar servidores de incorporación de cambios diferentes para los recursos y los informes.
+Para especificar un servidor de recursos, utilice un bloque **ResourceRepositoryWeb** (para un servidor de extracción web) o un bloque **ResourceRepositoryShare** (para un servidor de extracción SMB).
+Para especificar un servidor de informes, utilice un bloque **ReportRepositoryWeb**.
+Un servidor de informes no puede ser un servidor SMB.
 La metaconfiguración siguiente configura un cliente de extracción para que obtenga sus configuraciones de **CONTOSO-PullSrv** y sus recursos de **CONTOSO-ResourceSrv**, y para que envíe los informes a **CONTOSO-ReportSrv**:
 
 ```powershell
@@ -106,7 +124,7 @@ configuration PullClientConfigNames
         Settings
         {
             RefreshMode = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
 
@@ -115,7 +133,7 @@ configuration PullClientConfigNames
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
             RegistrationKey = 'fbc6ef09-ad98-4aad-a062-92b0e0327562'
         }
-        
+
         ResourceRepositoryWeb CONTOSO-ResourceSrv
         {
             ServerURL = 'https://CONTOSO-ResourceSrv:8080/PSDSCPullServer.svc'
@@ -132,14 +150,13 @@ configuration PullClientConfigNames
 PullClientConfigNames
 ```
 
-## Véase también
+## <a name="see-also"></a>Véase también
 
-* [Configuración de un cliente de incorporación de cambios con el id. de configuración](PullClientConfigNames.md)
+* [Configuración de un cliente de extracción con el id. de configuración](PullClientConfigNames.md)
 * [Configuración de un servidor de extracción web de DSC](pullServer.md)
 
 
 
-
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

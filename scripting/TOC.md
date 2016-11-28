@@ -96,7 +96,7 @@
 ### [Entorno de scripting integrado (ISE)](core-powershell/ise-guide.md)
 ####  [Referencia del modelo de objetos ISE](core-powershell/ise/Windows-PowerShell-ISE-Object-Model-Reference.md)
 ####  [Objeto de objetos de scripting ISE](core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-####  [Usar Windows PowerShell ISE](core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+####  [Usar Windows PowerShell ISE](core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 ####  [El objeto ISE File](core-powershell/ise/The-ISEFile-Object.md)
 ####  [El objeto ISE Options](core-powershell/ise/The-ISEOptions-Object.md)
 ####  [El objeto ISE Snippet Collection](core-powershell/ise/The-ISESnippetCollection-Object.md)
@@ -136,12 +136,12 @@
 ####  [Reglas de autorización y características de seguridad de Windows PowerShell Web Access](core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md)
 ####  [Instalación y uso de Windows PowerShell Web Access](core-powershell/web-access/install-and-use-windows-powershell-web-access.md)
 ####  [Solución de problemas de acceso en Windows PowerShell Web Access](core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md)
-####  [Desinstalación de Windows PowerShell Web Access](core-powershell/web-access/uninstall-windows-powershell-web-access.md)
+####  [Desinstalar Windows PowerShell Web Access](core-powershell/web-access/uninstall-windows-powershell-web-access.md)
 ####  [Uso de la consola de Windows PowerShell basada en web](core-powershell/web-access/use-the-web-based-windows-powershell-console.md)
 
 ## [Glosario de PowerShell](Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=Oct16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

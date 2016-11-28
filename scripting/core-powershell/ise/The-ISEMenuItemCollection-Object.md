@@ -14,12 +14,12 @@ ms.openlocfilehash: 489c9492e8de213145b71a7963e180fe1a4ad5b6
 
 ---
 
-# El objeto ISEMenuItemCollection
+# <a name="the-isemenuitemcollection-object"></a>El objeto ISEMenuItemCollection
   Un objeto **ISEMenuItemCollection** es una colección de objetos **ISEMenuItem**. Es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection. Un ejemplo es el objeto **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** que se usa para personalizar el menú **Complemento** en el Entorno de scripting integrado (ISE) de Windows PowerShell®.
 
-## Método
+## <a name="method"></a>Método
 
-### Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)
+### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a>Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut\)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Agrega un elemento de menú a la colección.
@@ -42,7 +42,7 @@ ms.openlocfilehash: 489c9492e8de213145b71a7963e180fe1a4ad5b6
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
 ```
 
-### Borrar\(\)
+### <a name="clear"></a>Borrar\(\)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Quita todos los submenús del elemento de menú.
@@ -53,7 +53,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
 ```
 
-## Véase también
+## <a name="see-also"></a>Véase también
 - [El objeto ISEMenuItem](The-ISEMenuItem-Object.md) 
 - [El modelo de objetos de scripting de ISE de Windows PowerShell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Referencia del modelo de objetos de ISE de Windows PowerShell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
@@ -63,6 +63,6 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

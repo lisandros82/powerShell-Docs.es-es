@@ -14,13 +14,13 @@ ms.openlocfilehash: 6a4b65525125e088a58a66719b4b21816814f012
 
 ---
 
-# Módulo PackageManagement
+# <a name="packagemanagement-module"></a>Módulo PackageManagement
 Esta sección contiene los temas de Ayuda del módulo **Microsoft.PowerShell.PackageManagement**. El módulo **Microsoft.PowerShell. PackageManagement** se instala con Windows PowerShell® 5.0.
 
-## Temas de Ayuda
+## <a name="help-topics"></a>Temas de Ayuda
 [Cmdlets PackageManagement de Windows PowerShell](http://technet.microsoft.com/library/dn890706(v=wps.640).aspx)
 
-## Véase también
+## <a name="see-also"></a>Véase también
 - [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
 - [Conceptos básicos de Windows PowerShell](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
 - [Scripting con Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
@@ -28,6 +28,6 @@ Esta sección contiene los temas de Ayuda del módulo **Microsoft.PowerShell.Pac
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

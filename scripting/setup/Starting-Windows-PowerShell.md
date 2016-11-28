@@ -14,7 +14,7 @@ ms.openlocfilehash: 260805af4b64646922477f874c6679f58af8aea9
 
 ---
 
-# Iniciar Windows PowerShell
+# <a name="starting-windows-powershell"></a>Iniciar Windows PowerShell
 PowerShell es una dll de motor de scripting que se inserta en varios hosts.  Los hosts más comunes que iniciará son la línea de comandos interactiva PowerShell.exe y el entorno de scripting interactivo PowerShell_ISE.exe.  
 
 Para iniciar Windows PowerShell® en Windows Server® 2012 R2, Windows® 8.1, Windows Server 2012 y Windows 8, consulte [Navegación y tareas de administración comunes en Windows](http://technet.microsoft.com/library/hh831491.aspx).
@@ -29,13 +29,13 @@ Los temas incluyen:
 
 -   [Iniciar el motor de Windows PowerShell 2.0](Starting-the-Windows-PowerShell-2.0-Engine.md)
 
-## Véase también
+## <a name="see-also"></a>Véase también
 - [Requisitos del sistema de Windows PowerShell](Windows-PowerShell-System-Requirements.md)
 - [Instalación de Windows PowerShell](Installing-Windows-PowerShell.md)
 
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

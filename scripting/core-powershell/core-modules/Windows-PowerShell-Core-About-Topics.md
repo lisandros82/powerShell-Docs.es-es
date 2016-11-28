@@ -14,7 +14,7 @@ ms.openlocfilehash: c935d6f066aed1496069681723aa7bd72edbb8e3
 
 ---
 
-# Acerca de temas principales de Windows PowerShell
+# <a name="windows-powershell-core-about-topics"></a>Acerca de temas principales de Windows PowerShell
 Esta sección contiene los temas de Ayuda conceptual ("About") que se aplican a todos los módulos de Windows PowerShell. Para consultar los temas "About" de otros módulos, vea los temas de Ayuda del módulo en particular.
 
 |Tema|Descripción|
@@ -133,18 +133,18 @@ Esta sección contiene los temas de Ayuda conceptual ("About") que se aplican a 
 |[about_WQL](https://technet.microsoft.com/en-us/library/820b2d23-3473-46f5-a188-5910704c7905)|Describe el lenguaje de consulta de WMI (WQL), que puede usarse para obtener objetos WMI en Windows PowerShell.|
 |[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|Describe los cmdlets del módulo Microsoft.WsMan.Management. Explica cómo utilizarlos juntos para administrar las características de WS-Management, incluida la unidad del proveedor WSMan.|
 
-## Véase también
+## <a name="see-also"></a>Véase también
 - [Scripting con Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 - [Conceptos básicos de Windows PowerShell](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
 - [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
 - [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)
 - [about_WMI_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/9c56b172-3b25-47b2-b6e0-86db649b1c45)
 - [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
-- [SDK de Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107032)
+- [Windows PowerShell SDK](http://go.microsoft.com/fwlink/?LinkID=107032)
 
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

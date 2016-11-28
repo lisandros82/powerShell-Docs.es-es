@@ -14,10 +14,10 @@ ms.openlocfilehash: 03a9bbfb14c4587d794db2eaadf60cc7a4d4dcdc
 
 ---
 
-# Cuadros de lista de selección múltiple
+# <a name="multiple-selection-list-boxes"></a>Cuadros de lista de selección múltiple
 Use Windows PowerShell 3.0 (y versiones posteriores) para crear un control de cuadro de lista de selección múltiple en un formulario de Windows Forms personalizado.
 
-## Crear controles de cuadro de lista que permiten selecciones múltiples
+## <a name="create-list-box-controls-that-allow-multiple-selections"></a>Crear controles de cuadro de lista que permiten selecciones múltiples
 Copie y pegue lo siguiente en Windows PowerShell ISE y, después, guárdelo como un script de Windows PowerShell (.ps1).
 
 ```
@@ -184,14 +184,14 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## Véase también
-- [Hey Scripting Guy: Why don’t these PowerShell GUI examples work? (Hey Scripting Guy: ¿Por qué estos ejemplos de GUI de PowerShell no funcionan?)](http://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates (GitHub: WinFormsExampleUpdates de Dave Wyatt)](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week: Multi-Select List Boxes – And More! (Sugerencia de Windows PowerShell de la semana: cuadros de lista multiselección y mucho más)](http://technet.microsoft.com/library/ff730950.aspx)
+## <a name="see-also"></a>Véase también
+- [Hey Scripting Guy: Why don’t these PowerShell GUI examples work?](http://go.microsoft.com/fwlink/?LinkId=506644) (Hey Scripting Guy: ¿Por qué estos ejemplos de GUI de PowerShell no funcionan?)
+- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) (GitHub: WinFormsExampleUpdates de Dave Wyatt)
+- [Windows PowerShell Tip of the Week: Multi-Select List Boxes – And More!](http://technet.microsoft.com/library/ff730950.aspx) (Sugerencia de Windows PowerShell de la semana: cuadros de lista multiselección y mucho más)
 
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

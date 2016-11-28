@@ -14,15 +14,15 @@ ms.openlocfilehash: 20718ebbfb38f847d460a33e3c69b5cb45b754c6
 
 ---
 
-# Entorno de scripting integrado (ISE) de Windows PowerShell
+# <a name="windows-powershell-integrated-scripting-environment-ise"></a>Entorno de scripting integrado (ISE) de Windows PowerShell
 El Entorno de scripting integrado (ISE ) de Windows PowerShell es uno de los dos hosts para el motor y el lenguaje de Windows PowerShell. Puede escribir, ejecutar y probar scripts de maneras que no están disponibles en la consola de Windows PowerShell. El ISE agrega color de sintaxis, finalización con tabulación, IntelliSense, depuración visual y ayuda contextual.
 
 El ISE permite ejecutar comandos en un panel de consola, pero también admite paneles que se pueden usar para ver simultáneamente el código fuente del script y otras herramientas que pueden conectarse al ISE. También puede abrir varias ventanas de script al mismo tiempo, lo cual es especialmente útil cuando se depura un script que usa las funciones definidas en otros scripts o módulos.
 
-## Novedades
+## <a name="whats-new"></a>Novedades
 Estas son algunas de las características que se agregaron al ISE en las versiones más recientes de PowerShell.
 
-### Agregado en PowerShell 3.0 (Windows Server 2012, Windows 8)
+### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>Agregado en PowerShell 3.0 (Windows Server 2012, Windows 8)
 **Intellisense** completa automáticamente sus comandos mostrando menús de cmdlets, parámetros, valores de parámetros, archivos o carpetas coincidentes a medida que escribe.
 
 **Fragmentos de código** son secciones de código breves que puede insertar fácilmente en los scripts que escribe. Una colección de fragmentos de código útiles se incluye en el cuadro y puede agregar más mediante el cmdlet **New-Snippet**.
@@ -55,21 +55,21 @@ Las **nuevas características del editor** facilitan la creación y lectura del 
 
 -   **Selección de bloques**. Para seleccionar un fragmento de texto en forma de bloque, puede mantener presionada la tecla ALT y seleccionar texto en el panel de scripts con el ratón, o bien presionar **Alt+Mayús+Flecha**.
 
-### Agregado en PowerShell 2.0 (Windows Server 2008 R2, Windows 7)
+### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>Agregado en PowerShell 2.0 (Windows Server 2008 R2, Windows 7)
 El ISE se introdujo con PowerShell 2.0.
 
-## Requisitos para ejecutar Windows PowerShell ISE
+## <a name="requirements-for-running-the-windows-powershell-ise"></a>Requisitos para ejecutar Windows PowerShell ISE
 El ISE está disponible en cualquier equipo que puede ejecutar Windows PowerShell 2.0 o una versión posterior. Cada versión de Windows y Windows Server incluye una versión de Windows PowerShell y el ISE, pero se puede actualizar a la versión más reciente disponible mediante la instalación de Windows Management Framework. Realice esta búsqueda para encontrar la versión más reciente disponible: [Descargas](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending). Tenga en cuenta que todas las entradas etiquetadas como "Vista previa" son código de versión preliminar y no una característica completa.
 
 > [!NOTE]
 > Dado que Windows PowerShell ISE requiere una interfaz gráfica de usuario, no puede ejecutar la opción Server Core de Windows Server.
 
-## Vea también
+## <a name="see-also"></a>Vea también
 - [Uso del Entorno de scripting integrado de Windows PowerShell](http://technet.microsoft.com/library/cc732148.aspx)
 
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 
