@@ -8,19 +8,17 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: uso de JEA
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 88ce340c09efdbb3d81a72fe6113c1187a9152f2
-ms.openlocfilehash: 9db7a5a91d25d459313117da34af63016f03c241
-
+ms.openlocfilehash: 55c8f2d6a8e2bb9f33a3e9af5c3ee94fa5259716
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Uso de JEA
+# <a name="using-jea"></a>Uso de JEA
 Esta sección se centra en la comprensión de la experiencia del *uso de JEA* por parte del usuario final.
 En la sección Requisitos previos, creó un punto de conexión de JEA de demostración.
 Usaremos esta demostración para mostrar JEA en acción.
 En secciones posteriores, la guía funcionará con versiones anteriores, es decir, introducirá acciones y archivos que hicieron posible la experiencia del usuario final.
 
-## Uso de JEA como no administrador
+## <a name="using-jea-as-a-non-administrator"></a>Uso de JEA como no administrador
 Para mostrar JEA en acción, debe usar Comunicación remota de PowerShell como si fuera un usuario sin privilegios de administrador.
 Ejecute el comando siguiente en una nueva ventana de PowerShell:   
 
@@ -93,10 +91,4 @@ Exit-PSSession
 ```
 
 Esto lo desconecta de la sesión remota de PowerShell.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

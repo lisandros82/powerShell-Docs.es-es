@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-translationtype: Human Translation
-ms.sourcegitcommit: d698cdd29bfe165b87494696ca2dc3486be4ab0e
-ms.openlocfilehash: 96204a0ce674cacd5b830f9f8b820ce3e1cbbc20
-
+ms.openlocfilehash: 4f53fb9bd096b63e23763e737dae03da2126ec56
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Recopilar información acerca de los equipos
+# <a name="collecting-information-about-computers"></a>Recopilar información acerca de los equipos
 **Get-WmiObject** es el cmdlet más importante para las tareas generales de administración del sistema. Todas las opciones de configuración críticas del subsistema se exponen a través de WMI. Además, WMI trata los datos como objetos que están en colecciones de uno o más elementos. Dado que Windows PowerShell también funciona con objetos y tiene una canalización que permite tratar uno o varios objetos de la misma manera, el acceso genérico a WMI le permite realizar algunas tareas avanzadas con muy poco esfuerzo.
 
 Los ejemplos siguientes muestran cómo recopilar información específica mediante **Get-WmiObject** en un equipo arbitrario. Especificamos el parámetro **ComputerName** con el valor de punto (**.**), que representa el equipo local. Puede especificar una dirección IP o un nombre asociado a cualquier equipo que pueda alcanzar a través de WMI. Para recuperar información acerca del equipo local, puede omitir **-ComputerName.**
 
-### Enumerar la configuración del escritorio
+### <a name="listing-desktop-settings"></a>Enumerar la configuración del escritorio
 Comenzaremos con un comando que recopila información acerca de los escritorios en el equipo local.
 
 ```
@@ -37,14 +35,14 @@ Get-WmiObject -Class Win32_Desktop -ComputerName . | Select-Object -Property [a-
 
 Para filtrar los metadatos, use el operador de canalización (|) para enviar los resultados del comando Get-WmiObject a **Select-Object -Property [a-z]***.
 
-### Enumerar información del BIOS
+### <a name="listing-bios-information"></a>Enumerar información del BIOS
 La clase Win32_BIOS de WMI devuelve información bastante compacta y completa acerca del BIOS del sistema en el equipo local:
 
 ```
 Get-WmiObject -Class Win32_BIOS -ComputerName .
 ```
 
-### Enumerar información del procesador
+### <a name="listing-processor-information"></a>Enumerar información del procesador
 Puede recuperar información general del procesador mediante la clase **Win32_Processor** de WMI, aunque probablemente desee filtrar la información:
 
 ```
@@ -60,7 +58,7 @@ SystemType
 X86-based PC
 ```
 
-### Enumerar el modelo y el fabricante del equipo
+### <a name="listing-computer-manufacturer-and-model"></a>Enumerar el modelo y el fabricante del equipo
 La información del modelo del equipo también está disponible en **Win32_ComputerSystem**. La salida estándar mostrada no necesita ningún filtrado para proporcionar datos de OEM:
 
 ```
@@ -75,7 +73,7 @@ TotalPhysicalMemory : 804765696
 
 La salida de comandos como este, que devuelven información directamente de determinado hardware, es tan buena como los datos que posee. Los fabricantes del hardware no configuran correctamente algunos datos, por lo que podrían no estar disponibles.
 
-### Enumerar las revisiones instaladas
+### <a name="listing-installed-hotfixes"></a>Enumerar las revisiones instaladas
 Puede enumerar todas las revisiones instaladas mediante **Win32_QuickFixEngineering**:
 
 ```
@@ -123,7 +121,7 @@ HotFixId
 KB910437
 ```
 
-### Enumerar la información de versión del sistema operativo
+### <a name="listing-operating-system-version-information"></a>Enumerar la información de versión del sistema operativo
 Las propiedades de la clase **Win32_OperatingSystem** incluyen información acerca de la versión y del Service Pack. Solo puede seleccionar explícitamente estas propiedades para obtener un resumen de la información de versión de **Win32_OperatingSystem**:
 
 ```
@@ -142,7 +140,7 @@ ServicePackMajorVersion : 2
 ServicePackMinorVersion : 0
 ```
 
-### Enumerar el propietario y los usuarios locales
+### <a name="listing-local-users-and-owner"></a>Enumerar el propietario y los usuarios locales
 La información local del usuario general (número de usuarios con licencia, número actual de usuarios y nombre del propietario) puede encontrarse con una selección de propiedades de **Win32_OperatingSystem**. Puede seleccionar explícitamente las propiedades para que tengan el aspecto siguiente:
 
 ```
@@ -155,7 +153,7 @@ Una versión más concisa con caracteres comodín es:
 Get-WmiObject -Class Win32_OperatingSystem -ComputerName . | Select-Object -Property *user*
 ```
 
-### Obtener el espacio disponible en disco
+### <a name="getting-available-disk-space"></a>Obtener el espacio disponible en disco
 Para ver el espacio en disco y el espacio libre de las unidades locales, puede usar la clase Win32_LogicalDisk de WMI. Solo necesita ver las instancias con un valor de DriveType de 3 (valor que WMI usa para los discos duros fijos).
 
 ```
@@ -178,21 +176,21 @@ VolumeName   : New Volume
 Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType=3" -ComputerName . | Measure-Object -Property FreeSpace,Size -Sum | Select-Object -Property Property,Sum
 ```
 
-### Obtener información de la sesión de inicio
+### <a name="getting-logon-session-information"></a>Obtener información de la sesión de inicio
 Puede obtener información general acerca de las sesiones de inicio asociadas a los usuarios a través de la clase Win32_LogonSession de WMI:
 
 ```
 Get-WmiObject -Class Win32_LogonSession -ComputerName .
 ```
 
-### Ayudar al usuario a iniciar sesión en un equipo
+### <a name="getting-the-user-logged-on-to-a-computer"></a>Ayudar al usuario a iniciar sesión en un equipo
 Para ver el usuario que inició sesión en un equipo concreto use Win32_ComputerSystem. Este comando devuelve solo el usuario que inició sesión en el escritorio del sistema:
 
 ```
 Get-WmiObject -Class Win32_ComputerSystem -Property UserName -ComputerName .
 ```
 
-### Obtener la hora local de un equipo
+### <a name="getting-local-time-from-a-computer"></a>Obtener la hora local de un equipo
 Puede recuperar la hora local actual en un equipo específico mediante la clase Win32_LocalTime de WMI. Dado que esta clase muestra todos los metadatos de forma predeterminada, puede filtrarlos mediante **Select-Object**:
 
 ```
@@ -210,7 +208,7 @@ WeekInMonth  : 3
 Year         : 2006
 ```
 
-### Visualizar el estado del servicio
+### <a name="displaying-service-status"></a>Visualizar el estado del servicio
 Para ver el estado de todos los servicios de un equipo específico, puede usar el cmdlet **Get-Service** localmente como ya se ha mencionado. Para los sistemas remotos, puede usar la clase Win32_Service de WMI. Si también usa **Select-Object** para filtrar los resultados con **Status**, **Name** y **DisplayName**, el formato de salida será casi idéntico al de **Get-Service**:
 
 ```
@@ -222,10 +220,4 @@ Para permitir la visualización completa de los nombres de los servicios ocasion
 ```
 Get-WmiObject -Class Win32_Service -ComputerName . | Format-Table -Property Status,Name,DisplayName -AutoSize -Wrap
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

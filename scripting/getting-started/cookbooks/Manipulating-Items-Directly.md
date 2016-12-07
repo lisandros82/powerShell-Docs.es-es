@@ -8,14 +8,12 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: b21af4711cc5a846517c3e286c9e90f858612ccb
-
+ms.openlocfilehash: f462f195e1128cd67be8073fe0755b5158fee970
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Manipular elementos directamente
-Los elementos que se ven en las unidades de Windows PowerShell (como los archivos y carpetas en las unidades del sistema de archivos y las claves del Registro en las unidades de Registro de Windows PowerShell) se denominan *elementos* en Windows PowerShell. Los cmdlets que funcionan con los elementos contienen el término **Item** en sus nombres.
+# <a name="manipulating-items-directly"></a>Manipular elementos directamente
+Los elementos que se ven en las unidades de Windows PowerShell (como los archivos y carpetas en las unidades del sistema de archivos y las claves del Registro en las unidades de Registro de Windows PowerShell) se denominan *elementos* en Windows PowerShell. Los cmdlets que funcionan con los elementos contienen el término **Item** en sus nombres.
 
 La salida del comando **Get-Command -Noun Item** indica que hay nueve cmdlets de elemento en Windows PowerShell.
 
@@ -35,7 +33,7 @@ Cmdlet          Rename-Item                     Rename-Item [-Path] <String>...
 Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
-### Crear elementos (New-Item)
+### <a name="creating-new-items-new-item"></a>Crear elementos (New-Item)
 Para crear un elemento en el sistema de archivos, use el cmdlet **New-Item**. Incluya el parámetro **Path** con la ruta de acceso al elemento y el parámetro **ItemType** con un valor "file" o "directory".
 
 Por ejemplo, para crear un directorio denominado "New.Directory" en el directorio C:\\Temp, escriba:
@@ -75,9 +73,9 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-Cuando escriba una ruta de acceso del Registro, no olvide incluir dos puntos (**:**) en los nombres de unidad de Windows PowerShell, HKLM: y HKCU:. Sin esos dos puntos, Windows PowerShell no reconoce el nombre de la unidad en la ruta de acceso.
+Cuando escriba una ruta de acceso del Registro, no olvide incluir dos puntos (**:**) en los nombres de unidad de Windows PowerShell, HKLM: y HKCU:. Sin esos dos puntos, Windows PowerShell no reconoce el nombre de la unidad en la ruta de acceso.
 
-### ¿Por qué valores del Registro no son elementos?
+### <a name="why-registry-values-are-not-items"></a>¿Por qué valores del Registro no son elementos?
 Si usa el cmdlet **Get-ChildItem** para encontrar los elementos en una clave del Registro, nunca verá las entradas del Registro reales ni sus valores.
 
 Por ejemplo, la clave del Registro **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run** suele contener varias entradas del Registro que representan las aplicaciones que se ejecutan cuando el sistema se inicia.
@@ -95,7 +93,7 @@ SKC  VC Name                           Property
 
 Aunque posiblemente sea conveniente tratar las entradas del Registro como elementos, no se puede especificar una ruta de acceso a una entrada del Registro de una manera que garantice que sea única. La notación de ruta de acceso no distingue entre la subclave del Registro **Run** y la entrada del Registro **(Default)** en la subclave **Run**. Es más, dado que los nombres de las entradas del Registro pueden contener el carácter de barra diagonal inversa (**\\**), si las entradas de Registro fueran elementos, no podría usar la notación de ruta de acceso para distinguir una entrada del Registro llamada **Windows\\CurrentVersion\\Run** de la subclave que se encuentra en esa ruta de acceso.
 
-### Cambiar el nombre de los elementos existentes (Rename-Item)
+### <a name="renaming-existing-items-rename-item"></a>Cambiar el nombre de los elementos existentes (Rename-Item)
 Para cambiar el nombre de un archivo o una carpeta, use el cmdlet **Rename-Item**. El siguiente comando cambia el nombre del archivo **file1.txt** a **fileOne.txt**.
 
 ```
@@ -111,10 +109,10 @@ At line:1 char:12
 + Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
 ```
 
-### Mover elementos (Move-Item)
+### <a name="moving-items-move-item"></a>Mover elementos (Move-Item)
 Para mover un archivo o una carpeta, use el cmdlet **Move-Item**.
 
-Por ejemplo, el siguiente comando mueve el directorio New.Directory del directorio C:\\temp a la raíz de la unidad C:. Para confirmar que el elemento se ha movido, incluya el parámetro **PassThru** del cmdlet **Move-Item**. Sin **Passthru**, el cmdlet **Move-Item** no muestra ningún resultado.
+Por ejemplo, el siguiente comando mueve el directorio New.Directory del directorio C:\\temp a la raíz de la unidad C:. Para confirmar que el elemento se ha movido, incluya el parámetro **PassThru** del cmdlet **Move-Item**. Sin **Passthru**, el cmdlet **Move-Item** no muestra ningún resultado.
 
 ```
 PS> Move-Item -Path C:\temp\New.Directory -Destination C:\ -PassThru
@@ -126,10 +124,10 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  12:14 PM            New.Directory
 ```
 
-### Copiar elementos (Copy-Item)
+### <a name="copying-items-copy-item"></a>Copiar elementos (Copy-Item)
 Si está familiarizado con las operaciones de copia de otros shells, el comportamiento del cmdlet **Copy-Item** de Windows PowerShell le puede parecer inusual. Al copiar un elemento de una ubicación en otra, Copy-Item no copia el contenido de forma predeterminada.
 
-Por ejemplo, si copia el directorio **New.Directory** de la unidad C: en el directorio C:\\temp, el comando se ejecuta correctamente, pero los archivos del directorio New.Directory no se copian.
+Por ejemplo, si copia el directorio **New.Directory** de la unidad C: en el directorio C:\\temp, el comando se ejecuta correctamente, pero los archivos del directorio New.Directory no se copian.
 
 ```
 PS> Copy-Item -Path C:\New.Directory -Destination C:\temp
@@ -163,7 +161,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-### Eliminar elementos (Remove-Item)
+### <a name="deleting-items-remove-item"></a>Eliminar elementos (Remove-Item)
 Use el cmdlet **Remove-Item** para eliminar archivos y carpetas. Los cmdlets de Windows PowerShell como **Remove-Item**, que pueden realizar cambios importantes e irreversibles, a menudo pedirán confirmación al escribir sus comandos. Así, si intenta quitar la carpeta **New.Directory**, se le pedirá que confirme el comando, ya que la carpeta contiene archivos:
 
 ```
@@ -183,7 +181,7 @@ Dado que **Sí** es la respuesta predeterminada, presione la tecla **Entrar** pa
 PS> Remove-Item C:\temp\New.Directory -Recurse
 ```
 
-### Ejecutar elementos (Invoke-Item)
+### <a name="executing-items-invoke-item"></a>Ejecutar elementos (Invoke-Item)
 Windows PowerShell usa el cmdlet **Invoke-Item** para realizar una acción predeterminada relativa a un archivo o una carpeta. Esta acción predeterminada viene determinada por el controlador de aplicación predeterminado en el Registro; el efecto es el mismo que si hiciera doble clic en el elemento en el Explorador de archivos.
 
 Por ejemplo, suponga que ejecuta el siguiente comando:
@@ -194,17 +192,11 @@ PS> Invoke-Item C:\WINDOWS
 
 Se abre una ventana del explorador en la ubicación C:\\Windows, básicamente como si hubiera hecho doble clic en la carpeta C:\\Windows.
 
-Si invoca el archivo **Boot.ini** en un sistema previo a Windows Vista:
+Si invoca el archivo **Boot.ini** en un sistema previo a Windows Vista:
 
 ```
 PS> Invoke-Item C:\boot.ini
 ```
 
-Si el tipo de archivo .ini está asociado con el Bloc de notas, se abrirá en el Bloc de notas.
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
+Si el tipo de archivo .ini está asociado con el Bloc de notas, se abrirá en el Bloc de notas.
 

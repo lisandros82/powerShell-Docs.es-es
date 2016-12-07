@@ -8,15 +8,13 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 270f2a458a40f005f462d3de5236defbb91a7362
-ms.openlocfilehash: c88c145c3585befcee194499f7e21aaeac67c0f3
-
+ms.openlocfilehash: 53c3bcb76f2bb9284339a4e506f28375a14285ae
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+#<a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Mejoras en la configuración de estado deseado (DSC) en WMF 5.1
 
-#Mejoras en la configuración de estado deseado (DSC) en WMF 5.1
-
-## Mejoras en los recursos de la clase DSC
+## <a name="dsc-class-resource-improvements"></a>Mejoras en los recursos de la clase DSC
 
 En WMF 5.1, hemos corregido los siguientes problemas conocidos:
 * Get-DscConfiguration puede devolver valores vacíos (NULL) o errores si la función Get() de un recurso de DSC basado en clases devuelve un tipo complejo o de tabla hash.
@@ -26,20 +24,20 @@ En WMF 5.1, hemos corregido los siguientes problemas conocidos:
 * Los recursos basados en clases no se pueden utilizar como recursos exclusivos.
 
 
-## Mejoras en la depuración de recursos de DSC
+## <a name="dsc-resource-debugging-improvements"></a>Mejoras en la depuración de recursos de DSC
 
 En WMF 5.0, el depurador de PowerShell no se detenía directamente en el método de recursos basados en clases (Get/Set/Test).
 En WMF 5.1, el depurador se detendrá en el método de recursos basados en clases de la misma manera que con los métodos de recursos basados en MOF.
 
-## El cliente de extracción de DSC es compatible con TLS 1.1 y TLS 1.2 
+## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>El cliente de extracción de DSC es compatible con TLS 1.1 y TLS 1.2 
 Anteriormente, el cliente de extracción de DSC solo era compatible con SSL3.0 y TLS1.0 a través de conexiones HTTPS. Cuando se le obligaba a usar protocolos más seguros, el cliente de extracción dejaba de funcionar. En WMF 5.1, el cliente de extracción de DSC ya no es compatible con SSL 3.0 y, en cambio, ya es compatible con los protocolos TLS 1.1 y TLS 1.2 que son más seguros.  
 
-## Registro de servidor de extracción mejorado ##
+## <a name="improved-pull-server-registration"></a>Registro de servidor de extracción mejorado ##
 
 En las versiones anteriores de WMF, si se realizaban solicitudes de informes y registros concurrentes al servidor de extracción de DSC mientras se usaba la base de datos ESENT, LCM no podía registrarlas ni informar al respecto. En tales casos, los registros de eventos del servidor de extracción mostrarán el error "El nombre de instancia ya está en uso".
 Esto se debe a que se usa un patrón incorrecto para acceder a la base de datos ESENT en un escenario de varios subprocesos. En WMF 5.1, este problema se ha corregido. Los informes o registros simultáneos (que implican la base de datos ESENT) funcionan correctamente en WMF 5.1. Este problema solo concierne a la base de datos ESENT, no se aplica a la base de datos OLEDB. 
 
-##Convención de nomenclatura de configuración parcial de extracción
+##<a name="pull-partial-configuration-naming-convention"></a>Convención de nomenclatura de configuración parcial de extracción
 En la versión anterior, la convención de nomenclatura de una configuración parcial consistía en que el nombre de archivo MOF en el servidor o servicio de extracción debía coincidir con el nombre de configuración parcial especificado en la configuración del administrador de configuración local, que a su vez debe coincidir con el nombre de configuración insertado en el archivo MOF. 
 
 Vea las instantáneas siguientes:
@@ -132,7 +130,7 @@ La metaconfiguración siguiente configurará un nodo que se debe administrar tan
    slcm -Path .\RegistrationMetaConfig -Verbose
  ```
 
-# Uso de PsDscRunAsCredential con recursos compuestos de DSC   
+# <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Uso de PsDscRunAsCredential con recursos compuestos de DSC   
 
 Hemos agregado compatibilidad para usar [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) con recursos [compuestos](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite) de DSC.    
 
@@ -177,14 +175,14 @@ InstallWindowsFeature -ConfigurationData $configData
 
 ```
 
-##Validaciones de firmas de configuraciones y módulos de DSC
+##<a name="dsc-module-and-configuration-signing-validations"></a>Validaciones de firmas de configuraciones y módulos de DSC
 En DSC, las configuraciones y los módulos se distribuyen a los equipos administrados desde el servidor de extracción. Si el servidor de extracción está en peligro, un atacante puede modificar las configuraciones y los módulos del servidor de extracción y propagarlos a todos los nodos administrados, poniéndolos todos en peligro. 
 
  En WMF 5.1, DSC admite la validación de las firmas digitales en los archivos del catálogo y de configuración (.MOF). Esta característica evitará que los nodos ejecuten archivos de módulos o de configuración que no están firmados por un firmante de confianza o que se han alterado después de que los haya firmado un firmante de confianza. 
 
 
 
-###Cómo firmar un módulo y una configuración 
+###<a name="how-to-sign-configuration-and-module"></a>Cómo firmar un módulo y una configuración 
 ***
 * Archivos de configuración (.MOF): el cmdlet de PowerShell existente [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) se amplía para admitir la firma de archivos MOF.  
 * Módulos: la firma de módulos se realiza mediante la firma del catálogo de módulos correspondiente mediante los siguientes pasos: 
@@ -195,9 +193,9 @@ En DSC, las configuraciones y los módulos se distribuyen a los equipos administ
     3. Coloque el archivo de catálogo dentro de la carpeta del módulo.
 Por convención, el archivo de catálogo del módulo debe colocarse en la carpeta del módulo y debe tener el mismo nombre que este.
 
-###Configuración de LocalConfigurationManager para habilitar las validaciones de las firmas
+###<a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>Configuración de LocalConfigurationManager para habilitar las validaciones de las firmas
 
-####Extracción
+####<a name="pull"></a>Extracción
 En un nodo, LocalConfigurationManager realiza la validación de las firmas de módulos y las configuraciones en función de su configuración actual. De forma predeterminada, la validación de firmas está deshabilitada. La validación de firmas se puede habilitar agregando un bloque "SignatureValidation" a la definición de metaconfiguración del nodo, tal como se muestra aquí:
 
 ```PowerShell
@@ -248,7 +246,7 @@ De forma similar, la extracción de un módulo cuyo catálogo no esté firmado p
 
 ![Módulo de salida de error de ejemplo](../images/PullUnisgnedCatalog.png)
 
-####Push
+####<a name="push"></a>Push
 Una configuración entregada mediante inserción puede alterarse en su origen antes de que se entregue al nodo. El administrador de configuración local llevará a cabo pasos de validación de firmas similares para las configuraciones insertadas o publicadas.
 A continuación, se muestra un ejemplo completo de validación de firma para la inserción.
 
@@ -301,10 +299,4 @@ Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 * Intente insertar el archivo MOF firmado.
 
 ![SignMofFile](../images/PushSignedMof.png)
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

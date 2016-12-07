@@ -1,5 +1,5 @@
 ---
-title: "Explorar Windows PowerShell ISE"
+title: Explorar Windows PowerShell ISE
 ms.date: 2016-05-11
 keywords: powershell,cmdlet
 description: 
@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
-translationtype: Human Translation
-ms.sourcegitcommit: b59186234a513cf34d2615d90643ee749bd60d3f
-ms.openlocfilehash: d0f9c059f6f5286388af3cfc07995fe46e7321c3
-
+ms.openlocfilehash: 590996f2db730a7841eb7a85036e4f36e59e46ff
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# <a name="exploring-the-windows-powershell-ise"></a>Explorar Windows PowerShell ISE
+# <a name="exploring-the-windows-powershell-ise"></a>Explorar Windows PowerShell ISE
 Puede usar el Entorno de scripting integrado (ISE) de Windows PowerShell® para crear, ejecutar y depurar scripts y comandos. Windows PowerShell ISE consta de la barra de menús, las pestañas de Windows PowerShell, la barra de herramientas, las pestañas de script, un panel de scripts, un panel de consola, una barra de estado, un control deslizante de tamaño de texto y la ayuda contextual.
 
 > [!NOTE]
@@ -26,7 +24,7 @@ La barra de menús contiene los menús **Archivo**, **Edición**, **Ver**, **Her
 > [!NOTE]
 > En Windows PowerShell ISE 2.0, no existían los menús **Herramientas** y **Complementos**.
 
-## <a name="windows-powershell-tabs"></a>Pestañas de Windows PowerShell
+## <a name="windows-powershell-tabs"></a>Pestañas de Windows PowerShell
 Una pestaña de Windows PowerShell es el entorno en el que se ejecuta un script de Windows PowerShell. Puede abrir nuevas pestañas de Windows PowerShell en Windows PowerShell ISE para crear entornos independientes en el equipo local o en equipos remotos. Puede tener un máximo de ocho pestañas de PowerShell abiertas de forma simultánea.
 
 ## <a name="toolbar"></a>Barra de herramientas
@@ -77,10 +75,4 @@ La ayuda de Windows PowerShell ISE está disponible en la biblioteca de TechNet 
 
 ## <a name="see-also"></a>Véase también
 - [Usar Windows PowerShell ISE](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

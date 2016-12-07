@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 01720794aa1d200428c2729463fba92970f9cb56
-ms.openlocfilehash: 716ecd9b14976dd70b69a740850ab53670387956
-
+ms.openlocfilehash: a3f2cf37eb185124d73443bbe42b5fcc82034f15
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Uso de recursos con varias versiones
+# <a name="using-resources-with-multiple-versions"></a>Uso de recursos con varias versiones
 
 > Se aplica a: Windows PowerShell 5.0
 
 En PowerShell 5.0, los recursos de DSC pueden tener varias versiones, y las versiones pueden instalarse en un equipo en paralelo. Esto se implementa mediante varias versiones de un módulo de recursos que están contenidas en la misma carpeta del módulo.
 
-## Instalación de varias versiones de recursos en paralelo
+## <a name="installing-multiple-resource-versions-side-by-side"></a>Instalación de varias versiones de recursos en paralelo
 
 Puede usar los parámetros **MinimumVersion**, **MaximumVersion** y **RequiredVersion** del cmdlet [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) para especificar la versión de un módulo que se va a instalar. Llamar a **Install-Module** sin especificar una versión instala la versión más reciente.
 
@@ -46,7 +44,7 @@ PowerShell      xCluster                  xFailOverCluster               1.1    
 PowerShell      xCluster                  xFailOverCluster               1.2.0.0    {DomainAdministratorCredential, Name, ...
 ```
 
-## Especificación de una versión de recursos en una configuración
+## <a name="specifying-a-resource-version-in-a-configuration"></a>Especificación de una versión de recursos en una configuración
 
 Si tiene varios recursos instalados en un equipo, debe especificar la versión de ese recurso cuando lo usa en una configuración. Esto se hace mediante la especificación del parámetro **ModuleVersion** de la palabra clave **Import-DscResource**. Si tiene instaladas varias versiones de un recurso y no especifica la versión del módulo de recursos que quiere usar, la configuración generará un error.
 
@@ -90,13 +88,7 @@ configuration VersionTest
 
 Esto también funcionará en PowerShell 5.0, pero se recomienda que use el parámetro **ModuleVersion**.
 
-## Vea también
+## <a name="see-also"></a>Vea también
 * [Configuraciones DSC](configurations.md)
 * [Recursos de DSC](resources.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

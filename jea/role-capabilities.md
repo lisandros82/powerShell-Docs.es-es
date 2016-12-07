@@ -8,25 +8,23 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Funcionalidades de rol
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 81fd386d58576a8930093b4f18ce36a4ff6cecd0
-ms.openlocfilehash: a3dd4a217f5b1fd80e97adf802c65073ca015bbc
-
+ms.openlocfilehash: d5f6311d74e47f2fa1a93909c244cddf114b0229
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="role-capabilities"></a>Funcionalidades de rol
 
-# Funcionalidades de rol
-
-## Introducción
+## <a name="overview"></a>Introducción
 En la sección anterior, aprendió que el campo RoleDefinitions define los grupos que tienen acceso a las funcionalidades de rol.
 Probablemente se pregunte qué son las funcionalidades de rol.
 En esta sección responderemos a esta pregunta.  
 
-## Introducción a las funcionalidades de rol de PowerShell
+## <a name="introducing-powershell-role-capabilities"></a>Introducción a las funcionalidades de rol de PowerShell
 Las funcionalidades de rol de PowerShell definen qué puede hacer un usuario en un punto de conexión de JEA.
 Detallan una lista blanca de elementos como comandos visibles, aplicaciones visibles, etc.
 Las funcionalidades de rol se definen mediante archivos con la extensión ".psrc".
 
-## Contenido de las funcionalidades de rol
+## <a name="role-capability-contents"></a>Contenido de las funcionalidades de rol
 Empezaremos examinando y modificando el archivo de funcionalidad de rol de demostración que usó anteriormente.
 Imagine que ha implementado la configuración de sesión en su entorno, pero de acuerdo con los comentarios recibidos debe cambiar las funcionalidades expuestas a los usuarios.
 Los operadores necesitan poder reiniciar las máquinas y también quieren poder obtener información sobre la configuración de red.
@@ -102,7 +100,7 @@ Salga de la sesión cuando haya terminado.
 Exit-PSSession
 ```
 
-## Creación de funcionalidades de rol
+## <a name="role-capability-creation"></a>Creación de funcionalidades de rol
 En la siguiente sección, creará un punto de conexión de JEA para los usuarios del departamento de soporte técnico de AD.
 Como preparación, crearemos un archivo de funcionalidad de rol en blanco para rellenarlo para esa sección.
 Las funcionalidades de rol deben crearse dentro de una carpeta "RoleCapabilities" en un módulo de PowerShell válido para que se resuelvan cuando se inicie una sesión.
@@ -133,7 +131,7 @@ New-PSRoleCapabilityFile -Path 'C:\Program Files\WindowsPowerShell\Modules\Conto
 Enhorabuena, ha creado un archivo de funcionalidad de rol en blanco.
 Lo usará en la sección siguiente.
 
-## Conceptos clave
+## <a name="key-concepts"></a>Conceptos clave
 **Funcionalidad de rol (.psrc)**: archivo que define qué puede hacer un usuario en un punto de conexión de JEA.
 Detalla una lista blanca de elementos como comandos visibles, aplicaciones de consola visibles, etc.
 Para que PowerShell detecte las funcionalidades de rol, debe colocarlas en una carpeta "RoleCapabilities" en un módulo de PowerShell válido.
@@ -141,10 +139,4 @@ Para que PowerShell detecte las funcionalidades de rol, debe colocarlas en una c
 **Módulo de PowerShell**: paquete de funcionalidad de PowerShell.
 Puede contener funciones de PowerShell, cmdlets, recursos de DSC, funcionalidades de rol y mucho más.
 Para que se carguen automáticamente, los módulos de PowerShell deben estar ubicados en una ruta de acceso en `$env:PSModulePath`.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

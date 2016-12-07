@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 0a7ab24ff278defd7fc0a80f1dbd45bfa0e16427
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Recurso nxEnvironment de DSC para Linux
+# <a name="dsc-for-linux-nxenvironment-resource"></a>Recurso nxEnvironment de DSC para Linux
 
 El recurso **nxEnvironment** de la configuración de estado deseado (DSC) de PowerShell ofrece un mecanismo para administrar variables de entorno del sistema en un nodo de Linux.
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 
 ```
 nxEnvironment <string> #ResourceName
@@ -31,7 +29,7 @@ nxEnvironment <string> #ResourceName
 }
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 |  Propiedad |  Descripción | 
 |---|---|
@@ -41,12 +39,12 @@ nxEnvironment <string> #ResourceName
 | Ruta| Define la variable de entorno que se está configurando. Establezca esta propiedad en **$true** si la variable es la variable **Path**; de lo contrario, establézcala en **$false**. El valor predeterminado es **$false**. Si la variable que se está configurando es la variable **Path**, el valor facilitado mediante la propiedad **Value** se anexará al valor existente.| 
 | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
 
-## Información adicional
+## <a name="additional-information"></a>Información adicional
 
 * Si **Path** no está presente o se establece en **$false**, las variables de entorno se administran en `/etc/environment`. Los programas o scripts pueden requerir una configuración para que el archivo `/etc/environment` acceda a las variables de entorno administradas.
 * Si **Path** se establece en **$true**, la variable de entorno se administra en el archivo `/etc/profile.d/DSCenvironment.sh`. Este archivo se creará si no existe. Si **Ensure** se establece en "Absent" y **Path** se establece en **$true**, solo se quitará una variable de entorno de `/etc/profile.d/DSCenvironment.sh` y no de otros archivos.
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En el ejemplo siguiente se muestra cómo utilizar el recurso **nxEnvironment** para asegurarse de que **TestEnvironmentVariable** existe y tiene el valor "Test-Value". Si **TestEnvironmentVariable** no existe, se creará.
 
@@ -61,11 +59,5 @@ nxEnvironment EnvironmentExample
     Value = “TestValue”
 }
 ```
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

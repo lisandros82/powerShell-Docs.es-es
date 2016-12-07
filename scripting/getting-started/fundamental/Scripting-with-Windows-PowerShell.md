@@ -1,5 +1,5 @@
 ---
-title: "Scripting con Windows PowerShell"
+title: Scripting con Windows PowerShell
 ms.date: 2016-05-11
 keywords: powershell,cmdlet
 description: 
@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c425d27a-bb41-4947-8d73-ba5480bc8ee0
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 0148f4631e34e65a4336c5d1d50e313fb6639748
-
+ms.openlocfilehash: f7c9164e09e253e8138820708ba8864841ddfff2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Scripting con Windows PowerShell
+# <a name="scripting-with-windows-powershell"></a>Scripting con Windows PowerShell
 
 Windows PowerShell® es un lenguaje de scripting y shell de línea de comandos basado en tareas diseñado especialmente para la administración del sistema. Basado en .NET Framework, Windows PowerShell ayuda a los profesionales de TI y a los usuarios avanzados a controlar y automatizar la administración tanto del sistema operativo Windows como de las aplicaciones que se ejecutan en Windows.
 
@@ -28,10 +26,4 @@ Windows PowerShell incluye las siguientes características:
 -   Navegación simplificada basada en comandos del sistema operativo, que permite a los usuarios navegar por el Registro y por otros almacenes de datos recurriendo a las mismas técnicas que se usan para navegar por el sistema de archivos.
 -   Capacidades muy eficaces de manipulación de objetos. Los objetos se pueden manipular directamente o enviar a otras herramientas o bases de datos.
 -   Interfaz extensible. Los fabricantes de software independiente y los desarrolladores empresariales pueden crear herramientas y utilidades personalizadas para administrar su software.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

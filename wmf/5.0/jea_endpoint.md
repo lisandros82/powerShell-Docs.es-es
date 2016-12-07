@@ -1,4 +1,4 @@
-# Crear un punto de conexión de JEA y conectarse a este
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a>Crear un punto de conexión de JEA y conectarse a este
 Para crear un punto de conexión de JEA, debe crear y registrar un archivo de configuración de sesión de PowerShell especialmente configurado, que se puede generar con el cmdlet **New-PSSessionConfigurationFile**.
 
 ```powershell
@@ -130,14 +130,10 @@ Por último, cuando termine de personalizar la configuración de la sesión y la
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
 ```
 
-## Conectarse a un punto de conexión de JEA
+## <a name="connect-to-a-jea-endpoint"></a>Conectarse a un punto de conexión de JEA
 La conexión a un punto de conexión de JEA funciona igual que la conexión a otros puntos de conexión de PowerShell.  Solo tiene que indicar el nombre del punto de conexión de JEA como el parámetro "ConfigurationName" de **New-PSSession**, **Invoke-Command** o **Enter-PSSession**.
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 Después de conectarse a la sesión de JEA, estará limitado a ejecutar la comandos de la lista de permitidos en las funcionalidades de rol a las que tenga acceso. Si intenta ejecutar cualquier comando no permitido para su rol, se producirá un error.
-
-<!--HONumber=Aug16_HO3-->
-
-

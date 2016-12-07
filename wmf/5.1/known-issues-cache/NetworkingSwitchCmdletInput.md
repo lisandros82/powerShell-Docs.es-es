@@ -1,12 +1,10 @@
 ---
 title: Error de cmdlets de Network Switch Manager
 contributor: vaibch
-translationtype: Human Translation
-ms.sourcegitcommit: 34337749a77f4379b841a8478d4e6e3bc97e7ada
-ms.openlocfilehash: 180158033e0c960f73dba66a3d77b15765e3e382
-
+ms.openlocfilehash: e32e31762b665a7e2c6f6938fe494cb6127d4264
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 Los cmdlets de Network Switch Manager se pueden usar para administrar modificadores de red a través de WSMAN. Algunos cmdlets de este módulo pueden aceptar valores de canalizaciones. En la versión preliminar de WMF 5.1, los cmdlets que pueden aceptar el valor de la canalización no pueden ejecutarse si los valores no pasan a través de canalizaciones.
 
 Si no se usa el parámetro "InputObject", el cmdlet debería continuar ejecutándose sin errores.
@@ -24,7 +22,7 @@ Esta es la lista de cmdlets afectados; es decir, estos cmdlets pueden aceptar el
 - Remove-NetworkSwitchVlan
 - Set-NetworkSwitchVlanProperty
 
-### Solución
+### <a name="resolution"></a>Solución
 Los cmdlets funcionan bien cuando el valor del parámetro InputObject se pasa a través de la canalización. Algunos ejemplos que funcionan con los cmdlets anteriores son:
 
 - Disable-NetworkSwitchEthernetPort
@@ -77,9 +75,3 @@ $properties = @{Caption = "New Caption"}
 $vlan = Get-CimInstance -ClassName CIM_NetworkVlan -Namespace root/interop -CimSession $cimSession | Select-Object -First 1
 $vlan | Set-NetworkSwitchVlanProperty -Property $properties -CimSession $cimSession
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

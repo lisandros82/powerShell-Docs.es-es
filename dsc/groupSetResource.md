@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: bf36abde6a3bfff4c2e49868465e089cc886d031
-ms.openlocfilehash: 45fe96c43a834566d398820e3d94e3be923bb385
-
+ms.openlocfilehash: 6e5ea98febfe7541f35a84c37df73df580654340
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Recurso GroupSet de DSC
+# <a name="dsc-groupset-resource"></a>Recurso GroupSet de DSC
 
 > Se aplica a: Windows PowerShell 5.0
 
@@ -21,7 +19,7 @@ El recurso **GroupSet** de la configuración de estado deseado (DSC) de Windows 
 
 Utilice este recurso cuando desee agregar o quitar la misma lista de miembros de más de un grupo, quitar más de un grupo o agregar más de un grupo con la misma lista de miembros.
 
-##Sintaxis##
+##<a name="syntax"></a>Sintaxis##
 ```
 Group [string] #ResourceName
 {
@@ -34,7 +32,7 @@ Group [string] #ResourceName
 }
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 |  Propiedad  |  Descripción   | 
 |---|---| 
@@ -46,7 +44,7 @@ Group [string] #ResourceName
 | MembersToInclude| Use esta propiedad para agregar miembros a la pertenencia existente al grupo. El valor de esta propiedad es una matriz de cadenas del formulario *Domain*\\*UserName*. Si establece esta propiedad en una configuración, no use la propiedad **Members**. Si lo hace, se generará un error.| 
 | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"``.| 
 
-## Ejemplo 1
+## <a name="example-1"></a>Ejemplo 1
 
 En el ejemplo siguiente se muestra cómo asegurarse de que existen dos grupos denominados "myGroup" y "myOtherGroup". 
 
@@ -81,11 +79,5 @@ GroupSetTest -ConfigurationData $cd
 ```
 
 >**Nota:** este ejemplo usa las credenciales de texto sin formato por su sencillez. Para más información sobre el cifrado de credenciales en el archivo MOF de configuración, consulte [Proteger el archivo MOF](secureMOF.md).
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,4 +1,4 @@
-# Cmdlets Clipboard
+# <a name="clipboard-cmdlets"></a>Cmdlets Clipboard
 **Get-Clipboard** y **Set-Clipboard** facilitan la transferencia de contenido a y desde una sesión de Windows PowerShell. Por ejemplo, si usa el Explorador de Windows para copiar tres archivos en el Portapapeles (seleccionándolos y presionando `ctrl-c`, por ejemplo), puede tener acceso sencillo al contenido del Portapapeles como una lista de archivos:
 
 ```powershell 
@@ -19,8 +19,3 @@ Mode LastWriteTime Length Name
 
 
 Los cmdlets Clipboard admiten imágenes, archivos de audio, listas de archivos y texto.
-
-
-<!--HONumber=Aug16_HO3-->
-
-

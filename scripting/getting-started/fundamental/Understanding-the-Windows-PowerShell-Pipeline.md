@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d90bf940a1047b629f7b59d239aab50a78748251
-
+ms.openlocfilehash: 34e641329388436074f2d0f05647ec4fa7efdf83
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Descripción de la canalización de Windows PowerShell
+# <a name="understanding-the-windows-powershell-pipeline"></a>Descripción de la canalización de Windows PowerShell
 La canalización funciona prácticamente en cualquier lugar en Windows PowerShell. Aunque se ve texto en la pantalla, Windows PowerShell no canaliza texto entre los comandos. En su lugar, canaliza objetos.
 
 La notación usada para las canalizaciones es similar a la que se usa en otros shells, por lo que, a primera vista, puede que no sea evidente que Windows PowerShell presenta algo nuevo. Por ejemplo, si usa el cmdlet **Out-Host** para forzar una presentación página por página de la salida de otro comando, la salida tiene el aspecto del texto normal que se muestra en la pantalla, dividida en páginas:
@@ -66,10 +64,4 @@ De hecho, la información de encabezado generada por el cmdlet **Get-Location** 
 Dado que puede haber más información devuelta por un comando de Windows PowerShell de la que vemos en la ventana de la consola, ¿cómo podemos recuperar los elementos no visibles? ¿Cómo se pueden ver los datos adicionales? ¿Qué ocurre si quiere ver los datos en un formato diferente al que suele usar Windows PowerShell?
 
 En lo que queda de este capítulo explicaremos cómo puede detectar la estructura de objetos específicos de Windows PowerShell, seleccionar elementos específicos y darles formato para mostrarlos más fácilmente, y cómo enviar esta información a ubicaciones de salida alternativas, como archivos e impresoras.
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

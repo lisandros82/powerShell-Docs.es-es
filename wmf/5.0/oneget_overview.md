@@ -1,4 +1,4 @@
-# Detección, instalación e inventario de software con PackageManagement
+# <a name="software-discovery-install-and-inventory-with-packagemanagement"></a>Detección, instalación e inventario de software con PackageManagement
 
 PackageManagement (también conocido como OneGet) es una nueva manera de descubrir e instalar paquetes de software en la Web. Es un administrador o multiplexor de administradores de paquetes existentes (también denominados proveedores de paquetes) que unifica la administración de paquetes de Windows con una única interfaz de Windows PowerShell. Con PackageManagement, puede hacer lo siguiente.
 
@@ -8,8 +8,3 @@ PackageManagement (también conocido como OneGet) es una nueva manera de descubr
 -   Instalar, desinstalar e inventariar paquetes de uno o varios repositorios de software sin problemas.
 
 Para obtener más información, consulte http://oneget.org/.
-
-
-<!--HONumber=Aug16_HO3-->
-
-
