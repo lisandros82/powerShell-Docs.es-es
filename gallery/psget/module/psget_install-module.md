@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_install module
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 68e7ba36a723b0cb863ed890834855fa5f531240
-
+ms.openlocfilehash: 82e4bb1ec76b1a51e1a99de85bc77a5429d46e26
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Install-Module
+# <a name="install-module"></a>Install-Module
 
 Instala los módulos de PowerShell desde repositorios en línea en el equipo local.
 
-## Descripción
+## <a name="description"></a>Descripción
 
 El cmdlet Install-Module descarga de una galería en línea uno o más módulos, los valida y los instala en el equipo local en el ámbito de instalación especificado.
 
@@ -35,7 +33,7 @@ Puede filtrar los resultados en función de una versión mínima y exacta de los
 - -Force vuelve a instalar el módulo instalado.
 - RequiredVersion instala la versión especificada en SxS con las versiones existentes en PowerShell versión 5.0 o posterior.
 
-### Ámbito
+### <a name="scope"></a>Ámbito
 Especifica el ámbito de instalación del módulo. Los valores aceptables para este parámetro son AllUsers y CurrentUser.
 
 El ámbito de instalación predeterminado es AllUsers.
@@ -44,7 +42,7 @@ El ámbito AllUsers permite instalar módulos en una ubicación accesible para t
 
 El ámbito CurrentUser permite instalar módulos solo en "$home\Documents\WindowsPowerShell\Modules", de modo que el módulo solo está disponible para el usuario actual.
 
-## Notas
+## <a name="notes"></a>Notas
 
 Este cmdlet se ejecuta en Windows PowerShell 3.0 o versiones posteriores de Windows PowerShell, en Windows 7 o Windows 2008 R2 y versiones posteriores de Windows.
 
@@ -61,16 +59,16 @@ De forma predeterminada, los módulos se instalan en la carpeta Archivos de prog
 Para evitar la ejecución de módulos que contienen código malintencionado, la instalación no importa automáticamente los módulos instalados. Como procedimiento de seguridad recomendado, evalúe el código del módulo antes de ejecutar un cmdlet o una función en un módulo por primera vez.
 
 
-## Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
 ```powershell
 Get-Command -Name Install-Module -Module PowerShellGet -Syntax
 ```
 
-## Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
 
 [Install-Module](http://go.microsoft.com/fwlink/?LinkID=398573)
 
-## Comandos de ejemplo
+## <a name="example-commands"></a>Comandos de ejemplo
 
 ```powershell
 
@@ -111,7 +109,7 @@ Install-Module ContosoClient -Force
 Install-Module -Name 
 ```
 
-## Cmdlet Install-Module en operaciones de canalización
+## <a name="install-module-cmdlet-in-pipeline-operations"></a>Cmdlet Install-Module en operaciones de canalización
 
 ```powershell
 
@@ -138,11 +136,11 @@ Get-InstalledModule
 
 ```
 
-## Compatibilidad de versiones en paralelo en PowerShell 5.0 o posterior
+## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Compatibilidad de versiones en paralelo en PowerShell 5.0 o posterior
 
 PowerShellGet incluye compatibilidad de versiones de módulos en paralelo (SxS) en los cmdlets Install-Module, Update-Module y Publish-Module que se ejecutan en Windows PowerShell 5.0 o versiones más recientes.
 
-### Ejemplos de Install-Module
+### <a name="install-module-examples"></a>Ejemplos de Install-Module
 
 ```powershell
 # Install a version of the module
@@ -174,7 +172,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## Instalar un módulo con sus dependencias
+## <a name="install-module-with-its-dependencies"></a>Instalar un módulo con sus dependencias
 
 ```powershell
 
@@ -268,7 +266,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## Escenarios de error
+## <a name="error-scenarios"></a>Escenarios de error
 
 ```powershell
 
@@ -285,10 +283,4 @@ Install-Module ContosoClient,ContosoServer -RequiredVersion 2.0
 Install-Module ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

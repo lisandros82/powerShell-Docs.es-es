@@ -1,4 +1,4 @@
-# Compatibilidad de los módulos para la declaración de intervalos de versiones (1.*, etc.)
+# <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Compatibilidad de los módulos para la declaración de intervalos de versiones (1.*, etc.)
 Combinado con **-MinimumVersion**, **-MaximumVersion** permite ahora al usuario obtener o importar el módulo dentro de un intervalo específico. El parámetro también admite **.***. El siguiente ejemplo muestra funciona:
 
 ```PowerShell
@@ -14,8 +14,3 @@ VERBOSE: Importing cmdlet 'Set-PSReadlineKeyHandler'.
 VERBOSE: Importing cmdlet 'Set-PSReadlineOption'.
 VERBOSE: Importing function 'PSConsoleHostReadline'.
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

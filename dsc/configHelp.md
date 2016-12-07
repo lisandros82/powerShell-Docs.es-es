@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: f4dc0265246195cc2320bcaf9d7f9abf7b1405a3
-ms.openlocfilehash: becacd2dcbc6fd0edd9154a45342edc5c536935b
-
+ms.openlocfilehash: 099755bf8dc41adfedf77de451dbcdf390c298e9
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Escribir ayuda para configuraciones de DSC
+# <a name="writing-help-for-dsc-configurations"></a>Escribir ayuda para configuraciones de DSC
 
 >Se aplica a: Windows PowerShell 5.0
 
@@ -63,7 +61,7 @@ configuration HelpSample1
 }
 ```
 
-## Ver la ayuda de configuración
+## <a name="viewing-configuration-help"></a>Ver la ayuda de configuración
 
 Para ver la ayuda de una configuración, use el cmdlet **Get-Help** con el nombre de la función o escriba el nombre de la función seguido de `-?`. A continuación, se muestra el resultado de la función anterior cuando se pasa a **Get-Help**:
 
@@ -94,12 +92,6 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-## Véase también
+## <a name="see-also"></a>Véase también
 * [Configuraciones DSC](configurations.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

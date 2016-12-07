@@ -8,24 +8,22 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "Implementación y mantenimiento de varias máquinas"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 784806197a64eb30af1ecea4af55575434ce7b87
-
+ms.openlocfilehash: 8117d0d12c062b460cb7117b54c138c8db5a1d0c
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Implementación y mantenimiento de varias máquinas
+# <a name="multi-machine-deployment-and-maintenance"></a>Implementación y mantenimiento de varias máquinas
 En este momento, ha implementado JEA en sistemas locales varias veces.
 Dado que su entorno de producción probablemente esté formado por más de una máquina, es importante que siga los pasos fundamentales del proceso de implementación que deben repetirse en cada máquina.
 
-## Pasos de alto nivel:
+## <a name="high-level-steps"></a>Pasos de alto nivel:
 1.  Copie los módulos (con funcionalidades de rol) en cada nodo.
 2.  Copie los archivos de configuración de sesión en cada nodo.
 3.  Ejecute `Register-PSSessionConfiguration` con la configuración de sesión.
 4.  Conserve una copia de la configuración de sesión y de los kits de herramientas en una ubicación segura.
 Como realizará modificaciones, es conveniente tener un "origen único de verdad."
 
-## Script de ejemplo
+## <a name="example-script"></a>Script de ejemplo
 A continuación se muestra un script de ejemplo para la implementación.
 Para usarlo en su entorno, deberá usar los nombres o las rutas de acceso de recursos compartidos de archivos y módulos reales.
 ```PowerShell
@@ -55,20 +53,14 @@ Invoke-Command –ComputerName 'Node1', 'Node2', 'Node3', 'NodeN' -FilePath 'C:\
 Remove-Item -Path '\\FileShare\JEA\Demo.pssc'
 Remove-Item -Path '\\FileShare\JEA\SomeModule' -Recurse
 ```
-## Modificar funcionalidades
+## <a name="modifying-capabilities"></a>Modificar funcionalidades
 Cuando se trabaja con varias máquinas, es importante que las modificaciones se implementen de forma coherente.
 Una vez que JEA tenga un recurso de DSC, podrá asegurarse más fácilmente de que el entorno esté sincronizado.
 Hasta ese momento, se recomienda que conserve una copia maestra de las configuraciones de sesión y que vuelva a implementarla cada vez que realice una modificación.
 
-## Quitar funcionalidades
+## <a name="removing-capabilities"></a>Quitar funcionalidades
 Para quitar la configuración de JEA de sus sistemas, use el comando siguiente en cada máquina:
 ```PowerShell
 Unregister-PSSessionConfiguration -Name JEADemo
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

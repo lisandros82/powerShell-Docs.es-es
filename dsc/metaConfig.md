@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 140f60bf7344eae57e2b5d364464bc0b7c1a2220
-ms.openlocfilehash: 5d37938869a71bea0d8a6349e680411b7d0200d9
-
+ms.openlocfilehash: e978ee828fe3c91be52077442c5781b7a20e50be
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Configuración del administrador de configuración local
+# <a name="configuring-the-local-configuration-manager"></a>Configuración del administrador de configuración local
 
 > Se aplica a: Windows PowerShell 5.0
 
@@ -28,7 +26,7 @@ Se utiliza un tipo especial de configuración para configurar el LCM a fin de qu
 
 > **Nota**: Este tema se aplica al LCM que se introdujo en Windows PowerShell 5.0. Para obtener información sobre cómo configurar el LCM en Windows PowerShell 4.0, consulte [Administrador de configuración local (LCM) de la configuración de estado deseado de Windows PowerShell 4.0](metaconfig4.md).
 
-## Escritura y aplicación de una configuración de LCM
+## <a name="writing-and-enacting-an-lcm-configuration"></a>Escritura y aplicación de una configuración de LCM
 
 Para configurar el LCM, debe crear y ejecutar un tipo especial de configuración. Para especificar una configuración de LCM, utilice el atributo DscLocalConfigurationManager. A continuación se muestra una configuración sencilla que establece el LCM en el modo de inserción.
 
@@ -57,7 +55,7 @@ Una configuración de LCM puede contener bloques solo para un conjunto limitado 
 * **ReportServerWeb**: especifica un servidor de incorporación de cambios HTTP al que se envían informes.
 * **PartialConfiguration**: especifica configuraciones parciales.
 
-## Configuración básica
+## <a name="basic-settings"></a>Configuración básica
 
 Aparte de especificar servidores de incorporación de cambios y configuraciones parciales, todas las propiedades del LCM se configuran en un bloque **Settings**. Las propiedades siguientes están disponibles en un bloque **Settings**.
 
@@ -79,7 +77,7 @@ Aparte de especificar servidores de incorporación de cambios y configuraciones 
 | PartialConfigurations| CimInstance| Sin implementar. No usar.| 
 | StatusRetentionTimeInDays | UInt32| El número de días que el LCM mantiene el estado de la configuración actual.| 
 
-## Servidores de extracción
+## <a name="pull-servers"></a>Servidores de extracción
 
 Un servidor de extracción es un servicio web OData o un recurso compartido SMB que se utiliza como una ubicación central para archivos de DSC. La configuración de LCM admite la definición de los siguientes tipos de servidores de extracción:
 
@@ -89,7 +87,7 @@ Un servidor de extracción es un servicio web OData o un recurso compartido SMB 
 
 Para obtener más información sobre la configuración y utilización de servidores de incorporación de cambios, consulte [Configuración de un servidor de incorporación de cambios de DSC](pullServer.md).
 
-## Bloques del servidor de configuración
+## <a name="configuration-server-blocks"></a>Bloques del servidor de configuración
 
 Para definir un servidor de configuración basado en web, cree un bloque **ConfigurationRepositoryWeb**. Un bloque **ConfigurationRepositoryWeb** define las siguientes propiedades.
 
@@ -108,7 +106,7 @@ Para definir un servidor de configuración basado en SMB, cree un bloque **Confi
 |Credential|MSFT_Credential|La credencial usada para autenticarse en el recurso compartido SMB.|
 |SourcePath|cadena|La ruta de acceso del recurso compartido SMB.|
 
-## Bloques del servidor de recursos
+## <a name="resource-server-blocks"></a>Bloques del servidor de recursos
 
 Para definir un servidor de recursos basado en web, cree un bloque **ResourceRepositoryWeb**. Un bloque **ResourceRepositoryWeb** define las siguientes propiedades.
 
@@ -126,7 +124,7 @@ Para definir un servidor de recursos basado en SMB, cree un bloque **ResourceRep
 |Credential|MSFT_Credential|La credencial usada para autenticarse en el recurso compartido SMB.|
 |SourcePath|cadena|La ruta de acceso del recurso compartido SMB.|
 
-## Bloques del servidor de informes
+## <a name="report-server-blocks"></a>Bloques del servidor de informes
 
 Un servidor de informes debe ser un servicio web OData. Para definir un servidor de informes, cree un bloque **ReportServerWeb**. **ReportServerWeb** define las siguientes propiedades.
 
@@ -137,7 +135,7 @@ Un servidor de informes debe ser un servicio web OData. Para definir un servidor
 |RegistrationKey|cadena|Un GUID que identifica el nodo para el servidor de extracción. Para más información, consulte Cómo registrar un nodo con un servidor de extracción de DSC.|
 |ServerURL|cadena|La dirección URL del servidor de configuración.|
 
-## Configuraciones parciales
+## <a name="partial-configurations"></a>Configuraciones parciales
 
 Para definir una configuración parcial, cree un bloque **PartialConfiguration**. Para más información sobre configuraciones parciales, consulte [Configuraciones parciales de DSC](partialConfigs.md). **PartialConfiguration** define las siguientes propiedades.
 
@@ -150,23 +148,17 @@ Para definir una configuración parcial, cree un bloque **PartialConfiguration**
 |RefreshMode|cadena|Especifica cómo obtiene el LCM esta configuración parcial. Los valores posibles son __"Disabled"__, __"Push(default)"__ y __"Pull"__. <ul><li>__Disabled__: esta configuración parcial está deshabilitada.</li><li> __Push__: la configuración parcial se inserta en el nodo con una llamada al cmdlet [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx). Cuando todas las configuraciones parciales del nodo se han insertado o extraído de un servidor, es posible iniciar la configuración con una llamada a `Start-DscConfiguration –UseExisting`. Este es el valor predeterminado.</li><li>__Pull__: el nodo se configura para comprobar con regularidad si existe una configuración parcial en un servidor de extracción. Si esta propiedad se establece en __Pull__, debe especificar un servidor de extracción en una propiedad __ConfigurationSource__. Para más información sobre los servidores de incorporación de cambios, consulte [Configuración de un servidor de incorporación de cambios de DSC](pullServer.md).</li></ul>|
 |ResourceModuleSource|string[]|Una matriz de los nombres de los servidores de recursos desde los que se descargarán los recursos necesarios para esta configuración parcial. Estos nombres deben hacer referencia a los servidores de recursos definidos previamente en bloques **ResourceRepositoryWeb** y **ResourceRepositoryShare**.|
 
-## Véase también 
+## <a name="see-also"></a>Véase también 
 
-### Conceptos
+### <a name="concepts"></a>Conceptos
 [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
  
-[Configuración de un servidor de incorporación de cambios de DSC](pullServer.md) 
+[Configuración de un servidor de extracción de DSC](pullServer.md) 
 
 [Administrador de configuración local de la configuración de estado deseado de Windows PowerShell 4.0](metaConfig4.md) 
 
-### Otros recursos
+### <a name="other-resources"></a>Otros recursos
 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) 
 
-[Configuración de un cliente de incorporación de cambios con nombres de configuración](pullClientConfigNames.md) 
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
+[Configuración de un cliente de extracción con nombres de configuración](pullClientConfigNames.md) 
 

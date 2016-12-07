@@ -94,8 +94,3 @@
 ### [Generación de cmdlets de PowerShell basados en el punto de conexión de OData](5.0/odata_overview.md)
 ### [Administración de modificadores de red con PowerShell](5.0/networkswitch_overview.md)
 ### [Registro de inventario de software (SIL)](5.0/sil_overview.md)
-
-
-<!--HONumber=Nov16_HO4-->
-
-

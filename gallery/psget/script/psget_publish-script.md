@@ -9,31 +9,29 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_publish script
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: bcf1abe7021c9b48fa35f08762f4d4a0a710dfa3
-
+ms.openlocfilehash: 2619738ba76ed3b3c84d1a77771531ebd6955d6f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Publish-Script
+# <a name="publish-script"></a>Publish-Script
 
 El cmdlet Publish-Script publica el script especificado en la galería en línea.
 
-## Descripción
+## <a name="description"></a>Descripción
 
 El cmdlet Publish-Script permite publicar el archivo de script con metadatos válidos, como Version, Guid, Author, Description, etc. El parámetro de modificador Force en el cmdlet Publish-Script arranca NuGet.exe sin pedir confirmación.
 
-## Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-## Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
 
 [Publish-Script](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-## Comandos de ejemplo
+## <a name="example-commands"></a>Comandos de ejemplo
 
 ```powershell
 # Publish the really basic script file with required metadata
@@ -80,10 +78,4 @@ PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

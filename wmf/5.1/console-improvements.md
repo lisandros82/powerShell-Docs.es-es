@@ -8,19 +8,17 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 749c1ca8bc617014dffacecce7d14a55adc38036
-ms.openlocfilehash: 2a17fdd4092adf734398f38bec915d53c1b3e566
-
+ms.openlocfilehash: 574fec8e1f4948021988d8489532d7325277fed6
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="console-improvements-in-wmf-51-preview"></a>Mejoras de la consola en WMF 5.1 (versión preliminar)#
 
-# Mejoras de la consola en WMF 5.1 (versión preliminar)#
-
-## Mejoras en la consola de PowerShell
+## <a name="powershell-console-improvements"></a>Mejoras en la consola de PowerShell
 
 En WMF 5.1, se han realizado los siguientes cambios en PowerShell.exe para mejorar la experiencia de la consola:
 
-###Compatibilidad con VT100
+###<a name="vt100-support"></a>Compatibilidad con VT100
 
 Windows 10 agregó compatibilidad con [secuencias de escape de VT100](https://msdn.microsoft.com/en-us/library/windows/desktop/mt638032(v=vs.85).aspx).
 PowerShell ignorará ciertas secuencias de escape con formato VT100 al calcular los anchos de tabla.
@@ -43,20 +41,14 @@ Guarde el ejemplo en un archivo denominado `MatchInfo.format.ps1xml` y para usar
 
 Tenga en cuenta que las secuencias de escape VT100 solo se admiten a partir de la actualización de aniversario de Windows 10, no en los sistemas anteriores.   
 
-### Compatibilidad con el modo VI en PSReadline
+### <a name="vi-mode-support-in-psreadline"></a>Compatibilidad con el modo VI en PSReadline
 
 [PSReadline](https://github.com/lzybkr/PSReadLine) agrega compatibilidad con el modo VI. Para utilizar el modo VI, ejecute `Set-PSReadline -EditMode vi`.
 
-### Stdin redirigido con entrada interactiva 
+### <a name="redirected-stdin-with-interactive-input"></a>Stdin redirigido con entrada interactiva 
 
 En versiones anteriores, a partir de PowerShell con `powershell -File -` se requería cuando se redirigía stdin y deseaba especificar los comandos de forma interactiva.
 
 Con WMF 5.1 ya no es necesaria esta opción, que es difícil de detectar. Puede iniciar PowerShell sin opciones, por ejemplo, `powershell`.
 
 Tenga en cuenta que PSReadline actualmente no admite stdin redirigido y la experiencia de edición de línea de comandos integrada con stdin redirigido es extremadamente limitada, por ejemplo, las teclas de dirección no funcionan. Una futura versión de PSReadline debería solucionar este problema.   
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

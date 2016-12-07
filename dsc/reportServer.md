@@ -7,12 +7,10 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 1e7bc38f03dd72fc29d004eb92bf130c416e490a
 ms.openlocfilehash: f7f2699287e76970d0b2565f7bbd45a5d75ac93a
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="using-a-dsc-report-server"></a>Uso de un servidor de informes de DSC
 
 > Se aplica a: Windows PowerShell 5.0
@@ -226,10 +224,4 @@ Tenga en cuenta que estos ejemplos están diseñados para ofrecerle una idea de 
 - [Configuración del administrador de configuración local](metaConfig.md)
 - [Configuración de un servidor de extracción web de DSC](pullServer.md)
 - [Configuración de un cliente de extracción mediante nombres de configuración](pullClientConfigNames.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 99c1ea706ca5c3fb008065e98cc99fef463b1011
-ms.openlocfilehash: caf661fe58faf8cf24c789b408505051429df3f4
-
+ms.openlocfilehash: f933d5d821d71a497d20e8ff66ebe26af9661f50
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="troubleshooting-dsc"></a>Solución de problemas de DSC
 
->Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Este tema describen las distintas formas de solucionar problemas de DSC cuando surgen.
 
-## <a name="using-getdscconfigurationstatus"></a>Uso de Get-DscConfigurationStatus
+## <a name="using-get-dscconfigurationstatus"></a>Uso de Get-DscConfigurationStatus
 
 El cmdlet [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) obtiene información acerca del estado de la configuración de un nodo de destino. Se devuelve un objeto enriquecido que incluye información detallada sobre si la configuración de ejecución era correcta o no. Ya puede adentrarse en el objeto para descubrir los detalles sobre la configuración de ejecución como:
 
@@ -618,14 +616,8 @@ onlyProperty                            PSComputerName
 * [Recurso de DSC Log](logResource.md)
 
 ### <a name="concepts"></a>Conceptos
-* [Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md)
+* [Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md)
 
 ### <a name="other-resources"></a>Otros recursos
 * [Cmdlets de configuración de estado deseado (DSC) de Windows PowerShell](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

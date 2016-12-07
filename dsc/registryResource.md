@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
-ms.openlocfilehash: 48b68a99baa489dad38e7072b171db10ee0f7386
-
+ms.openlocfilehash: d94f178fb75d15b12268ad783f78183ceba9f2b3
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="dsc-registry-resource"></a>Recursos de DSC Registry
 
-# Recursos de DSC Registry
-
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 El recurso **Registry** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para administrar valores y claves del Registro en un nodo de destino.
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 
 ```
 Registry [string] #ResourceName
@@ -35,7 +33,7 @@ Registry [string] #ResourceName
 }
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 |  Propiedad  |  Descripción   | 
 |---|---| 
 | Clave| Indica la ruta de acceso de la clave del Registro para la que quiere garantizar un estado específico. Esta ruta de acceso debe incluir el subárbol.| 
@@ -63,7 +61,7 @@ Registry [string] #ResourceName
 
 <li>Cadena expandible (REG_EXPAND_SZ)</li></ul>
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 Este ejemplo garantiza que una clave denominada "ExampleKey" está presente en el subárbol **HKEY\_LOCAL\_MACHINE**.
 ```powershell
 Configuration RegistryTest
@@ -81,11 +79,5 @@ Configuration RegistryTest
 >**Nota:** Cambiar una configuración de registro en el subárbol **HKEY\_CURRENT\_USER** requiere que la configuración se ejecute con las credenciales de usuario y no como el sistema.
 >Puede usar la propiedad **PsDscRunAsCredential** para especificar las credenciales de usuario para la configuración. Para obtener un ejemplo, vea [DSC de ejecución con las credenciales de usuario](runAsUser.md).
 
-
-
-
-
-
-<!--HONumber=Sep16_HO3-->
 
 

@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
-ms.openlocfilehash: 012a0e5c4f2a1f60ecea869d588b9c54e0567ced
-
+ms.openlocfilehash: f9754be3f803d3232189985faa41fb209bfcfe46
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Recurso de DSC WindowsProcess
+# <a name="dsc-windowsprocess-resource"></a>Recurso de DSC WindowsProcess
 
 > Se aplica a: Windows PowerShell 5.0
 
 El recurso **ProcessSet** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para configurar procesos en un nodo de destino. Este es un [recurso compuesto](authoringResourceComposite.md) que llama al [recurso WindowsProcess](windowsProcessResource.md) de cada uno de los grupos que se especifican en el parámetro `GroupName`.
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 
 ```
 WindowsProcess [string] #ResourceName
@@ -36,7 +34,7 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 |  Propiedad  |  Descripción   | 
 |---|---| 
 | Argumentos| Una cadena que tiene argumentos que se pasa al proceso tal cual. Si necesita pasar varios argumentos, colóquelos en esta cadena.| 
@@ -48,10 +46,4 @@ WindowsProcess [string] #ResourceName
 | StandardOutputPath| La ruta de acceso del archivo en la que los procesos escriben las salidas estándar. Se sobrescribirá cualquier archivo existente en la ubicación.| 
 | WorkingDirectory| La ubicación utilizada como directorio de trabajo actual de los procesos.| 
 | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"``.| 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

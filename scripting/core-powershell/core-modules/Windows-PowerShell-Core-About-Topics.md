@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: c935d6f066aed1496069681723aa7bd72edbb8e3
-
+ms.openlocfilehash: 5343cf633d74171037ed3cdc9fcaa04495f4aaf7
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="windows-powershell-core-about-topics"></a>Acerca de temas principales de Windows PowerShell
 Esta sección contiene los temas de Ayuda conceptual ("About") que se aplican a todos los módulos de Windows PowerShell. Para consultar los temas "About" de otros módulos, vea los temas de Ayuda del módulo en particular.
 
@@ -134,17 +132,11 @@ Esta sección contiene los temas de Ayuda conceptual ("About") que se aplican a 
 |[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|Describe los cmdlets del módulo Microsoft.WsMan.Management. Explica cómo utilizarlos juntos para administrar las características de WS-Management, incluida la unidad del proveedor WSMan.|
 
 ## <a name="see-also"></a>Véase también
-- [Scripting con Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+- [Scripting con Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 - [Conceptos básicos de Windows PowerShell](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
 - [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
 - [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)
 - [about_WMI_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/9c56b172-3b25-47b2-b6e0-86db649b1c45)
 - [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
 - [Windows PowerShell SDK](http://go.microsoft.com/fwlink/?LinkID=107032)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

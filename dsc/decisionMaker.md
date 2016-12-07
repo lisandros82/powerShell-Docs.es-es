@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 2d2b142dc862f7655f28aa34e1fd91f63bd6286e
-
+ms.openlocfilehash: 0c6dd3499ed47915b190cfeb906ccafdfa43b49f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Información general sobre la configuración de estado deseado para responsables de toma de decisiones #
+# <a name="desired-state-configuration-overview-for-decision-makers"></a>Información general sobre la configuración de estado deseado para responsables de toma de decisiones #
 
 En este documento se describen los beneficios de negocio del uso de la configuración de estado deseado (DSC) de PowerShell. No se trata de una guía técnica.
 
-## ¿Qué es la configuración de estado deseado? ##
+## <a name="what-is-desired-state-configuration"></a>¿Qué es la configuración de estado deseado? ##
 
 La configuración de estado deseado (DSC) de Windows PowerShell ofrece una plataforma de administración de configuración integrada en Windows que se basa en estándares abiertos. DSC es lo suficientemente flexible como para funcionar de forma confiable y coherente en cada una de las etapas del ciclo de vida de implementación (desarrollo, prueba, preproducción, producción), así como durante el escalado horizontal. 
 
@@ -25,7 +23,7 @@ DSC se centra en la idea de "[configuraciones](https://msdn.microsoft.com/en-us/
 
 DSC también tiene supervisión y generación de informes integradas. Si un sistema ya no es conforme, DSC puede generar una alerta y actuar para corregir el sistema. 
 
-## Ventajas de usar la configuración de estado deseado ##
+## <a name="benefits-of-using-desired-state-configuration"></a>Ventajas de usar la configuración de estado deseado ##
 
 Las configuraciones están diseñadas para que se puedan leer, almacenar y actualizar fácilmente. Las configuraciones simplemente declaran el estado en que deberían estar los dispositivos de destino, en lugar de escribir instrucciones sobre cómo hacer que lleguen a ese estado. Esto permite que la configuración mediante DSC sea mucho menos costosa de aprender, adoptar, implementar y mantener. 
 
@@ -34,25 +32,19 @@ La creación de configuraciones implica que se capturen los pasos de implementac
 Las configuraciones también pueden compartirse a través de la [Galería de PowerShell](https://powershellgallery.com). Esto significa que puede que ya existan escenarios comunes y procedimientos recomendados para el trabajo que necesita.
 
 
-## Configuración de estado deseado y DevOps ##
+## <a name="desired-state-configuration-and-devops"></a>Configuración de estado deseado y DevOps ##
 
 [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) es una combinación de personas, tecnologías y referencias culturales que permiten una implementación e iteración rápidas. DSC se diseñó con DevOps en mente. Que una sola configuración defina un entorno significa que los desarrolladores pueden codificar sus requisitos en una configuración, incorporar esa configuración en el control de código fuente, y los equipos de operaciones pueden implementar fácilmente el código sin tener que realizar procesos manuales propensos a errores. 
 
 Las configuraciones también están [controladas por datos](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), lo que facilita que los equipos de operaciones identifiquen y cambien los entornos sin intervención del programador. 
 
-## Configuración de estado deseado local y remota ##
+## <a name="desired-state-configuration-on--and-off-premise"></a>Configuración de estado deseado local y remota ##
 
 DSC se puede utilizar para administrar implementaciones locales y remotas. Para las soluciones locales, la configuración de estado deseado tiene un [servidor de extracción](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver) que puede utilizarse para centralizar la administración de máquinas e informar sobre su estado. Para las soluciones de nube, la configuración de estado deseado se puede utilizar siempre que se pueda usar Windows. También hay ofertas específicas de Azure basadas en la configuración de estado deseado, como [Automatización de Azure](https://azure.microsoft.com/en-us/documentation/services/automation/), que centraliza la creación de informes de la configuración de estado deseado. 
 
-## DSC y la compatibilidad ##
+## <a name="dsc-and-compatibility"></a>DSC y la compatibilidad ##
 
 Aunque DSC se introdujo en Windows Server 2012 R2, está disponible para los sistemas operativos inferiores mediante el paquete Windows Management Framework (WMF). Puede encontrar más información sobre WMF en la [página principal de PowerShell](https://msdn.microsoft.com/en-us/powershell/). 
 
 DSC también se puede usar para administrar Linux. Para más información, consulte [Introducción a DSC para Linux](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted).
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

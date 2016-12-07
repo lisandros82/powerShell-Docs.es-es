@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 2139e4462c0568c30b118ef6cb3ceef1717b52e6
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Recurso nxGroup de DSC para Linux
+# <a name="dsc-for-linux-nxgroup-resource"></a>Recurso nxGroup de DSC para Linux
 
 El recurso **nxGroup** de la configuración de estado deseado (DSC) de PowerShell ofrece un mecanismo para administrar grupos locales en un nodo de Linux.
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 
 ```powershell
 nxGroup <string> #ResourceName
@@ -32,7 +30,7 @@ nxGroup <string> #ResourceName
 
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 |  Propiedad |  Descripción | 
 |---|---|
@@ -44,7 +42,7 @@ nxGroup <string> #ResourceName
 | PreferredGroupID| Establece el identificador de grupo en el valor proporcionado, si es posible. Si el identificador de grupo está actualmente en uso, se utiliza el siguiente identificador de grupo disponible.| 
 | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 El ejemplo siguiente se asegura de que el usuario "monuser" exista y de que sea un miembro del grupo "DBusers".
 
@@ -69,10 +67,4 @@ nxGroup GroupExample{
 }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

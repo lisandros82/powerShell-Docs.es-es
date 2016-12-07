@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_get installedscript
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: f809c5c8f5a28c01c67ee4c4453ecca7796838c4
-
+ms.openlocfilehash: d755ed5dbcee279f943d56832ffd7689e4cc6f04
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Get-InstalledScript
+# <a name="get-installedscript"></a>Get-InstalledScript
 
 Obtiene los scripts instalados en un equipo.
 
-## Descripción
+## <a name="description"></a>Descripción
 
 El cmdlet Get-InstalledScript obtiene los scripts de PowerShell instalados en un equipo.
 
@@ -32,17 +30,17 @@ Para cada script instalado, Get-InstalledScript devuelve un objeto PSRepositoryI
   - Si no se especifica el parámetro RequiredVersion, Get-InstalledScript devuelve la versión más reciente del script instalado que sea igual o mayor que la versión mínima especificada, o la versión más reciente del script si no se especifica ninguna versión mínima. 
   - Si se especifica el parámetro RequiredVersion, Get-InstalledScript solo devuelve la versión del script instalado que coincida exactamente con la versión especificada.
 
-## Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
 
 ```powershell
 Get-Command -Name Get-InstalledScript -Module PowerShellGet -Syntax
 ```
 
-## Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
 
 [Get-InstalledScript](http://go.microsoft.com/fwlink/?LinkId=619790)
 
-## Comandos de ejemplo
+## <a name="example-commands"></a>Comandos de ejemplo
 
 ```powershell
 
@@ -103,10 +101,4 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Scripts
 
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

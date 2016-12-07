@@ -1,4 +1,4 @@
-# Cmdlets de sintaxis de mensajes de cifrado (CMS)
+# <a name="cryptographic-message-syntax-cms-cmdlets"></a>Cmdlets de sintaxis de mensajes de cifrado (CMS)
 
 Los cmdlets de sintaxis de mensajes de cifrado admiten el cifrado y descifrado de contenido mediante el formato estándar IETF para proteger los mensajes de forma criptográfica según se documenta en [RFC5652](http://tools.ietf.org/html/rfc5652).
 
@@ -82,7 +82,3 @@ Para ver los certificados de cifrado del documento en el proveedor de certificad
 ```powershell
 dir -DocumentEncryptionCert
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

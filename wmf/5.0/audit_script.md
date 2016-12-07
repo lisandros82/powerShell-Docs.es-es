@@ -1,4 +1,4 @@
-# Seguimiento y registro de scripts
+# <a name="script-tracing-and-logging"></a>Seguimiento y registro de scripts
 
 Mientras que Windows PowerShell ya tiene la opción de Directiva de grupo **LogPipelineExecutionDetails** para registrar la invocación de cmdlets, el lenguaje de scripting de PowerShell tiene muchas características que quizás quiera registrar y/o auditar. La nueva característica de seguimiento detallado de scripts permite habilitar el seguimiento detallado y el análisis del uso de scripting de Windows PowerShell en un sistema. Después de habilitar el seguimiento detallado de scripts, Windows PowerShell registra todos los bloques de script en el registro de eventos ETW, **Microsoft-Windows-PowerShell/Operational**. Si un bloque de script crea otro bloque de script (por ejemplo, un script que llame al cmdlet Invoke-Expression en una cadena), también se registra este bloque de script resultante.
 
@@ -96,8 +96,3 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
 Al igual que con todos los sistemas de registro que tienen un búfer de retención limitado (es decir, registros de ETW), un ataque contra esta infraestructura es inundar el registro de eventos falsos para ocultar las pruebas anteriores. Para protegerse de este ataque, asegúrese de que tiene algún tipo de colección de registro de eventos configurado (es decir, Colección de reenvío de eventos de Windows, [Spotting the Adversary with Windows Event Log Monitoring](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)) para desplazar los registros de eventos del equipo tan pronto como sea posible.
-
-
-<!--HONumber=Aug16_HO3-->
-
-

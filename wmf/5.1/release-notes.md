@@ -8,13 +8,11 @@ author: jkeithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: ebbd7d4d39cd335d994dd6cd3a06dd644df6d919
-ms.openlocfilehash: 83061e651b190bab3e5914bb6270a5857f7aa7a5
-
+ms.openlocfilehash: 60350cdc816e3a480a033adb3721ad4dabddfff9
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Notas de la versión preliminar de Windows Management Framework (WMF) 5.1 #
+# <a name="windows-management-framework-wmf-51-preview-release-notes"></a>Notas de la versión preliminar de Windows Management Framework (WMF) 5.1 #
 
 La versión preliminar de WMF 5.1 incluye los componentes de PowerShell, WMI, WinRM e inventario y licencias de software (SIL) que se lanzan con Windows Server 2016. WMF 5.1 puede instalarse en Windows 7, Windows 8.1, Windows Server 2008 R2, 2012 y 2012 R2 y proporciona una serie de mejoras con respecto a WMF 5.0 RTM, incluidos:
 
@@ -30,12 +28,6 @@ La versión preliminar de WMF 5.1 incluye los componentes de PowerShell, WMI, Wi
 - **La versión preliminar de WMF 5.1 requiere .NET Framework 4.6**. La instalación se realizará correctamente, pero se producirá un error en las características clave si .NET 4.6 no está instalado. Las instrucciones están disponibles en el tema [Instalación y configuración de WMF 5.1 (versión preliminar)](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/install-configure). 
 - **La versión preliminar de WMF 5.1 no admite implementaciones** de producción en este momento. Está diseñado para proporcionar información anticipada sobre qué hay en la versión y darle la oportunidad de enviar comentarios al equipo de PowerShell.
 - La versión preliminar de WMF 5.1 puede instalarse directamente sobre WMF 5.0.
-- Es un problema conocido que, actualmente, se necesita WMF 4.0 para instalar la versión preliminar de WMF 5.1 en Windows 7 y Windows Server 2008. Se espera retirar este requisito antes de la versión final.
+- Es un problema conocido que, actualmente, se necesita WMF 4.0 para instalar la versión preliminar de WMF 5.1 en Windows 7 y Windows Server 2008 R2. Se espera retirar este requisito antes de la versión final.
 - Instalar las versiones futuras de WMF 5.1, incluida la versión RTM, requerirá desinstalar la versión preliminar de WMF 5.1.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

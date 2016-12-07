@@ -7,24 +7,22 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 1a796658eb30bdf5c37ea3677f94767260a34b45
-
+ms.openlocfilehash: 2dff393684eb46aab6853010cebc76d5ca4b93a8
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="windows-powershell-desired-state-configuration-overview"></a>Información general sobre la configuración de estado deseado de Windows PowerShell 
 
-# Información general sobre la configuración de estado deseado de Windows PowerShell 
-
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 En este tema se describe la característica de configuración de estado deseado (DSC) de Windows PowerShell en Windows PowerShell. Puede utilizar este tema para obtener una visión general de DSC y para encontrar los recursos de documentación que necesita para comprender y usar DSC.
 
-## Descripción de la característica
+## <a name="feature-description"></a>Descripción de la característica
 DSC es una nueva plataforma de administración de Windows PowerShell que permite implementar y administrar datos de configuración de servicios de software y administrar el entorno en el que se ejecutan estos servicios.
 
 DSC ofrece un conjunto de extensiones de lenguaje de Windows PowerShell, nuevos cmdlets de Windows PowerShell y recursos que se pueden usar para especificar mediante declaración cómo quiere configurar el entorno del software. También proporciona un medio para mantener y administrar las configuraciones existentes.
 
-## Aplicaciones prácticas
+## <a name="practical-applications"></a>Aplicaciones prácticas
 A continuación se muestran algunos escenarios de ejemplo donde puede usar recursos integrados de DSC para configurar y administrar un conjunto de equipos (también conocidos como nodos de destino) de forma automática:
 
 * Habilitar o deshabilitar características y roles de servidor.
@@ -38,7 +36,7 @@ A continuación se muestran algunos escenarios de ejemplo donde puede usar recur
 * Corregir una configuración que se ha desplazado del estado deseado.
 * Detectar el estado de la configuración real en un nodo determinado.
 
-## Conceptos clave
+## <a name="key-concepts"></a>Conceptos clave
 DSC es una plataforma declarativa que se usa para la configuración, implementación y administración de sistemas. Consta de tres componentes principales:
 
 * Las [configuraciones](configurations.md) son scripts de PowerShell declarativos que definen y configuran instancias de recursos. Cuando ejecuta la configuración, DSC (y los recursos a los que llama la configuración) simplemente "hará que sea así", asegurándose de que el sistema exista en el estado que disponga la configuración. Las configuraciones DSC también son idempotentes: el administrador de configuración local (LCM) seguirá garantizando que las máquinas estén configuradas en el estado que la configuración declare.
@@ -47,14 +45,8 @@ DSC es una plataforma declarativa que se usa para la configuración, implementac
 
 DSC también incluye una serie de nuevas palabras clave, cmdlets y herramientas del lenguaje que permiten la creación de configuraciones, ayudan a crear recursos de DSC, a invocar configuraciones y a administrar el LCM. Muchos de estos cmdlets se pueden encontrar en Windows 8.1 como parte del módulo PSDesiredStateConfiguration (entre los que se incluyen `Start-DscConfiguration`, `Set-DscLocalConfigurationManager` y `Get-DscResource`). xDscResourceDesigner (que se encuentra en la [Galería de PowerShell](https://www.powershellgallery.com/packages/xDSCResourceDesigner/)) es una recopilación de cmdlets que simplifican el desarrollo de los recursos de DSC.
 
-## Véase también
+## <a name="see-also"></a>Véase también
 * [Configuraciones DSC](configurations.md)
 * [Recursos de DSC](resources.md)
 * [Configuración del administrador de configuración local](metaConfig.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

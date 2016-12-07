@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 8dd7904611fb697f9b398161e12765454b4f3441
-
+ms.openlocfilehash: 4b219e4499482eafa6eddf1461b74c62ba091d1a
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Repetir una tarea para varios objetos (ForEach-Object)
+# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Repetir una tarea para varios objetos (ForEach-Object)
 El cmdlet **ForEach-Object** usa bloques de script y el descriptor $_ del objeto de canalización actual para permitir ejecutar un comando en cada objeto de la canalización. Se puede usar para realizar algunas tareas complejas.
 
 Una situación en la que puede resultar útil es la manipulación de datos para mejorar su utilidad. Por ejemplo, la clase Win32_LogicalDisk de WMI puede usarse para devolver información del espacio libre de cada disco local. Los datos se devuelven en bytes, lo que dificulta su lectura:
@@ -53,10 +51,4 @@ eeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
 Puede reorganizar los datos mediante algunas técnicas avanzadas, pero un enfoque más sencillo es crear un nuevo objeto con **Select-Object**.
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

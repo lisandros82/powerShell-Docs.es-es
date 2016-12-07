@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
-translationtype: Human Translation
-ms.sourcegitcommit: d015dfae1990c66ea75aa45004b366d1609fb36f
-ms.openlocfilehash: 460ab6d82b694266d31b09779866f746b56c9f51
-
+ms.openlocfilehash: fb568b1194a3d123913e635d26b5fbd2ad76c531
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>Cómo crear una pestaña de PowerShell en Windows PowerShell ISE
 Las pestañas del Entorno de scripting integrado de Windows PowerShell® permiten crear y usar varios entornos de ejecución simultáneamente dentro de la misma aplicación. Cada pestaña de PowerShell corresponde a una sesión o un entorno de ejecución independiente.
 
@@ -44,10 +42,4 @@ Si tiene archivos sin guardar abiertos en la pestaña de PowerShell que está ce
 ## <a name="see-also"></a>Véase también
 - [Usar Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 - [Cómo usar el panel de consola en Windows PowerShell ISE](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

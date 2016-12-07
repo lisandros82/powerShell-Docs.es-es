@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 67426f6ad72967293f8aee1b3f098afc73067c59
-
+ms.openlocfilehash: a62e258812960ce59f050e59d2ef3acc296663a2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  Uso de la consola de Windows PowerShell basada en web
+#  <a name="use-the-web-based-windows-powershell-console"></a>Uso de la consola de Windows PowerShell basada en web
 
 Actualizado: 24 de junio de 2013
 
@@ -60,9 +58,9 @@ Windows PowerShell Web Access admite los siguientes exploradores de Internet. Au
 
 ------------------------------------------------------------------------
 
--   Windows Phone 7 y 7.5
+-   Windows Phone 7 y 7.5
 
--   Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
+-   Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 
 -   Apple Safari para sistema operativo iPhone 5.0.1
 
@@ -91,7 +89,7 @@ Para usar la consola de Windows PowerShell Web Access basada en web, los explora
 
 El administrador de Windows PowerShell Web Access debe proporcionar una dirección URL que es la dirección del sitio web de la puerta de enlace de Windows PowerShell Web Access de la organización. De manera predeterminada, la dirección de este sitio web es https://&lt;nombre_servidor&gt;/pswa. Antes de iniciar sesión en Windows PowerShell Web Access, asegúrese de contar con el nombre o la dirección IP del equipo remoto que desea administrar. Debe ser un usuario autorizado en el equipo remoto, y el equipo debe estar configurado para admitir la administración remota. Para más información sobre de la configuración del equipo para que admita la administración remota, consulte el tema sobre cómo [Enable and Use Remote Commands in Windows PowerShell](https://technet.microsoft.com/magazine/ff700227.aspx) (Habilitación y uso de comandos remotos en Windows PowerShell). El método más sencillo de configurar el equipo para que admita la administración remota consiste en ejecutar el cmdlet **Enable-PSRemoting -force** en el equipo, en una sesión de Windows PowerShell abierta con permisos del usuario elevados (**Ejecutar como administrador**).
 
-### Para iniciar sesión en Windows PowerShell Web Access
+### <a name="to-sign-in-to-windows-powershell-web-access"></a>Para iniciar sesión en Windows PowerShell Web Access
 
 1.  Abra el sitio web de Windows PowerShell Web Access en una pestaña o ventana del explorador de Internet.
 
@@ -175,13 +173,13 @@ Tras iniciar sesión en Windows PowerShell Web Access, una consola de Windows Po
 
 La mayoría de las funcionalidades del host de Windows PowerShell están disponibles en la consola de Windows PowerShell Web Access basada en web, pero hay algunas características que no se encuentran disponibles.
 
--   <span class="label">Visualización del progreso anidado.</span>  Windows PowerShell Web Access muestra una GUI de progreso para los cmdlets que notifican el progreso, pero solo se muestra información de progreso de nivel superior.
+-   <span class="label">Visualización del progreso anidado</span>  Windows PowerShell Web Access muestra una GUI de progreso para los cmdlets que notifican el progreso, pero solo se muestra información de progreso de nivel superior.
 
--   <span class="label">Modificación del color de entrada.</span>  No se puede cambiar el color de entrada (ni el del primer plano ni el del fondo). El estilo de los mensajes detallados, de resultados, de advertencia y de error se puede cambiar mediante la ejecución de un script.
+-   <span class="label">Modificación del color de entrada</span>  No se puede cambiar el color de entrada (ni el del primer plano ni el del fondo). El estilo de los mensajes detallados, de resultados, de advertencia y de error se puede cambiar mediante la ejecución de un script.
 
--   <span class="label">PSHostRawUserInterface.</span>  Windows PowerShell Web Access se implementa a través de la administración remota de Windows PowerShell y utiliza un espacio de ejecución remoto. Windows PowerShell Web Access no implementa algunos métodos en esta interfaz; por ejemplo, no implementa ningún comando que escriba en la consola Windows. Los comandos como **PowerTab** no funcionan en Windows PowerShell Web Access.
+-   <span class="label">PSHostRawUserInterface</span>  Windows PowerShell Web Access se implementa a través de la administración remota de Windows PowerShell y utiliza un espacio de ejecución remoto. Windows PowerShell Web Access no implementa algunos métodos en esta interfaz; por ejemplo, no implementa ningún comando que escriba en la consola Windows. Los comandos como **PowerTab** no funcionan en Windows PowerShell Web Access.
 
--   <span class="label">Teclas de función.</span>  Windows PowerShell Web Access no admite algunas teclas de función; en muchos casos, esto se debe a que los comandos están reservados por el explorador.
+-   <span class="label">Teclas de función</span>  Windows PowerShell Web Access no admite algunas teclas de función; en muchos casos, esto se debe a que los comandos están reservados por el explorador.
 
 <table>
 <colgroup>
@@ -285,7 +283,7 @@ La mayoría de las funcionalidades del host de Windows PowerShell están disponi
 
 ------------------------------------------------------------------------
 
--   <span class="label">Salto doble.</span>   Puede encontrarse con la limitación del salto doble (o la conexión a un segundo equipo desde la primera conexión) si intenta crear una nueva sesión o trabajar en ella usando Windows PowerShell Web Access. Windows PowerShell Web Access usa un espacio de ejecución remoto y, actualmente, **PowerShell.exe** no admite el establecimiento de una conexión remota a un segundo equipo desde un espacio de ejecución remoto. Si intenta conectarte a un segundo equipo remoto desde una conexión existente usando el cmdlet **Enter-PSSession**, por ejemplo, puede obtener varios errores, como “No se pueden obtener recursos de red.”.
+-   <span class="label">Salto doble</span>   Puede encontrarse con la limitación del salto doble (o la conexión a un segundo equipo desde la primera conexión) si intenta crear una nueva sesión o trabajar en ella usando Windows PowerShell Web Access. Windows PowerShell Web Access usa un espacio de ejecución remoto y, actualmente, **PowerShell.exe** no admite el establecimiento de una conexión remota a un segundo equipo desde un espacio de ejecución remoto. Si intenta conectarte a un segundo equipo remoto desde una conexión existente usando el cmdlet **Enter-PSSession**, por ejemplo, puede obtener varios errores, como “No se pueden obtener recursos de red.”.
 
     Para evitar los errores de salto doble, el administrador debe configurar la autenticación CredSSP en el entorno de red de la organización. Para más información sobre la configuración de la autenticación CredSSP, consulte [CredSSP for second-hop remoting](http://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) (CredSSP para comunicación remota de segundo salto) en el sitio web de Microsoft. También puede proporcionar credenciales explícitas si desea administrar un segundo equipo remoto (es poco probable que las credenciales implícitas permitan el segundo salto).
 
@@ -305,13 +303,13 @@ La mayoría de las funcionalidades del host de Windows PowerShell están disponi
 
 -   Los usuarios que han iniciado sesión en una configuración de sesión **NoLanguage** o en un espacio de ejecución restringido en Windows PowerShell Web Access no pueden ejecutar el comando **Exit** para finalizar la sesión. Para cerrar sesión, los usuarios deben hacer clic en **Cerrar sesión** en la página de la consola.
 
--   <span class="label">Conexión simultánea a varios equipos de destino.</span>   Si se está ejecutando el servidor de puerta de enlace de Windows Server 2012, Windows PowerShell Web Access solo permite una conexión de equipo remoto por sesión del explorador. No permite a los usuarios iniciar sesión una vez y conectarse a varios equipos remotos mediante pestañas del explorador independientes. Al abrir una nueva pestaña o ventana del explorador, Windows PowerShell Web Access le pedirá que desconecte su sesión actual e inicie una nueva sesión, para permitirle conectarse a un nuevo equipo remoto (o al mismo). No obstante, si desea iniciar sesión en dos o varias sesiones individuales en equipos remotos distintos, existe una característica de Internet Explorer que le permite crear una nueva sesión. Para iniciar una nueva sesión del explorador en Internet Explorer, presione **ALT**, abra el menú **Archivo** y luego seleccione **Nueva sesión**. Después, abra el sitio web de Windows PowerShell Web Access en una nueva sesión e inicie sesión para obtener acceso a otro equipo remoto.
+-   <span class="label">Conexión simultánea a varios equipos de destino</span>   Si se está ejecutando el servidor de puerta de enlace de Windows Server 2012, Windows PowerShell Web Access solo permite una conexión de equipo remoto por sesión del explorador. No permite a los usuarios iniciar sesión una vez y conectarse a varios equipos remotos mediante pestañas del explorador independientes. Al abrir una nueva pestaña o ventana del explorador, Windows PowerShell Web Access le pedirá que desconecte su sesión actual e inicie una nueva sesión, para permitirle conectarse a un nuevo equipo remoto (o al mismo). No obstante, si desea iniciar sesión en dos o varias sesiones individuales en equipos remotos distintos, existe una característica de Internet Explorer que le permite crear una nueva sesión. Para iniciar una nueva sesión del explorador en Internet Explorer, presione **ALT**, abra el menú **Archivo** y luego seleccione **Nueva sesión**. Después, abra el sitio web de Windows PowerShell Web Access en una nueva sesión e inicie sesión para obtener acceso a otro equipo remoto.
 
     Cuando la puerta de enlace de Windows PowerShell Web Access se está ejecutando en Windows Server 2012 R2, los usuarios pueden abrir varias conexiones a equipos remotos en pestañas diferentes del explorador. Si quiere abrir más de una conexión a un equipo remoto usando la consola de Windows PowerShell basada en web, póngase en contacto con su administrador de puerta de enlace de Windows PowerShell Web Access para ver si esta característica es compatible con el servidor de puerta de enlace.
 
--   <span class="label">Sesiones persistentes de Windows PowerShell (reconexión).</span>   Una vez agotado el tiempo de espera de la puerta de enlace de Windows PowerShell Web Access, se cierra la conexión remota entre esa puerta de enlace y el equipo de destino. Esto detiene cualquier cmdlet o script que se encuentre en curso actualmente. Se recomienda usar la infraestructura **-Job** de Windows PowerShell al llevar a cabo tareas de ejecución prolongadas, para que pueda iniciar trabajos, desconectarse del equipo, volver a conectarte más tarde y hacer que los trabajos sean persistentes. Otra ventaja de utilizar cmdlets **-Job** es que puede iniciarlos mediante Windows PowerShell Web Access, cerrar la sesión y volver a conectarse más tarde, ya sea mediante la ejecución de Windows PowerShell Web Access u otro host (como el Entorno de scripting integrado (ISE) de Windows PowerShell®).
+-   <span class="label">Sesiones persistentes de Windows PowerShell (reconexión)</span>   Una vez agotado el tiempo de espera de la puerta de enlace de Windows PowerShell Web Access, se cierra la conexión remota entre esa puerta de enlace y el equipo de destino. Esto detiene cualquier cmdlet o script que se encuentre en curso actualmente. Se recomienda usar la infraestructura **-Job** de Windows PowerShell al llevar a cabo tareas de ejecución prolongadas, para que pueda iniciar trabajos, desconectarse del equipo, volver a conectarte más tarde y hacer que los trabajos sean persistentes. Otra ventaja de utilizar cmdlets **-Job** es que puede iniciarlos mediante Windows PowerShell Web Access, cerrar la sesión y volver a conectarse más tarde, ya sea mediante la ejecución de Windows PowerShell Web Access u otro host (como el Entorno de scripting integrado (ISE) de Windows PowerShell®).
 
--   <span class="label">Cambiar el tamaño de la consola.</span>   Se puede cambiar el tamaño de la ventana de la consola de **PowerShell.exe** de las tres maneras siguientes.
+-   <span class="label">Cambiar el tamaño de la consola</span>   Se puede cambiar el tamaño de la ventana de la consola de **PowerShell.exe** de las tres maneras siguientes.
 
     -   Arrastrar y ajustar el tamaño de la ventana de la consola con el mouse
 
@@ -334,7 +332,7 @@ La mayoría de las funcionalidades del host de Windows PowerShell están disponi
 
         En el [blog del equipo de Windows PowerShell](http://blogs.msdn.com/b/powershell/), encontrará más ejemplos para personalizar la visualización de la consola.
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Véase también</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Consulte también</span></a>
 <a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -360,7 +358,7 @@ Sí No
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> Comentarios del sitio</a> Comentarios del sitio
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span>Comentarios del sitio</a> Comentarios del sitio
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -393,10 +391,4 @@ Más información
 
 Los scripts y el código de terceros vinculados a este sitio web o a los que este hace referencia se le ofrecen a usted bajo licencia de las partes propietarias de dicho código, no de Microsoft. Consulte los términos de uso de Ajax CDN para ASP.NET en http://www.asp.net/ajaxlibrary/CDN.ashx.
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 04aa6292dee991060669e1ac770cf98cbba41bfc
-ms.openlocfilehash: f4c64d3603fd01f29a63f8b180057714bf3d1197
-
+ms.openlocfilehash: c99ef444027a82d3adeba6a060f60fba3a0fe530
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Especificación de dependencias entre nodos
+# <a name="specifying-cross-node-dependencies"></a>Especificación de dependencias entre nodos
 
 > Se aplica a: Windows PowerShell 5.0
 
@@ -23,7 +21,7 @@ DSC proporciona recursos especiales, **WaitForAll**, **WaitForAny** y **WaitForS
 * **WaitForAny**: se ejecuta si el recurso especificado está en el estado deseado en al menos uno de los nodos de destino definidos en la propiedad **NodeName**.
 * **WaitForSome**: especifica una propiedad **NodeCount** además de **NodeName**. El recurso se ejecuta si está en el estado deseado en un número mínimo de nodos (especificado por **NodeCount**) definido por la propiedad **NodeName**. 
 
-## Uso de recursos WaitForXXXX
+## <a name="using-waitforxxxx-resources"></a>Uso de recursos WaitForXXXX
 
 Para usar los recursos **WaitForXXXX**, cree un bloque de recursos de ese tipo de recurso que especifique los nodos y el recurso de DSC que se esperará. Después, use la propiedad **DependsOn** en otros bloques de recursos de la configuración para esperar que las condiciones especificadas del nodo **WaitForXXXX** sean correctas.
 
@@ -59,14 +57,8 @@ Configuration JoinDomain
 
 >**Nota:** De manera predeterminada, los recursos de WaitForXXX lo intentan una vez y después se produce un error. Aunque no es necesario, normalmente la intención será especificar un recuento y un intervalo de reintentos.
 
-## Véase también
+## <a name="see-also"></a>Véase también
 * [Configuraciones DSC](configurations.md)
 * [Recursos de DSC](resources.md)
 * [Configuración del administrador de configuración local](metaConfig.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

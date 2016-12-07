@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 31867cc7af96a3d8d527f5906d77bed5206940b4
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Recurso nxPackage de DSC para Linux
+# <a name="dsc-for-linux-nxpackage-resource"></a>Recurso nxPackage de DSC para Linux
 
 El recurso **nxPackage** de la configuración de estado deseado (DSC) de PowerShell ofrece un mecanismo para administrar paquetes en un nodo de Linux.
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 
 ```
 nxPackage <string> #ResourceName
@@ -34,7 +32,7 @@ nxPackage <string> #ResourceName
 }
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 |  Propiedad |  Descripción | 
 |---|---|
@@ -47,7 +45,7 @@ nxPackage <string> #ResourceName
 | ReturnCode| El código de retorno esperado. Si el código de retorno real no a coincide con el valor esperado facilitado aquí, la configuración devolverá un error.| 
 | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En el ejemplo siguiente se garantiza que el paquete denominado "httpd" está instalado en un equipo Linux, mediante el administrador de paquetes "Yum".
 
@@ -63,10 +61,4 @@ nxPackage httpd
 }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

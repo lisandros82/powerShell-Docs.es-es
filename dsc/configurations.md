@@ -7,15 +7,13 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 49ddf6faf98a51f7ad5252e9563b1543478ed113
-ms.openlocfilehash: 567ab9528402c7d39d80a997bc14b6c6992cf772
-
+ms.openlocfilehash: 01af336f34928aec63cac7402c1ab20c701579fe
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="dsc-configurations"></a>Configuraciones DSC
 
->Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Las configuraciones DSC son scripts de PowerShell que definen un tipo especial de función. Para definir una configuración, se utiliza la palabra clave de PowerShell __Configuration__.
 
@@ -130,13 +128,7 @@ En la actualidad, DSC incluye 12 recursos como parte del módulo PSDesiredStateC
 * __Name__ es el nombre del recurso que se importará. Este no es el nombre descriptivo que [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) devuelve como "Name", sino el nombre de clase que se usa al definir el esquema del recurso (que [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) devuelve como __ResourceType__). 
 
 ## <a name="see-also"></a>Véase también
-* [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
+* [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
 * [Recursos de DSC](resources.md)
 * [Configuración del administrador de configuración local](metaConfig.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

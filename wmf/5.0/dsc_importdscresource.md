@@ -1,4 +1,4 @@
-# La palabra clave Import-DscResource admite el parámetro -ModuleVersion
+# <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>La palabra clave Import-DscResource admite el parámetro -ModuleVersion
 
 Hemos agregado un nuevo parámetro para la palabra clave dinámica `Import-DscResource`, que está disponible al crear configuraciones de DSC. Los autores de configuración pueden ahora especificar exactamente de qué versión del módulo se deben cargar los recursos de DSC. La nueva sintaxis de la palabra clave es:
 
@@ -16,10 +16,5 @@ En Windows PowerShell ISE, se muestra con IntelliSense:
 
 **Nota**: El parámetro `–ModuleVersion` solo puede usarse en combinación con el parámetro `–ModuleName`. No puede usarse con nombres de recursos usando solo el parámetro `–Name`.
 
-Anteriormente, la única manera de especificar la versión del módulo al cargar los recursos de DSC era mediante el objeto de especificación del módulo, como por ejemplo: `–ModuleName @{ModuleName="UserConfigProvider";ModuleVersion="3.0"}`
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+Anteriormente, la única manera de especificar la versión del módulo al cargar los recursos de DSC era mediante el objeto de especificación del módulo, como `–ModuleName @{ModuleName="UserConfigProvider";ModuleVersion="3.0"}`
 

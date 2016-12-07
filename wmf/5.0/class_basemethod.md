@@ -1,4 +1,4 @@
-# Llamar al método de clase base
+# <a name="call-base-class-method"></a>Llamar al método de clase base
 
 Puede invalidar los métodos existentes en las subclases. Para ello, declare métodos con el mismo nombre y la misma firma:
 
@@ -46,7 +46,3 @@ $list = [MyIntList]::new()
 $list.Add(100)
 $list[0] # return 200
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

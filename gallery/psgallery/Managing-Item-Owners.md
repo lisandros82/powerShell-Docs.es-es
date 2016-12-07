@@ -9,24 +9,22 @@ ms.date: 2016-10-14
 contributor: manikb
 title: Administrar propietarios de elementos
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 00fe57762c6b2bb690255ecaea642f97124f4328
-
+ms.openlocfilehash: 36a3a3079bce642b16f0512ead2b0778b43e5d2d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Administrar propietarios de elementos
+# <a name="managing-item-owners"></a>Administrar propietarios de elementos
 
 La propiedad de un elemento en la Galería de PowerShell está definida por la persona que publicó el elemento en la Galería.
 A veces estos metadatos deben administrarse después de la publicación inicial del elemento, lo que significa que los metadatos de propietario deben ser mutables, aunque el elemento en sí no lo es.
 
 Todos los propietarios del elemento son del mismo nivel. Esto significa que cualquier propietario del elemento puede publicar una versión nueva de un elemento. También significa que cualquier propietario del elemento puede quitar a otro propietario del elemento. Ningún propietario tiene más autoridad que los demás propietarios.  
 
-## Establecer el propietario inicial de un elemento 
+## <a name="setting-an-items-initial-owner"></a>Establecer el propietario inicial de un elemento 
 
 Cuando se publica un elemento nuevo en la Galería de PowerShell, el propietario inicial es el usuario que publicó el elemento. Esto se determina mediante la clave de API que se usó en el cmdlet Publish-Module.
 
-## Agregar propietarios
+## <a name="adding-owners"></a>Agregar propietarios
 
 Una vez que se ha publicado un elemento en la Galería de PowerShell, es fácil invitar a otros usuarios para que se conviertan en propietarios de un elemento.
 
@@ -45,7 +43,7 @@ Este proceso de invitaciones impide que los usuarios agreguen de forma errónea 
 Tenga en cuenta que los metadatos "Authors" (Autores) son exclusivamente texto de forma libre; solo se controla "Owners" (Propietarios).
 
 
-## Quitar propietarios
+## <a name="removing-owners"></a>Quitar propietarios
 Cuando un elemento tiene varios propietarios y es necesario quitar uno, el proceso es sencillo:
 
 1. [Inicie sesión](https://powershellgallery.com/users/account/LogOn) en la Galería de PowerShell con la cuenta que es el propietario actual de un elemento.
@@ -55,7 +53,7 @@ Cuando un elemento tiene varios propietarios y es necesario quitar uno, el proce
 
 
 
-## Transferir la propiedad de un elemento
+## <a name="transferring-item-ownership"></a>Transferir la propiedad de un elemento
 En ocasiones recibimos solicitudes de soporte técnico para transferir la propiedad de un elemento de un usuario a otro, pero la mayoría de las veces puede hacerlo usted.
 La transferencia de la propiedad de un usuario a otro es simplemente una combinación de las dos funciones anteriores.
 
@@ -68,7 +66,7 @@ Hemos recibido esta solicitud en un par de formularios, pero el proceso funciona
 * El elemento se publicó accidentalmente con una cuenta errónea.
 
 
-## Elementos huérfanos
+## <a name="orphaned-items"></a>Elementos huérfanos
 Por último, se ha producido otro escenario, aunque no muchas veces.
 Consiste en que algunos elementos se han convertido en huérfanos y la única cuenta de propietario de elemento que existe no se puede usar para agregar nuevos propietarios.
 Aquí se proporcionan algunos ejemplos de este escenario:
@@ -83,10 +81,4 @@ Iniciaremos un proceso para comprobar que es el propietario del elemento.
 Si llegamos a la conclusión de que usted debe ser el propietario del elemento, usaremos el vínculo "Manage Owners" (Administrar propietarios) para el elemento y le enviaremos una invitación para convertirse en propietario.
 Solo lo haremos después de comprobar que debe ser propietario. Este proceso de comprobación varía según las circunstancias.
 En ocasiones, usaremos la dirección URL del proyecto del elemento para ponernos en contacto con el propietario del proyecto, pero también podemos usar Twitter, el correo electrónico u otros medios para ponernos en contacto con el propietario del proyecto.
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

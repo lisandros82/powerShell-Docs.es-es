@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
-translationtype: Human Translation
-ms.sourcegitcommit: 2aa04e8094fee4b0da3d5e7025cca215d542355e
-ms.openlocfilehash: 260805af4b64646922477f874c6679f58af8aea9
-
+ms.openlocfilehash: 23e966474c80f31265529099365e318d376e2daa
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="starting-windows-powershell"></a>Iniciar Windows PowerShell
 PowerShell es una dll de motor de scripting que se inserta en varios hosts.  Los hosts más comunes que iniciará son la línea de comandos interactiva PowerShell.exe y el entorno de scripting interactivo PowerShell_ISE.exe.  
 
@@ -32,10 +30,4 @@ Los temas incluyen:
 ## <a name="see-also"></a>Véase también
 - [Requisitos del sistema de Windows PowerShell](Windows-PowerShell-System-Requirements.md)
 - [Instalación de Windows PowerShell](Installing-Windows-PowerShell.md)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

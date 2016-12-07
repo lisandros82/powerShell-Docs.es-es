@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
-ms.openlocfilehash: d07b11c148dfa747b3f9c0157191b83efb6c65df
-
+ms.openlocfilehash: 343bd3c625e2df9f34480ea8065e3039d6069d61
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="dsc-package-resource"></a>Recursos de DSC Package
 
-# Recursos de DSC Package
-
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 El recurso **Package** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para instalar o desinstalar paquetes, como los paquetes de Windows Installer y setup.exe, en un nodo de destino.
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 
 ```
 Package [string] #ResourceName
@@ -36,7 +34,7 @@ Package [string] #ResourceName
 }
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 |  Propiedad  |  Descripción   | 
 |---|---| 
 | Nombre| Indica el nombre del paquete para el que quiere garantizar un estado específico.| 
@@ -49,7 +47,7 @@ Package [string] #ResourceName
 | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"``.| 
 | ReturnCode| Indica el código de retorno esperado. Si el código de retorno real no a coincide con el valor esperado facilitado aquí, la configuración devolverá un error.| 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En este ejemplo se ejecuta al instalador .msi que se encuentra en la ruta de acceso especificada y tiene el identificador de producto especificado.
 
@@ -65,10 +63,4 @@ Configuration PackageTest
     } 
 }
 ```
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

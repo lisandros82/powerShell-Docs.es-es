@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: f62b1e0ec9f26e1b2bcb364c78a2ce39467655a5
-
+ms.openlocfilehash: 984323731b2cd0c4f3c26fe100e4b680082881f5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Reglas de autorización y características de seguridad de Windows PowerShell Web Access
+# <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reglas de autorización y características de seguridad de Windows PowerShell Web Access
 
 Actualizado: 24 de junio de 2013
 
@@ -198,7 +196,7 @@ Los cmdlets de Windows PowerShell Web Access admiten un carácter comodín: un a
 </tbody>
 </table>
 
-#### Para agregar una regla de autorización restrictiva
+#### <a name="to-add-a-restrictive-authorization-rule"></a>Para agregar una regla de autorización restrictiva
 
 1.  Realice una de las siguientes acciones para abrir una sesión de Windows PowerShell con derechos de usuario elevados.
 
@@ -222,7 +220,7 @@ Los cmdlets de Windows PowerShell Web Access admiten un carácter comodín: un a
 
 4.  Compruebe que se ha creado la regla ejecutando el cmdlet **Get-PswaAuthorizationRule** o **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;. Por ejemplo, **Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**.
 
-#### Para quitar una regla de autorización
+#### <a name="to-remove-an-authorization-rule"></a>Para quitar una regla de autorización
 
 1.  Si aún no tiene abierta una sesión de Windows PowerShell, consulte el paso 1 de [Agregar una regla de autorización restrictiva](#BKMK_arar) en esta sección.
 
@@ -273,7 +271,7 @@ Cada sesión de Windows PowerShell usa una configuración de sesión. Si esta no
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> Nota de seguridad </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">Nota de seguridad</span></th>
     </tr>
     </thead>
     <tbody>
@@ -367,7 +365,7 @@ En Windows PowerShell Web Access cuando se ejecuta en Windows Server 2012 R2, se
 
 Si el servidor de puerta de enlace está ejecutando Windows Server 2012 R2, Windows PowerShell Web Access permite a los usuarios volver a conectarse a las sesiones guardadas en otro momento, pero cuando errores de red, apagados no planificados u otros errores desconectan las sesiones, los usuarios no pueden ver o volver a conectarse a las sesiones guardadas hasta que haya vencido el período de tiempo de espera especificado por el administrador de la puerta de enlace.
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Véase también</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Consulte también</span></a>
 <a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -391,7 +389,7 @@ Sí No
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> Comentarios del sitio</a> Comentarios del sitio
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span>Comentarios del sitio</a> Comentarios del sitio
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -424,10 +422,4 @@ Más información
 
 Los scripts y el código de terceros vinculados a este sitio web o a los que este hace referencia se le ofrecen a usted bajo licencia de las partes propietarias de dicho código, no de Microsoft. Consulte los términos de uso de Ajax CDN para ASP.NET en http://www.asp.net/ajaxlibrary/CDN.ashx.
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

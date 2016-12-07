@@ -1,4 +1,4 @@
-# Permitir recursos duplicados idénticos en una configuración
+# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Permitir recursos duplicados idénticos en una configuración
 
 DSC no permite ni administra las definiciones de recursos en conflicto dentro de una configuración. En lugar de intentar resolver el conflicto, simplemente no funciona. Dado que la reutilización de la configuración se usa más en los recursos compuestos, etc., se producirán conflictos más a menudo. Cuando las definiciones de recursos en conflicto son idénticas, DSC debe ser inteligente y permitirlo. En esta versión, se admite tener varias instancias de recursos con definiciones idénticas:
 
@@ -85,7 +85,3 @@ Configuration WebApplication
 ```
 
 Esta configuración muy similar se podrá realizarse porque los recursos WindowsFeature FE_IIS y WindowsFeature Worker_IIS ya no son idénticos y, por tanto, están en conflicto.
-
-<!--HONumber=Aug16_HO3-->
-
-

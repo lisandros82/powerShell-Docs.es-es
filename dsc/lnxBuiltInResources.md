@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 6b001c12885022006003ef3ffe91b7aede07bd17
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Recursos de configuración de estado deseado integrados para Linux
+# <a name="built-in-desired-state-configuration-resources-for-linux"></a>Recursos de configuración de estado deseado integrados para Linux
 
 Los recursos son bloques de creación que puede usar para escribir un script de configuración de estado deseado (DSC) de PowerShell. DSC para Linux incorpora un conjunto de funcionalidades integradas para configurar recursos tales como archivos y carpetas, paquetes, variables de entorno, servicios y procesos.
 
-## Recursos integrados 
+## <a name="built-in-resources"></a>Recursos integrados 
 
 En la tabla siguiente se ofrece una lista con estos recursos y vínculos a temas que los describen en detalle.
 
@@ -32,9 +30,3 @@ En la tabla siguiente se ofrece una lista con estos recursos y vínculos a temas
 * [Recurso nxSshAuthorizedKeys](lnxSshAuthorizedKeysResource.md): administra claves ssh públicas para un usuario de Linux. 
 * [Recurso nxUser](lnxUserResource.md): administra usuarios locales de Linux. 
   
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

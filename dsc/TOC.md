@@ -93,8 +93,3 @@
 # Más recursos
 ## [Notas del producto](whitepapers.md)
 
-
-
-<!--HONumber=Nov16_HO4-->
-
-

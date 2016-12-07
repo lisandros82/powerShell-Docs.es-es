@@ -1,4 +1,4 @@
-# El cmdlet Test-DscConfiguration admite configuraciones de referencia
+# <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a>El cmdlet Test-DscConfiguration admite configuraciones de referencia
 
 El cmdlet Test-DscConfiguration se actualizó para permitir la prueba del estado de configuración deseado de uno o más nodos de destino mediante la especificación de un documento de configuración de referencia para comparar.
 
@@ -35,8 +35,3 @@ Test-DscConfiguration   -ReferenceConfiguration <string>
                         [-AsJob] 
                         [<CommonParameters>]
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

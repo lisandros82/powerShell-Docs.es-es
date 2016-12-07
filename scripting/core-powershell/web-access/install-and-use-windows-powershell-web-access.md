@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: fe79ca70ff1f9a3960b79747221a70adc46b7c67
-
+ms.openlocfilehash: 0dd820a884f094e6aac520f504404139aebf13a0
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  Instalación y uso de Windows PowerShell Web Access
+#  <a name="install-and-use-windows-powershell-web-access"></a>Instalación y uso de Windows PowerShell Web Access
 
 Actualizado: 5 de noviembre de 2013
 
@@ -95,9 +93,9 @@ Windows PowerShell Web Access admite los siguientes exploradores de Internet. Au
 
 ------------------------------------------------------------------------
 
--   Windows Phone 7 y 7.5
+-   Windows Phone 7 y 7.5
 
--   Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
+-   Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 
 -   Apple Safari para sistema operativo iPhone 5.0.1
 
@@ -139,7 +137,7 @@ Puede instalar la puerta de enlace de Windows PowerShell Web Access en un servid
 
 ------------------------------------------------------------------------
 
-#### Para instalar Windows PowerShell Web Access mediante cmdlets de Windows PowerShell
+#### <a name="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>Para instalar Windows PowerShell Web Access mediante cmdlets de Windows PowerShell
 
 1.  Realice una de las siguientes acciones para abrir una sesión de Windows PowerShell con derechos de usuario elevados.
 
@@ -226,7 +224,7 @@ Puede completar la configuración de la aplicación web Windows PowerShell Web A
 
 -   [Para configurar la puerta de enlace de Windows PowerShell Web Access con un certificado original mediante Install-PswaWebApplication y el Administrador de IIS](#BKMK_gencert)
 
-#### Para configurar la puerta de enlace de Windows PowerShell Web Access con un certificado de prueba mediante Install-PswaWebApplication
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>Para configurar la puerta de enlace de Windows PowerShell Web Access con un certificado de prueba mediante Install-PswaWebApplication
 
 1.  Realice una de las siguientes acciones para abrir una sesión de Windows PowerShell.
 
@@ -244,7 +242,7 @@ Puede completar la configuración de la aplicación web Windows PowerShell Web A
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> Nota de seguridad </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">Nota de seguridad</span></th>
     </tr>
     </thead>
     <tbody>
@@ -286,7 +284,7 @@ Puede completar la configuración de la aplicación web Windows PowerShell Web A
     </tbody>
     </table>
 
-#### Para configurar la puerta de enlace de Windows PowerShell Web Access con un certificado original mediante Install-PswaWebApplication y el Administrador de IIS
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>Para configurar la puerta de enlace de Windows PowerShell Web Access con un certificado original mediante Install-PswaWebApplication y el Administrador de IIS
 
 1.  Realice una de las siguientes acciones para abrir una sesión de Windows PowerShell.
 
@@ -353,7 +351,7 @@ Una vez instalado Windows PowerShell Web Access y configurada la puerta de enlac
 
 Para obtener más información sobre la seguridad y las reglas de autorización de Windows PowerShell Web Access, consulte [Reglas de autorización y características de seguridad de Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx).
 
-#### Para agregar una regla de autorización restrictiva
+#### <a name="to-add-a-restrictive-authorization-rule"></a>Para agregar una regla de autorización restrictiva
 
 1.  Realice una de las siguientes acciones para abrir una sesión de Windows PowerShell con derechos de usuario elevados.
 
@@ -395,7 +393,7 @@ Puede instalar la puerta de enlace de Windows PowerShell Web Access en un servid
 
 ------------------------------------------------------------------------
 
-#### Para instalar Windows PowerShell Web Access mediante el Asistente para agregar roles y características
+#### <a name="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard"></a>Para instalar Windows PowerShell Web Access mediante el Asistente para agregar roles y características
 
 1.  Si ya se ha abierto el Administrador del servidor, vaya al siguiente paso. Si todavía no se ha abierto el Administrador del servidor, ábralo mediante una de las siguientes acciones.
 
@@ -447,7 +445,7 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
 -   
 
-#### Para usar el Administrador de IIS para configurar la puerta de enlace en un sitio web existente
+#### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>Para usar el Administrador de IIS para configurar la puerta de enlace en un sitio web existente
 
 1.  Abra la consola del Administrador de IIS mediante uno de los siguientes procedimientos.
 
@@ -509,7 +507,7 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
         c:\windows\system32\icacls.exe $authorizationFile
 
-#### Para usar el Administrador de IIS para configurar la puerta de enlace como sitio web raíz con un certificado de prueba
+#### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>Para usar el Administrador de IIS para configurar la puerta de enlace como sitio web raíz con un certificado de prueba
 
 1.  Abra la consola del Administrador de IIS mediante uno de los siguientes procedimientos.
 
@@ -529,7 +527,7 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
 7.  En el campo **Tipo** del área **Enlace**, seleccione **https**.
 
-8.  Asigne al sitio web un número de puerto que no esté en uso por otro sitio o aplicación. Para encontrar puertos abiertos, puede ejecutar el comando **netstat** en una ventana del símbolo del sistema. El número de puerto predeterminado es 443.
+8.  Asigne al sitio web un número de puerto que no esté en uso por otro sitio o aplicación. Para encontrar puertos abiertos, puede ejecutar el comando **netstat** en una ventana del símbolo del sistema. El número de puerto predeterminado es 443.
 
     Cambie el puerto predeterminado si otro sitio web ya está usando el 443 o por algún otro motivo de seguridad. Si otro sitio web que se ejecuta en el servidor de puerta de enlace está usando el puerto seleccionado, se mostrará una advertencia cuando haga clic en **Aceptar** en el cuadro de diálogo **Agregar sitio web**. Debe usar un puerto que no esté en uso para ejecutar Windows PowerShell Web Access.
 
@@ -587,7 +585,7 @@ Una vez instalado Windows PowerShell Web Access y configurada la puerta de enlac
 
 Para obtener más información sobre la seguridad y las reglas de autorización de Windows PowerShell Web Access, consulte [Reglas de autorización y características de seguridad de Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx).
 
-#### Para agregar una regla de autorización restrictiva
+#### <a name="to-add-a-restrictive-authorization-rule"></a>Para agregar una regla de autorización restrictiva
 
 1.  Realice una de las siguientes acciones para abrir una sesión de Windows PowerShell con derechos de usuario elevados.
 
@@ -622,7 +620,7 @@ Después de configurar una regla de autorización, está listo para que los usua
 
 Para un entorno de producción seguro, se recomienda usar un certificado SSL válido firmado por una entidad de certificación (CA). En el procedimiento descrito en esta sección se explica cómo obtener y aplicar un certificado SSL válido de una CA.
 
-### Para configurar un certificado SSL en el Administrador de IIS
+### <a name="to-configure-an-ssl-certificate-in-iis-manager"></a>Para configurar un certificado SSL en el Administrador de IIS
 
 1.  En el panel del árbol del Administrador de IIS, seleccione el servidor en el que está instalado Windows PowerShell Web Access.
 
@@ -651,7 +649,7 @@ Para un entorno de producción seguro, se recomienda usar un certificado SSL vá
 
 Una vez instalado Windows PowerShell Web Access y configurada la puerta de enlace como se describe en este tema, la consola de Windows PowerShell basada en web estará lista para usarse. Para obtener más información sobre la introducción a la consola basada en web, consulte [Uso de la consola de Windows PowerShell basada en web](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx).
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Véase también</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Consulte también</span></a>
 <a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_6" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -676,7 +674,7 @@ Sí No
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> Comentarios del sitio</a> Comentarios del sitio
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span>Comentarios del sitio</a> Comentarios del sitio
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -709,10 +707,4 @@ Más información
 
 Los scripts y el código de terceros vinculados a este sitio web o a los que este hace referencia se le ofrecen a usted bajo licencia de las partes propietarias de dicho código, no de Microsoft. Consulte los términos de uso de Ajax CDN para ASP.NET en http://www.asp.net/ajaxlibrary/CDN.ashx.
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

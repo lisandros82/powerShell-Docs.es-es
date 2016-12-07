@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 83aa2ceb63497c7a12ec80d4b1472327284acf5b
-
+ms.openlocfilehash: 114f7b60bf44e0cfc2c9e2bad223552cb141d145
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Otros objetos de scripting útiles
+# <a name="other-useful-scripting-objects"></a>Otros objetos de scripting útiles
   Los objetos siguientes proporcionan funcionalidad adicional de scripting de Windows PowerShell ISE. No forman parte de la jerarquía de **$psISE**.
 
-## Objetos de scripting útiles
+## <a name="useful-scripting-objects"></a>Objetos de scripting útiles
 
-### $psUnsupportedConsoleApplications
+### <a name="psunsupportedconsoleapplications"></a>$psUnsupportedConsoleApplications
  Existen algunas limitaciones sobre cómo Windows PowerShell ISE interactúa con las aplicaciones de consola. Un comando o un script de automatización que requiere la intervención de usuario podrían no funcionar de la misma forma que desde la consola de Windows PowerShell. Puede bloquear la ejecución de estos comandos o scripts en el panel de comandos de Windows PowerShell ISE. El objeto **$psUnsupportedConsoleApplications** mantiene una lista de estos comandos. Si intenta ejecutar los comandos de esta lista, recibirá un mensaje donde se indica que no son compatibles. El siguiente script agrega una entrada a la lista.
 
 ```
@@ -32,7 +30,7 @@ psUnsupportedConsoleApplications
 
 ```
 
-### $psLocalHelp
+### <a name="pslocalhelp"></a>$psLocalHelp
  Se trata de un objeto de diccionario que mantiene una asignación contextual entre los temas de Ayuda y sus vínculos asociados en el archivo de Ayuda HTML compilado local. Se utiliza para buscar la Ayuda local para un tema determinado. Puede agregar o eliminar los temas de esta lista. En el ejemplo de código siguiente se muestran algunos pares clave-valor de ejemplo que se encuentran en **$psLocalHelp**.
 
 ```
@@ -41,7 +39,7 @@ $psLocalHelp | Format-List
 
 ```
 
-### Salida de muestra
+### <a name="sample-output"></a>Salida de muestra
 
 |||
 |-|-|
@@ -54,7 +52,7 @@ $psLocalHelp | Format-List
 $psLocalHelp.Add("get-myNoun","c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-57ae-aa0c-87b5e5a84712.htm")
 ```
 
-### $psOnlineHelp
+### <a name="psonlinehelp"></a>$psOnlineHelp
  Se trata de un objeto de diccionario que mantiene una asignación contextual entre los títulos de los temas de Ayuda y sus direcciones URL externas asociadas. Se utiliza para buscar la Ayuda para un tema determinado en la Web. Puede agregar o eliminar los temas de esta lista.
 
 ```
@@ -62,7 +60,7 @@ $psOnlineHelp | Format-List
 
 ```
 
-### Salida de muestra
+### <a name="sample-output"></a>Salida de muestra
 
 |||
 |-|-|
@@ -75,13 +73,7 @@ $psOnlineHelp | Format-List
 $psOnlineHelp.Add("get-myNoun","http://www.mydomain.com/MyNoun.html")
 ```
 
-## Véase también
- [El modelo de objetos de scripting de ISE de Windows PowerShell](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+## <a name="see-also"></a>Véase también
+- [El modelo de objetos de scripting de ISE de Windows PowerShell](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   
-
-
-
-<!--HONumber=Aug16_HO4-->
-
-

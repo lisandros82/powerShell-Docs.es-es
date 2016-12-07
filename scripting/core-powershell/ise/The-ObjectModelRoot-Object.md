@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 13fcf7ee-b18f-4499-a2b4-ccfc4484cd88
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: d51f5ab8b80bdf5e12a5b0f505f91eeeb4f3d48a
-
+ms.openlocfilehash: f65837e69471d3042a577e2c6f185e8f80a80d47
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="the-objectmodelroot-object"></a>El objeto ObjectModelRoot
   El objeto **$psISE**, que es el objeto raíz de entidad de seguridad en el Entorno de scripting integrado (ISE) de Windows PowerShell®, es una instancia de la clase Microsoft.PowerShell.Host.ISE.ObjectModelRoot. En este tema se describen las propiedades del objeto **ObjectModelRoot**.
 
@@ -55,9 +53,3 @@ ms.openlocfilehash: d51f5ab8b80bdf5e12a5b0f505f91eeeb4f3d48a
 - [La jerarquía del modelo de objetos de ISE](The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Nov16_HO4-->
-
-

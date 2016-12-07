@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 4809eb60ba1a5529343c2ab3c88493bf2c32389b
-
+ms.openlocfilehash: 6af4884948c44f7f256d62d0c61f1c71b47994f3
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Trabajar con claves del Registro
+# <a name="working-with-registry-keys"></a>Trabajar con claves del Registro
 Dado que las claves del Registro son elementos en unidades de Windows PowerShell, trabajar con ellas es muy similar a trabajar con archivos y carpetas. Una diferencia fundamental es que todos los elementos en una unidad de Windows PowerShell basada en el Registro es un contenedor, como una carpeta en una unidad del sistema de archivos. Sin embargo, las entradas del Registro y sus valores asociados son propiedades de los elementos, no elementos distintos.
 
-### Enumerar a todas las subclaves de una clave del Registro
+### <a name="listing-all-subkeys-of-a-registry-key"></a>Enumerar a todas las subclaves de una clave del Registro
 Puede mostrar todos los elementos directamente dentro de una clave del Registro mediante **Get-ChildItem**. Agregue el parámetro **Force** opcional para mostrar elementos ocultos o del sistema. Por ejemplo, este comando muestra los elementos directamente en la unidad HKCU: de Windows PowerShell, que se corresponde con el subárbol del Registro HKEY_CURRENT_USER:
 
 ```
@@ -60,7 +58,7 @@ Get-ChildItem -Path hkcu:\ -Recurse
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-### Copiar claves
+### <a name="copying-keys"></a>Copiar claves
 La copia se realiza con **Copy-Item**. El siguiente comando copia HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion y todas sus propiedades en HKCU:\\, y crea una nueva clave denominada "CurrentVersion":
 
 ```
@@ -75,7 +73,7 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination h
 
 Puede seguir usando otras herramientas que tiene a su disposición para realizar copias del sistema de archivos. Todas las herramientas de edición del Registro, incluidas reg.exe, regini.exe y regedit.exe, y los objetos COM que admiten la edición del Registro (como WScript.Shell y la clase WMI StdRegProv) pueden usarse desde Windows PowerShell.
 
-### Crear claves
+### <a name="creating-keys"></a>Crear claves
 Crear nuevas claves en el Registro es más sencillo que crear un nuevo elemento en un sistema de archivos. Dado que todas las claves del Registro son contenedores, no es necesario especificar el tipo de elemento; solo tiene que proporcionar una ruta de acceso explícita, como:
 
 ```
@@ -88,7 +86,7 @@ También puede usar una ruta de acceso basada en el proveedor para especificar u
 New-Item -Path Registry::HKCU_DeleteMe
 ```
 
-### Eliminar claves
+### <a name="deleting-keys"></a>Eliminar claves
 El proceso de eliminación de elementos es básicamente igual para todos los proveedores. Los siguientes comandos quitarán elementos de forma automática:
 
 ```
@@ -96,7 +94,7 @@ Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
-### Quitar todas las claves bajo una clave específica
+### <a name="removing-all-keys-under-a-specific-key"></a>Quitar todas las claves bajo una clave específica
 Puede quitar los elementos contenidos mediante **Remove-Item**, pero se le pedirá que confirme la eliminación si el elemento contiene algo más. Por ejemplo, si se intenta eliminar la subclave HKCU:\\CurrentVersion creada, se muestra lo siguiente:
 
 ```
@@ -121,10 +119,4 @@ Si deseara quitar todos los elementos de HKCU:\\CurrentVersion, pero no el propi
 ```
 Remove-Item -Path HKCU:\CurrentVersion\* -Recurse
 ```
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

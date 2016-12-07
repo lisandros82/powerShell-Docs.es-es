@@ -3,13 +3,13 @@ título: Recursos compuestos: uso de una configuración DSC como un recurso ms.d
 ms.topic: autor del artículo: eslesar administrador: dongill ms.prod: powershell
 ---
 
-# Recursos compuestos: uso de una configuración DSC como un recurso
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Recursos compuestos: uso de una configuración DSC como un recurso
 
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 En situaciones del mundo real, las configuraciones pueden acabar siendo largas y complejas, con llamadas a muchos recursos diferentes y estableciendo una gran cantidad de propiedades. Para ayudar a abordar esta complejidad, puede utilizar una configuración de estado deseado (DSC) de Windows PowerShell como recurso para otras configuraciones. Es lo que se conoce como un recurso compuesto. Un recurso compuesto es una configuración DSC que toma parámetros. Los parámetros de la configuración actúan como las propiedades del recurso. La configuración se guarda como un archivo con una extensión **.schema.psm1** y ocupa el lugar tanto del esquema MOF como del recurso de script de un recurso de DSC típico (para más información sobre los recursos de DSC, consulte [Recursos de configuración de estado deseado de Windows PowerShell](resources.md).
 
-## Creación del recurso compuesto
+## <a name="creating-the-composite-resource"></a>Creación del recurso compuesto
 
 En nuestro ejemplo, se creará una configuración que invoca un número de recursos existentes para configurar las máquinas virtuales. En lugar de especificar los valores que se establecerán en bloques de configuración, la configuración toma un número de parámetros que se utilizan en los bloques de configuración.
 
@@ -125,7 +125,7 @@ Configuration xVirtualMachine
 }
 ```
 
-### Guardar la configuración como un recurso compuesto
+### <a name="saving-the-configuration-as-a-composite-resource"></a>Guardar la configuración como un recurso compuesto
 
 Para usar la configuración con parámetros como un recurso de DSC, guárdela en una estructura de directorios similar a la de cualquier otro recurso basado en MOF y asígnele un nombre con una extensión **.schema.psm1**. En este ejemplo, el archivo se denominará **xVirtualMachine.schema.psm1**. También deberá crear un manifiesto llamado **xVirtualMachine.psd1** que contenga la línea siguiente. Tenga en cuenta que esto es además de **MyDscResources.psd1**, el manifiesto del módulo para todos los recursos de la carpeta **MyDscResources**.
 
@@ -147,7 +147,7 @@ $env: psmodulepath
 
 El recurso ahora es detectable mediante el cmdlet Get-DscResource y sus propiedades las puede detectar cualquier cmdlet o mediante la función de autocompletar **CTRL+BARRA ESPACIADORA** en Windows PowerShell ISE.
 
-## Uso del recurso compuesto
+## <a name="using-the-composite-resource"></a>Uso del recurso compuesto
 
 A continuación, se crea una configuración que llama al recurso compuesto. Esta configuración llama al recurso compuesto xVirtualMachine para crear una máquina virtual y después llama al recurso **xComputer** para cambiar su nombre.
 
@@ -182,13 +182,8 @@ configuration RenameVM
 }
 ```
 
-## Consulte también
-### Conceptos
+## <a name="see-also"></a>Véase también
+### <a name="concepts"></a>Conceptos
 * [Escribir un recurso de DSC personalizado con MOF](authoringResourceMOF.md)
-* [Introducción a la configuración de estado deseado de Windows PowerShell](overview.md)
-
-
-
-<!--HONumber=Jun16_HO1-->
-
+* [Introducción a la configuración de estado deseado de Windows PowerShell](overview.md)
 

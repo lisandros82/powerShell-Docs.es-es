@@ -7,23 +7,21 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: b414a01bcd111143791a5fac77e61ce309a0a5c5
-ms.openlocfilehash: 50b99917f15d290db30da1b1b752d668d886ec50
-
+ms.openlocfilehash: 1fc28589633d6279d0428179a70e7e561d753ea8
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="writing-a-custom-dsc-resource-with-mof"></a>Escribir un recurso de DSC personalizado con MOF
 
-# Escribir un recurso de DSC personalizado con MOF
-
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 En este tema se define el esquema de un recurso personalizado de configuración de estado deseado (DSC) de Windows PowerShell en un archivo MOF y se implementa el recurso en un archivo de script de Windows PowerShell. Este recurso personalizado es para la creación y el mantenimiento de un sitio web.
 
-## Crear el esquema MOF
+## <a name="creating-the-mof-schema"></a>Crear el esquema MOF
 
 El esquema define las propiedades del recurso que se pueden configurar mediante un script de configuración DSC.
 
-### Estructura de carpetas de un recurso MOF
+### <a name="folder-structure-for-a-mof-resource"></a>Estructura de carpetas de un recurso MOF
 
 Para implementar un recurso de DSC personalizado con un esquema MOF, cree la siguiente estructura de carpetas. El esquema MOF se define en el archivo Demo_IISWebsite.schema.mof y el script del recurso se define en Demo_IISWebsite.psm1. Opcionalmente, puede crear un archivo de manifiesto del módulo (psd1).
 
@@ -39,7 +37,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
 
 Tenga en cuenta que es necesario crear una carpeta denominada DSCResources en la carpeta de nivel superior y que la carpeta de cada recurso debe tener el mismo nombre que el recurso.
 
-### Contenido del archivo MOF
+### <a name="the-contents-of-the-mof-file"></a>Contenido del archivo MOF
 
 A continuación se muestra un ejemplo de un archivo MOF que se puede utilizar para un recurso de sitio web personalizado. Para seguir este ejemplo, guarde este esquema en un archivo y asigne como nombre del archivo *Demo_IISWebsite.schema.mof*.
 
@@ -69,7 +67,7 @@ Tenga en cuenta lo siguiente sobre el código anterior:
 * Se recomienda incluir una propiedad denominada `Ensure` con los valores `Present` y `Absent` en el recurso como una forma de mantener un estilo coherente con los recursos integrados de DSC.
 * Asigne el nombre del archivo de esquema para el recurso personalizado de la siguiente forma: `classname.schema.mof`, donde `classname` es el identificador que sigue a la palabra clave `class` en la definición del esquema.
 
-### Escribir el script del recurso
+### <a name="writing-the-resource-script"></a>Escribir el script del recurso
 
 El script del recurso implementa la lógica del recurso. En este módulo, debe incluir tres funciones llamadas **Get-TargetResource**, **Set-TargetResource** y **Test-TargetResource**. Las tres funciones deben tomar un conjunto de parámetros que sea idéntico al conjunto de propiedades definidas en el esquema MOF que creó para el recurso. En este documento, este conjunto de propiedades se conoce como "propiedades del recurso". Almacene estas tres funciones en un archivo denominado <ResourceName>.psm1. En el ejemplo siguiente, las funciones se almacenan en un archivo denominado Demo_IISWebsite.psm1.
 
@@ -220,7 +218,7 @@ $result
 
 **Nota**: Para una depuración más sencilla, utilice el cmdlet **Write-Verbose** en la implementación de las tres funciones anteriores. Este cmdlet escribe texto en la secuencia de mensajes detallados. De forma predeterminada, la secuencia de mensajes detallados no se muestra, pero se puede mostrar si se cambia el valor de la variable **$VerbosePreference** o se usa el parámetro **Verbose** en los cmdlets de DSC = new.
 
-### Crear el manifiesto del módulo
+### <a name="creating-the-module-manifest"></a>Crear el manifiesto del módulo
 
 Por último, utilice el cmdlet **New-ModuleManifest** para definir un archivo <ResourceName>.psd1 para el módulo de recursos personalizados. Al invocar este cmdlet, haga referencia al archivo del módulo de script (.psm1) que se describe en la sección anterior. Incluya **Get-TargetResource**, **Set-TargetResource** y **Test-TargetResource** en la lista de funciones que se deben exportar. A continuación se muestra un archivo de manifiesto de ejemplo.
 
@@ -275,10 +273,4 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 # HelpInfoURI = ''
 }
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

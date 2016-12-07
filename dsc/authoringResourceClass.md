@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: b414a01bcd111143791a5fac77e61ce309a0a5c5
-ms.openlocfilehash: b5de1100450a89796c20a5bbb2e71f7759374b02
-
+ms.openlocfilehash: a8c2094cbef1bb14c4a9082ff78fae78ec0c2e65
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Escribir un recurso de DSC personalizado con clases de PowerShell
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Escribir un recurso de DSC personalizado con clases de PowerShell
 
 > Se aplica a: Windows PowerShell 5.0
 
@@ -23,9 +21,9 @@ En un recurso de DSC basados en clases, el esquema se define como propiedades de
 
 En este tema, se creará un recurso simple denominado **FileResource** que administra un archivo en una ruta de acceso especificada.
 
-Para más información sobre los recursos DSC, consulte [Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md).
+Para más información sobre los recursos DSC, consulte [Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md).
 
-## Estructura de carpetas de un recurso de clase
+## <a name="folder-structure-for-a-class-resource"></a>Estructura de carpetas de un recurso de clase
 
 Para implementar un recurso de DSC personalizado con una clase de PowerShell, cree la siguiente estructura de carpetas. La clase se define en **MyDscResource.psm1** y el manifiesto del módulo se define en **MyDscResource.psd1**.
 
@@ -36,7 +34,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
            MyDscResource.psd1 
 ```
 
-## Crear la clase
+## <a name="create-the-class"></a>Crear la clase
 
 Utilice la palabra clave class para crear una clase de PowerShell. Para especificar que una clase es un recurso de DSC, use el atributo **DscResource()**. El nombre de la clase es el nombre del recurso de DSC.
 
@@ -46,7 +44,7 @@ class FileResource {
 }
 ```
 
-### Declarar propiedades
+### <a name="declare-properties"></a>Declarar propiedades
 
 El esquema de recursos de DSC se define como propiedades de la clase. Se declaran tres propiedades como se indica a continuación.
 
@@ -81,7 +79,7 @@ enum Ensure
 }
 ```
 
-### Implementar los métodos
+### <a name="implementing-the-methods"></a>Implementar los métodos
 
 Los métodos **Get()**, **Set()** y **Test()** son análogos a las funciones **Get-TargetResource**, **Set-TargetResource** y **Test-TargetResource** de un recurso de script.
 
@@ -218,7 +216,7 @@ Este código también incluye la función CopyFile(), una función auxiliar que 
     }
 ```
 
-### El archivo completo
+### <a name="the-complete-file"></a>El archivo completo
 A continuación se muestra el archivo de clases completo.
 
 ```powershell
@@ -417,7 +415,7 @@ class FileResource
 ```
 
 
-## Crear un manifiesto
+## <a name="create-a-manifest"></a>Crear un manifiesto
 
 Para que un recurso basado en clases esté disponible para el motor de DSC, debe incluir una instrucción **DscResourcesToExport** en el archivo de manifiesto que indique al módulo que se exporten los recursos. El manifiesto tiene este aspecto:
 
@@ -455,7 +453,7 @@ PowerShellVersion = '5.0'
 } 
 ```
 
-## Probar el recurso
+## <a name="test-the-resource"></a>Probar el recurso
 
 Después de guardar la clase y los archivos de manifiesto en la estructura de carpetas tal y como se describió anteriormente, puede crear una configuración que utilice el nuevo recurso. Para obtener información sobre cómo ejecutar una configuración DSC, consulte [Establecer configuraciones](enactingConfigurations.md). La configuración siguiente comprobará si existe el archivo en `c:\test\test.txt` y, si no es así, copia el archivo desde `c:\test.txt` (debe crear `c:\test.txt` antes de ejecutar la configuración).
 
@@ -474,13 +472,7 @@ Test
 Start-DscConfiguration -Wait -Force Test
 ```
 
-## Véase también
-### Conceptos
-[Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md)
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
+## <a name="see-also"></a>Véase también
+### <a name="concepts"></a>Conceptos
+[Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md)
 

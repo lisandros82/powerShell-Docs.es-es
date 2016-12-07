@@ -7,15 +7,13 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 49ddf6faf98a51f7ad5252e9563b1543478ed113
-ms.openlocfilehash: 9090f4be2987b8a56ba4d839f54e05082a8bcfa0
-
+ms.openlocfilehash: 69248223a67c8dbbea421f80b57cb245489fbc4f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="enacting-configurations"></a>Establecer configuraciones
 
->Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Hay dos maneras de establecer las configuraciones de la configuración de estado deseado (DSC) de PowerShell: el modo de inserción y el modo de extracción.
 
@@ -45,10 +43,4 @@ En los temas siguientes se explica cómo configurar los clientes y servidores de
 - [Configuración de un servidor de extracción web](pullServer.md)
 - [Configuración de un servidor de extracción SMB](pullServerSMB.md)
 - [Configuración de un cliente de extracción](pullClientConfigID.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

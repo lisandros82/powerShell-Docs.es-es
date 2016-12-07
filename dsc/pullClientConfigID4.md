@@ -7,15 +7,13 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 730f2f26e2811996e79cf0073a4ef65cad390687
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>Configuración de un cliente de extracción mediante un id. de configuración en PowerShell 4.0
 
-# Configuración de un cliente de extracción mediante un id. de configuración en PowerShell 4.0
-
->Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Es necesario indicar a cada nodo de destino que debe usar el modo de extracción y se le debe facilitar la dirección URL donde puede establecer contacto con el servidor de extracción para obtener las configuraciones. Para ello, tendrá que configurar el administrador de configuración local (LCM) con la información necesaria. Para configurar el LCM, debe crear un tipo especial de configuración conocida como "metaconfiguración". Para más información sobre cómo configurar el LCM, consulte [Administrador de configuración local de configuración de estado deseado de Windows PowerShell 4.0](metaConfig4.md).
 
@@ -48,10 +46,10 @@ Para aplicar la configuración, utilice **Set-DscLocalConfigurationManager** con
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
 
-## Id. de configuración
+## <a name="configuration-id"></a>Id. de configuración
 El script establece la propiedad **ConfigurationID** del LCM en un GUID que se había creado anteriormente para este fin (puede crear un GUID mediante el cmdlet **New-Guid**). La propiedad **ConfigurationID** es lo que usa el LCM para buscar la configuración adecuada en el servidor de incorporación de cambios. El archivo MOF de configuración del servidor de incorporación de cambios debe denominarse `ConfigurationID.mof`, donde *ConfigurationID* es el valor de la propiedad **ConfigurationID** del LCM del nodo de destino.
 
-## Incorporación de cambios de un servidor SMB
+## <a name="pulling-from-an-smb-server"></a>Incorporación de cambios de un servidor SMB
 
 Si el servidor de incorporación de cambios está configurado como un recurso compartido de archivos SMB, en lugar de un servicio web, especifique **DscFileDownloadManager** en lugar de **WebDownLoadManager**.
 **DscFileDownloadManager** toma una propiedad **SourcePath** en lugar de **ServerUrl**. El script siguiente configura el LCM para que extraiga configuraciones de un recurso compartido SMB denominado "SmbDscShare" en un servidor denominado "CONTOSO-SERVER":
@@ -74,14 +72,8 @@ Configuration SimpleMetaConfigurationForPull
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-## Véase también
+## <a name="see-also"></a>Véase también
 
 - [Configuración de un servidor de extracción web de DSC](pullServer.md)
-- [Configuración de un servidor de incorporación de cambios SMB de DSC](pullServerSMB.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+- [Configuración de un servidor de extracción SMB de DSC](pullServerSMB.md)
 

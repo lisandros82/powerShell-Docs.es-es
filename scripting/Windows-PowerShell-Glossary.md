@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 5c6f660f9de9039355f3a991da440b75e97275eb
-
+ms.openlocfilehash: 9e5bb79b0d022b85441f5f6aab2f8cce141fe9c1
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Glosario de Windows PowerShell
+# <a name="windows-powershell-glossary"></a>Glosario de Windows PowerShell
 
 
 |Término|Definición|
@@ -60,10 +58,4 @@ ms.openlocfilehash: 5c6f660f9de9039355f3a991da440b75e97275eb
 |Archivo de script de Windows PowerShell|Archivo que tiene la extensión .ps1 y que contiene un script escrito en el lenguaje de Windows PowerShell.|
 |Complemento de Windows PowerShell|Recurso que define un conjunto de cmdlets, proveedores y tipos de Microsoft .NET Framework que se pueden agregar al entorno de Windows PowerShell.|
 |Flujo de trabajo de Windows PowerShell|Un flujo de trabajo es una secuencia de pasos conectados y programados que realizan tareas de larga duración o requieren de la coordinación de pasos múltiples a través de varios dispositivos o nodos administrados. El flujo de trabajo de Windows PowerShell permite a los desarrolladores y profesionales de TI crear secuencias de actividades de administración de varios dispositivos o tareas únicas dentro de un flujo de trabajo, como flujos de trabajo. El flujo de trabajo de Windows PowerShell permite adaptar y ejecutar scripts de Windows PowerShell y archivos XAML como flujos de trabajo.|
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

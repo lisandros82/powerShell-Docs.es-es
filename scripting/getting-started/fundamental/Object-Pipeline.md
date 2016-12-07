@@ -8,22 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 523d8ae4-d743-47a4-b79a-806130ca688a
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 7f4cafad8854c19f733a2672ba6b40834d93aac0
-
+ms.openlocfilehash: 570805d6ceb4613f0efc8095f08ce79d90514f62
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Canalización de objetos
+# <a name="object-pipeline"></a>Canalización de objetos
 Las canalizaciones actúan como una serie de segmentos de canalización conectados. Los elementos que se mueven por la canalización pasan a través de cada segmento. Para crear una canalización en Windows PowerShell, se conectan comandos con el operador de canalización "|". La salida de cada comando se usa como entrada para el siguiente.
 
 Las canalizaciones son sin duda el concepto más valioso usado en las interfaces de línea de comandos. Si se usan correctamente, la canalizaciones no solo reducen el esfuerzo que implica escribir comandos complejos, sino que también facilitan la visualización del flujo de trabajo en los comandos. Una característica útil relacionada de las canalizaciones es que, dado que operan en cada elemento por separado, no tienen que modificarse según la ausencia de elementos o la presencia de uno o muchos elementos en la canalización. Además, cada comando de una canalización (denominado un elemento de canalización) suele pasar la salida al siguiente comando de la canalización elemento por elemento. Normalmente, esto reduce la demanda de recursos de comandos complejos y permite empezar a obtener la salida inmediatamente.
 
 En este capítulo, se describe cómo la canalización de Windows PowerShell difiere de las canalizaciones de los shells más populares y, luego, se muestran algunas herramientas básicas que puede usar para simplificar el control de la salida de la canalización y para ver cómo funciona la canalización.
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

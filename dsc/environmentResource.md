@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 20a7711604033b5ff1484dbb526df2642a9a1738
-
+ms.openlocfilehash: 4a51b56091aea23568674cdc7d4d4128c78b239c
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="dsc-environment-resource"></a>Recursos de DSC Environment
 
-# Recursos de DSC Environment
-
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 El recurso __Environment__ de la configuración de estado deseado (DSC) de PowerShell ofrece un mecanismo para administrar variables de entorno del sistema.
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 ``` mof
 Environment [string] #ResourceName
 {
@@ -31,7 +29,7 @@ Environment [string] #ResourceName
 }
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 |  Propiedad  |  Descripción   | 
 |---|---| 
@@ -41,7 +39,7 @@ Environment [string] #ResourceName
 | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
 | Value| Valor que se asigna a la variable de entorno.| 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 El ejemplo siguiente se asegura de que __TestEnvironmentVariable__ exista y tenga el valor __TestValue__. Si no existe, se crea.
 
@@ -53,10 +51,4 @@ Environment EnvironmentExample
     Value = "TestValue"
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

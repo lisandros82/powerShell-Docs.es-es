@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 2edbc1d11dfc7c84369430688a8b0d773277e864
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Recurso nxArchive de DSC para Linux
+# <a name="dsc-for-linux-nxarchive-resource"></a>Recurso nxArchive de DSC para Linux
 
 El recurso **nxArchive** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para desempaquetar archivos de almacenamiento (.tar, .zip) en una ruta de acceso específica de un nodo Linux.
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 
 ```
 nxArchive <string> #ResourceName
@@ -31,7 +29,7 @@ nxArchive <string> #ResourceName
 }
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 |  Propiedad |  Descripción | 
 |---|---|
@@ -42,7 +40,7 @@ nxArchive <string> #ResourceName
 | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
 | Ensure| Determina si se debe comprobar si existe el contenido del archivo en **Destination**. Establezca esta propiedad en "Present" para asegurarse de que el contenido exista. Establézcala en "Absent" para asegurarse de que no exista. El valor predeterminado es "Present".| 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En el ejemplo siguiente se muestra cómo usar el recurso **nxArchive** para asegurarse de que el contenido de un archivo llamado `website.tar` exista y se extraiga en un destino determinado.
 
@@ -66,10 +64,4 @@ nxArchive SyncWebDir
    DependsOn = "[nxFile]SyncArchiveFromWeb"
 } 
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

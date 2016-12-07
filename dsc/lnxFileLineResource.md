@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 9196129e79272d8bee717ef8a5d42fb590760a0f
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Recurso nxFileLine de DSC para Linux
+# <a name="dsc-for-linux-nxfileline-resource"></a>Recurso nxFileLine de DSC para Linux
 
 El recurso **nxFileLine** de la configuración de estado deseado (DSC) de PowerShell ofrece un mecanismo para administrar líneas dentro de un archivo de configuración en un nodo de Linux.
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 
 ```
 nxFileLine <string> #ResourceName
@@ -30,7 +28,7 @@ nxFileLine <string> #ResourceName
 }
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 |  Propiedad |  Descripción | 
 |---|---|
@@ -39,7 +37,7 @@ nxFileLine <string> #ResourceName
 | DoesNotContainPattern| Un patrón de expresiones regulares para las líneas que no deben existir en el archivo. Para todas las líneas que existan en el archivo y coincidan con esta expresión regular, se quitará la línea del archivo.| 
 | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En este ejemplo se muestra cómo utilizar el recurso **nxFileLine** para configurar el archivo `/etc/sudoers`, asegurándose de que el usuario monuser esté configurado como not requiretty.
 
@@ -53,10 +51,4 @@ nxFileLine DoNotRequireTTY
    DoesNotContainPattern = "Defaults:monuser[ ]+requiretty"
 } 
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,4 +1,4 @@
-# Llamar al constructor de clase base
+# <a name="call-base-class-constructor"></a>Llamar al constructor de clase base
 
 Para llamar a un constructor de clase base desde una subclase, use la palabra clave **base**:
 
@@ -29,7 +29,3 @@ class C : B
     C([int]$c) {}
 }
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

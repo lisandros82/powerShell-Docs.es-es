@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 3835495705297616a41329bcfdaad42b464115d8
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Recurso nxService de DSC para Linux
+# <a name="dsc-for-linux-nxservice-resource"></a>Recurso nxService de DSC para Linux
 
 El recurso **nxService** de la configuración de estado deseado (DSC) de PowerShell ofrece un mecanismo para administrar servicios en un nodo de Linux.
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 
 ```
 nxService <string> #ResourceName
@@ -31,7 +29,7 @@ nxService <string> #ResourceName
 }
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 |  Propiedad |  Descripción | 
 |---|---|
 | Nombre| El nombre del servicio o el demonio que se configurará.| 
@@ -41,11 +39,11 @@ nxService <string> #ResourceName
 | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
 
 
-## Información adicional
+## <a name="additional-information"></a>Información adicional
 
 El recurso **nxService** no creará una definición de servicio ni un script para el servicio si no existe. Puede usar el recurso **nxFile** de la configuración de estado deseado de PowerShell para administrar la existencia o el contenido del script o el archivo de definición del servicio.
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En el ejemplo siguiente se muestra la configuración del servicio "httpd" (para el servidor HTTP Apache), registrado con el controlador de servicio **SystemD**.
 
@@ -63,10 +61,4 @@ Controller = "systemd"
 }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

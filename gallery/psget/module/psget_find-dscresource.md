@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_find dscresource
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 4ee5433547266e2665e1e33b9f120f505426c8f4
-
+ms.openlocfilehash: afd13e1dd791794d62be4601477bcc77448586c5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Find-DscResource
+# <a name="find-dscresource"></a>Find-DscResource
 
 Encuentra recursos de DSC en módulos.
 
-## Descripción
+## <a name="description"></a>Descripción
 
 El cmdlet Find-DscResource busca recursos de [configuración de estado deseado (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) contenidos en módulos que coincidan con los criterios especificados desde repositorios registrados.
 Para cada módulo detectado por este cmdlet, Find-DscResource devuelve un objeto PSGetDscResourceInfo que se puede canalizar a Install-Module para instalar los módulos que contienen los recursos que este cmdlet devuelve.
@@ -39,16 +37,16 @@ Un recurso puede modelar algo tan genérico como un archivo o tan específico co
 - Find-DscResource puede filtrar por el idioma de búsqueda específico del repositorio con el parámetro -Filter.
 - Find-DscResource puede filtrar por los módulos de todos o algunos de los repositorios registrados.
 
-## Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
 ```powershell
 Get-Command -Name Find-DscResource -Module PowerShellGet -Syntax
 ```
 
-## Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
 
 [Find-DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
 
-## Comandos de ejemplo
+## <a name="example-commands"></a>Comandos de ejemplo
 ```powershell
 
 # Find a specific DSC Resource
@@ -96,10 +94,4 @@ Find-DscResource -Filter Domain
 Find-DscResource -Tag Azure, DSC
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

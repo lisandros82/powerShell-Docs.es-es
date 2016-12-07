@@ -8,17 +8,15 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "Recreación del punto de conexión de la demostración"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: d20ea8418cb7389d756de94ea752cf604b8d07af
-ms.openlocfilehash: acd2cfbd038250a26236c875d0e8b03a32cd84f9
-
+ms.openlocfilehash: 4a56272b6f995500d443d441f5e03db85dac6f96
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Recreación del punto de conexión de demostración
+# <a name="remake-the-demo-endpoint"></a>Recreación del punto de conexión de demostración
 En esta sección obtendrá información sobre cómo generar una réplica exacta del punto de conexión de demostración usado en la sección anterior.
 Aquí se introducirán conceptos básicos que son necesarios para entender JEA, incluidas las configuraciones de sesión de PowerShell y las funcionalidades de rol.
 
-## Configuraciones de sesión de PowerShell
+## <a name="powershell-session-configurations"></a>Configuraciones de sesión de PowerShell
 Cuando usó JEA en la sección anterior, comenzó ejecutando el comando siguiente:
 
 ```PowerShell
@@ -41,14 +39,14 @@ Puede ver todas las configuraciones de sesión registradas ejecutando el comando
 Get-PSSessionConfiguration
 ```
 
-## Archivos de configuración de sesión de PowerShell
+## <a name="powershell-session-configuration-files"></a>Archivos de configuración de sesión de PowerShell
 Puede establecer configuraciones de sesión nuevas registrando *archivos nuevos de configuración de sesión de PowerShell*.
 Los archivos de configuración de sesión tienen la extensión de archivo ".pssc".
 Puede generar archivos de configuración de sesión con el cmdlet New-PSSessionConfigurationFile.
 
 Después, creará y registrará una nueva configuración de sesión para JEA.
 
-## Generar y modificar la configuración de sesión de PowerShell
+## <a name="generate-and-modify-your-powershell-session-configuration"></a>Generar y modificar la configuración de sesión de PowerShell
 Ejecute el comando siguiente para generar un archivo "esqueleto" de configuración de sesión de PowerShell.
 
 ```PowerShell
@@ -107,7 +105,7 @@ Las transcripciones son simplemente un poco más legibles.
 
 Por último, guarde los cambios en *JEADemo2.pssc*.
 
-## Aplicar la configuración de sesión de PowerShell
+## <a name="apply-the-powershell-session-configuration"></a>Aplicar la configuración de sesión de PowerShell
 
 Para crear un punto de conexión a partir de un archivo de configuración de sesión, debe registrar el archivo.
 Para ello, se necesita cierta información:
@@ -123,7 +121,7 @@ Register-PSSessionConfiguration -Name 'JEADemo2' -Path "$env:ProgramData\JEAConf
 
 Enhorabuena, ha configurado el punto de conexión de JEA.
 
-## Probar el punto de conexión
+## <a name="test-out-your-endpoint"></a>Probar el punto de conexión
 Vuelva a ejecutar los pasos enumerados en la sección [Uso de JEA](using-jea.md) con el nuevo punto de conexión para confirmar que funciona según lo previsto.
 Asegúrese de usar el nombre nuevo del punto de conexión (JEADemo2) al proporcionar el nombre de la configuración a `Enter-PSSession`.
 
@@ -131,7 +129,7 @@ Asegúrese de usar el nombre nuevo del punto de conexión (JEADemo2) al proporci
 Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdminCred
 ```
 
-## Conceptos clave
+## <a name="key-concepts"></a>Conceptos clave
 **Configuración de sesión de PowerShell**: denominada también *punto de conexión de PowerShell*, es el "lugar" metafórico donde los usuarios se conectan y obtienen acceso a la funcionalidad de PowerShell.
 Puede enumerar las configuraciones de sesión registradas en el sistema ejecutando `Get-PSSessionConfiguration`.
 Cuando se configura de forma específica, la configuración de sesión de PowerShell también se puede denominar *punto de conexión de JEA*.
@@ -149,10 +147,4 @@ En el caso de los puntos de conexión de JEA, debe establecerse en RestrictedRem
 **Transcripción de PowerShell**: archivo que contiene una vista "con consentimiento temporal" de una sesión de PowerShell.
 Puede establecer que PowerShell genere transcripciones para sesiones de JEA mediante el campo TranscriptDirectory.
 Para obtener más información sobre las transcripciones, consulte esta [entrada de blog](https://technet.microsoft.com/en-us/magazine/ff687007.aspx).
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

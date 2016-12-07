@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
-ms.openlocfilehash: 1254037b655a3160c90e69971c9faf061f205917
-
+ms.openlocfilehash: 26d140d68760ec92b3b6cbc31d0735eaaf671d9c
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Recurso WindowsOptionalFeature de DSC
+# <a name="dsc-windowsoptionalfeature-resource"></a>Recurso WindowsOptionalFeature de DSC
 
 > Se aplica a: Windows PowerShell 5.0
 
 El recurso **WindowsOptionalFeature** de la configuración de estado deseado (DSC) de Windows PowerShell proporciona un mecanismo para asegurarse de que las características óptimas están habilitadas en un nodo de destino.
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 
 ```
 WindowsOptionalFeature [string] #ResourceName
@@ -36,7 +34,7 @@ WindowsOptionalFeature [string] #ResourceName
 }
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 |  Propiedad  |  Descripción   | 
 |---|---| 
@@ -50,11 +48,5 @@ WindowsOptionalFeature [string] #ResourceName
 | DependsOn| Especifica que debe ejecutarse la configuración de otro recurso antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

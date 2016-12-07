@@ -23,7 +23,7 @@
 ### [Conceptos fundamentales](getting-started/fundamental-concepts.md)
 ####  [Conceptos básicos de PowerShell](getting-started/fundamental/Windows-PowerShell-Basics.md)
 ####  [Obtener información de ayuda detallada](getting-started/fundamental/Getting-Detailed-Help-Information.md)
-####  [Explorar Windows PowerShell ISE](getting-started/fundamental/Exploring-the-Windows-PowerShell-ISE.md)
+####  [Explorar Windows PowerShell ISE](getting-started/fundamental/Exploring-the-Windows-PowerShell-ISE.md)
 ####  [Obtener información sobre los comandos](getting-started/fundamental/Getting-Information-About-Commands.md)
 ####  [Aprendizaje de los nombres de PowerShell](getting-started/fundamental/Learning-Windows-PowerShell-Names.md)
 ####  [Usar Windows PowerShell para la administración](getting-started/fundamental/Using-Windows-PowerShell-for-Administration.md)
@@ -34,8 +34,8 @@
 ####  [Descripción de la canalización de PowerShell](getting-started/fundamental/Understanding-the-Windows-PowerShell-Pipeline.md)
 ####  [Usar nombres de comando conocidos](getting-started/fundamental/Using-Familiar-Command-Names.md)
 ####  [Canalización de objetos](getting-started/fundamental/Object-Pipeline.md)
-####  [Scripting con Windows PowerShell](getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
-####  [Uso de Windows PowerShell](getting-started/fundamental/Using-Windows-PowerShell.md)
+####  [Scripting con Windows PowerShell](getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+####  [Uso de Windows PowerShell](getting-started/fundamental/Using-Windows-PowerShell.md)
 
 ### [Guías básicas](getting-started/basic-cookbooks.md)
 ####  [Cambiar el estado del equipo](getting-started/cookbooks/Changing-Computer-State.md)
@@ -48,7 +48,7 @@
 ####  [Obtener objetos de WMI (Get-WmiObject)](getting-started/cookbooks/Getting-WMI-Objects--Get-WmiObject-.md)
 ####  [Administración de procesos con cmdlets de proceso](getting-started/cookbooks/Managing-Processes-with-Process-Cmdlets.md)
 ####  [Administración de servicios](getting-started/cookbooks/Managing-Services.md)
-####  [Administrar unidades de Windows PowerShell](getting-started/cookbooks/Managing-Windows-PowerShell-Drives.md)
+####  [Administrar unidades de Windows PowerShell](getting-started/cookbooks/Managing-Windows-PowerShell-Drives.md)
 ####  [Administrar la ubicación actual](getting-started/cookbooks/Managing-Current-Location.md)
 ####  [Manipular elementos directamente](getting-started/cookbooks/Manipulating-Items-Directly.md)
 ####  [Cuadros de lista de selección múltiple](getting-started/cookbooks/Multiple-selection-List-Boxes.md)
@@ -108,7 +108,7 @@
 ####  [Uso del panel de consola en PowerShell ISE](core-powershell/ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
 ####  [Cómo usar la finalización con tabulación en el panel de scripts y en el panel de consola](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 ####  [Cómo escribir y ejecutar scripts en Windows PowerShell ISE](core-powershell/ise/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)
-####  [Introducción a PowerShell ISE](core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
+####  [Introducción a PowerShell ISE](core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
 ####  [Módulo ISE](core-powershell/ise/ISE-Module.md)
 ####  [Métodos abreviados de teclado para PowerShell ISE](core-powershell/ise/Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md)
 ####  [El objeto PowerShell Tab](core-powershell/ise/The-PowerShellTab-Object.md)
@@ -140,8 +140,3 @@
 ####  [Uso de la consola de Windows PowerShell basada en web](core-powershell/web-access/use-the-web-based-windows-powershell-console.md)
 
 ## [Glosario de PowerShell](Windows-PowerShell-Glossary.md)
-
-
-<!--HONumber=Nov16_HO4-->
-
-

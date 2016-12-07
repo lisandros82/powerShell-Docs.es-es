@@ -9,18 +9,16 @@ ms.date: 2016-10-14
 contributor: manikb
 title: bootstrapping_nuget_proivder_and_exe
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 0e0e1287dbe0912e90dfeabee8e22cdf78d9e82a
-
+ms.openlocfilehash: 3ba2289f83f2de5f7be7e4e0cced1988ee17b466
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Arrancar el proveedor de NuGet y NuGet.exe para operaciones de publicación con un solo mensaje de solicitud y arrancar solo el proveedor de NuGet para operaciones que no son de publicación
+# <a name="bootstrap-both-nuget-provider-and-nugetexe-for-publish-operations-with-single-prompt-message-and-bootstrap-only-nuget-provider-for-non-publish-operations"></a>Arrancar el proveedor de NuGet y NuGet.exe para operaciones de publicación con un solo mensaje de solicitud y arrancar solo el proveedor de NuGet para operaciones que no son de publicación
 
 NuGet.exe se ha quitado del proveedor más reciente de NuGet. Para publicar un módulo o un script, PowerShellGet necesita NuGet.exe para crear y publicar un archivo .nupkg en el repositorio. Se necesita el proveedor de NuGet para operaciones que no son de publicación, como buscar, instalar, actualizar y guardar.
 Se ha agregado lógica para arrancar el proveedor de NuGet y NuGet.exe para operaciones de publicación con un solo mensaje de solicitud y arrancar solo el proveedor de NuGet para operaciones que no son de publicación.
 
-## Cuando no está disponible el proveedor de NuGet
+## <a name="when-nuget-provider-is-not-available"></a>Cuando no está disponible el proveedor de NuGet
 
 ```powershell                                
 PS C:\windows\system32> find-module -Repository dtlgalleryint -verbose -name contoso
@@ -51,7 +49,7 @@ Version    Name                                Type       Repository           D
 2.5        Contoso                             Module     dtlgalleryint        Contoso module
 ```
 
-## Cuando el proveedor de NuGet está disponible y NuGet.exe no está disponible durante la operación de publicación
+## <a name="when-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation"></a>Cuando el proveedor de NuGet está disponible y NuGet.exe no está disponible durante la operación de publicación
 
 ```powershell
 PS C:\windows\system32> Publish-Module -Name Contoso -Repository LocalRepo -Verbose
@@ -75,7 +73,7 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'C:\LocalGallery'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
                    
-## Cuando no están disponibles ni el proveedor de NuGet ni NuGet.exe durante la operación de publicación
+## <a name="when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation"></a>Cuando no están disponibles ni el proveedor de NuGet ni NuGet.exe durante la operación de publicación
 
 ```powershell
 PS C:\windows\system32> Publish-Module -Name Contoso -Repository LocalRepo -Verbose
@@ -100,10 +98,4 @@ VERBOSE: Installing NuGet provider.
 VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'C:\LocalGallery'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

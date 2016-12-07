@@ -1,4 +1,4 @@
-# Extracción a petición de configuraciones de DSC
+# <a name="on-demand-pull-of-dsc-configurations"></a>Extracción a petición de configuraciones de DSC
 
 El nuevo cmdlet Update-DscConfiguration desencadena una extracción de los servidores de extracción definidos en la metaconfiguración. El comportamiento suele denominarse "extraer ahora". 
 
@@ -31,7 +31,3 @@ Update-DscConfiguration     -CimSession <CimSession[]>
                             [-Confirm] 
                             [<CommonParameters>]
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

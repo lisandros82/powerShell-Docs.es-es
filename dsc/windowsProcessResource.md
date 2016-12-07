@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
-ms.openlocfilehash: 0fe5e7d9679d44bb50c897badf8c6517b95049e2
-
+ms.openlocfilehash: 7e8c0d39d4f49d09acef79d789ee54f158e465f8
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="dsc-windowsprocess-resource"></a>Recurso de DSC WindowsProcess
 
-# Recurso de DSC WindowsProcess
-
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 El recurso **WindowsProcess** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para configurar procesos en un nodo de destino.
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 
 ```
 WindowsProcess [string] #ResourceName
@@ -36,7 +34,7 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 |  Propiedad  |  Descripción   | 
 |---|---| 
 | Argumentos| Indica una cadena de argumentos que se pasa al proceso tal cual. Si necesita pasar varios argumentos, colóquelos en esta cadena.| 
@@ -48,10 +46,4 @@ WindowsProcess [string] #ResourceName
 | StandardInputPath| Indica la ubicación de entrada estándar.| 
 | StandardOutputPath| Indica la ubicación donde se escribirá la salida estándar. Se sobrescribirá cualquier archivo existente en la ubicación.| 
 | WorkingDirectory| Indica la ubicación que se utilizará como directorio de trabajo actual del proceso.| 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 
