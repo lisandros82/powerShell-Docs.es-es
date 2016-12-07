@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
-ms.openlocfilehash: 52eb958e59ecb1d5ae3faf268933bbd544410d47
-
+ms.openlocfilehash: 1fab04dfcd4ce927bbe526b93c826cf3749a42a5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Recurso WindowsOptionalFeatureSet de DSC
+# <a name="dsc-windowsoptionalfeatureset-resource"></a>Recurso WindowsOptionalFeatureSet de DSC
 
 > Se aplica a: Windows PowerShell 5.0
 
@@ -21,7 +19,7 @@ El recurso **WindowsOptionalFeatureSet** de la configuración de estado deseado 
 
 Este recurso se usa cuando se desea configurar varias características opcionales de Windows para que tengan el mismo estado.
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 
 ```
 WindowsOptionalFeature [string] #ResourceName
@@ -38,7 +36,7 @@ WindowsOptionalFeature [string] #ResourceName
 }
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 |  Propiedad  |  Descripción   | 
 |---|---| 
@@ -52,11 +50,5 @@ WindowsOptionalFeature [string] #ResourceName
 | DependsOn| Especifica que debe ejecutarse la configuración de otro recurso antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

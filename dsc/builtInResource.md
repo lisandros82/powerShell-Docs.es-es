@@ -1,5 +1,5 @@
 ---
-title: "Recursos de configuración de estado deseado de Windows PowerShell integrados"
+title: "Recursos de configuración de estado deseado de Windows PowerShell integrados"
 ms.date: 2016-05-16
 keywords: powershell,DSC
 description: 
@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: ea312b4e773cd8b0eceeca123e616957728eb1c6
-
+ms.openlocfilehash: 1cbe3ac8de217d659f717cb960b4b57cb2d4fdd9
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="built-in-windows-powershell-desired-state-configuration-resources"></a>Recursos de configuración de estado deseado de Windows PowerShell integrados
 
-# Recursos de configuración de estado deseado de Windows PowerShell integrados
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
-
-La configuración de estado deseado (DSC) de Windows PowerShell incluye un conjunto de recursos de configuración integrados. En la tabla siguiente se ofrece una lista ordenada alfabéticamente con estos recursos y vínculos a temas que los describen en detalle. Si necesita crear recursos adicionales, consulte [Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md).
+La configuración de estado deseado (DSC) de Windows PowerShell incluye un conjunto de recursos de configuración integrados. En la tabla siguiente se ofrece una lista ordenada alfabéticamente con estos recursos y vínculos a temas que los describen en detalle. Si necesita crear recursos adicionales, consulte [Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md).
 
 * [Recurso Archive](archiveResource.md)
 * [Recurso Environment](environmentResource.md)
@@ -31,10 +29,4 @@ La configuración de estado deseado (DSC) de Windows PowerShell incluye un conju
 * [Recurso User](userResource.md)
 * [Recurso WindowsFeature](windowsfeatureResource.md)
 * [Recurso WindowsProcess](windowsProcessResource.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

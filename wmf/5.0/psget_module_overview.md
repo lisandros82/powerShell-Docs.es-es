@@ -1,4 +1,4 @@
-# Detección, instalación e inventario del módulo de PowerShell con PowerShellGet
+# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>Detección, instalación e inventario del módulo de PowerShell con PowerShellGet
  
 PowerShellGet se incluye en esta versión de WMF:
 -   Find-Module puede filtrar por los metadatos del módulo con el parámetro -Tag.
@@ -7,7 +7,7 @@ PowerShellGet se incluye en esta versión de WMF:
 -   Find-DscResource permite la detección de recursos de DSC individuales en repositorios.
 -   Soporte para la instalación y la publicación en recursos compartidos de archivos con NuGet.
 
-## Comandos de ejemplo
+## <a name="example-commands"></a>Comandos de ejemplo
 ```powershell
 \# Find all modules with tags Azure or DSC
 Find-Module -Tag Azure, DSC
@@ -42,7 +42,7 @@ Find-Module -Filter Cookbook -Repository PSGallery
 Find-Module -Filter RBAC -Repository PSGallery
 ```
 
-## Nuevas características de PowerShell
+## <a name="new-features-in-powershellget"></a>Nuevas características de PowerShell
 -   Compatibilidad de versiones en paralelo en Windows PowerShell 5.0 o más reciente
 -   Compatibilidad con la instalación de dependencias de módulo
 -   Tres cmdlets nuevos
@@ -50,7 +50,3 @@ Find-Module -Filter RBAC -Repository PSGallery
     -   Uninstall-Module
     -   Save-Module
     
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-translationtype: Human Translation
-ms.sourcegitcommit: 2aa04e8094fee4b0da3d5e7025cca215d542355e
-ms.openlocfilehash: 68a3d823f6545e1fbf6399b4d566a7e62daeebc9
-
+ms.openlocfilehash: 7bb4a7458bb035a16ccb650fa422d9c318eab01a
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="installing-the-windows-powershell-20-engine"></a>Instalar el motor de Windows PowerShell 2.0
 En este tema se explica cómo instalar el motor de Windows PowerShell 2.0.
 
@@ -83,10 +81,4 @@ El paquete de Windows Management Framework 3.0 que instala Windows PowerShell 3.
 - [Instalación de Windows PowerShell](Installing-Windows-PowerShell.md)
 - [Inicio de Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 - [Iniciar el motor de Windows PowerShell 2.0](Starting-the-Windows-PowerShell-2.0-Engine.md)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

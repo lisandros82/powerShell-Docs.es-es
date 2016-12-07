@@ -8,23 +8,21 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 redirect_url: https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity
-translationtype: Human Translation
-ms.sourcegitcommit: afa259b8611f995bbf5b824179a12e3d8f15df86
-ms.openlocfilehash: 207792452c563ec6cca5c17fbcd122372442d8ac
-
+ms.openlocfilehash: cacf45175dff2b12b332d62d0580469f9eadc747
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Consideraciones de seguridad de comunicación remota de PowerShell
+# <a name="powershell-remoting-security-considerations"></a>Consideraciones de seguridad de comunicación remota de PowerShell
 
 La comunicación remota de PowerShell es la forma recomendada para administrar los sistemas de Windows. La comunicación remota de PowerShell está habilitada de forma predeterminada en Windows Server 2012 R2. En este documento se tratan cuestiones de seguridad, recomendaciones y procedimientos recomendados para el uso de la comunicación remota de PowerShell.
 
-## ¿Qué es la comunicación remota de PowerShell?
+## <a name="what-is-powershell-remoting"></a>¿Qué es la comunicación remota de PowerShell?
 
 La comunicación remota de PowerShell usa [Administración remota de Windows (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx), que es la implementación de Microsoft del protocolo [Servicios web para administración (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf), que permite a los usuarios ejecutar comandos de PowerShell en equipos remotos. Puede encontrar más información acerca del uso de la comunicación remota de PowerShell en [Ejecutar comandos remotos](https://technet.microsoft.com/en-us/library/dd819505.aspx).
 
 La comunicación remota de PowerShell no es lo mismo que usar el parámetro **ComputerName** de un cmdlet para ejecutarlo en un equipo remoto, que usa la llamada a procedimiento remoto (RPC) como protocolo subyacente.
 
-##  Configuración predeterminada de la comunicación remota de PowerShell
+##  <a name="powershell-remoting-default-settings"></a>Configuración predeterminada de la comunicación remota de PowerShell
 
 La comunicación remota de PowerShell (y WinRM) escucha los puertos siguientes:
 
@@ -37,22 +35,22 @@ En redes privadas, la regla de Firewall de Windows predeterminada para la comuni
 
 >**Advertencia:** la regla de firewall para redes públicas está diseñada para proteger el equipo frente a los intentos de conexión externa potencialmente malintencionados. Tenga precaución al quitar esta regla.
 
-## Aislamiento de procesos
+## <a name="process-isolation"></a>Aislamiento de procesos
 
 La comunicación remota de PowerShell usa [Administración remota de Windows (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426) para la comunicación entre equipos. WinRM se ejecuta como servicio en la cuenta servicio de red y genera procesos aislados que se ejecutan como cuentas de usuario para las instancias de host de PowerShell. Una instancia de PowerShell que se ejecuta como un usuario no tiene acceso a un proceso que ejecuta una instancia de PowerShell como otro usuario.
 
-## Registros de eventos generados por la comunicación remota de PowerShell
+## <a name="event-logs-generated-by-powershell-remoting"></a>Registros de eventos generados por la comunicación remota de PowerShell
 
 FireEye ha proporcionado un buen resumen de los registros de eventos y otras pruebas de seguridad generados por las sesiones de comunicación remota de PowerShell, disponibles en  
 [Investigating PowerShell Attacks](https://www.fireeye.com/content/dam/fireeye-www/global/en/solutions/pdfs/wp-lazanciyan-investigating-powershell-attacks.pdf) (Investigación de los ataques de PowerShell).
 
-## Protocolos de transporte y cifrado
+## <a name="encryption-and-transport-protocols"></a>Protocolos de transporte y cifrado
 
 Resulta útil tener en cuenta la seguridad de una conexión de comunicación remota de PowerShell desde dos perspectivas: autenticación inicial y comunicación continua. 
 
 Independientemente del protocolo de transporte utilizado (HTTP o HTTPS), la comunicación remota de PowerShell siempre cifra toda la comunicación tras la autenticación inicial con una clave simétrica AES-256 por sesión.
     
-### Autenticación inicial
+### <a name="initial-authentication"></a>Autenticación inicial
 
 La autenticación confirma la identidad del cliente al servidor, e idealmente, del servidor al cliente.
     
@@ -65,37 +63,37 @@ Sin embargo, el protocolo NTLM no garantiza la identidad del servidor. De la mis
 
 La autenticación basada en NTLM está deshabilitada de forma predeterminada, pero puede permitirse al configurar SSL en el servidor de destino o el valor WinRM TrustedHosts.
     
-#### Uso de certificados SSL para validar la identidad del servidor durante las conexiones basadas en NTLM
+#### <a name="using-ssl-certificates-to-validate-server-identity-during-ntlm-based-connections"></a>Uso de certificados SSL para validar la identidad del servidor durante las conexiones basadas en NTLM
 
 Puesto que el protocolo de autenticación NTLM no puede asegurar la identidad del servidor de destino (solo que ya conoce su contraseña), puede configurar los servidores de destino para usar SSL para la comunicación remota de PowerShell. La asignación de un certificado SSL al servidor de destino (si lo emite una entidad emisora de certificados en la que el cliente también confía) habilita la autenticación basada en NTLM que garantiza la identidad del usuario y del servidor.
     
-#### Omisión de errores de identidad de servidor basados en NTLM
+#### <a name="ignoring-ntlm-based-server-identity-errors"></a>Omisión de errores de identidad de servidor basados en NTLM
       
 Si no es factible implementar un certificado SSL en un servidor para las conexiones de NTLM, puede suprimir los errores de identidad resultantes mediante la adición del servidor a la lista WinRM **TrustedHosts**. Tenga en cuenta que la adición de un nombre de servidor a la lista TrustedHosts no se debe considerar como ninguna forma de instrucción de la confiabilidad de los mismos hosts, ya que el protocolo de autenticación NTLM no puede garantizar que, en realidad, se está conectando al host al que pretende conectarse.
 En su lugar, debe considerar que el valor de TrustedHosts sea la lista de hosts de la que quiere suprimir el error generado por la imposibilidad de comprobar la identidad del servidor.
     
     
-### Comunicación continua
+### <a name="ongoing-communication"></a>Comunicación continua
 
 Una vez completada la autenticación inicial, el [Protocolo de comunicación remota de PowerShell](https://msdn.microsoft.com/en-us/library/dd357801.aspx) cifra toda la comunicación continua con una clave simétrica AES-256 por sesión.  
 
 
-## Creación del segundo salto
+## <a name="making-the-second-hop"></a>Creación del segundo salto
 
 De forma predeterminada, la comunicación remota de PowerShell usa Kerberos (si está disponible) o NTLM para la autenticación. Ambos protocolos se autentican en el equipo remoto sin enviarle credenciales.
 Este es el modo más seguro de autenticación, pero dado que el equipo remoto no tiene las credenciales de usuario, no puede acceder a otros equipos o servicios en nombre del usuario. Esto se conoce como el problema de "Salto doble".
 
 Hay varias formas de evitar este problema:
 
-### Delegación limitada de Kerberos
+### <a name="kerberos-constrained-delegation"></a>Delegación limitada de Kerberos
 
 Para servidores de confianza alta, puede habilitar [Delegación limitada de Kerberos](https://technet.microsoft.com/en-us/library/cc995228.aspx). Esto permite que el servidor remoto suplante el usuario autenticado en una lista especificada de equipos y servicios.
 
-### Confianza entre equipos remotos
+### <a name="trust-between-remote-computers"></a>Confianza entre equipos remotos
 
 Si confía en los usuarios conectados de forma remota a *Server1* a los recursos de *Server2*, puede conceder a *Server1* acceso explícito a esos recursos.
 
-### Uso de credenciales explícitas al obtener acceso a recursos remotos
+### <a name="use-explicit-credentials-when-accessing-remote-resources"></a>Uso de credenciales explícitas al obtener acceso a recursos remotos
 
 Puede pasar explícitamente las credenciales a un recurso remoto mediante el parámetro **Credential** de un cmdlet. Por ejemplo:
 
@@ -104,7 +102,7 @@ $myCredential = Get-Credential
 New-PSDrive -Name Tools \\Server2\Shared\Tools -Credential $myCredential 
 ```
 
-### CredSSP
+### <a name="credssp"></a>CredSSP
 
 Puede usar el [proveedor de compatibilidad para seguridad de credenciales (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) para la autenticación (especificando "CredSSP" como el valor del parámetro `Authentication` de una llamada al cmdlet [New-PSSession](https://technet.microsoft.com/en-us/library/hh849717.aspx)). CredSSP pasa las credenciales en texto sin formato al servidor, por lo que, al usarlo, le hace vulnerable a los ataques de robos de credenciales. Si el equipo remoto se ve comprometido, el atacante tiene acceso a las credenciales del usuario. CredSSP está deshabilitado de forma predeterminada tanto en el equipo del cliente como del servidor. Debe habilitar CredSSP solo en los entornos de mayor confianza. Por ejemplo, un administrador de dominio que se conecta a un controlador de dominio porque el controlador de dominio es de plena confianza.
 
@@ -117,11 +115,5 @@ Para obtener más información acerca de los ataques de robo de credenciales, co
 
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

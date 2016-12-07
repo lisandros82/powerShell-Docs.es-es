@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
-translationtype: Human Translation
-ms.sourcegitcommit: 41647fc2b323292e496340f68bc92fd9a997ce0e
-ms.openlocfilehash: 662d0823749c142a716b74164ad57a8612833ccd
-
+ms.openlocfilehash: f35cfa6b547c63fc94c370f21ee83987468a894d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# <a name="creating-net-and-com-objects-newobject"></a>Crear objetos .NET y COM (New-Object)
+# <a name="creating-net-and-com-objects-new-object"></a>Crear objetos .NET y COM (New-Object)
 Existen componentes de software con interfaces de .NET Framework y COM que permiten realizar muchas tareas de administración del sistema. Windows PowerShell le permite usar estos componentes, por lo que no está limitado a las tareas que pueden realizarse mediante cmdlets. Muchos de los cmdlets de la versión inicial de Windows PowerShell no funcionan en equipos remotos. Demostraremos cómo superar esta limitación al administrar registros de eventos mediante el uso de la clase **System.Diagnostics.EventLog** de .NET Framework directamente desde Windows PowerShell.
 
-### <a name="using-newobject-for-event-log-access"></a>Usar New-Object para el acceso de registro de eventos
+### <a name="using-new-object-for-event-log-access"></a>Usar New-Object para el acceso de registro de eventos
 La biblioteca de clases de .NET Framework incluye una clase denominada **System.Diagnostics.EventLog** que se puede usar para administrar registros de eventos. Puede crear una nueva instancia de una clase de .NET Framework mediante el cmdlet **New-Object** con el parámetro **TypeName**. Por ejemplo, el comando siguiente crea una referencia de registro de eventos:
 
 ```
@@ -29,7 +27,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 
 Aunque el comando creó una instancia de la clase EventLog, la instancia no incluye ningún dato. Eso es porque no especificamos un registro de eventos concreto. ¿Cómo se consigue un registro de eventos real?
 
-#### <a name="using-constructors-with-newobject"></a>Usar constructores con New-Object
+#### <a name="using-constructors-with-new-object"></a>Usar constructores con New-Object
 Para hacer referencia a un registro de eventos específico, debe especificar el nombre del registro. **New-Object** tiene un parámetro **ArgumentList**. Los argumentos que se pasan como valores a este parámetro se usan en un método de inicio especial del objeto. El método se llama *constructor* porque se usa para construir el objeto. Por ejemplo, para obtener una referencia al registro de aplicaciones, especifique la cadena "Application" como argumento:
 
 ```
@@ -62,7 +60,7 @@ PS> $AppLog
   16,384      7 OverwriteOlder          2,160 Application
 ```
 
-#### <a name="accessing-a-remote-event-log-with-newobject"></a>Acceder a un registro de eventos remoto con New-Object
+#### <a name="accessing-a-remote-event-log-with-new-object"></a>Acceder a un registro de eventos remoto con New-Object
 Los comandos usados en la sección anterior son para el equipo local; el cmdlet **Get-EventLog** puede hacerlo. Para acceder al registro de aplicaciones en un equipo remoto, debe proporcionar el nombre del registro y un nombre de equipo (o dirección IP) como argumentos.
 
 ```
@@ -116,7 +114,7 @@ PS> $RemoteAppLog
      512      7 OverwriteOlder              0 Application
 ```
 
-### <a name="creating-com-objects-with-newobject"></a>Crear objetos COM con New-Object
+### <a name="creating-com-objects-with-new-object"></a>Crear objetos COM con New-Object
 Puede usar **New-Object** para trabajar con componentes del Modelo de objetos componentes (COM). Los componentes van desde las distintas bibliotecas incluidas con Windows Script Host (WSH) hasta las aplicaciones de ActiveX, como Internet Explorer, que están instaladas en la mayoría de los sistemas.
 
 **New-Object** usa contenedores RCW de .NET Framework para crear objetos COM, por lo que tiene las mismas limitaciones que .NET Framework al llamar a objetos COM. Para crear un objeto COM, debe especificar el parámetro **ComObject** con el identificador de programación o *ProgID* de la clase COM que quiere usar. Una explicación completa de las limitaciones del uso de COM y determinar qué ProgID están disponibles en un sistema está fuera del ámbito de esta guía de usuario, pero la mayoría de los objetos conocidos de entornos como WSH pueden usarse en Windows PowerShell.
@@ -259,7 +257,7 @@ Remove-Variable ie
 > [!NOTE]
 > No hay un estándar común para determinar si los ejecutables de ActiveX se cierran o se siguen ejecutando cuando se quita una referencia a uno de ellos. Que la aplicación se cierre o no dependerá de las circunstancias, como, por ejemplo, si la aplicación es visible, si está ejecutando en ella un documento editado e incluso si Windows PowerShell todavía se está ejecutando. Por este motivo, debe probar el comportamiento de finalización de cada ejecutable de ActiveX que quiere usar en Windows PowerShell.
 
-### <a name="getting-warnings-about-net-frameworkwrapped-com-objects"></a>Obtener advertencias sobre los objetos COM ajustados por .NET Framework
+### <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Obtener advertencias sobre los objetos COM ajustados por .NET Framework
 En algunos casos, un objeto COM puede tener un *contenedor RCW* de .NET Framework asociado, que se usará en **New-Object**. Dado que el comportamiento del RCW puede ser diferente del comportamiento del objeto COM normal, **New-Object** tiene un parámetro **Strict** para advertirle del acceso del RCW. Si especifica el parámetro **Strict** y, a continuación, crea un objeto COM que usa un RCW, recibirá un mensaje de advertencia:
 
 ```
@@ -274,10 +272,4 @@ At line:1 char:17
 ```
 
 Aunque el objeto se creará de todos modos, se le advertirá que no es un objeto COM estándar.
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

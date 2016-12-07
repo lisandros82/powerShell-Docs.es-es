@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 6b35f2dd3cf441daa1a92d52435ed0ae350c138a
-
+ms.openlocfilehash: 6644ad379def3853d618dad2c72e7aa97b8242da
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Conceptos básicos de Windows PowerShell
+# <a name="windows-powershell-basics"></a>Conceptos básicos de Windows PowerShell
 Las interfaces gráficas de usuario usan algunos conceptos básicos con los que la mayoría de los usuarios de equipos están familiarizados. Los usuarios confían en la sencillez de estas interfaces para realizar tareas. Los sistemas operativos presentan a los usuarios una representación gráfica de los elementos que se pueden examinar, generalmente menús desplegables para acceder a funcionalidades específicas y menús contextuales para acceder a la funcionalidades específicas del contexto.
 
 Una interfaz de la línea de comandos (CLI), como Windows PowerShell, debe usar un enfoque diferente para exponer información, porque no tiene menús ni sistemas de gráficos para ayudar al usuario. Debe conocer los nombres de los comandos antes de usarlos. Aunque puede escribir comandos complejos que sean equivalentes a las características en un entorno de interfaz gráfica de usuario, debe familiarizarse con los comandos usados frecuentemente y parámetros de comando.
@@ -32,10 +30,4 @@ Windows PowerShell se diseñó para aprovechar el conocimiento histórico que un
 -   Uso de Tab-Completion
 
 -   Uso de Get-Help
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

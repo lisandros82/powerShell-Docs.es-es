@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 4b1e8a6d3fb4feca426a9d7861c40d194e612c22
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Escribir un recurso de DSC de instancia única (procedimiento recomendado)
+# <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Escribir un recurso de DSC de instancia única (procedimiento recomendado)
 
 >**Nota:** En este tema se describe un procedimiento recomendado para definir un recurso de DSC que permite una sola instancia en una configuración. Actualmente, no hay ninguna característica de DSC integrada para este fin. Esto podría cambiar en el futuro.
 
@@ -226,9 +224,3 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + FullyQualifiedErrorId : FailToProcessConfiguration
 ```
    
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

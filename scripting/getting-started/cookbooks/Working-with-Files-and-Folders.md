@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: c3f7c226fcb496e5bb51ba601429c54b43de9d52
-
+ms.openlocfilehash: be0960062182bbce161fdb26340825a7f6360382
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Trabajar con archivos y carpetas
+# <a name="working-with-files-and-folders"></a>Trabajar con archivos y carpetas
 Navegar a través de unidades de Windows PowerShell y manipular los elementos son procesos similares al de manipulación de archivos y carpetas en unidades de disco físico de Windows. Explicaremos cómo tratar con tareas específicas de manipulación de archivos y carpetas en esta sección.
 
-### Enumerar todos los archivos y carpetas de una carpeta
+### <a name="listing-all-the-files-and-folders-within-a-folder"></a>Enumerar todos los archivos y carpetas de una carpeta
 Puede obtener todos los elementos directamente dentro de una carpeta mediante **Get-ChildItem**. Agregue el parámetro **Force** opcional para mostrar elementos ocultos o del sistema. Por ejemplo, este comando muestra el contenido directo de la unidad C de Windows PowerShell (que es la misma que la unidad física de Windows C):
 
 ```
@@ -38,7 +36,7 @@ El siguiente comando busca todos los ejecutables en la carpeta Archivos de progr
 Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -FilterScript {($_.LastWriteTime -gt "2005-10-01") -and ($_.Length -ge 1m) -and ($_.Length -le 10m)}
 ```
 
-### Compartir archivos y carpetas
+### <a name="copying-files-and-folders"></a>Compartir archivos y carpetas
 La copia se realiza con **Copy-Item**. El comando siguiente realiza una copia de seguridad de C:\\boot.ini en C:\\boot.bak:
 
 ```
@@ -71,7 +69,7 @@ Todavía puede usar otras herramientas para realizar copias del sistema de archi
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile("c:\boot.ini", "c:\boot.bak")
 ```
 
-### Crear archivos y carpetas
+### <a name="creating-files-and-folders"></a>Crear archivos y carpetas
 La creación de nuevos elementos funciona igual en todos los proveedores de Windows PowerShell. Si un proveedor de Windows PowerShell tiene más de un tipo de elemento (por ejemplo, el proveedor FileSystem de Windows PowerShell distingue entre directorios y archivos), debe especificar el tipo de elemento.
 
 Este comando crea una nueva carpeta C:\\temp\\Nueva carpeta:
@@ -86,7 +84,7 @@ Este comando crea un nuevo archivo vacío C:\\temp\\Nueva carpeta\\file.txt
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType "file"
 ```
 
-### Quitar todos los archivos y carpetas de una carpeta
+### <a name="removing-all-files-and-folders-within-a-folder"></a>Quitar todos los archivos y carpetas de una carpeta
 Puede quitar los elementos contenidos mediante **Remove-Item**, pero se le pedirá que confirme la eliminación si el elemento contiene algo más. Por ejemplo, si intenta eliminar la carpeta C:\\temp\\DeleteMe que contiene otros elementos, Windows PowerShell le pedirá confirmación antes de eliminar la carpeta:
 
 ```
@@ -106,7 +104,7 @@ Si no quiere que se le solicite confirmación por cada elemento contenido, espec
 Remove-Item C:\temp\DeleteMe -Recurse
 ```
 
-### Asignar una carpeta local como una unidad accesible de Windows
+### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Asignar una carpeta local como una unidad accesible de Windows
 También puede asignar una carpeta local mediante el comando **subst**. El siguiente comando crea una unidad local P: con raíz en el directorio local Archivos de programa:
 
 ```
@@ -115,7 +113,7 @@ subst p: $env:programfiles
 
 Al igual que con las unidades de red, las unidades asignadas dentro de Windows PowerShell con **subst** son visibles inmediatamente en el shell de Windows PowerShell.
 
-### Leer un archivo de texto en una matriz
+### <a name="reading-a-text-file-into-an-array"></a>Leer un archivo de texto en una matriz
 Uno de los formatos de almacenamiento más comunes para los datos de texto es en un archivo con líneas separadas que se tratan como elementos de datos distintos. El cmdlet **Get-Content** puede usarse para leer un archivo completo en un solo paso, como se muestra aquí:
 
 ```
@@ -144,10 +142,4 @@ $Computers = Get-Content -Path C:\temp\DomainMembers.txt
 ```
 
 **$Computers** es ahora una matriz que contiene un nombre de equipo en cada elemento.
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

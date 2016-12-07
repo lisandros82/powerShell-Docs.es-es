@@ -8,13 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Acerca de la lista negra
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 8892e5e08a763fbc66d782bbc9252d1f3a7dcfcf
-
+ms.openlocfilehash: e823cc0b130500fb7ea60e65acf27f90ad3f3802
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-### Acerca de la lista negra
+### <a name="on-blacklisting"></a>Acerca de la lista negra
 Ahora que se ha familiarizado con JEA, probablemente se pregunte si es posible incluir comandos en una lista negra.
 Se trata de una solicitud comprensible, pero actualmente no está previsto para JEA por las razones siguientes:
 
@@ -32,10 +30,4 @@ Debe comprender las funcionalidades de los comandos que exponga a través de JEA
 A menos que comprenda todos los comandos que expone, es imposible garantizar que una acción determinada no es posible.
 Usted tiene la responsabilidad de comprender qué comandos expone, tanto si se incluyen en una lista blanca como en una lista negra.
 El número de comandos que expondría una lista negra sería imposible de administrar, por lo que JEA se implementa mediante listas blancas.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

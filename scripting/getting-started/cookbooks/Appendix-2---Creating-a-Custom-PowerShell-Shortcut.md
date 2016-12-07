@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: ceec1038516ddd4c29df770d14981c0a69437498
-
+ms.openlocfilehash: da02415aaaf0e308abb3a9c96bb19591701e3408
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Apéndice 2: Crear de un acceso directo de PowerShell personalizado
+# <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>Apéndice 2: Crear de un acceso directo de PowerShell personalizado
 El siguiente procedimiento describe cómo crear un acceso directo a Windows PowerShell que tenga varias opciones prácticas personalizadas.
 
 1.  Crear un acceso directo que apunte a Powershell.exe.
@@ -42,10 +40,4 @@ El siguiente procedimiento describe cómo crear un acceso directo a Windows Powe
 11. Si desea colocar la consola en un punto concreto del escritorio al abrirla, desactive la casilla **Dejar que el sistema ubique la ventana** en la sección **Posición de la ventana** y, luego, cambie los valores de los cuadros **Izquierda** y **Superior** de la sección **Posición de la ventana**.
 
 12. Haga clic en **Aceptar**.
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

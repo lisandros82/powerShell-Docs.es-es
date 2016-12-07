@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 9453e0ec5ce2c43a3f140e70db6f30e55c211d64
-
+ms.openlocfilehash: 88f3edf9f5e1cad0979626af6a435b9331bfb04d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# El objeto ISEEditor
+# <a name="the-iseeditor-object"></a>El objeto ISEEditor
   Un objeto **ISEEditor** es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEEditor. El panel de consola es un objeto **ISEEditor**. Cada objeto [ISEFile](The-ISEFile-Object.md) tiene asociado un objeto **ISEEditor**. En las secciones siguientes se enumeran los métodos y las propiedades de un objeto **ISEEditor**.
 
-## Métodos
+## <a name="methods"></a>Métodos
 
-### Borrar\(\)
+### <a name="clear"></a>Borrar\(\)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Borra el texto en el editor.
@@ -29,7 +27,7 @@ ms.openlocfilehash: 9453e0ec5ce2c43a3f140e70db6f30e55c211d64
 $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 ```
 
-### EnsureVisible\(int lineNumber\)
+### <a name="ensurevisibleint-linenumber"></a>EnsureVisible\(int lineNumber\)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Desplaza el editor de modo que la línea que corresponde al valor del parámetro **lineNumber** especificado está visible. Produce una excepción si el número de línea especificado está fuera del intervalo de 1, último número de línea, que define los números de línea válidos.
@@ -42,7 +40,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 $psISE.CurrentFile.Editor.EnsureVisible(5)
 ```
 
-### Focus\(\)
+### <a name="focus"></a>Focus\(\)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Establece el foco en el editor.
@@ -52,7 +50,7 @@ $psISE.CurrentFile.Editor.EnsureVisible(5)
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
 
-### GetLineLength\(int lineNumber \)
+### <a name="getlinelengthint-linenumber-"></a>GetLineLength\(int lineNumber \)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Obtiene la longitud de línea como un entero de la línea especificada por el número de línea.
@@ -68,7 +66,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
 
-### GoToMatch\(\)
+### <a name="gotomatch"></a>GoToMatch\(\)
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. 
 
  Mueve el símbolo de intercalación al carácter coincidente si la propiedad **CanGoToMatch** del objeto del editor es **$true**, lo que ocurre cuando el símbolo de intercalación está inmediatamente antes de un paréntesis, corchete o llave de apertura \(,\[,{ - o inmediatamente después de un paréntesis, corchete o llave de cierre - \),\],}.  El símbolo de intercalación se coloca delante de un carácter de apertura o después de un carácter de cierre. Si la propiedad **CanGoToMatch** es **$false**, el método no hace nada. Consulte [CanGoToMatch](#cangotomatch).
@@ -77,7 +75,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
 ```
 
-### InsertText\( text \)
+### <a name="inserttext-text-"></a>InsertText\( text \)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Reemplaza la selección por texto o inserta texto en la posición del símbolo de intercalación actual.
@@ -86,7 +84,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Vea [Ejemplo de scripting](#example) más adelante en este tema.
 
-### Select\( startLine, startColumn, endLine, endColumn \)
+### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Selecciona el texto de los parámetros **startLine**, **startColumn**, **endLine** y **endColumn**.
@@ -101,7 +99,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Vea [Ejemplo de scripting](#example) más adelante en este tema.
 
-### SelectCaretLine\(\)
+### <a name="selectcaretline"></a>SelectCaretLine\(\)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Selecciona toda la línea de texto que contiene actualmente el símbolo de intercalación.
@@ -113,7 +111,7 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 $psISE.CurrentFile.Editor.SelectCaretLine()
 ```
 
-### SetCaretPosition\( lineNumber, columnNumber \)
+### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition\( lineNumber, columnNumber \)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Establece la posición del símbolo de intercalación en el número de línea y el número de columna. Produce una excepción si el número de línea del símbolo de intercalación o el número de columna del símbolo de intercalación están fuera de sus  intervalos válidos respectivos.
@@ -127,7 +125,7 @@ $psISE.CurrentFile.Editor.SelectCaretLine()
 $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 ```
 
-### ToggleOutliningExpansion\(\)
+### <a name="toggleoutliningexpansion"></a>ToggleOutliningExpansion\(\)
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. 
 
  Hace que todas las secciones de esquema se expandan o se contraigan.
@@ -137,9 +135,9 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
-###  <a name="CanGoToMatch"></a> CanGoToMatch
+###  <a name="a-namecangotomatcha-cangotomatch"></a><a name="CanGoToMatch"></a> CanGoToMatch
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. 
 
  Propiedad booleana de solo lectura que indica si el símbolo de intercalación está al lado de paréntesis, corchetes o llaves: \(\), \[\], {}. Si el símbolo de intercalación está inmediatamente antes del carácter de apertura o inmediatamente después del carácter de cierre de un par, el valor de esta propiedad es **$true**. Si no, es **$false**.
@@ -149,7 +147,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 $psISE.CurrentFile.Editor.CanGoToMatch
 ```
 
-###  <a name="CaretColumn"></a> CaretColumn
+###  <a name="a-namecaretcolumna-caretcolumn"></a><a name="CaretColumn"></a> CaretColumn
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Propiedad de solo lectura que obtiene el número de columna que corresponde a la posición del símbolo de intercalación.
@@ -159,7 +157,7 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 $psISE.CurrentFile.Editor.CaretColumn
 ```
 
-###  <a name="CaretLine"></a> CaretLine
+###  <a name="a-namecaretlinea-caretline"></a><a name="CaretLine"></a> CaretLine
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Propiedad de solo lectura que obtiene el número de la línea que contiene el símbolo de intercalación.
@@ -169,7 +167,7 @@ $psISE.CurrentFile.Editor.CaretColumn
 $psISE.CurrentFile.Editor.CaretLine
 ```
 
-###  <a name="caretlinetext"></a> CaretLineText
+###  <a name="a-namecaretlinetexta-caretlinetext"></a><a name="CaretLineText"></a> CaretLineText
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Propiedad de solo lectura que obtiene la línea de texto completa que contiene el símbolo de intercalación.
@@ -179,7 +177,7 @@ $psISE.CurrentFile.Editor.CaretLine
 $psISE.CurrentFile.Editor.CaretLineText
 ```
 
-###  <a name="LineCount"></a> LineCount
+###  <a name="a-namelinecounta-linecount"></a><a name="LineCount"></a> LineCount
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Propiedad de solo lectura que obtiene el recuento de líneas del editor.
@@ -189,21 +187,21 @@ $psISE.CurrentFile.Editor.CaretLineText
 $psISE.CurrentFile.Editor.LineCount
 ```
 
-###  <a name="SelectedText"></a> SelectedText
+###  <a name="a-nameselectedtexta-selectedtext"></a><a name="SelectedText"></a> SelectedText
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Propiedad de solo lectura que obtiene el texto seleccionado del editor.
 
  Vea [Ejemplo de scripting](#example) más adelante en este tema.
 
-###  <a name="Text"></a> Texto
+###  <a name="a-nametexta-text"></a><a name="Text"></a> Text
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Propiedad de lectura y escritura que obtiene o establece el texto en el editor.
 
  Vea [Ejemplo de scripting](#example) más adelante en este tema.
 
-##  <a name="example"></a> Ejemplo de scripting
+##  <a name="a-nameexamplea-scripting-example"></a><a name="example"></a> Ejemplo de scripting
 
 ```PowerShell
 # This illustrates how you can use the length of a line to
@@ -232,7 +230,7 @@ $myEditor.Clear()
 $myEditor.InsertText($selection.ToLower())
 ```
 
-## Véase también
+## <a name="see-also"></a>Véase también
 - [El objeto ISEFile](The-ISEFile-Object.md) 
 - [El objeto PowerShellTab](The-PowerShellTab-Object.md) 
 - [El modelo de objetos de scripting de ISE de Windows PowerShell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
@@ -240,9 +238,3 @@ $myEditor.InsertText($selection.ToLower())
 - [La jerarquía del modelo de objetos de ISE](The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Oct16_HO3-->
-
-
