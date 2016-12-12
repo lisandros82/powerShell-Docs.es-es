@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_dispute_resolution
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 6d7015a14f0d0a75bc28e201dceefe6c9c682b31
-
+ms.openlocfilehash: b7a76a6d8746b4a22154f8a8c7dde89d61046116
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Resolución de conflictos
+# <a name="dispute-resolution"></a>Resolución de conflictos
 
 Este documento contiene el proceso recomendado de resolución de conflictos para que los miembros de la comunidad ayuden a resolver conflictos con otros editores de Galería de PowerShell.
 
-## Proceso
+## <a name="process"></a>Proceso
 
 1. Si tiene un conflicto, póngase en contacto con los propietarios del elemento mediante el vínculo **Contact Owners** (Ponerse en contacto con los propietarios) en la página de detalles del elemento.
 Explique amablemente el problema de manera concisa.
@@ -28,7 +26,7 @@ Explique amablemente el problema de manera concisa.
 El equipo de soporte técnico de PowerShellGallery.com se encargará del asunto e intentará resolverlo.
 
 
-## Uso prohibido
+## <a name="prohibited-use"></a>Uso prohibido
 
 No está permitido lo siguiente en la Galería de PowerShell pública y se quitará inmediatamente de manera incontestable.  Los propietarios recibirán una notificación si se quita un elemento.
 
@@ -43,11 +41,5 @@ En estos casos, publique el código y prosiga con su trabajo o cédale el nombre
 
 Si detecta un elemento que infringe cualquiera de los puntos anteriores, haga clic en el vínculo Notificar abuso en la página de detalles del elemento y envíe un informe.
 
-**Esta directiva está sujeta a cambios a la entera discreción de la Galería de PowerShell.**
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
+**Esta directiva está sujeta a cambios a la discreción de la Galería de PowerShell.**
 

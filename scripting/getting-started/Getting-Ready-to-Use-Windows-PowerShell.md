@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6dc7052d-cc5a-4220-950f-98f963a2b587
-translationtype: Human Translation
-ms.sourcegitcommit: 416d21d2a2fa3d837eba19b1023e4045a124e23c
-ms.openlocfilehash: 9229df48b00c125e04d0f97536697495d0ca01ed
-
+ms.openlocfilehash: 2564ab148fb1de1cb58ee775d2000d321a1d36c1
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Preparativos para usar Windows PowerShell
+# <a name="getting-ready-to-use-windows-powershell"></a>Preparativos para usar Windows PowerShell
 Cuando instale e inicie Windows PowerShell ISE, considere las siguientes opciones de configuración. Puede realizar estas tareas en cualquier momento.
 
 -   **Instalar los archivos de ayuda.** Los cmdlets que se incluyen en Windows PowerShell 3.0 no se suministran con archivos de ayuda. Sin embargo, puede usar el cmdlet [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) para descargar e instalar los archivos de ayuda más recientes en el equipo. Una vez instalados los archivos, puede usar el cmdlet [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) para que se muestren directamente en la línea de comandos. Para obtener más información, consulte [about_Updatable_Help](https://technet.microsoft.com/en-us/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe).
@@ -27,13 +25,7 @@ Cuando instale e inicie Windows PowerShell ISE, considere las siguientes opcione
 
     NOTA: Si la comunicación remota está habilitada en un equipo que ejecuta Windows Server 2.0, lo sigue estando después de instalar Windows Management Framework 3.0. Sin embargo, en Windows Server 2008 (no Windows Server 2008 R2), debe volver a habilitar la comunicación remota después de instalar Windows Management Framework 3.0.
 
-## Véase también
+## <a name="see-also"></a>Véase también
 - [Instalación de Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 - [Iniciar Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
 

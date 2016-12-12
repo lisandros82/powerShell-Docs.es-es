@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: be2141330dda803a22fdce6d65a1e379adf14fed
-
+ms.openlocfilehash: 4478806e46c9c6cdc314b1ecadd8554d6558e8f5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Uso de la herramienta Diseñador de recursos
+# <a name="using-the-resource-designer-tool"></a>Uso de la herramienta Diseñador de recursos
 
 > Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -23,7 +21,7 @@ Use el cmdlet [Install-Module](https://technet.microsoft.com/en-us/library/dn807
 
 >**Nota**: **Install-Module** está incluido en el módulo **PowerShellGet**, que se incluye en PowerShell 5.0. Puede descargar el módulo **PowerShellGet** para PowerShell 3.0 y 4.0 en [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186) (Vista previa de los módulos de PowerShell PackageManagement).
 
-## Crear propiedades de recursos
+## <a name="creating-resource-properties"></a>Crear propiedades de recursos
 Lo primero que es necesario hacer es decidir qué propiedades expondrá el recurso. En este ejemplo, definimos un usuario de Active Directory con las siguientes propiedades.
  
 Nombre del parámetro: descripción
@@ -41,7 +39,7 @@ PS C:\> $DomainCredential = New-xDscResourceProperty –Name DomainCredential-Ty
 PS C:\> $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
 
-## Crear el recurso
+## <a name="create-the-resource"></a>Crear el recurso
 
 Ahora que se han creado las propiedades del recurso, se puede llamar al cmdlet **New-xDscResource** para crear el recurso. El cmdlet **New-xDscResource** toma la lista de propiedades como parámetros. También toma la ruta de acceso donde se debe crear el módulo, el nombre del nuevo recurso y el nombre del módulo que lo contiene. El siguiente comando de PowerShell crea el recurso:
 
@@ -164,7 +162,7 @@ $result
 Export-ModuleMember -Function *-TargetResource
 ```
 
-## Actualizar el recurso
+## <a name="updating-the-resource"></a>Actualizar el recurso
 
 Si necesita agregar o modificar la lista de parámetros del recurso, puede llamar al cmdlet **Update-xDscResource**. El cmdlet actualiza el recurso con una nueva lista de parámetros. Si ya ha agregado lógica en el script del recurso, se mantiene intacta.
 
@@ -175,21 +173,15 @@ PS C:\> $lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtabl
 PS C:\> Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
 ```
 
-## Probar un esquema de recurso
+## <a name="testing-a-resource-schema"></a>Probar un esquema de recurso
 
 La herramienta Diseñador de recursos expone un cmdlet más que puede utilizarse para probar la validez de un esquema MOF que se escribió manualmente. Llame al cmdlet **Test-xDscSchema** y pase la ruta de acceso de un esquema de recursos MOF como un parámetro. El cmdlet mostrará los errores en el esquema.
 
-### Véase también
+### <a name="see-also"></a>Véase también
 
-#### Conceptos
+#### <a name="concepts"></a>Conceptos
 [Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md)
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 [Módulo xDscResourceDesigner](https://powershellgallery.com/packages/xDscResourceDesigner)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

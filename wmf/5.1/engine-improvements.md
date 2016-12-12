@@ -8,18 +8,16 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 45182af45b2d1510b7ad8e9f2ac35fa5346ddb66
-ms.openlocfilehash: bb7efc55b1c948c349aa778b700e5cb1277b9762
-
+ms.openlocfilehash: 118cb91528824b75e28a1eadaa377a696c67f2dd
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#Mejoras del motor de PowerShell
+#<a name="powershell-engine-improvements"></a>Mejoras del motor de PowerShell
 
 En WMF 5.1, se han implementado las siguientes mejoras al motor central de PowerShell:
 
 
-## Rendimiento ##
+## <a name="performance"></a>Rendimiento ##
 
 El rendimiento ha mejorado en algunas áreas importantes:
 
@@ -42,9 +40,3 @@ Tenga en cuenta que el cambio del contenido de estos archivos nunca ha sido un e
 
 Otro cambio visible es la forma en que PowerShell almacena en caché tanto comandos exportados como otra información de los módulos instalados en un sistema. Antes, la memoria caché se almacenaba en el directorio `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis`. En WMF 5.1, la memoria caché es un único archivo `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`.
 Para obtener más información, vea [Caché de análisis de módulo](scenarios-features.md#module-analysis-cache).
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

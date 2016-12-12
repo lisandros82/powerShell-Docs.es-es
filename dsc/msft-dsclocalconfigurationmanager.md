@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 26db4a48af3aa3d6a9a2054fb85da8779626f284
 ms.openlocfilehash: b9cb89bb120151df69e3cb26b50c3a0d15c23711
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Clase MSFT_DSCLocalConfigurationManager
+# <a name="msftdsclocalconfigurationmanager-class"></a>Clase MSFT_DSCLocalConfigurationManager
 
 Administrador de configuración Local (LCM) que controla los estados de los archivos de configuración y usa al agente de configuración para aplicar las configuraciones.
 
 La siguiente sintaxis se simplifica desde el código de Managed Object Format (MOF) e incluye todas las propiedades heredadas.
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 ------
 
 ``` syntax
@@ -29,14 +27,14 @@ class MSFT_DSCLocalConfigurationManager
 };
 ```
 
-## Miembros
+## <a name="members"></a>Miembros
 -------
 
 La clase **MSFT_DSCLocalConfigurationManager** tiene los miembros siguientes:
 
 -   [Métodos][]
 
-### Métodos
+### <a name="methods"></a>Métodos
 
 La clase **MSFT_DSCLocalConfigurationManager** tiene estos métodos.
 
@@ -66,7 +64,7 @@ La clase **MSFT_DSCLocalConfigurationManager** tiene estos métodos.
 
  
 
-## Requisitos
+## <a name="requirements"></a>Requisitos
 ------------
 >**MOF:** DscCore.mof
 
@@ -78,11 +76,5 @@ La clase **MSFT_DSCLocalConfigurationManager** tiene estos métodos.
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

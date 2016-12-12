@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 962941ba946a67256baf141bd195361c94a68f90
-
+ms.openlocfilehash: a8faf242fcc8c72461d6cb7609a562fbb92dfdb9
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Uso de DSC on Nano Server
+# <a name="using-dsc-on-nano-server"></a>Uso de DSC on Nano Server
 
 > Se aplica a: Windows PowerShell 5.0
 
@@ -26,7 +24,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 Para obtener más información sobre cómo instalar y usar Nano Server, y también cómo administrar Nano Server con comunicación remota de PowerShell, vea [Getting Started with Nano Server](https://technet.microsoft.com/en-us/library/mt126167.aspx) (Introducción a Nano Server).
 
 
-## Características de DSC disponibles en Nano Server
+## <a name="dsc-features-available-on-nano-server"></a>Características de DSC disponibles en Nano Server
 
  Dado que Nano Server solo admite un conjunto limitado de API en comparación con una versión completa de Windows Server; por el momento, DSC on Nano Server no tiene paridad completa funcional con DSC cuando se ejecuta en SKU completas. DSC on Nano Server está en desarrollo activo y todavía no es una característica completa.
  
@@ -44,7 +42,7 @@ Para obtener más información sobre cómo instalar y usar Nano Server, y tambi�
   * [Stop-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143542.aspx)
   * [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx)
   * [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)      
-  * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx) 
+  * [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx) 
   * [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
   * [Restore-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
   * [Remove-DscConfigurationDocument](https://technet.microsoft.com/en-us/library/mt143544.aspx)
@@ -52,7 +50,7 @@ Para obtener más información sobre cómo instalar y usar Nano Server, y tambi�
   * [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
   * [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
   * [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)
-  * [New-DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)    
+  * [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx)    
 
 * Compilación de configuraciones (vea [Configuraciones DSC](configurations.md))
 
@@ -68,13 +66,13 @@ Para obtener más información sobre cómo instalar y usar Nano Server, y tambi�
   
   **Problema:** no funciona si un recurso usa PsDscRunAsCredential (vea [DSC de ejecución con las credenciales de usuario](runAsUser.md))
 
-* [Especificación de dependencias entre nodos](crossNodeDependencies.md) 
+* [Especificación de las dependencias entre nodos](crossNodeDependencies.md) 
 
 * [Control de versiones de recursos](sxsResource.md)
 
 * Cliente de extracción (configuraciones y recursos) (vea [Configuración de un cliente de extracción mediante nombres de configuración](pullClientConfigNames.md))
 
-* [Configuraciones parciales (extracción e inserción)](partialConfigs.md)
+* [Configuraciones parciales (extracción e incorporación de cambios)](partialConfigs.md)
 
 * [Generación de informes en el servidor de extracción](reportServer.md) 
 
@@ -86,11 +84,11 @@ Para obtener más información sobre cómo instalar y usar Nano Server, y tambi�
 
 * Recursos que son totalmente funcionales
   * [Archive](archiveResource.md)
-  * [Entorno](environmentResource.md)
-  * [Archivo](fileResource.md)
-  * [Registro](logResource.md)
+  * [Environment](environmentResource.md)
+  * [File](fileResource.md)
+  * [Log](logResource.md)
   * ProcessSet
-  * [Registro](registryResource.md)
+  * [Registry](registryResource.md)
   * [Script](scriptResource.md)
   * WindowsPackageCab
   * [WindowsProcess](windowsProcessResource.md)
@@ -115,7 +113,7 @@ Para obtener más información sobre cómo instalar y usar Nano Server, y tambi�
   * [Usuario](userResource.md)
   
 
-## Características de DSC no disponibles en Nano Server
+## <a name="dsc-features-not-available-on-nano-server"></a>Características de DSC no disponibles en Nano Server
 
 Las siguientes características de DSC no están disponibles actualmente en Nano Server:
 
@@ -123,16 +121,10 @@ Las siguientes características de DSC no están disponibles actualmente en Nano
 * Servidor de extracción: actualmente no se puede establecer un servidor de extracción en Nano Server
 * Todo lo que no está en la lista de trabajos funciona
 
-## Uso de recursos personalizados de DSC en Nano Server
+## <a name="using-custom-dsc-resources-on-nano-server"></a>Uso de recursos personalizados de DSC en Nano Server
  
 Debido a un conjunto limitado de bibliotecas CLR y API de Windows disponibles en Nano Server, los recursos de DSC que funcionan en la versión CLR completa de Windows no funcionan necesariamente en Nano Server. Pruebas de un extremo a otro antes de implementar los recursos personalizados de DSC en un entorno de producción.
 
-## Véase también
-- [Getting Started with Nano Server (Introducción a Nano Server)](https://technet.microsoft.com/en-us/library/mt126167.aspx)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+## <a name="see-also"></a>Véase también
+- [Getting Started with Nano Server](https://technet.microsoft.com/en-us/library/mt126167.aspx) (Introducción a Nano Server)
 

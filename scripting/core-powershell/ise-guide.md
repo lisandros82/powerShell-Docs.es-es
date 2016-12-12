@@ -7,21 +7,19 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 053a4fd734b1e86c5f8ca22c8197ce4e80b6fce6
-
+ms.openlocfilehash: 52103ee815f97068efc2c4cf666589e9d240bf92
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Guía sobre ISE
+# <a name="ise-guide"></a>Guía sobre ISE
 
 -  [Cómo crear una pestaña de PowerShell en Windows PowerShell ISE](ise/How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
--  [Cómo depurar scripts en ISE de Windows PowerShell](ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
--  [Cómo usar perfiles en ISE de Windows PowerShell](ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
+-  [Cómo depurar scripts en Windows PowerShell ISE](ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
+-  [Cómo usar perfiles en Windows PowerShell ISE](ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
 -  [Cómo usar la finalización con tabulación en el panel de scripts y en el panel de consola](ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 -  [Cómo usar el panel de consola en Windows PowerShell ISE](ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
 -  [Cómo escribir y ejecutar scripts en Windows PowerShell ISE](ise/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)
--  [Introducción a Windows PowerShell ISE](ise/Introducing-the-Windows-PowerShell-ISE.md)
+-  [Presentación de Windows PowerShell ISE](ise/Introducing-the-Windows-PowerShell-ISE.md)
 -  [Módulo ISE](ise/ISE-Module.md)
 -  [Métodos abreviados de teclado para Windows PowerShell ISE](ise/Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md)
 -  [Finalidad del modelo de objetos de scripting de Windows PowerShell ISE](ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
@@ -40,12 +38,6 @@ ms.openlocfilehash: 053a4fd734b1e86c5f8ca22c8197ce4e80b6fce6
 -  [El objeto PowerShellTab](ise/The-PowerShellTab-Object.md)
 -  [El objeto PowerShellTabCollection](ise/The-PowerShellTabCollection-Object.md)
 -  [El modelo de objetos de scripting de ISE de Windows PowerShell](ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
--  [Usar Windows PowerShell ISE](ise/Using-the-Windows-PowerShell-ISE.md)
+-  [Usar Windows PowerShell ISE](ise/Using-the-Windows-PowerShell-ISE.md)
 -  [Referencia del modelo de objetos de ISE de Windows PowerShell](ise/Windows-PowerShell-ISE-Object-Model-Reference.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

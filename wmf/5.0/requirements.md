@@ -1,25 +1,25 @@
-# Requisitos del sistema
+# <a name="system-requirements"></a>Requisitos del sistema
 
 - Instale las actualizaciones de Windows más recientes antes de instalar WMF 5.0 RTM.
 - Puede instalar WMF 5.0 RTM solo en los siguientes sistemas operativos:
 
     | Sistema operativo       | Ediciones         | Requisitos previos        |  Vínculos de paquete |
     |------------------------|--------------|------------------|----------------------| --------------|
-    | Windows Server 2012 R2 |  |  | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
+    | Windows Server 2012 R2 |  |  | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
     | Windows Server 2012    |  |  | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) |
     | Windows Server 2008 R2 SP1 | Todas, excepto IA64 | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) y [.NET Framework 4.5 o superior](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) están instalados.| [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)|
     | Windows 8.1 | Pro, Enterprise | | **x64:**  [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86:**  [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
     | Windows 7 SP1 | Todos | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) y [.NET Framework 4.5 o superior](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) están instalados. | **x64:** [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86:**  [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
 
-# Instrucciones de instalación
+# <a name="installation-instructions"></a>Instrucciones de instalación
 
-### Para instalar WMF 5.0 desde el Explorador de Windows (o el Explorador de archivos):
+### <a name="to-install-wmf-50-from-windows-explorer-or-file-explorer"></a>Para instalar WMF 5.0 desde el Explorador de Windows (o el Explorador de archivos):
 
 1. Desplácese a la carpeta en la que descargó el archivo MSU.
 
 2. Haga doble clic en el archivo MSU para ejecutarlo.
 
-### Para instalar WMF 5.0 desde el símbolo del sistema:
+### <a name="to-install-wmf-50-from-command-prompt"></a>Para instalar WMF 5.0 desde el símbolo del sistema:
 
 1. Después de descargar el paquete correcto para la arquitectura del equipo, abra una ventana del símbolo del sistema con derechos de usuario elevados (Ejecutar como administrador). En las opciones de instalación de Server Core de Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2 SP1, el símbolo del sistema se abre de forma predeterminada con derechos de usuario elevados.
 
@@ -32,7 +32,7 @@
     - En los equipos que ejecutan Windows 8.1 x86, ejecute **Win8.1-KB3134758-x86.msu /quiet**.
     - En los equipos que ejecutan Windows 7 SP1 x86, ejecute **Win7-KB3134760-x86.msu /quiet**.
 
-### Notas de instalación adicionales para Windows Server 2008 R2 SP1 y Windows 7 SP1:
+### <a name="additional-installation-notes-for-windows-server-2008-r2-sp1-and-windows-7-sp1"></a>Notas de instalación adicionales para Windows Server 2008 R2 SP1 y Windows 7 SP1:
 
 Asegúrese de que se cumplen los requisitos previos siguientes:
 - El Service Pack más reciente está instalado.
@@ -55,9 +55,9 @@ Solucionamos todos estos problemas en los paquetes de WMF 4.0. Por lo tanto, hay
 
 La configuración de estado deseado (DSC) de Windows PowerShell depende de WinRM. WinRM no está habilitado de forma predeterminada en Windows Server 2008 R2 SP1 y Windows 7 SP1. Para habilitar WinRM, en una sesión de Windows PowerShell con permisos elevados, ejecute **Set-WSManQuickConfig**.
 
-# Instrucciones de desinstalación
+# <a name="uninstallation-instructions"></a>Instrucciones de desinstalación
 
-### Uso de la ventana del símbolo del sistema
+### <a name="using-command-prompt"></a>Uso de la ventana del símbolo del sistema
 
 1.  Abra el **símbolo del sistema.**
 
@@ -76,7 +76,7 @@ En Windows Server 2008 R2 SP1 y Windows 7 SP1:
 wusa /uninstall /kb:3134760
 ```
 
-### Uso del Panel de control
+### <a name="using-control-panel"></a>Uso del Panel de control
 
 1.  Abra el **Panel de control.**
 
@@ -85,8 +85,3 @@ wusa /uninstall /kb:3134760
 3.  Haga clic en **Ver actualizaciones instaladas.**
 
 4.  Seleccione **Windows Management Framework 5.0** en la lista de actualizaciones instaladas. Corresponde a *KB3134758*, *KB3134759* o *KB3134760*. Haga clic en **Desinstalar.**
-
-
-<!--HONumber=Aug16_HO3-->
-
-

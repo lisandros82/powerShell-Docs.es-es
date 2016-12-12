@@ -7,17 +7,15 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: b38cfd053cc2356fa7ca99605dbd84190d342327
-ms.openlocfilehash: fc6307be4dafb378350b6d9667b2b6aca0e2e6d4
-
+ms.openlocfilehash: e5ad9190ae620e511258675ad7e65ec59018d89f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  PowerShell
+#  <a name="powershell"></a>PowerShell
 
 Windows PowerShell, basado en .NET Framework, es un lenguaje de scripting y shell de línea de comandos basado en tareas. Está diseñado específicamente para que los administradores del sistema y los usuarios avanzados automaticen rápidamente la administración de varios sistemas operativos (Linux, OSX, Unix y Windows) y los procesos relacionados con las aplicaciones que se ejecutan en dichos sistemas operativos.
 
-###  PowerShell es ahora de código abierto
+###  <a name="powershell-is-now-open-source"></a>PowerShell es ahora de código abierto
 
 El código fuente base de PowerShell ahora está disponible en GitHub y admite las contribuciones de la comunidad. Consulte [PowerShell](https://github.com/powershell/powershell).
 
@@ -27,19 +25,19 @@ o, si lo prefiere, con el paseo introductorio incluido en esta [introducción](h
 >  **Nota:**  
 >  Todos los vínculos de PowerShell en GitHub le llevarán a GitHub.
 
-#  Documentación
+#  <a name="documentation"></a>Documentación
 
 La recopilación de documentación está organizada en 4 secciones principales:
 
-##  [Novedades de PowerShell](whats-new/What-s-New-With-PowerShell.md)
+##  <a name="whats-new-with-powershellwhats-newwhat-s-new-with-powershellmd"></a>[Novedades de PowerShell](whats-new/What-s-New-With-PowerShell.md)
 En esta sección encontrará todos los anuncios relacionados con el producto (versión por versión).
 
-##  [Instalación de PowerShell](setup/setup-reference.md)
+##  <a name="powershell-setupsetupsetup-referencemd"></a>[Instalación de PowerShell](setup/setup-reference.md)
 En esta sección encontrará todo lo que necesita saber para instalar todas las versiones de PowerShell en todos los entornos admitidos.  
 
 También encontrará instrucciones para configurar las opciones de seguridad, accesibilidad, acceso y administración remotos, flujos de trabajo y acceso web.
 
-##  [Introducción a PowerShell](getting-started/Getting-Started-with-Windows-PowerShell.md)
+##  <a name="getting-started-with-powershellgetting-startedgetting-started-with-windows-powershellmd"></a>[Introducción a PowerShell](getting-started/Getting-Started-with-Windows-PowerShell.md)
 Esta sección está dirigida a los nuevos usuarios de PowerShell, pues aquí encontrarán toda la información necesaria para empezar a usar el producto.  
 En esta sección:
 -   Los [preparativos para usar Windows PowerShell](getting-started/Getting-Ready-to-Use-Windows-PowerShell.md) que indican los pasos necesarios para instalar PowerShell y ejecutar y probar todos los códigos y fragmentos de comandos que se presentan en la sección “Introducción a PowerShell”.
@@ -48,7 +46,7 @@ En esta sección:
 -  Una serie de “[recetas básicas para &lt;usar la herramienta&gt;](getting-started/cookbooks/basic-cookbooks-reference.md)”, con instrucciones para ejecutar tareas estándar en los archivos, el sistema de archivos, el registro, los procesos, los servicios y otros temas habituales similares.
 -  Una guía con otras fuentes para [aprender a usar PowerShell](getting-started/more-powershell-learning.md).
 
-##  [PowerShell común](core-powershell/core-powershell.md)
+##  <a name="common-powershellcore-powershellcore-powershellmd"></a>[PowerShell común](core-powershell/core-powershell.md)
 Esta sección contiene todo el material de referencia de PowerShell.  
 Encuentre en esta sección:
 -  Los [módulos comunes de PowerShell](core-powershell/core-modules.md)
@@ -58,9 +56,3 @@ Encuentre en esta sección:
 -  Los [flujos de trabajo de PowerShell](core-powershell/workflows-guide.md)
 -  El [acceso web de PowerShell](core-powershell/web-access.md)
 -  El [glosario de PowerShell](Windows-PowerShell-Glossary.md)
-
-
-
-<!--HONumber=Aug16_HO4-->
-
-

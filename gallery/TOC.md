@@ -2,12 +2,12 @@
 ## Galería
 ### [Introducción](psgallery/psgallery_gettingstarted.md)
 ### [Estado de mantenimiento](psgallery/psgallery_status.md)
-### [Preguntas más frecuentes de la Galería](psgallery/psgallery_faqs.md)
-### [Pestaña Elementos de la Galería](psgallery/psgallery_items_tab.md)
-### [Sintaxis de búsqueda de la Galería](psgallery/psgallery_search_syntax.md)
+### [Preguntas más frecuentes de la galería](psgallery/psgallery_faqs.md)
+### [Pestaña Elementos de la galería](psgallery/psgallery_items_tab.md)
+### [Sintaxis de búsqueda de la galería](psgallery/psgallery_search_syntax.md)
 ### [Elementos con PSEditions compatibles](psgallery/psgallery_pseditions.md)
 ### [Vista de FileList](psgallery/psgallery_filelist_feature.md)
-### [Implementar en Automatización de Azure](psgallery/psgallery_deploy_to_azure_automation.md)
+### [Implementar en Azure Automation](psgallery/psgallery_deploy_to_azure_automation.md)
 ### [Ocultar elementos](psgallery/psgallery_unlist_items.md)
 ### [Eliminar elementos](psgallery/Deleting-Items.md)
 ### [Administrar propietarios de elementos](psgallery/Managing-Item-Owners.md)
@@ -27,7 +27,7 @@
 ### [Actualizar](psget/module/psget_update-module.md)
 ### [Desinstalar](psget/module/psget_uninstall-module.md)
 ### [Obtener los módulos instalados](psget/module/psget_get-installedmodule.md)
-### [Actualizar el manifiesto de módulo](psget/module/psget_update-modulemanifest.md)
+### [Actualizar el manifiesto del módulo](psget/module/psget_update-modulemanifest.md)
 ### [Publicar](psget/module/psget_publish-module.md)
 ### [Módulos con PSEditions](psget/module/modulewithpseditionsupport.md)
 ### [Solucionar problemas](psget/psget_cmdlets_troubleshooting.md)
@@ -43,18 +43,13 @@
 ### [Probar los metadatos del archivo de script](psget/script/psget_test-scriptfileinfo.md)
 ### [Actualizar los metadatos del archivo de script](psget/script/psget_update-scriptfileinfo.md)
 ### [Publicar](psget/script/psget_publish-script.md)
-### [Scripts with PSEditions (Scripts con ediciones de PowerShell)](psget/script/scriptwithpseditionsupport.md)
+### [Scripts con PSEditions](psget/script/scriptwithpseditionsupport.md)
 
 ## Administración de repositorios
 ### [Arrancar el proveedor de NuGet y NuGet.exe](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
 ### [Registrar un repositorio](psget/repository/psget_register-psrepository.md)
-### [Enumerar repositorios registrados](psget/repository/psget_get-psrepository.md)
+### [Enumerar un repositorio registrado](psget/repository/psget_get-psrepository.md)
 ### [Modificar un repositorio registrado](psget/repository/psget_set-psrepository.md)
 ### [Anular el registro de un repositorio](psget/repository/psget_unregister-psrepository.md)
 
-## [Cmdlets PackageManagement](psget/oneget/PackageManagement_cmdlets.md)
-
-
-<!--HONumber=Sep16_HO2-->
-
-
+## [Cmdlet de PackageManagement](psget/oneget/PackageManagement_cmdlets.md)

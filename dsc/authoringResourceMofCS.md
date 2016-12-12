@@ -7,24 +7,22 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 644d08a69a8bb70f49e12c1504aa46c4b57a51fc
-ms.openlocfilehash: 991a324945289b2eff0b706d093b2d345352fb15
-
+ms.openlocfilehash: df330cede5466f4d8da3b4be0057f6a822d15f00
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="authoring-a-dsc-resource-in-c"></a>Creación de un recurso de DSC en C`#`
 
-# Creación de un recurso de DSC en C`#`
-
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Normalmente, un recurso personalizado de configuración de estado deseado (DSC) de Windows PowerShell se implementa en un script de PowerShell. Sin embargo, también puede implementar la funcionalidad de un recurso de DSC personalizado mediante la escritura de cmdlets en C#. Para ver una introducción sobre la escritura de cmdlets en C#, consulte [Escribir un cmdlet de Windows PowerShell](https://technet.microsoft.com/en-us/library/dd878294.aspx).
 
 Además de implementar el recurso en C# como cmdlets, el proceso de creación del esquema MOF, la creación de la estructura de carpetas, la importación y la utilización del recurso personalizado de DSC son idénticos a cómo se describen en [Escribir un recurso de DSC personalizado con MOF](authoringResourceMOF.md).
 
-## Escribir un recurso basado en cmdlets
+## <a name="writing-a-cmdlet-based-resource"></a>Escribir un recurso basado en cmdlets
 En este ejemplo, se implementará un recurso simple que administra un archivo de texto y su contenido.
 
-### Escribir el esquema MOF
+### <a name="writing-the-mof-schema"></a>Escribir el esquema MOF
 
 A continuación se muestra la definición del recurso MOF.
 
@@ -38,8 +36,8 @@ class MSFT_XDemoFile : OMI_BaseResource
 };
 ```
 
-### Configurar el proyecto de Visual Studio
-#### Configurar un proyecto de cmdlet
+### <a name="setting-up-the-visual-studio-project"></a>Configurar el proyecto de Visual Studio
+#### <a name="setting-up-a-cmdlet-project"></a>Configurar un proyecto de cmdlet
 
 1. Abra Visual Studio.
 1. Cree un proyecto de C# y proporcione el nombre.
@@ -48,7 +46,7 @@ class MSFT_XDemoFile : OMI_BaseResource
 1. Agregue al proyecto una referencia de ensamblado a System.Automation.Management.dll.
 1. Cambie el nombre del ensamblado para que coincida con el nombre del recurso. En este caso, el ensamblado debe tener como nombre **MSFT_XDemoFile**.
 
-### Escribir el código del cmdlet
+### <a name="writing-the-cmdlet-code"></a>Escribir el código del cmdlet
 
 El siguiente código de C# implementa los cmdlets **Get-TargetResource**, **Set-TargetResource** y **Test-TargetResource**.
 
@@ -266,7 +264,7 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-### Implementar el recurso
+### <a name="deploying-the-resource"></a>Implementar el recurso
 
 El archivo dll compilado debe guardarse en una estructura de archivos similar a un recurso de script. A continuación se muestra la estructura de carpetas de este recurso.
 
@@ -281,15 +279,9 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-### Véase también
-#### Conceptos
+### <a name="see-also"></a>Véase también
+#### <a name="concepts"></a>Conceptos
 [Escribir un recurso de DSC personalizado con MOF](authoringResourceMOF.md)
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 [Escribir un cmdlet de Windows PowerShell](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

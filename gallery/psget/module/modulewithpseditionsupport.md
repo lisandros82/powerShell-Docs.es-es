@@ -9,19 +9,17 @@ ms.date: 2016-10-14
 contributor: manikb
 title: modulewithpseditionsupport
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: dc8836607e2d2f03d34e5c90a8d20fe4cf0ae76f
-
+ms.openlocfilehash: d502427a3685467bdafb875ea84b9389483746e4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Módulos con las ediciones compatibles de PowerShell
+# <a name="modules-with-compatible-powershell-editions"></a>Módulos con las ediciones compatibles de PowerShell
 A partir de la versión 5.1, PowerShell está disponible en diferentes ediciones que denotan distintos conjuntos de características y compatibilidad con varias plataformas.
 
 - **Desktop Edition:** basado en .NET Framework y proporciona compatibilidad con scripts y módulos destinados a las versiones de PowerShell que se ejecutan en las ediciones de superficie completa de Windows como Server Core y Windows Desktop.
 - **Core Edition:** basado en .NET Core y proporciona compatibilidad con scripts y módulos destinados a las versiones de PowerShell que se ejecutan en las ediciones de superficie completa de Windows como Nano Server y Windows IoT.
 
-## La edición de PowerShell que se está ejecutando se muestra en la propiedad PSEdition de $PSVersionTable.
+## <a name="the-running-edition-of-powershell-is-shown-in-the-psedition-property-of-psversiontable"></a>La edición de PowerShell que se está ejecutando se muestra en la propiedad PSEdition de $PSVersionTable.
 ```powershell
 $PSVersionTable
 
@@ -37,7 +35,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-## Los autores de módulos pueden declarar sus módulos para hacerlos compatibles con una o varias ediciones de PowerShell mediante la clave de manifiesto del módulo CompatiblePSEditions. Esta clave solo se admite en PowerShell 5.1 o versiones posteriores.
+## <a name="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later"></a>Los autores de módulos pueden declarar sus módulos para hacerlos compatibles con una o varias ediciones de PowerShell mediante la clave de manifiesto del módulo CompatiblePSEditions. Esta clave solo se admite en PowerShell 5.1 o versiones posteriores.
 *NOTA* Una vez que se especifica un manifiesto de módulo con la clave CompatiblePSEditions, no se puede importar en versiones anteriores de PowerShell.
 
 ```powershell
@@ -73,15 +71,15 @@ Core
 
 ```
 
-## Los autores de módulos pueden publicar un único módulo destinado a una de las ediciones de PowerShell o a ambas (Core o Desktop) 
+## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>Los autores de módulos pueden publicar un único módulo destinado a una de las ediciones de PowerShell o a ambas (Core o Desktop) 
 
 Un único módulo puede trabajar tanto en la edición Desktop como Core; en este módulo, el autor tiene que agregar la lógica necesaria en RootModule o en el manifiesto del módulo mediante la variable $PSEdition.
 Los módulos pueden tener dos conjuntos de archivos DLL que se dirijan a CoreCLR y a FullCLR.
 A continuación, se indican un par de formas de empaquetar un módulo con la lógica correspondiente para cargar los archivos DLL adecuados.
 
-### Opción 1: empaquetar un módulo para dirigirlo a varias versiones y varias ediciones de PowerShell
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Opción 1: empaquetar un módulo para dirigirlo a varias versiones y varias ediciones de PowerShell
 
-#### Contenido de la carpeta del módulo
+#### <a name="module-folder-contents"></a>Contenido de la carpeta del módulo
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
 - PSScriptAnalyzer.psd1
@@ -100,7 +98,7 @@ A continuación, se indican un par de formas de empaquetar un módulo con la ló
 - Settings\ScriptingStyle.psd1
 - Settings\ScriptSecurity.psd1
 
-#### Contenido del archivo PSScriptAnalyzer.psd1
+#### <a name="contents-of-psscriptanalyzerpsd1-file"></a>Contenido del archivo PSScriptAnalyzer.psd1
 
 ```powershell
 @{
@@ -118,7 +116,7 @@ ModuleVersion = '1.6.1'
 }
 ```
 
-#### Contenido del archivo PSScriptAnalyzer.psm1
+#### <a name="contents-of-psscriptanalyzerpsm1-file"></a>Contenido del archivo PSScriptAnalyzer.psm1
 A continuación, la lógica carga los ensamblados necesarios en función de la edición o la versión actual.
 
 ```powershell
@@ -155,7 +153,7 @@ $PSModule.OnRemove = {
 
 ```
 
-### Opción 2: usar la variable $PSEdition en el archivo. PSD1 para cargar los archivos DLL adecuados y los módulos anidados o necesarios
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>Opción 2: usar la variable $PSEdition en el archivo. PSD1 para cargar los archivos DLL adecuados y los módulos anidados o necesarios
 
 En PS 5.1 y versiones posteriores, se permite usar la variable global $PSEdition en el archivo de manifiesto de módulo.
 Mediante esta variable el autor del módulo puede especificar los valores condicionales en el archivo de manifiesto de módulo. Se puede hacer referencia a la variable $PSEdition en modo de lenguaje restringido o en una sección de datos. 
@@ -163,7 +161,7 @@ Mediante esta variable el autor del módulo puede especificar los valores condic
 *NOTA* Una vez que se especifica un manifiesto de módulo con la clave CompatiblePSEditions (o cuando usa la variable $PSEdition), no se puede importar en versiones anteriores de PowerShell.
 
 
-#### Ejemplo de un archivo de manifiesto de módulo con la clave CompatiblePSEditions
+#### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a>Ejemplo de un archivo de manifiesto de módulo con la clave CompatiblePSEditions
 
 ```powershell
 @{ 
@@ -198,7 +196,7 @@ else # Desktop
 }
 ```
 
-#### Contenido del módulo
+#### <a name="module-contents"></a>Contenido del módulo
 
 ```powershell
 
@@ -229,7 +227,7 @@ Mode                LastWriteTime         Length Name
 -a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl                                                                      
 ```
 
-## Los usuarios de la Galería de PowerShell pueden encontrar la lista de módulos admitidos de edición específica de PowerShell mediante las etiquetas PSEdition_Desktop y PSEditon_Core.
+## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditoncore"></a>Los usuarios de la Galería de PowerShell pueden encontrar la lista de módulos admitidos de edición específica de PowerShell mediante las etiquetas PSEdition_Desktop y PSEditon_Core.
 Se considera que los módulos que no tienen las etiquetas PSEdition_Desktop o PSEditon_Core funcionan correctamente en las ediciones de PowerShell Desktop.
 
 ```powershell
@@ -243,14 +241,8 @@ Find-Module -Tag PSEditon_Core
 ```
 
 
-## Más detalles
-### [Scripts with PSEditions (Scripts con ediciones de PowerShell)](../script/scriptwithpseditionsupport.md)
-### [PSEditions support on PowerShellGallery (Compatibilidad con las ediciones de PowerShell en la Galería de PowerShell)](../../psgallery/psgallery_pseditions.md)
-### [Actualizar manifiesto de módulo] (./psget_update-modulemanifest.md)
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
+## <a name="more-details"></a>Más detalles
+### <a name="scripts-with-pseditionsscriptscriptwithpseditionsupportmd"></a>[Scripts con PSEditions](../script/scriptwithpseditionsupport.md)
+### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[Compatibilidad con PSEditions en la Galería de PowerShell](../../psgallery/psgallery_pseditions.md)
+### <a name="update-module-manifest-psgetupdate-modulemanifestmd"></a>[Actualizar manifiesto de módulo] (./psget_update-modulemanifest.md)
 

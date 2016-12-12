@@ -1,4 +1,4 @@
-# Estado coherente unificado y representación de estado
+# <a name="unified-and-consistent-state-and-status-representation"></a>Estado coherente unificado y representación de estado
 
 En este versión se incluye una serie de mejoras para el estado de LCM y el estado de DSC creados por las automatizaciones. Incluyen representaciones de estado y de estado unificado coherente, la propiedad datatime administrable de los objetos de estado devueltos por el cmdlet Get-DscConfigurationStatus y la propiedad state details de LCM mejorada devuelta por el cmdlet Get-DscLocalConfigurationManager.
 
@@ -12,7 +12,7 @@ La representación del estado de las operaciones de DSC y LCM se revisa y unific
 
 En la siguiente tabla se muestran el estado resultante y las propiedades relacionadas con el estado en algunos escenarios típicos.
 
-| **Escenario**                    | **LCMState\***       | **Estado** | **Reinicio solicitado**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
+| **Scenario**                    | **LCMState\***       | **Status** | **Reboot Requested**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | Inactivo                 | Correcto    | $false        | S                            | $null                          |
 | F**^**                          | PendingConfiguration | Error    | $false        | $null                        | F                              |
@@ -26,8 +26,7 @@ En la siguiente tabla se muestran el estado resultante y las propiedades relacio
 | r, F                            | PendingReboot        | Correcto    | $true         | $null                        | r                              |
 
 ^
-S<sub>i</sub>: serie de recursos que se aplicaron correctamente F<sub>i</sub>: serie de recursos que no se aplicaron correctamente r: A recurso que requiere un reinicio
-\*
+S<sub>i</sub>: serie de recursos que se aplicaron correctamente F<sub>i</sub>: serie de recursos que no se aplicaron correctamente r: recurso que requiere un reinicio \*
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState
@@ -39,7 +38,7 @@ $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
 $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
 ```
-## Mejora en el cmdlet Get-DscConfigurationStatus
+## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Mejora en el cmdlet Get-DscConfigurationStatus
 
 En esta versión, se incluyen algunas mejoras en el cmdlet Get-DscConfigurationStatus. Anteriormente, la propiedad StartDate de los objetos devueltos por el cmdlet era de tipo String. Ahora, es de tipo Datetime, que facilita la selección y el filtrado complejos según las propiedades intrínsecas de un objeto Datetime.
 ```powershell
@@ -81,7 +80,7 @@ Success 11/13/2015 11:20:44 AM Initial True
 Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 ```
 
-## Mejora en el cmdlet Get-DSCLocalConfigurationManager
+## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Mejora en el cmdlet Get-DSCLocalConfigurationManager
 Se agregó un nuevo campo de LCMStateDetail al objeto devuelto del cmdlet Get-DscLocalConfigurationManager. Este campo se rellena cuando el valor de LCMState es "Ocupado". Se puede recuperar mediante el siguiente cmdlet:
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail
@@ -103,8 +102,3 @@ LCM State: Idle,
 LCM State: Busy, LCM is performing a consistency check.
 LCM State: Idle,
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

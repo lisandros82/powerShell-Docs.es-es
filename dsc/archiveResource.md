@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 1d4d2d9106ef76d6628f93cf86234807dbb121ed
-
+ms.openlocfilehash: 77398d26f59975469e7c752a8d7f4f8bbbe4f553
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Recursos de DSC Archive
+# <a name="dsc-archive-resource"></a>Recursos de DSC Archive
 
 > Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 El recurso Archive de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para desempaquetar archivos de almacenamiento (.zip) en una ruta de acceso específica.
 
-## Sintaxis 
+## <a name="syntax"></a>Sintaxis 
 ```MOF
 Archive [string] #ResourceName
 {
@@ -33,7 +31,7 @@ Archive [string] #ResourceName
 }
 ```
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 |  Propiedad  |  Descripción   | 
 |---|---| 
@@ -45,7 +43,7 @@ Archive [string] #ResourceName
 | Validar| Utiliza la propiedad Checksum para determinar si el archivo coincide con la firma. Si especifica Checksum sin Validate, se producirá un error de configuración. Si especifica Validate sin Checksum, se usará una suma de comprobación SHA-256 de forma predeterminada.| 
 | Force| Determinadas operaciones de archivos (por ejemplo, sobrescribir un archivo o eliminar un directorio que no está vacío) provocarán un error. Si se usa la propiedad Force, se invalidan estos errores. El valor predeterminado es False.| 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En el ejemplo siguiente se muestra cómo usar el recurso Archive para asegurarse de que el contenido de un archivo llamado Test.zip exista y se extraiga en un destino determinado.
 
@@ -56,10 +54,4 @@ Archive ArchiveExample {
     Destination = "C:\Users\Public\Documents\ExtractionPath"
 } 
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

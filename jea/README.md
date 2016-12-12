@@ -8,13 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "ARCHIVO LÉAME"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 8149f656f0aacbb23cacc8a1a9b45ed59866b92f
-ms.openlocfilehash: 7bb5635832e912b39ec387e8ac93ada24a434ff8
-
+ms.openlocfilehash: b0ef4ff685b82e1a4e9ab83a45736720df7b39a2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Just Enough Administration
+# <a name="just-enough-administration"></a>Just Enough Administration
 Just Enough Administration (JEA) es una tecnología de seguridad que permite la administración delegada de todo lo que se puede administrar con PowerShell.
 Con JEA, se puede hacer lo siguiente:
 - **Reducir el número de administradores de las máquinas** aprovechando las cuentas virtuales que realizan acciones con privilegios en nombre de usuarios normales.
@@ -30,7 +28,7 @@ Con JEA, puede configurar un rol para los administradores DNS que les proporcion
 Esto significa que puede proporcionar el acceso adecuado para reparar una caché DNS dudosa sin concederles involuntariamente derechos en Active Directory, para examinar el sistema de archivos o para ejecutar scripts potencialmente peligrosos.
 Y lo que es mejor, cuando la sesión de JEA está configurada para usar cuentas virtuales con privilegios de un solo uso, los administradores de DNS pueden conectarse al servidor mediante credenciales *sin privilegios* y seguir siendo capaces de ejecutar comandos con privilegios.
 
-## Disponibilidad
+## <a name="availability"></a>Disponibilidad
 JEA se está desarrollando en paralelo a Windows Server 2016, y está disponible en versiones anteriores de Windows mediante actualizaciones de Windows Management Framework.
 La versión actual de JEA está disponible en las siguientes plataformas:
 
@@ -45,7 +43,7 @@ La versión actual de JEA está disponible en las siguientes plataformas:
 \* La compatibilidad con cuentas virtuales en sesiones de JEA no está disponible en Windows Server 2008 R2 o Windows 7.
 
 
-## Explorar la guía de la experiencia
+## <a name="explore-the-experience-guide"></a>Explorar la guía de la experiencia
 ¿Listo para aprender a crear, implementar y utilizar su propio punto de conexión JEA?
 
 Esta guía incluye una rápida introducción con un punto de conexión de JEA predefinido para que se haga una idea de cómo es la experiencia del usuario final y, después, describe el proceso de crear un punto de conexión desde cero para demostrar conceptos como las configuraciones de sesión y las funcionalidades de rol.
@@ -81,17 +79,11 @@ Descubra cómo auditar e informar sobre todas las acciones y la infraestructura 
   -  [Consideraciones al limitar comandos](considerations-when-limiting-commands.md)  
   -  [Dificultades comunes de las funcionalidades de rol](common-role-capability-pitfalls.md)
 
-## Empiece a crear sus propios puntos de conexión de JEA
+## <a name="start-authoring-your-own-jea-endpoints"></a>Empiece a crear sus propios puntos de conexión de JEA
 Es fácil crear un punto de conexión de JEA: lo único que necesita es un sistema habilitado para JEA y un editor de texto (como PowerShell ISE).
 Se recomienda que, para empezar, cree archivos esqueleto mediante [`New-PSRoleCapabilityFile -Path <path>`](https://technet.microsoft.com/library/mt631422.aspx)y [`New-PSSessionConfigurationFile -Path <Path>`](https://technet.microsoft.com/library/mt631422.aspx) sin ningún otro argumento.
 Estos archivos esqueleto contienen todos los campos de configuración aplicables, junto con comentarios útiles que explican para qué puede usarse cada campo.
 
 Para facilitar la creación de puntos de conexión de JEA, consulte el [JEA Toolkit Helper](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx) (Asistente para el kit de herramientas de JEA), que proporciona una GUI con la que puede crear archivos de configuración de sesión y funcionalidad de rol.
 Incluso permite generar funcionalidades de rol basadas en los registros de PowerShell para que tome como punto de partida los comandos que los usuarios ejecutan habitualmente para realizar su trabajo.
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 
