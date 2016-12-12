@@ -9,13 +9,11 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_unlist_items
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 95e0bb58eb110a9060615e409cb55fa9231d505f
-
+ms.openlocfilehash: ede07cce7b65b795f48d16cb2862880f84c3eda2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Ocultar elementos
+# <a name="unlisting-items"></a>Ocultar elementos
 
 **¿Por qué no se ofrece como opción la acción de quitar un elemento de la Galería de PowerShell?**
 
@@ -41,11 +39,5 @@ Los escenarios de eliminación válidos son los siguientes:
 - El elemento contiene información confidencial.
 
 Para enviar una solicitud de eliminación de elemento a los administradores de la Galería de PowerShell, visite la página de detalles del elemento y seleccione Ponerse en contacto con soporte técnico.  
-
-
-
-
-
-<!--HONumber=Oct16_HO2-->
 
 

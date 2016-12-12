@@ -1,4 +1,4 @@
-# Extraer y analizar objetos estructurados fuera de la cadena
+# <a name="extract-and-parse-structured-objects-out-of-string"></a>Extraer y analizar objetos estructurados fuera de la cadena
 También presenta algunas funciones adicionales para el cmdlet ConvertFrom-String:
 
 -   Quita la propiedad ExtentText de forma predeterminada. Se puede incluir con el parámetro -IncludeExtent.
@@ -8,7 +8,7 @@ También presenta algunas funciones adicionales para el cmdlet ConvertFrom-Strin
 -   Un nuevo parámetro -UpdateTemplate para guardar los resultados del algoritmo de aprendizaje en un comentario en el archivo de plantilla. Esto convierte el proceso de aprendizaje (la fase más lenta) en un costo puntual. La ejecución de Convert-String con una plantilla que contenga el algoritmo de aprendizaje codificado es ahora casi instantánea.
 
 
-Extraer y analizar objetos estructurados fuera del contenido de la cadena
+<a name="extract-and-parse-structured-objects-out-of-string-content"></a>Extraer y analizar objetos estructurados fuera del contenido de la cadena
 ----------------------------------------------------------
 
 En colaboración con [Microsoft Research](http://research.microsoft.com/), se ha agregado un nuevo cmdlet **ConvertFrom-String**.
@@ -79,10 +79,5 @@ De este conjunto de ejemplos, **ConvertFrom-String** puede ahora extraer automá
 > ----------                     ----               ----     -----
 > Ana Trujillo...                Ana Trujillo       Redmond  WA Antonio Moreno...              Antonio Moreno     Renton   WA Thomas Hardy...                Thomas Hardy       Seattle  WA Christina Berglund...          Christina Berglund Redmond  WA Hanna Moos...                  Hanna Moos         Puyallup WA
 
-Para manipular datos adicionales en el texto extraído, la propiedad **ExtentText** captura el texto sin formato del que se extrajo el registro. Para proporcionar comentarios sobre esta característica o compartir contenido del que le resulta dificil escribir ejemplos, envíe un correo electrónico a <psdmfb@microsoft.com>.
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+Para manipular datos adicionales en el texto extraído, la propiedad **ExtentText** captura el texto sin formato del que se extrajo el registro. Para proporcionar comentarios sobre esta característica o compartir el contenido que presenta dificultades para escribir ejemplos, envíe un correo electrónico a <psdmfb@microsoft.com>.
 

@@ -7,18 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: c915ebd021ed20209bc491505d45cff2ac89f21d
 ms.openlocfilehash: cbc499f293aad941d40fcb720ef53e832c3b1ea8
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-
-# Método ResourceSet de la clase MSFT_DSCLocalConfigurationManager
+# <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método ResourceSet de la clase MSFT_DSCLocalConfigurationManager
 
 Llama directamente al método **Set** de un recurso de DSC.
 
-Sintaxis
+<a name="syntax"></a>Sintaxis
 ------
 
 ```mof
@@ -30,7 +27,7 @@ uint32 ResourceSet(
 );
 ```
 
-Parámetros
+<a name="parameters"></a>Parámetros
 ----------
 
 *ResourceType* \[in\]  
@@ -45,23 +42,23 @@ Especifica el nombre de la propiedad del recurso y su valor en una tabla hash co
 *RebootRequired* \[out\]  
 En la devolución, esta propiedad se establece en **true** si el nodo de destino debe reiniciarse.
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 ------------
 
 Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código de error.
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 Se trata de un método estático.
 
-## Requisitos
+## <a name="requirements"></a>Requisitos
 ------------
 >**MOF:** DscCore.mof
 
 >**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
@@ -70,11 +67,5 @@ Se trata de un método estático.
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

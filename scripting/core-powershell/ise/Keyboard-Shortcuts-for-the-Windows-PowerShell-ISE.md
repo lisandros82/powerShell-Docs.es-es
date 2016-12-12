@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 942d85f8b49282bf888bfcdb55c353073c0e62f3
-
+ms.openlocfilehash: 3cf2d8cea6f99cbc3bd778138c730643bd021268
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Métodos abreviados de teclado para Windows PowerShell ISE
+# <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Métodos abreviados de teclado para Windows PowerShell ISE
 Use los siguientes métodos abreviados de teclado para realizar acciones en el Entorno de scripting integrado (ISE) de Windows PowerShell®. Windows PowerShell ISE está disponible como parte de los sistemas operativos Windows Server y cliente de Windows, pero también se puede instalar en algunos sistemas operativos anteriores de Windows como parte del [paquete de descarga de Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881).
 
-## Métodos abreviados de teclado para editar texto
+## <a name="keyboard-shortcuts-for-editing-text"></a>Métodos abreviados de teclado para editar texto
 Puede usar los siguientes métodos abreviados de teclado cuando edite texto.
 
 |Acción|Métodos abreviados de teclado.|Usar en|
@@ -38,12 +36,12 @@ Puede usar los siguientes métodos abreviados de teclado cuando edite texto.
 |**Mostrar fragmentos de código**|CTRL+J|Panel de scripts, Panel de comandos|
 |**Deshacer**|CTRL+Z|Panel de scripts, Panel de comandos|
 
-## Métodos abreviados de teclado para ejecutar scripts
+## <a name="keyboard-shortcuts-for-running-scripts"></a>Métodos abreviados de teclado para ejecutar scripts
 Puede usar los siguientes métodos abreviados de teclado cuando ejecute scripts en el panel de scripts.
 
 |Acción|Método abreviado de teclado|
 |----------|---------------------|
-|**New**|CTRL+N|
+|**Nuevo**|CTRL+N|
 |**Abrir**|CTRL+O|
 |**Ejecutar**|F5|
 |**Ejecutar selección**|F8|
@@ -51,7 +49,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando ejecute scripts 
 |**Tabulación** (para el siguiente script)|CTRL+TAB **Nota:** La pestaña para el siguiente script solo funciona si tiene una sola pestaña de Windows PowerShell abierta, o bien si tiene más de una abierta pero el foco está en el panel de scripts.|
 |**Tabulación** (para el script anterior)|CTRL+MAYÚS+TAB **Nota:** La pestaña para el script anterior solo funciona si tiene una sola pestaña de Windows PowerShell abierta, o bien si tiene más de una abierta pero el foco está en el panel de scripts.|
 
-## Métodos abreviados de teclado para personalizar la vista
+## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Métodos abreviados de teclado para personalizar la vista
 Puede usar los siguientes métodos abreviados de teclado cuando personalice la vista en Windows PowerShell ISE. Son accesibles desde todos los paneles de la aplicación.
 
 |Acción|Método abreviado de teclado|
@@ -59,7 +57,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando personalice la v
 |**Ir al panel de comandos (v2) o el panel de consola (v3 y versiones posteriores)**|CTRL+D|
 |**Ir al panel de salida (solo v2)**|CTRL+MAYÚS+O|
 |**Ir al panel de scripts**|CTRL+I|
-|**Ir al panel de scripts**|CTRL+R|
+|**Mostrar el panel de scripts**|CTRL+R|
 |**Ocultar el panel de scripts**|CTRL+R|
 |**Subir el panel de scripts**|CTRL+1|
 |**Mover el panel de scripts a la derecha**|CTRL+2|
@@ -67,7 +65,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando personalice la v
 |**Acercar**|CTRL+SIGNO MÁS|
 |**Alejar**|CTRL+SIGNO MENOS|
 
-## Métodos abreviados de teclado para depurar scripts
+## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Métodos abreviados de teclado para depurar scripts
 Puede usar los siguientes métodos abreviados de teclado cuando depure scripts.
 
 |Acción|Método abreviado de teclado|Usar en|
@@ -97,7 +95,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando depure scripts.
 |**Enumerar el script**|L|Panel de consola, al depurar un script|
 |**Mostrar los comandos de depuración de la consola**|H o ?|Panel de consola, al depurar un script|
 
-## Métodos abreviados de teclado para las pestañas de Windows PowerShell
+## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Métodos abreviados de teclado para las pestañas de Windows PowerShell
 Puede usar los siguientes métodos abreviados de teclado cuando use las pestañas de Windows PowerShell.
 
 |Acción|Método abreviado de teclado|
@@ -107,7 +105,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando use las pestaña
 |**Pestaña de PowerShell anterior**|CTRL+MAYÚS+TAB Este método abreviado solo funciona si no hay archivos abiertos en ninguna pestaña de Windows PowerShell.|
 |**Pestaña de Windows PowerShell siguiente**|CTRL+TAB Este método abreviado solo funciona si no hay archivos abiertos en ninguna pestaña de Windows PowerShell.|
 
-## Métodos abreviados de teclado para iniciar y salir
+## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Métodos abreviados de teclado para iniciar y salir
 Puede usar los siguientes métodos abreviados de teclado para iniciar la consola de Windows PowerShell (PowerShell.exe) o para salir de Windows PowerShell ISE.
 
 |Acción|Método abreviado de teclado|
@@ -115,12 +113,6 @@ Puede usar los siguientes métodos abreviados de teclado para iniciar la consola
 |**Salir**|ALT+F4|
 |**Iniciar PowerShell.exe** (consola de Windows PowerShell)|CTRL+MAYÚS+P|
 
-## Véase también
-- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts (Lista completa de métodos abreviados de teclado de Windows PowerShell ISE)](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
+## <a name="see-also"></a>Véase también
+- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/) (Lista completa de métodos abreviados de teclado de Windows PowerShell ISE)
 

@@ -1,5 +1,5 @@
-# Generar cmdlets de PowerShell basados en el punto de conexión de OData
-Generar cmdlets de Windows PowerShell basados en el punto de conexión de OData
+# <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>Generar cmdlets de PowerShell basados en el punto de conexión de OData
+<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Generar cmdlets de Windows PowerShell basados en el punto de conexión de OData
 --------------------------------------------------------------
 
 **Export-ODataEndpointProxy** es un cmdlet que genera un conjunto de cmdlets de Windows PowerShell basados en la funcionalidad expuesta por un punto de conexión de OData determinado.
@@ -40,7 +40,7 @@ Todavía hay partes de casos de uso clave en el desarrollo de esta funcionalidad
 -   Asociaciones
 -   Flujos de paso
 
-Generar cmdlets de Windows PowerShell basados en un punto de conexión de OData con ODataUtils
+<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>Generar cmdlets de Windows PowerShell basados en un punto de conexión de OData con ODataUtils
 ------------------------------------------------------------------------------
 El módulo ODataUtils permite la generación de cmdlets de Windows PowerShell desde los puntos de conexión de REST que admiten OData. Las siguientes mejoras incrementales se incluyen en el módulo Microsoft.PowerShell.ODataUtils de Windows PowerShell.
 -   Canalización de información adicional del punto de conexión del lado servidor al lado cliente.
@@ -98,8 +98,3 @@ El cmdlet Export-ODataEndpointProxy y los cmdlets de proxy que este genera admit
 
 Export-ODataEndpointProxy -Uri $endPointUri -OutputModule $generatedProxyModuleDir -Force -AllowUnSecureConnection -Verbose -Headers @{'subscription-key'='XXXX'}
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
-
+ms.openlocfilehash: e22fa0d8712321e8b0f61b849d46c0c610049c86
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  Solución de problemas de acceso en Windows PowerShell Web Access
+#  <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Solución de problemas de acceso en Windows PowerShell Web Access
 
 Actualizado: 24 de junio de 2013
 
@@ -69,7 +67,7 @@ En la siguiente tabla, se identifican algunos problemas comunes que pueden exper
 </tr>
 <tr class="odd">
 <td><p>Error al conectarse a un equipo de grupo de trabajo remoto</p></td>
-<td><p>Si el equipo de destino es miembro de un grupo de trabajo, use la siguiente sintaxis para especificar su nombre de usuario e iniciar sesión en el equipo: &lt;<em>NombreDeGrupoDeTrabajo</em>&gt;\&lt;<em>NombreDeUsuario</em>&gt;</p></td>
+<td><p>Si el equipo de destino es miembro de un grupo de trabajo, use la siguiente sintaxis para especificar su nombre de usuario e iniciar sesión en el equipo: &lt;<em>nombre_grupo_de_trabajo</em>&gt;\&It;<em>nombre_de_usuario</em>&gt;</p></td>
 </tr>
 <tr class="even">
 <td><p>No se encuentran las herramientas de administración de Servidor web (IIS) (aún cuando está instalado el rol)</p></td>
@@ -106,7 +104,7 @@ En la siguiente tabla, se identifican algunos problemas comunes que pueden exper
 <td><p><em>Nombre_servidor</em>\<em>nombre_usuario</em>, Localhost\<em>nombre_usuario</em> o .\<em>nombre_usuario</em></p></td>
 <td><p><em>Nombre_servidor</em>\<em>grupo_usuarios</em>, Localhost\<em>grupo_usuarios</em> o .\<em>grupo_usuarios</em></p></td>
 <td><p>Nombre completo del servidor de puerta de enlace o localhost</p></td>
-<td><p><em>Nombre_servidor</em>\<em>grupo_equipos</em>, Localhost\<em>grupo_equipos</em> o .\<em>grupo_equipos</em></p></td>
+<td><p><em>Nombre_servidor</em>\<em>grupo_equipos</em>, Localhost\<em>grupo_equipos</em> o .<em>\grupo_equipos</em></p></td>
 </tr>
 <tr class="even">
 <td><p>El servidor de puerta de enlace se encuentra en un grupo de trabajo</p></td>
@@ -136,7 +134,7 @@ En la siguiente tabla, se identifican algunos problemas comunes que pueden exper
 </tbody>
 </table>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Véase también</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Vea también</span></a>
 <a href="/en-us/library/dn282395(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -160,7 +158,7 @@ Sí No
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> Comentarios del sitio</a> Comentarios del sitio
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span>Comentarios del sitio</a> Comentarios del sitio
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -193,10 +191,4 @@ Más información
 
 Los scripts y el código de terceros vinculados a este sitio web o a los que este hace referencia se le ofrecen a usted bajo licencia de las partes propietarias de dicho código, no de Microsoft. Consulte los términos de uso de Ajax CDN para ASP.NET en http://www.asp.net/ajaxlibrary/CDN.ashx.
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

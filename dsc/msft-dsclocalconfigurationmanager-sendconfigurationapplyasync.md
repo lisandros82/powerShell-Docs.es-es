@@ -7,18 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: c915ebd021ed20209bc491505d45cff2ac89f21d
 ms.openlocfilehash: 41177f2eb2bbcf2dddaf232141fb483efaaeeea5
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-
-# Método SendConfigurationApplyAsync de la clase MSFT_DSCLocalConfigurationManager
+# <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método SendConfigurationApplyAsync de la clase MSFT_DSCLocalConfigurationManager
 
 Envía el documento de configuración de forma asincrónica al nodo administrado y usa el agente de configuración para aplicar la configuración.
 
-Sintaxis
+<a name="syntax"></a>Sintaxis
 ------
 
 ```mof
@@ -29,7 +26,7 @@ uint32 SendConfigurationApplyAsync(
 );
 ```
 
-Parámetros
+<a name="parameters"></a>Parámetros
 ----------
 
 *ConfigurationData* \[in\]  
@@ -41,23 +38,23 @@ Datos del entorno para la configuración.
 *jobId* \[in\]  
 Identificador del trabajo al que se enviará la configuración.
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 ------------
 
 Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código de error.
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 Se trata de un método estático.
 
-## Requisitos
+## <a name="requirements"></a>Requisitos
 ------------
 >**MOF:** DscCore.mof
 
 >**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
@@ -67,11 +64,5 @@ Se trata de un método estático.
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

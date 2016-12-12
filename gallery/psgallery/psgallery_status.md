@@ -9,26 +9,24 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_status
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 69df41ae0a9dfd9fb71655cf6334f60f1d39ae94
-
+ms.openlocfilehash: 2e9eed63e0cc6fbf66543ea528581c2728e999c7
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-Estado de la Galería de PowerShell
+<a name="powershell-gallery-status"></a>Estado de la Galería de PowerShell
 =========================
 
 
-## 10/8/2016 - Resuelto: no se pueden enviar correos electrónicos a cgadmin@microsoft.com
+## <a name="8102016---resolved-unable-to-send-emails-to-cgadminmicrosoftcom"></a>10/8/2016 - Resuelto: no se pueden enviar correos electrónicos a cgadmin@microsoft.com
 
-__Resumen del impacto__: entre los días 5/8/2016 y 10/8/2016, los clientes no pudieron enviar correos electrónicos a cgadmin@microsoft.com ni usar la característica Póngase en contacto con nosotros.  
+__Resumen del impacto__: entre los días 5/8/2016 y 10/8/2016, los clientes no pudieron enviar correos electrónicos a cgadmin@microsoft.com, ni usar la característica Póngase en contacto con nosotros.  
 __Causa principal__: los ingenieros identificaron que la causa era un cambio de configuración de la cuenta de correo electrónico.  
 __Resolución__: los ingenieros trabajaron para resolver el problema de configuración.  
 __Pasos siguientes__: si ha usado el vínculo Póngase en contacto con nosotros o ha enviado un correo a cgadmin@microsoft.com durante este tiempo y no hemos respondido, vuelva a intentarlo. Gracias por su paciencia.
 
 
 
-## 13/7/2016 - Error al descargar elementos
+## <a name="7132016---download-items-failed"></a>13/7/2016 - Error al descargar elementos
 
 __Resumen del impacto__: entre los días 11/7/2016 y 13/7/2016, un subconjunto de clientes experimentó problemas al descargar elementos de la Galería de PowerShell. Probablemente, el problema se manifestó en el siguiente mensaje de error que se ha devuelto de Install-Module/Install-Script y Save-Module/Save-Script:
 
@@ -48,7 +46,7 @@ __Mitigación__: los ingenieros han deshabilitado Azure CDN en la Galería de Po
 __Pasos siguientes__: investigar la causa principal subyacente y desarrollar una solución para evitar incidencias futuras.
 
 
-## 19/5/2016 - Error al descargar elementos
+## <a name="5192016---download-items-failed"></a>19/5/2016 - Error al descargar elementos
 __Resumen del impacto__: entre los días 17/5/2016 y 19/5/2016, un subconjunto de clientes experimentó problemas al descargar elementos de la Galería de PowerShell. Probablemente, el problema se manifestó en el siguiente mensaje de error que se ha devuelto de Install-Module/Install-Script y Save-Module/Save-Script:
 
 ```PowerShell
@@ -75,10 +73,4 @@ Microsoft.PowerShell.PackageManagement.Cmdlets.SavePackage
 __Causa principal preliminar__: los ingenieros identificaron una interrupción en el proveedor subyacente de Azure Content Deliver Network (CDN), que se implementó en la Galería de PowerShell el 17/5/2016.  
 __Mitigación__: los ingenieros han deshabilitado Azure CDN en la Galería de PowerShell.  
 __Pasos siguientes__: investigar la causa principal subyacente y desarrollar una solución para evitar incidencias futuras.
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

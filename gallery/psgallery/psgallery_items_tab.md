@@ -9,13 +9,11 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_items_tab
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 6edf1451cb869f0b9400b353b3143c99c3568382
-
+ms.openlocfilehash: 32f28df7318472f34f79c61f19f33016cf73f517
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-Pestaña Elementos
+<a name="items-tab"></a>Pestaña Elementos
 ==========
 
 La pestaña Elementos muestra todos los elementos disponibles en la Galería de PowerShell.
@@ -26,7 +24,7 @@ Para obtener más información sobre un elemento determinado, haga clic en el el
 
 Hay varias maneras de ordenar los elementos:
 
-##Filtrar por##
+##<a name="filter-by"></a>Filtrar por##
 La sección Filtrar por permite a los usuarios filtrar los resultados por:
 * Tipo de elemento:
     * Módulos
@@ -41,20 +39,14 @@ Nota: Los filtros son inclusivos.
 Por ejemplo, un elemento que contenga cmdlets y funciones aparecerá si se activa Cmdlet o Función (o ambos).  Si no se selecciona ninguna opción, el elemento no aparecerá.  
 Del mismo modo, si se seleccionan todas las categorías, solo aparecerán los elementos que contengan alguna de esas categorías. **No aparecerán los elementos que no pertenezcan a ninguna de esas categorías.**
 
-##Ordenar por## 
+##<a name="sort-by"></a>Ordenar por## 
 La lista desplegable Ordenar por permite a los usuarios ordenar los resultados según los criterios siguientes:
 * Popularidad: la popularidad está determinada por el número de descargas.
 * A-Z: alfabéticamente según el nombre de elemento.
 * Reciente: los elementos aparecen ordenados por fecha de publicación.
 
 
-##Cuadro de búsqueda##
+##<a name="search-box"></a>Cuadro de búsqueda##
 El cuadro de búsqueda permite a los usuarios buscar elementos por palabras clave.  
 Consulte [Search Syntax](./psgallery_search_syntax.md) (Sintaxis de búsqueda) para obtener más información.
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

@@ -13,8 +13,3 @@
 ###  [Acerca de la lista negra](on-blacklisting.md)  
 ###  [Consideraciones al limitar comandos](considerations-when-limiting-commands.md)  
 ###  [Dificultades comunes de las funcionalidades de rol](common-role-capability-pitfalls.md)
-
-
-<!--HONumber=Aug16_HO3-->
-
-

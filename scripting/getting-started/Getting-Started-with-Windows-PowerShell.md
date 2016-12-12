@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: a031bad99e8aca1d7598f99e157723bf4360cf56
-
+ms.openlocfilehash: bb852b8d5cb5202568a80517074cc8ff6f40ea0f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Introducción a Windows PowerShell
+# <a name="getting-started-with-windows-powershell"></a>Introducción a Windows PowerShell
 Windows PowerShell es un shell de línea de comandos de Windows diseñado especialmente para los administradores del sistema. Windows PowerShell incluye un aviso interactivo y un entorno de scripting que puede usarse de forma independiente o conjunta.
 
 A diferencia de la mayoría de los shells, que aceptan y devuelven texto, Windows PowerShell se basa en .NET Framework Common Language Runtime (CLR) y .NET Framework, y acepta y devuelve objetos de .NET Framework. Este cambio fundamental en el entorno aporta herramientas y métodos completamente nuevos para la administración y configuración de Windows.
@@ -31,13 +29,7 @@ En este tema:
 
 -   [Instalación de Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 
--   [Iniciar Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
+-   [Inicio de Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
 
 -   [Preparativos para usar Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

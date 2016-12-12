@@ -1,4 +1,4 @@
-# Instrucciones de instalación
+# <a name="installation-instructions"></a>Instrucciones de instalación
 
 Descargue el paquete correcto para su sistema operativo y arquitectura:
 
@@ -39,10 +39,5 @@ Asegúrese de que se cumplen los requisitos previos siguientes:
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) está instalado.
 
 *Dependencia de WinRM:* la configuración de estado deseado (DSC) de Windows PowerShell depende de WinRM. WinRM no está habilitado de forma predeterminada en Windows Server 2008 R2 y Windows 7. Para habilitar WinRM, en una sesión de Windows PowerShell con permisos elevados, ejecute **Set-WSManQuickConfig**.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

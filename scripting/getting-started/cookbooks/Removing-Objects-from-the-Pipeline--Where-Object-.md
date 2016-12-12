@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 94117fcf337ecf550d6df1d167e608ba64582c03
-
+ms.openlocfilehash: f616fbbc073c5e8870d7c8c55d6d2eb40fd3957c
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Quitar objetos de la canalización (Where-Object)
+# <a name="removing-objects-from-the-pipeline-where-object"></a>Quitar objetos de la canalización (Where-Object)
 En Windows PowerShell, se suelen generar y pasar más objetos de los deseados a una canalización. Puede especificar las propiedades de los objetos concretos que quiere que se muestren mediante los cmdlets **Format**, pero esto no ayuda a resolver el problema de eliminación de objetos completos de la presentación. Es posible que quiera filtrar objetos antes del final de una canalización, para poder realizar acciones solo en un subconjunto de los objetos generados inicialmente.
 
 Windows PowerShell incluye un cmdlet **Where-Object** que permite probar cada objeto de la canalización y pasarlo solo a la canalización si cumple una condición de prueba determinada. Los objetos que no pasan la prueba se quitan de la canalización. Debe indicar la condición de prueba como el valor del parámetro **Where-ObjectFilterScript**.
 
-### Realizar pruebas simples con Where-Object
+### <a name="performing-simple-tests-with-where-object"></a>Realizar pruebas simples con Where-Object
 El valor de **FilterScript** es un *bloque de script*; es decir, uno o más comandos de Windows PowerShell entre llaves ({}), que se evalúa como true o false. Estos bloques de script pueden ser muy simples, pero su creación requiere el conocimiento de otro concepto de Windows PowerShell: los operadores de comparación. Un operador de comparación compara los elementos que aparecen en cada uno de sus lados. Los operadores de comparación comienzan con un carácter '-' seguido de un nombre. Los operadores de comparación básicos funcionan en casi todos los tipos de objeto. Es posible que los operadores de comparación más avanzados solo funcionen en texto o matrices.
 
 > [!NOTE]
@@ -48,7 +46,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 2
 ```
 
-### Filtrar por las propiedades de objeto
+### <a name="filtering-based-on-object-properties"></a>Filtrar por las propiedades de objeto
 Dado que $_ hace referencia al objeto de canalización actual, podemos acceder a sus propiedades para nuestras pruebas.
 
 Por ejemplo, podemos observar la clase Win32_SystemDriver en WMI. Puede haber cientos de controladores del sistema en un determinado sistema, pero puede que solo esté interesado en un conjunto concreto de estos controladores, como, por ejemplo, aquellos que se están ejecutando actualmente. Si usa Get-Member para ver los miembros de Win32_SystemDriver (**Get-WmiObject -Class Win32_SystemDriver | Get-Member -MemberType Property**), verá que la propiedad correspondiente es State y que tiene un valor "Running" cuando se ejecuta el controlador. Para filtrar los controladores del sistema seleccione solo los que se estén ejecutando. Para ello, escriba:
@@ -106,10 +104,4 @@ Los operadores lógicos estándar se muestran en la tabla siguiente.
 |-or|Lógico or; true si algún lado es true|(1 -eq 1) -or (1 -eq 2)|
 |-not|Lógico not; invierte true y false|-not (1 -eq 2)|
 |\!|Lógico not; invierte true y false|\!(1 -eq 2)|
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

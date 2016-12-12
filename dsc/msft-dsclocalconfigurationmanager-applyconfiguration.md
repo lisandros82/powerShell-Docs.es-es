@@ -7,20 +7,18 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 919438862ca9786447b690d2db10e905da0a7c42
 ms.openlocfilehash: 6f9c6a8851732574ac72bc4f3a3db1a73fbbecf2
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Método ApplyConfiguration de la clase MSFT_DSCLocalConfigurationManager
+# <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método ApplyConfiguration de la clase MSFT_DSCLocalConfigurationManager
 
 Usa el agente de configuración para aplicar la configuración que está pendiente. 
 
 Si no hay ninguna configuración pendiente, este método vuelve a aplicar la configuración actual.
 
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 ------
 
 ```mof
@@ -29,29 +27,29 @@ uint32 ApplyConfiguration(
 );
 ```
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 ----------
 
 *force* \[in\]  
 Si es **true**, se vuelve a aplicar la configuración actual, incluso si hay una configuración pendiente.
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 ------------
 
 Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código de error.
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 Se trata de un método estático.
 
-## Requisitos
+## <a name="requirements"></a>Requisitos
 ------------
 >**MOF:** DscCore.mof
 
 >**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
@@ -60,11 +58,5 @@ Se trata de un método estático.
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -8,13 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Active Directory de principio a fin
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 33e92c7fd6039a1e3f5f784470c7bd0e43a7f030
-ms.openlocfilehash: e7ea3957ce3bbd3ce0fc072a82cd108606f05614
-
+ms.openlocfilehash: 3108f5dad96ef54feb3cf559fae38812ed46849c
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# De un extremo a otro: Active Directory
+# <a name="end-to-end---active-directory"></a>De un extremo a otro: Active Directory
 Imagine que el ámbito de su programa ha aumentado.
 Ahora es responsable de agregar JEA a controladores de dominio para realizar acciones de Active Directory.
 El personal del departamento de soporte técnico va a usar JEA para desbloquear cuentas, restablecer contraseñas y otras acciones similares.
@@ -23,13 +21,13 @@ Debe exponer un conjunto de comandos completamente nuevo para un grupo diferente
 Además, tiene que exponer numerosos scripts existentes de Active Directory.
 Esta sección le guiará por el proceso de creación de una configuración de sesión y funcionalidad de rol para esta tarea.
 
-## Requisitos previos
+## <a name="prerequisites"></a>Requisitos previos
 Para seguir esta sección paso a paso, debe trabajar en un controlador de dominio.
 Si no tiene acceso al controlador de dominio, no se preocupe.
 Intente seguir los pasos trabajando en otro escenario o rol con el que esté familiarizado.
 Si quiere configurar rápidamente un nuevo controlador de dominio, consulte el apéndice [Creación de un controlador de dominio](.\creating-a-domain-controller.md).
 
-## Pasos para crear una nueva funcionalidad de rol y configuración de sesión
+## <a name="steps-to-make-a-new-role-capability-and-session-configuration"></a>Pasos para crear una nueva funcionalidad de rol y configuración de sesión
 
 La tarea de crear una nueva funcionalidad de rol puede parecer desalentadora al principio, pero puede dividirse en pasos bastante simples:
 
@@ -39,19 +37,19 @@ La tarea de crear una nueva funcionalidad de rol puede parecer desalentadora al 
 4.  Colocarlas en un archivo de funcionalidad de rol
 5.  Registrar una configuración de sesión que exponga esa funcionalidad de rol
 
-## Paso 1: identificar lo que se debe exponer
+## <a name="step-1-identify-what-needs-to-be-exposed"></a>Paso 1: identificar lo que se debe exponer
 Antes de crear una nueva funcionalidad de rol o configuración de sesión, debe identificar todas las acciones que los usuarios tendrán que realizar mediante el punto de conexión de JEA, así como la manera en que se llevarán a cabo a través de PowerShell.
 Esto implica llevar a cabo una extensa recopilación e investigación de requisitos.
 La manera en que realice este proceso dependerá de su organización y de sus objetivos.
 Es importante destacar que la recopilación y la investigación de los requisitos es una parte fundamental del proceso real.
 Este podría ser el paso más difícil del proceso de adopción de JEA.
 
-### Buscar recursos
+### <a name="find-resources"></a>Buscar recursos
 A continuación se indica una serie de recursos en línea que podría haber encontrado en su investigación para crear un punto de conexión de administración de Active Directory:
 -   [Introducción a Active Directory PowerShell](http://blogs.msdn.com/b/adpowershell/archive/2009/03/05/active-directory-powershell-overview.aspx)
--   [Guía de CMD a PowerShell para Active Directory](http://blogs.technet.com/b/ashleymcglone/archive/2013/01/02/free-download-cmd-to-powershell-guide-for-ad.aspx)
+-   [Guía de comandos de Powershell para Active Directory](http://blogs.technet.com/b/ashleymcglone/archive/2013/01/02/free-download-cmd-to-powershell-guide-for-ad.aspx)
 
-### Hacer una lista
+### <a name="make-a-list"></a>Hacer una lista
 A continuación se muestran diez acciones con las que trabajará en el resto de la sección.
 Tenga en cuenta que se trata básicamente de un ejemplo y que los requisitos de las organizaciones podrían ser diferentes:
 
@@ -66,7 +64,7 @@ Tenga en cuenta que se trata básicamente de un ejemplo y que los requisitos de 
 |Habilitar una cuenta de usuario                                          |`Enable-ADAccount`                                             |
 |Deshabilitar una cuenta de usuario                                         |`Disable-ADAccount`                                            |
 
-## Paso 2: restringir las tareas según sea necesario
+## <a name="step-2-restrict-tasks-as-necessary"></a>Paso 2: restringir las tareas según sea necesario
 
 Ahora que tiene la lista de acciones, debe considerar detenidamente las capacidades de cada comando.
 Hay dos razones importantes para hacerlo:
@@ -85,9 +83,9 @@ Después de revisar cada comando, decide restringir lo siguiente:
 
 1.  `Set-ADUser` solo se debe poder ejecutar con el parámetro -Title
 
-2.  `Add-ADGroupMember` y `Remove-ADGroupMember` solo deben funcionar con determinados grupos.
+2.  `Add-ADGroupMember` y `Remove-ADGroupMember` solo deben funcionar con determinados grupos
 
-### Paso 3: confirmar que las tareas funcionan con JEA
+### <a name="step-3-confirm-the-tasks-work-with-jea"></a>Paso 3: confirmar que las tareas funcionan con JEA
 En realidad, el uso de estos cmdlets podría no ser sencillo en el entorno de JEA restringido.
 JEA se ejecuta en el modo *NoLanguage* que, entre otras cosas, impide que los usuarios usen variables.
 Para asegurarse de que los usuarios finales tengan una experiencia sin problemas, es importante comprobar ciertas cosas.
@@ -116,7 +114,7 @@ Los scripts y las funciones que se exponen se ejecutan en un contexto sin restri
 Este enfoque simplifica la experiencia del usuario final, evita errores, reduce los conocimientos necesarios de PowerShell y reduce la exposición involuntaria de demasiadas funcionalidades.
 La única desventaja es el costo de crear y mantener la función.
 
-### Inciso: Agregar una función al módulo
+### <a name="aside-adding-a-function-to-your-module"></a>Inciso: Agregar una función al módulo
 Si adopta el segundo enfoque, tendrá que escribir una función de PowerShell denominada `Reset-ContosoUserPassword`.
 Esta función se encarga de todo lo que debe ocurrir cuando se restablece una contraseña de usuario.
 En su organización, esto podría obligarle a hacer cosas sofisticadas y complicadas.
@@ -162,7 +160,7 @@ Set-ADUser -Identity $Identity -ChangePasswordAtLogon
 ```
 Ahora, los usuarios pueden llamar simplemente a `Reset-ContosoUserPassword` y no tienen que recordar la sintaxis para crear una cadena segura de insertada.
 
-## Paso 4: editar el archivo de funcionalidad de rol
+## <a name="step-4-edit-the-role-capability-file"></a>Paso 4: editar el archivo de funcionalidad de rol
 En la sección [Creación de funcionalidades de rol](./role-capabilities.md#role-capability-creation), creó un archivo de funcionalidad de rol en blanco.
 En esta sección, rellenará los valores de ese archivo.
 
@@ -199,7 +197,7 @@ Podría tener que mostrar explícitamente los nombres de los módulos en el camp
 3.  ValidatePattern permite usar una expresión regular para restringir los argumentos del parámetro si no resulta sencillo definir un conjunto de valores permitidos.
 No puede definir ValidatePattern y ValidateSet para un solo parámetro.
 
-## Paso 5: registrar una nueva configuración de sesión
+## <a name="step-5-register-a-new-session-configuration"></a>Paso 5: registrar una nueva configuración de sesión
 A continuación, creará un nuevo archivo de configuración de sesión que expondrá la funcionalidad de rol a los miembros del grupo "JEA_NonAdmin_HelpDesk" de AD.
 
 Primero cree y abra un nuevo archivo de configuración de sesión en blanco en PowerShell ISE.
@@ -229,7 +227,7 @@ Guarde y registre la configuración de sesión.
 ```PowerShell
 Register-PSSessionConfiguration -Name ADHelpDesk -Path "$env:ProgramData\JEAConfiguration\HelpDeskDemo.pssc"
 ```
-## Pruébela
+## <a name="test-it-out"></a>Pruébela
 Obtenga las credenciales de usuario sin privilegios de administrador:
 ```PowerShell
 $HelpDeskCred = Get-Credential
@@ -259,7 +257,7 @@ Salga de la sesión:
 ```PowerShell
 Exit-PSSession
 ```
-## Conceptos clave
+## <a name="key-concepts"></a>Conceptos clave
 **Modo NoLanguage**: cuando PowerShell está en modo "NoLanguage", los usuarios solo pueden ejecutar comandos; no pueden usar elementos del lenguaje.
 Para más información, vea `Get-Help about_Language_Modes`.
 
@@ -269,10 +267,4 @@ Para más información, vea `Get-Help about_Functions`.
 **ValidateSet/ValidatePattern**: al exponer un comando, puede restringir los argumentos válidos para parámetros específicos.
 ValidateSet es una lista específica de argumentos válidos.
 ValidatePattern es una expresión regular con la que deben coincidir los argumentos de ese parámetro.
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

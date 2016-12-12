@@ -8,24 +8,22 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "creación de un controlador de dominio"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: d4a72a7c5883b1d3ba8de3dbc9cfe016a6fb3498
-ms.openlocfilehash: 8473eb668e4da5bab01c2f2b7647cbced413bd22
-
+ms.openlocfilehash: 80b957ed666ca626c6083041cf99c263e2e0dc27
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-### Creación de un controlador de dominio
+### <a name="creating-a-domain-controller"></a>Creación de un controlador de dominio
 
 Este documento da por supuesto que la máquina está unida al dominio.
 Si actualmente no tiene un dominio al que unirse, esta sección puede ayudarle a crear rápidamente un controlador de dominio con DSC.
 
-#### Requisitos previos
+#### <a name="prerequisites"></a>Requisitos previos
 
 1.  La máquina se encuentra en una red interna.
 2.  La máquina no está unida a un dominio existente.
 3.  La máquina ejecuta Windows Server 2016 o tiene instalado WMF 5.0.
 
-#### Instalación de xActiveDirectory
+#### <a name="install-xactivedirectory"></a>Instalación de xActiveDirectory
 Si la máquina tiene una conexión a Internet activa, ejecute el comando siguiente en una ventana de PowerShell con privilegios elevados:
 ```PowerShell
 Install-Module xActiveDirectory -Force
@@ -37,7 +35,7 @@ Para confirmar que la instalación se ha realizado correctamente, ejecute el com
 Get-Module xActiveDirectory -ListAvailable
 ```
 
-#### Configurar un dominio con DSC
+#### <a name="set-up-a-domain-with-dsc"></a>Configurar un dominio con DSC
 Copie el script siguiente en PowerShell para hacer que la máquina sea el controlador de dominio de un dominio nuevo.
 **NOTA DEL AUTOR: HAY UN PROBLEMA CONOCIDO CON LAS CREDENCIALES PROPORCIONADAS SI NO SE USAN.  PARA QUE SEAN SEGURAS, NO OLVIDE LA CONTRASEÑA DE ADMINISTRADOR LOCAL.**
 
@@ -115,7 +113,7 @@ Start-DSCConfiguration -path .\DomainController -ComputerName $env:Computername 
 La máquina se reiniciará varias veces.
 Sabrá que el proceso se ha completado cuando vea un archivo denominado "C:\temp.txt" con el texto "Domain has been created" (Se ha creado el dominio).
 
-#### Configurar usuarios y grupos
+#### <a name="set-up-users-and-groups"></a>Configurar usuarios y grupos
 Los comandos siguientes configurarán un grupo de operadores y departamento de soporte técnico en su dominio y un usuario correspondiente sin privilegios de administrador que es miembro de ese grupo.
 ```PowerShell
 # Make Groups
@@ -134,10 +132,4 @@ Enable-ADAccount -Identity $HelpDeskUser
 Add-ADGroupMember -Identity $NonAdminOperatorGroup -Members $OperatorUser
 Add-ADGroupMember -Identity $NonAdminHelpDeskGroup -Members $HelpDeskUser
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

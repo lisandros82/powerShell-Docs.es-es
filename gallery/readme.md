@@ -1,12 +1,12 @@
-# Galería de PowerShell
+# <a name="the-powershell-gallery"></a>Galería de PowerShell
 
 La Galería de PowerShell es el repositorio central del contenido de PowerShell. En la Galería encontrará nuevos comandos de PowerShell o recursos de configuración de estado deseado (DSC).
 
-# Información general de PowerShellGet
+# <a name="powershellget-overview"></a>Información general de PowerShellGet
 
 El módulo PowerShellGet contiene cmdlets para detectar, instalar, actualizar y publicar los artefactos de PowerShell como módulos, recursos de DSC, funcionalidades de rol y scripts desde https://www.PowerShellGallery.com y otros repositorios privados.
 
-## Introducción a la Galería
+## <a name="getting-started-with-the-gallery"></a>Introducción a la Galería
 
 Para instalar elementos desde la Galería se requiere la versión más reciente del módulo PowerShellGet, que está disponible en Windows 10, en Windows Management Framework (WMF) 5.0 o en el programa de instalación basado en MSI (para PowerShell 3 y 4).
 
@@ -24,7 +24,7 @@ Con la última versión del módulo [PowerShellGet](http://go.microsoft.com/fwli
 
 Consulte la página [Introducción](psgallery/psgallery_gettingstarted.md) para obtener más información sobre el uso de comandos PowerShellGet con la Galería. También puede ejecutar *Update-Help -Module PowerShellGet* para instalar la Ayuda local para estos comandos.
 
-## Sistemas operativos compatibles
+## <a name="supported-operating-systems"></a>Sistemas operativos compatibles
 
 El módulo **PowerShellGet** requiere **PowerShell 3.0 o posterior**.
 
@@ -41,12 +41,7 @@ Por lo tanto, **PowerShellGet** requiere uno de los siguientes sistemas operativ
 **PowerShellGet** también requiere .NET Framework 4.5 o posterior. Puede instalar .NET Framework 4.5 o posterior desde [aquí](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx).
 
 
-## ¿Tiene alguna pregunta? ¿Tiene comentarios?
+## <a name="got-a-question-have-feedback"></a>¿Tiene alguna pregunta? ¿Tiene comentarios?
 
 Encontrará más información sobre la Galería de PowerShell y PowerShellGet en la página [Introducción](psgallery/psgallery_gettingstarted.md). Proporcione comentarios e informe de problemas mediante [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 
