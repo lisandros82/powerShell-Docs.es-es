@@ -1,14 +1,15 @@
 ---
-title: "Instalación y uso de Windows PowerShell Web Access"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 0dd820a884f094e6aac520f504404139aebf13a0
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "Instalación y uso de Windows PowerShell Web Access"
+ms.technology: powershell
+ms.openlocfilehash: f2a908b670d1a0aba3ca0912aed0ff7e3c5bba1f
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 #  <a name="install-and-use-windows-powershell-web-access"></a>Instalación y uso de Windows PowerShell Web Access
@@ -93,9 +94,9 @@ Windows PowerShell Web Access admite los siguientes exploradores de Internet. Au
 
 ------------------------------------------------------------------------
 
--   Windows Phone 7 y 7.5
+-   Windows Phone 7 y 7.5
 
--   Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
+-   Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 
 -   Apple Safari para sistema operativo iPhone 5.0.1
 
@@ -527,7 +528,7 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
 7.  En el campo **Tipo** del área **Enlace**, seleccione **https**.
 
-8.  Asigne al sitio web un número de puerto que no esté en uso por otro sitio o aplicación. Para encontrar puertos abiertos, puede ejecutar el comando **netstat** en una ventana del símbolo del sistema. El número de puerto predeterminado es 443.
+8.  Asigne al sitio web un número de puerto que no esté en uso por otro sitio o aplicación. Para encontrar puertos abiertos, puede ejecutar el comando **netstat** en una ventana del símbolo del sistema. El número de puerto predeterminado es 443.
 
     Cambie el puerto predeterminado si otro sitio web ya está usando el 443 o por algún otro motivo de seguridad. Si otro sitio web que se ejecuta en el servidor de puerta de enlace está usando el puerto seleccionado, se mostrará una advertencia cuando haga clic en **Aceptar** en el cuadro de diálogo **Agregar sitio web**. Debe usar un puerto que no esté en uso para ejecutar Windows PowerShell Web Access.
 

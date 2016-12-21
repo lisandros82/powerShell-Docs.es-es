@@ -1,15 +1,16 @@
 ---
-title: "Ayuda para la línea de comandos de PowerShell.exe"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "Ayuda para la línea de comandos de PowerShell.exe"
+ms.technology: powershell
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: f2a682671bb39de943fac47488e2a1c651423b53
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 609682294c344129f96afd0241116bb19154d19e
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="powershellexe-command-line-help"></a>Ayuda de línea de comandos de PowerShell.exe
@@ -55,7 +56,7 @@ Normalmente, los parámetros de modificador de un script se incluyen o se omiten
 
 En raras ocasiones, es posible que deba proporcionar un valor booleano para un parámetro de modificador. Para proporcionar un valor booleano para un parámetro de modificador en el valor del parámetro **File**, escriba el nombre y el valor de parámetro entre llaves, como en el ejemplo siguiente: `-File .\Get-Script.ps1 {-All:$False}`
 
-### <a name="-inputformat-text-xml"></a>-InputFormat {Text | XML}
+### <a name="-inputformat-text--xml"></a>-InputFormat {Text | XML}
 Describe el formato de los datos que se envían a Windows PowerShell. Los valores válidos son "Text" (cadenas de texto) o "XML" (formato CLIXML serializado).
 
 ### <a name="-mta"></a>-Mta
@@ -73,7 +74,7 @@ No presenta un aviso interactivo al usuario.
 ### <a name="-noprofile"></a>-NoProfile
 No carga el perfil de Windows PowerShell.
 
-### <a name="-outputformat-text-xml"></a>-OutputFormat {Text | XML}
+### <a name="-outputformat-text--xml"></a>-OutputFormat {Text | XML}
 Determina cómo se formatea la salida de Windows PowerShell. Los valores válidos son "Text" (cadenas de texto) o "XML" (formato CLIXML serializado).
 
 ### <a name="-psconsolefile-filepath"></a>-PSConsoleFile <FilePath>
