@@ -1,19 +1,20 @@
 ---
-title: Trabajar con archivos, carpetas y claves del Registro
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: Trabajar con archivos, carpetas y claves del Registro
+ms.technology: powershell
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: e049f49414a79b9de5c05100957ae4dba8d992ce
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 5d76098261c0288c83b4a27063ca36c23d606103
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Trabajar con archivos, carpetas y claves del Registro
-En Windows PowerShell se usa el término **Item** para hacer referencia a los elementos contenidos en una unidad de Windows PowerShell. Cuando se trabaja con el proveedor FileSystem de Windows PowerShell, un **Item** puede ser un archivo, una carpeta o la unidad de Windows PowerShell. Enumerar estos elementos y trabajar con ellos son tareas críticas básicas en la mayoría de las configuraciones administrativas, de modo que conviene abordar estas tareas en profundidad.
+En Windows PowerShell se usa el término **Item** para hacer referencia a los elementos contenidos en una unidad de Windows PowerShell. Cuando se trabaja con el proveedor FileSystem de Windows PowerShell, un **Item** puede ser un archivo, una carpeta o la unidad de Windows PowerShell. Enumerar estos elementos y trabajar con ellos son tareas críticas básicas en la mayoría de las configuraciones administrativas, de modo que conviene abordar estas tareas en profundidad.
 
 ### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Enumerar archivos, carpetas y claves del Registro (Get-ChildItem)
 Hacerse con una colección de elementos de una ubicación determinada es una tarea extremadamente común, por lo que el cmdlet **Get-ChildItem** está diseñado específicamente para devolver todos los elementos dentro de un contenedor, como, por ejemplo, una carpeta.
@@ -78,7 +79,7 @@ Este parámetro se llama Force porque permite anular a la fuerza el comportamien
 #### <a name="matching-item-names-with-wildcards"></a>Buscar nombres de elemento coincidentes con caracteres comodín
 **El comando Get-ChildItem** acepta caracteres comodín en la ruta de acceso de los elementos que se van a enumerar.
 
-Dado que las coincidencias con caracteres comodín se controla mediante el motor de Windows PowerShell, todos los cmdlets que acepten caracteres comodín usan la misma notación y tienen el mismo comportamiento de búsqueda de coincidencias. La notación de caracteres comodín de Windows PowerShell conlleva las siguientes reglas:
+Dado que las coincidencias con caracteres comodín se controla mediante el motor de Windows PowerShell, todos los cmdlets que acepten caracteres comodín usan la misma notación y tienen el mismo comportamiento de búsqueda de coincidencias. La notación de caracteres comodín de Windows PowerShell conlleva las siguientes reglas:
 
 -   El asterisco (\*) coincide con cero o más repeticiones de cualquier carácter.
 
@@ -119,7 +120,7 @@ Get-ChildItem -Path C:\Windows\[xz]*
 #### <a name="excluding-items--exclude"></a>Excluir elementos (-Exclude)
 Puede excluir elementos concretos con el parámetro **Exclude** de Get-ChildItem. Esto le permite realizar filtrados complejos en una sola instrucción.
 
-Por ejemplo, imaginemos que estamos buscando el archivo DLL del Servicio de hora de Windows en la carpeta System32, y todo lo que recuerda del nombre del archivo DLL es que comienza por "W" y contiene "32".
+Por ejemplo, imaginemos que estamos buscando el archivo DLL del Servicio de hora de Windows en la carpeta System32, y todo lo que recuerda del nombre del archivo DLL es que comienza por "W" y contiene "32".
 
 Con una expresión como **w\&#42;32\&#42;.dll**, se detectarán todos los archivos DLL que cumplan las condiciones, pero también se pueden devolver los archivos DLL de compatibilidad de Windows 95 y Windows de 16 bits que incluyan "95" o "16" en sus nombres. Puede omitir todos los archivos que contengan cualquiera de estos números en sus nombres, para lo que debe usar el parámetro **Exclude** con el patrón **\&#42;\[9516]\&&#42;**:
 
@@ -132,7 +133,7 @@ Se pueden usar varios de los parámetros del cmdlet **Get-ChildItem** en el mism
 PS> Get-ChildItem -Path C:\Windows\*.dll -Recurse -Exclude [a-y]*.dll
 ```
 
-No hay ningún resultado, a pesar de que hay dos archivos DLL que comienzan por la letra "z" en la carpeta de Windows.
+No hay ningún resultado, a pesar de que hay dos archivos DLL que comienzan por la letra "z" en la carpeta de Windows.
 
 No se devolvieron resultados porque hemos especificado el carácter comodín como parte de la ruta de acceso. Aunque el comando era recursivo, el cmdlet **Get-ChildItem** limitó los elementos a aquellos que están en la carpeta de Windows y cuyos nombres terminan en ".dll".
 

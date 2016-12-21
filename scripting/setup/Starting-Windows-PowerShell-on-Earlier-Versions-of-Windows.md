@@ -1,23 +1,24 @@
 ---
-title: Iniciar Windows PowerShell en versiones anteriores de Windows
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: Iniciar Windows PowerShell en versiones anteriores de Windows
+ms.technology: powershell
 ms.assetid: 57125436-3d1e-4e7f-b5c4-8f0ecb49d642
-ms.openlocfilehash: adadad15dfca9355e31c40d502571153b0112935
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: ac7cacef0b2ee9e17355db7f60e5050ddb76c986
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="starting-windows-powershell-on-earlier-versions-of-windows"></a>Iniciar Windows PowerShell en versiones anteriores de Windows
 En esta sección, se explica cómo iniciar Windows PowerShell y el Entorno de scripting integrado (ISE) de Windows PowerShell en Windows® 7, Windows Server® 2008 R2 y Windows Server® 2008. También se explica cómo habilitar la característica opcional para Windows PowerShell ISE de Windows PowerShell 2.0 en Windows Server® 2008 R2 y Windows Server® 2008.
 
-Para instalar Windows PowerShell 4.0 en sistemas compatibles, descargue e instale [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881). Para obtener más información, consulte [Instalar Windows PowerShell](Installing-Windows-PowerShell.md).
+Para instalar Windows PowerShell 4.0 en sistemas compatibles, descargue e instale [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881). Para obtener más información, consulte [Instalar Windows PowerShell](Installing-Windows-PowerShell.md).
 
-Para instalar Windows PowerShell 3.0 en sistemas compatibles, descargue e instale [Windows Management Framework 3.0](http://go.microsoft.com/fwlink/?LinkID=240290). Para obtener más información, consulte [Instalar Windows PowerShell](Installing-Windows-PowerShell.md).
+Para instalar Windows PowerShell 3.0 en sistemas compatibles, descargue e instale [Windows Management Framework 3.0](http://go.microsoft.com/fwlink/?LinkID=240290). Para obtener más información, consulte [Instalar Windows PowerShell](Installing-Windows-PowerShell.md).
 
 ## <a name="how-to-start-windows-powershell-on-earlier-versions-of-windows"></a>Iniciar Windows PowerShell en versiones anteriores de Windows
 Use cualquiera de los métodos siguientes para iniciar la versión instalada de Windows PowerShell 3.0 o Windows PowerShell 4.0, según corresponda.

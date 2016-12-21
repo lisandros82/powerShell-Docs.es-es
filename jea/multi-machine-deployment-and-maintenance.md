@@ -1,66 +1,15 @@
 ---
-description: 
-manager: dongill
+manager: carmonm
 ms.topic: article
-author: jpjofre
+author: rpsqrd
+ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2016-06-22
-title: "Implementación y mantenimiento de varias máquinas"
+ms.date: 2016-12-05
+title: Just Enough Administration
 ms.technology: powershell
-ms.openlocfilehash: 8117d0d12c062b460cb7117b54c138c8db5a1d0c
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+redirect_url: https://msdn.microsoft.com/powershell/jea/register-jea
+ms.openlocfilehash: fafd0317bd7bc208b962b3fbfb9b5054a6e15618
+ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
 translationtype: HT
 ---
-# <a name="multi-machine-deployment-and-maintenance"></a>Implementación y mantenimiento de varias máquinas
-En este momento, ha implementado JEA en sistemas locales varias veces.
-Dado que su entorno de producción probablemente esté formado por más de una máquina, es importante que siga los pasos fundamentales del proceso de implementación que deben repetirse en cada máquina.
-
-## <a name="high-level-steps"></a>Pasos de alto nivel:
-1.  Copie los módulos (con funcionalidades de rol) en cada nodo.
-2.  Copie los archivos de configuración de sesión en cada nodo.
-3.  Ejecute `Register-PSSessionConfiguration` con la configuración de sesión.
-4.  Conserve una copia de la configuración de sesión y de los kits de herramientas en una ubicación segura.
-Como realizará modificaciones, es conveniente tener un "origen único de verdad."
-
-## <a name="example-script"></a>Script de ejemplo
-A continuación se muestra un script de ejemplo para la implementación.
-Para usarlo en su entorno, deberá usar los nombres o las rutas de acceso de recursos compartidos de archivos y módulos reales.
-```PowerShell
-# First, copy the session configuration and modules (containing role capability files) onto a file share you have access to.
-Copy-Item -Path 'C:\Demo\Demo.pssc' -Destination '\\FileShare\JEA\Demo.pssc'
-Copy-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\SomeModule\' -Recurse -Destination '\\FileShare\JEA\SomeModule'
-
-# Next, author a setup script (C:\JEA\Deploy.ps1) to run on each individual node
-    # Contents of C:\JEA\Deploy.ps1
-    New-Item -ItemType Directory -Path C:\JEADeploy
-    Copy-Item -Path '\\FileShare\JEA\Demo.pssc' -Destination 'C:\JEADeploy\'
-    Copy-Item -Path '\\FileShare\JEA\SomeModule' -Recurse -Destination 'C:\Program Files\WindowsPowerShell\Modules' # Remember, Role Capability Files are found in modules
-    if (Get-PSSessionConfiguration -Name JEADemo -ErrorAction SilentlyContinue)
-    {
-        Unregister-PSSessionConfiguration -Name JEADemo -ErrorAction Stop
-    }
-
-    Register-PSSessionConfiguration -Name JEADemo -Path 'C:\JEADeploy\Demo.pssc'
-    Remove-Item -Path 'C:\JEADeploy' # Don't forget to clean up!
-
-# Now, invoke the script on all of the target machines.
-# Note: this requires PowerShell Remoting be enabled on each machine. Enabling PowerShell remoting is a requirement to use JEA as well.
-# You may need to provide the "-Credential" parameter if your current user account does not have admin permissions on these machines.
-Invoke-Command –ComputerName 'Node1', 'Node2', 'Node3', 'NodeN' -FilePath 'C:\JEA\Deploy.ps1'
-
-# Finally, delete the session configuration and role capability files from the file share.
-Remove-Item -Path '\\FileShare\JEA\Demo.pssc'
-Remove-Item -Path '\\FileShare\JEA\SomeModule' -Recurse
-```
-## <a name="modifying-capabilities"></a>Modificar funcionalidades
-Cuando se trabaja con varias máquinas, es importante que las modificaciones se implementen de forma coherente.
-Una vez que JEA tenga un recurso de DSC, podrá asegurarse más fácilmente de que el entorno esté sincronizado.
-Hasta ese momento, se recomienda que conserve una copia maestra de las configuraciones de sesión y que vuelva a implementarla cada vez que realice una modificación.
-
-## <a name="removing-capabilities"></a>Quitar funcionalidades
-Para quitar la configuración de JEA de sus sistemas, use el comando siguiente en cada máquina:
-```PowerShell
-Unregister-PSSessionConfiguration -Name JEADemo
-```
-

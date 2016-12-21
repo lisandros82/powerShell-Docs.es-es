@@ -1,14 +1,15 @@
 ---
-title: Uso de la consola de Windows PowerShell basada en web
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: a62e258812960ce59f050e59d2ef3acc296663a2
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: Uso de la consola de Windows PowerShell basada en web
+ms.technology: powershell
+ms.openlocfilehash: ea530d346ec36000da331b287f51d8f732947629
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 #  <a name="use-the-web-based-windows-powershell-console"></a>Uso de la consola de Windows PowerShell basada en web
@@ -58,9 +59,9 @@ Windows PowerShell Web Access admite los siguientes exploradores de Internet. Au
 
 ------------------------------------------------------------------------
 
--   Windows Phone 7 y 7.5
+-   Windows Phone 7 y 7.5
 
--   Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
+-   Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 
 -   Apple Safari para sistema operativo iPhone 5.0.1
 
@@ -303,7 +304,7 @@ La mayoría de las funcionalidades del host de Windows PowerShell están disponi
 
 -   Los usuarios que han iniciado sesión en una configuración de sesión **NoLanguage** o en un espacio de ejecución restringido en Windows PowerShell Web Access no pueden ejecutar el comando **Exit** para finalizar la sesión. Para cerrar sesión, los usuarios deben hacer clic en **Cerrar sesión** en la página de la consola.
 
--   <span class="label">Conexión simultánea a varios equipos de destino</span>   Si se está ejecutando el servidor de puerta de enlace de Windows Server 2012, Windows PowerShell Web Access solo permite una conexión de equipo remoto por sesión del explorador. No permite a los usuarios iniciar sesión una vez y conectarse a varios equipos remotos mediante pestañas del explorador independientes. Al abrir una nueva pestaña o ventana del explorador, Windows PowerShell Web Access le pedirá que desconecte su sesión actual e inicie una nueva sesión, para permitirle conectarse a un nuevo equipo remoto (o al mismo). No obstante, si desea iniciar sesión en dos o varias sesiones individuales en equipos remotos distintos, existe una característica de Internet Explorer que le permite crear una nueva sesión. Para iniciar una nueva sesión del explorador en Internet Explorer, presione **ALT**, abra el menú **Archivo** y luego seleccione **Nueva sesión**. Después, abra el sitio web de Windows PowerShell Web Access en una nueva sesión e inicie sesión para obtener acceso a otro equipo remoto.
+-   <span class="label">Conexión simultánea a varios equipos de destino</span>   Si se está ejecutando el servidor de puerta de enlace de Windows Server 2012, Windows PowerShell Web Access solo permite una conexión de equipo remoto por sesión del explorador. No permite a los usuarios iniciar sesión una vez y conectarse a varios equipos remotos mediante pestañas del explorador independientes. Al abrir una nueva pestaña o ventana del explorador, Windows PowerShell Web Access le pedirá que desconecte su sesión actual e inicie una nueva sesión, para permitirle conectarse a un nuevo equipo remoto (o al mismo). No obstante, si desea iniciar sesión en dos o varias sesiones individuales en equipos remotos distintos, existe una característica de Internet Explorer que le permite crear una nueva sesión. Para iniciar una nueva sesión del explorador en Internet Explorer, presione **ALT**, abra el menú **Archivo** y luego seleccione **Nueva sesión**. Después, abra el sitio web de Windows PowerShell Web Access en una nueva sesión e inicie sesión para obtener acceso a otro equipo remoto.
 
     Cuando la puerta de enlace de Windows PowerShell Web Access se está ejecutando en Windows Server 2012 R2, los usuarios pueden abrir varias conexiones a equipos remotos en pestañas diferentes del explorador. Si quiere abrir más de una conexión a un equipo remoto usando la consola de Windows PowerShell basada en web, póngase en contacto con su administrador de puerta de enlace de Windows PowerShell Web Access para ver si esta característica es compatible con el servidor de puerta de enlace.
 

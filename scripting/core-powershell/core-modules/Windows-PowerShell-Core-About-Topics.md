@@ -1,15 +1,16 @@
 ---
-title: Acerca de temas principales de Windows PowerShell
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: Acerca de temas principales de Windows PowerShell
+ms.technology: powershell
 ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
-ms.openlocfilehash: 5343cf633d74171037ed3cdc9fcaa04495f4aaf7
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 08f62a8e54e1342a01e76dafd02b745c59a1e3f8
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="windows-powershell-core-about-topics"></a>Acerca de temas principales de Windows PowerShell
@@ -132,7 +133,7 @@ Esta sección contiene los temas de Ayuda conceptual ("About") que se aplican a 
 |[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|Describe los cmdlets del módulo Microsoft.WsMan.Management. Explica cómo utilizarlos juntos para administrar las características de WS-Management, incluida la unidad del proveedor WSMan.|
 
 ## <a name="see-also"></a>Véase también
-- [Scripting con Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+- [Scripting con Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 - [Conceptos básicos de Windows PowerShell](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
 - [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
 - [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)

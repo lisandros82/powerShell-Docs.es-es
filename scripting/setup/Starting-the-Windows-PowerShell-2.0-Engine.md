@@ -1,15 +1,16 @@
 ---
-title: Iniciar el motor de Windows PowerShell 2.0
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: Iniciar el motor de Windows PowerShell 2.0
+ms.technology: powershell
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: dedd8c3192c777faac82cd87fd333fd5ab8a4ebf
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 4f388bc2e397d12b73718e6bc326bb448ed3ae16
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>Iniciar el motor de Windows PowerShell 2.0
@@ -54,7 +55,7 @@ Para más información sobre los archivos de configuración de sesión, vea [abo
 
     Cuando se inicia una sesión que usa la configuración de sesión, el motor de Windows PowerShell 2.0 se carga automáticamente en la sesión.
 
-    El comando siguiente inicia una sesión en el equipo Server01 que usa la configuración de sesión PS2. El comando guarda la sesión en la variable $s.
+    El comando siguiente inicia una sesión en el equipo Server01 que usa la configuración de sesión PS2. El comando guarda la sesión en la variable $s.
 
     ```
     $s = New-PSSession -ComputerName Server01 -ConfigurationName PS2

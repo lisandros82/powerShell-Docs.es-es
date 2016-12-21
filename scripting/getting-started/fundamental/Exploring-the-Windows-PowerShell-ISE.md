@@ -1,18 +1,19 @@
 ---
-title: Explorar Windows PowerShell ISE
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "Explorar Windows PowerShell ISE"
+ms.technology: powershell
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
-ms.openlocfilehash: 590996f2db730a7841eb7a85036e4f36e59e46ff
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 8d2c803386233390440972b66a6d616b58439a6b
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
-# <a name="exploring-the-windows-powershell-ise"></a>Explorar Windows PowerShell ISE
+# <a name="exploring-the-windows-powershell-ise"></a>Explorar Windows PowerShell ISE
 Puede usar el Entorno de scripting integrado (ISE) de Windows PowerShell® para crear, ejecutar y depurar scripts y comandos. Windows PowerShell ISE consta de la barra de menús, las pestañas de Windows PowerShell, la barra de herramientas, las pestañas de script, un panel de scripts, un panel de consola, una barra de estado, un control deslizante de tamaño de texto y la ayuda contextual.
 
 > [!NOTE]
@@ -24,7 +25,7 @@ La barra de menús contiene los menús **Archivo**, **Edición**, **Ver**, **Her
 > [!NOTE]
 > En Windows PowerShell ISE 2.0, no existían los menús **Herramientas** y **Complementos**.
 
-## <a name="windows-powershell-tabs"></a>Pestañas de Windows PowerShell
+## <a name="windows-powershell-tabs"></a>Pestañas de Windows PowerShell
 Una pestaña de Windows PowerShell es el entorno en el que se ejecuta un script de Windows PowerShell. Puede abrir nuevas pestañas de Windows PowerShell en Windows PowerShell ISE para crear entornos independientes en el equipo local o en equipos remotos. Puede tener un máximo de ocho pestañas de PowerShell abiertas de forma simultánea.
 
 ## <a name="toolbar"></a>Barra de herramientas

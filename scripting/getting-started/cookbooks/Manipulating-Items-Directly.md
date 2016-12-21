@@ -1,19 +1,20 @@
 ---
-title: Manipular elementos directamente
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: Manipular elementos directamente
+ms.technology: powershell
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: f462f195e1128cd67be8073fe0755b5158fee970
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: e99ea91b6e17ab898815480d615b23cbd29061d5
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="manipulating-items-directly"></a>Manipular elementos directamente
-Los elementos que se ven en las unidades de Windows PowerShell (como los archivos y carpetas en las unidades del sistema de archivos y las claves del Registro en las unidades de Registro de Windows PowerShell) se denominan *elementos* en Windows PowerShell. Los cmdlets que funcionan con los elementos contienen el término **Item** en sus nombres.
+Los elementos que se ven en las unidades de Windows PowerShell (como los archivos y carpetas en las unidades del sistema de archivos y las claves del Registro en las unidades de Registro de Windows PowerShell) se denominan *elementos* en Windows PowerShell. Los cmdlets que funcionan con los elementos contienen el término **Item** en sus nombres.
 
 La salida del comando **Get-Command -Noun Item** indica que hay nueve cmdlets de elemento en Windows PowerShell.
 
@@ -73,7 +74,7 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-Cuando escriba una ruta de acceso del Registro, no olvide incluir dos puntos (**:**) en los nombres de unidad de Windows PowerShell, HKLM: y HKCU:. Sin esos dos puntos, Windows PowerShell no reconoce el nombre de la unidad en la ruta de acceso.
+Cuando escriba una ruta de acceso del Registro, no olvide incluir dos puntos (**:**) en los nombres de unidad de Windows PowerShell, HKLM: y HKCU:. Sin esos dos puntos, Windows PowerShell no reconoce el nombre de la unidad en la ruta de acceso.
 
 ### <a name="why-registry-values-are-not-items"></a>¿Por qué valores del Registro no son elementos?
 Si usa el cmdlet **Get-ChildItem** para encontrar los elementos en una clave del Registro, nunca verá las entradas del Registro reales ni sus valores.
@@ -112,7 +113,7 @@ At line:1 char:12
 ### <a name="moving-items-move-item"></a>Mover elementos (Move-Item)
 Para mover un archivo o una carpeta, use el cmdlet **Move-Item**.
 
-Por ejemplo, el siguiente comando mueve el directorio New.Directory del directorio C:\\temp a la raíz de la unidad C:. Para confirmar que el elemento se ha movido, incluya el parámetro **PassThru** del cmdlet **Move-Item**. Sin **Passthru**, el cmdlet **Move-Item** no muestra ningún resultado.
+Por ejemplo, el siguiente comando mueve el directorio New.Directory del directorio C:\\temp a la raíz de la unidad C:. Para confirmar que el elemento se ha movido, incluya el parámetro **PassThru** del cmdlet **Move-Item**. Sin **Passthru**, el cmdlet **Move-Item** no muestra ningún resultado.
 
 ```
 PS> Move-Item -Path C:\temp\New.Directory -Destination C:\ -PassThru
@@ -127,7 +128,7 @@ d----        2006-05-18  12:14 PM            New.Directory
 ### <a name="copying-items-copy-item"></a>Copiar elementos (Copy-Item)
 Si está familiarizado con las operaciones de copia de otros shells, el comportamiento del cmdlet **Copy-Item** de Windows PowerShell le puede parecer inusual. Al copiar un elemento de una ubicación en otra, Copy-Item no copia el contenido de forma predeterminada.
 
-Por ejemplo, si copia el directorio **New.Directory** de la unidad C: en el directorio C:\\temp, el comando se ejecuta correctamente, pero los archivos del directorio New.Directory no se copian.
+Por ejemplo, si copia el directorio **New.Directory** de la unidad C: en el directorio C:\\temp, el comando se ejecuta correctamente, pero los archivos del directorio New.Directory no se copian.
 
 ```
 PS> Copy-Item -Path C:\New.Directory -Destination C:\temp
@@ -192,11 +193,11 @@ PS> Invoke-Item C:\WINDOWS
 
 Se abre una ventana del explorador en la ubicación C:\\Windows, básicamente como si hubiera hecho doble clic en la carpeta C:\\Windows.
 
-Si invoca el archivo **Boot.ini** en un sistema previo a Windows Vista:
+Si invoca el archivo **Boot.ini** en un sistema previo a Windows Vista:
 
 ```
 PS> Invoke-Item C:\boot.ini
 ```
 
-Si el tipo de archivo .ini está asociado con el Bloc de notas, se abrirá en el Bloc de notas.
+Si el tipo de archivo .ini está asociado con el Bloc de notas, se abrirá en el Bloc de notas.
 

@@ -1,15 +1,16 @@
 ---
-title: Trabajar con entradas del Registro
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: Trabajar con entradas del Registro
+ms.technology: powershell
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
-ms.openlocfilehash: 24517b4a31ab2c5b92c2485fb8c6bd0e56dd2ffd
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 261c1c5fd0a85ce2d2830e34e9de92f0de4b9ff2
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="working-with-registry-entries"></a>Trabajar con entradas del Registro
@@ -96,12 +97,12 @@ PSProvider   : Microsoft.PowerShell.Core\Registry
 DevicePath   : C:\WINDOWS\inf
 ```
 
-Este comando devuelve las propiedades estándar de Windows PowerShell, así como la propiedad **DevicePath**.
+Este comando devuelve las propiedades estándar de Windows PowerShell, así como la propiedad **DevicePath**.
 
 > [!NOTE]
 > Aunque **Get-ItemProperty** tiene los parámetros **Filter**, **Include** y **Exclude**, no se pueden usar para filtrar por nombre de propiedad. Estos parámetros hacen referencia a claves del Registro (que son rutas de acceso de los elementos) y no a entradas del Registro (que son propiedades de los elementos).
 
-Otra opción sería usar la herramienta de línea de comandos Reg.exe. Para obtener ayuda con reg.exe, escriba **reg.exe /?** en un símbolo del sistema. Para buscar la entrada DevicePath, use reg.exe tal y como se muestra en el siguiente comando:
+Otra opción sería usar la herramienta de línea de comandos Reg.exe. Para obtener ayuda con reg.exe, escriba **reg.exe /?** en un símbolo del sistema. Para buscar la entrada DevicePath, use reg.exe tal y como se muestra en el siguiente comando:
 
 ```
 PS> reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion /v DevicePath
@@ -120,7 +121,7 @@ PS> (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windo
 ```
 
 ### <a name="creating-new-registry-entries"></a>Crear entradas del Registro
-Para agregar una nueva entrada denominada "PowerShellPath" a la clave **CurrentVersion**, use **New-ItemProperty** con la ruta de acceso a la clave, el nombre de la entrada y el valor de la entrada. En este ejemplo, tomaremos el valor de la variable de Windows PowerShell **$PSHome**, que almacena la ruta de acceso al directorio de instalación de Windows PowerShell.
+Para agregar una nueva entrada denominada "PowerShellPath" a la clave **CurrentVersion**, use **New-ItemProperty** con la ruta de acceso a la clave, el nombre de la entrada y el valor de la entrada. En este ejemplo, tomaremos el valor de la variable de Windows PowerShell **$PSHome**, que almacena la ruta de acceso al directorio de instalación de Windows PowerShell.
 
 Puede agregar la nueva entrada a la clave usando el siguiente comando; este comando también devolverá información sobre la nueva entrada:
 
@@ -146,7 +147,7 @@ PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 |ExpandString|Una cadena que puede contener variables de entorno que se expanden dinámicamente|
 |MultiString|Una cadena de varias líneas|
 |Cadena|Cualquier valor de cadena|
-|QWord|8 bytes de datos binarios|
+|QWord|8 bytes de datos binarios|
 
 > [!NOTE]
 > Una entrada del Registro se puede agregar a varias ubicaciones si se especifica una matriz de valores para el parámetro **Path**:
