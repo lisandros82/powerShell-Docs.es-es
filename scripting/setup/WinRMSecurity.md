@@ -1,14 +1,15 @@
 ---
-title: WinRMSecurity
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
-author: eslesar
-manager: dongill
+author: jpjofre
 ms.prod: powershell
-ms.openlocfilehash: d1a75f4167a2f0af60801f33b79fb07cf7fe9398
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: WinRMSecurity
+ms.technology: powershell
+ms.openlocfilehash: 31b5ec784d394568c462a1e133b501f0a8884f2e
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="powershell-remoting-security-considerations"></a>Consideraciones de seguridad de comunicación remota de PowerShell
@@ -80,30 +81,11 @@ Una vez completada la autenticación inicial, el [Protocolo de comunicación rem
 ## <a name="making-the-second-hop"></a>Creación del segundo salto
 
 De forma predeterminada, la comunicación remota de PowerShell usa Kerberos (si está disponible) o NTLM para la autenticación. Ambos protocolos se autentican en el equipo remoto sin enviarle credenciales.
-Este es el modo más seguro de autenticación, pero dado que el equipo remoto no tiene las credenciales de usuario, no puede acceder a otros equipos o servicios en nombre del usuario. Esto se conoce como el problema de "Salto doble".
+Este es el modo más seguro de autenticación, pero dado que el equipo remoto no tiene las credenciales de usuario, no puede acceder a otros equipos o servicios en nombre del usuario. Esto se conoce como el "problema del segundo salto".
 
-Hay varias formas de evitar este problema:
+Hay varias formas de evitar este problema. Para obtener descripciones de estos métodos y las ventajas e inconvenientes de cada uno, consulte [Realizar el segundo salto en la comunicación remota de PowerShell](PS-remoting-second-hop.md).
 
-### <a name="trust-between-remote-computers"></a>Confianza entre equipos remotos
 
-Si confía en los usuarios conectados de forma remota a *Server1* a los recursos de *Server2*, puede conceder a *Server1* acceso explícito a esos recursos.
-
-### <a name="use-explicit-credentials-when-accessing-remote-resources"></a>Uso de credenciales explícitas al obtener acceso a recursos remotos
-
-Puede pasar explícitamente las credenciales a un recurso remoto mediante el parámetro **Credential** de un cmdlet. Por ejemplo:
-
-```powershell
-$myCredential = Get-Credential
-New-PSDrive -Name Tools \\Server2\Shared\Tools -Credential $myCredential 
-```
-
-### <a name="credssp"></a>CredSSP
-
-Puede usar el [proveedor de compatibilidad para seguridad de credenciales (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) para la autenticación (especificando "CredSSP" como el valor del parámetro `Authentication` de una llamada al cmdlet [New-PSSession](https://technet.microsoft.com/en-us/library/hh849717.aspx)). CredSSP pasa las credenciales en texto sin formato al servidor, por lo que, al usarlo, le hace vulnerable a los ataques de robos de credenciales. Si el equipo remoto se ve comprometido, el atacante tiene acceso a las credenciales del usuario. CredSSP está deshabilitado de forma predeterminada tanto en el equipo del cliente como del servidor. Debe habilitar CredSSP solo en los entornos de mayor confianza. Por ejemplo, un administrador de dominio que se conecta a un controlador de dominio porque el controlador de dominio es de plena confianza.
-
-Para obtener más información sobre problemas de seguridad cuando se usa CredSSP para la comunicación remota de PowerShell, vea [Accidental Sabotage: Beware of CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp) (Sabotaje accidental: tenga cuidado con CredSSP).
-
-Para obtener más información acerca de los ataques de robo de credenciales, consulte [Mitigating Pass-the-Hash (PtH) Attacks and Other Credential Theft](https://www.microsoft.com/en-us/download/details.aspx?id=36036) (Mitigación de ataques Pass-the-Hash (PtH) y otros robos de credenciales).
 
 
 

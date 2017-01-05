@@ -1,5 +1,5 @@
 ---
-title: "Mejoras en la administración de paquetes en WMF 5.1 (versión preliminar)"
+title: "Mejoras en la administración de paquetes en WMF 5.1"
 ms.date: 2016-07-15
 keywords: PowerShell, DSC, WMF
 description: 
@@ -9,11 +9,11 @@ contributor: jianyunt, quoctruong
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: fd1fb6dd12b0a9ddcf69d159d83595955af62bc5
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 77d8e66da0452a3cb55ad770537b35a97dffb357
+ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
 translationtype: HT
 ---
-# <a name="improvements-to-package-management-in-wmf-51-preview"></a>Mejoras en la administración de paquetes en WMF 5.1 (versión preliminar) #
+# <a name="improvements-to-package-management-in-wmf-51"></a>Mejoras en la administración de paquetes en WMF 5.1#
 
 ## <a name="improvements-in-packagemanagement"></a>Mejoras en la administración de paquetes ##
 Estas son las correcciones realizadas en WMF 5.1: 

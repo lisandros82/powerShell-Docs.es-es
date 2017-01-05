@@ -7,13 +7,13 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 64fc906cf0328d7be3aba7d5d6819640b4dcb4fa
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: cec3aaf4e57d1efc3e29880e4a7f078bd1840901
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
 # <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Administrador de configuración local (LCM) de la configuración de estado deseado de Windows PowerShell 4.0
 
->Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 El administrador de configuración local es el motor de la configuración de estado deseado (DSC) de Windows PowerShell. Se ejecuta en todos los nodos de destino y es el responsable de llamar a los recursos de configuración que se incluyen en un script de configuración DSC. En este tema se enumeran las propiedades del administrador de configuración local y se describe cómo puede modificar la configuración del administrador de configuración local en un nodo de destino.
 
@@ -21,7 +21,7 @@ El administrador de configuración local es el motor de la configuración de est
 A continuación se enumeran las propiedades del administrador de configuración local que se pueden establecer o recuperar.
  
 * **AllowModuleOverwrite**: controla si se permite que las nuevas configuraciones descargadas desde el servidor de configuración sobrescriban las antiguas en el nodo de destino. Los valores posibles son True y False.
-* **CertificateID**: GUID que usó un certificado para proteger las credenciales para acceder a la configuración. Para más información, consulte [Want to secure credentials in Windows PowerShell Desired State Configuration?](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx) (¿Quiere proteger las credenciales de configuración de estado deseado de Windows PowerShell?).
+* **CertificateID**: la huella digital de un certificado usado para proteger las credenciales que se han pasado en una configuración. Para más información, consulte [Want to secure credentials in Windows PowerShell Desired State Configuration?](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx) (¿Quiere proteger las credenciales de configuración de estado deseado de Windows PowerShell?).
 * **ConfigurationID**: indica un GUID que se utiliza para obtener un archivo de configuración concreto de un servidor configurado como un servidor "pull". El GUID garantiza que se acceda al archivo de configuración correcto.
 * **ConfigurationMode**: especifica cómo aplica realmente el administrador de la configuración local la configuración en los nodos de destino. Puede tomar los valores siguientes:
     - **ApplyOnly**: con esta opción, DSC aplica la configuración y no hace nada más, a menos que se detecte una nueva configuración, ya sea porque envíe una nueva configuración directamente al nodo de destino ("push"), o si ha configurado un servidor "pull" y DSC detecta una nueva configuración cuando hace una comprobación con el servidor "pull". Si se desplaza la configuración del nodo de destino, no se realiza ninguna acción.
@@ -32,7 +32,7 @@ A continuación se enumeran las propiedades del administrador de configuración 
 * **DownloadManagerCustomData**: representa una matriz que contiene datos personalizados específicos del administrador de descargas.
 * **DownloadManagerName**: indica el nombre de la configuración y el administrador de descargas del módulo.
 * **RebootNodeIfNeeded**: determinados cambios de configuración en un nodo de destino pueden requerir que deba reiniciarse para que se apliquen los cambios. Con el valor **True**, esta propiedad reiniciará el nodo en cuanto la configuración se haya aplicado completamente, sin ninguna advertencia más. Si es **False** (el valor predeterminado), la configuración se completará, pero el nodo deberá reiniciarse manualmente para que los cambios surtan efecto.
-* **RefreshFrequencyMins**: se utiliza cuando se ha configurado un servidor "pull". Representa la frecuencia (en minutos) con que el administrador de configuración local contacta con un servidor "pull" para descargar la configuración actual. Este valor se puede establecer junto con ConfigurationModeFrequencyMins. Cuando el valor de RefreshMode se establece en PULL, el nodo de destino contacta con el servidor "pull" en un intervalo que establece el valor de RefreshFrequencyMins y descarga la configuración actual. En el intervalo que define ConfigurationModeFrequencyMins, el motor de coherencia aplica la configuración más reciente que se haya descargado en el nodo de destino. Si el valor de RefreshFrequencyMins no se establece en un entero que sea múltiplo del valor de ConfigurationModeFrequencyMins, el sistema lo redondeará al alza. El valor predeterminado es 30.
+* **RefreshFrequencyMins**: se utiliza cuando se ha configurado un servidor "pull". Representa la frecuencia (en minutos) con que el administrador de configuración local contacta con un servidor "pull" para descargar la configuración actual. Este valor se puede establecer junto con ConfigurationModeFrequencyMins. Cuando el valor de RefreshMode se establece en PULL, el nodo de destino contacta con el servidor "pull" en un intervalo que establece el valor de RefreshFrequencyMins y descarga la configuración actual. En el intervalo que define ConfigurationModeFrequencyMins, el motor de coherencia aplica la configuración más reciente que se haya descargado en el nodo de destino. Si el valor de RefreshFrequencyMins no se establece en un entero que sea múltiplo del valor de ConfigurationModeFrequencyMins, el sistema lo redondeará al alza. El valor predeterminado es 30.
 * **RefreshMode**: los valores posibles son **Push** (el valor predeterminado) y **Pull**. En la configuración "push", debe colocar un archivo de configuración en cada nodo de destino, mediante cualquier equipo cliente. En el modo "pull", debe configurar un servidor "pull" con el que el administrador de configuración local contacte y acceda a los archivos de configuración.
 
 ### <a name="example-of-updating-local-configuration-manager-settings"></a>Ejemplo de actualización de la configuración del administrador de configuración local

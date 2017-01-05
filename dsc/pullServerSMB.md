@@ -7,13 +7,13 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 35ac9b38086b12fb48844c56a488854f63529e21
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: df994500ce5f46d62f143af07d8ce86dddf44c3e
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Configuración de un servidor de incorporación de cambios SMB de DSC
 
->Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Un servidor de extracción [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) de DSC es un recurso compartido de archivos SMB que pone los archivos de configuración de DSC o los recursos de DSC a disposición de los nodos de destino cuando estos nodos los solicitan.
 
@@ -135,7 +135,7 @@ Todos los archivos MOF de configuración deben denominarse _ConfigurationID_.mof
 
 >**Nota:** Debe usar identificadores de configuración si está utilizando un servidor de incorporación de cambios SMB. Los nombres de configuración no son compatibles con SMB.
 
-Los recursos que necesite el cliente deben colocarse en la carpeta de recursos compartidos SMB como archivos `.zip` almacenados.  
+Cada módulo de recursos se debe comprimir y se le debe asignar un nombre de acuerdo con el siguiente patrón `{Module Name}_{Module Version}.zip`. Por ejemplo, un módulo denominado xWebAdminstration con una versión de módulo de 3.1.2.0 se denominaría 'xWebAdministration_3.2.1.0.zip'. Cada versión de un módulo debe incluirse en un solo archivo ZIP. Dado que solo hay una versión de un recurso en cada archivo ZIP, no se admite el formato de módulo que se agrega en WMF 5.0 con compatibilidad con varias versiones de módulo en un único directorio. Esto significa que antes de empaquetar los módulos de recursos de DSC para su uso con el servidor de incorporación de cambios, deberá realizar un pequeño cambio en la estructura de directorios. El formato predeterminado de los módulos que contienen recursos de DSC en WMF 5.0 es '{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'. Antes de empaquetar el servidor de extracción, quite la carpeta **{Module version}** para que la ruta de acceso se convierta en '{Module Folder}\DscResources\{DSC Resource Folder}\'. Con este cambio, comprima la carpeta según lo descrito anteriormente y coloque estos archivos ZIP en la carpeta compartida SMB. 
 
 ## <a name="creating-the-mof-checksum"></a>Creación de la suma de comprobación MOF
 Un archivo de configuración MOF debe emparejarse con un archivo de suma de comprobación para que un LCM de un nodo de destino pueda validar la configuración. Para crear una suma de comprobación, llame al cmdlet [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx). El cmdlet toma un parámetro **Path** que especifica la carpeta donde se encuentra el MOF de configuración. El cmdlet crea un archivo de suma de comprobación denominado `ConfigurationMOFName.mof.checksum`, donde `ConfigurationMOFName` es el nombre del archivo mof de configuración. Si hay más de un archivo MOF de configuración en la carpeta especificada, se crea una suma de comprobación para cada una de las configuraciones de la carpeta.
@@ -143,6 +143,67 @@ Un archivo de configuración MOF debe emparejarse con un archivo de suma de comp
 El archivo de suma de comprobación debe estar en el mismo directorio que el archivo MOF de configuración (de forma predeterminada, `$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration`) y tener el mismo nombre con la extensión `.checksum` anexada.
 
 >**Nota**: Si cambia el archivo MOF de configuración de cualquier manera, también deberá volver a crear el archivo de suma de comprobación.
+
+## <a name="setting-up-a-pull-client-for-smb"></a>Configuración de un cliente de extracción para SMB
+
+Para configurar un cliente que extraiga las configuraciones o recursos desde un recurso compartido de SMB, configure el administrador de configuración local (LCM) con los bloques **ConfigurationRepositoryShare** y **ResourceRepositoryShare** que especifiquen el recurso compartido desde el que se va a extraer.
+
+Para obtener más información sobre cómo configurar el LCM, consulte [Configuración de un cliente de extracción mediante id. de configuración](pullClientConfigID.md).
+
+>**Nota:** Por motivos de simplicidad, este ejemplo usa **PSDscAllowPlainTextPassword** para permitir pasar una contraseña de texto no cifrado al parámetro **Credential**. Para obtener información sobre cómo pasar credenciales de forma más segura, consulte [Opciones de credenciales en los datos de configuración](configDataCredentials.md).
+
+>**Nota:** Debe especificar un **ConfigurationID** en el bloque **Configuration** de una metaconfiguración para un servidor de extracción SMB, incluso si solo está extrayendo recursos.
+
+```powershell
+$secpasswd = ConvertTo-SecureString “Pass1Word” -AsPlainText -Force
+$mycreds = New-Object System.Management.Automation.PSCredential (“TestUser”, $secpasswd)
+
+[DSCLocalConfigurationManager()]
+configuration SmbCredTest
+{
+    Node $AllNodes.NodeName
+    {
+        Settings
+        {
+            RefreshMode = 'Pull'
+            RefreshFrequencyMins = 30 
+            RebootNodeIfNeeded = $true
+            ConfigurationID    = '16db7357-9083-4806-a80c-ebbaf4acd6c1'
+        }
+         
+         ConfigurationRepositoryShare SmbConfigShare      
+        {
+            SourcePath = '\\WIN-E0TRU6U11B1\DscSmbShare'
+            Credential = $mycreds
+        }
+
+        ResourceRepositoryShare SmbResourceShare
+        {
+            SourcePath = '\\WIN-E0TRU6U11B1\DscSmbShare'
+            Credential = $mycreds
+            
+        }      
+    }
+}
+
+$ConfigurationData = @{
+
+    AllNodes = @(
+
+        @{
+
+            #the "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
+
+            NodeName="localhost"
+
+            PSDscAllowPlainTextPassword = $true
+
+        })
+
+        
+
+}
+```
 
 ## <a name="acknowledgements"></a>Agradecimientos
 
@@ -152,7 +213,7 @@ Agradecimientos especiales a:
 - Serge Nikalaichyk, que creó el módulo **cNtfsAccessControl**. El origen de este módulo se encuentra en https://github.com/SNikalaichyk/cNtfsAccessControl.
 
 ## <a name="see-also"></a>Vea también
-- [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
+- [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
 - [Establecer configuraciones](enactingConfigurations.md)
 - [Configuración de un cliente de extracción mediante id. de configuración](pullClientConfigID.md)
 

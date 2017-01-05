@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: e978ee828fe3c91be52077442c5781b7a20e50be
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 13ff9acefa048e3b01c64150d67a2f14ec501284
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Configuración del administrador de configuración local
@@ -66,7 +66,7 @@ Aparte de especificar servidores de incorporación de cambios y configuraciones 
 | ConfigurationMode| cadena | Especifica la forma en que el LCM aplica realmente la configuración a los nodos de destino. Los valores posibles son __"ApplyOnly"__, __"ApplyandMonitior"(default)__ y __"ApplyandAutoCorrect"__. <ul><li>__"ApplyOnly"__: DSC aplica la configuración y no hace nada más, a menos que se inserte una nueva configuración en el nodo de destino o se extraiga una nueva configuración de un servidor. Después de la aplicación inicial de una nueva configuración, DSC no comprueba si hay un desplazamiento con respecto a un estado configurado previamente. Tenga en cuenta que DSC intentará aplicar la configuración hasta que lo consiga antes de que __ApplyOnly__ surta efecto. </li><li> __ApplyAndMonitor__: este es el valor predeterminado. El LCM aplica las nuevas configuraciones. Después de la aplicación inicial de una nueva configuración, si el nodo de destino se desplaza del estado deseado, DSC notifica la discrepancia en los registros. Tenga en cuenta que DSC intentará aplicar la configuración hasta que lo consiga antes de que __ApplyAndMonitor__ surta efecto.</li><li>__ApplyAndAutoCorrect__: DSC aplica cualquier configuración nueva. Después de la aplicación inicial de una nueva configuración, si el nodo de destino se desplaza del estado deseado, DSC notifica la discrepancia en los registros y después vuelve a aplicar la configuración actual.</li></ul>| 
 | ActionAfterReboot| cadena| Especifica lo que ocurre tras un reinicio durante la aplicación de una configuración. Los valores posibles son __"ContinueConfiguration(default)"__ y __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: continúe aplicando la configuración actual después de reiniciar el equipo.</li><li>__StopConfiguration__: detenga la configuración actual después de reiniciar el equipo.</li></ul>| 
 | RefreshMode| cadena| Especifica cómo obtiene el LCM las configuraciones. Los valores posibles son __"Disabled"__, __"Push(default)"__ y __"Pull"__. <ul><li>__Disabled__: las configuraciones DSC se deshabilitan para este nodo.</li><li> __Push__: las configuraciones se inician con una llamada al cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx). La configuración se aplica inmediatamente al nodo. Este es el valor predeterminado.</li><li>__Pull:__ el nodo se configura para comprobar con regularidad si existen configuraciones en un servidor de incorporación de cambios. Si esta propiedad se establece en __Pull__, se debe especificar un servidor de extracción en un bloque __ConfigurationRepositoryWeb__ o __ConfigurationRepositoryShare__. Para más información sobre los servidores de incorporación de cambios, consulte [Configuración de un servidor de incorporación de cambios de DSC](pullServer.md).</li></ul>| 
-| CertificateID| cadena| Un GUID que especifique un certificado utilizado para proteger las credenciales para acceder a la configuración. Para más información, consulte [Want to secure credentials in Windows PowerShell Desired State Configuration?](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx) (¿Quiere proteger las credenciales de configuración de estado deseado de Windows PowerShell?).| 
+| CertificateID| cadena| La huella digital de un certificado usado para proteger las credenciales que se han pasado en una configuración. Para más información, consulte [Want to secure credentials in Windows PowerShell Desired State Configuration?](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx) (¿Quiere proteger las credenciales de configuración de estado deseado de Windows PowerShell?).| 
 | ConfigurationID| cadena| Un GUID que identifica el archivo de configuración que se obtendrá de un servidor de extracción en el modo de extracción. El nodo extraerá las configuraciones del servidor de extracción si el nombre del MOF de configuración es ConfigurationID.mof.<br> __Nota:__ Si establece esta propiedad, el registro del nodo con un servidor de extracción mediante __RegistrationKey__ no funcionará. Para más información, consulte [Configuración de un cliente de incorporación de cambios con nombres de configuración](pullClientConfigNames.md).| 
 | RefreshFrequencyMins| Uint32| El intervalo de tiempo, en minutos, que emplea el LCM para comprobar un servidor de extracción en busca de configuraciones actualizadas. Este valor se omite si el LCM no está configurado en el modo de extracción. El valor predeterminado es 30.<br> __Nota:__ O bien el valor de esta propiedad debe ser un múltiplo del valor de la propiedad __ConfigurationModeFrequencyMins__, o bien el valor de la propiedad __ConfigurationModeFrequencyMins__ debe ser un múltiplo del valor de esta propiedad.| 
 | AllowModuleOverwrite| bool| __$TRUE__ si se permite que las nuevas configuraciones descargadas desde el servidor de configuración sobrescriban las antiguas en el nodo de destino. En caso contrario, $FALSE.| 
@@ -94,7 +94,7 @@ Para definir un servidor de configuración basado en web, cree un bloque **Confi
 |Propiedad|Tipo|Descripción|
 |---|---|---| 
 |AllowUnsecureConnection|bool|Establézcala en **$TRUE** para permitir conexiones desde el nodo al servidor sin autenticación. Establézcala en **$FALSE** para que se requiera autenticación.|
-|CertificateID|cadena|Un GUID que representa el certificado utilizado para autenticar el servidor.|
+|CertificateID|cadena|La huella digital de un certificado usado para autenticar el servidor.|
 |ConfigurationNames|String[]|Una matriz de nombres de configuraciones que el nodo de destino extraerá. Solo se utilizan si el nodo se registra con el servidor de incorporación de cambios mediante un elemento **RegistrationKey**. Para más información, consulte [Configuración de un cliente de incorporación de cambios con nombres de configuración](pullClientConfigNames.md).|
 |RegistrationKey|cadena|Un GUID que registra el nodo con el servidor de extracción. Para más información, consulte [Configuración de un cliente de extracción con nombres de configuración](pullClientConfigNames.md).|
 |ServerURL|cadena|La dirección URL del servidor de configuración.|
@@ -113,7 +113,7 @@ Para definir un servidor de recursos basado en web, cree un bloque **ResourceRep
 |Propiedad|Tipo|Descripción|
 |---|---|---|
 |AllowUnsecureConnection|bool|Establézcala en **$TRUE** para permitir conexiones desde el nodo al servidor sin autenticación. Establézcala en **$FALSE** para que se requiera autenticación.|
-|CertificateID|cadena|Un GUID que representa el certificado utilizado para autenticar el servidor.|
+|CertificateID|cadena|La huella digital de un certificado usado para autenticar el servidor.|
 |RegistrationKey|cadena|Un GUID que identifica el nodo para el servidor de extracción. Para más información, consulte Cómo registrar un nodo con un servidor de extracción de DSC.|
 |ServerURL|cadena|La dirección URL del servidor de configuración.|
  
@@ -121,7 +121,7 @@ Para definir un servidor de recursos basado en SMB, cree un bloque **ResourceRep
 
 |Propiedad|Tipo|Descripción|
 |---|---|---|
-|Credential|MSFT_Credential|La credencial usada para autenticarse en el recurso compartido SMB.|
+|Credential|MSFT_Credential|La credencial usada para autenticarse en el recurso compartido SMB. Para obtener un ejemplo de transferencia de credenciales, consulte [Configuración de un servidor de incorporación de cambios SMB de DSC](pullServerSMB.md)|
 |SourcePath|cadena|La ruta de acceso del recurso compartido SMB.|
 
 ## <a name="report-server-blocks"></a>Bloques del servidor de informes
@@ -131,7 +131,7 @@ Un servidor de informes debe ser un servicio web OData. Para definir un servidor
 |Propiedad|Tipo|Descripción|
 |---|---|---| 
 |AllowUnsecureConnection|bool|Establézcala en **$TRUE** para permitir conexiones desde el nodo al servidor sin autenticación. Establézcala en **$FALSE** para que se requiera autenticación.|
-|CertificateID|cadena|Un GUID que representa el certificado utilizado para autenticar el servidor.|
+|CertificateID|cadena|La huella digital de un certificado usado para autenticar el servidor.|
 |RegistrationKey|cadena|Un GUID que identifica el nodo para el servidor de extracción. Para más información, consulte Cómo registrar un nodo con un servidor de extracción de DSC.|
 |ServerURL|cadena|La dirección URL del servidor de configuración.|
 
@@ -151,7 +151,7 @@ Para definir una configuración parcial, cree un bloque **PartialConfiguration**
 ## <a name="see-also"></a>Véase también 
 
 ### <a name="concepts"></a>Conceptos
-[Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
+[Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
  
 [Configuración de un servidor de extracción de DSC](pullServer.md) 
 

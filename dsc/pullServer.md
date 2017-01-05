@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: e62d4bf50e122d2e381cebf8fa594dda4f888e47
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: f419394b7699544567bf17945a55773ed3024f24
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
 # <a name="setting-up-a-dsc-web-pull-server"></a>Configuración de un servidor de extracción web de DSC
@@ -145,10 +145,12 @@ Si falta la propiedad **ConfigurationID** en el archivo de metaconfiguration, si
 >**Nota**: En un escenario de inserción, hay un error en la versión actual que hace que sea necesario definir una propiedad ConfigurationID en el archivo de metaconfiguration para los nodos que nunca se han registrado en un servidor de incorporación de cambios. De esta manera, se forzará el protocolo del servidor de incorporación de cambios V1 y se evitarán los mensajes de error de registro.
 
 ## <a name="placing-configurations-and-resources"></a>Colocación de configuraciones y recursos
+
 Una vez completada la configuración del servidor de incorporación de cambios, los módulos y las configuraciones que estarán disponibles para la incorporación de cambios de los nodos de destino se colocarán en las carpetas que definan las propiedades **ConfigurationPath** y **ModulePath** de la configuración del servidor de incorporación de cambios. Estos archivos deben estar en un formato concreto para que el servidor de incorporación de cambios los procese correctamente. 
 
 ### <a name="dsc-resource-module-package-format"></a>Formato del paquete de módulo de recursos de DSC
-Cada módulo de recursos se debe comprimir y se le debe asignar un nombre de acuerdo con el siguiente patrón **{Module Name}_{Module Version}.zip**. Por ejemplo, un módulo denominado xWebAdminstration con una versión de módulo de 3.1.2.0 se denominaría 'xWebAdministration_3.2.1.0.zip'. Cada versión de un módulo debe incluirse en un solo archivo ZIP. Dado que solo hay una versión de un recurso en cada archivo ZIP, no se admite el formato de módulo que se agrega en WMF 5.0 con compatibilidad con varias versiones de módulo en un único directorio. Esto significa que antes de empaquetar los módulos de recursos de DSC para su uso con el servidor de incorporación de cambios, deberá realizar un pequeño cambio en la estructura de directorios. El formato predeterminado de los módulos que contienen recursos de DSC en WMF 5.0 es '{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'. Antes de empaquetar el servidor de extracción, quite la carpeta **{Module version}** para que la ruta de acceso se convierta en '{Module Folder}\DscResources\{DSC Resource Folder}\'. Con este cambio, comprima la carpeta según lo descrito anteriormente y coloque estos archivos ZIP en la carpeta **ModulePath**.
+
+Cada módulo de recursos se debe comprimir y se le debe asignar un nombre de acuerdo con el siguiente patrón `{Module Name}_{Module Version}.zip`. Por ejemplo, un módulo denominado xWebAdminstration con una versión de módulo de 3.1.2.0 se denominaría 'xWebAdministration_3.2.1.0.zip'. Cada versión de un módulo debe incluirse en un solo archivo ZIP. Dado que solo hay una versión de un recurso en cada archivo ZIP, no se admite el formato de módulo que se agrega en WMF 5.0 con compatibilidad con varias versiones de módulo en un único directorio. Esto significa que antes de empaquetar los módulos de recursos de DSC para su uso con el servidor de incorporación de cambios, deberá realizar un pequeño cambio en la estructura de directorios. El formato predeterminado de los módulos que contienen recursos de DSC en WMF 5.0 es '{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'. Antes de empaquetar el servidor de extracción, quite la carpeta **{Module version}** para que la ruta de acceso se convierta en '{Module Folder}\DscResources\{DSC Resource Folder}\'. Con este cambio, comprima la carpeta según lo descrito anteriormente y coloque estos archivos ZIP en la carpeta **ModulePath**.
 
 Use `new-dscchecksum {module zip file}` para crear un archivo de suma de comprobación para el módulo que acaba de agregar.
 
@@ -182,7 +184,7 @@ En los temas siguientes se describe en detalle cómo configurar los clientes de 
 
 
 ## <a name="see-also"></a>Vea también
-* [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
+* [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
 * [Establecer configuraciones](enactingConfigurations.md)
 * [Uso de un servidor de informes de DSC](reportServer.md)
 
