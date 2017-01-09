@@ -7,13 +7,13 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 72555a36819c9717fafdd3daede8fa2f02c692b2
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: f8f8ef06cd79af294bad7bb8cf3d6676ab9a69bc
+ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
 translationtype: HT
 ---
 # <a name="separating-configuration-and-environment-data"></a>Separación de los datos de entorno y configuración
 
->Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Puede definir los datos que se pueden usar dentro de una configuración al usar el parámetro DSC integrado **ConfigurationData**. Esto le permite crear una única configuración que puede usarse para varios nodos o para entornos diferentes. Por ejemplo, si está desarrollando una aplicación, puede usar una configuración para los entornos de producción y desarrollo, y usar datos de configuración para especificar datos para cada entorno.
 
@@ -50,7 +50,7 @@ $MyData =
 
         @{
             NodeName    = 'VM-2'
-            FeatureName = 'VMHost'
+            Role = 'VMHost'
         }
     )
 }
