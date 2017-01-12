@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 5f3d40fe431d026d8d83dfc720d919048c6bf336
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 02f1cc45f30c0892e777a9e05d87f440f628fbf5
+ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
 translationtype: HT
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Configuraciones parciales de la configuración de estado deseado de PowerShell
@@ -49,10 +49,57 @@ PartialConfigDemo
 
 El valor **RefreshMode** de cada configuración parcial se establece en "Push". Los nombres de los bloques **PartialConfiguration** (en este caso, "ServiceAccountConfig" y "SharePointConfig") deben coincidir exactamente con los nombres de las configuraciones que se inserten en el nodo de destino.
 
-### <a name="publishing-and-starting-push-mode-partial-configurations"></a>Publicación e inicialización de las configuraciones parciales del modo de inserción
-![Estructura de la carpeta PartialConfig](./images/PartialConfig1.jpg)
+>**Nota:** El nombre de cada bloque **PartialConfiguration** debe coincidir con el nombre real de la configuración tal como esté especificado en el script de configuración y no con el nombre del archivo MOF, que debe ser el nombre del nodo de destino o `localhost`.
 
-Después llame a **Publish-DSCConfiguration** para cada configuración, pasando las carpetas que contengan los documentos de configuración como los parámetros Path. Después de publicar las dos configuraciones, puede llamar a `Start-DSCConfiguration –UseExisting` en el nodo de destino.
+### <a name="publishing-and-starting-push-mode-partial-configurations"></a>Publicación e inicialización de las configuraciones parciales del modo de inserción
+
+Después llame a [Publish-DSCConfiguration](/reference/5.0/PSDesiredStateconfiguration/Publish-DscConfiguration.md) para cada configuración, pasando las carpetas que contengan los documentos de configuración como los parámetros **Path**. `Publish-DSCConfiguration` coloca los archivos MOF de configuración en los nodos de destino. Después de publicar las dos configuraciones, puede llamar a `Start-DSCConfiguration –UseExisting` en el nodo de destino.
+
+Por ejemplo, si ha compilado los siguientes documentos MOF de configuración en el nodo de creación:
+
+```powershell
+PS C:\PartialConfigTest> Get-ChildItem -Recurse
+
+
+    Directory: C:\PartialConfigTest
+
+
+Mode                LastWriteTime         Length Name                                                                                                                                         
+----                -------------         ------ ----                                                                                                                                         
+d-----        8/11/2016   1:55 PM                ServiceAccountConfig                                                                                                                  
+d-----       11/17/2016   4:14 PM                SharePointConfig                                                                                                                                    
+
+
+    Directory: C:\PartialConfigTest\ServiceAccountConfig
+
+
+Mode                LastWriteTime         Length Name                                                                                                                                         
+----                -------------         ------ ----                                                                                                                                         
+-a----        8/11/2016   2:02 PM           2034 TestVM.mof                                                                                                                                
+
+
+    Directory: C:\DscTests\SharePointConfig
+
+
+Mode                LastWriteTime         Length Name                                                                                                                                         
+----                -------------         ------ ----                                                                                                                                         
+-a----       11/17/2016   4:14 PM           1930 TestVM.mof                                                                                                                                     
+```
+
+Publicaría y ejecutaría las configuraciones de la forma siguiente:
+
+```powershell
+PS C:\PartialConfigTest> Publish-DscConfiguration .\ServiceAccountConfig -ComputerName 'TestVM'
+PS C:\PartialConfigTest> Publish-DscConfiguration .\SharePointConfig -ComputerName 'TestVM'
+PS C:\PartialConfigTest> Start-Configuration -UseExisting -ComputerName 'TestVM'
+
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command                  
+--     ----            -------------   -----         -----------     --------             -------                  
+17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
+```
+
+>**Nota:** El usuario que ejecuta las 
+
 
 ## <a name="partial-configurations-in-pull-mode"></a>Configuraciones parciales en el modo de extracción
 

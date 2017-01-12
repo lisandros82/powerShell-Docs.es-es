@@ -8,8 +8,8 @@ author: krishna
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 8f1b550e92c3c280b84664e0b1f9695172370522
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: b341f57592feb183eb0e7228cdc08460e370369f
+ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
 translationtype: HT
 ---
 # <a name="known-issues-in-wmf-51"></a>Problemas conocidos de WMF 5.1 #
@@ -18,7 +18,7 @@ translationtype: HT
 
 ## <a name="starting-powershell-shortcut-as-administrator"></a>Inicio del acceso directo de PowerShell como administrador
 Al instalar WMF, si intenta iniciar PowerShell como administrador desde el acceso directo, puede obtener el mensaje "Error no especificado".
-Vuelva a abrir el acceso directo como no administrador y dicho acceso directo funcionará ahora incluso como administrador.
+Vuelva a abrir el acceso directo como no administrador y este ya funcionará incluso como administrador.
 
 ## <a name="pester"></a>Pester
 En esta versión, hay dos problemas que deben tenerse en cuenta cuando se utilice Pester en Nano Server:
@@ -28,7 +28,7 @@ En esta versión, hay dos problemas que deben tenerse en cuenta cuando se utilic
 
 ## <a name="operation-validation"></a>Validación de operaciones 
 
-* Se producirá un error de Update-Help para el módulo Microsoft.PowerShell.Operation.Validation porque el URI de ayuda no funciona.
+* Se produce un error de Update-Help para el módulo Microsoft.PowerShell.Operation.Validation porque el URI de ayuda no funciona.
 
 ## <a name="dsc-after-uninstall-wmf"></a>DSC después de desinstalar WMF 
 * La desinstalación de WMF no elimina los documentos MOF de DSC desde la carpeta de configuración. DSC no funcionará correctamente si los documentos MOF contienen propiedades más recientes que no están disponibles en los sistemas más antiguos. En este caso, ejecute el siguiente script desde la consola de PowerShell con privilegios elevados para limpiar los estados de DSC.
