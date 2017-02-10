@@ -13,7 +13,7 @@ translationtype: HT
 ---
 # <a name="enacting-configurations"></a>Establecer configuraciones
 
->Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Hay dos maneras de establecer las configuraciones de la configuración de estado deseado (DSC) de PowerShell: el modo de inserción y el modo de extracción.
 
