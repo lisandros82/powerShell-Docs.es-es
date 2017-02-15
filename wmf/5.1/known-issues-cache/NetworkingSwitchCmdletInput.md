@@ -1,8 +1,8 @@
 ---
 title: Error de cmdlets de Network Switch Manager
 contributor: vaibch
-ms.openlocfilehash: e32e31762b665a7e2c6f6938fe494cb6127d4264
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 8495d79aec54d93f94e745e2efccb5116ad5d944
+ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
 translationtype: HT
 ---
 Los cmdlets de Network Switch Manager se pueden usar para administrar modificadores de red a través de WSMAN. Algunos cmdlets de este módulo pueden aceptar valores de canalizaciones. En la versión preliminar de WMF 5.1, los cmdlets que pueden aceptar el valor de la canalización no pueden ejecutarse si los valores no pasan a través de canalizaciones.
@@ -30,6 +30,7 @@ Los cmdlets funcionan bien cuando el valor del parámetro InputObject se pasa a 
 $port = Get-CimInstance -Namespace root/interop -ClassName CIM_EthernetPort -CimSession $cimSession | Select-Object -First 1
 $port | Disable-NetworkSwitchEthernetPort -CimSession $cimSession
 ```
+
 - Enable-NetworkSwitchEthernetPort
 ```powershell
 $port = Get-CimInstance -Namespace root/interop -ClassName CIM_EthernetPort -CimSession $cimSession | Select-Object -First 1
