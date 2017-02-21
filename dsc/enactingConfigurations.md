@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 69248223a67c8dbbea421f80b57cb245489fbc4f
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 7059d0a0ac3ad81353d1e758bc24fc236656c199
+ms.sourcegitcommit: 89e7ae30faff5f96641fc72764bdc76e0e257bc2
 translationtype: HT
 ---
 # <a name="enacting-configurations"></a>Establecer configuraciones
@@ -19,7 +19,7 @@ Hay dos maneras de establecer las configuraciones de la configuración de estado
 
 ## <a name="push-mode"></a>Modo de inserción
 
-![Modo de inserción](images/Push.png "How push mode works")
+![Modo de inserción](images/Push.png "Cómo funciona el modo de inserción")
 
 El modo de inserción se refiere a un usuario que aplica activamente una configuración a un nodo de destino mediante una llamada al cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx).
 
@@ -30,11 +30,13 @@ Después de crear y compilar una configuración, puede establecerla en el modo d
 
 ## <a name="pull-mode"></a>Modo de extracción
 
-![Modo de extracción](images/Pull.png "How pull mode works")
+![Modo de extracción](images/Pull.png "Cómo funciona el modo de extracción")
 
-En el modo de extracción, los clientes de extracción se configuran para obtener sus configuraciones de estado deseado desde un servidor de extracción remoto. Del mismo modo, el servidor de extracción se ha configurado para hospedar el servicio de DSC y se ha aprovisionado con las configuraciones y los recursos que necesitan los clientes de extracción. Cada uno de los clientes de extracción tiene una tarea programada que realiza una comprobación periódica del cumplimiento de la configuración del nodo. Cuando el evento se desencadena por primera vez, provoca que el administrador de configuración local (LCM) del cliente de extracción valide la configuración. Si el cliente de extracción se configura como se desea, no ocurre nada. De lo contrario, el LCM envía una solicitud al servidor de extracción para obtener una configuración determinada. Si dicha configuración existe en el servidor de extracción y pasa las comprobaciones de validación iniciales, la configuración se transmite al cliente de extracción, donde a continuación el LCM la ejecuta.
+En el modo de extracción, los clientes de extracción se configuran para obtener sus configuraciones de estado deseado desde un servidor de extracción remoto. Del mismo modo, el servidor de extracción se ha configurado para hospedar el servicio de DSC y se ha aprovisionado con las configuraciones y los recursos que necesitan los clientes de extracción. Cada uno de los clientes de extracción tiene una tarea programada que realiza una comprobación periódica del cumplimiento de la configuración del nodo. Cuando el evento se desencadena por primera vez, el administrador de configuración local (LCM) del cliente de extracción realiza una solicitud al servidor de extracción para obtener la configuración especificada en el LCM. Si dicha configuración existe en el servidor de extracción y pasa las comprobaciones de validación iniciales, la configuración se transmite al cliente de extracción, donde a continuación el LCM la ejecuta.
 
-Para más información sobre la implementación de un servidor de extracción de DSC local, consulte la Guía de planificación y configuración del servidor de extracción de DSC.
+El LCM comprueba que el cliente es conforme con la configuración a intervalos regulares especificados por la propiedad **ConfigurationModeFrequencyMins** del LCM. El LCM busca configuraciones actualizadas en el servidor de extracción a intervalos regulares especificados por la propiedad **RefreshModeFrequency** del LCM. Para obtener información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local](metaConfig.md).
+
+Para más información sobre la configuración de un servidor de extracción de DSC, consulte [Configuración de un servidor de extracción web de DSC](pullServer.md).
 
 Si prefiere aprovechar un servicio en línea para hospedar la funcionalidad del servidor de extracción, consulte el servicio [DSC de Automatización de Azure](https://azure.microsoft.com/en-us/documentation/articles/automation-dsc-overview/).
 

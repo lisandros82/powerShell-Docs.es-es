@@ -8,11 +8,11 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 581d80d476e918a78775291521abfd254703a7b7
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: 1bf1bf914982e0d52e592e6ef421d36b1915b338
+ms.sourcegitcommit: 267688f61dcc76fd685c1c34a6c7bfd9be582046
 translationtype: HT
 ---
-#<a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Mejoras en la configuración de estado deseado (DSC) en WMF 5.1
+# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Mejoras en la configuración de estado deseado (DSC) en WMF 5.1
 
 ## <a name="dsc-class-resource-improvements"></a>Mejoras en los recursos de la clase DSC
 
@@ -25,7 +25,6 @@ En WMF 5.1, hemos corregido los siguientes problemas conocidos:
 
 
 ## <a name="dsc-resource-debugging-improvements"></a>Mejoras en la depuración de recursos de DSC
-
 En WMF 5.0, el depurador de PowerShell no se detenía directamente en el método de recursos basados en clases (Get/Set/Test).
 En WMF 5.1, el depurador se detendrá en el método de recursos basados en clases de la misma manera que con los métodos de recursos basados en MOF.
 
@@ -37,7 +36,17 @@ Anteriormente, el cliente de extracción de DSC solo era compatible con SSL3.0 y
 En las versiones anteriores de WMF, si se realizaban solicitudes de informes y registros concurrentes al servidor de extracción de DSC mientras se usaba la base de datos ESENT, LCM no podía registrarlas ni informar al respecto. En tales casos, los registros de eventos del servidor de extracción mostrarán el error "El nombre de instancia ya está en uso".
 Esto se debe a que se usa un patrón incorrecto para acceder a la base de datos ESENT en un escenario de varios subprocesos. En WMF 5.1, este problema se ha corregido. Los informes o registros simultáneos (que implican la base de datos ESENT) funcionan correctamente en WMF 5.1. Este problema solo concierne a la base de datos ESENT, no se aplica a la base de datos OLEDB. 
 
-##<a name="pull-partial-configuration-naming-convention"></a>Convención de nomenclatura de configuración parcial de extracción
+## <a name="enable-circular-log-on-esent-database-instance"></a>Habilitación del registro circular en la instancia de base de datos ESENT
+En versiones anteriores de DSC-PullServer, los archivos de registro de la base de datos ESENT llenaban el espacio en disco del servidor de extracción, porque la instancia de la base de datos se creó sin el registro circular. En esta versión, el cliente tendrá la opción de controlar el comportamiento del registro circular de la instancia mediante el archivo web.config del servidor de extracción. De forma predeterminada, CircularLogging se establecerá en TRUE.
+```
+<appSettings>
+     <add key="dbprovider" value="ESENT" />
+    <add key="dbconnectionstr" value="C:\Program Files\WindowsPowerShell\DscService\Devices.edb" />
+    <add key="CheckpointDepthMaxKB" value="512" />
+    <add key="UseCircularESENTLogs" value="TRUE" />
+  </appSettings>
+```
+## <a name="pull-partial-configuration-naming-convention"></a>Convención de nomenclatura de configuración parcial de extracción
 En la versión anterior, la convención de nomenclatura de una configuración parcial consistía en que el nombre de archivo MOF en el servidor o servicio de extracción debía coincidir con el nombre de configuración parcial especificado en la configuración del administrador de configuración local, que a su vez debe coincidir con el nombre de configuración insertado en el archivo MOF. 
 
 Vea las instantáneas siguientes:
@@ -67,7 +76,7 @@ PartialOne
 
 ![Archivo MOF de ejemplo generado](../images/PartialGeneratedMof.png)
 
-• FileName en el repositorio de configuración de extracción 
+•   FileName en el repositorio de configuración de extracción 
 
 ![FileName en el repositorio de configuración](../images/PartialInConfigRepository.png)
 

@@ -7,13 +7,13 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 01af336f34928aec63cac7402c1ab20c701579fe
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: f833eed14a30d80b1fcc3a9e5e67811c53096bf5
+ms.sourcegitcommit: a81ffb39f370b95ae802cd054dc4480c9e68cf77
 translationtype: HT
 ---
 # <a name="dsc-configurations"></a>Configuraciones DSC
 
->Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Las configuraciones DSC son scripts de PowerShell que definen un tipo especial de función. Para definir una configuración, se utiliza la palabra clave de PowerShell __Configuration__.
 
@@ -30,7 +30,9 @@ Configuration MyDscConfiguration {
             Name = "Bitlocker"
         }
     }
-}
+} 
+
+MyDscConfiguration 
 ```
 
 Guarde el script como un archivo .ps1.
@@ -62,12 +64,14 @@ Configuration MyDscConfiguration {
         }
     }
 }
+
+MyDscConfiguration 
 ```
 
-En este ejemplo, especifique el nombre del nodo, pasando como parámetro $ComputerName cuando [compile la configuración](# Compiling the configuration). El nombre se establece como el valor predeterminado "localhost".
+En este ejemplo, especifique el nombre del nodo, pasando como parámetro $ComputerName cuando compile la configuración. El nombre se establece como el valor predeterminado "localhost".
 
 ## <a name="compiling-the-configuration"></a>Compilación de la configuración
-Antes de que se pueda establecer una configuración, debe compilarla en un documento MOF. Para ello, llame a la configuración, como lo haría con una función de PowerShell.
+Antes de que se pueda establecer una configuración, debe compilarla en un documento MOF. Para ello, llame a la configuración, como lo haría con una función de PowerShell.  La última línea del ejemplo que contiene sólo el nombre de la configuración llama a la configuración.
 >__Nota:__ Para llamar a una configuración, la función debe estar en el ámbito global (como ocurre con cualquier otra función de PowerShell). Puede conseguirlo si precede el script con el operador punto ".", o si ejecuta el script de configuración presionando F5 o haciendo clic en el botón __Ejecutar Script__ del ISE. Para anteponer el operador punto al script, ejecute el comando `. .\myConfig.ps1`, donde `myConfig.ps1` es el nombre del archivo de script que contiene la configuración.
 
 Cuando llama a la configuración:
@@ -119,6 +123,8 @@ Configuration DependsOnExample {
         }
     }
 }
+
+DependsOnExample
 ```
 
 ## <a name="using-new-resources-in-your-configuration"></a>Uso de nuevos recursos en la configuración
@@ -128,7 +134,7 @@ En la actualidad, DSC incluye 12 recursos como parte del módulo PSDesiredStateC
 * __Name__ es el nombre del recurso que se importará. Este no es el nombre descriptivo que [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) devuelve como "Name", sino el nombre de clase que se usa al definir el esquema del recurso (que [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) devuelve como __ResourceType__). 
 
 ## <a name="see-also"></a>Véase también
-* [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
+* [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
 * [Recursos de DSC](resources.md)
 * [Configuración del administrador de configuración local](metaConfig.md)
 

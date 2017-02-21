@@ -7,18 +7,21 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 8a8af7f4b82b856460427a68ec536e98f7cd981b
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 5436b047052f522e930e60925aef1de2f5e81fcb
+ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
 translationtype: HT
 ---
 # <a name="running-dsc-with-user-credentials"></a>DSC de ejecución con las credenciales de usuario 
 
-> Se aplica a: Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 5.0, Windows PowerShell 5.1
 
 Puede ejecutar un recurso de DSC en un conjunto de credenciales especificado mediante la propiedad **PsDscRunAsCredential** automática de la configuración. De forma predeterminada, DSC ejecuta cada recurso como la cuenta del sistema. A veces, es necesaria la ejecución como usuario, por ejemplo, al instalar paquetes MSI en un contexto de usuario específico, al configurar claves de registro de un usuario, al acceder a un directorio local específico de usuario o al acceder a un recurso compartido de red.
 
 Cada recurso de DSC tiene una propiedad **PsDscRunAsCredential** que se puede establecer en cualquier credencial de usuario (un objeto [PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx)).
 La credencial puede codificarse de forma rígida como el valor de la propiedad de la configuración, o bien puede establecer el valor en [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx), que solicitará al usuario una credencial cuando se compile la configuración (para más información sobre la compilación de configuraciones, vea [Configuraciones](configurations.md)).
+
+>**Nota:** En PowerShell 5.0, no se admite el uso de la propiedad **PsDscRunAsCredential** en configuraciones que llaman a recursos compuestos. 
+>En PowerShell 5.1, la propiedad **PsDscRunAsCredential** es compatible con configuraciones que llaman a recursos compuestos.
 
 >**Nota:** La propiedad **PsDscRunAsCredential** no está disponible en PowerShell 4.0.
 
