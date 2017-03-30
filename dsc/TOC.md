@@ -1,4 +1,7 @@
 # [Introducción](overview.md)
+## [Información general sobre la configuración de estado deseado para responsables de toma de decisiones](decisionMaker.md)
+## [Información general sobre la configuración de estado deseado para ingenieros](DscForEngineers.md)
+## [Inicio rápido de DSC](quickStart.md)
 
 # [Configuraciones](configurations.md)
 ## [Establecer configuraciones](enactingConfigurations.md)

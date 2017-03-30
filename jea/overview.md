@@ -1,16 +1,15 @@
 ---
-description: 
-manager: dongill
+manager: carmonm
 ms.topic: article
 author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.date: 2017-03-07
 title: "Información general de Just Enough Administration"
 ms.technology: powershell
-ms.openlocfilehash: 742f88bd130a9bcb577914c842735e8c47ca53e6
-ms.sourcegitcommit: cfe32f213819ae76de05da564c3e2c4b7ecfda2f
+ms.openlocfilehash: 2206ccbbcf5996b1bf8db9a46acab2f18f8020dd
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="just-enough-administration"></a>Just Enough Administration
@@ -18,7 +17,7 @@ translationtype: HT
 Just Enough Administration (JEA) es una tecnología de seguridad que permite la administración delegada de todo lo que se puede administrar con PowerShell.
 Con JEA, se puede hacer lo siguiente:
 
-- **Reducir el número de administradores de las máquinas** aprovechando las cuentas virtuales que realizan acciones con privilegios en nombre de usuarios normales.
+- **Reducir el número de administradores de las máquinas** aprovechando las cuentas virtuales o las cuentas de servicio administradas de grupo que realizan acciones con privilegios en nombre de usuarios normales.
 - **Limitar lo que pueden hacer los usuarios** especificando qué cmdlets, funciones y comandos externos pueden ejecutar.
 - **Entender mejor lo que hacen los usuarios** con transcripciones y registros que muestran exactamente qué comandos ha ejecutado un usuario durante su sesión.
 
@@ -52,3 +51,7 @@ Para obtener más información sobre los requisitos para usar JEA y cómo crear,
 - [Uso de JEA](using-jea.md): obtenga información sobre las distintas formas en que puede usar JEA.
 - [Consideraciones de seguridad](security-considerations.md): revise los procedimientos recomendados de seguridad y las implicaciones de las opciones de configuración de JEA.
 - [Auditoría e informes en JEA](audit-and-report.md): obtenga información sobre cómo auditar y crear informes sobre los puntos de conexión de JEA.
+
+## <a name="samples-and-dsc-resource"></a>Ejemplos y recurso de DSC
+
+En el [repositorio de GitHub de JEA](https://github.com/PowerShell/JEA) puede encontrar configuraciones de JEA de ejemplo y el recurso de DSC de JEA.

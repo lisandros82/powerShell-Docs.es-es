@@ -9,13 +9,20 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_status
 ms.technology: powershell
-ms.openlocfilehash: 40ebfa510abe647d80a85fa15f0b777d697ffdfb
-ms.sourcegitcommit: 26c3acb3dae9f7c3868a5f0d6144e9e1a0d02557
+ms.openlocfilehash: 9bc83e9cf0f8a3f29e9bcc8fd1d578abb2125e20
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 <a name="powershell-gallery-status"></a>Estado de la Galería de PowerShell
 =========================
 
+## <a name="03272017---unable-to-see-individual-module-and-script-pages"></a>27/03/2017 - No se pueden ver páginas individuales de módulo y script
+
+__Resumen de impacto__: los vínculos a páginas individuales de módulo y script en https://www.powershellgallery.com está actualmente rotos. Actualmente, estamos informando de este problema en todas las regiones. Esto afecta a todos los cmdlet de PowerShellGet, es decir, Install-Module, Install-Script, Update-Module, Update-Script, Publish-Module y Publish-Scirpt deben continuar funcionando.
+
+__Causa raíz__: los ingenieros identificaron que la causa era un problema al mostrar los botones de medios sociales, como Facebook, en la página.  
+
+__Resolución__: los ingenieros están trabajando en una revisión para resolver este problema.  
 
 ## <a name="12152016---unable-to-send-emails-via-powershellgallery-website"></a>15/12/2016: No se pueden enviar correos electrónicos a través del sitio web de PowerShellGallery
 
@@ -28,7 +35,7 @@ __Pasos siguientes__: si ha usado los vínculos Ponerse en contacto con los prop
 
 ## <a name="8102016---resolved-unable-to-send-emails-to-cgadminmicrosoftcom"></a>10/8/2016 - Resuelto: no se pueden enviar correos electrónicos a cgadmin@microsoft.com
 
-__Resumen del impacto__: entre los días 5/8/2016 y 10/8/2016, los clientes no pudieron enviar correos electrónicos a cgadmin@microsoft.com, ni usar la característica Póngase en contacto con nosotros.  
+__Resumen del impacto__: entre los días 5/8/2016 y 10/8/2016, los clientes no pudieron enviar correos electrónicos a cgadmin@microsoft.com ni usar la característica Póngase en contacto con nosotros.  
 __Causa principal__: los ingenieros identificaron que la causa era un cambio de configuración de la cuenta de correo electrónico.  
 __Resolución__: los ingenieros trabajaron para resolver el problema de configuración.  
 __Pasos siguientes__: si ha usado el vínculo Póngase en contacto con nosotros o ha enviado un correo a cgadmin@microsoft.com durante este tiempo y no hemos respondido, vuelva a intentarlo. Gracias por su paciencia.

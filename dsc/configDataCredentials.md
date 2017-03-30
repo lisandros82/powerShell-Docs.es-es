@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 162ae26dec67e8259661bb58c1b713818627220b
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
+ms.openlocfilehash: e6ea0992f90a72da6426d9112950c925ab6cd32b
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="credentials-options-in-configuration-data"></a>Opciones de credenciales en los datos de configuración
@@ -82,10 +82,8 @@ configuration unencryptedPasswordDemo
             Ensure = "Present"
             MembersToInclude = "User1"
         }
-
     }
 
-    
     Node "TestMachine2"
     {
         # Now we'll use a node-specific password to this machine
@@ -112,7 +110,6 @@ configuration unencryptedPasswordDemo
             Ensure = "Present"
             MembersToInclude = "User2"
         }
-      
     }
 
 }
@@ -160,7 +157,8 @@ En este ejemplo se utiliza un recurso [Group](https://msdn.microsoft.com/en-us/p
 Puede crear grupos locales y agregar o quitar miembros.
 Acepta tanto la propiedad `Credential` como la propiedad automática `PsDscRunAsCredential`.
 No obstante, el recurso solo utiliza la propiedad `Credential`.
-Obtenga más información sobre `PsDscRunAsCredential` en las [notas de la versión de WMF](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_runas).
+
+Para más información sobre la propiedad `PsDscRunAsCredential`, consulte [DSC de ejecución con las credenciales de usuario](runAsUser.md).
 
 ## <a name="example-the-group-resource-credential-property"></a>Ejemplo: la propiedad Credential del recurso Group
 
@@ -279,7 +277,7 @@ Si se utiliza una cuenta local, se elimina la posible exposición de credenciale
 
 **Cuando se usan credenciales con recursos de DSC, siempre que sea posible es preferible usar una cuenta local en lugar de una cuenta de dominio.**
 
-Si hay un carácter "\'" o "'@'" en la propiedad `Username` de la credencial, DSC lo tratará como una cuenta de dominio.
+Si hay un carácter '\'' o '@' en la propiedad `Username` de la credencial, DSC lo tratará como una cuenta de dominio.
 Existen excepciones para "localhost", "127.0.0.1" y "::1" en la parte del dominio del nombre de usuario.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser

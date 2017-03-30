@@ -5,11 +5,11 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.date: 2017-03-08
 title: "Configuraciones de sesión de JEA"
 ms.technology: powershell
-ms.openlocfilehash: 32602293afd3a94767682d32a053281ec021cc33
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: e98214d1777a1530b5a18ac9df1a6185d6d73979
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="jea-session-configurations"></a>Configuraciones de sesión de JEA
@@ -175,55 +175,13 @@ Tal como se muestra en el ejemplo anterior, el nombre sin formato (nombre de arc
 Si hay varias funcionalidades de rol disponibles en el sistema con el mismo nombre sin formato, PowerShell usará su orden de búsqueda implícito para seleccionar el archivo de funcionalidad de rol adecuado.
 **No** proporcionará acceso a todos los archivos de funcionalidad de rol con el mismo nombre.
 
-El orden de las rutas de acceso en `$env:PSModulePath` y el nombre del módulo principal determinan el orden de búsqueda de las funcionalidades de rol de JEA.
-La ruta de acceso predeterminada del módulo en PowerShell es la siguiente:
+JEA utiliza la variable de entorno `$env:PSModulePath` para determinar qué rutas de acceso examinar para archivos de capacidad de rol.
+Dentro de cada una de esas rutas de acceso, JEA buscará módulos válidos de PowerShell que contengan una subcarpeta "RoleCapabilities".
+Al igual que con la importación de módulos, JEA prefiere funcionalidades de rol que se suministran con Windows a capacidades de rol personalizadas con el mismo nombre.
+Para todos los demás conflictos de nomenclatura, la precedencia se determina por el orden en el que Windows enumera los archivos en el directorio (sin garantizar el orden alfabético).
+El primer archivo de funcionalidad de rol que coincida con el nombre deseado se usará para el usuario que se conecta.
 
-```powershell
-PS C:\> $env:PSModulePath
-
-
-C:\Users\Alice\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\
-```
-
-Las rutas de acceso que aparecen antes (a la izquierda) en la lista PSModulePath tienen mayor prioridad que las rutas de acceso de la derecha.
-
-En cada ruta de acceso, puede haber 0 o más módulos de PowerShell.
-Las funcionalidades de rol se seleccionan en el primer módulo, por orden alfabético, que contiene un archivo de funcionalidad de rol que coincida con el nombre que quiera.
-
-Para ilustrar esta prioridad, tenga en cuenta el ejemplo siguiente, donde el signo más (+) indica una carpeta y el signo menos (-) indica un archivo.
-
-```
-+ C:\Program Files\WindowsPowerShell\Modules
-    + ContosoMaintenance
-        - ContosoMaintenance.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - DnsOperator.psrc
-            - DnsAuditor.psrc
-    + FabrikamModule
-        - FabrikamModule.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - FileServerAdmin.psrc
-
-+ C:\Windows\System32\WindowsPowerShell\v1.0\Modules
-    + BuiltInModule
-        - BuiltInModule.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - OtherBuiltinRole.psrc
-```
-
-Hay varios archivos de funcionalidad de rol instalados en este sistema.
-¿Qué ocurre si un archivo de configuración de sesión proporciona acceso a un usuario al rol "DnsAdmin"?
-
-
-El archivo de funcionalidad de rol adecuado estará en "C:\\Archivos de programa\\WindowsPowerShell\\Modules\\ContosoMaintenance\\RoleCapabilities\\DnsAdmin.psrc".
-
-Si se pregunta por qué, recuerde los 2 órdenes de prioridad:
-
-1. La variable `$env:PSModulePath` tiene la carpeta Archivos de programa enumerada antes que la carpeta System32, por lo que preferirá archivos de la carpeta Archivos de programa.
-2. Por orden alfabético, el módulo ContosoMaintenance precede al módulo FabrikamModule, por lo que seleccionará el rol DnsAdmin de ContosoMaintenance.
+Puesto que el orden de búsqueda de la funcionalidad de rol no es determinista cuando dos o más funcionalidades de rol comparten el mismo nombre, se **recomienda encarecidamente** que se asegure de que las funcionalidades de rol tienen nombres únicos en el equipo.
 
 ### <a name="conditional-access-rules"></a>Reglas de acceso condicional
 
