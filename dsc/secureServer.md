@@ -5,10 +5,10 @@ keywords: powershell,DSC
 description: 
 ms.topic: article
 author: eslesar
-manager: dongill
+manager: carmonm
 ms.prod: powershell
-ms.openlocfilehash: b84b70edeafca3112356224c9ae14c6497170ac5
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: af86f1f93a1035ec52a8b029acdd826e8463e2c2
+ms.sourcegitcommit: ba8ed836799ef465e507fa1b8d341ba38459d863
 translationtype: HT
 ---
 # <a name="pull-server-best-practices"></a>Procedimientos recomendados del servidor de extracción
@@ -117,13 +117,12 @@ Al configurar clientes para trabajar con un entorno de servidor de extracción, 
 
 Un CNAME DNS le permite crear un alias para hacer referencia al registro de host (A). El objetivo del registro de nombre adicional es aumentar la flexibilidad por si se necesitara un cambio en el futuro. Un CNAME puede ayudar a aislar la configuración del cliente para que los cambios en el entorno de servidor, como la sustitución de un servidor de extracción o la adición de servidores adicionales de extracción, no exijan un cambio correspondiente en la configuración del cliente.
 
-Al elegir un nombre para el registro DNS, tenga en cuenta la arquitectura de la solución. Si usa equilibrio de carga, el certificado empleado para proteger el tráfico a través de HTTPS tendrá que llevar el mismo nombre que el registro DNS. De forma similar, si usa un recurso compartido de archivos de alta disponibilidad, se usa el nombre virtual del clúster.
+Al elegir un nombre para el registro DNS, tenga en cuenta la arquitectura de la solución. Si usa equilibrio de carga, el certificado empleado para proteger el tráfico a través de HTTPS tendrá que llevar el mismo nombre que el registro DNS. 
 
 Escenario |Procedimiento recomendado
 :---|:---
 Entorno de prueba |Si es posible, reproduzca el entorno de producción planeado. Un nombre de host del servidor es adecuado para configuraciones sencillas. Si DNS no está disponible, se puede usar una dirección IP en lugar de un nombre de host.|
 Implementación de un solo nodo |Cree un registro CNAME DNS que apunte al nombre de host del servidor.|
-Implementación de alta disponibilidad |Si los clientes se conectan a través de una solución de equilibrio de carga, cree un nombre de host para la dirección IP virtual y un registro CNAME que haga referencia a ese nombre de host. Si se va a usar round robin de DNS para distribuir solicitudes de cliente en servidores de extracción, debe configurar los registros de nombre para incluir los nombres de host de todas las instancias de servidor de extracción implementadas.|
 
 Para más información, vea [Configuring DNS Round Robin in Windows Server (Configuración de round robin de DNS en Windows Server)](https://technet.microsoft.com/en-us/library/cc787484(v=ws.10).aspx).
 
@@ -154,13 +153,6 @@ Si las solicitudes de certificado no están automatizadas, ¿con quién tiene qu
 
 Un servidor de extracción se puede implementar mediante un servicio web hospedado en IIS o un recurso compartido de archivos SMB. En la mayoría de los casos, la opción del servicio web proporcionará mayor flexibilidad. No es raro que el tráfico HTTPS atraviese límites de red, mientras que el tráfico SMB se suele filtrar o bloquear entre redes. El servicio web también ofrece la opción de incluir un servidor de conformidad o un administrador de informes web (ambos temas se tratarán en una versión futura de este documento) que proporcionan un mecanismo para que los clientes informen del estado a un servidor para una visibilidad centralizada. SMB proporciona una opción para entornos donde la directiva determina que no se debe usar un servidor web y para otros requisitos de entorno que convierten a un rol de servidor web en no deseado. En cualquier caso, no olvide evaluar los requisitos de firma y cifrado del tráfico. HTTPS, firma SMB y directivas IPSEC son opciones que vale la pena tener en cuenta.
 
-#### <a name="designing-for-high-availability"></a>Diseño para alta disponibilidad  
-El rol de servidor de extracción se puede implementar en una arquitectura de alta disponibilidad. El rol de servicio web puede ser de carga equilibrada y los archivos y las carpetas que incluyen módulos de DSC y configuraciones DSC pueden colocarse en almacenamiento de alta disponibilidad.
-
-Tenga en cuenta que una vez que las configuraciones y los módulos se entregan en un nodo de destino, todos los datos necesarios para realizar pruebas y para establecer configuraciones se almacenan localmente en cada nodo. Únicamente los cambios se entregan desde el servidor de extracción. Una interrupción del servicio de un servidor de extracción no sería una interrupción a menos que las implementaciones estuvieran activas.  Normalmente, solo se garantiza la alta disponibilidad para el mayor de los entornos.
-
-La configuración de un entorno de servidor de extracción de alta disponibilidad exige tomar decisiones sobre cómo distribuir las solicitudes de cliente en varios nodos de servidor y cómo compartir los archivos de servidor necesarios en esos nodos.
-
 #### <a name="load-balancing"></a>Equilibrio de carga  
 Los clientes que interactúan con el servicio web realizan una solicitud de información que se devuelve en una sola respuesta. No se necesitan solicitudes secuenciales, por lo que no es necesario que la plataforma de equilibrio de carga garantice el mantenimiento de las sesiones en un único servidor en cualquier momento.
 
@@ -173,17 +165,6 @@ Si usa un equilibrador de carga de hardware, ¿quién recibirá la solicitud de 
 ¿Habrá que solicitar una dirección IP adicional o el equipo responsable del equilibrio de carga se ocupará de eso?|
 ¿Tiene los registros DNS necesarios y el equipo responsable de configurar la solución de equilibrio de carga los necesitará?|
 ¿La solución de equilibrio de carga exige que el dispositivo administre la PKI o puede equilibrar la carga de tráfico HTTPS siempre que no haya ningún requisito de sesión?|
-
-### <a name="shared-storage"></a>Almacenamiento compartido
-
-En un escenario de alta disponibilidad donde hay varios servidores configurados como servidores de extracción y las conexiones tienen equilibrio de carga, es fundamental que los recursos y las configuraciones disponibles en esos servidores sean idénticos. La mejor manera de conseguirlo es almacenar este contenido en una ubicación de alta disponibilidad como un recurso compartido de archivos en clúster. La ubicación del recurso compartido se puede especificar en la configuración de cada servidor. Para más información sobre las opciones de almacenamiento compartido, vea Introducción al servidor de archivos de escalabilidad horizontal para datos de aplicación.
-
-Tarea de planeamiento|
----|
-¿Qué solución se va a usar para hospedar el recurso compartido de alta disponibilidad?|
-¿Quién administrará la solicitud de un nuevo recurso compartido de alta disponibilidad?|
-¿Cuál es el tiempo de respuesta medio para que un recurso compartido de alta disponibilidad esté disponible?|
-¿Qué información necesitarán los equipos responsables del almacenamiento o la agrupación en clústeres?|
 
 ### <a name="staging-configurations-and-modules-on-the-pull-server"></a>Preconfiguración de configuraciones y módulos en el servidor de extracción
 
