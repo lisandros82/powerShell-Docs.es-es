@@ -25,5 +25,5 @@ Todas las carpetas de este repositorio se publican en [MSDN](https://msdn.micros
 
 Incorporamos las contribuciones hechas a este repositorio mediante [solicitudes de incorporación de cambios](https://help.github.com/articles/using-pull-requests/) en la rama *staging*. Tenga en cuenta que antes de enviar una solicitud de incorporación de cambios debe [firmar un contrato de licencia de contribución](https://cla.microsoft.com/) para garantizar que la comunidad pueda utilizar libremente sus aportaciones.
 Para obtener más información sobre las contribuciones, lea nuestra [guía de contribuciones](CONTRIBUTING.md).
-Hay una [guía de estilo](./style.md) preliminar que puede revisar antes de realizar contribuciones.
+Hay una [guía de estilo](./STYLE.md) preliminar que puede revisar antes de realizar contribuciones.
 Use las plantillas de problemas y solicitud de extracción para ayudar a mantener la documentación coherente entre versiones. 
