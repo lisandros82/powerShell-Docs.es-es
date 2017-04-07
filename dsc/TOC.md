@@ -5,15 +5,17 @@
 
 # [Configuraciones](configurations.md)
 ## [Establecer configuraciones](enactingConfigurations.md)
+## [Separación de los datos de entorno y configuración](separatingEnvData.md)
 ## [Uso de recursos con varias versiones](sxsResource.md)
 ## [Ejecución de DSC con las credenciales de usuario](runAsUser.md)
 ## [Especificación de las dependencias entre nodos](crossNodeDependencies.md)
 ## [Datos de configuración](configData.md)
 ### [Opciones de credenciales en los datos de configuración](configDataCredentials.md)
+## [Anidamiento de configuraciones](compositeConfigs.md)
 ## [Protección del archivo MOF de configuración](secureMOF.md)
 ## [Configuraciones parciales](partialConfigs.md)
 ## [Escritura de ayuda para configuraciones de DSC](configHelp.md)
-## [Configuración de máquinas virtuales en el arranque inicial mediante DSC](bootstrapDsc.md)
+## [Configuración de una máquina virtual en el arranque inicial mediante DSC](bootstrapDsc.md)
 ### [Clave del Registro DSCAutomationHostEnabled](DSCAutomationHostEnabled.md)
 
 # [Recursos](resources.md)
