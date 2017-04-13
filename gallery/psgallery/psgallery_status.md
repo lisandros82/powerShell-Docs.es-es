@@ -9,12 +9,20 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_status
 ms.technology: powershell
-ms.openlocfilehash: 48f554793d25c2d5ea10bc202489845f4225b2b9
-ms.sourcegitcommit: ba8ed836799ef465e507fa1b8d341ba38459d863
+ms.openlocfilehash: 1886715c4b948e4bc59a51fb96d54b56b5b5afed
+ms.sourcegitcommit: 809e4f1bdf218b283e84438151030bfa94ca956d
 translationtype: HT
 ---
 <a name="powershell-gallery-status"></a>Estado de la Galería de PowerShell
 =========================
+
+## <a name="04112017---users-unable-to-log-in"></a>11/04/2017: los usuarios no pueden iniciar sesión
+
+__Resumen de impacto__: algunos usuarios no pueden iniciar sesión en Galería de PowerShell con sus cuentas de Azure AD. El equipo de operaciones de Galería de PowerShell está investigando el problema. Parece que no afecta a los usuarios con cuentas Microsoft, es decir, los que usan dominios como Outlook.com, Live.com, etc.). 
+ 
+__Causa raíz__: por determinar  
+
+__Pasos siguientes__: estamos trabajando con el equipo de Azure AD para investigar el problema. 
 
 ## <a name="03272017---resolved-unable-to-see-individual-module-and-script-pages"></a>27/03/2017 - RESUELTO - No se pueden ver páginas individuales de módulo y script
 

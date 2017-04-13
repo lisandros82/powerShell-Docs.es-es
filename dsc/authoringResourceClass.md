@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: a8c2094cbef1bb14c4a9082ff78fae78ec0c2e65
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: feec9b9e242ef6f43c272bfeb179d11944d1cb06
+ms.sourcegitcommit: 1002c473b88abb209e4188bb626d93675c3614e2
 translationtype: HT
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Escribir un recurso de DSC personalizado con clases de PowerShell
@@ -21,7 +21,9 @@ En un recurso de DSC basados en clases, el esquema se define como propiedades de
 
 En este tema, se creará un recurso simple denominado **FileResource** que administra un archivo en una ruta de acceso especificada.
 
-Para más información sobre los recursos DSC, consulte [Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md).
+Para más información sobre los recursos DSC, consulte [Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md).
+
+>**Nota**: Los recursos basados en clases no admiten colecciones genéricas.
 
 ## <a name="folder-structure-for-a-class-resource"></a>Estructura de carpetas de un recurso de clase
 
@@ -474,5 +476,5 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="see-also"></a>Véase también
 ### <a name="concepts"></a>Conceptos
-[Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md)
+[Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md)
 
