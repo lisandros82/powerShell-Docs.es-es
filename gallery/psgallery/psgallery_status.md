@@ -9,20 +9,22 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_status
 ms.technology: powershell
-ms.openlocfilehash: 1886715c4b948e4bc59a51fb96d54b56b5b5afed
-ms.sourcegitcommit: 809e4f1bdf218b283e84438151030bfa94ca956d
+ms.openlocfilehash: a260b9b696b41947fbbb789fd165dfe4bdac1dc3
+ms.sourcegitcommit: 214b8442f05618d078837889cbb6a30b42c01edb
 translationtype: HT
 ---
 <a name="powershell-gallery-status"></a>Estado de la Galería de PowerShell
 =========================
 
-## <a name="04112017---users-unable-to-log-in"></a>11/04/2017: los usuarios no pueden iniciar sesión
+## <a name="04112017---users-unable-to-log-in-with-azure-active-directory-aad-accounts"></a>11/04/2017: los usuarios no pueden iniciar sesión con cuentas de Azure Active Directory (AAD)
 
-__Resumen de impacto__: algunos usuarios no pueden iniciar sesión en Galería de PowerShell con sus cuentas de Azure AD. El equipo de operaciones de Galería de PowerShell está investigando el problema. Parece que no afecta a los usuarios con cuentas Microsoft, es decir, los que usan dominios como Outlook.com, Live.com, etc.). 
+__Resumen de impacto__: algunos usuarios no podían iniciar sesión en Galería de PowerShell con sus cuentas de Azure AD. 
  
-__Causa raíz__: por determinar  
+__Causa principal__: durante una actualización para interactuar de forma más segura con AAD, se perdió un cambio de configuración. Las pruebas realizadas para validar el cambio no incluían ciertos tipos de cuentas de AAD, por lo que la implementación siguió adelante.
 
-__Pasos siguientes__: estamos trabajando con el equipo de Azure AD para investigar el problema. 
+__Resolución__: los ingenieros han identificado el valor de configuración que faltaba y han corregido el problema. 
+
+__Pasos siguientes__: modificaremos nuestras pruebas para incluir un conjunto más amplio de tipos de cuentas de AAD.
 
 ## <a name="03272017---resolved-unable-to-see-individual-module-and-script-pages"></a>27/03/2017 - RESUELTO - No se pueden ver páginas individuales de módulo y script
 
