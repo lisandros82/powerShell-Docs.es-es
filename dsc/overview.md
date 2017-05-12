@@ -7,9 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: ec773688540a3f4a2f128f66d311926fd5b9a935
-ms.sourcegitcommit: 6d27d6db5ab0e2d5b6c7229e2e2d2e57915ea22d
-translationtype: HT
+ms.openlocfilehash: efd15e1cee366ee887d302c7e681f18a93c68080
+ms.sourcegitcommit: ee407927101c3b166cc200a39a6ea786a1c21f95
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="windows-powershell-desired-state-configuration-overview"></a>Información general sobre la configuración de estado deseado de Windows PowerShell 
 
@@ -28,9 +30,9 @@ DSC es una plataforma declarativa que se usa para la configuración, implementac
 - Las [configuraciones](configurations.md) son scripts de PowerShell declarativos que definen y configuran instancias de recursos.
     Cuando ejecuta la configuración, DSC (y los recursos a los que llama la configuración) simplemente "hará que sea así", asegurándose de que el sistema exista en el estado que disponga la configuración. 
     Las configuraciones DSC también son idempotentes: el administrador de configuración local (LCM) seguirá garantizando que las máquinas estén configuradas en el estado que la configuración declare.
-- Los recursos son la parte "hacer que sea así" de DSC. Contienen el código que coloca y mantiene el destino de una configuración en el estado especificado. 
+- Los [recursos](resources.md) son la parte "hacer que sea así" de DSC. Contienen el código que coloca y mantiene el destino de una configuración en el estado especificado. 
     Los recursos residen en los módulos de PowerShell y pueden escribirse para modelar algo tan genérico como un archivo o un proceso de Windows, o algo tan específico como un servidor IIS o una VM que se ejecuta en Azure.
-- El administrador de configuración local (LCM) es el motor mediante el que DSC facilita la interacción entre recursos y configuraciones. 
+- El [administrador de configuración local (LCM)](metaConfig.md) es el motor mediante el que DSC facilita la interacción entre recursos y configuraciones. 
     El LCM sondea periódicamente el sistema mediante el flujo de control que han implementado los recursos para asegurarse de que se mantiene el estado que ha definido una configuration. 
     Si el sistema está fuera del estado, el LCM llama al código de los recursos para "hacer que sea así" según la declaración de la configuration. 
 

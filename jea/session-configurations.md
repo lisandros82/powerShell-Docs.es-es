@@ -5,12 +5,14 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2017-03-08
+ms.date: 2017-04-25
 title: "Configuraciones de sesión de JEA"
 ms.technology: powershell
-ms.openlocfilehash: e98214d1777a1530b5a18ac9df1a6185d6d73979
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: 8773096627217663362e61fb158cc900aea20f43
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="jea-session-configurations"></a>Configuraciones de sesión de JEA
 
@@ -40,7 +42,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 Puede abrir el archivo de configuración de sesión en cualquier editor de texto.
 El campo `-SessionType RestrictedRemoteServer` indica que JEA usará la configuración de sesión para administrarla de forma segura.
-Las sesiones configuradas de esta forma funcionarán en [modo NoLanguage](https://technet.microsoft.com/en-us/library/dn433292.aspx) y solo tendrán los siguientes 8 cmdlets (y alias) predeterminados disponibles:
+Las sesiones configuradas de esta forma funcionarán en [modo NoLanguage](https://technet.microsoft.com/en-us/library/dn433292.aspx) y solo tendrán los siguientes 8 comandos (y alias) predeterminados disponibles:
 
 - Clear-Host (cls, clear)
 - Exit-PSSession (exsn, exit)
@@ -139,7 +141,7 @@ MountUserDrive = $true
 ```
 
 De manera predeterminada, la unidad de usuario le permite almacenar un máximo de 50 MB de datos por usuario.
-Puede limitar la cantidad de datos que puede consumir un usuario con el campo *UserDriveMaxmimumSize*.
+Puede limitar la cantidad de datos que puede consumir un usuario con el campo *UserDriveMaximumSize*.
 
 ```powershell
 # Enables the user drive with a per-user limit of 500MB (524288000 bytes)
@@ -169,6 +171,15 @@ RoleDefinitions = @{
 
 Si un usuario pertenece a más de un grupo en la definición de rol, obtendrá acceso a los roles de cada uno.
 Si dos roles conceden acceso a los mismos cmdlets, se concederá al usuario el conjunto de parámetros más permisivo.
+
+Al especificar usuarios o grupos locales en el campo de las definiciones de rol, asegúrese de utilizar el nombre del equipo (no *localhost* o *.*) antes de la barra diagonal inversa.
+Puede comprobar el nombre del equipo observando la variable `$env:computername`.
+
+```powershell
+RoleDefinitions = @{
+    'MyComputerName\MyLocalGroup' = @{ RoleCapabilities = 'DnsAuditor' }
+}
+```
 
 ### <a name="role-capability-search-order"></a>Orden de búsqueda de funcionalidad de rol
 Tal como se muestra en el ejemplo anterior, el nombre sin formato (nombre de archivo sin la extensión) del archivo de funcionalidad de rol hace referencia a las funcionalidades de rol.
