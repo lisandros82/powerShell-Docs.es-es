@@ -1,11 +1,7 @@
 ---
 author: jpjofre
 description: 
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-12
-ms.prod: powershell
-ms.technology: powershell
+
 ms.topic: conceptual
 title: Referencia de PowerShell
 translationtype: Human Translation
