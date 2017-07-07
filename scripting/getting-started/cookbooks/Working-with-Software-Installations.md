@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Trabajar con instalaciones de software
-ms.technology: powershell
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: 123ad074fc626bc2c93c4c61f30f056e92cd9d51
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 2078376a8be19c9ff8ecc44183eb89f14bc388ed
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="working-with-software-installations"></a>Trabajar con instalaciones de software
 Puede usar la clase **Win32_Product** de WMI para acceder a las aplicaciones diseñadas para usar Windows Installer, si bien no todas las aplicaciones de hoy en día usan Windows Installer. Dado que Windows Installer proporciona la gama más amplia de técnicas estándar para trabajar con aplicaciones instalables, nos centraremos principalmente en esas aplicaciones. Por lo general, las aplicaciones que usan otras rutinas de instalación no se administrarán con Windows Installer. Las técnicas concretas para trabajar con esas aplicaciones dependerán del instalador de software y de las decisiones tomadas por el desarrollador de la aplicación.
@@ -92,7 +88,7 @@ Aunque no hay ninguna manera en firme de encontrar todas las aplicaciones en un 
 También podemos examinar esta clave para buscar aplicaciones. Podemos hacer que la clave Uninstall sea más fácil de ver si asignamos una unidad de Windows PowerShell a esta ubicación del Registro:
 
 ```
-PS>    
+PS> New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall    
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
