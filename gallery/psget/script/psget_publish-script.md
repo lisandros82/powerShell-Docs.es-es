@@ -1,37 +1,34 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_publish script
-ms.technology: powershell
-ms.openlocfilehash: 2619738ba76ed3b3c84d1a77771531ebd6955d6f
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Publish-Script
+ms.openlocfilehash: 0d2fd87645d2286e87e68198844adce8909739cb
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="publish-script"></a>Publish-Script
+# <a name="publish-script"></a><span data-ttu-id="1445f-103">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="1445f-103">Publish-Script</span></span>
 
-El cmdlet Publish-Script publica el script especificado en la galería en línea.
+<span data-ttu-id="1445f-104">El cmdlet Publish-Script publica el script especificado en la galería en línea.</span><span class="sxs-lookup"><span data-stu-id="1445f-104">The Publish-Script cmdlet publishes the specified script to the online gallery.</span></span>
 
-## <a name="description"></a>Descripción
+## <a name="description"></a><span data-ttu-id="1445f-105">Descripción</span><span class="sxs-lookup"><span data-stu-id="1445f-105">Description</span></span>
 
-El cmdlet Publish-Script permite publicar el archivo de script con metadatos válidos, como Version, Guid, Author, Description, etc. El parámetro de modificador Force en el cmdlet Publish-Script arranca NuGet.exe sin pedir confirmación.
+<span data-ttu-id="1445f-106">El cmdlet Publish-Script permite publicar el archivo de script con metadatos válidos, como Version, Guid, Author, Description, etc. El parámetro de modificador Force en el cmdlet Publish-Script arranca NuGet.exe sin pedir confirmación.</span><span class="sxs-lookup"><span data-stu-id="1445f-106">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc. Force switch parameter on Publish-Script cmdlet bootstraps the NuGet.exe without prompting.</span></span>
 
-## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a><span data-ttu-id="1445f-107">Sintaxis de cmdlet</span><span class="sxs-lookup"><span data-stu-id="1445f-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="1445f-108">Referencia de la ayuda en línea de cmdlet</span><span class="sxs-lookup"><span data-stu-id="1445f-108">Cmdlet online help reference</span></span>
 
-[Publish-Script](http://go.microsoft.com/fwlink/?LinkId=619788)
+[<span data-ttu-id="1445f-109">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="1445f-109">Publish-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-## <a name="example-commands"></a>Comandos de ejemplo
+## <a name="example-commands"></a><span data-ttu-id="1445f-110">Comandos de ejemplo</span><span class="sxs-lookup"><span data-stu-id="1445f-110">Example commands</span></span>
 
 ```powershell
 # Publish the really basic script file with required metadata

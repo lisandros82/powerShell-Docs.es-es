@@ -1,7 +1,18 @@
-# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>Detección, instalación y administración de scripts de PowerShell con PowerShellGet
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: a5d1bff0b39cbbac7d83c44c232a2721c340caa8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a><span data-ttu-id="5bc2c-102">Detección, instalación y administración de scripts de PowerShell con PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="5bc2c-102">PowerShell Script Discovery, Install and Management with PowerShellGet</span></span>
 
-La característica de uso compartido de scripts de PowerShell se agregó a PowerShellGet en la versión WMF 5.0 RTM.
-Los siguientes cmdlets nuevos se agregaron al módulo PowerShellGet para admitir los scripts de PowerShell.
+<span data-ttu-id="5bc2c-103">La característica de uso compartido de scripts de PowerShell se agregó a PowerShellGet en la versión WMF 5.0 RTM.</span><span class="sxs-lookup"><span data-stu-id="5bc2c-103">PowerShell Script sharing feature got added to the PowerShellGet in the WMF 5.0 RTM release.</span></span>
+<span data-ttu-id="5bc2c-104">Los siguientes cmdlets nuevos se agregaron al módulo PowerShellGet para admitir los scripts de PowerShell.</span><span class="sxs-lookup"><span data-stu-id="5bc2c-104">The following new cmdlets are added to the PowerShellGet module for supporting the PowerShell Scripts.</span></span>
 ```powershell
 PS C:\\windows\\system32&gt; Get-Command \*script\* -Module PowerShellGet | Sort-Object -Property Noun, Verb
 CommandType Name Version Source
@@ -28,7 +39,7 @@ Function Update-ScriptFileInfo 1.0.0.1 PowerShellGet
 -   **Test-ScriptFileInfo** cmdlet lets you to validate and get the script file metadata.
 ```
 
-Sintaxis de cmdlets de uso compartido de scripts:
+<span data-ttu-id="5bc2c-105">Sintaxis de cmdlets de uso compartido de scripts:</span><span class="sxs-lookup"><span data-stu-id="5bc2c-105">Syntax of script sharing Cmdlets:</span></span>
 ```powershell
 **New-ScriptFileInfo** \[-Path\] &lt;string&gt; -Description &lt;string&gt; \[-Version &lt;version&gt;\] \[-Author &lt;string&gt;\] \[-Guid &lt;guid&gt;\] \[-CompanyName &lt;string&gt;\] \[-Copyright &lt;string&gt;\] \[-RequiredModules &lt;Object\[\]&gt;\] \[-ExternalModuleDependencies &lt;string\[\]&gt;\] \[-RequiredScripts &lt;string\[\]&gt;\] \[-ExternalScriptDependencies &lt;string\[\]&gt;\] \[-Tags &lt;string\[\]&gt;\] \[-ProjectUri &lt;uri&gt;\] \[-LicenseUri &lt;uri&gt;\] \[-IconUri &lt;uri&gt;\] \[-ReleaseNotes &lt;string\[\]&gt;\] \[-PassThru\] \[-Force\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 
@@ -66,3 +77,4 @@ Sintaxis de cmdlets de uso compartido de scripts:
 
 **Publish-Script** -LiteralPath &lt;string&gt; \[-NuGetApiKey &lt;string&gt;\] \[-Repository &lt;string&gt;\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 ```
+

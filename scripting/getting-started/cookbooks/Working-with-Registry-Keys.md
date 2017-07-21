@@ -1,23 +1,19 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Trabajar con claves del Registro
-ms.technology: powershell
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: 8554bd1752ecddd87d70c2f31de357ce5da26ba5
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: efb2c016afa2212c2907c0740ad26c4e4cddd3af
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
-# <a name="working-with-registry-keys"></a>Trabajar con claves del Registro
-Dado que las claves del Registro son elementos en unidades de Windows PowerShell, trabajar con ellas es muy similar a trabajar con archivos y carpetas. Una diferencia fundamental es que todos los elementos en una unidad de Windows PowerShell basada en el Registro es un contenedor, como una carpeta en una unidad del sistema de archivos. Sin embargo, las entradas del Registro y sus valores asociados son propiedades de los elementos, no elementos distintos.
+# <a name="working-with-registry-keys"></a><span data-ttu-id="e0216-103">Trabajar con claves del Registro</span><span class="sxs-lookup"><span data-stu-id="e0216-103">Working with Registry Keys</span></span>
+<span data-ttu-id="e0216-104">Dado que las claves del Registro son elementos en unidades de Windows PowerShell, trabajar con ellas es muy similar a trabajar con archivos y carpetas.</span><span class="sxs-lookup"><span data-stu-id="e0216-104">Because registry keys are items on Windows PowerShell drives, working with them is very similar to working with files and folders.</span></span> <span data-ttu-id="e0216-105">Una diferencia fundamental es que todos los elementos en una unidad de Windows PowerShell basada en el Registro es un contenedor, como una carpeta en una unidad del sistema de archivos.</span><span class="sxs-lookup"><span data-stu-id="e0216-105">One critical difference is that every item on a registry-based Windows PowerShell drive is a container, just like a folder on a file system drive.</span></span> <span data-ttu-id="e0216-106">Sin embargo, las entradas del Registro y sus valores asociados son propiedades de los elementos, no elementos distintos.</span><span class="sxs-lookup"><span data-stu-id="e0216-106">However, registry entries and their associated values are properties of the items, not distinct items.</span></span>
 
-### <a name="listing-all-subkeys-of-a-registry-key"></a>Enumerar a todas las subclaves de una clave del Registro
-Puede mostrar todos los elementos directamente dentro de una clave del Registro mediante **Get-ChildItem**. Agregue el parámetro **Force** opcional para mostrar elementos ocultos o del sistema. Por ejemplo, este comando muestra los elementos directamente en la unidad HKCU: de Windows PowerShell, que se corresponde con el subárbol del Registro HKEY_CURRENT_USER:
+### <a name="listing-all-subkeys-of-a-registry-key"></a><span data-ttu-id="e0216-107">Enumerar a todas las subclaves de una clave del Registro</span><span class="sxs-lookup"><span data-stu-id="e0216-107">Listing All Subkeys of a Registry Key</span></span>
+<span data-ttu-id="e0216-108">Puede mostrar todos los elementos directamente dentro de una clave del Registro mediante **Get-ChildItem**.</span><span class="sxs-lookup"><span data-stu-id="e0216-108">You can show all items directly within a registry key by using **Get-ChildItem**.</span></span> <span data-ttu-id="e0216-109">Agregue el parámetro **Force** opcional para mostrar elementos ocultos o del sistema.</span><span class="sxs-lookup"><span data-stu-id="e0216-109">Add the optional **Force** parameter to display hidden or system items.</span></span> <span data-ttu-id="e0216-110">Por ejemplo, este comando muestra los elementos directamente en la unidad HKCU: de Windows PowerShell, que se corresponde con el subárbol del Registro HKEY_CURRENT_USER:</span><span class="sxs-lookup"><span data-stu-id="e0216-110">For example, this command displays the items directly within Windows PowerShell drive HKCU:, which corresponds to the HKEY_CURRENT_USER registry hive:</span></span>
 
 ```
 PS> Get-ChildItem -Path hkcu:\
@@ -35,9 +31,9 @@ SKC  VC Name                           Property
 ...
 ```
 
-Estas son las claves de nivel superior visibles en HKEY_CURRENT_USER en el Editor del Registro (Regedit.exe).
+<span data-ttu-id="e0216-111">Estas son las claves de nivel superior visibles en HKEY_CURRENT_USER en el Editor del Registro (Regedit.exe).</span><span class="sxs-lookup"><span data-stu-id="e0216-111">These are the top-level keys visible under HKEY_CURRENT_USER in the Registry Editor (Regedit.exe).</span></span>
 
-Para especificar esta ruta de acceso del Registro también puede especificar el nombre del proveedor del Registro, seguido de "**::**". El nombre completo del proveedor del Registro es **Microsoft.PowerShell.Core\\Registry**, pero se puede abreviar a **Registry**. Cualquiera de los siguientes comandos enumerará el contenido directamente en HKCU:
+<span data-ttu-id="e0216-112">Para especificar esta ruta de acceso del Registro también puede especificar el nombre del proveedor del Registro, seguido de "**::**".</span><span class="sxs-lookup"><span data-stu-id="e0216-112">You can also specify this registry path by specifying the registry provider's name, followed by "**::**".</span></span> <span data-ttu-id="e0216-113">El nombre completo del proveedor del Registro es **Microsoft.PowerShell.Core\\Registry**, pero se puede abreviar a **Registry**.</span><span class="sxs-lookup"><span data-stu-id="e0216-113">The registry provider's full name is **Microsoft.PowerShell.Core\\Registry**, but this can be shortened to just **Registry**.</span></span> <span data-ttu-id="e0216-114">Cualquiera de los siguientes comandos enumerará el contenido directamente en HKCU:</span><span class="sxs-lookup"><span data-stu-id="e0216-114">Any of the following commands will list the contents directly under HKCU:</span></span>
 
 ```
 Get-ChildItem -Path Registry::HKEY_CURRENT_USER
@@ -47,56 +43,56 @@ Get-ChildItem -Path Microsoft.PowerShell.Core\Registry::HKCU
 Get-ChildItem HKCU:
 ```
 
-Estos comandos muestran solo los elementos contenidos directamente, lo que se parece a usar el comando **DIR** de Cmd.exe o **ls** en un shell de UNIX. Para mostrar los elementos contenidos, debe especificar el parámetro **Recurse**. Para enumerar todas las claves del Registro en HKCU, use el comando siguiente (esta operación puede tardar una gran cantidad de tiempo):
+<span data-ttu-id="e0216-115">Estos comandos muestran solo los elementos contenidos directamente, lo que se parece a usar el comando **DIR** de Cmd.exe o **ls** en un shell de UNIX.</span><span class="sxs-lookup"><span data-stu-id="e0216-115">These commands list only the directly contained items, much like using Cmd.exe's **DIR** command or **ls** in a UNIX shell.</span></span> <span data-ttu-id="e0216-116">Para mostrar los elementos contenidos, debe especificar el parámetro **Recurse**.</span><span class="sxs-lookup"><span data-stu-id="e0216-116">To show contained items, you need to specify the **Recurse** parameter.</span></span> <span data-ttu-id="e0216-117">Para enumerar todas las claves del Registro en HKCU, use el comando siguiente (esta operación puede tardar una gran cantidad de tiempo):</span><span class="sxs-lookup"><span data-stu-id="e0216-117">To list all registry keys in HKCU, use the following command (This operation can take an extremely long time.):</span></span>
 
 ```
 Get-ChildItem -Path hkcu:\ -Recurse
 ```
 
-**Get-ChildItem** puede realizar funciones complejas de filtrado a través de sus parámetros **Path**, **Filter**, **Include** y **Exclude**, pero estos parámetros suelen basarse solo en el nombre. Puede realizar un filtrado complejo basado en otras propiedades de elementos mediante el cmdlet **Where-Object**. El siguiente comando busca en HKCU:\\Software todas las claves que no tengan más de una subclave y que tengan exactamente cuatro valores:
+<span data-ttu-id="e0216-118">**Get-ChildItem** puede realizar funciones complejas de filtrado a través de sus parámetros **Path**, **Filter**, **Include** y **Exclude**, pero estos parámetros suelen basarse solo en el nombre.</span><span class="sxs-lookup"><span data-stu-id="e0216-118">**Get-ChildItem** can perform complex filtering capabilities through its **Path**, **Filter**, **Include**, and **Exclude** parameters, but those parameters are typically based only on name.</span></span> <span data-ttu-id="e0216-119">Puede realizar un filtrado complejo basado en otras propiedades de elementos mediante el cmdlet **Where-Object**.</span><span class="sxs-lookup"><span data-stu-id="e0216-119">You can perform complex filtering based on other properties of items by using the **Where-Object**cmdlet.</span></span> <span data-ttu-id="e0216-120">El siguiente comando busca en HKCU:\\Software todas las claves que no tengan más de una subclave y que tengan exactamente cuatro valores:</span><span class="sxs-lookup"><span data-stu-id="e0216-120">The following command finds all keys within HKCU:\\Software that have no more than one subkey and also have exactly four values:</span></span>
 
 ```
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-### <a name="copying-keys"></a>Copiar claves
-La copia se realiza con **Copy-Item**. El siguiente comando copia HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion y todas sus propiedades en HKCU:\\, y crea una nueva clave denominada "CurrentVersion":
+### <a name="copying-keys"></a><span data-ttu-id="e0216-121">Copiar claves</span><span class="sxs-lookup"><span data-stu-id="e0216-121">Copying Keys</span></span>
+<span data-ttu-id="e0216-122">La copia se realiza con **Copy-Item**.</span><span class="sxs-lookup"><span data-stu-id="e0216-122">Copying is done with **Copy-Item**.</span></span> <span data-ttu-id="e0216-123">El siguiente comando copia HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion y todas sus propiedades en HKCU:\\, y crea una nueva clave denominada "CurrentVersion":</span><span class="sxs-lookup"><span data-stu-id="e0216-123">The following command copies HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion and all of its properties to HKCU:\\, creating a new key named "CurrentVersion":</span></span>
 
 ```
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination hkcu:
 ```
 
-Si examina esta nueva clave en el Editor del Registro o mediante **Get-ChildItem**, observará que no tiene copias de las subclaves contenidas en la nueva ubicación. Para copiar todo el contenido de un contenedor, debe especificar el parámetro **Recurse**. Para hacer que el comando de copia anterior sea recursivo, debe usar este comando:
+<span data-ttu-id="e0216-124">Si examina esta nueva clave en el Editor del Registro o mediante **Get-ChildItem**, observará que no tiene copias de las subclaves contenidas en la nueva ubicación.</span><span class="sxs-lookup"><span data-stu-id="e0216-124">If you examine this new key in the registry editor or by using **Get-ChildItem**, you will notice that you do not have copies of the contained subkeys in the new location.</span></span> <span data-ttu-id="e0216-125">Para copiar todo el contenido de un contenedor, debe especificar el parámetro **Recurse**.</span><span class="sxs-lookup"><span data-stu-id="e0216-125">In order to copy all of the contents of a container, you need to specify the **Recurse** parameter.</span></span> <span data-ttu-id="e0216-126">Para hacer que el comando de copia anterior sea recursivo, debe usar este comando:</span><span class="sxs-lookup"><span data-stu-id="e0216-126">To make the preceding copy command recursive, you would use this command:</span></span>
 
 ```
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination hkcu: -Recurse
 ```
 
-Puede seguir usando otras herramientas que tiene a su disposición para realizar copias del sistema de archivos. Todas las herramientas de edición del Registro, incluidas reg.exe, regini.exe y regedit.exe, y los objetos COM que admiten la edición del Registro (como WScript.Shell y la clase WMI StdRegProv) pueden usarse desde Windows PowerShell.
+<span data-ttu-id="e0216-127">Puede seguir usando otras herramientas que tiene a su disposición para realizar copias del sistema de archivos.</span><span class="sxs-lookup"><span data-stu-id="e0216-127">You can still use other tools you already have available to perform filesystem copies.</span></span> <span data-ttu-id="e0216-128">Todas las herramientas de edición del Registro, incluidas reg.exe, regini.exe y regedit.exe, y los objetos COM que admiten la edición del Registro (como WScript.Shell y la clase WMI StdRegProv) pueden usarse desde Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="e0216-128">Any registry editing tools—including reg.exe, regini.exe, and regedit.exe—and COM objects that support registry editing (such as WScript.Shell and WMI's StdRegProv class) can be used from within Windows PowerShell.</span></span>
 
-### <a name="creating-keys"></a>Crear claves
-Crear nuevas claves en el Registro es más sencillo que crear un nuevo elemento en un sistema de archivos. Dado que todas las claves del Registro son contenedores, no es necesario especificar el tipo de elemento; solo tiene que proporcionar una ruta de acceso explícita, como:
+### <a name="creating-keys"></a><span data-ttu-id="e0216-129">Crear claves</span><span class="sxs-lookup"><span data-stu-id="e0216-129">Creating Keys</span></span>
+<span data-ttu-id="e0216-130">Crear nuevas claves en el Registro es más sencillo que crear un nuevo elemento en un sistema de archivos.</span><span class="sxs-lookup"><span data-stu-id="e0216-130">Creating new keys in the registry is simpler than creating a new item in a file system.</span></span> <span data-ttu-id="e0216-131">Dado que todas las claves del Registro son contenedores, no es necesario especificar el tipo de elemento; solo tiene que proporcionar una ruta de acceso explícita, como:</span><span class="sxs-lookup"><span data-stu-id="e0216-131">Because all registry keys are containers, you do not need to specify the item type; you simply supply an explicit path, such as:</span></span>
 
 ```
 New-Item -Path hkcu:\software_DeleteMe
 ```
 
-También puede usar una ruta de acceso basada en el proveedor para especificar una clave:
+<span data-ttu-id="e0216-132">También puede usar una ruta de acceso basada en el proveedor para especificar una clave:</span><span class="sxs-lookup"><span data-stu-id="e0216-132">You can also use a provider-based path to specify a key:</span></span>
 
 ```
 New-Item -Path Registry::HKCU_DeleteMe
 ```
 
-### <a name="deleting-keys"></a>Eliminar claves
-El proceso de eliminación de elementos es básicamente igual para todos los proveedores. Los siguientes comandos quitarán elementos de forma automática:
+### <a name="deleting-keys"></a><span data-ttu-id="e0216-133">Eliminar claves</span><span class="sxs-lookup"><span data-stu-id="e0216-133">Deleting Keys</span></span>
+<span data-ttu-id="e0216-134">El proceso de eliminación de elementos es básicamente igual para todos los proveedores.</span><span class="sxs-lookup"><span data-stu-id="e0216-134">Deleting items is essentially the same for all providers.</span></span> <span data-ttu-id="e0216-135">Los siguientes comandos quitarán elementos de forma automática:</span><span class="sxs-lookup"><span data-stu-id="e0216-135">The following commands will silently remove items:</span></span>
 
 ```
 Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
-### <a name="removing-all-keys-under-a-specific-key"></a>Quitar todas las claves bajo una clave específica
-Puede quitar los elementos contenidos mediante **Remove-Item**, pero se le pedirá que confirme la eliminación si el elemento contiene algo más. Por ejemplo, si se intenta eliminar la subclave HKCU:\\CurrentVersion creada, se muestra lo siguiente:
+### <a name="removing-all-keys-under-a-specific-key"></a><span data-ttu-id="e0216-136">Quitar todas las claves bajo una clave específica</span><span class="sxs-lookup"><span data-stu-id="e0216-136">Removing All Keys Under a Specific Key</span></span>
+<span data-ttu-id="e0216-137">Puede quitar los elementos contenidos mediante **Remove-Item**, pero se le pedirá que confirme la eliminación si el elemento contiene algo más.</span><span class="sxs-lookup"><span data-stu-id="e0216-137">You can remove contained items by using **Remove-Item**, but you will be prompted to confirm the removal if the item contains anything else.</span></span> <span data-ttu-id="e0216-138">Por ejemplo, si se intenta eliminar la subclave HKCU:\\CurrentVersion creada, se muestra lo siguiente:</span><span class="sxs-lookup"><span data-stu-id="e0216-138">For example, if we attempt to delete the HKCU:\\CurrentVersion subkey we created, we see this:</span></span>
 
 ```
 Remove-Item -Path hkcu:\CurrentVersion
@@ -109,13 +105,13 @@ parameter was not specified. If you continue, all children will be removed with
 (default is "Y"):
 ```
 
-Para eliminar los elementos contenidos sin preguntar, especifique el parámetro **-Recurse**:
+<span data-ttu-id="e0216-139">Para eliminar los elementos contenidos sin preguntar, especifique el parámetro **-Recurse**:</span><span class="sxs-lookup"><span data-stu-id="e0216-139">To delete contained items without prompting, specify the **-Recurse** parameter:</span></span>
 
 ```
 Remove-Item -Path HKCU:\CurrentVersion -Recurse
 ```
 
-Si deseara quitar todos los elementos de HKCU:\\CurrentVersion, pero no el propio HKCU:\\CurrentVersion, podría usar:
+<span data-ttu-id="e0216-140">Si deseara quitar todos los elementos de HKCU:\\CurrentVersion, pero no el propio HKCU:\\CurrentVersion, podría usar:</span><span class="sxs-lookup"><span data-stu-id="e0216-140">If you wanted to remove all items within HKCU:\\CurrentVersion but not HKCU:\\CurrentVersion itself, you could instead use:</span></span>
 
 ```
 Remove-Item -Path HKCU:\CurrentVersion\* -Recurse

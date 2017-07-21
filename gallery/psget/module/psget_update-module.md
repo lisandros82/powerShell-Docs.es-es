@@ -1,49 +1,46 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_update module
-ms.technology: powershell
-ms.openlocfilehash: 3f843bcf667bdb40f45613911647acf464cbbf29
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Update-Module
+ms.openlocfilehash: 343c296dad2a3df35f13393b3796a1d484f5f535
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="update-module"></a>Update-Module
+# <a name="update-module"></a><span data-ttu-id="58413-103">Update-Module</span><span class="sxs-lookup"><span data-stu-id="58413-103">Update-Module</span></span>
 
-Descarga e instala la versión más reciente de los módulos especificados desde una galería en línea en el equipo local.
+<span data-ttu-id="58413-104">Descarga e instala la versión más reciente de los módulos especificados desde una galería en línea en el equipo local.</span><span class="sxs-lookup"><span data-stu-id="58413-104">Downloads and installs the newest version of specified modules from an online gallery to the local computer.</span></span>
 
-## <a name="description"></a>Descripción
+## <a name="description"></a><span data-ttu-id="58413-105">Descripción</span><span class="sxs-lookup"><span data-stu-id="58413-105">Description</span></span>
 
-El cmdlet Update-Module instala una versión más reciente de un módulo de Windows PowerShell instalado desde la galería en línea mediante la ejecución de Install-Module en el equipo local.
+<span data-ttu-id="58413-106">El cmdlet Update-Module instala una versión más reciente de un módulo de Windows PowerShell instalado desde la galería en línea mediante la ejecución de Install-Module en el equipo local.</span><span class="sxs-lookup"><span data-stu-id="58413-106">The Update-Module cmdlet installs a newer version of a Windows PowerShell module that was installed from the online gallery by running Install-Module on the local computer.</span></span>
 
-De forma predeterminada, se instala la versión más reciente del módulo especificado que esté disponible en la galería en línea, a menos que especifique la versión requerida. Puede actualizar un módulo instalado especificando el nombre del módulo. Update-Module busca $env:PSModulePath para el módulo que quiere actualizar.
+<span data-ttu-id="58413-107">De forma predeterminada, se instala la versión más reciente del módulo especificado que esté disponible en la galería en línea, a menos que especifique la versión requerida.</span><span class="sxs-lookup"><span data-stu-id="58413-107">By default, the newest version of the specified module available in online gallery is installed, unless you specify a required version.</span></span> <span data-ttu-id="58413-108">Puede actualizar un módulo instalado especificando el nombre del módulo. Update-Module busca $env:PSModulePath para el módulo que quiere actualizar.</span><span class="sxs-lookup"><span data-stu-id="58413-108">You can update an existing, installed module by specifying the name of the module; Update-Module searches $env:PSModulePath for the module that you want to update.</span></span>
 
-Si ejecuta Update-Module sin el parámetro Name, se actualizan todos los módulos que se pueden actualizar en el equipo local.
+<span data-ttu-id="58413-109">Si ejecuta Update-Module sin el parámetro Name, se actualizan todos los módulos que se pueden actualizar en el equipo local.</span><span class="sxs-lookup"><span data-stu-id="58413-109">Running Update-Module without the Name parameter updates all modules that can be updated on the local computer.</span></span>
 
-### <a name="notes"></a>Notas
+### <a name="notes"></a><span data-ttu-id="58413-110">Notas</span><span class="sxs-lookup"><span data-stu-id="58413-110">Notes</span></span>
 
-- Este cmdlet se ejecuta en Windows PowerShell 3.0 o versiones posteriores de Windows PowerShell, en Windows 7 o Windows 2008 R2 y versiones posteriores de Windows.
-- Si el módulo que se especifica con el parámetro Name no se instaló mediante Install-Module, se produce un error. Update-Module solo se puede ejecutar en los módulos instalados desde la galería en línea mediante la ejecución de Install-Module.
-- Si Update-Module intenta actualizar archivos binarios que están en uso, Update-Module devuelve un error que identifica los procesos con problemas e informa al usuario de que vuelva a intentar ejecutar Update-Module después de detener los procesos.
-- En PowerShell 5.0 o versiones más recientes, cuando Update-Module actualiza un módulo, agrega la versión más reciente (o especificada) del módulo, por lo que las versiones anterior y reciente se encuentran ahora en paralelo en el mismo directorio. Sería útil indicarlo y mostrar un ejemplo de la salida de estos comandos.
+- <span data-ttu-id="58413-111">Este cmdlet se ejecuta en Windows PowerShell 3.0 o versiones posteriores de Windows PowerShell, en Windows 7 o Windows 2008 R2 y versiones posteriores de Windows.</span><span class="sxs-lookup"><span data-stu-id="58413-111">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
+- <span data-ttu-id="58413-112">Si el módulo que se especifica con el parámetro Name no se instaló mediante Install-Module, se produce un error.</span><span class="sxs-lookup"><span data-stu-id="58413-112">If the module that you specify with the Name parameter was not installed by using Install-Module, an error occurs.</span></span> <span data-ttu-id="58413-113">Update-Module solo se puede ejecutar en los módulos instalados desde la galería en línea mediante la ejecución de Install-Module.</span><span class="sxs-lookup"><span data-stu-id="58413-113">You can only run Update-Module on modules that you installed from the online gallery by running Install-Module.</span></span>
+- <span data-ttu-id="58413-114">Si Update-Module intenta actualizar archivos binarios que están en uso, Update-Module devuelve un error que identifica los procesos con problemas e informa al usuario de que vuelva a intentar ejecutar Update-Module después de detener los procesos.</span><span class="sxs-lookup"><span data-stu-id="58413-114">If Update-Module attempts to update binaries that are in use, Update-Module returns an error that identifies the problem processes, and informs the user to retry Update-Module after stopping the processes.</span></span>
+- <span data-ttu-id="58413-115">En PowerShell 5.0 o versiones más recientes, cuando Update-Module actualiza un módulo, agrega la versión más reciente (o especificada) del módulo, por lo que las versiones anterior y reciente se encuentran ahora en paralelo en el mismo directorio.</span><span class="sxs-lookup"><span data-stu-id="58413-115">On PowerShell 5.0 or newer versions, when Update-Module updates a module, it adds the latest (or specified) version of the module, so the older and newer versions are now side-by-side in the same directory.</span></span> <span data-ttu-id="58413-116">Sería útil indicarlo y mostrar un ejemplo de la salida de estos comandos.</span><span class="sxs-lookup"><span data-stu-id="58413-116">It would be useful to say so and to show an example of the output from these commands.</span></span>
 
 
-## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a><span data-ttu-id="58413-117">Sintaxis de cmdlet</span><span class="sxs-lookup"><span data-stu-id="58413-117">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Update-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="58413-118">Referencia de la ayuda en línea de cmdlet</span><span class="sxs-lookup"><span data-stu-id="58413-118">Cmdlet online help reference</span></span>
 
-[Update-Module](http://go.microsoft.com/fwlink/?LinkID=398576)
+[<span data-ttu-id="58413-119">Update-Module</span><span class="sxs-lookup"><span data-stu-id="58413-119">Update-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398576)
 
 
-## <a name="example-commands"></a>Comandos de ejemplo
+## <a name="example-commands"></a><span data-ttu-id="58413-120">Comandos de ejemplo</span><span class="sxs-lookup"><span data-stu-id="58413-120">Example commands</span></span>
 
 ```powershell
 PS C:\\windows\\system32> Update-Module -Name ContosoServer -RequiredVersion 1.5
@@ -87,7 +84,7 @@ Version Name Repository Description
 ```
 
 
-###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Actualice el módulo TestDepWithNestedRequiredModules1 con dependencias.
+###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a><span data-ttu-id="58413-121">Actualice el módulo TestDepWithNestedRequiredModules1 con dependencias.</span><span class="sxs-lookup"><span data-stu-id="58413-121">Update the TestDepWithNestedRequiredModules1 module with dependencies.</span></span>
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 

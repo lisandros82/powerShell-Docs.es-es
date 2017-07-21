@@ -1,21 +1,20 @@
 ---
-title: "Escribir un recurso de DSC de instancia única (procedimiento recomendado)"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 4b1e8a6d3fb4feca426a9d7861c40d194e612c22
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Escribir un recurso de DSC de instancia única (procedimiento recomendado)"
+ms.openlocfilehash: fe7c50c39ba08e290076ea7a058372ce57898325
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Escribir un recurso de DSC de instancia única (procedimiento recomendado)
+# <a name="writing-a-single-instance-dsc-resource-best-practice"></a><span data-ttu-id="7bd45-103">Escribir un recurso de DSC de instancia única (procedimiento recomendado)</span><span class="sxs-lookup"><span data-stu-id="7bd45-103">Writing a single-instance DSC resource (best practice)</span></span>
 
->**Nota:** En este tema se describe un procedimiento recomendado para definir un recurso de DSC que permite una sola instancia en una configuración. Actualmente, no hay ninguna característica de DSC integrada para este fin. Esto podría cambiar en el futuro.
+><span data-ttu-id="7bd45-104">**Nota:** En este tema se describe un procedimiento recomendado para definir un recurso de DSC que permite una sola instancia en una configuración.</span><span class="sxs-lookup"><span data-stu-id="7bd45-104">**Note:** This topic describes a best practice for defining a DSC resource that allows only a single instance in a configuration.</span></span> <span data-ttu-id="7bd45-105">Actualmente, no hay ninguna característica de DSC integrada para este fin.</span><span class="sxs-lookup"><span data-stu-id="7bd45-105">Currently, there is no built-in DSC feature to do this.</span></span> <span data-ttu-id="7bd45-106">Esto podría cambiar en el futuro.</span><span class="sxs-lookup"><span data-stu-id="7bd45-106">That might change in the future.</span></span>
 
-Hay situaciones en las que no desea permitir que un recurso se use varias veces en una configuración. Por ejemplo, en una implementación anterior del recurso [xTimeZone](https://github.com/PowerShell/xTimeZone), una configuración podría llamar al recurso varias veces y establecer la zona horaria en un valor diferente en cada bloque de recursos:
+<span data-ttu-id="7bd45-107">Hay situaciones en las que no desea permitir que un recurso se use varias veces en una configuración.</span><span class="sxs-lookup"><span data-stu-id="7bd45-107">There are situations where you don't want to allow a resource to be used multiple times in a configuration.</span></span> <span data-ttu-id="7bd45-108">Por ejemplo, en una implementación anterior del recurso [xTimeZone](https://github.com/PowerShell/xTimeZone), una configuración podría llamar al recurso varias veces y establecer la zona horaria en un valor diferente en cada bloque de recursos:</span><span class="sxs-lookup"><span data-stu-id="7bd45-108">For example, in a previous implementation of the [xTimeZone](https://github.com/PowerShell/xTimeZone) resource, a configuration could call the resource multiple times, setting the time zone to a different setting in each resource block:</span></span>
 
 ```powershell
 Configuration SetTimeZone 
@@ -48,9 +47,9 @@ Configuration SetTimeZone
 } 
 ```
 
-Esto se debe al funcionamiento de las claves de recursos de DSC. Un recurso debe tener al menos una propiedad de clave. Una instancia de recursos se considera única si la combinación de los valores de todas sus propiedades de clave es única. En su implementación anterior, el recurso [xTimeZone](https://github.com/PowerShell/xTimeZone) tenía una sola propiedad, **TimeZone**, que debía ser una clave obligatoriamente. Por este motivo, una configuración como la anterior se compilaría y ejecutaría sin previo aviso. Cada uno de los bloques del recurso **xTimeZone** se considera único. Esto provocaría que la configuración se aplicara repetidamente al nodo, avanzando y retrocediendo la zona horaria.
+<span data-ttu-id="7bd45-109">Esto se debe al funcionamiento de las claves de recursos de DSC.</span><span class="sxs-lookup"><span data-stu-id="7bd45-109">This is because of the way DSC resource keys work.</span></span> <span data-ttu-id="7bd45-110">Un recurso debe tener al menos una propiedad de clave.</span><span class="sxs-lookup"><span data-stu-id="7bd45-110">A resource must have at least one key property.</span></span> <span data-ttu-id="7bd45-111">Una instancia de recursos se considera única si la combinación de los valores de todas sus propiedades de clave es única.</span><span class="sxs-lookup"><span data-stu-id="7bd45-111">A resource instance is considered unique if the combination of the values of all of its key properties is unique.</span></span> <span data-ttu-id="7bd45-112">En su implementación anterior, el recurso [xTimeZone](https://github.com/PowerShell/xTimeZone) tenía una sola propiedad, **TimeZone**, que debía ser una clave obligatoriamente.</span><span class="sxs-lookup"><span data-stu-id="7bd45-112">In its previous implementation, the [xTimeZone](https://github.com/PowerShell/xTimeZone) resource had only one property--**TimeZone**, which was required to be a key.</span></span> <span data-ttu-id="7bd45-113">Por este motivo, una configuración como la anterior se compilaría y ejecutaría sin previo aviso.</span><span class="sxs-lookup"><span data-stu-id="7bd45-113">Because of this, a configuration such as the one above would compile and run without warning.</span></span> <span data-ttu-id="7bd45-114">Cada uno de los bloques del recurso **xTimeZone** se considera único.</span><span class="sxs-lookup"><span data-stu-id="7bd45-114">Each of the **xTimeZone** resource blocks is considered unique.</span></span> <span data-ttu-id="7bd45-115">Esto provocaría que la configuración se aplicara repetidamente al nodo, avanzando y retrocediendo la zona horaria.</span><span class="sxs-lookup"><span data-stu-id="7bd45-115">This would cause the configuration to be repeatedly applied to the node, cycling the timezone back and forth.</span></span>
 
-Para garantizar que una configuración pudiera establecer la zona horaria de un nodo de destino solo una vez, el recurso se actualizó para agregar una segunda propiedad, **IsSingleInstance**, que se convirtió en la propiedad de clave. La propiedad **IsSingleInstance** estaba limitada a un único valor, "Yes", mediante **ValueMap**. El esquema MOF anterior del recurso era:
+<span data-ttu-id="7bd45-116">Para garantizar que una configuración pudiera establecer la zona horaria de un nodo de destino solo una vez, el recurso se actualizó para agregar una segunda propiedad, **IsSingleInstance**, que se convirtió en la propiedad de clave.</span><span class="sxs-lookup"><span data-stu-id="7bd45-116">To ensure that a configuration could set the time zone for a target node only once, the resource was updated to add a second property, **IsSingleInstance**, that became the key property.</span></span> <span data-ttu-id="7bd45-117">La propiedad **IsSingleInstance** estaba limitada a un único valor, "Yes", mediante **ValueMap**.</span><span class="sxs-lookup"><span data-stu-id="7bd45-117">The **IsSingleInstance** was limited to a single value, "Yes" by using a **ValueMap**.</span></span> <span data-ttu-id="7bd45-118">El esquema MOF anterior del recurso era:</span><span class="sxs-lookup"><span data-stu-id="7bd45-118">The old MOF schema for the resource was:</span></span>
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -60,7 +59,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-El esquema MOF actualizado del recurso era:
+<span data-ttu-id="7bd45-119">El esquema MOF actualizado del recurso era:</span><span class="sxs-lookup"><span data-stu-id="7bd45-119">The updated MOF schema for the resource is:</span></span>
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -71,7 +70,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-El script de recursos también se actualizó para usar el nuevo parámetro. Este es el script de recursos anterior:
+<span data-ttu-id="7bd45-120">El script de recursos también se actualizó para usar el nuevo parámetro.</span><span class="sxs-lookup"><span data-stu-id="7bd45-120">The resource script was also updated to use the new parameter.</span></span> <span data-ttu-id="7bd45-121">Este es el script de recursos anterior:</span><span class="sxs-lookup"><span data-stu-id="7bd45-121">Here is the old resource script:</span></span>
 
 ```powershell
 function Get-TargetResource
@@ -204,7 +203,7 @@ Function Set-TimeZone {
 Export-ModuleMember -Function *-TargetResource
 ```
 
-Observe que la propiedad **TimeZone** ya no es una clave. Ahora, si una configuración intenta establecer la zona horaria dos veces (con dos bloques **xTimeZone** diferentes y valores de **TimeZone** diferentes), al intentar compilar la configuración se producirá un error:
+<span data-ttu-id="7bd45-122">Observe que la propiedad **TimeZone** ya no es una clave.</span><span class="sxs-lookup"><span data-stu-id="7bd45-122">Notice that the **TimeZone** property is no longer a key.</span></span> <span data-ttu-id="7bd45-123">Ahora, si una configuración intenta establecer la zona horaria dos veces (con dos bloques **xTimeZone** diferentes y valores de **TimeZone** diferentes), al intentar compilar la configuración se producirá un error:</span><span class="sxs-lookup"><span data-stu-id="7bd45-123">Now, if a configuration attempts to set the time zone twice (by using two different **xTimeZone** blocks with different **TimeZone** values), attempting to compile the configuration will cause an error:</span></span>
 
 ```powershell
 Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and 

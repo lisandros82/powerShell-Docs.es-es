@@ -1,22 +1,21 @@
 ---
-title: Anidamiento de configuraciones
-ms.date: 2017-03-27
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: carmonm
-ms.prod: powershell
-ms.openlocfilehash: 3afc4c87b1bc54e5f251a3a54eab5f448900f124
-ms.sourcegitcommit: 65250232157bb1c742d7d385933b8abc24a570fb
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Anidamiento de configuraciones
+ms.openlocfilehash: 4de53b94056df46d74923dda56e02841cfac2cd1
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="nesting-dsc-configurations"></a>Anidamiento de configuraciones DSC
+# <a name="nesting-dsc-configurations"></a><span data-ttu-id="30cba-103">Anidamiento de configuraciones DSC</span><span class="sxs-lookup"><span data-stu-id="30cba-103">Nesting DSC configurations</span></span>
 
-Una configuración anidada (también denominada configuración compuesta) es una configuración que se llama dentro de otra configuración, como si se tratara de un recurso.
-Ambas configuraciones deben definirse en el mismo archivo.
+<span data-ttu-id="30cba-104">Una configuración anidada (también denominada configuración compuesta) es una configuración que se llama dentro de otra configuración, como si se tratara de un recurso.</span><span class="sxs-lookup"><span data-stu-id="30cba-104">A nested configuration (also called composite configuration) is a configuration that is called within another configuration as if it were a resource.</span></span>
+<span data-ttu-id="30cba-105">Ambas configuraciones deben definirse en el mismo archivo.</span><span class="sxs-lookup"><span data-stu-id="30cba-105">Both configurations must be defined in the same file.</span></span>
 
-Veamos un ejemplo sencillo:
+<span data-ttu-id="30cba-106">Veamos un ejemplo sencillo:</span><span class="sxs-lookup"><span data-stu-id="30cba-106">Let's look at a simple example:</span></span>
 
 ```powershell
 Configuration FileConfig 
@@ -53,9 +52,10 @@ Configuration NestedFileConfig
 }
 ```
 
-En este ejemplo, `FileConfig` toma dos parámetros obligatorios, **CopyFrom** y **CopyTo**, que se utilizan como los valores para las propiedades **SourcePath** y **DestinationPath** en el bloque de recursos `File`. La configuración `NestedConfig` llamada a `FileConfig` como si fuera un recurso.
-Las propiedades del bloque de recursos `NestedConfig` (**CopyFrom** y **CopyTo**) son los parámetros de la configuración `FileConfig`.
+<span data-ttu-id="30cba-107">En este ejemplo, `FileConfig` toma dos parámetros obligatorios, **CopyFrom** y **CopyTo**, que se utilizan como los valores para las propiedades **SourcePath** y **DestinationPath** en el bloque de recursos `File`.</span><span class="sxs-lookup"><span data-stu-id="30cba-107">In this example, `FileConfig` takes two mandatory parameters,  **CopyFrom** and **CopyTo**, which are used as the values for the **SourcePath** and **DestinationPath** properties in the `File` resource block.</span></span> <span data-ttu-id="30cba-108">La configuración `NestedConfig` llamada a `FileConfig` como si fuera un recurso.</span><span class="sxs-lookup"><span data-stu-id="30cba-108">The `NestedConfig` configuration calls `FileConfig` as if it were a resource.</span></span>
+<span data-ttu-id="30cba-109">Las propiedades del bloque de recursos `NestedConfig` (**CopyFrom** y **CopyTo**) son los parámetros de la configuración `FileConfig`.</span><span class="sxs-lookup"><span data-stu-id="30cba-109">The properties in the `NestedConfig` resource block (**CopyFrom** and **CopyTo**) are the parameters of the `FileConfig` configuration.</span></span>
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a><span data-ttu-id="30cba-110">Véase también</span><span class="sxs-lookup"><span data-stu-id="30cba-110">See Also</span></span>
 
-- [Recursos compuestos: uso de una configuración DSC como un recurso](authoringResourceComposite.md)
+- [<span data-ttu-id="30cba-111">Recursos compuestos: uso de una configuración DSC como un recurso</span><span class="sxs-lookup"><span data-stu-id="30cba-111">Composite resources--Using a DSC configuration as a resource</span></span>](authoringResourceComposite.md)
+

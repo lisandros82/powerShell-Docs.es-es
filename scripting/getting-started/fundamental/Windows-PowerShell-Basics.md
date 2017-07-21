@@ -1,34 +1,30 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Conceptos básicos de Windows PowerShell"
-ms.technology: powershell
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-ms.openlocfilehash: 338d11350cd9baba82df7700e9df3688259a3907
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: f8a520f1fbe97737c7d0c2acab0129f88b5ed425
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
-# <a name="windows-powershell-basics"></a>Conceptos básicos de Windows PowerShell
-Las interfaces gráficas de usuario usan algunos conceptos básicos con los que la mayoría de los usuarios de equipos están familiarizados. Los usuarios confían en la sencillez de estas interfaces para realizar tareas. Los sistemas operativos presentan a los usuarios una representación gráfica de los elementos que se pueden examinar, generalmente menús desplegables para acceder a funcionalidades específicas y menús contextuales para acceder a la funcionalidades específicas del contexto.
+# <a name="windows-powershell-basics"></a><span data-ttu-id="7b811-103">Conceptos básicos de Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="7b811-103">Windows PowerShell Basics</span></span>
+<span data-ttu-id="7b811-104">Las interfaces gráficas de usuario usan algunos conceptos básicos con los que la mayoría de los usuarios de equipos están familiarizados.</span><span class="sxs-lookup"><span data-stu-id="7b811-104">Graphical user interfaces use some basic concepts that are well known to most computer users.</span></span> <span data-ttu-id="7b811-105">Los usuarios confían en la sencillez de estas interfaces para realizar tareas.</span><span class="sxs-lookup"><span data-stu-id="7b811-105">Users rely on the familiarity of those interfaces to accomplish tasks.</span></span> <span data-ttu-id="7b811-106">Los sistemas operativos presentan a los usuarios una representación gráfica de los elementos que se pueden examinar, generalmente menús desplegables para acceder a funcionalidades específicas y menús contextuales para acceder a la funcionalidades específicas del contexto.</span><span class="sxs-lookup"><span data-stu-id="7b811-106">Operating systems present users with a graphical representation of items that can be browsed, usually with drop-down menus for accessing specific functionality and context menus for accessing context-specific functionality.</span></span>
 
-Una interfaz de la línea de comandos (CLI), como Windows PowerShell, debe usar un enfoque diferente para exponer información, porque no tiene menús ni sistemas de gráficos para ayudar al usuario. Debe conocer los nombres de los comandos antes de usarlos. Aunque puede escribir comandos complejos que sean equivalentes a las características en un entorno de interfaz gráfica de usuario, debe familiarizarse con los comandos usados frecuentemente y parámetros de comando.
+<span data-ttu-id="7b811-107">Una interfaz de la línea de comandos (CLI), como Windows PowerShell, debe usar un enfoque diferente para exponer información, porque no tiene menús ni sistemas de gráficos para ayudar al usuario.</span><span class="sxs-lookup"><span data-stu-id="7b811-107">A command-line interface (CLI), such as Windows PowerShell, must use a different approach to expose information, because it does not have menus or graphical systems to help the user.</span></span> <span data-ttu-id="7b811-108">Debe conocer los nombres de los comandos antes de usarlos.</span><span class="sxs-lookup"><span data-stu-id="7b811-108">You need to know command names before you can use them.</span></span> <span data-ttu-id="7b811-109">Aunque puede escribir comandos complejos que sean equivalentes a las características en un entorno de interfaz gráfica de usuario, debe familiarizarse con los comandos usados frecuentemente y parámetros de comando.</span><span class="sxs-lookup"><span data-stu-id="7b811-109">Although you can type complex commands that are equivalent to the features in a GUI environment, you must become familiar with commonly-used commands and command parameters.</span></span>
 
-La mayoría de las CLI no tienen patrones que puedan ayudar al usuario a obtener información sobre la interfaz. Dados que las CLI eran los primeros shells del sistema operativo, muchos de los nombres de comando y nombres de parámetro se seleccionaban de manera arbitraria. Se solían elegir los nombres de comando concisos antes que los claros. Aunque los estándares de diseño de comandos y sistemas de ayuda estaban integrados en la mayoría de las CLI, generalmente se diseñaban para ofrecer compatibilidad con los comandos más antiguos, por lo que el conjunto de comandos todavía está definido por decisiones tomadas hace décadas.
+<span data-ttu-id="7b811-110">La mayoría de las CLI no tienen patrones que puedan ayudar al usuario a obtener información sobre la interfaz.</span><span class="sxs-lookup"><span data-stu-id="7b811-110">Most CLIs do not have patterns that can help the user to learn the interface.</span></span> <span data-ttu-id="7b811-111">Dados que las CLI eran los primeros shells del sistema operativo, muchos de los nombres de comando y nombres de parámetro se seleccionaban de manera arbitraria.</span><span class="sxs-lookup"><span data-stu-id="7b811-111">Because CLIs were the first operating system shells, many command names and parameter names were selected arbitrarily.</span></span> <span data-ttu-id="7b811-112">Se solían elegir los nombres de comando concisos antes que los claros.</span><span class="sxs-lookup"><span data-stu-id="7b811-112">Terse command names were generally chosen over clear ones.</span></span> <span data-ttu-id="7b811-113">Aunque los estándares de diseño de comandos y sistemas de ayuda estaban integrados en la mayoría de las CLI, generalmente se diseñaban para ofrecer compatibilidad con los comandos más antiguos, por lo que el conjunto de comandos todavía está definido por decisiones tomadas hace décadas.</span><span class="sxs-lookup"><span data-stu-id="7b811-113">Although help systems and command design standards are integrated into most CLIs, they have been generally designed for compatibility with the earliest commands, so the command set is still shaped by decisions made decades ago.</span></span>
 
-Windows PowerShell se diseñó para aprovechar el conocimiento histórico que un usuario tenía de las CLI. En este capítulo, hablaremos de algunas herramientas y conceptos básicos que puede usar para aprender a usar Windows PowerShell rápidamente. Incluyen:
+<span data-ttu-id="7b811-114">Windows PowerShell se diseñó para aprovechar el conocimiento histórico que un usuario tenía de las CLI.</span><span class="sxs-lookup"><span data-stu-id="7b811-114">Windows PowerShell was designed to take advantage of a user's historic knowledge of CLIs.</span></span> <span data-ttu-id="7b811-115">En este capítulo, hablaremos de algunas herramientas y conceptos básicos que puede usar para aprender a usar Windows PowerShell rápidamente.</span><span class="sxs-lookup"><span data-stu-id="7b811-115">In this chapter, we will talk about some basic tools and concepts that you can use to learn Windows PowerShell quickly.</span></span> <span data-ttu-id="7b811-116">Incluyen:</span><span class="sxs-lookup"><span data-stu-id="7b811-116">They include:</span></span>
 
--   Uso de Get-Command
+-   <span data-ttu-id="7b811-117">Uso de Get-Command</span><span class="sxs-lookup"><span data-stu-id="7b811-117">Using Get-Command</span></span>
 
--   Uso de los comandos de Cmd.exe y UNIX
+-   <span data-ttu-id="7b811-118">Uso de los comandos de Cmd.exe y UNIX</span><span class="sxs-lookup"><span data-stu-id="7b811-118">Using Cmd.exe and UNIX commands</span></span>
 
--   Uso de comandos External
+-   <span data-ttu-id="7b811-119">Uso de comandos External</span><span class="sxs-lookup"><span data-stu-id="7b811-119">Using External Commands</span></span>
 
--   Uso de Tab-Completion
+-   <span data-ttu-id="7b811-120">Uso de Tab-Completion</span><span class="sxs-lookup"><span data-stu-id="7b811-120">Using Tab-Completion</span></span>
 
--   Uso de Get-Help
+-   <span data-ttu-id="7b811-121">Uso de Get-Help</span><span class="sxs-lookup"><span data-stu-id="7b811-121">Using Get-Help</span></span>
 

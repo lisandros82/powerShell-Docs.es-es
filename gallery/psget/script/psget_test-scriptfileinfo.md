@@ -1,37 +1,34 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_test scriptfileinfo
-ms.technology: powershell
-ms.openlocfilehash: 570ad7e878195f36e1d0831c504301bcee647a7d
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Test-ScriptFileInfo
+ms.openlocfilehash: 0f6951b86bba352e33abe91fc76e000b7df75b49
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="test-scriptfileinfo"></a>Test-ScriptFileInfo
+# <a name="test-scriptfileinfo"></a><span data-ttu-id="dbb8e-103">Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="dbb8e-103">Test-ScriptFileInfo</span></span>
 
-Valida el bloque de comentario de metadatos de un archivo de script.
+<span data-ttu-id="dbb8e-104">Valida el bloque de comentario de metadatos de un archivo de script.</span><span class="sxs-lookup"><span data-stu-id="dbb8e-104">Validates the metadata comment block of a script file.</span></span>
 
-## <a name="description"></a>Descripción
+## <a name="description"></a><span data-ttu-id="dbb8e-105">Descripción</span><span class="sxs-lookup"><span data-stu-id="dbb8e-105">Description</span></span>
 
-El cmdlet Test-ScriptFileInfo valida el bloque de comentario al principio de un script que se publicará con el cmdlet Publish-Script.
-Si el bloque de comentario de metadatos tiene un error, este cmdlet devuelve información sobre dónde se encuentra el error o cómo corregirlo.
+<span data-ttu-id="dbb8e-106">El cmdlet Test-ScriptFileInfo valida el bloque de comentario al principio de un script que se publicará con el cmdlet Publish-Script.</span><span class="sxs-lookup"><span data-stu-id="dbb8e-106">The Test-ScriptFileInfo cmdlet validates the comment block at the beginning of a script that will be published with the Publish-Script cmdlet.</span></span>
+<span data-ttu-id="dbb8e-107">Si el bloque de comentario de metadatos tiene un error, este cmdlet devuelve información sobre dónde se encuentra el error o cómo corregirlo.</span><span class="sxs-lookup"><span data-stu-id="dbb8e-107">If the metadata comment block has an error, this cmdlet returns information about where the error is located or how to correct it.</span></span>
 
-## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a><span data-ttu-id="dbb8e-108">Sintaxis de cmdlet</span><span class="sxs-lookup"><span data-stu-id="dbb8e-108">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Test-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="dbb8e-109">Referencia de la ayuda en línea de cmdlet</span><span class="sxs-lookup"><span data-stu-id="dbb8e-109">Cmdlet online help reference</span></span>
 
-[Test-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619791)
+[<span data-ttu-id="dbb8e-110">Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="dbb8e-110">Test-ScriptFileInfo</span></span>](http://go.microsoft.com/fwlink/?LinkId=619791)
 
-## <a name="example-commands"></a>Comandos de ejemplo
+## <a name="example-commands"></a><span data-ttu-id="dbb8e-111">Comandos de ejemplo</span><span class="sxs-lookup"><span data-stu-id="dbb8e-111">Example commands</span></span>
 ```powershell
 # Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\ScriptSharingDemo\Demo-Script.ps1 -Description "Script file description goes here"

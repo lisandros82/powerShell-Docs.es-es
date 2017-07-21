@@ -1,38 +1,35 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_get psrepository
-ms.technology: powershell
-ms.openlocfilehash: b1d5172232f0c2916382b6c35093a238f6b2cb4d
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Get-PSRepository
+ms.openlocfilehash: 96f87428312c233757aa5fcae405a192aadff385
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="get-psrepository"></a>Get-PSRepository
+# <a name="get-psrepository"></a><span data-ttu-id="fae5e-103">Get-PSRepository</span><span class="sxs-lookup"><span data-stu-id="fae5e-103">Get-PSRepository</span></span>
 
-Obtiene los repositorios registrados de un equipo.
+<span data-ttu-id="fae5e-104">Obtiene los repositorios registrados de un equipo.</span><span class="sxs-lookup"><span data-stu-id="fae5e-104">Gets the registered repositories on a computer.</span></span>
 
-## <a name="description"></a>Descripción
+## <a name="description"></a><span data-ttu-id="fae5e-105">Descripción</span><span class="sxs-lookup"><span data-stu-id="fae5e-105">Description</span></span>
 
-El cmdlet Get-PSRepository obtiene los repositorios del módulo de PowerShell que están registrados para el usuario actual de un equipo.
+<span data-ttu-id="fae5e-106">El cmdlet Get-PSRepository obtiene los repositorios del módulo de PowerShell que están registrados para el usuario actual de un equipo.</span><span class="sxs-lookup"><span data-stu-id="fae5e-106">The Get-PSRepository cmdlet gets PowerShell module repositories that are registered for the current user on a computer.</span></span>
 
-Para cada repositorio registrado, Get-PSRepository devuelve un objeto PSRepository que opcionalmente se puede canalizar a Unregister-PSRepository para anular el registro de un repositorio registrado.
+<span data-ttu-id="fae5e-107">Para cada repositorio registrado, Get-PSRepository devuelve un objeto PSRepository que opcionalmente se puede canalizar a Unregister-PSRepository para anular el registro de un repositorio registrado.</span><span class="sxs-lookup"><span data-stu-id="fae5e-107">For each registered repository, Get-PSRepository returns a PSRepository object which can optionally be piped to Unregister-PSRepository for unregistering a registered repository.</span></span>
 
-## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a><span data-ttu-id="fae5e-108">Sintaxis de cmdlet</span><span class="sxs-lookup"><span data-stu-id="fae5e-108">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Get-PSRepository -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="fae5e-109">Referencia de la ayuda en línea de cmdlet</span><span class="sxs-lookup"><span data-stu-id="fae5e-109">Cmdlet online help reference</span></span>
 
-[Get-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517127)
+[<span data-ttu-id="fae5e-110">Get-PSRepository</span><span class="sxs-lookup"><span data-stu-id="fae5e-110">Get-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517127)
 
-## <a name="example-commands"></a>Comandos de ejemplo
+## <a name="example-commands"></a><span data-ttu-id="fae5e-111">Comandos de ejemplo</span><span class="sxs-lookup"><span data-stu-id="fae5e-111">Example commands</span></span>
 
 ```powershell
 

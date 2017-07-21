@@ -1,36 +1,33 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_uninstall script
-ms.technology: powershell
-ms.openlocfilehash: 9cc6ee62720bfca858e7f783753adabe8a53fb29
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Uninstall-Script
+ms.openlocfilehash: 7973524cf9268d629b5375f0726fe70164bdeddb
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="uninstall-script"></a>Uninstall-Script
+# <a name="uninstall-script"></a><span data-ttu-id="dd8cb-103">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="dd8cb-103">Uninstall-Script</span></span>
 
-Desinstala un archivo de script instalado mediante PowerShellGet.
+<span data-ttu-id="dd8cb-104">Desinstala un archivo de script instalado mediante PowerShellGet.</span><span class="sxs-lookup"><span data-stu-id="dd8cb-104">Uninstalls a script file which was installed using PowerShellGet.</span></span>
 
-## <a name="description"></a>Descripción
+## <a name="description"></a><span data-ttu-id="dd8cb-105">Descripción</span><span class="sxs-lookup"><span data-stu-id="dd8cb-105">Description</span></span>
 
-El cmdlet Uninstall-Script desinstala los archivos de script especificados que se instalaron desde el repositorio en línea.
+<span data-ttu-id="dd8cb-106">El cmdlet Uninstall-Script desinstala los archivos de script especificados que se instalaron desde el repositorio en línea.</span><span class="sxs-lookup"><span data-stu-id="dd8cb-106">The Uninstall-Script cmdlet uninstalls the specified script files which were installed from the online repository.</span></span>
 
-## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a><span data-ttu-id="dd8cb-107">Sintaxis de cmdlet</span><span class="sxs-lookup"><span data-stu-id="dd8cb-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Uninstall-Script -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="dd8cb-108">Referencia de la ayuda en línea de cmdlet</span><span class="sxs-lookup"><span data-stu-id="dd8cb-108">Cmdlet online help reference</span></span>
 
-[Uninstall-Script](http://go.microsoft.com/fwlink/?LinkId=619789)
+[<span data-ttu-id="dd8cb-109">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="dd8cb-109">Uninstall-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619789)
 
-## <a name="example-commands"></a>Comandos de ejemplo
+## <a name="example-commands"></a><span data-ttu-id="dd8cb-110">Comandos de ejemplo</span><span class="sxs-lookup"><span data-stu-id="dd8cb-110">Example commands</span></span>
 
 ```powershell
 Get-InstalledScript | Uninstall-Script -WhatIf

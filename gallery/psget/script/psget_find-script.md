@@ -1,51 +1,48 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_find script
-ms.technology: powershell
-ms.openlocfilehash: 09f4d6eca9cf04d03fddbe23beea6a5bc0243657
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Find-Script
+ms.openlocfilehash: 15bf23b803250c7893fe970c2580592ea7c0a4b6
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="find-script"></a>Find-Script
+# <a name="find-script"></a><span data-ttu-id="53cd3-103">Find-Script</span><span class="sxs-lookup"><span data-stu-id="53cd3-103">Find-Script</span></span>
 
-Busca los archivos de script de PowerShell de una galería en línea que coincidan con los criterios especificados.
+<span data-ttu-id="53cd3-104">Busca los archivos de script de PowerShell de una galería en línea que coincidan con los criterios especificados.</span><span class="sxs-lookup"><span data-stu-id="53cd3-104">Finds the PowerShell script files from an online gallery that match specified criteria.</span></span>
 
-## <a name="description"></a>Descripción
+## <a name="description"></a><span data-ttu-id="53cd3-105">Descripción</span><span class="sxs-lookup"><span data-stu-id="53cd3-105">Description</span></span>
 
-Find-Script detecta los archivos de script de repositorios registrados que coincidan con los criterios especificados.
-Para cada script detectado, Find-Script devuelve un objeto PSRepositoryItemInfo que opcionalmente se puede canalizar a Install-Script para instalar los scripts.
-El cmdlet Find-Script permite detectar los archivos de script con criterios de búsqueda diferentes, tales como nombre, etiqueta, filtro, nombre de comando, intervalo de versiones, versión exacta, todas las versiones, incluidas sus dependencias y de repositorios específicos o todos los repositorios registrados.
+<span data-ttu-id="53cd3-106">Find-Script detecta los archivos de script de repositorios registrados que coincidan con los criterios especificados.</span><span class="sxs-lookup"><span data-stu-id="53cd3-106">Find-Script discovers the script files from registered repositories that matches the specified criteria.</span></span>
+<span data-ttu-id="53cd3-107">Para cada script detectado, Find-Script devuelve un objeto PSRepositoryItemInfo que opcionalmente se puede canalizar a Install-Script para instalar los scripts.</span><span class="sxs-lookup"><span data-stu-id="53cd3-107">For each script found, Find-Script returns a PSRepositoryItemInfo object which can optionally be piped to Install-Script for installing the scripts.</span></span>
+<span data-ttu-id="53cd3-108">El cmdlet Find-Script permite detectar los archivos de script con criterios de búsqueda diferentes, tales como nombre, etiqueta, filtro, nombre de comando, intervalo de versiones, versión exacta, todas las versiones, incluidas sus dependencias y de repositorios específicos o todos los repositorios registrados.</span><span class="sxs-lookup"><span data-stu-id="53cd3-108">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
 
-- Find-Script puede filtrar por el contenido del script con los parámetros -Command e -Includes.
-- Find-Script puede filtrar con parámetros de versión: MinimumVersion, MaximumVersion, RequiredVersion y AllVersions.
-  - Estos parámetros se excluyen mutuamente, excepto MinmimumVersion y MaximumVersion.
-  - Estos parámetros de versión solo se permiten con el nombre de script único sin ningún carácter comodín.
-  - Si no se especifica el parámetro RequiredVersion, Find-Script devuelve la versión más reciente del script que sea igual o mayor que la versión mínima especificada, o la versión más reciente del script si no se especifica ninguna versión mínima. 
-  - Si se especifica el parámetro RequiredVersion, Find-Script solo devuelve la versión del script que coincida exactamente con la versión especificada.
-- Find-Script puede filtrar por los metadatos del script con el parámetro -Tag.
-- Find-Script puede filtrar por el idioma de búsqueda específico del repositorio con el parámetro -Filter.
-- Find-Script puede filtrar por los scripts de todos o algunos de los repositorios registrados.
+- <span data-ttu-id="53cd3-109">Find-Script puede filtrar por el contenido del script con los parámetros -Command e -Includes.</span><span class="sxs-lookup"><span data-stu-id="53cd3-109">Find-Script can filter based on script contents with the -Command and -Includes parameters.</span></span>
+- <span data-ttu-id="53cd3-110">Find-Script puede filtrar con parámetros de versión: MinimumVersion, MaximumVersion, RequiredVersion y AllVersions.</span><span class="sxs-lookup"><span data-stu-id="53cd3-110">Find-Script can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="53cd3-111">Estos parámetros se excluyen mutuamente, excepto MinmimumVersion y MaximumVersion.</span><span class="sxs-lookup"><span data-stu-id="53cd3-111">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
+  - <span data-ttu-id="53cd3-112">Estos parámetros de versión solo se permiten con el nombre de script único sin ningún carácter comodín.</span><span class="sxs-lookup"><span data-stu-id="53cd3-112">These version parameters are allowed only with the single script name without any wildcards.</span></span>
+  - <span data-ttu-id="53cd3-113">Si no se especifica el parámetro RequiredVersion, Find-Script devuelve la versión más reciente del script que sea igual o mayor que la versión mínima especificada, o la versión más reciente del script si no se especifica ninguna versión mínima.</span><span class="sxs-lookup"><span data-stu-id="53cd3-113">If the RequiredVersion parameter is not specified, Find-Script returns the latest version of the script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified.</span></span> 
+  - <span data-ttu-id="53cd3-114">Si se especifica el parámetro RequiredVersion, Find-Script solo devuelve la versión del script que coincida exactamente con la versión especificada.</span><span class="sxs-lookup"><span data-stu-id="53cd3-114">If the RequiredVersion parameter is specified, Find-Script only returns the version of script that exactly matches the specified version.</span></span>
+- <span data-ttu-id="53cd3-115">Find-Script puede filtrar por los metadatos del script con el parámetro -Tag.</span><span class="sxs-lookup"><span data-stu-id="53cd3-115">Find-Script can filter on script metadata with the -Tag parameter.</span></span>
+- <span data-ttu-id="53cd3-116">Find-Script puede filtrar por el idioma de búsqueda específico del repositorio con el parámetro -Filter.</span><span class="sxs-lookup"><span data-stu-id="53cd3-116">Find-Script can filter on repository-specific search language with the -Filter parameter.</span></span>
+- <span data-ttu-id="53cd3-117">Find-Script puede filtrar por los scripts de todos o algunos de los repositorios registrados.</span><span class="sxs-lookup"><span data-stu-id="53cd3-117">Find-Script can filter on scripts from all or few of the registered repositories.</span></span>
 
-**Nota:** el repositorio PSRepository registrado debe tener un valor de ScriptSourceLocation válido. Puede usar Set-PSRepository para establecer el valor de ScriptSourceLocation.
+<span data-ttu-id="53cd3-118">**Nota:** el repositorio PSRepository registrado debe tener un valor de ScriptSourceLocation válido.</span><span class="sxs-lookup"><span data-stu-id="53cd3-118">**NOTE:** Registered PSRepository should have a valid ScriptSourceLocation.</span></span> <span data-ttu-id="53cd3-119">Puede usar Set-PSRepository para establecer el valor de ScriptSourceLocation.</span><span class="sxs-lookup"><span data-stu-id="53cd3-119">You can use the Set-PSRepository to set ScriptSourceLocation value.</span></span>
 
-## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a><span data-ttu-id="53cd3-120">Sintaxis de cmdlet</span><span class="sxs-lookup"><span data-stu-id="53cd3-120">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Find-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="53cd3-121">Referencia de la ayuda en línea de cmdlet</span><span class="sxs-lookup"><span data-stu-id="53cd3-121">Cmdlet online help reference</span></span>
 
-[Find-Script](http://go.microsoft.com/fwlink/?LinkId=619785)
+[<span data-ttu-id="53cd3-122">Find-Script</span><span class="sxs-lookup"><span data-stu-id="53cd3-122">Find-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619785)
 
-## <a name="example-commands"></a>Comandos de ejemplo
+## <a name="example-commands"></a><span data-ttu-id="53cd3-123">Comandos de ejemplo</span><span class="sxs-lookup"><span data-stu-id="53cd3-123">Example commands</span></span>
 
 ```powershell
 # Find a script from the registered repository with ScriptSourceLocation

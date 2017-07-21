@@ -1,48 +1,47 @@
 ---
-title: Establecer configuraciones
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 7059d0a0ac3ad81353d1e758bc24fc236656c199
-ms.sourcegitcommit: 89e7ae30faff5f96641fc72764bdc76e0e257bc2
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Establecer configuraciones
+ms.openlocfilehash: db82788650186eb82f67b30b24cd45b719bbe314
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="enacting-configurations"></a>Establecer configuraciones
+# <a name="enacting-configurations"></a><span data-ttu-id="4c160-103">Establecer configuraciones</span><span class="sxs-lookup"><span data-stu-id="4c160-103">Enacting configurations</span></span>
 
->Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+><span data-ttu-id="4c160-104">Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="4c160-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-Hay dos maneras de establecer las configuraciones de la configuración de estado deseado (DSC) de PowerShell: el modo de inserción y el modo de extracción.
+<span data-ttu-id="4c160-105">Hay dos maneras de establecer las configuraciones de la configuración de estado deseado (DSC) de PowerShell: el modo de inserción y el modo de extracción.</span><span class="sxs-lookup"><span data-stu-id="4c160-105">There are two ways to enact PowerShell Desired State Configuration (DSC) configurations: push mode and pull mode.</span></span>
 
-## <a name="push-mode"></a>Modo de inserción
+## <a name="push-mode"></a><span data-ttu-id="4c160-106">Modo de inserción</span><span class="sxs-lookup"><span data-stu-id="4c160-106">Push mode</span></span>
 
-![Modo de inserción](images/Push.png "Cómo funciona el modo de inserción")
+<span data-ttu-id="4c160-107">![Modo de inserción](images/Push.png "Cómo funciona el modo de inserción")</span><span class="sxs-lookup"><span data-stu-id="4c160-107">![Push mode](images/Push.png "How push mode works")</span></span>
 
-El modo de inserción se refiere a un usuario que aplica activamente una configuración a un nodo de destino mediante una llamada al cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx).
+<span data-ttu-id="4c160-108">El modo de inserción se refiere a un usuario que aplica activamente una configuración a un nodo de destino mediante una llamada al cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx).</span><span class="sxs-lookup"><span data-stu-id="4c160-108">Push mode refers to a user actively applying a configuration to a target node by calling the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet.</span></span>
 
-Después de crear y compilar una configuración, puede establecerla en el modo de inserción con una llamada al cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx), estableciendo el parámetro -Path del cmdlet en la ruta de acceso donde se encuentra el MOF de configuración. Por ejemplo, si el MOF de configuración está ubicado en `C:\DSC\Configurations\localhost.mof`, se aplicaría a la máquina local con el comando siguiente: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
+<span data-ttu-id="4c160-109">Después de crear y compilar una configuración, puede establecerla en el modo de inserción con una llamada al cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx), estableciendo el parámetro -Path del cmdlet en la ruta de acceso donde se encuentra el MOF de configuración.</span><span class="sxs-lookup"><span data-stu-id="4c160-109">After creating and compiling a configuration, you can enact it in push mode by calling the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet, setting the -Path parameter of the cmdlet to the path where the configuration MOF is located.</span></span> <span data-ttu-id="4c160-110">Por ejemplo, si el MOF de configuración está ubicado en `C:\DSC\Configurations\localhost.mof`, se aplicaría a la máquina local con el comando siguiente: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`</span><span class="sxs-lookup"><span data-stu-id="4c160-110">For example, if the configuration MOF is located at `C:\DSC\Configurations\localhost.mof`, you would apply it to the local machine with the following command: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`</span></span>
 
-> __Nota__: De forma predeterminada, DSC ejecuta una configuración como un trabajo en segundo plano. Para ejecutar la configuración de forma interactiva, llame a [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) con el parámetro __-Wait__.
+> <span data-ttu-id="4c160-111">__Nota__: De forma predeterminada, DSC ejecuta una configuración como un trabajo en segundo plano.</span><span class="sxs-lookup"><span data-stu-id="4c160-111">__Note__: By default, DSC runs a configuration as a background job.</span></span> <span data-ttu-id="4c160-112">Para ejecutar la configuración de forma interactiva, llame a [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) con el parámetro __-Wait__.</span><span class="sxs-lookup"><span data-stu-id="4c160-112">To run the configuration interactively, call the [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) with the __-Wait__ parameter.</span></span>
 
 
-## <a name="pull-mode"></a>Modo de extracción
+## <a name="pull-mode"></a><span data-ttu-id="4c160-113">Modo de extracción</span><span class="sxs-lookup"><span data-stu-id="4c160-113">Pull mode</span></span>
 
-![Modo de extracción](images/Pull.png "Cómo funciona el modo de extracción")
+<span data-ttu-id="4c160-114">![Modo de extracción](images/Pull.png "Cómo funciona el modo de extracción")</span><span class="sxs-lookup"><span data-stu-id="4c160-114">![Pull Mode](images/Pull.png "How pull mode works")</span></span>
 
-En el modo de extracción, los clientes de extracción se configuran para obtener sus configuraciones de estado deseado desde un servidor de extracción remoto. Del mismo modo, el servidor de extracción se ha configurado para hospedar el servicio de DSC y se ha aprovisionado con las configuraciones y los recursos que necesitan los clientes de extracción. Cada uno de los clientes de extracción tiene una tarea programada que realiza una comprobación periódica del cumplimiento de la configuración del nodo. Cuando el evento se desencadena por primera vez, el administrador de configuración local (LCM) del cliente de extracción realiza una solicitud al servidor de extracción para obtener la configuración especificada en el LCM. Si dicha configuración existe en el servidor de extracción y pasa las comprobaciones de validación iniciales, la configuración se transmite al cliente de extracción, donde a continuación el LCM la ejecuta.
+<span data-ttu-id="4c160-115">En el modo de extracción, los clientes de extracción se configuran para obtener sus configuraciones de estado deseado desde un servidor de extracción remoto.</span><span class="sxs-lookup"><span data-stu-id="4c160-115">In pull mode, pull clients are configured to get their desired state configurations from a remote pull server.</span></span> <span data-ttu-id="4c160-116">Del mismo modo, el servidor de extracción se ha configurado para hospedar el servicio de DSC y se ha aprovisionado con las configuraciones y los recursos que necesitan los clientes de extracción.</span><span class="sxs-lookup"><span data-stu-id="4c160-116">Likewise, the pull server has been set up to host the DSC service, and has been provisioned with the configurations and resources that are required by the pull clients.</span></span> <span data-ttu-id="4c160-117">Cada uno de los clientes de extracción tiene una tarea programada que realiza una comprobación periódica del cumplimiento de la configuración del nodo.</span><span class="sxs-lookup"><span data-stu-id="4c160-117">Each one of the pull clients has a scheduled task that performs a periodic compliance check on the configuration of the node.</span></span> <span data-ttu-id="4c160-118">Cuando el evento se desencadena por primera vez, el administrador de configuración local (LCM) del cliente de extracción realiza una solicitud al servidor de extracción para obtener la configuración especificada en el LCM.</span><span class="sxs-lookup"><span data-stu-id="4c160-118">When the event is triggered the first time, it the Local Configuration Manager (LCM) on the pull client makes a request to the pull server to get the configuration specified in the LCM.</span></span> <span data-ttu-id="4c160-119">Si dicha configuración existe en el servidor de extracción y pasa las comprobaciones de validación iniciales, la configuración se transmite al cliente de extracción, donde a continuación el LCM la ejecuta.</span><span class="sxs-lookup"><span data-stu-id="4c160-119">If that configuration exists on the pull server, and it passes initial validation checks, the configuration is transmitted to the pull client, where it is then executed by the LCM.</span></span>
 
-El LCM comprueba que el cliente es conforme con la configuración a intervalos regulares especificados por la propiedad **ConfigurationModeFrequencyMins** del LCM. El LCM busca configuraciones actualizadas en el servidor de extracción a intervalos regulares especificados por la propiedad **RefreshModeFrequency** del LCM. Para obtener información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local](metaConfig.md).
+<span data-ttu-id="4c160-120">El LCM comprueba que el cliente es conforme con la configuración a intervalos regulares especificados por la propiedad **ConfigurationModeFrequencyMins** del LCM.</span><span class="sxs-lookup"><span data-stu-id="4c160-120">The LCM checks that the client is in compliance with the configuration at regular intervals specified by the **ConfigurationModeFrequencyMins** property of the LCM.</span></span> <span data-ttu-id="4c160-121">El LCM busca configuraciones actualizadas en el servidor de extracción a intervalos regulares especificados por la propiedad **RefreshModeFrequency** del LCM.</span><span class="sxs-lookup"><span data-stu-id="4c160-121">The LCM checks for updated configurations on the pull server at regular intervals specified by the **RefreshModeFrequency** property of the LCM.</span></span> <span data-ttu-id="4c160-122">Para obtener información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local](metaConfig.md).</span><span class="sxs-lookup"><span data-stu-id="4c160-122">For information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig.md).</span></span>
 
-Para más información sobre la configuración de un servidor de extracción de DSC, consulte [Configuración de un servidor de extracción web de DSC](pullServer.md).
+<span data-ttu-id="4c160-123">Para más información sobre la configuración de un servidor de extracción de DSC, consulte [Configuración de un servidor de extracción web de DSC](pullServer.md).</span><span class="sxs-lookup"><span data-stu-id="4c160-123">For more information on setting up a DSC Pull Server, see [Setting up a DSC web pull server](pullServer.md).</span></span>
 
-Si prefiere aprovechar un servicio en línea para hospedar la funcionalidad del servidor de extracción, consulte el servicio [DSC de Automatización de Azure](https://azure.microsoft.com/en-us/documentation/articles/automation-dsc-overview/).
+<span data-ttu-id="4c160-124">Si prefiere aprovechar un servicio en línea para hospedar la funcionalidad del servidor de extracción, consulte el servicio [DSC de Automatización de Azure](https://azure.microsoft.com/en-us/documentation/articles/automation-dsc-overview/).</span><span class="sxs-lookup"><span data-stu-id="4c160-124">If you would prefer to take advantage of an online service to host Pull Server functionality, see the [Azure Automation DSC](https://azure.microsoft.com/en-us/documentation/articles/automation-dsc-overview/) service.</span></span>
 
-En los temas siguientes se explica cómo configurar los clientes y servidores de extracción:
+<span data-ttu-id="4c160-125">En los temas siguientes se explica cómo configurar los clientes y servidores de extracción:</span><span class="sxs-lookup"><span data-stu-id="4c160-125">The following topics explain how to set up pull servers and clients:</span></span>
 
-- [Configuración de un servidor de extracción web](pullServer.md)
-- [Configuración de un servidor de extracción SMB](pullServerSMB.md)
-- [Configuración de un cliente de extracción](pullClientConfigID.md)
+- [<span data-ttu-id="4c160-126">Configuración de un servidor de extracción web</span><span class="sxs-lookup"><span data-stu-id="4c160-126">Setting up a web pull server</span></span>](pullServer.md)
+- [<span data-ttu-id="4c160-127">Configuración de un servidor de extracción SMB</span><span class="sxs-lookup"><span data-stu-id="4c160-127">Setting up an SMB pull server</span></span>](pullServerSMB.md)
+- [<span data-ttu-id="4c160-128">Configuración de un cliente de extracción</span><span class="sxs-lookup"><span data-stu-id="4c160-128">Configuring a pull client</span></span>](pullClientConfigID.md)
 

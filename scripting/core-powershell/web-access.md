@@ -1,22 +1,18 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: acceso web
-ms.technology: powershell
-ms.openlocfilehash: bac9b47cade581a7805f1d1ea4d67c3715d009f0
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: d9decc7b87be6ecabe766d1e605c850c7e39a095
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
-#  <a name="web-access-for-powershell"></a>Acceso web de PowerShell
+#  <a name="web-access-for-powershell"></a><span data-ttu-id="dc758-103">Acceso web de PowerShell</span><span class="sxs-lookup"><span data-stu-id="dc758-103">Web Access for PowerShell</span></span>
 
--  [Reglas de autorización y características de seguridad de Windows PowerShell Web Access](web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md)
--  [Instalación y uso de Windows PowerShell Web Access](web-access/install-and-use-windows-powershell-web-access.md)
--  [Solución de problemas de acceso en Windows PowerShell Web Access](web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md)
--  [Desinstalar Windows PowerShell Web Access](web-access/uninstall-windows-powershell-web-access.md)
--  [Uso de la consola de Windows PowerShell basada en web](web-access/use-the-web-based-windows-powershell-console.md)
+-  [<span data-ttu-id="dc758-104">Reglas de autorización y características de seguridad de Windows PowerShell Web Access</span><span class="sxs-lookup"><span data-stu-id="dc758-104">Authorization rules and security features of windows powershell web access</span></span>](web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md)
+-  [<span data-ttu-id="dc758-105">Instalación y uso de Windows PowerShell Web Access</span><span class="sxs-lookup"><span data-stu-id="dc758-105">Install and use windows powershell web access</span></span>](web-access/install-and-use-windows-powershell-web-access.md)
+-  [<span data-ttu-id="dc758-106">Solución de problemas de acceso en Windows PowerShell Web Access</span><span class="sxs-lookup"><span data-stu-id="dc758-106">Troubleshooting access problems in windows powershell web access</span></span>](web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md)
+-  [<span data-ttu-id="dc758-107">Desinstalar Windows PowerShell Web Access</span><span class="sxs-lookup"><span data-stu-id="dc758-107">Uninstall windows powershell web access</span></span>](web-access/uninstall-windows-powershell-web-access.md)
+-  [<span data-ttu-id="dc758-108">Uso de la consola de Windows PowerShell basada en web</span><span class="sxs-lookup"><span data-stu-id="dc758-108">Use the web based windows powershell console</span></span>](web-access/use-the-web-based-windows-powershell-console.md)
 

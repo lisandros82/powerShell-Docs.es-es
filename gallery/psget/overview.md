@@ -1,21 +1,18 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
 title: "introducción"
-ms.technology: powershell
-ms.openlocfilehash: 11861846269c0588bd8ef3bb556f7c2d01bed0a5
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: caea1ffe907cc5473fca3986294eab4e1fbc5ad8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="powershellget-overview"></a>Información general de PowerShellGet
+# <a name="powershellget-overview"></a><span data-ttu-id="3845d-103">Información general de PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="3845d-103">PowerShellGet Overview</span></span>
 
-El módulo PowerShellGet contiene cmdlets para detectar, instalar, actualizar y publicar los artefactos de PowerShell como módulos, recursos de DSC, funcionalidades de rol y scripts desde https://www.PowerShellGallery.com y otros repositorios privados.
+<span data-ttu-id="3845d-104">El módulo PowerShellGet contiene cmdlets para detectar, instalar, actualizar y publicar los artefactos de PowerShell como módulos, recursos de DSC, funcionalidades de rol y scripts desde https://www.PowerShellGallery.com y otros repositorios privados.</span><span class="sxs-lookup"><span data-stu-id="3845d-104">PowerShellGet module contains cmdlets for discovering, installing, updating and publishing the PowerShell artifacts like Modules, DSC Resources, Role Capabilities and Scripts from the https://www.PowerShellGallery.com and other private repositories.</span></span>
 
-## <a name="powershellget-cmdlet-referencepsgetcmdletsreferencemd"></a>[Referencia de cmdlet PowerShellGet](./psget_cmdlets_reference.md)
+## <a name="powershellget-cmdlet-referencepsgetcmdletsreferencemd"></a>[<span data-ttu-id="3845d-105">Referencia de cmdlet PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="3845d-105">PowerShellGet cmdlet reference</span></span>](./psget_cmdlets_reference.md)
 

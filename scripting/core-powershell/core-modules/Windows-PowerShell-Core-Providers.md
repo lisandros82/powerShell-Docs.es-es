@@ -1,35 +1,31 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Proveedores principales de Windows PowerShell
-ms.technology: powershell
 ms.assetid: 6e24bf6d-4c70-4edf-956a-1e8e4779ba10
-ms.openlocfilehash: dbb49a7e6bce4fe1383aab8a3b28e85adafb2643
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: fdfdfee86884d3ac18a33ac424828faa96ecd8bd
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
-# <a name="windows-powershell-core-providers"></a>Proveedores principales de Windows PowerShell
-Esta sección contiene temas de Ayuda que describen los proveedores de Windows PowerShell en el módulo **Microsoft.PowerShell.Core**.
+# <a name="windows-powershell-core-providers"></a><span data-ttu-id="b3102-103">Proveedores principales de Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="b3102-103">Windows PowerShell Core Providers</span></span>
+<span data-ttu-id="b3102-104">Esta sección contiene temas de Ayuda que describen los proveedores de Windows PowerShell en el módulo **Microsoft.PowerShell.Core**.</span><span class="sxs-lookup"><span data-stu-id="b3102-104">This section contains help topics that describe the Windows PowerShell providers in the **Microsoft.PowerShell.Core** module.</span></span>
 
-Los proveedores de Windows PowerShell son programas .NET que hacen que los datos de un almacén de datos especializado estén disponibles en Windows PowerShell, de modo que pueda verlos y administrarlos fácilmente. Los datos que expone un proveedor aparecen en una unidad, como una unidad de un sistema de archivos. Para obtener más información, consulte [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242).
+<span data-ttu-id="b3102-105">Los proveedores de Windows PowerShell son programas .NET que hacen que los datos de un almacén de datos especializado estén disponibles en Windows PowerShell, de modo que pueda verlos y administrarlos fácilmente.</span><span class="sxs-lookup"><span data-stu-id="b3102-105">Windows PowerShell providers are .NET programs that make the data in a specialized data store available in Windows PowerShell so that you can easily view and manage it.</span></span> <span data-ttu-id="b3102-106">Los datos que expone un proveedor aparecen en una unidad, como una unidad de un sistema de archivos.</span><span class="sxs-lookup"><span data-stu-id="b3102-106">The data that a provider exposes appears in a drive, much like a file system drive.</span></span> <span data-ttu-id="b3102-107">Para obtener más información, consulte [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242).</span><span class="sxs-lookup"><span data-stu-id="b3102-107">For more information, see [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242).</span></span>
 
-|Proveedor|Descripción|
+|<span data-ttu-id="b3102-108">Proveedor</span><span class="sxs-lookup"><span data-stu-id="b3102-108">Provider</span></span>|<span data-ttu-id="b3102-109">Descripción</span><span class="sxs-lookup"><span data-stu-id="b3102-109">Description</span></span>|
 |------------|---------------|
-|[Proveedor de alias [v3]](https://technet.microsoft.com/en-us/library/dce3f872-aeff-4eb2-8b38-876cd612fc29)|Proporciona acceso a los alias de Windows PowerShell y sus valores.|
-|[Proveedor de entorno [v3]](https://technet.microsoft.com/en-us/library/94fcd05d-e702-4706-9b7d-ad7e5fd0ec09)|Proporciona acceso a las variables de entorno de Windows.|
-|[Proveedor FileSystem [v3]](https://technet.microsoft.com/en-us/library/0e494537-dfdf-437a-8b27-c21e30aa1f9f)|Proporciona acceso a archivos y directorios.|
-|[Proveedor de funciones [v3]](https://technet.microsoft.com/en-us/library/7dfc92f4-9a88-4399-978d-6d5d224b3e76)|Proporciona acceso a las funciones definidas en Windows PowerShell.|
-|[Proveedor del Registro [v3]](https://technet.microsoft.com/en-us/library/d3c8013c-8caa-48d7-9feb-bfef0d95926e)|Proporciona acceso a los valores y claves del Registro del sistema.|
-|[Proveedor de variables [v3]](https://technet.microsoft.com/en-us/library/78dbcbbd-7946-4b9b-b75b-146f247f821c)|Proporciona acceso a las variables de Windows PowerShell y sus valores.|
+|[<span data-ttu-id="b3102-110">Proveedor de alias [v3]</span><span class="sxs-lookup"><span data-stu-id="b3102-110">Alias Provider [v3]</span></span>](https://technet.microsoft.com/en-us/library/dce3f872-aeff-4eb2-8b38-876cd612fc29)|<span data-ttu-id="b3102-111">Proporciona acceso a los alias de Windows PowerShell y sus valores.</span><span class="sxs-lookup"><span data-stu-id="b3102-111">Provides access to the Windows PowerShell aliases and their values.</span></span>|
+|[<span data-ttu-id="b3102-112">Proveedor de entorno [v3]</span><span class="sxs-lookup"><span data-stu-id="b3102-112">Environment Provider [v3]</span></span>](https://technet.microsoft.com/en-us/library/94fcd05d-e702-4706-9b7d-ad7e5fd0ec09)|<span data-ttu-id="b3102-113">Proporciona acceso a las variables de entorno de Windows.</span><span class="sxs-lookup"><span data-stu-id="b3102-113">Provides access to the Windows environment variables.</span></span>|
+|[<span data-ttu-id="b3102-114">Proveedor FileSystem [v3]</span><span class="sxs-lookup"><span data-stu-id="b3102-114">FileSystem Provider [v3]</span></span>](https://technet.microsoft.com/en-us/library/0e494537-dfdf-437a-8b27-c21e30aa1f9f)|<span data-ttu-id="b3102-115">Proporciona acceso a archivos y directorios.</span><span class="sxs-lookup"><span data-stu-id="b3102-115">Provides access to files and directories.</span></span>|
+|[<span data-ttu-id="b3102-116">Proveedor de funciones [v3]</span><span class="sxs-lookup"><span data-stu-id="b3102-116">Function Provider [v3]</span></span>](https://technet.microsoft.com/en-us/library/7dfc92f4-9a88-4399-978d-6d5d224b3e76)|<span data-ttu-id="b3102-117">Proporciona acceso a las funciones definidas en Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="b3102-117">Provides access to the functions defined in Windows PowerShell.</span></span>|
+|[<span data-ttu-id="b3102-118">Proveedor del Registro [v3]</span><span class="sxs-lookup"><span data-stu-id="b3102-118">Registry Provider [v3]</span></span>](https://technet.microsoft.com/en-us/library/d3c8013c-8caa-48d7-9feb-bfef0d95926e)|<span data-ttu-id="b3102-119">Proporciona acceso a los valores y claves del Registro del sistema.</span><span class="sxs-lookup"><span data-stu-id="b3102-119">Provides access to the system registry keys and values.</span></span>|
+|[<span data-ttu-id="b3102-120">Proveedor de variables [v3]</span><span class="sxs-lookup"><span data-stu-id="b3102-120">Variable Provider [v3]</span></span>](https://technet.microsoft.com/en-us/library/78dbcbbd-7946-4b9b-b75b-146f247f821c)|<span data-ttu-id="b3102-121">Proporciona acceso a las variables de Windows PowerShell y sus valores.</span><span class="sxs-lookup"><span data-stu-id="b3102-121">Provides access to Windows PowerShell variables and their values.</span></span>|
 
-## <a name="see-also"></a>Véase también
-- [Proveedor de certificados [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d)
-- [Proveedor de WSMan [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
-- [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)
-- [Módulo Microsoft.PowerShell.Core](Microsoft.PowerShell.Core-Module.md)
+## <a name="see-also"></a><span data-ttu-id="b3102-122">Véase también</span><span class="sxs-lookup"><span data-stu-id="b3102-122">See Also</span></span>
+- [<span data-ttu-id="b3102-123">Proveedor de certificados [v3]</span><span class="sxs-lookup"><span data-stu-id="b3102-123">Certificate Provider [v3]</span></span>](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d)
+- [<span data-ttu-id="b3102-124">Proveedor de WSMan [v3]</span><span class="sxs-lookup"><span data-stu-id="b3102-124">WSMan Provider [v3]</span></span>](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
+- [<span data-ttu-id="b3102-125">about_Providers [v4]</span><span class="sxs-lookup"><span data-stu-id="b3102-125">about_Providers [v4]</span></span>](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)
+- [<span data-ttu-id="b3102-126">Módulo Microsoft.PowerShell.Core</span><span class="sxs-lookup"><span data-stu-id="b3102-126">Microsoft.PowerShell.Core Module</span></span>](Microsoft.PowerShell.Core-Module.md)
 

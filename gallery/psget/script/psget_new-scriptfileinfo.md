@@ -1,46 +1,43 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_new scriptfileinfo
-ms.technology: powershell
-ms.openlocfilehash: d6b8790c3dd7ce366d608ff7bfd083ca12b201fd
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: New-ScriptFileInfo
+ms.openlocfilehash: 9aed0e16f2dec3681ca4b58595aae8d4972a3808
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="new-scriptfileinfo"></a>New-ScriptFileInfo
+# <a name="new-scriptfileinfo"></a><span data-ttu-id="6e1d3-103">New-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="6e1d3-103">New-ScriptFileInfo</span></span>
 
-Crea un archivo de script con metadatos.
+<span data-ttu-id="6e1d3-104">Crea un archivo de script con metadatos.</span><span class="sxs-lookup"><span data-stu-id="6e1d3-104">Creates a script file with metadata.</span></span>
 
-## <a name="description"></a>Descripción
+## <a name="description"></a><span data-ttu-id="6e1d3-105">Descripción</span><span class="sxs-lookup"><span data-stu-id="6e1d3-105">Description</span></span>
 
-El cmdlet New-ScriptFileInfo crea un archivo de script de PowerShell que incluye metadatos sobre el script.
+<span data-ttu-id="6e1d3-106">El cmdlet New-ScriptFileInfo crea un archivo de script de PowerShell que incluye metadatos sobre el script.</span><span class="sxs-lookup"><span data-stu-id="6e1d3-106">The New-ScriptFileInfo cmdlet creates a PowerShell script file, including metadata about the script.</span></span>
 
-## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a><span data-ttu-id="6e1d3-107">Sintaxis de cmdlet</span><span class="sxs-lookup"><span data-stu-id="6e1d3-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name New-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="6e1d3-108">Referencia de la ayuda en línea de cmdlet</span><span class="sxs-lookup"><span data-stu-id="6e1d3-108">Cmdlet online help reference</span></span>
 
-[New-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619792)
+[<span data-ttu-id="6e1d3-109">New-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="6e1d3-109">New-ScriptFileInfo</span></span>](http://go.microsoft.com/fwlink/?LinkId=619792)
 
-## <a name="example-commands"></a>Comandos de ejemplo
+## <a name="example-commands"></a><span data-ttu-id="6e1d3-110">Comandos de ejemplo</span><span class="sxs-lookup"><span data-stu-id="6e1d3-110">Example commands</span></span>
 
-### <a name="passthru-parameter"></a>Parámetro PassThru
+### <a name="passthru-parameter"></a><span data-ttu-id="6e1d3-111">Parámetro PassThru</span><span class="sxs-lookup"><span data-stu-id="6e1d3-111">PassThru parameter</span></span>
 
 ```powershell
 New-ScriptFileInfo -Description "Script file description." -PassThru
 ```
 
-### <a name="new-scriptfileinfo-cmdlet"></a>Cmdlet New-ScriptFileInfo
-El cmdlet New-ScriptFileInfo permite crear un nuevo archivo de script con metadatos, como Version, Guid, Author, Description, etc. 
+### <a name="new-scriptfileinfo-cmdlet"></a><span data-ttu-id="6e1d3-112">Cmdlet New-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="6e1d3-112">New-ScriptFileInfo cmdlet</span></span>
+<span data-ttu-id="6e1d3-113">El cmdlet New-ScriptFileInfo permite crear un nuevo archivo de script con metadatos, como Version, Guid, Author, Description, etc.</span><span class="sxs-lookup"><span data-stu-id="6e1d3-113">New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc.</span></span> 
 
 ```powershell
 # Create a new script file with minimum required metadata values

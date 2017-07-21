@@ -1,36 +1,33 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_save module
-ms.technology: powershell
-ms.openlocfilehash: 9e83f1eeeb8e4bee666aeb845702f6562a487d6b
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Save-Module
+ms.openlocfilehash: 296c5c5ffc6f1e12da0162237e562b13b3679110
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="save-module"></a>Save-Module
+# <a name="save-module"></a><span data-ttu-id="c4ec2-103">Save-Module</span><span class="sxs-lookup"><span data-stu-id="c4ec2-103">Save-Module</span></span>
 
-Guarda un módulo localmente sin instalarlo.
+<span data-ttu-id="c4ec2-104">Guarda un módulo localmente sin instalarlo.</span><span class="sxs-lookup"><span data-stu-id="c4ec2-104">Saves a module locally without installing it.</span></span>
 
-## <a name="description"></a>Descripción
+## <a name="description"></a><span data-ttu-id="c4ec2-105">Descripción</span><span class="sxs-lookup"><span data-stu-id="c4ec2-105">Description</span></span>
 
-El cmdlet Save-Module guarda un módulo localmente desde el repositorio especificado para su inspección. El módulo no está instalado.
+<span data-ttu-id="c4ec2-106">El cmdlet Save-Module guarda un módulo localmente desde el repositorio especificado para su inspección.</span><span class="sxs-lookup"><span data-stu-id="c4ec2-106">The Save-Module cmdlet saves a module locally from the specified repository for inspection.</span></span> <span data-ttu-id="c4ec2-107">El módulo no está instalado.</span><span class="sxs-lookup"><span data-stu-id="c4ec2-107">The module is not installed.</span></span>
 
-## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a><span data-ttu-id="c4ec2-108">Sintaxis de cmdlet</span><span class="sxs-lookup"><span data-stu-id="c4ec2-108">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Save-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="c4ec2-109">Referencia de la ayuda en línea de cmdlet</span><span class="sxs-lookup"><span data-stu-id="c4ec2-109">Cmdlet online help reference</span></span>
 
-[Save-Module](http://go.microsoft.com/fwlink/?LinkId=531351)
+[<span data-ttu-id="c4ec2-110">Save-Module</span><span class="sxs-lookup"><span data-stu-id="c4ec2-110">Save-Module</span></span>](http://go.microsoft.com/fwlink/?LinkId=531351)
 
-## <a name="example-commands"></a>Comandos de ejemplo
+## <a name="example-commands"></a><span data-ttu-id="c4ec2-111">Comandos de ejemplo</span><span class="sxs-lookup"><span data-stu-id="c4ec2-111">Example commands</span></span>
 
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation

@@ -1,26 +1,23 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_filelist_feature
-ms.technology: powershell
-ms.openlocfilehash: e5d9b7d9c6d233bc84f76f5311e5580bb9e5cd77
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 8335a78d4b08696a88f73fe0fd6936833316f264
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="filelist-feature-in-the-gallery"></a>Característica FileList de la Galería
+# <a name="filelist-feature-in-the-gallery"></a><span data-ttu-id="3a971-103">Característica FileList de la Galería</span><span class="sxs-lookup"><span data-stu-id="3a971-103">FileList Feature in the Gallery</span></span>
 
-Puede ver el contenido de todos los elementos publicados en la Galería. 
+<span data-ttu-id="3a971-104">Puede ver el contenido de todos los elementos publicados en la Galería.</span><span class="sxs-lookup"><span data-stu-id="3a971-104">You are able to view the contents in all items published in the gallery.</span></span> 
 
-Esta característica incluye dos partes: enumera los archivos dentro del elemento y muestra el contenido de los tipos de archivo admitidos. Actualmente se puede mostrar el contenido de las siguientes extensiones de archivo: .ps1, .psm1, .psd1, .ps1xml, .xml y .txt. Se admitirán más extensiones de archivo en las próximas ediciones. 
+<span data-ttu-id="3a971-105">Esta característica incluye dos partes: enumera los archivos dentro del elemento y muestra el contenido de los tipos de archivo admitidos.</span><span class="sxs-lookup"><span data-stu-id="3a971-105">This feature includes two parts: listing the files within the item, and displaying file contents for supported file types.</span></span> <span data-ttu-id="3a971-106">Actualmente se puede mostrar el contenido de las siguientes extensiones de archivo: .ps1, .psm1, .psd1, .ps1xml, .xml y .txt.</span><span class="sxs-lookup"><span data-stu-id="3a971-106">Currently we support displaying the contents of the following file extensions: .ps1, .psm1, .psd1, .ps1xml, .xml and .txt.</span></span> <span data-ttu-id="3a971-107">Se admitirán más extensiones de archivo en las próximas ediciones.</span><span class="sxs-lookup"><span data-stu-id="3a971-107">We will be supporting more file extensions in the next releases.</span></span> 
 
-## <a name="where-to-find-filelist"></a>Dónde encontrar FileList
-En la página de cada elemento, encontrará la sección FileList y el vínculo **Mostrar**. Si hace clic en el vínculo, verá una lista completa de los elementos contenidos en el elemento.
+## <a name="where-to-find-filelist"></a><span data-ttu-id="3a971-108">Dónde encontrar FileList</span><span class="sxs-lookup"><span data-stu-id="3a971-108">Where to Find FileList</span></span>
+<span data-ttu-id="3a971-109">En la página de cada elemento, encontrará la sección FileList y el vínculo **Mostrar**.</span><span class="sxs-lookup"><span data-stu-id="3a971-109">On each individual item page, you will be able to find FileList section and a **Show** link.</span></span> <span data-ttu-id="3a971-110">Si hace clic en el vínculo, verá una lista completa de los elementos contenidos en el elemento.</span><span class="sxs-lookup"><span data-stu-id="3a971-110">Click on the Show and you will find a complete list of items contained in the item.</span></span>
 
-Cada tipo de archivo admitido se muestra como un hipervínculo. Si hace clic en él, le llevará a una página nueva que muestra el contenido del archivo en el resaltado de sintaxis de PowerShell. Al hacer clic en el título o en la versión del elemento, que se muestran en la parte superior de la pantalla, volverá a la página de detalles del elemento.
+<span data-ttu-id="3a971-111">Cada tipo de archivo admitido se muestra como un hipervínculo. Si hace clic en él, le llevará a una página nueva que muestra el contenido del archivo en el resaltado de sintaxis de PowerShell.</span><span class="sxs-lookup"><span data-stu-id="3a971-111">Each supported file type is displayed as a hyperlink, and clicking it will take you to a new page with file contents displayed in PowerShell syntax highlighting.</span></span> <span data-ttu-id="3a971-112">Al hacer clic en el título o en la versión del elemento, que se muestran en la parte superior de la pantalla, volverá a la página de detalles del elemento.</span><span class="sxs-lookup"><span data-stu-id="3a971-112">Clicking on the title or the version of the item, which is displayed at the top of the screen, will bring you back to item detail page.</span></span>
 

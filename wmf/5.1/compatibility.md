@@ -1,38 +1,36 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
 title: Compatibilidad con el sistema operativo de WMF 5.1
-ms.date: 2016-05-16
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: ed7be717b831bad24bde74a68ce39d5e65f1c5d9
-ms.sourcegitcommit: 58e5e77050ba32717ce3e31e314f0f25cb7b2979
-translationtype: HT
+ms.openlocfilehash: b8724538a03ab67529682b9efb29e3ab947339b5
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="wmf-51-operating-system-compatibility"></a>Compatibilidad con el sistema operativo de WMF 5.1 #
+# <a name="wmf-51-operating-system-compatibility"></a><span data-ttu-id="c79c4-103">Compatibilidad con el sistema operativo de WMF 5.1</span><span class="sxs-lookup"><span data-stu-id="c79c4-103">WMF 5.1 Operating System Compatibility</span></span> #
 
-> Nota: Esta información es preliminar y está sujeta a cambios.
+> <span data-ttu-id="c79c4-104">Nota: Esta información es preliminar y está sujeta a cambios.</span><span class="sxs-lookup"><span data-stu-id="c79c4-104">Note: This information is preliminary and subject to change.</span></span>
 
-| Versión de sistema operativo | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
+| <span data-ttu-id="c79c4-105">Versión de sistema operativo</span><span class="sxs-lookup"><span data-stu-id="c79c4-105">Operating System Version</span></span> | [<span data-ttu-id="c79c4-106">WMF 5.1</span><span class="sxs-lookup"><span data-stu-id="c79c4-106">WMF 5.1</span></span>](https://aka.ms/wmf51download) | [<span data-ttu-id="c79c4-107">WMF 5.0</span><span class="sxs-lookup"><span data-stu-id="c79c4-107">WMF 5.0</span></span>](https://aka.ms/wmf5download) | [<span data-ttu-id="c79c4-108">WMF 4.0</span><span class="sxs-lookup"><span data-stu-id="c79c4-108">WMF 4.0</span></span>](https://aka.ms/wmf4download) |  [<span data-ttu-id="c79c4-109">WMF 3.0</span><span class="sxs-lookup"><span data-stu-id="c79c4-109">WMF 3.0</span></span>](https://aka.ms/wmf3download) | [<span data-ttu-id="c79c4-110">WMF 2.0</span><span class="sxs-lookup"><span data-stu-id="c79c4-110">WMF 2.0</span></span>](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
-| Windows Server 2016 | Se envía en la caja* |  |  |  |  |
-| Windows 10 | Se envía en la caja* | Se envía en la caja*  | | | |  
-| Windows Server 2012 R2| Sí | Sí | Se envía en la caja |  |  |
-| Windows 8.1 | Sí | Sí |  Se envía en la caja |  |  |
-| Windows Server 2012 | Sí | Sí | Sí |  Se envía en la caja | |
-| Windows 8 |  |  |  | Se envía en la caja | |
-| Windows Server 2008 R2 SP1 | Sí | Sí | Sí |  Sí| Se envía en la caja |
-| Windows 7 SP1  | Sí | Sí | Sí | Sí | Se envía en la caja |
-| Windows Server 2008 SP2 | | | | Sí | Sí |
-| Windows Vista | | | | | Sí |
-| Windows Server 2003| | | |  | Sí |
-| Windows XP | | | |  | Sí |
+| <span data-ttu-id="c79c4-111">Windows Server 2016</span><span class="sxs-lookup"><span data-stu-id="c79c4-111">Windows Server 2016</span></span> | <span data-ttu-id="c79c4-112">Se envía en la caja*</span><span class="sxs-lookup"><span data-stu-id="c79c4-112">Ships in-box*</span></span> |  |  |  |  |
+| <span data-ttu-id="c79c4-113">Windows 10</span><span class="sxs-lookup"><span data-stu-id="c79c4-113">Windows 10</span></span> | <span data-ttu-id="c79c4-114">Se envía en la caja*</span><span class="sxs-lookup"><span data-stu-id="c79c4-114">Ships in-box*</span></span> | <span data-ttu-id="c79c4-115">Se envía en la caja*</span><span class="sxs-lookup"><span data-stu-id="c79c4-115">Ships in-box*</span></span>  | | | |  
+| <span data-ttu-id="c79c4-116">Windows Server 2012 R2</span><span class="sxs-lookup"><span data-stu-id="c79c4-116">Windows Server 2012 R2</span></span>| <span data-ttu-id="c79c4-117">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-117">Yes</span></span> | <span data-ttu-id="c79c4-118">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-118">Yes</span></span> | <span data-ttu-id="c79c4-119">Se envía en la caja</span><span class="sxs-lookup"><span data-stu-id="c79c4-119">Ships in-box</span></span> |  |  |
+| <span data-ttu-id="c79c4-120">Windows 8.1</span><span class="sxs-lookup"><span data-stu-id="c79c4-120">Windows 8.1</span></span> | <span data-ttu-id="c79c4-121">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-121">Yes</span></span> | <span data-ttu-id="c79c4-122">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-122">Yes</span></span> |  <span data-ttu-id="c79c4-123">Se envía en la caja</span><span class="sxs-lookup"><span data-stu-id="c79c4-123">Ships in-box</span></span> |  |  |
+| <span data-ttu-id="c79c4-124">Windows Server 2012</span><span class="sxs-lookup"><span data-stu-id="c79c4-124">Windows Server 2012</span></span> | <span data-ttu-id="c79c4-125">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-125">Yes</span></span> | <span data-ttu-id="c79c4-126">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-126">Yes</span></span> | <span data-ttu-id="c79c4-127">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-127">Yes</span></span> |  <span data-ttu-id="c79c4-128">Se envía en la caja</span><span class="sxs-lookup"><span data-stu-id="c79c4-128">Ships in-box</span></span> | |
+| <span data-ttu-id="c79c4-129">Windows 8</span><span class="sxs-lookup"><span data-stu-id="c79c4-129">Windows 8</span></span> |  |  |  | <span data-ttu-id="c79c4-130">Se envía en la caja</span><span class="sxs-lookup"><span data-stu-id="c79c4-130">Ships in-box</span></span> | |
+| <span data-ttu-id="c79c4-131">Windows Server 2008 R2 SP1</span><span class="sxs-lookup"><span data-stu-id="c79c4-131">Windows Server 2008 R2 SP1</span></span> | <span data-ttu-id="c79c4-132">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-132">Yes</span></span> | <span data-ttu-id="c79c4-133">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-133">Yes</span></span> | <span data-ttu-id="c79c4-134">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-134">Yes</span></span> |  <span data-ttu-id="c79c4-135">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-135">Yes</span></span>| <span data-ttu-id="c79c4-136">Se envía en la caja</span><span class="sxs-lookup"><span data-stu-id="c79c4-136">Ships in-box</span></span> |
+| <span data-ttu-id="c79c4-137">Windows 7 SP1</span><span class="sxs-lookup"><span data-stu-id="c79c4-137">Windows 7 SP1</span></span>  | <span data-ttu-id="c79c4-138">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-138">Yes</span></span> | <span data-ttu-id="c79c4-139">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-139">Yes</span></span> | <span data-ttu-id="c79c4-140">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-140">Yes</span></span> | <span data-ttu-id="c79c4-141">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-141">Yes</span></span> | <span data-ttu-id="c79c4-142">Se envía en la caja</span><span class="sxs-lookup"><span data-stu-id="c79c4-142">Ships in-box</span></span> |
+| <span data-ttu-id="c79c4-143">Windows Server 2008 SP2</span><span class="sxs-lookup"><span data-stu-id="c79c4-143">Windows Server 2008 SP2</span></span> | | | | <span data-ttu-id="c79c4-144">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-144">Yes</span></span> | <span data-ttu-id="c79c4-145">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-145">Yes</span></span> |
+| <span data-ttu-id="c79c4-146">Windows Vista</span><span class="sxs-lookup"><span data-stu-id="c79c4-146">Windows Vista</span></span> | | | | | <span data-ttu-id="c79c4-147">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-147">Yes</span></span> |
+| <span data-ttu-id="c79c4-148">Windows Server 2003</span><span class="sxs-lookup"><span data-stu-id="c79c4-148">Windows Server 2003</span></span>| | | |  | <span data-ttu-id="c79c4-149">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-149">Yes</span></span> |
+| <span data-ttu-id="c79c4-150">Windows XP</span><span class="sxs-lookup"><span data-stu-id="c79c4-150">Windows XP</span></span> | | | |  | <span data-ttu-id="c79c4-151">Sí</span><span class="sxs-lookup"><span data-stu-id="c79c4-151">Yes</span></span> |
 
 
-Sobre "se envía en la caja*": las características de WMF 5.0 se han incluido en la versión RTM de Windows 10 original.
-Las características de WMF 5.1 se han incluido en Windows Server 2016 y en la edición de aniversario de Windows 10. WMF 5.1 no es adecuado para estas versiones de los sistemas operativos, ya que las actualizaciones se proporcionan a través de Windows Update.
+<span data-ttu-id="c79c4-152">Sobre "se envía en la caja*": las características de WMF 5.0 se han incluido en la versión RTM de Windows 10 original.</span><span class="sxs-lookup"><span data-stu-id="c79c4-152">About "Ships in-box*": The features of WMF 5.0 were included in the original Windows 10 RTM version.</span></span>
+<span data-ttu-id="c79c4-153">Las características de WMF 5.1 se han incluido en Windows Server 2016 y en la edición de aniversario de Windows 10.</span><span class="sxs-lookup"><span data-stu-id="c79c4-153">The features of WMF 5.1 were included in Windows Server 2016 and Windows 10 Anniversary Edition.</span></span> <span data-ttu-id="c79c4-154">WMF 5.1 no es adecuado para estas versiones de los sistemas operativos, ya que las actualizaciones se proporcionan a través de Windows Update.</span><span class="sxs-lookup"><span data-stu-id="c79c4-154">WMF 5.1 is not applicable for these operating system versions, as the updates are provided via Windows Update.</span></span>
 
 

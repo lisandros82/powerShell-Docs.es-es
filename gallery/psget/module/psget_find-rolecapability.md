@@ -1,45 +1,42 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_find rolecapability
-ms.technology: powershell
-ms.openlocfilehash: 3f005bf0a9201c3762ca6399a78d4ff983409656
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Find-RoleCapability
+ms.openlocfilehash: 77c5b492d9681fa05315401fba410c508af1d13b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="find-rolecapability"></a>Find-RoleCapability
+# <a name="find-rolecapability"></a><span data-ttu-id="67693-103">Find-RoleCapability</span><span class="sxs-lookup"><span data-stu-id="67693-103">Find-RoleCapability</span></span>
 
-Busca funcionalidades de rol en módulos.
+<span data-ttu-id="67693-104">Busca funcionalidades de rol en módulos.</span><span class="sxs-lookup"><span data-stu-id="67693-104">Finds role capabilities in modules.</span></span>
 
-## <a name="description"></a>Descripción
-El cmdlet Find-RoleCapability busca funcionalidades de rol de PowerShell en módulos. Find-RoleCapability busca en los módulos de los repositorios registrados. Para cada funcionalidad de rol que este cmdlet encuentre, se devuelve un objeto PSGetRoleCapabilityInfo. Puede pasar un objeto PSGetRoleCapabilityInfo al cmdlet Install-Module para instalar el módulo que contiene la funcionalidad de rol.
-Las funcionalidades de rol de PowerShell definen los comandos, las aplicaciones, etc., que están disponibles para un usuario en un punto de conexión de Just Enough Administration (JEA). Las funcionalidades de rol se definen mediante archivos con la extensión .psrc.
+## <a name="description"></a><span data-ttu-id="67693-105">Descripción</span><span class="sxs-lookup"><span data-stu-id="67693-105">Description</span></span>
+<span data-ttu-id="67693-106">El cmdlet Find-RoleCapability busca funcionalidades de rol de PowerShell en módulos.</span><span class="sxs-lookup"><span data-stu-id="67693-106">The Find-RoleCapability cmdlet finds PowerShell role capabilities in modules.</span></span> <span data-ttu-id="67693-107">Find-RoleCapability busca en los módulos de los repositorios registrados.</span><span class="sxs-lookup"><span data-stu-id="67693-107">Find-RoleCapability searches modules in registered repositories.</span></span> <span data-ttu-id="67693-108">Para cada funcionalidad de rol que este cmdlet encuentre, se devuelve un objeto PSGetRoleCapabilityInfo.</span><span class="sxs-lookup"><span data-stu-id="67693-108">For each role capability that this cmdlet finds, it returns a PSGetRoleCapabilityInfo object.</span></span> <span data-ttu-id="67693-109">Puede pasar un objeto PSGetRoleCapabilityInfo al cmdlet Install-Module para instalar el módulo que contiene la funcionalidad de rol.</span><span class="sxs-lookup"><span data-stu-id="67693-109">You can pass a PSGetRoleCapabilityInfo object to the Install-Module cmdlet to install the module that contains the role capability.</span></span>
+<span data-ttu-id="67693-110">Las funcionalidades de rol de PowerShell definen los comandos, las aplicaciones, etc., que están disponibles para un usuario en un punto de conexión de Just Enough Administration (JEA).</span><span class="sxs-lookup"><span data-stu-id="67693-110">PowerShell role capabilities define which commands, applications, and so on are available to a user at a Just Enough Administration (JEA) endpoint.</span></span> <span data-ttu-id="67693-111">Las funcionalidades de rol se definen mediante archivos con la extensión .psrc.</span><span class="sxs-lookup"><span data-stu-id="67693-111">Role capabilities are defined by files with a .psrc extension.</span></span>
 
-- Find-RoleCapability puede filtrar con parámetros de versión: MinimumVersion, RequiredVersion y AllVersions.
-  - Estos parámetros se excluyen mutuamente.
-  - Estos parámetros de versión solo se permiten con el nombre de módulo único sin ningún carácter comodín.
-  - Si no se especifica el parámetro RequiredVersion, Find-RoleCapability devuelve la versión más reciente del módulo que sea igual o mayor que la versión mínima especificada, o la versión más reciente del módulo si no se especifica ninguna versión mínima.
-  - Si se especifica el parámetro RequiredVersion, Find-RoleCapability solo devuelve la versión del módulo que coincida exactamente con la versión especificada.
-- Find-RoleCapability puede filtrar por los metadatos del módulo con el parámetro -Tag.
-- Find-RoleCapability puede filtrar por el idioma de búsqueda específico del repositorio con el parámetro -Filter.
-- Find-RoleCapability puede filtrar por los módulos de todos o algunos de los repositorios registrados.
+- <span data-ttu-id="67693-112">Find-RoleCapability puede filtrar con parámetros de versión: MinimumVersion, RequiredVersion y AllVersions.</span><span class="sxs-lookup"><span data-stu-id="67693-112">Find-RoleCapability can filter with version parameters: MinimumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="67693-113">Estos parámetros se excluyen mutuamente.</span><span class="sxs-lookup"><span data-stu-id="67693-113">These parameters are mutually exclusive.</span></span>
+  - <span data-ttu-id="67693-114">Estos parámetros de versión solo se permiten con el nombre de módulo único sin ningún carácter comodín.</span><span class="sxs-lookup"><span data-stu-id="67693-114">These version parameters are allowed only with the single module name without any wildcards.</span></span>
+  - <span data-ttu-id="67693-115">Si no se especifica el parámetro RequiredVersion, Find-RoleCapability devuelve la versión más reciente del módulo que sea igual o mayor que la versión mínima especificada, o la versión más reciente del módulo si no se especifica ninguna versión mínima.</span><span class="sxs-lookup"><span data-stu-id="67693-115">If the RequiredVersion parameter is not specified, Find-RoleCapability returns the latest version of the module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span>
+  - <span data-ttu-id="67693-116">Si se especifica el parámetro RequiredVersion, Find-RoleCapability solo devuelve la versión del módulo que coincida exactamente con la versión especificada.</span><span class="sxs-lookup"><span data-stu-id="67693-116">If the RequiredVersion parameter is specified, Find-RoleCapability only returns the version of the module that exactly matches the specified version.</span></span>
+- <span data-ttu-id="67693-117">Find-RoleCapability puede filtrar por los metadatos del módulo con el parámetro -Tag.</span><span class="sxs-lookup"><span data-stu-id="67693-117">Find-RoleCapability can filter on module metadata with the -Tag parameter</span></span>
+- <span data-ttu-id="67693-118">Find-RoleCapability puede filtrar por el idioma de búsqueda específico del repositorio con el parámetro -Filter.</span><span class="sxs-lookup"><span data-stu-id="67693-118">Find-RoleCapability can filter on repository-specific search language with the -Filter parameter.</span></span>
+- <span data-ttu-id="67693-119">Find-RoleCapability puede filtrar por los módulos de todos o algunos de los repositorios registrados.</span><span class="sxs-lookup"><span data-stu-id="67693-119">Find-RoleCapability can filter on modules from all or few of the registered repositories.</span></span>
 
-## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a><span data-ttu-id="67693-120">Sintaxis de cmdlet</span><span class="sxs-lookup"><span data-stu-id="67693-120">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Find-RoleCapability -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="67693-121">Referencia de la ayuda en línea de cmdlet</span><span class="sxs-lookup"><span data-stu-id="67693-121">Cmdlet online help reference</span></span>
 
-[Find-RoleCapability](http://go.microsoft.com/fwlink/?LinkId=718029)
+[<span data-ttu-id="67693-122">Find-RoleCapability</span><span class="sxs-lookup"><span data-stu-id="67693-122">Find-RoleCapability</span></span>](http://go.microsoft.com/fwlink/?LinkId=718029)
 
-## <a name="example-commands"></a>Comandos de ejemplo
+## <a name="example-commands"></a><span data-ttu-id="67693-123">Comandos de ejemplo</span><span class="sxs-lookup"><span data-stu-id="67693-123">Example commands</span></span>
 ```powershell
 
 # Find a specific role capability

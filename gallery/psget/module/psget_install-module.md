@@ -1,74 +1,71 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_install module
-ms.technology: powershell
-ms.openlocfilehash: 82e4bb1ec76b1a51e1a99de85bc77a5429d46e26
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Install-Module
+ms.openlocfilehash: 37e07cd32e7b2fd4a7a8e6cab179aecc3251baf3
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="install-module"></a>Install-Module
+# <a name="install-module"></a><span data-ttu-id="f9790-103">Install-Module</span><span class="sxs-lookup"><span data-stu-id="f9790-103">Install-Module</span></span>
 
-Instala los módulos de PowerShell desde repositorios en línea en el equipo local.
+<span data-ttu-id="f9790-104">Instala los módulos de PowerShell desde repositorios en línea en el equipo local.</span><span class="sxs-lookup"><span data-stu-id="f9790-104">Installs the PowerShell modules from online repositories to the local computer.</span></span>
 
-## <a name="description"></a>Descripción
+## <a name="description"></a><span data-ttu-id="f9790-105">Descripción</span><span class="sxs-lookup"><span data-stu-id="f9790-105">Description</span></span>
 
-El cmdlet Install-Module descarga de una galería en línea uno o más módulos, los valida y los instala en el equipo local en el ámbito de instalación especificado.
+<span data-ttu-id="f9790-106">El cmdlet Install-Module descarga de una galería en línea uno o más módulos, los valida y los instala en el equipo local en el ámbito de instalación especificado.</span><span class="sxs-lookup"><span data-stu-id="f9790-106">Install-Module cmdlet downloads one or more modules from an online gallery, validates and installs them on the local computer to the specified installation scope.</span></span>
 
-El cmdlet Install-Module obtiene de una galería en línea uno o varios módulos que cumplen los criterios especificados, comprueba que los resultados de la búsqueda son módulos válidos y copia carpetas de módulo en la ubicación de instalación.
+<span data-ttu-id="f9790-107">El cmdlet Install-Module obtiene de una galería en línea uno o varios módulos que cumplen los criterios especificados, comprueba que los resultados de la búsqueda son módulos válidos y copia carpetas de módulo en la ubicación de instalación.</span><span class="sxs-lookup"><span data-stu-id="f9790-107">The Install-Module cmdlet gets one or more modules that meet specified criteria from an online gallery, verifies that search results are valid modules, and copies module folders to the installation location.</span></span>
 
-Cuando no se define ningún ámbito o cuando el valor del parámetro Scope es AllUsers, el módulo se instala en %systemdrive%:\Program Files\WindowsPowerShell\Modules. Cuando el valor de Scope es CurrentUser, el módulo se instala en $home\Documents\WindowsPowerShell\Modules.
+<span data-ttu-id="f9790-108">Cuando no se define ningún ámbito o cuando el valor del parámetro Scope es AllUsers, el módulo se instala en %systemdrive%:\Program Files\WindowsPowerShell\Modules.</span><span class="sxs-lookup"><span data-stu-id="f9790-108">When no scope is defined, or when the value of the Scope parameter is AllUsers, the module is installed to %systemdrive%:\Program Files\WindowsPowerShell\Modules.</span></span> <span data-ttu-id="f9790-109">Cuando el valor de Scope es CurrentUser, el módulo se instala en $home\Documents\WindowsPowerShell\Modules.</span><span class="sxs-lookup"><span data-stu-id="f9790-109">When the value of Scope is CurrentUser, the module is installed to $home\Documents\WindowsPowerShell\Modules.</span></span>
 
-Puede filtrar los resultados en función de una versión mínima y exacta de los módulos especificados.
+<span data-ttu-id="f9790-110">Puede filtrar los resultados en función de una versión mínima y exacta de los módulos especificados.</span><span class="sxs-lookup"><span data-stu-id="f9790-110">You can filter your results based on minimum and exact versions of specified modules.</span></span>
 
-- Compatibilidad de versiones en paralelo en Windows PowerShell 5.0 o más reciente
-- Compatibilidad con la instalación de dependencias de módulo
-- **Aviso de no confianza:** se requiere la aceptación del usuario para instalar los módulos desde un repositorio que no es de confianza.
-- -Force vuelve a instalar el módulo instalado.
-- RequiredVersion instala la versión especificada en SxS con las versiones existentes en PowerShell versión 5.0 o posterior.
+- <span data-ttu-id="f9790-111">Compatibilidad de versiones en paralelo en Windows PowerShell 5.0 o más reciente</span><span class="sxs-lookup"><span data-stu-id="f9790-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
+- <span data-ttu-id="f9790-112">Compatibilidad con la instalación de dependencias de módulo</span><span class="sxs-lookup"><span data-stu-id="f9790-112">Module dependency installation support</span></span>
+- <span data-ttu-id="f9790-113">**Aviso de no confianza:** se requiere la aceptación del usuario para instalar los módulos desde un repositorio que no es de confianza.</span><span class="sxs-lookup"><span data-stu-id="f9790-113">**Untrusted prompt:**User acceptance is required for installing the modules from an untrusted repository.</span></span>
+- <span data-ttu-id="f9790-114">-Force vuelve a instalar el módulo instalado.</span><span class="sxs-lookup"><span data-stu-id="f9790-114">-Force reinstalls the installed module</span></span>
+- <span data-ttu-id="f9790-115">RequiredVersion instala la versión especificada en SxS con las versiones existentes en PowerShell versión 5.0 o posterior.</span><span class="sxs-lookup"><span data-stu-id="f9790-115">RequiredVersion installs the specified version in SxS with existing versions on PowerShell version 5.0 or newer.</span></span>
 
-### <a name="scope"></a>Ámbito
-Especifica el ámbito de instalación del módulo. Los valores aceptables para este parámetro son AllUsers y CurrentUser.
+### <a name="scope"></a><span data-ttu-id="f9790-116">Ámbito</span><span class="sxs-lookup"><span data-stu-id="f9790-116">Scope</span></span>
+<span data-ttu-id="f9790-117">Especifica el ámbito de instalación del módulo.</span><span class="sxs-lookup"><span data-stu-id="f9790-117">Specifies the installation scope of the module.</span></span> <span data-ttu-id="f9790-118">Los valores aceptables para este parámetro son AllUsers y CurrentUser.</span><span class="sxs-lookup"><span data-stu-id="f9790-118">The acceptable values for this parameter are: AllUsers and CurrentUser.</span></span>
 
-El ámbito de instalación predeterminado es AllUsers.
+<span data-ttu-id="f9790-119">El ámbito de instalación predeterminado es AllUsers.</span><span class="sxs-lookup"><span data-stu-id="f9790-119">The default installation scope is AllUsers.</span></span>
 
-El ámbito AllUsers permite instalar módulos en una ubicación accesible para todos los usuarios del equipo, es decir, "$env:SystemDrive\Program Files\WindowsPowerShell\Modules".
+<span data-ttu-id="f9790-120">El ámbito AllUsers permite instalar módulos en una ubicación accesible para todos los usuarios del equipo, es decir, "$env:SystemDrive\Program Files\WindowsPowerShell\Modules".</span><span class="sxs-lookup"><span data-stu-id="f9790-120">The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer, that is, "$env:SystemDrive\Program Files\WindowsPowerShell\Modules".</span></span>
 
-El ámbito CurrentUser permite instalar módulos solo en "$home\Documents\WindowsPowerShell\Modules", de modo que el módulo solo está disponible para el usuario actual.
+<span data-ttu-id="f9790-121">El ámbito CurrentUser permite instalar módulos solo en "$home\Documents\WindowsPowerShell\Modules", de modo que el módulo solo está disponible para el usuario actual.</span><span class="sxs-lookup"><span data-stu-id="f9790-121">The CurrentUser scope lets modules be installed only to "$home\Documents\WindowsPowerShell\Modules", so that the module is available only to the current user.</span></span>
 
-## <a name="notes"></a>Notas
+## <a name="notes"></a><span data-ttu-id="f9790-122">Notas</span><span class="sxs-lookup"><span data-stu-id="f9790-122">Notes</span></span>
 
-Este cmdlet se ejecuta en Windows PowerShell 3.0 o versiones posteriores de Windows PowerShell, en Windows 7 o Windows 2008 R2 y versiones posteriores de Windows.
+<span data-ttu-id="f9790-123">Este cmdlet se ejecuta en Windows PowerShell 3.0 o versiones posteriores de Windows PowerShell, en Windows 7 o Windows 2008 R2 y versiones posteriores de Windows.</span><span class="sxs-lookup"><span data-stu-id="f9790-123">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
 
-Si no se puede importar un módulo instalado (es decir, si no tiene un archivo .psm1, .psd1 o .dll con el mismo nombre en la carpeta), se produce un error en la instalación a menos que se agregue el parámetro Force al comando.
+<span data-ttu-id="f9790-124">Si no se puede importar un módulo instalado (es decir, si no tiene un archivo .psm1, .psd1 o .dll con el mismo nombre en la carpeta), se produce un error en la instalación a menos que se agregue el parámetro Force al comando.</span><span class="sxs-lookup"><span data-stu-id="f9790-124">If an installed module cannot be imported (that is, if it does not have a .psm1, .psd1, or .dll of the same name within the folder), installation fails unless you add the Force parameter to your command.</span></span>
 
-Si una versión del módulo en el equipo coincide con el valor especificado para el parámetro Name y no se ha agregado el parámetro MinimumVersion o RequiredVersion, Install-Module continúa en modo silencioso sin instalar ese módulo. Si se especifican los parámetros MinimumVersion o RequiredVersion y el módulo existente no coincide con los valores de ese parámetro, se produce un error. En concreto, se produce un error si la versión del módulo instalado actualmente es menor que el valor del parámetro MinimumVersion o si no es igual al valor del parámetro RequiredVersion. Si la versión del módulo instalado es mayor que el valor del parámetro MinimumVersion o igual al valor del parámetro RequiredVersion, Install-Module continúa en modo silencioso sin instalar ese módulo.
+<span data-ttu-id="f9790-125">Si una versión del módulo en el equipo coincide con el valor especificado para el parámetro Name y no se ha agregado el parámetro MinimumVersion o RequiredVersion, Install-Module continúa en modo silencioso sin instalar ese módulo.</span><span class="sxs-lookup"><span data-stu-id="f9790-125">If a version of the module on the computer matches the value specified for the Name parameter, and you have not added the MinimumVersion or RequiredVersion parameter, Install-Module silently continues without installing that module.</span></span> <span data-ttu-id="f9790-126">Si se especifican los parámetros MinimumVersion o RequiredVersion y el módulo existente no coincide con los valores de ese parámetro, se produce un error.</span><span class="sxs-lookup"><span data-stu-id="f9790-126">If the MinimumVersion or RequiredVersion parameters are specified, and the existing module does not match the values in that parameter, then an error occurs.</span></span> <span data-ttu-id="f9790-127">En concreto, se produce un error si la versión del módulo instalado actualmente es menor que el valor del parámetro MinimumVersion o si no es igual al valor del parámetro RequiredVersion.</span><span class="sxs-lookup"><span data-stu-id="f9790-127">To be more specific: if the version of the currently-installed module is either lower than the value of the MinimumVersion parameter, or not equal to the value of the RequiredVersion parameter, an error occurs.</span></span> <span data-ttu-id="f9790-128">Si la versión del módulo instalado es mayor que el valor del parámetro MinimumVersion o igual al valor del parámetro RequiredVersion, Install-Module continúa en modo silencioso sin instalar ese módulo.</span><span class="sxs-lookup"><span data-stu-id="f9790-128">If the version of the installed module is greater than the value of the MinimumVersion parameter, or equal to the value of the RequiredVersion parameter, Install-Module silently continues without installing that module.</span></span>
 
-Install-Module devuelve un error si no existe ningún módulo en la galería en línea que coincida con el nombre especificado.
+<span data-ttu-id="f9790-129">Install-Module devuelve un error si no existe ningún módulo en la galería en línea que coincida con el nombre especificado.</span><span class="sxs-lookup"><span data-stu-id="f9790-129">Install-Module returns an error if no module exists in the online gallery that matches the specified name.</span></span>
 
-Para instalar varios módulos, especifique una matriz de los nombres de módulo, separados por comas. No se puede agregar MinimumVersion o RequiredVersion si se especifican varios nombres de módulo.
+<span data-ttu-id="f9790-130">Para instalar varios módulos, especifique una matriz de los nombres de módulo, separados por comas.</span><span class="sxs-lookup"><span data-stu-id="f9790-130">To install multiple modules, specify an array of the module names, separated by commas.</span></span> <span data-ttu-id="f9790-131">No se puede agregar MinimumVersion o RequiredVersion si se especifican varios nombres de módulo.</span><span class="sxs-lookup"><span data-stu-id="f9790-131">You cannot add MinimumVersion or RequiredVersion if you specify multiple module names.</span></span>
 
-De forma predeterminada, los módulos se instalan en la carpeta Archivos de programa, para evitar confusiones al instalar recursos de configuración de estado deseado de Windows PowerShell (DSC). Puede canalizar varios objetos PSGetItemInfo a Install-Module. Se trata de otra manera de especificar varios módulos para instalarlos en un solo comando.
+<span data-ttu-id="f9790-132">De forma predeterminada, los módulos se instalan en la carpeta Archivos de programa, para evitar confusiones al instalar recursos de configuración de estado deseado de Windows PowerShell (DSC). Puede canalizar varios objetos PSGetItemInfo a Install-Module. Se trata de otra manera de especificar varios módulos para instalarlos en un solo comando.</span><span class="sxs-lookup"><span data-stu-id="f9790-132">By default, modules are installed to the Program Files folder, to prevent confusion when you are installing Windows PowerShell Desired State Configuration (DSC) resources.You can pipe multiple PSGetItemInfo objects to Install-Module; this is another way of specifying multiple modules to install in a single command.</span></span>
 
-Para evitar la ejecución de módulos que contienen código malintencionado, la instalación no importa automáticamente los módulos instalados. Como procedimiento de seguridad recomendado, evalúe el código del módulo antes de ejecutar un cmdlet o una función en un módulo por primera vez.
+<span data-ttu-id="f9790-133">Para evitar la ejecución de módulos que contienen código malintencionado, la instalación no importa automáticamente los módulos instalados.</span><span class="sxs-lookup"><span data-stu-id="f9790-133">To help prevent running modules that contain malicious code, installed modules are not automatically imported by installation.</span></span> <span data-ttu-id="f9790-134">Como procedimiento de seguridad recomendado, evalúe el código del módulo antes de ejecutar un cmdlet o una función en un módulo por primera vez.</span><span class="sxs-lookup"><span data-stu-id="f9790-134">As a security best practice, evaluate module code before running any cmdlets or functions in a module for the first time.</span></span>
 
 
-## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a><span data-ttu-id="f9790-135">Sintaxis de cmdlet</span><span class="sxs-lookup"><span data-stu-id="f9790-135">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Install-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="f9790-136">Referencia de la ayuda en línea de cmdlet</span><span class="sxs-lookup"><span data-stu-id="f9790-136">Cmdlet online help reference</span></span>
 
-[Install-Module](http://go.microsoft.com/fwlink/?LinkID=398573)
+[<span data-ttu-id="f9790-137">Install-Module</span><span class="sxs-lookup"><span data-stu-id="f9790-137">Install-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398573)
 
-## <a name="example-commands"></a>Comandos de ejemplo
+## <a name="example-commands"></a><span data-ttu-id="f9790-138">Comandos de ejemplo</span><span class="sxs-lookup"><span data-stu-id="f9790-138">Example commands</span></span>
 
 ```powershell
 
@@ -109,7 +106,7 @@ Install-Module ContosoClient -Force
 Install-Module -Name 
 ```
 
-## <a name="install-module-cmdlet-in-pipeline-operations"></a>Cmdlet Install-Module en operaciones de canalización
+## <a name="install-module-cmdlet-in-pipeline-operations"></a><span data-ttu-id="f9790-139">Cmdlet Install-Module en operaciones de canalización</span><span class="sxs-lookup"><span data-stu-id="f9790-139">Install-Module cmdlet in pipeline operations</span></span>
 
 ```powershell
 
@@ -136,11 +133,11 @@ Get-InstalledModule
 
 ```
 
-## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Compatibilidad de versiones en paralelo en PowerShell 5.0 o posterior
+## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a><span data-ttu-id="f9790-140">Compatibilidad de versiones en paralelo en PowerShell 5.0 o posterior</span><span class="sxs-lookup"><span data-stu-id="f9790-140">Side-by-Side Version Support on PowerShell 5.0 or newer</span></span>
 
-PowerShellGet incluye compatibilidad de versiones de módulos en paralelo (SxS) en los cmdlets Install-Module, Update-Module y Publish-Module que se ejecutan en Windows PowerShell 5.0 o versiones más recientes.
+<span data-ttu-id="f9790-141">PowerShellGet incluye compatibilidad de versiones de módulos en paralelo (SxS) en los cmdlets Install-Module, Update-Module y Publish-Module que se ejecutan en Windows PowerShell 5.0 o versiones más recientes.</span><span class="sxs-lookup"><span data-stu-id="f9790-141">PowerShellGet supports the side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
 
-### <a name="install-module-examples"></a>Ejemplos de Install-Module
+### <a name="install-module-examples"></a><span data-ttu-id="f9790-142">Ejemplos de Install-Module</span><span class="sxs-lookup"><span data-stu-id="f9790-142">Install-Module examples</span></span>
 
 ```powershell
 # Install a version of the module
@@ -172,7 +169,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## <a name="install-module-with-its-dependencies"></a>Instalar un módulo con sus dependencias
+## <a name="install-module-with-its-dependencies"></a><span data-ttu-id="f9790-143">Instalar un módulo con sus dependencias</span><span class="sxs-lookup"><span data-stu-id="f9790-143">Install module with its dependencies</span></span>
 
 ```powershell
 
@@ -266,7 +263,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## <a name="error-scenarios"></a>Escenarios de error
+## <a name="error-scenarios"></a><span data-ttu-id="f9790-144">Escenarios de error</span><span class="sxs-lookup"><span data-stu-id="f9790-144">Error scenarios</span></span>
 
 ```powershell
 

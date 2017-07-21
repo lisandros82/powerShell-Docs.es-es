@@ -1,21 +1,20 @@
 ---
-title: "Método ResourceSet de la clase MSFT_DSCLocalConfigurationManager"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: cbc499f293aad941d40fcb720ef53e832c3b1ea8
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Método ResourceSet de la clase MSFT_DSCLocalConfigurationManager"
+ms.openlocfilehash: 9cd9c1b3f58a5862db6c4eea0488423b8dfe7310
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método ResourceSet de la clase MSFT_DSCLocalConfigurationManager
+# <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="c687a-103">Método ResourceSet de la clase MSFT_DSCLocalConfigurationManager</span><span class="sxs-lookup"><span data-stu-id="c687a-103">ResourceSet method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-Llama directamente al método **Set** de un recurso de DSC.
+<span data-ttu-id="c687a-104">Llama directamente al método **Set** de un recurso de DSC.</span><span class="sxs-lookup"><span data-stu-id="c687a-104">Directly calls the **Set** method of a DSC resource.</span></span>
 
-<a name="syntax"></a>Sintaxis
+<a name="syntax"></a><span data-ttu-id="c687a-105">Sintaxis</span><span class="sxs-lookup"><span data-stu-id="c687a-105">Syntax</span></span>
 ------
 
 ```mof
@@ -27,41 +26,41 @@ uint32 ResourceSet(
 );
 ```
 
-<a name="parameters"></a>Parámetros
+<a name="parameters"></a><span data-ttu-id="c687a-106">Parámetros</span><span class="sxs-lookup"><span data-stu-id="c687a-106">Parameters</span></span>
 ----------
 
-*ResourceType* \[in\]  
-Nombre del recurso al que se llamará.
+<span data-ttu-id="c687a-107">*ResourceType* \[in\]</span><span class="sxs-lookup"><span data-stu-id="c687a-107">*ResourceType* \[in\]</span></span>  
+<span data-ttu-id="c687a-108">Nombre del recurso al que se llamará.</span><span class="sxs-lookup"><span data-stu-id="c687a-108">The name of the resource to call.</span></span>
 
-*ModuleName* \[in\]  
-Nombre del módulo que contiene el recurso al que se llamará.
+<span data-ttu-id="c687a-109">*ModuleName* \[in\]</span><span class="sxs-lookup"><span data-stu-id="c687a-109">*ModuleName* \[in\]</span></span>  
+<span data-ttu-id="c687a-110">Nombre del módulo que contiene el recurso al que se llamará.</span><span class="sxs-lookup"><span data-stu-id="c687a-110">The name of the module that contains the resource to call.</span></span>
 
-*resourceProperty* \[in\]  
-Especifica el nombre de la propiedad del recurso y su valor en una tabla hash como clave y valor, respectivamente. Use el cmdlet [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) para descubrir las propiedades del recurso y sus tipos.
+<span data-ttu-id="c687a-111">*resourceProperty* \[in\]</span><span class="sxs-lookup"><span data-stu-id="c687a-111">*resourceProperty* \[in\]</span></span>  
+<span data-ttu-id="c687a-112">Especifica el nombre de la propiedad del recurso y su valor en una tabla hash como clave y valor, respectivamente.</span><span class="sxs-lookup"><span data-stu-id="c687a-112">Specifies the resource property name and its value in a hash table as key and value, respectively.</span></span> <span data-ttu-id="c687a-113">Use el cmdlet [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) para descubrir las propiedades del recurso y sus tipos.</span><span class="sxs-lookup"><span data-stu-id="c687a-113">Use the [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet to discover resource properties and their types.</span></span>
 
-*RebootRequired* \[out\]  
-En la devolución, esta propiedad se establece en **true** si el nodo de destino debe reiniciarse.
+<span data-ttu-id="c687a-114">*RebootRequired* \[out\]</span><span class="sxs-lookup"><span data-stu-id="c687a-114">*RebootRequired* \[out\]</span></span>  
+<span data-ttu-id="c687a-115">En la devolución, esta propiedad se establece en **true** si el nodo de destino debe reiniciarse.</span><span class="sxs-lookup"><span data-stu-id="c687a-115">On return, this property is set to **true** if the target node needs to be rebooted.</span></span>
 
-## <a name="return-value"></a>Valor devuelto
+## <a name="return-value"></a><span data-ttu-id="c687a-116">Valor devuelto</span><span class="sxs-lookup"><span data-stu-id="c687a-116">Return value</span></span>
 ------------
 
-Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código de error.
+<span data-ttu-id="c687a-117">Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código de error.</span><span class="sxs-lookup"><span data-stu-id="c687a-117">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a><span data-ttu-id="c687a-118">Observaciones</span><span class="sxs-lookup"><span data-stu-id="c687a-118">Remarks</span></span>
 
-Se trata de un método estático.
+<span data-ttu-id="c687a-119">Se trata de un método estático.</span><span class="sxs-lookup"><span data-stu-id="c687a-119">This is a static method.</span></span>
 
-## <a name="requirements"></a>Requisitos
+## <a name="requirements"></a><span data-ttu-id="c687a-120">Requisitos</span><span class="sxs-lookup"><span data-stu-id="c687a-120">Requirements</span></span>
 ------------
->**MOF:** DscCore.mof
+><span data-ttu-id="c687a-121">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="c687a-121">**MOF:** DscCore.mof</span></span>
 
->**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-## <a name="see-also"></a>Vea también
+><span data-ttu-id="c687a-122">**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="c687a-122">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="c687a-123">Vea también</span><span class="sxs-lookup"><span data-stu-id="c687a-123">See also</span></span>
+
+
+[<span data-ttu-id="c687a-124">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="c687a-124">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
  
 

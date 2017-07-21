@@ -1,6 +1,17 @@
-# <a name="information-stream"></a>Flujo de información
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 4ccbdcc0eb3cd07b46ab51b63689fe21873cdd7e
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
+# <a name="information-stream"></a><span data-ttu-id="827da-102">Flujo de información</span><span class="sxs-lookup"><span data-stu-id="827da-102">Information Stream</span></span>
 
-Un nuevo flujo de información estructurado se puede usar ahora para transmitir datos estructurados entre un script y su host. **Write-Host** también se actualizó para emitir su salida en el flujo de información, donde ahora se puede capturar o silenciar. El nuevo cmdlet **Write-Information** (junto con una API WriteInformation correspondiente) que se usa con los parámetros **-InformationVariable** y **-InformationAction** comunes ofrece más flexibilidad y capacidad.
+<span data-ttu-id="827da-103">Un nuevo flujo de información estructurado se puede usar ahora para transmitir datos estructurados entre un script y su host.</span><span class="sxs-lookup"><span data-stu-id="827da-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="827da-104">**Write-Host** también se actualizó para emitir su salida en el flujo de información, donde ahora se puede capturar o silenciar.</span><span class="sxs-lookup"><span data-stu-id="827da-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="827da-105">El nuevo cmdlet **Write-Information** (junto con una API WriteInformation correspondiente) que se usa con los parámetros **-InformationVariable** y **-InformationAction** comunes ofrece más flexibilidad y capacidad.</span><span class="sxs-lookup"><span data-stu-id="827da-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script
@@ -112,3 +123,4 @@ ProcessId       : 4008
 NativeThreadId  : 2276
 ManagedThreadId : 14
 ```
+

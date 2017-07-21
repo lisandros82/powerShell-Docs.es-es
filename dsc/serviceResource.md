@@ -1,24 +1,23 @@
 ---
-title: Recurso de DSC Service
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 6c1dce6a3f1b801f7bdf5bf778df8033e3d76280
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Recurso de DSC Service
+ms.openlocfilehash: 611729e5d971ebaf15ac947454cffadc6797927b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-service-resource"></a>Recurso de DSC Service
+# <a name="dsc-service-resource"></a><span data-ttu-id="fd7c2-103">Recurso de DSC Service</span><span class="sxs-lookup"><span data-stu-id="fd7c2-103">DSC Service Resource</span></span>
 
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> <span data-ttu-id="fd7c2-104">Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="fd7c2-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
 
-El recurso **Service** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para administrar servicios en el nodo de destino.
+<span data-ttu-id="fd7c2-105">El recurso **Service** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para administrar servicios en el nodo de destino.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-105">The **Service** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage services on the target node.</span></span>
 
-## <a name="syntax"></a>Sintaxis
+## <a name="syntax"></a><span data-ttu-id="fd7c2-106">Sintaxis</span><span class="sxs-lookup"><span data-stu-id="fd7c2-106">Syntax</span></span>
 
 ```
 Service [string] #ResourceName
@@ -36,22 +35,22 @@ Service [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Propiedades
+## <a name="properties"></a><span data-ttu-id="fd7c2-107">Propiedades</span><span class="sxs-lookup"><span data-stu-id="fd7c2-107">Properties</span></span>
 
-|  Propiedad  |  Descripción   | 
+|  <span data-ttu-id="fd7c2-108">Propiedad</span><span class="sxs-lookup"><span data-stu-id="fd7c2-108">Property</span></span>  |  <span data-ttu-id="fd7c2-109">Descripción</span><span class="sxs-lookup"><span data-stu-id="fd7c2-109">Description</span></span>   | 
 |---|---| 
-| Nombre| Indica el nombre del servicio. Tenga en cuenta que a veces es distinto del nombre para mostrar. Puede obtener una lista de los servicios y sus estados actuales con el cmdlet Get-Service.| 
-| BuiltInAccount| Indica la cuenta de inicio de sesión que se utilizará para el servicio. Los valores permitidos para esta propiedad son: **LocalService**, **LocalSystem** y **NetworkService**.| 
-| Credential| Indica las credenciales de la cuenta en la que se ejecutará el servicio. Esta propiedad no se puede utilizar junto con la propiedad __BuiltinAccount__.| 
-| DependsOn| Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
-| StartupType| Indica el tipo de inicio del servicio. Los valores permitidos para esta propiedad son: **Automatic**, **Disabled** y **Manual**.| 
-| Estado| Indica el estado que quiere garantizar para el servicio.| 
-| Descripción | Indica la descripción del servicio de destino.| 
-| DisplayName | Indica el nombre para mostrar del servicio de destino.| 
-| Ensure | Indica si el servicio de destino existe en el sistema. Establezca esta propiedad en **Absent** para asegurarse de que el servicio de destino no exista. Si la establece en **Present** (el valor predeterminado), se asegura de que el servicio de destino existe.|
-| Ruta | Indica la ruta de acceso al archivo binario para un nuevo servicio.| 
+| <span data-ttu-id="fd7c2-110">Nombre</span><span class="sxs-lookup"><span data-stu-id="fd7c2-110">Name</span></span>| <span data-ttu-id="fd7c2-111">Indica el nombre del servicio.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-111">Indicates the service name.</span></span> <span data-ttu-id="fd7c2-112">Tenga en cuenta que a veces es distinto del nombre para mostrar.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-112">Note that sometimes this is different from the display name.</span></span> <span data-ttu-id="fd7c2-113">Puede obtener una lista de los servicios y sus estados actuales con el cmdlet Get-Service.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-113">You can get a list of the services and their current state with the Get-Service cmdlet.</span></span>| 
+| <span data-ttu-id="fd7c2-114">BuiltInAccount</span><span class="sxs-lookup"><span data-stu-id="fd7c2-114">BuiltInAccount</span></span>| <span data-ttu-id="fd7c2-115">Indica la cuenta de inicio de sesión que se utilizará para el servicio.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-115">Indicates the sign-in account to use for the service.</span></span> <span data-ttu-id="fd7c2-116">Los valores permitidos para esta propiedad son: **LocalService**, **LocalSystem** y **NetworkService**.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-116">The values that are allowed for this property are: **LocalService**, **LocalSystem**, and **NetworkService**.</span></span>| 
+| <span data-ttu-id="fd7c2-117">Credential</span><span class="sxs-lookup"><span data-stu-id="fd7c2-117">Credential</span></span>| <span data-ttu-id="fd7c2-118">Indica las credenciales de la cuenta en la que se ejecutará el servicio.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-118">Indicates credentials for the account that the service will run under.</span></span> <span data-ttu-id="fd7c2-119">Esta propiedad no se puede utilizar junto con la propiedad __BuiltinAccount__.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-119">This property and the __BuiltinAccount__ property cannot be used together.</span></span>| 
+| <span data-ttu-id="fd7c2-120">DependsOn</span><span class="sxs-lookup"><span data-stu-id="fd7c2-120">DependsOn</span></span>| <span data-ttu-id="fd7c2-121">Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-121">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="fd7c2-122">Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-122">For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>| 
+| <span data-ttu-id="fd7c2-123">StartupType</span><span class="sxs-lookup"><span data-stu-id="fd7c2-123">StartupType</span></span>| <span data-ttu-id="fd7c2-124">Indica el tipo de inicio del servicio.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-124">Indicates the startup type for the service.</span></span> <span data-ttu-id="fd7c2-125">Los valores permitidos para esta propiedad son: **Automatic**, **Disabled** y **Manual**.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-125">The values that are allowed for this property are: **Automatic**, **Disabled**, and **Manual**</span></span>| 
+| <span data-ttu-id="fd7c2-126">Estado</span><span class="sxs-lookup"><span data-stu-id="fd7c2-126">State</span></span>| <span data-ttu-id="fd7c2-127">Indica el estado que quiere garantizar para el servicio.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-127">Indicates the state you want to ensure for the service.</span></span>| 
+| <span data-ttu-id="fd7c2-128">Descripción</span><span class="sxs-lookup"><span data-stu-id="fd7c2-128">Description</span></span> | <span data-ttu-id="fd7c2-129">Indica la descripción del servicio de destino.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-129">Indicates the description of the target service.</span></span>| 
+| <span data-ttu-id="fd7c2-130">DisplayName</span><span class="sxs-lookup"><span data-stu-id="fd7c2-130">DisplayName</span></span> | <span data-ttu-id="fd7c2-131">Indica el nombre para mostrar del servicio de destino.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-131">Indicates the display name of the target service.</span></span>| 
+| <span data-ttu-id="fd7c2-132">Ensure</span><span class="sxs-lookup"><span data-stu-id="fd7c2-132">Ensure</span></span> | <span data-ttu-id="fd7c2-133">Indica si el servicio de destino existe en el sistema.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-133">Indicates whether the target service exists on the system.</span></span> <span data-ttu-id="fd7c2-134">Establezca esta propiedad en **Absent** para asegurarse de que el servicio de destino no exista.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-134">Set this property to **Absent** to ensure that the target service does not exist.</span></span> <span data-ttu-id="fd7c2-135">Si la establece en **Present** (el valor predeterminado), se asegura de que el servicio de destino existe.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-135">Setting it to **Present** (the default value) ensures that target service exists.</span></span>|
+| <span data-ttu-id="fd7c2-136">Ruta</span><span class="sxs-lookup"><span data-stu-id="fd7c2-136">Path</span></span> | <span data-ttu-id="fd7c2-137">Indica la ruta de acceso al archivo binario para un nuevo servicio.</span><span class="sxs-lookup"><span data-stu-id="fd7c2-137">Indicates the path to the binary file for a new service.</span></span>| 
 
-## <a name="example"></a>Ejemplo
+## <a name="example"></a><span data-ttu-id="fd7c2-138">Ejemplo</span><span class="sxs-lookup"><span data-stu-id="fd7c2-138">Example</span></span>
 
 ```powershell
 configuration ServiceTest

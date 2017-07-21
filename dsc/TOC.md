@@ -33,10 +33,14 @@
 ### [Recurso Service](serviceResource.md)
 ### [Recurso ServiceSet](serviceSetResource.md)
 ### [Recurso User](userResource.md)
+### [WaitForAllResource](waitForAllResource.md)
+### [WaitForAnyResource](waitForAnyResource.md)
+### [WaitForSomeResource](waitForSomeResource.md)
 ### [Recurso WindowsFeature](windowsfeatureResource.md)
 ### [Recurso WindowsFeatureSet](windowsFeatureSetResource.md)
 ### [Recurso WindowsOptionalFeature](windowsOptionalFeatureResource.md)
 ### [Recurso WindowsOptionalFeatureSet](windowsOptionalFeatureSetResource.md)
+### [Recurso WindowsPackageCab](windowsPackageCabResource.md)
 ### [Recurso WindowsProcess](windowsProcessResource.md)
 ## [Creación de recursos personalizados](authoringResource.md) 
 ### [Recursos personalizados basados en MOF](authoringResourceMOF.md)
@@ -59,6 +63,10 @@
 ### [Configuración de un cliente de extracción mediante id. de configuración](pullClientConfigID.md)
 ## [Uso de un servidor de informes de DSC](reportServer.md)
 ## [Procedimientos recomendados del servidor de extracción](secureServer.md)
+
+# [Ejemplos de DSC](dscExamples.md)
+## [Creación de una canalización CI/CD con DSC, Pester y Visual Studio Team Services](dscCiCd.md)
+## [Separación de los datos de entorno y configuración](separatingEnvData.md)
 
 # [Solución de problemas de DSC](troubleshooting.md)
 

@@ -1,36 +1,33 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_set psrepository
-ms.technology: powershell
-ms.openlocfilehash: be2c16a79a3e6873c0f7a364092def881d490091
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Set-PSRepository
+ms.openlocfilehash: 2e850947b67d43254ee9d1b3c1c571167435234c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="set-psrepository"></a>Set-PSRepository
+# <a name="set-psrepository"></a><span data-ttu-id="15302-103">Set-PSRepository</span><span class="sxs-lookup"><span data-stu-id="15302-103">Set-PSRepository</span></span>
 
-Set-PSRepository establece los valores de un repositorio registrado.
+<span data-ttu-id="15302-104">Set-PSRepository establece los valores de un repositorio registrado.</span><span class="sxs-lookup"><span data-stu-id="15302-104">Set-PSRepository sets values for a registered repository.</span></span>
 
-## <a name="description"></a>Descripción
+## <a name="description"></a><span data-ttu-id="15302-105">Descripción</span><span class="sxs-lookup"><span data-stu-id="15302-105">Description</span></span>
 
-El cmdlet Set-PSRepository establece los valores de un repositorio de módulos registrado.
+<span data-ttu-id="15302-106">El cmdlet Set-PSRepository establece los valores de un repositorio de módulos registrado.</span><span class="sxs-lookup"><span data-stu-id="15302-106">The Set-PSRepository cmdlet sets values for a registered module repository.</span></span>
 
-## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
+## <a name="cmdlet-syntax"></a><span data-ttu-id="15302-107">Sintaxis de cmdlet</span><span class="sxs-lookup"><span data-stu-id="15302-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Set-PSRepository -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a>Referencia de la ayuda en línea de cmdlet
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="15302-108">Referencia de la ayuda en línea de cmdlet</span><span class="sxs-lookup"><span data-stu-id="15302-108">Cmdlet online help reference</span></span>
 
-[Set-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517128)
+[<span data-ttu-id="15302-109">Set-PSRepository</span><span class="sxs-lookup"><span data-stu-id="15302-109">Set-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517128)
 
-## <a name="example-commands"></a>Comandos de ejemplo
+## <a name="example-commands"></a><span data-ttu-id="15302-110">Comandos de ejemplo</span><span class="sxs-lookup"><span data-stu-id="15302-110">Example commands</span></span>
 
 ```powershell
 PS C:\> Register-PSRepository -Name myRepository -SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" -InstallationPolicy Trusted
@@ -49,9 +46,9 @@ myRepository              Untrusted            https://www.myget.org/F/powershel
 ```
 
 
-### <a name="set-psrepository-cmdlet-with-script-sharing-support"></a>Cmdlet Set-PSRepository compatible con el uso compartido de scripts
+### <a name="set-psrepository-cmdlet-with-script-sharing-support"></a><span data-ttu-id="15302-111">Cmdlet Set-PSRepository compatible con el uso compartido de scripts</span><span class="sxs-lookup"><span data-stu-id="15302-111">Set-PSRepository cmdlet with script sharing support</span></span>
 
-Use cmdlets Set-PSRepository para agregar **ScriptSourceLocation** y **ScriptPublishLocation** a PSRepository.
+<span data-ttu-id="15302-112">Use cmdlets Set-PSRepository para agregar **ScriptSourceLocation** y **ScriptPublishLocation** a PSRepository.</span><span class="sxs-lookup"><span data-stu-id="15302-112">Use Set-PSRepository cmdlets to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
 ```powershell
 # Add script sharing locations to an existing PSRepository using Set-PSRepository object.
 Set-PSRepository -Name MyGallery `
