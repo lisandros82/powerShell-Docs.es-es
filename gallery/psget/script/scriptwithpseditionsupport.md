@@ -11,7 +11,8 @@ title: scriptwithpseditionsupport
 ms.technology: powershell
 ms.openlocfilehash: aac38b9a5b133b0b7982e7748e1483a0774599a2
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Script con las ediciones compatibles de PowerShell
 A partir de la versión 5.1, PowerShell está disponible en diferentes ediciones que denotan distintos conjuntos de características y compatibilidad con varias plataformas.

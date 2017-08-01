@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Conceptos básicos de Windows PowerShell"
-ms.technology: powershell
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-ms.openlocfilehash: 338d11350cd9baba82df7700e9df3688259a3907
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: f8a520f1fbe97737c7d0c2acab0129f88b5ed425
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="windows-powershell-basics"></a>Conceptos básicos de Windows PowerShell
 Las interfaces gráficas de usuario usan algunos conceptos básicos con los que la mayoría de los usuarios de equipos están familiarizados. Los usuarios confían en la sencillez de estas interfaces para realizar tareas. Los sistemas operativos presentan a los usuarios una representación gráfica de los elementos que se pueden examinar, generalmente menús desplegables para acceder a funcionalidades específicas y menús contextuales para acceder a la funcionalidades específicas del contexto.

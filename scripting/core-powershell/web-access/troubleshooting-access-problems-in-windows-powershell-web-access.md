@@ -1,16 +1,12 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Solución de problemas de acceso en Windows PowerShell Web Access"
-ms.technology: powershell
-ms.openlocfilehash: 26de977d2c85e26f445eecb1278e6a7278e7dfd6
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: c10e19b177110ff62d44f28b6a523380b55b79e0
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 #  <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Solución de problemas de acceso en Windows PowerShell Web Access
 
@@ -105,7 +101,7 @@ En la siguiente tabla, se identifican algunos problemas comunes que pueden exper
 <td><p><em>Nombre_servidor</em>\<em>nombre_usuario</em>, Localhost\<em>nombre_usuario</em> o .\<em>nombre_usuario</em></p></td>
 <td><p><em>Nombre_servidor</em>\<em>grupo_usuarios</em>, Localhost\<em>grupo_usuarios</em> o .\<em>grupo_usuarios</em></p></td>
 <td><p>Nombre completo del servidor de puerta de enlace o localhost</p></td>
-<td><p><em>Nombre_servidor</em>\<em>grupo_equipos</em>, Localhost\<em>grupo_equipos</em> o .<em>\grupo_equipos</em></p></td>
+<td><p><em>Nombre_servidor</em>\<em>grupo_equipos</em>, Localhost\<em>grupo_equipos</em> o .\<em>grupo_equipos</em></p></td>
 </tr>
 <tr class="even">
 <td><p>El servidor de puerta de enlace se encuentra en un grupo de trabajo</p></td>
@@ -135,7 +131,7 @@ En la siguiente tabla, se identifican algunos problemas comunes que pueden exper
 </tbody>
 </table>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Vea también</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Consulte también</span></a>
 <a href="/en-us/library/dn282395(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------

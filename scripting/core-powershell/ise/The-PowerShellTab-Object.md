@@ -1,24 +1,20 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: El objeto PowerShellTab
-ms.technology: powershell
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
-ms.openlocfilehash: 89258180377c6649c213e442b1f2d64872aaa1b4
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: d4e9374202d352a30b3eb46bcf1e4e40dea49822
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="the-powershelltab-object"></a>El objeto PowerShellTab
   El objeto **PowerShellTab** representa un entorno de runtime de Windows PowerShell.
 
 ## <a name="methods"></a>Métodos
 
-###  <a name="a-nameinvokea-invoke-script-"></a><a name="invoke"></a> Invoke\( Script \)
+###  <a name="invoke"></a> Invoke\( Script \)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Ejecuta el script especificado en la pestaña de PowerShell.
@@ -72,7 +68,7 @@ measure-command {$psISE.PowerShellTabs[1].InvokeSynchronous("sleep 10",$false,50
 
 ## <a name="properties"></a>Propiedades
 
-###  <a name="a-nameaddonsmenua-addonsmenu"></a><a name="AddOnsMenu"></a> AddOnsMenu
+###  <a name="AddOnsMenu"></a> AddOnsMenu
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  La propiedad de solo lectura que obtiene el menú Complementos para la pestaña de PowerShell.
@@ -90,7 +86,7 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 $psISE.CurrentPowerShellTab.AddOnsMenu
 ```
 
-###  <a name="a-namecanexecutea-caninvoke"></a><a name="CanExecute"></a> CanInvoke
+###  <a name="CanExecute"></a> CanInvoke
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  La propiedad booleana de solo lectura que devuelve un valor **$true** si se puede invocar un script con el método [Invoke( Script )](#invoke).
@@ -109,7 +105,7 @@ $secondTab.CanInvoke
 
 ```
 
-###  <a name="a-namecommandpanea-consolepane"></a><a name="Commandpane"></a> Consolepane
+###  <a name="Commandpane"></a> Consolepane
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores.  En Windows PowerShell ISE 2.0 esto se llamaba **CommandPane**.
 
  La propiedad de solo lectura que obtiene el objeto [editor](../ise/The-ISEEditor-Object.md) del panel de consola.
@@ -120,7 +116,7 @@ $psISE.CurrentPowerShellTab.ConsolePane
 
 ```
 
-###  <a name="a-namedisplaynamea-displayname"></a><a name="Displayname"></a> DisplayName
+###  <a name="Displayname"></a> DisplayName
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  La propiedad de lectura y escritura que obtiene o establece el texto que se muestra en la pestaña de PowerShell. De forma predeterminada, las pestañas se denominan "PowerShell #", donde # representa un número.
@@ -131,7 +127,7 @@ $newTab = $psise.PowerShellTabs.Add()
 $newTab.DisplayName="Brand New Tab"
 ```
 
-###  <a name="a-nameexpandedscripta-expandedscript"></a><a name="ExpandedScript"></a> ExpandedScript
+###  <a name="ExpandedScript"></a> ExpandedScript
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  La propiedad booleana de lectura y escritura que determina si el panel de scripts se expande o se oculta.
@@ -142,7 +138,7 @@ $PSise.CurrentPowerShellTab.ExpandedScript=!$PSise.CurrentPowerShellTab.Expanded
 
 ```
 
-###  <a name="a-namefilesa-files"></a><a name="Files"></a> Files
+###  <a name="Files"></a> Files
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  La propiedad de solo lectura que obtiene la [colección de archivos de scripts](../ise/The-ISEFileCollection-Object.md) que están abiertos en la pestaña de PowerShell.
@@ -154,7 +150,7 @@ $newFile.Editor.Text = "a`r`nb"
 $newFile.Editor.LineCount
 ```
 
-###  <a name="a-nameoutputa-output"></a><a name="Output"></a> Output
+###  <a name="Output"></a> Output
   Esta característica está presente en Windows PowerShell ISE 2.0, pero se quitó o se cambió de nombre en versiones posteriores del ISE.  En versiones posteriores de Windows PowerShell ISE, puede usar el objeto **ConsolePane** con el mismo propósito.
 
  La propiedad de solo lectura que obtiene el panel de salida del [editor](../ise/The-ISEEditor-Object.md) actual .
@@ -164,7 +160,7 @@ $newFile.Editor.LineCount
 $psise.CurrentPowerShellTab.output.clear()
 ```
 
-###  <a name="a-nameprompta-prompt"></a><a name="Prompt"></a> Prompt
+###  <a name="Prompt"></a> Prompt
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  La propiedad de solo lectura que obtiene el texto de la petición actual. Nota: El perfil del usuario puede reemplazar a la función **Prompt**. Si el resultado es distinto de una cadena simple, esta propiedad no devuelve nada.
@@ -174,7 +170,7 @@ $psise.CurrentPowerShellTab.output.clear()
 $psISE.CurrentPowerShellTab.Prompt
 ```
 
-###  <a name="a-nameshowcommandsa-showcommands"></a><a name="ShowCommands"></a> ShowCommands
+###  <a name="ShowCommands"></a> ShowCommands
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. 
 
  La propiedad de lectura y escritura que indica si actualmente se muestra el panel de comandos.
@@ -186,7 +182,7 @@ $a = $psISE.CurrentPowerShellTab.ShowCommands
 if (!$a) {$psISE.CurrentPowerShellTab.ShowCommands=$True}
 ```
 
-###  <a name="a-namestatustexta-statustext"></a><a name="StatusText"></a> StatusText
+###  <a name="StatusText"></a> StatusText
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  La propiedad de solo lectura que obtiene el texto de estado de **PowerShellTab**.
@@ -196,7 +192,7 @@ if (!$a) {$psISE.CurrentPowerShellTab.ShowCommands=$True}
 $psISE.CurrentPowerShellTab.StatusText
 ```
 
-###  <a name="a-namehorizontaladdontoolspaneopeneda-horizontaladdontoolspaneopened"></a><a name="HorizontalAddOnToolsPaneOpened"></a> HorizontalAddOnToolsPaneOpened
+###  <a name="HorizontalAddOnToolsPaneOpened"></a> HorizontalAddOnToolsPaneOpened
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. 
 
  La propiedad de solo lectura que indica si el panel de herramientas de complementos horizontal está abierto actualmente.
@@ -206,7 +202,7 @@ $psISE.CurrentPowerShellTab.StatusText
 $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 ```
 
-###  <a name="a-nameverticaladdontoolspaneopeneda-verticaladdontoolspaneopened"></a><a name="VerticalAddOnToolsPaneOpened"></a> **VerticalAddOnToolsPaneOpened**
+###  <a name="VerticalAddOnToolsPaneOpened"></a> **VerticalAddOnToolsPaneOpened**
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. 
 
  La propiedad de solo lectura que indica si el panel de herramientas de complementos vertical está abierto actualmente.

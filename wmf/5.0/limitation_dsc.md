@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: f39328b240a36deb40d484c4aedb889cee91dc8d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Problemas y limitaciones conocidos de la configuración de estado deseado (DSC)
 
 <a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>Cambio de última hora: los certificados usados para cifrar o descifrar contraseñas en configuraciones de DSC no funcionen después de instalar WMF 5.0 RTM
@@ -226,3 +237,4 @@ Configuration $configName
     }
 }
 ```
+

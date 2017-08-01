@@ -11,7 +11,8 @@ title: psget_set psrepository
 ms.technology: powershell
 ms.openlocfilehash: be2c16a79a3e6873c0f7a364092def881d490091
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="set-psrepository"></a>Set-PSRepository
 

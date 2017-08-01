@@ -1,15 +1,15 @@
 ---
-title: Recurso GroupSet de DSC
-ms.date: 2016-05-16
-keywords: recurso, integrado, DSC, PowerShell
-description: Proporciona un mecanismo para administrar grupos locales en el nodo de destino.
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 6e5ea98febfe7541f35a84c37df73df580654340
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+description: Proporciona un mecanismo para administrar grupos locales en el nodo de destino.
+title: Recurso GroupSet de DSC
+ms.openlocfilehash: 0907a968bfc660adc873c28e8be6572d1d5cb993
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="dsc-groupset-resource"></a>Recurso GroupSet de DSC
 

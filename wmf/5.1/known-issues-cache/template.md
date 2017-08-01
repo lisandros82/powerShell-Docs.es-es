@@ -3,7 +3,8 @@ title: "plantilla de ejemplo de una escritura de problema o limitación conocida
 contributor: 
 ms.openlocfilehash: e3b98044902cb6665e06582c8259bd5defd6f2ca
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 >Nota: Especifique un título descriptivo propuesto y una breve descripción
 

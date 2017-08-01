@@ -1,15 +1,14 @@
 ---
-title: Establecer configuraciones
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 7059d0a0ac3ad81353d1e758bc24fc236656c199
-ms.sourcegitcommit: 89e7ae30faff5f96641fc72764bdc76e0e257bc2
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Establecer configuraciones
+ms.openlocfilehash: db82788650186eb82f67b30b24cd45b719bbe314
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="enacting-configurations"></a>Establecer configuraciones
 

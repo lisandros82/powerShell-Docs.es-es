@@ -1,15 +1,14 @@
 ---
-title: "Configuración de máquinas virtuales en el arranque inicial mediante DSC"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 38751d62a56dc90ff69fe3ab6e92829fb33edb2b
-ms.sourcegitcommit: a81ffb39f370b95ae802cd054dc4480c9e68cf77
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Configuración de máquinas virtuales en el arranque inicial mediante DSC"
+ms.openlocfilehash: a3592c50fa7f2232538fbec07129fac86c1d00b5
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 >Se aplica a: Windows PowerShell 5.0
 
@@ -205,3 +204,4 @@ De forma predeterminada, la clave **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Window
 - [Clave del Registro DSCAutomationHostEnabled](DSCAutomationHostEnabled.md)
 - [Configuración del administrador de configuración local (LCM)](metaConfig.md)
 - [Configuración de un servidor de extracción web de DSC](pullServer.md)
+

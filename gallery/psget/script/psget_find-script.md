@@ -11,7 +11,8 @@ title: psget_find script
 ms.technology: powershell
 ms.openlocfilehash: 09f4d6eca9cf04d03fddbe23beea6a5bc0243657
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="find-script"></a>Find-Script
 

@@ -1,18 +1,14 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.topic: conceptual
+keywords: jea,powershell,security
 title: Uso de JEA
-ms.technology: powershell
-ms.openlocfilehash: 62e5f74d60b2fd09e302ecc12996f97e90b73f2f
-ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.openlocfilehash: 9996a432bca27240e0f08adf932126ced116985d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="using-jea"></a>Uso de JEA
 
@@ -193,3 +189,4 @@ Se recomienda encarecidamente que cree un usuario local dedicado con el único d
 Recuerde que incluso un usuario sin privilegios puede iniciar sesión en una máquina de Windows de manera predeterminada, incluido al usar PowerShell sin restricciones.
 Eso le permitirá examinar el sistema de archivos (o una parte) y obtener más información sobre el entorno del sistema operativo.
 Para bloquear a un administrador de Hyper-V de manera que solo tenga acceso a una máquina virtual mediante PowerShell Direct con JEA, tendrá que denegar los derechos de inicio de sesión local a la cuenta de JEA del administrador de Hyper-V.
+

@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 81ce13a082ad1d7a13ba5fd76a7595b55708f54e
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="register-a-powershell-repository"></a>Registrar un repositorio de PowerShell
 Puede configurar PowerShellGet para operar en repositorios internos. Esto se realiza mediante las siguientes adiciones:
 - Register-PSRepository: registra un repositorio del usuario actual.
@@ -31,3 +42,4 @@ Install-Module SomeModule
 \#Removing a repository
 Unregister-PSRepository DemoRepo
 ```
+

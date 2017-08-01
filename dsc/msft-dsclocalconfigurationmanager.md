@@ -9,7 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: b9cb89bb120151df69e3cb26b50c3a0d15c23711
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>Clase MSFT_DSCLocalConfigurationManager
 

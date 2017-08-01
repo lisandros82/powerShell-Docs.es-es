@@ -1,16 +1,14 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2017-03-07
+ms.topic: conceptual
+keywords: jea,powershell,security
 title: Funcionalidades de rol de JEA
-ms.technology: powershell
-ms.openlocfilehash: 49623e69b186fd09679bf7e0186dec3961e719ba
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: 10f5f390daccbb012be6ee7272041e777810ee12
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="jea-role-capabilities"></a>Funcionalidades de rol de JEA
 
@@ -282,3 +280,4 @@ Puede encontrar información adicional sobre cómo identificar los permisos efec
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Crear un archivo de configuración de sesión](session-configurations.md)
+

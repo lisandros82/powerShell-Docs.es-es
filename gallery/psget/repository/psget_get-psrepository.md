@@ -11,7 +11,8 @@ title: psget_get psrepository
 ms.technology: powershell
 ms.openlocfilehash: b1d5172232f0c2916382b6c35093a238f6b2cb4d
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="get-psrepository"></a>Get-PSRepository
 

@@ -11,7 +11,8 @@ title: psgallery_pseditions
 ms.technology: powershell
 ms.openlocfilehash: fddac6b6741150a0d809dc434a7a14b646434e01
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="items-with-compatible-powershell-editions"></a>Elementos con las ediciones compatibles de PowerShell
 A partir de la versión 5.1, PowerShell está disponible en diferentes ediciones que denotan distintos conjuntos de características y compatibilidad con varias plataformas.

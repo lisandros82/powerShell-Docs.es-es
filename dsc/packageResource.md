@@ -1,19 +1,18 @@
 ---
-title: Recursos de DSC Package
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 343bd3c625e2df9f34480ea8065e3039d6069d61
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Recursos de DSC Package
+ms.openlocfilehash: f7bcbd387db422037614feee7c4a00d93b3cec4e
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="dsc-package-resource"></a>Recursos de DSC Package
 
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 El recurso **Package** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para instalar o desinstalar paquetes, como los paquetes de Windows Installer y setup.exe, en un nodo de destino.
 

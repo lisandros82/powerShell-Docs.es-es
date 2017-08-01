@@ -1,16 +1,12 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: security
-ms.technology: powershell
-ms.openlocfilehash: 777cc0c011cf32a633246061da0d362cff698ac8
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 9ed7971d36e14b3db9046da0e899f9758d21ea5c
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="security-module"></a>Módulo de seguridad
 Esta sección contiene los temas de Ayuda del módulo **Microsoft.PowerShell.Security**. El módulo **Microsoft.PowerShell.Security** contiene los cmdlets y el [proveedor de certificados [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d) que administran las características de seguridad de Windows PowerShell, incluidas las directivas de ejecución. El módulo **Microsoft.PowerShell.Security** se instala con Windows PowerShell.

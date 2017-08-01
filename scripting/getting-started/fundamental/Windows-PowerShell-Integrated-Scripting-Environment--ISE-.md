@@ -1,19 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Entorno de scripting integrado (ISE) de Windows PowerShell
-ms.technology: powershell
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 6b10e9ee610235cb17795a371fe05e4c2a81c3bb
-ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.openlocfilehash: 93b3322ae5634d3611f3c2743e7460e266dc7ab8
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Entorno de scripting integrado (ISE) de Windows PowerShell
 El Entorno de scripting integrado (ISE ) de Windows PowerShell es uno de los dos hosts para el motor y el lenguaje de Windows PowerShell. Puede escribir, ejecutar y probar scripts de maneras que no están disponibles en la consola de Windows PowerShell. El ISE agrega color de sintaxis, finalización con tabulación, IntelliSense, depuración visual y ayuda contextual.

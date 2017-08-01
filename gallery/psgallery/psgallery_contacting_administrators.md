@@ -11,7 +11,8 @@ title: psgallery_contacting_administrators
 ms.technology: powershell
 ms.openlocfilehash: 6822dfd6d0358ad42cd499f7eb153a4f19906c7d
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="contact-gallery-administrators"></a>Ponerse en contacto con los administradores de la Galería
 

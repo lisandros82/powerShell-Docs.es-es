@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Cuadros de lista de selección múltiple"
-ms.technology: powershell
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
-ms.openlocfilehash: 5d079859309947fcb6ee034b1be9d6dd300510af
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 85167ea25044f0ee587dc817460e8f13869be4bd
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="multiple-selection-list-boxes"></a>Cuadros de lista de selección múltiple
 Use Windows PowerShell 3.0 (y versiones posteriores) para crear un control de cuadro de lista de selección múltiple en un formulario de Windows Forms personalizado.

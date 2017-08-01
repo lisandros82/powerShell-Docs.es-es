@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 4ccbdcc0eb3cd07b46ab51b63689fe21873cdd7e
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="information-stream"></a>Flujo de información
 
 Un nuevo flujo de información estructurado se puede usar ahora para transmitir datos estructurados entre un script y su host. **Write-Host** también se actualizó para emitir su salida en el flujo de información, donde ahora se puede capturar o silenciar. El nuevo cmdlet **Write-Information** (junto con una API WriteInformation correspondiente) que se usa con los parámetros **-InformationVariable** y **-InformationAction** comunes ofrece más flexibilidad y capacidad.
@@ -112,3 +123,4 @@ ProcessId       : 4008
 NativeThreadId  : 2276
 ManagedThreadId : 14
 ```
+

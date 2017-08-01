@@ -1,16 +1,14 @@
 ---
-title: Recurso de DSC File
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: ba625f5130e806b3b8e14a0f6ed91fd5a1aabc54
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Recurso de DSC File
+ms.openlocfilehash: f16bfbc31489ef7d1b0e5e4ec3a4f30069c24c79
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="dsc-file-resource"></a>Recurso de DSC File
 

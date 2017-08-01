@@ -1,15 +1,14 @@
 ---
-title: "Método GetMetaConfiguration de la clase MSFT_DSCLocalConfigurationManager"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 4662bfed62fce47be7d42a083ad5a7be801e6ff1
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Método GetMetaConfiguration de la clase MSFT_DSCLocalConfigurationManager"
+ms.openlocfilehash: 4f209014e9fde5841a9bce743f5364e6677d1e41
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="getmetaconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método GetMetaConfiguration de la clase MSFT_DSCLocalConfigurationManager
 

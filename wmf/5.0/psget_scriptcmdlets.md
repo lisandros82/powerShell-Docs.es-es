@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 2d56df459a4e09a16ab16c02f7ca2744c779206f
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="powershellget-cmdlets-for-script-management"></a>Cmdlets de PowerShellGet para la administración de scripts
 
 ## <a name="find-script-cmdlet"></a>Cmdlet Find-Script

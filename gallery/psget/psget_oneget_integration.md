@@ -1,17 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
 title: psget_oneget_integration
-ms.technology: powershell
-ms.openlocfilehash: afaba610d41d560d2d1196269ee188edd97c48ba
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 093860217c736278a7aede91cad40072efe5c38c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 ## <a name="architecture-of-packagemanagement-and-its-relationship-with-powershellget-module"></a>Arquitectura de PackageManagement y su relación con el módulo PowerShellGet.
 

@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Trabajar con claves del Registro
-ms.technology: powershell
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: 8554bd1752ecddd87d70c2f31de357ce5da26ba5
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: efb2c016afa2212c2907c0740ad26c4e4cddd3af
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="working-with-registry-keys"></a>Trabajar con claves del Registro
 Dado que las claves del Registro son elementos en unidades de Windows PowerShell, trabajar con ellas es muy similar a trabajar con archivos y carpetas. Una diferencia fundamental es que todos los elementos en una unidad de Windows PowerShell basada en el Registro es un contenedor, como una carpeta en una unidad del sistema de archivos. Sin embargo, las entradas del Registro y sus valores asociados son propiedades de los elementos, no elementos distintos.

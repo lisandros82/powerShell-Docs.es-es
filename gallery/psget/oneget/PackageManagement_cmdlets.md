@@ -11,7 +11,8 @@ title: PackageManagement_cmdlets
 ms.technology: powershell
 ms.openlocfilehash: 954097f6f3516eb627902c126a70203818ef84db
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="packagemanagement-cmdlets"></a>Cmdlets PackageManagement
 Este es el núcleo de PackageManagement para admitir la detección, la instalación y el inventario de software (SDII). Pruebe los cmdlets para estas operaciones:

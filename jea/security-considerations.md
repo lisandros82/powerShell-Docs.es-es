@@ -1,16 +1,14 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2017-03-07
+ms.topic: conceptual
+keywords: jea,powershell,security
 title: Consideraciones de seguridad de JEA
-ms.technology: powershell
-ms.openlocfilehash: 02384465e3c1b6d9633cc346ba88a2566fea1af1
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: f85b342625d4dba0890619ef9680eaccbbde5224
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="jea-security-considerations"></a>Consideraciones de seguridad de JEA
 
@@ -155,3 +153,4 @@ Por tanto, es importante evaluar los permisos extendidos de los usuarios de JEA 
 
 Un procedimiento común es usar JEA para realizar el mantenimiento diario habitual y tener una solución de administración de acceso con privilegios "Just-In-Time" que permita que los usuarios se conviertan de forma temporal en administradores locales en situaciones de emergencia.
 Esto ayuda a garantizar que los usuarios no sean administradores de forma permanente en el sistema, pero pueden obtener esos derechos si, y solo cuando, completan un flujo de trabajo que documente su uso de estos permisos.
+

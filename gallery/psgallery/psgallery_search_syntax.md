@@ -1,18 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_search_syntax
-ms.technology: powershell
-ms.openlocfilehash: 36b551cd6576b1d2a9ca696f2bfdab570ea2523f
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 409ae607557af760f9cec4e3c54f39e51b5fac18
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="gallery-search-syntax"></a>Sintaxis de búsqueda de la Galería
 

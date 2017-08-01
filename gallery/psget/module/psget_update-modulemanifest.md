@@ -1,18 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_update modulemanifest
-ms.technology: powershell
-ms.openlocfilehash: 85153872326c5af8f869bc2254040eca1a152f8b
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Update-ModuleManifest
+ms.openlocfilehash: ce3f6f173535d98648eb51adb1dbf84764e4f434
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="update-modulemanifest"></a>Update-ModuleManifest
 Actualiza un archivo de manifiesto de módulo.

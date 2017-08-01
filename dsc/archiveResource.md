@@ -1,16 +1,14 @@
 ---
-title: Recursos de DSC Archive
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 77398d26f59975469e7c752a8d7f4f8bbbe4f553
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Recursos de DSC Archive
+ms.openlocfilehash: 035f7cc1b7f21f7a0df2d72db0ba83bc0688356c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="dsc-archive-resource"></a>Recursos de DSC Archive
 

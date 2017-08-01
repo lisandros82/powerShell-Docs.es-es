@@ -9,11 +9,12 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: 395ebe88fcf1f4d79c4eb91bf10c63c82cb1d799
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="securing-the-mof-file"></a>Proteger el archivo MOF
 
->Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 DSC indica a los nodos de destino la configuración que deben tener mediante el envío de un archivo MOF con esa información a cada nodo, donde el administrador de configuración local (LCM) implementa la configuración deseada. Como este archivo contiene los detalles de la configuración, es importante que esté protegido. Para ello, puede establecer el LCM para comprobar las credenciales de un usuario. En este tema se describe cómo transmitir esas credenciales de forma segura al nodo de destino mediante su cifrado con certificados.
 

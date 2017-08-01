@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: ab49a0ae10f9ad32966944a1dcf8125619bde141
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="new-built-in-dsc-resources"></a>Nuevos recursos de DSC integrados
 
 WMF 5.0 RTM tiene 4 nuevos recursos de DSC: 
@@ -81,3 +92,4 @@ ProcessSet [String] #ResourceName
     [WorkingDirectory = [String]]
 }
 ```
+

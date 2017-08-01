@@ -35,9 +35,19 @@ Header 2
 ## <a name="syntax"></a>Sintaxis
 
 * Cuando hablamos de un cmdlet en el párrafo, utilice \` para resaltar los nombres de cmdlet
-  * Al escribir un artículo (en lugar de contenido de referencia), la primera instancia de un nombre de cmdlet debe ser un vínculo a la documentación de dicho cmdlet
+  * Ejemplo correcto: Este cmdlet `Write-Host` puede ...
+  * Ejemplo incorrecto: Este cmdlet **Write-Host** puede ... y canalizar en el cmdlet out-file para ...
+* Al escribir un artículo (en lugar de contenido de referencia), la primera instancia de un nombre de cmdlet debe ser un vínculo a la documentación de dicho cmdlet
 * Todos los bloques de sintaxis de PowerShell deben usar &#96;&#96;&#96;powershell
-* No inicie comandos de PowerShell con "C:\ PS>"
+* No inicie comandos de PowerShell con "`PS C:\>`"
+  * Ejemplo correcto:
+  ```powershell
+  Get-Process
+  ```
+  * Ejemplo incorrecto:
+  ```powershell
+  PS C:\> Get-Process
+  ```
 * La salida emitida por comandos de PowerShell debe incluir comentarios para evitar que reciba el resaltado de sintaxis
 * Los nombres de propiedad y de parámetro deben estar en **negrita**
 * Los cmdlets de PowerShell usan la [grafía Pascal](https://en.wikipedia.org/wiki/PascalCase). Los verbos se separan de los sustantivos con un guión.

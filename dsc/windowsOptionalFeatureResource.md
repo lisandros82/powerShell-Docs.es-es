@@ -1,16 +1,14 @@
 ---
-title: Recurso WindowsOptionalFeature de DSC
-ms.date: 2016-05-24
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 26d140d68760ec92b3b6cbc31d0735eaaf671d9c
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Recurso WindowsOptionalFeature de DSC
+ms.openlocfilehash: 388fbe1bc430098d6680902e0b5643243fbf7f4c
+ms.sourcegitcommit: 79e8f03afb8d0b0bb0a167e56464929b27f51990
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="dsc-windowsoptionalfeature-resource"></a>Recurso WindowsOptionalFeature de DSC
 
@@ -24,7 +22,7 @@ El recurso **WindowsOptionalFeature** de la configuración de estado deseado (DS
 WindowsOptionalFeature [string] #ResourceName
 {
     Name = [string]
-    [ Ensure = [string] { Absent | Present }  ]
+    [ Ensure = [string] { Enable | Disable }  ]
     [ Source = [string] ]
     [ NoWindowsUpdateCheck = [bool] ]
     [ RemoveFilesOnDisable = [bool] ]
@@ -40,7 +38,7 @@ WindowsOptionalFeature [string] #ResourceName
 |  Propiedad  |  Descripción   | 
 |---|---| 
 | Nombre| Indica el nombre de la característica que desea asegurarse de que está habilitada o deshabilitada.| 
-| Ensure| Especifica si la característica está habilitada. Para asegurarse de que la característica está habilitada, establezca esta propiedad en "Present"; para asegurarse de que está deshabilitada, establezca la propiedad en "Absent".|
+| Ensure| Especifica si la característica está habilitada. Para asegurarse de que la característica está habilitada, establezca esta propiedad en "Enable"; para asegurarse de que está deshabilitada, establezca la propiedad en "Disable".|
 | Origen| Sin implementar.|
 | NoWindowsUpdateCheck| Especifica si DISM se pone en contacto con Windows Update (WU) al buscar los archivos de origen para habilitar una característica. Si el valor es $true, DISM no se pone en contacto con WU.|
 | RemoveFilesOnDisable| Establézcalo en **$true** para quitar todos los archivos asociados con la característica cuando se deshabilite (es decir, cuando el valor de **Ensure** (Asegurar) sea "Absent").|

@@ -1,15 +1,14 @@
 ---
-title: "Método RemoveConfiguration de la clase MSFT_DSCLocalConfigurationManager"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 4f3d74949d98e3ab3f5136303e229c23ed903c5d
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Método RemoveConfiguration de la clase MSFT_DSCLocalConfigurationManager"
+ms.openlocfilehash: faa113c442b80eea3ac474220b098b7d80ec50a8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método RemoveConfiguration de la clase MSFT_DSCLocalConfigurationManager
 

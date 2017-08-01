@@ -11,7 +11,8 @@ title: psget_get installedscript
 ms.technology: powershell
 ms.openlocfilehash: d755ed5dbcee279f943d56832ffd7689e4cc6f04
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="get-installedscript"></a>Get-InstalledScript
 

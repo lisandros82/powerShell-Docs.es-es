@@ -1,15 +1,14 @@
 ---
+ms.date: 2017-06-12
+author: eslesar
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
 title: Recurso PackageManagementSource de DSC
-ms.date: 
-keywords: powershell,DSC
-description: 
-ms.topic: article
-author: brywang-msft
-manager: kriscv
-ms.prod: powershell
-ms.openlocfilehash: 22e61490e7b3f98335334a2703ec9639cbdaa87e
-ms.sourcegitcommit: 89e7ae30faff5f96641fc72764bdc76e0e257bc2
-translationtype: HT
+ms.openlocfilehash: 80d157aff5bf7685a797baaf6a26215f02473096
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>Recurso PackageManagementSource de DSC
 
@@ -58,3 +57,4 @@ Configuration PackageManagementSourceTest
     }
 }
 ```
+

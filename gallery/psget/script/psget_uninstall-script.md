@@ -11,7 +11,8 @@ title: psget_uninstall script
 ms.technology: powershell
 ms.openlocfilehash: 9cc6ee62720bfca858e7f783753adabe8a53fb29
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="uninstall-script"></a>Uninstall-Script
 

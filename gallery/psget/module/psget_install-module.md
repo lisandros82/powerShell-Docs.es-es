@@ -1,18 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_install module
-ms.technology: powershell
-ms.openlocfilehash: 82e4bb1ec76b1a51e1a99de85bc77a5429d46e26
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Install-Module
+ms.openlocfilehash: 37e07cd32e7b2fd4a7a8e6cab179aecc3251baf3
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="install-module"></a>Install-Module
 

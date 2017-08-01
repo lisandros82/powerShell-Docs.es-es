@@ -1,16 +1,14 @@
 ---
-title: "Método StopConfiguration de la clase MSFT_DSCLocalConfigurationManager"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 9721486cca6f94d6b156c6ee1992eced6652c123
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Método StopConfiguration de la clase MSFT_DSCLocalConfigurationManager"
+ms.openlocfilehash: f0b550615b20f07f99c8ed7009805c45794bfe22
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método StopConfiguration de la clase MSFT_DSCLocalConfigurationManager
 

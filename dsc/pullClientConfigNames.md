@@ -1,15 +1,14 @@
 ---
-title: "Configuración de un cliente de extracción mediante nombres de configuración"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 03db9843209038f7a14b46cf8a27316f1c63a819
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Configuración de un cliente de extracción mediante nombres de configuración"
+ms.openlocfilehash: 9bfcac87300d30a59b66e60ed24add32e2420e21
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="setting-up-a-pull-client-using-configuration-names"></a>Configuración de un cliente de extracción mediante nombres de configuración
 
@@ -152,3 +151,4 @@ PullClientConfigNames
 
 * [Configuración de un cliente de extracción con el id. de configuración](PullClientConfigNames.md)
 * [Configuración de un servidor de extracción web de DSC](pullServer.md)
+

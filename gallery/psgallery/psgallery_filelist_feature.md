@@ -11,7 +11,8 @@ title: psgallery_filelist_feature
 ms.technology: powershell
 ms.openlocfilehash: e5d9b7d9c6d233bc84f76f5311e5580bb9e5cd77
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="filelist-feature-in-the-gallery"></a>Característica FileList de la Galería
 

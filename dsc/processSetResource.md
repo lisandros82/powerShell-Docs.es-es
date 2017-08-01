@@ -1,15 +1,14 @@
 ---
-title: Recurso ProcessSet de DSC
-ms.date: 2016-05-23
-keywords: powershell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: f9754be3f803d3232189985faa41fb209bfcfe46
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Recurso ProcessSet de DSC
+ms.openlocfilehash: b713d1a9c34eab6966de4f342991ead32c19df5d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="dsc-windowsprocess-resource"></a>Recurso de DSC WindowsProcess
 

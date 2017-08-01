@@ -1,16 +1,14 @@
 ---
-title: "Método ApplyConfiguration de la clase MSFT_DSCLocalConfigurationManager"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 6f9c6a8851732574ac72bc4f3a3db1a73fbbecf2
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Método ApplyConfiguration de la clase MSFT_DSCLocalConfigurationManager"
+ms.openlocfilehash: febaf972a2a452eb9aaf3ec7fbc5e41f3f463a58
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método ApplyConfiguration de la clase MSFT_DSCLocalConfigurationManager
 

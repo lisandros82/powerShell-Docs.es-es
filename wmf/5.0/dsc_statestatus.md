@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 32f8e20889ddc526def4b925e8d0761a2e851e19
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Estado coherente unificado y representación de estado
 
 En este versión se incluye una serie de mejoras para el estado de LCM y el estado de DSC creados por las automatizaciones. Incluyen representaciones de estado y de estado unificado coherente, la propiedad datatime administrable de los objetos de estado devueltos por el cmdlet Get-DscConfigurationStatus y la propiedad state details de LCM mejorada devuelta por el cmdlet Get-DscLocalConfigurationManager.
@@ -25,8 +36,7 @@ En la siguiente tabla se muestran el estado resultante y las propiedades relacio
 | r, S                            | PendingReboot        | Correcto    | $true         | $null                        | r                              |
 | r, F                            | PendingReboot        | Correcto    | $true         | $null                        | r                              |
 
-^
-S<sub>i</sub>: serie de recursos que se aplicaron correctamente F<sub>i</sub>: serie de recursos que no se aplicaron correctamente r: recurso que requiere un reinicio \*
+^ S<sub>i</sub>: serie de recursos que se aplicaron correctamente F<sub>i</sub>: serie de recursos que no se aplicaron correctamente r: recurso que requiere un reinicio \*
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState
@@ -102,3 +112,4 @@ LCM State: Idle,
 LCM State: Busy, LCM is performing a consistency check.
 LCM State: Idle,
 ```
+

@@ -1,18 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_uninstall module
-ms.technology: powershell
-ms.openlocfilehash: d638bd583d5cbe2d593cd4e6ebbddc998d4b1987
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Uninstall-Module
+ms.openlocfilehash: 3c4d8faa63aba6b4434d42a19a219baf84122591
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="uninstall-module"></a>Uninstall-Module
 

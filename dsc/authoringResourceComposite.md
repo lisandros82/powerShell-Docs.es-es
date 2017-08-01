@@ -1,15 +1,14 @@
 ---
-title: "Recursos compuestos: uso de una configuración DSC como un recurso"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 36851c9616cfb9a2fc79925e4187effa913341ad
-ms.sourcegitcommit: c7577f7a1e902a41df6d337e5d85361d1814f90a
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Recursos compuestos: uso de una configuración DSC como un recurso"
+ms.openlocfilehash: 6c9a878c45a3e999e20dec5766ee8bda409905d3
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Recursos compuestos: uso de una configuración DSC como un recurso
 
@@ -187,6 +186,23 @@ configuration RenameVM
             DomainName = "fourthcoffee.com"
         }
     }
+}
+```
+
+## <a name="supporting-psdscrunascredential"></a>Compatibilidad con PsDscRunAsCredential
+
+>**Nota:** **PsDscRunAsCredential** es compatible con PowerShell 5.0 y versiones posteriores.
+
+La propiedad **PsDscRunAsCredential** se puede usar en el bloque de recursos de [configuraciones de DSC](configurations.md) para especificar que el recurso se debe ejecutar bajo un conjunto especificado de credenciales.
+Para más información, consulte [DSC de ejecución con las credenciales de usuario](runAsUser.md).
+
+Para tener acceso al contexto de usuario desde un recurso personalizado, puede usar la variable automática `$PsDscContext`.
+
+Por ejemplo, el código siguiente podría escribir el contexto de usuario bajo el cual se ejecuta el recurso en el flujo de salida detallado:
+
+```powershell
+if (PsDscContext.RunAsUser) {
+    Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
 

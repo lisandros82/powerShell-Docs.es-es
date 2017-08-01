@@ -1,17 +1,14 @@
 ---
-title: "Configuración de un servidor de incorporación de cambios SMB de DSC"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: f16af7664ac5d07b5884070534bed20e8cf2fcd9
-ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Configuración de un servidor de incorporación de cambios SMB de DSC"
+ms.openlocfilehash: 5efd8a822e4420484391f7a5a9832d5d51883e8d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Configuración de un servidor de incorporación de cambios SMB de DSC
 

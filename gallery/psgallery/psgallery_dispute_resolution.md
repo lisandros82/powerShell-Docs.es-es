@@ -1,18 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_dispute_resolution
-ms.technology: powershell
-ms.openlocfilehash: b7a76a6d8746b4a22154f8a8c7dde89d61046116
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 640d20371a51b08a5627b9beff1bb0ada4f06dd8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="dispute-resolution"></a>Resolución de conflictos
 

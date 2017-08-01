@@ -1,18 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_update module
-ms.technology: powershell
-ms.openlocfilehash: 3f843bcf667bdb40f45613911647acf464cbbf29
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Update-Module
+ms.openlocfilehash: 343c296dad2a3df35f13393b3796a1d484f5f535
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="update-module"></a>Update-Module
 

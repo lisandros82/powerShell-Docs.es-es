@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: El objeto ISEAddOnTool
-ms.technology: powershell
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
-ms.openlocfilehash: c1ab4220fdede7cabec99fd2d9dfb39648503f28
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 15f0cdd1425b9f87edeb0404fc385275e4a9d1d8
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="the-iseaddontool-object"></a>El objeto ISEAddOnTool
   Un objeto **ISEAddonTool** representa una herramienta de complemento instalada que proporciona funcionalidad adicional a Windows PowerShell ISE. Un ejemplo es la herramienta **Comandos** que se puede mostrar haciendo clic en **Ver** y, después, en **Show Command Add-on** (Mostrar complemento Comandos). Esta herramienta es accesible mediante la manipulación de los distintos objetos **ISEAddOnTool** disponibles.
@@ -25,7 +21,7 @@ translationtype: HT
 
 ## <a name="properties"></a>Propiedades
 
-###  <a name="a-namecontrola-control"></a><a name="Control"></a> Control
+###  <a name="Control"></a> Control
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores.
 
  La propiedad **Control** proporciona acceso de lectura a muchos de los detalles de la herramienta de complemento Comandos.
@@ -141,7 +137,7 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 ```
 
-###  <a name="a-nameisvisiblea-isvisible"></a><a name="IsVisible"></a> IsVisible
+###  <a name="IsVisible"></a> IsVisible
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores.
 
  Propiedad booleana que indica si la herramienta de complemento está visible actualmente en el panel asignado. Si está visible, puede establecer la propiedad **IsVisible** en **$false** para ocultar la herramienta o establecer la propiedad **IsVisible** en **$true** para hacer que una herramienta de complemento esté visible en su pestaña de PowerShell. Tenga en cuenta que al ocultar una herramienta de complemento, esta deja de ser accesible a través de los objetos **CurrentVisibleHorizontalTool** o **CurrentVisibleVerticalTool** y, por lo tanto, no puede hacerse visible usando esta propiedad en ese objeto.
@@ -154,7 +150,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible=$true
 
 ```
 
-###  <a name="a-namenamea-name"></a><a name="name"></a> Name
+###  <a name="name"></a> Name
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores.
 
  Propiedad de solo lectura que obtiene el nombre de la herramienta de complemento.

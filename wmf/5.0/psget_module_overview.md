@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 2c7e718bc518b332cb4303ef73b1bf5c924ca471
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>Detección, instalación e inventario del módulo de PowerShell con PowerShellGet
  
 PowerShellGet se incluye en esta versión de WMF:

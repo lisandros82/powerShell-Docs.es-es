@@ -1,17 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_publish module
-ms.technology: powershell
-ms.openlocfilehash: a21351837d0cc63e56254911a1a436175a2734cd
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Publish-Module
+ms.openlocfilehash: 53fca3d6756ebf698023152ce5b58b45eb0ef757
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="publish-module"></a>Publish-Module
 

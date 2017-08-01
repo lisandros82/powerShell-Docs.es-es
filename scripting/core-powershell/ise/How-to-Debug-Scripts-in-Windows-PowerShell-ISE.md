@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Cómo depurar scripts en ISE de Windows PowerShell"
-ms.technology: powershell
 ms.assetid: 6dc6d8f9-8978-46e9-a92f-169af37e2817
-ms.openlocfilehash: 8574754ccdf4717d29c4076f88d41691501da471
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: db8847e2cc9abeec729ed8d939fc170529a93846
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Cómo depurar scripts en ISE de Windows PowerShell
 En este tema se describe cómo depurar scripts en un equipo local mediante las características de depuración visual del Entorno de scripting integrado (ISE) de Windows PowerShell®.
@@ -21,7 +17,7 @@ En este tema se describe cómo depurar scripts en un equipo local mediante las c
 [Cómo depurar paso a paso por procedimientos, por instrucciones y para salir durante la depuración](#bkmk_3)
 [Cómo mostrar los valores de variables durante la depuración](#bkmk_4)
 
-## <a name="a-namebkmk1ahow-to-manage-breakpoints"></a><a name="bkmk_1"></a>Como administrar los puntos de interrupción
+## <a name="bkmk_1"></a>Como administrar los puntos de interrupción
 Un punto de interrupción es una zona designada en un script que desee que la operación entre en pausa para poder examinar el estado actual de las variables y el entorno en que se ejecuta el script. Cuando un punto de interrupción pausa un script, puede ejecutar comandos en el panel de consola para examinar el estado del script.  Puede generar variables o ejecutar otros comandos. Incluso puede modificar el valor de las variables que son visibles para el contexto del script que se está ejecutando. Después de examinar lo que desea ver, puede reanudar la operación del script.
 
 Puede establecer tres tipos de puntos de interrupción en el entorno de depuración de Windows PowerShell:
@@ -72,7 +68,7 @@ El script siguiente es un ejemplo de cómo quitar todos los puntos de interrupci
 Get-PSBreakpoint | Remove-PSBreakpoint
 ```
 
-### <a name="a-namebkmkdisableadisable-a-breakpoint"></a><a name="bkmk_disable"></a>Deshabilitar un punto de interrupción
+### <a name="bkmk_disable"></a>Deshabilitar un punto de interrupción
 Al deshabilitar un punto de interrupción, este no se quita; permanece desactivado hasta que se vuelve a habilitar.  Para deshabilitar un punto de interrupción de línea específico, haga clic con el botón derecho en la línea donde desee deshabilitar un punto de interrupción y luego haga clic en **Deshabilitar punto de interrupción**. O bien, haga clic en la línea donde desee deshabilitar un punto de interrupción y presione **F9** o, en el menú **Depurar**, haga clic en **Deshabilitar punto de interrupción**. El script siguiente es un ejemplo de cómo quitar un punto de interrupción con un identificador especificado del panel de consola mediante el cmdlet [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8).
 
 ``` PowerShell
@@ -106,7 +102,7 @@ Para habilitar todos los puntos de interrupción definidos en la sesión actual,
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
-## <a name="a-namebkmk2ahow-to-manage-a-debugging-session"></a><a name="bkmk_2"></a>Cómo administrar una sesión de depuración
+## <a name="bkmk_2"></a>Cómo administrar una sesión de depuración
 Antes de iniciar la depuración, debe establecer uno o varios puntos de interrupción. No se puede establecer un punto de interrupción si no se guarda el script que desea depurar. Para obtener instrucciones acerca de cómo establecer un punto de interrupción, vea [Cómo administrar los puntos de interrupción](#bkmk_1) o [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420). Después de iniciar la depuración, no se puede editar un script hasta que la depuración se detenga. Un script con uno o más puntos de interrupción establecidos se guarda automáticamente antes de ejecutarse.
 
 ### <a name="to-start-debugging"></a>Para iniciar la depuración
@@ -123,7 +119,7 @@ Mientras está en pausa, para ver la pila de llamadas actual, presione **CTRL+MA
 ### <a name="to-stop-debugging"></a>Para detener la depuración
 Presione **MAYÚS-F5** o, en el menú **Depurar**, haga clic en **Detener el depurador**. También puede escribir **Q** en el panel de consola y presionar **ENTRAR**.
 
-## <a name="a-namebkmk3ahow-to-step-over-step-into-and-step-out-while-debugging"></a><a name="bkmk_3"></a>Cómo depurar paso a paso por procedimientos, por instrucciones y para salir durante la depuración
+## <a name="bkmk_3"></a>Cómo depurar paso a paso por procedimientos, por instrucciones y para salir durante la depuración
 La ejecución paso a paso es el proceso de ejecutar una instrucción cada vez. Puede detenerse en una línea de código y examinar los valores de las variables y el estado del sistema. En la tabla siguiente se describen las tareas de depuración comunes, como la depuración paso a paso por procedimientos, por instrucciones y para salir.
 
 | Tarea de depuración | Descripción | Cómo llevarla a cabo en PowerShell ISE |
@@ -133,7 +129,7 @@ La ejecución paso a paso es el proceso de ejecutar una instrucción cada vez. P
 | **Depurar paso a paso para salir** | Sale de la función actual y sube un nivel si la función está anidada. Si se encuentra en el cuerpo principal, el script se ejecuta hasta el final o hasta el punto de interrupción siguiente. Las instrucciones omitidas se ejecutan, pero no se depuran paso a paso. | Presione **MAYÚS+F11** o, en el menú **Depurar**, haga clic en **Paso a paso para salir**. También puede escribir **O** en el panel de consola y presionar **ENTRAR**. |
 | **Continuar** | Continúa la ejecución hasta el final o hasta el punto de interrupción siguiente. Las funciones omitidas y las invocaciones se ejecutan, pero no se ejecutan paso a paso. | Presione **F5** o, en el menú **Depurar**, haga clic en **Ejecutar o continuar**. También puede escribir **C** en el panel de consola y presionar **ENTRAR**. |
 
-## <a name="a-namebkmk4ahow-to-display-the-values-of-variables-while-debugging"></a><a name="bkmk_4"></a>Cómo mostrar los valores de variables durante la depuración
+## <a name="bkmk_4"></a>Cómo mostrar los valores de variables durante la depuración
 Puede mostrar los valores actuales de las variables en el script mientras realiza la depuración paso a paso del código.
 
 ### <a name="to-display-the-values-of-standard-variables"></a>Para mostrar los valores de las variables estándar

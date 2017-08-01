@@ -1,17 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
 title: modulewithpseditionsupport
-ms.technology: powershell
-ms.openlocfilehash: 042df39b52cfb1cce9a44689ca40b42763321853
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
-translationtype: HT
+ms.openlocfilehash: 8122756b78e18fe55daef5c46dc299b87ddcaf1a
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Módulos con las ediciones compatibles de PowerShell
 A partir de la versión 5.1, PowerShell está disponible en diferentes ediciones que denotan distintos conjuntos de características y compatibilidad con varias plataformas.

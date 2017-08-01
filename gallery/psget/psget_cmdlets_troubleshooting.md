@@ -11,7 +11,8 @@ title: psget_cmdlets_troubleshooting
 ms.technology: powershell
 ms.openlocfilehash: 4758c650933b082f467c66ad4accb4c8a1fb514e
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 ## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>Cómo resolver el problema "WARNING: Package 'your package name' failed to download" (ADVERTENCIA: No se pudo descargar el paquete 'nombre del paquete'")
 

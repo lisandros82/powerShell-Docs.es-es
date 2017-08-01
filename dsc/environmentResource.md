@@ -1,19 +1,18 @@
 ---
-title: Recursos de DSC Environment
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 4a51b56091aea23568674cdc7d4d4128c78b239c
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Recursos de DSC Environment
+ms.openlocfilehash: 7c98798fa0e8fc865798ea30530e41ac87b2dadc
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="dsc-environment-resource"></a>Recursos de DSC Environment
 
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 El recurso __Environment__ de la configuración de estado deseado (DSC) de PowerShell ofrece un mecanismo para administrar variables de entorno del sistema.
 

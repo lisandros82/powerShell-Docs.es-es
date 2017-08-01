@@ -9,7 +9,8 @@ manager: carolz
 ms.prod: powershell
 ms.openlocfilehash: 938dcdfe6ef4254819068703d1c267934df913b4
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="using-dsc-on-microsoft-azure"></a>Uso de DSC en Microsoft Azure
 

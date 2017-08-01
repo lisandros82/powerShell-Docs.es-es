@@ -1,16 +1,12 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Uso de la consola de Windows PowerShell basada en web
-ms.technology: powershell
-ms.openlocfilehash: ea530d346ec36000da331b287f51d8f732947629
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 48ed1646c00f909c4e950f197f51a30205060ef0
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 #  <a name="use-the-web-based-windows-powershell-console"></a>Uso de la consola de Windows PowerShell basada en web
 

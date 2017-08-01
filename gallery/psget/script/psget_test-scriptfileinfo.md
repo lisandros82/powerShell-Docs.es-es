@@ -1,17 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_test scriptfileinfo
-ms.technology: powershell
-ms.openlocfilehash: 570ad7e878195f36e1d0831c504301bcee647a7d
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Test-ScriptFileInfo
+ms.openlocfilehash: 0f6951b86bba352e33abe91fc76e000b7df75b49
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="test-scriptfileinfo"></a>Test-ScriptFileInfo
 

@@ -1,16 +1,14 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.topic: conceptual
+keywords: jea,powershell,security
 title: "Auditoría y creación de informes en JEA"
-ms.technology: powershell
-ms.openlocfilehash: 865055e873a065aef16a95d0f3297e550e40bc98
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 60bc7a4213c75735628207bb21078bf90f7b1ca3
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Auditoría y creación de informes en JEA
 
@@ -153,3 +151,4 @@ Los detalles de ese objeto se imprimen unas líneas más adelante, imitando dete
 
 - [Auditar acciones del usuario en una sesión JEA](audit-and-report.md)
 - [Entrada de blog sobre seguridad de *PowerShell ♥ the Blue Team*](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+

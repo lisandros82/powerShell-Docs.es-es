@@ -1,17 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_get installedmodule
-ms.technology: powershell
-ms.openlocfilehash: a3c7c96bcb288dcc44aa1e4039d85def4ddb014e
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Get-InstalledModule
+ms.openlocfilehash: 6f485d04503ea6d9a51a68ae7ec3d0dc2e6facab
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="get-installedmodule"></a>Get-InstalledModule
 

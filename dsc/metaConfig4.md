@@ -1,15 +1,14 @@
 ---
-title: "Administrador de configuración local (LCM) de la configuración de estado deseado de Windows PowerShell 4.0"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: cec3aaf4e57d1efc3e29880e4a7f078bd1840901
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Administrador de configuración local (LCM) de la configuración de estado deseado de Windows PowerShell 4.0"
+ms.openlocfilehash: 2e6e4731bdf6d7de6d13fc7f9b81698a192247e4
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Administrador de configuración local (LCM) de la configuración de estado deseado de Windows PowerShell 4.0
 

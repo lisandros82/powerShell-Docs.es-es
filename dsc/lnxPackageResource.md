@@ -1,16 +1,14 @@
 ---
-title: Recurso nxPackage de DSC para Linux
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 31867cc7af96a3d8d527f5906d77bed5206940b4
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Recurso nxPackage de DSC para Linux
+ms.openlocfilehash: 11019b1cd12f23b0b498b7cb9a06e02c46c3c279
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>Recurso nxPackage de DSC para Linux
 

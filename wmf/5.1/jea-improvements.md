@@ -10,7 +10,8 @@ ms.prod: powershell
 ms.technology: WMF
 ms.openlocfilehash: 1b054b67bfd7b3660bac134bc8b023baf5644507
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Mejoras de Just Enough Administration (JEA)
 

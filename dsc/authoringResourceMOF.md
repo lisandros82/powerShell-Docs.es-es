@@ -1,19 +1,18 @@
 ---
-title: Escribir un recurso de DSC personalizado con MOF
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 1fc28589633d6279d0428179a70e7e561d753ea8
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Escribir un recurso de DSC personalizado con MOF
+ms.openlocfilehash: 58d6ba3995d3d6dea2787cfa347e0b1386bc40af
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Escribir un recurso de DSC personalizado con MOF
 
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 En este tema se define el esquema de un recurso personalizado de configuración de estado deseado (DSC) de Windows PowerShell en un archivo MOF y se implementa el recurso en un archivo de script de Windows PowerShell. Este recurso personalizado es para la creación y el mantenimiento de un sitio web.
 
@@ -42,7 +41,7 @@ Tenga en cuenta que es necesario crear una carpeta denominada DSCResources en la
 A continuación se muestra un ejemplo de un archivo MOF que se puede utilizar para un recurso de sitio web personalizado. Para seguir este ejemplo, guarde este esquema en un archivo y asigne como nombre del archivo *Demo_IISWebsite.schema.mof*.
 
 ```
-[ClassVersion("1.0.0"), FriendlyName("Website")] 
+[ClassVersion("1.0.0"), FriendlyName("Website")]
 class Demo_IISWebsite : OMI_BaseResource
 {
   [Key] string Name;
@@ -77,10 +76,10 @@ En la implementación de la función **Get-TargetResource**, utilice los valores
 
 ```powershell
 # DSC uses the Get-TargetResource function to fetch the status of the resource instance specified in the parameters for the target machine
-function Get-TargetResource 
+function Get-TargetResource
 {
-    param 
-    (       
+    param
+    (
         [ValidateSet("Present", "Absent")]
         [string]$Ensure = "Present",
 
@@ -110,7 +109,7 @@ function Get-TargetResource
         # Add all Website properties to the hash table
         # This simple example assumes that $Website is not null
         $getTargetResourceResult = @{
-                                      Name = $Website.Name; 
+                                      Name = $Website.Name;
                                         Ensure = $ensureResult;
                                         PhysicalPath = $Website.physicalPath;
                                         State = $Website.state;
@@ -134,11 +133,11 @@ En el ejemplo siguiente se ilustra esto.
 
 ```powershell
 # The Set-TargetResource function is used to create, delete or configure a website on the target machine. 
-function Set-TargetResource 
+function Set-TargetResource
 {
     [CmdletBinding(SupportsShouldProcess=$true)]
-    param 
-    (       
+    param
+    (
         [ValidateSet("Present", "Absent")]
         [string]$Ensure = "Present",
 
@@ -212,11 +211,13 @@ $ApplicationPool
 #Include logic to 
 $result = [System.Boolean]
 #Add logic to test whether the website is present and its status mathes the supplied parameter values. If it does, return true. If it does not, return false.
-$result 
+$result
 }
 ```
 
-**Nota**: Para una depuración más sencilla, utilice el cmdlet **Write-Verbose** en la implementación de las tres funciones anteriores. Este cmdlet escribe texto en la secuencia de mensajes detallados. De forma predeterminada, la secuencia de mensajes detallados no se muestra, pero se puede mostrar si se cambia el valor de la variable **$VerbosePreference** o se usa el parámetro **Verbose** en los cmdlets de DSC = new.
+**Nota**: Para una depuración más sencilla, utilice el cmdlet **Write-Verbose** en la implementación de las tres funciones anteriores. 
+>Este cmdlet escribe texto en la secuencia de mensajes detallados. 
+>De forma predeterminada, la secuencia de mensajes detallados no se muestra, pero se puede mostrar si se cambia el valor de la variable **$VerbosePreference** o se usa el parámetro **Verbose** en los cmdlets de DSC = new.
 
 ### <a name="creating-the-module-manifest"></a>Crear el manifiesto del módulo
 
@@ -273,4 +274,24 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 # HelpInfoURI = ''
 }
 ```
+
+## <a name="supporting-psdscrunascredential"></a>Compatibilidad con PsDscRunAsCredential
+
+>**Nota:** **PsDscRunAsCredential** es compatible con PowerShell 5.0 y versiones posteriores.
+
+La propiedad **PsDscRunAsCredential** se puede usar en el bloque de recursos de [configuraciones de DSC](configurations.md) para especificar que el recurso se debe ejecutar bajo un conjunto especificado de credenciales.
+Para más información, consulte [DSC de ejecución con las credenciales de usuario](runAsUser.md).
+
+Para tener acceso al contexto de usuario desde un recurso personalizado, puede usar la variable automática `$PsDscContext`.
+
+Por ejemplo, el código siguiente podría escribir el contexto de usuario bajo el cual se ejecuta el recurso en el flujo de salida detallado:
+
+```powershell
+if (PsDscContext.RunAsUser) {
+    Write-Verbose "User: $PsDscContext.RunAsUser";
+}
+```
+
+
+
 

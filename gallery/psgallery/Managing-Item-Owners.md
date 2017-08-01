@@ -11,7 +11,8 @@ title: Administrar propietarios de elementos
 ms.technology: powershell
 ms.openlocfilehash: 36a3a3079bce642b16f0512ead2b0778b43e5d2d
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="managing-item-owners"></a>Administrar propietarios de elementos
 

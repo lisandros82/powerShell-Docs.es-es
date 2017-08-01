@@ -9,7 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: 59a0e45e3d0ded6cde31418984c3a0cc04c39478
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="resource-authoring-checklist"></a>Lista de comprobación de creación de recursos
 Esta lista de comprobación es una lista de procedimientos recomendados cuando se crea un nuevo recurso de DSC.

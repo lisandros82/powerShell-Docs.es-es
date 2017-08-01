@@ -1,15 +1,14 @@
 ---
-title: Configuraciones DSC
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: carmonm
-ms.prod: powershell
-ms.openlocfilehash: d960cbe8534d4e5b4a423e685113a3ebafd403d4
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Configuraciones DSC
+ms.openlocfilehash: 3fdee72d5701433a3903697c5a0a32b112136592
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="dsc-configurations"></a>Configuraciones DSC
 
@@ -23,7 +22,7 @@ Configuration MyDscConfiguration {
     Node "TEST-PC1" {
         WindowsFeature MyFeatureInstance {
             Ensure = "Present"
-            Name =    "RSAT"
+            Name =  "RSAT"
         }
         WindowsFeature My2ndFeatureInstance {
             Ensure = "Present"
@@ -56,7 +55,7 @@ Configuration MyDscConfiguration {
     Node $ComputerName {
         WindowsFeature MyFeatureInstance {
             Ensure = "Present"
-            Name =    "RSAT"
+            Name =  "RSAT"
         }
         WindowsFeature My2ndFeatureInstance {
             Ensure = "Present"

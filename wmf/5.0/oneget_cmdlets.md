@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 6cba004890fc4b1dfac40920f751f61b0530cce9
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="packagemanagement-cmdlets"></a>Cmdlets PackageManagement
 Este es el núcleo de PackageManagement para admitir la detección, la instalación y el inventario de software (SDII). Pruebe los cmdlets para estas operaciones:
 -   Find-Package
@@ -180,3 +191,4 @@ Get-Package -Name jquery –Provider NuGet -Destination c:\test | Uninstall-Pack
 # Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.
 Unregister-PackageSource  -Name "NugetSource"
 ```
+

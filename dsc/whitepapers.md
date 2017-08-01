@@ -9,7 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: 9f0256e6cc9a9af2fbd881e9aa65f2f9c1b41c15
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="whitepapers"></a>Notas del producto
 

@@ -1,22 +1,18 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "La jerarquía del modelo de objetos de ISE"
-ms.technology: powershell
 ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
-ms.openlocfilehash: 815d17ea6ca4a1a209b39d49ce1bd271e07621b4
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 0d0370ed9f64464038e643ae2cd241891fa74f33
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="the-ise-object-model-hierarchy"></a>La jerarquía del modelo de objetos de ISE
   En este tema se muestra la jerarquía de objetos que forman parte del Entorno de scripting integrado (ISE) de Windows PowerShell. Windows PowerShell ISE se incluye en Windows PowerShell 3.0 y Windows PowerShell 4.0. Haga clic en un objeto para ir a la documentación de referencia de la clase que define el objeto.
 
-##  <a name="a-namepsisea-psise-object"></a><a name="psISE"></a> **$psISE Object**
+##  <a name="psISE"></a> **$psISE Object**
  El objeto **$psISE** es el [objeto raíz](The-ObjectModelRoot-Object.md) de la jerarquía de objetos de Windows PowerShell ISE. Ubicado en el nivel superior, este objeto hace que estén disponibles para scripting los objetos siguientes:
 
 -   **[$psISE.CurrentFile](#currentfile)**
@@ -31,7 +27,7 @@ translationtype: HT
 
 -   **[$psISE.PowerShellTabs](#powershelltabs)**
 
-##  <a name="a-namecurrentfilea-psisecurrentfilethe-isefile-objectmd"></a><a name="CurrentFile"></a> **[$psISE.CurrentFile](The-ISEFile-Object.md)**
+##  <a name="CurrentFile"></a> **[$psISE.CurrentFile](The-ISEFile-Object.md)**
  El objeto **$psISE.CurrentFile** es una instancia de la clase [ISEFile](The-ISEFile-Object.md) y hace que estén disponibles para scripting los objetos siguientes:
 
 -   **[$psISE.CurrentFile.DisplayName](The-ISEFile-Object.md#Displayname)**
@@ -60,7 +56,7 @@ translationtype: HT
 
 -   **[IsUntitled](The-ISEFile-Object.md#IsUntitled)**
 
-##  <a name="a-namecurrentpowershelltaba-psisecurrentpowershelltabthe-powershelltab-objectmd"></a><a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
+##  <a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
  El objeto **$psISE.CurrentPowerShellTab** es una instancia de la clase [PowerShellTab](The-PowerShellTab-Object.md) y hace que estén disponibles para scripting los objetos siguientes:
 
 -   **[$psISE.CurrentPowerShellTab.AddOnsMenu](The-ISEMenuItem-Object.md)** Este objeto es una instancia de la clase [ISEMenuItem](The-ISEMenuItem-Object.md) y hace que estén disponibles para scripting los objetos siguientes:
@@ -117,7 +113,7 @@ translationtype: HT
 
 -   **[$psISE.CurrentPowerShellTab.VisibleVerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
-##  <a name="a-namecurrentvisiblehorizontaltoola-psisecurrentvisiblehorizontaltool"></a><a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
+##  <a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
  El objeto **$psISE.CurrentVisibleHorizontalTool** es una instancia de la clase [ISEAddOnTool](The-ISEAddOnTool-Object.md). Representa la herramienta de complemento instalada que actualmente está acoplada al borde superior de la ventana de Windows PowerShell ISE. Este objeto hace que estén disponibles para scripting los objetos siguientes:
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
@@ -126,7 +122,7 @@ translationtype: HT
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
-##  <a name="a-namecurrentvisibleverticaltoola-psisecurrentvisibleverticaltool"></a><a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**
+##  <a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**
  El objeto **$psISE.CurrentVisibleHorizontalTool** es una instancia de la clase [ISEAddOnTool](The-ISEAddOnTool-Object.md). Representa la herramienta de complemento instalada que actualmente está acoplada al borde derecho de la ventana de Windows PowerShell ISE. Este objeto hace que estén disponibles para scripting los objetos siguientes:
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
@@ -135,7 +131,7 @@ translationtype: HT
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
-##  <a name="a-nameoptionsa-psiseoptions"></a><a name="Options"></a> **$psISE.Options**
+##  <a name="Options"></a> **$psISE.Options**
  El objeto **$psISE.Options** hace que estén disponibles para scripting los objetos siguientes:
 
 -   **[$psISE.Options.AutoSaveMinuteInterval](The-ISEOptions-Object.md#asmi)**
@@ -208,7 +204,7 @@ translationtype: HT
 
 -   **[$psISE.Options.Zoom](The-ISEOptions-Object.md#z)**
 
-##  <a name="a-namepowershelltabsa-psisepowershelltabsthe-powershelltabcollection-objectmd"></a><a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
+##  <a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
  El objeto **$psISE.PowerShellTabs** es una instancia de la clase [PowerShellTabCollection](The-PowerShellTabCollection-Object.md). Es una colección de todas las pestañas de PowerShell abiertas actualmente que representan los entornos de ejecución de Windows PowerShell disponibles en el equipo local o en equipos remotos conectados. Cada miembro de la colección es una instancia de la clase [PowerShellTab](The-PowerShellTab-Object.md).
 
 ## <a name="see-also"></a>Véase también

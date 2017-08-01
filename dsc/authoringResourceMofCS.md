@@ -1,16 +1,14 @@
 ---
-title: "Creación de un recurso de DSC en C"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: df330cede5466f4d8da3b4be0057f6a822d15f00
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Creación de un recurso de DSC en C"
+ms.openlocfilehash: 502a4f42f685642d0966a8ee1ee745902005d61c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>Creación de un recurso de DSC en C`#`
 

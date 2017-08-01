@@ -1,16 +1,14 @@
 ---
-title: Escribir ayuda para configuraciones de DSC
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 099755bf8dc41adfedf77de451dbcdf390c298e9
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Escribir ayuda para configuraciones de DSC
+ms.openlocfilehash: bcf5c4b1af3cfd8d2e6376c1b7344c7babcaba9a
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Escribir ayuda para configuraciones de DSC
 

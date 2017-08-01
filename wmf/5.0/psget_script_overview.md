@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: a5d1bff0b39cbbac7d83c44c232a2721c340caa8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>Detección, instalación y administración de scripts de PowerShell con PowerShellGet
 
 La característica de uso compartido de scripts de PowerShell se agregó a PowerShellGet en la versión WMF 5.0 RTM.
@@ -66,3 +77,4 @@ Sintaxis de cmdlets de uso compartido de scripts:
 
 **Publish-Script** -LiteralPath &lt;string&gt; \[-NuGetApiKey &lt;string&gt;\] \[-Repository &lt;string&gt;\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 ```
+

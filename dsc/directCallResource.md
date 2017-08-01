@@ -9,7 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: 97d97a36830088d6ee1296cda5310e087fc41893
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>Llamada directa a los métodos de recursos de DSC
 

@@ -1,16 +1,14 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.topic: conceptual
+keywords: jea,powershell,security
 title: Registro de configuraciones de JEA
-ms.technology: powershell
-ms.openlocfilehash: 2dcf541f1ed9975a680b31ca5e00e0fbbbddb22e
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
-translationtype: HT
+ms.openlocfilehash: 0684a1c7acffbccbedab9dba4689611a24c8ae25
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="registering-jea-configurations"></a>Registro de configuraciones de JEA
 
@@ -137,3 +135,4 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Probar el punto de conexión de JEA](using-jea.md)
+

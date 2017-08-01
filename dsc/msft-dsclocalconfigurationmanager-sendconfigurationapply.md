@@ -1,15 +1,14 @@
 ---
-title: "Método SendConfigurationApply de la clase MSFT_DSCLocalConfigurationManager"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 701063dfa37fe4ba8b014cadadd10339b7fd1bf7
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Método SendConfigurationApply de la clase MSFT_DSCLocalConfigurationManager"
+ms.openlocfilehash: 9552fd5b5feb862fbe8ef95a7746776e7fe2f5c8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método SendConfigurationApply de la clase MSFT_DSCLocalConfigurationManager
 

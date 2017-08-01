@@ -1,16 +1,14 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
 title: "Corrección de errores de WMF 5.1"
-ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 8957f4709c95ccb5b72c4fa9b42c9fe9ef93dffe
-ms.sourcegitcommit: 58e5e77050ba32717ce3e31e314f0f25cb7b2979
-translationtype: HT
+ms.openlocfilehash: 137095f50f9f926d3488ff9c1ce8270ddbda63eb
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="bug-fixes-in-wmf-51"></a>Corrección de errores de WMF 5.1#
 
@@ -111,3 +109,4 @@ PowerShell usa una consulta WMI para comprobar que se ha iniciado a través de l
 La consulta WMI termina con la inyección de tzres.mui.dll en todos los procesos del sistema, puesto que la clase Win32_Process de WMI intenta recuperar la información de la zona horaria local.
 Esto produce un gran aumento de la CPU en wmiprvse (el host del proveedor WMI).
 La solución consiste en utilizar llamadas a la API de Win32 para obtener la misma información en lugar de usar WMI.
+

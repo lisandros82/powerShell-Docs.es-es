@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 6419d45617a76b2e3a8a244d7194c96cb02e6445
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="improvements-in-desired-state-configuration-dsc"></a>Mejoras en la configuración de estado deseado (DSC)
 
 ## <a name="dsc-feedback-survey"></a>Encuesta de comentarios de DSC   
@@ -9,3 +20,4 @@ Gracias por participar en nuestra encuesta. Sus comentarios son muy importantes 
 **Versión del módulo PSDesiredStateConfiguration actualizada a 1.1**
 
 La versión del módulo PsDesiredStateConfiguration se actualizó a 1.1. Las configuraciones de DSC compiladas en la versión WMF 5.0 Preview de febrero de 2015 o anteriores no funcionarán en PowerShell/WMF 5.0. 
+

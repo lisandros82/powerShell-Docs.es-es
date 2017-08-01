@@ -1,24 +1,20 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: El objeto ISEMenuItem
-ms.technology: powershell
 ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
-ms.openlocfilehash: 443f79a2d7f299b4f9f59804909f01c7742415a4
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 33de866d706ec2b0894c5bfe49e07fee142b95c0
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="the-isemenuitem-object"></a>El objeto ISEMenuItem
   Un objeto **ISEMenuItem** es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEMenuItem. Todos los objetos de menú **Complementos** son instancias de la clase **Microsoft.PowerShell.Host.ISE.ISEMenuItem**.
 
 ## <a name="properties"></a>Propiedades
 
-###  <a name="a-namedisplaynamea-displayname"></a><a name="DisplayName"></a> DisplayName
+###  <a name="DisplayName"></a> DisplayName
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  La propiedad de solo lectura que obtiene el nombre para mostrar del elemento de menú.
@@ -31,7 +27,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 
 ```
 
-###  <a name="a-nameactiona-action"></a><a name="Action"></a> Action
+###  <a name="Action"></a> Action
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  La propiedad de solo lectura que obtiene el bloque del script. Invoca la acción al hacer clic en el elemento de menú.
@@ -46,7 +42,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
-###  <a name="a-nameshortcuta-shortcut"></a><a name="Shortcut"></a> Shortcut
+###  <a name="Shortcut"></a> Shortcut
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  La propiedad de solo lectura que obtiene el método abreviado de teclado de entrada de Windows para el elemento de menú.
@@ -58,7 +54,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Al
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-###  <a name="a-namesubmenusa-submenus"></a><a name="Submenus"></a> Submenus
+###  <a name="Submenus"></a> Submenus
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  La propiedad de solo lectura que obtiene la [lista de submenús](The-ISEMenuItemCollection-Object.md) del elemento de menú.

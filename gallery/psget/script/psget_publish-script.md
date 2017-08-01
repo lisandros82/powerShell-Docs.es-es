@@ -11,7 +11,8 @@ title: psget_publish script
 ms.technology: powershell
 ms.openlocfilehash: 2619738ba76ed3b3c84d1a77771531ebd6955d6f
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="publish-script"></a>Publish-Script
 

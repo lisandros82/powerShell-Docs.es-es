@@ -1,15 +1,14 @@
 ---
-title: "Escribir un recurso de DSC de instancia única (procedimiento recomendado)"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 4b1e8a6d3fb4feca426a9d7861c40d194e612c22
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Escribir un recurso de DSC de instancia única (procedimiento recomendado)"
+ms.openlocfilehash: fe7c50c39ba08e290076ea7a058372ce57898325
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Escribir un recurso de DSC de instancia única (procedimiento recomendado)
 

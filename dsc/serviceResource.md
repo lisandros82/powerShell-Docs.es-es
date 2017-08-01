@@ -9,11 +9,12 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: 6c1dce6a3f1b801f7bdf5bf778df8033e3d76280
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="dsc-service-resource"></a>Recurso de DSC Service
 
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 
 El recurso **Service** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para administrar servicios en el nodo de destino.

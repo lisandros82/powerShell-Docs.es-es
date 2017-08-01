@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Obtener información sobre los comandos"
-ms.technology: powershell
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-ms.openlocfilehash: e8ce2c403e023f4ae8f2f308d400e66859b7b200
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 98e449110860ea81939d6ec0b7b1a8534a2da2aa
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="getting-information-about-commands"></a>Obtener información sobre los comandos
 El cmdlet **Get-Command** de Windows PowerShell obtiene todos los comandos disponibles en la sesión actual. Cuando **Get-Command** se escribe en un símbolo del sistema de Windows PowerShell, se obtiene un resultado similar al siguiente:

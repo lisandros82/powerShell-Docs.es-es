@@ -1,15 +1,14 @@
 ---
-title: "Método PerformRequiredConfigurationChecks de la clase MSFT_DSCLocalConfigurationManager"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: f9eb975845f6ccabcac80e2591fd987f80f81331
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Método PerformRequiredConfigurationChecks de la clase MSFT_DSCLocalConfigurationManager"
+ms.openlocfilehash: 26110b3920104da7343b8d55cf63440c12accbbc
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método PerformRequiredConfigurationChecks de la clase MSFT_DSCLocalConfigurationManager
 

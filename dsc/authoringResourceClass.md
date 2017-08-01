@@ -1,15 +1,14 @@
 ---
-title: Escribir un recurso de DSC personalizado con clases de PowerShell
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: feec9b9e242ef6f43c272bfeb179d11944d1cb06
-ms.sourcegitcommit: 1002c473b88abb209e4188bb626d93675c3614e2
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Escribir un recurso de DSC personalizado con clases de PowerShell
+ms.openlocfilehash: 6e482f45c7d09898d46de20f43dcf16ecf3da7da
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Escribir un recurso de DSC personalizado con clases de PowerShell
 
@@ -472,6 +471,43 @@ Configuration Test
 }
 Test
 Start-DscConfiguration -Wait -Force Test
+```
+
+## <a name="supporting-psdscrunascredential"></a>Compatibilidad con PsDscRunAsCredential
+
+>**Nota:** **PsDscRunAsCredential** es compatible con PowerShell 5.0 y versiones posteriores.
+
+La propiedad **PsDscRunAsCredential** se puede usar en el bloque de recursos de [configuraciones de DSC](configurations.md) para especificar que el recurso se debe ejecutar bajo un conjunto especificado de credenciales.
+Para más información, consulte [DSC de ejecución con las credenciales de usuario](runAsUser.md).
+
+### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>Exigir o impedir PsDscRunAsCredential para el recurso
+
+El atributo **DscResource()** toma un parámetro opcional **RunAsCredential**.
+Este parámetro toma uno de estos tres valores:
+
+- `Optional` **PsDscRunAsCredential** es opcional para las configuraciones que llaman a este recurso. Este es el valor predeterminado.
+- `Mandatory` **PsDscRunAsCredential** se debe usar para cada configuración que llama a este recurso.
+- `NotSupported` Las configuraciones que llaman a este recurso no pueden usar **PsDscRunAsCredential**.
+- `Default` Igual que `Optional`.
+
+Por ejemplo, use el atributo siguiente para especificar que el recurso personalizado no admite el uso de **PsDscRunAsCredential**:
+
+```powershell
+[DscResource(RunAsCredential=NotSupported)]
+class FileResource {
+}
+```
+
+### <a name="access-the-user-context"></a>Acceso al contexto de usuario
+
+Para tener acceso al contexto de usuario desde un recurso personalizado, puede usar la variable automática `$global:PsDscContext`.
+
+Por ejemplo, el código siguiente podría escribir el contexto de usuario bajo el cual se ejecuta el recurso en el flujo de salida detallado:
+
+```powershell
+if (PsDscContext.RunAsUser) {
+    Write-Verbose "User: $global:PsDscContext.RunAsUser";
+}
 ```
 
 ## <a name="see-also"></a>Véase también

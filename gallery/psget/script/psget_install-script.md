@@ -1,17 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_install script
-ms.technology: powershell
-ms.openlocfilehash: ac2473283a80e76d4823d85d4c4481d349a95a12
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Install-Script
+ms.openlocfilehash: 4c3fd9393ccb7ee5c3b010f1114b6596a74fdee2
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="install-script"></a>Install-Script
 

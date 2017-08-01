@@ -1,20 +1,19 @@
 ---
-title: Recurso de DSC Script
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 56eb7ef230d84cc5f5679f39e13e2019205c65f5
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Recurso de DSC Script
+ms.openlocfilehash: 81718de0b0c8463189e33e565dc9ff39692dbe8b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="dsc-script-resource"></a>Recurso de DSC Script
 
  
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 El recurso **Script** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para ejecutar bloques de script de Windows PowerShell en nodos de destino. El recurso `Script` tiene las propiedades `GetScript`, `SetScript` y `TestScript`. Estas propiedades se deben establecer en los bloques de script que se ejecutarán en cada nodo de destino. 
 
@@ -84,7 +83,7 @@ Configuration ScriptTest
     {
         GetScript = { 
             $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Result' = "Version: $currentVersion" }
+            return @{ 'Version' = "$currentVersion" }
         }          
         TestScript = { 
             $state = $GetScript

@@ -11,7 +11,8 @@ title: psget_find module
 ms.technology: powershell
 ms.openlocfilehash: b6fe3ffcbb366ee237acf0304ec4804b93e2b8ad
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="find-module"></a>Find-Module
 Busca módulos de una galería en línea que coincidan con los criterios especificados.

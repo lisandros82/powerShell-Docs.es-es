@@ -1,16 +1,14 @@
 ---
-title: "Uso de la herramienta Diseñador de recursos"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 4478806e46c9c6cdc314b1ecadd8554d6558e8f5
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Uso de la herramienta Diseñador de recursos"
+ms.openlocfilehash: 5a034547d0850682513e9a80367ce148bfcf0bdc
+ms.sourcegitcommit: a775e4788616490980123e8e6ea78594ffeb6f7d
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/29/2017
 ---
 # <a name="using-the-resource-designer-tool"></a>Uso de la herramienta Diseñador de recursos
 
@@ -34,10 +32,10 @@ Nombre del parámetro: descripción
 Para crear las propiedades, use el cmdlet **New-xDscResourceProperty**. Los siguientes comandos de PowerShell crean las propiedades descritas anteriormente.
 
 ```powershell
-PS C:\> $UserName = New-xDscResourceProperty –Name UserName -Type String -Attribute Key
-PS C:\> $Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet “Present”, “Absent”
-PS C:\> $DomainCredential = New-xDscResourceProperty –Name DomainCredential-Type PSCredential -Attribute Write
-PS C:\> $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
+$UserName = New-xDscResourceProperty –Name UserName -Type String -Attribute Key
+$Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet “Present”, “Absent”
+$DomainCredential = New-xDscResourceProperty –Name DomainCredential-Type PSCredential -Attribute Write
+$Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
 
 ## <a name="create-the-resource"></a>Crear el recurso
@@ -45,7 +43,7 @@ PS C:\> $Password = New-xDscResourceProperty –Name Password -Type PSCredential
 Ahora que se han creado las propiedades del recurso, se puede llamar al cmdlet **New-xDscResource** para crear el recurso. El cmdlet **New-xDscResource** toma la lista de propiedades como parámetros. También toma la ruta de acceso donde se debe crear el módulo, el nombre del nuevo recurso y el nombre del módulo que lo contiene. El siguiente comando de PowerShell crea el recurso:
 
 ```powershell
-PS C:\> New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCredential, $Password –Path ‘C:\Program Files\WindowsPowerShell\Modules’ –ModuleName Demo_DSCModule
+New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCredential, $Password –Path ‘C:\Program Files\WindowsPowerShell\Modules’ –ModuleName Demo_DSCModule
 ```
 
 El cmdlet **New-xDscResource** crea el esquema MOF, un script del recurso de esqueleto, la estructura de directorios necesaria para el nuevo recurso y un manifiesto del módulo que expone el nuevo recurso.
@@ -56,10 +54,10 @@ El archivo del esquema MOF se encuentra en **C:\Archivos de Programa\WindowsPowe
 [ClassVersion("1.0.0.0"), FriendlyName("Demo_ADUser")]
 class Demo_ADUser : OMI_BaseResource
 {
-[Key] string UserName;
-[Write, ValueMap{"Present","Absent"}, Values{"Present","Absent"}] string Ensure;
-[Write, EmbeddedInstance("MSFT_Credential")] String DomainCredential;
-[Write, EmbeddedInstance("MSFT_Credential")] String Password;
+  [Key] string UserName;
+  [Write, ValueMap{"Present","Absent"}, Values{"Present","Absent"}] string Ensure;
+  [Write, EmbeddedInstance("MSFT_Credential")] String DomainCredential;
+  [Write, EmbeddedInstance("MSFT_Credential")] String Password;
 };
 ```
 
@@ -68,59 +66,59 @@ El script del recurso se encuentra en **C:\Archivos de Programa\WindowsPowerShel
 ```powershell
 function Get-TargetResource
 {
-[CmdletBinding()]
-[OutputType([System.Collections.Hashtable])]
-param
-(
-[parameter(Mandatory = $true)]
-[System.String]
-$UserName
-)
+  [CmdletBinding()]
+  [OutputType([System.Collections.Hashtable])]
+  param
+  (
+    [parameter(Mandatory = $true)]
+    [System.String]
+    $UserName
+  )
 
-#Write-Verbose "Use this cmdlet to deliver information about command processing."
+  #Write-Verbose "Use this cmdlet to deliver information about command processing."
 
-#Write-Debug "Use this cmdlet to write debug information while troubleshooting."
+  #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
 
-<#
-$returnValue = @{
-UserName = [System.String]
-Ensure = [System.String]
-DomainAdminCredential = [System.Management.Automation.PSCredential]
-Password = [System.Management.Automation.PSCredential]
-}
+  <#
+  $returnValue = @{
+  UserName = [System.String]
+  Ensure = [System.String]
+  DomainAdminCredential = [System.Management.Automation.PSCredential]
+  Password = [System.Management.Automation.PSCredential]
+  }
 
-$returnValue
-#>
+  $returnValue
+  #>
 }
 
 
 function Set-TargetResource
 {
-[CmdletBinding()]
-param
-(
-[parameter(Mandatory = $true)]
-[System.String]
-$UserName,
+  [CmdletBinding()]
+  param
+  (
+    [parameter(Mandatory = $true)]
+    [System.String]
+    $UserName,
 
-[ValidateSet("Present","Absent")]
-[System.String]
-$Ensure,
+    [ValidateSet("Present","Absent")]
+    [System.String]
+    $Ensure,
 
-[System.Management.Automation.PSCredential]
-$DomainAdminCredential,
+    [System.Management.Automation.PSCredential]
+    $DomainAdminCredential,
 
-[System.Management.Automation.PSCredential]
-$Password
-)
+    [System.Management.Automation.PSCredential]
+    $Password
+  )
 
-#Write-Verbose "Use this cmdlet to deliver information about command processing."
+  #Write-Verbose "Use this cmdlet to deliver information about command processing."
 
-#Write-Debug "Use this cmdlet to write debug information while troubleshooting."
+  #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
-#Include this line if the resource requires a system reboot.
-#$global:DSCMachineStatus = 1
+  #Include this line if the resource requires a system reboot.
+  #$global:DSCMachineStatus = 1
 
 
 }
@@ -128,35 +126,35 @@ $Password
 
 function Test-TargetResource
 {
-[CmdletBinding()]
-[OutputType([System.Boolean])]
-param
-(
-[parameter(Mandatory = $true)]
-[System.String]
-$UserName,
+  [CmdletBinding()]
+  [OutputType([System.Boolean])]
+  param
+  (
+    [parameter(Mandatory = $true)]
+    [System.String]
+    $UserName,
 
-[ValidateSet("Present","Absent")]
-[System.String]
-$Ensure,
+    [ValidateSet("Present","Absent")]
+    [System.String]
+    $Ensure,
 
-[System.Management.Automation.PSCredential]
-$DomainAdminCredential,
+    [System.Management.Automation.PSCredential]
+    $DomainAdminCredential,
 
-[System.Management.Automation.PSCredential]
-$Password
-)
+    [System.Management.Automation.PSCredential]
+    $Password
+  )
 
-#Write-Verbose "Use this cmdlet to deliver information about command processing."
+  #Write-Verbose "Use this cmdlet to deliver information about command processing."
 
-#Write-Debug "Use this cmdlet to write debug information while troubleshooting."
+  #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
 
-<#
-$result = [System.Boolean]
+  <#
+  $result = [System.Boolean]
 
-$result
-#>
+  $result
+  #>
 }
 
 
@@ -170,8 +168,8 @@ Si necesita agregar o modificar la lista de parámetros del recurso, puede llama
 Por ejemplo, suponga que quiere incluir el último registro en el tiempo del usuario en el recurso. En lugar de escribir completamente de nuevo el recurso, puede llamar a **New-xDscResourceProperty** para crear la nueva propiedad y después llamar a **Update-xDscResource** y agregar la nueva propiedad a la lista de propiedades.
 
 ```powershell
-PS C:\> $lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Attribute Write –Description “For mapping users to their last log on time”
-PS C:\> Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
+$lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Attribute Write –Description “For mapping users to their last log on time”
+Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
 ```
 
 ## <a name="testing-a-resource-schema"></a>Probar un esquema de recurso
@@ -185,4 +183,3 @@ La herramienta Diseñador de recursos expone un cmdlet más que puede utilizarse
 
 #### <a name="other-resources"></a>Otros recursos
 [Módulo xDscResourceDesigner](https://powershellgallery.com/packages/xDscResourceDesigner)
-

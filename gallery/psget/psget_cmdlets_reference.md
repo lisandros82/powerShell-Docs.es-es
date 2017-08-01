@@ -11,7 +11,8 @@ title: psget_cmdlets_reference
 ms.technology: powershell
 ms.openlocfilehash: d96506a70861a013b6383b6327225eb341fd164d
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="powershellget-cmdlet-reference"></a>Referencia de cmdlet PowerShellGet
 

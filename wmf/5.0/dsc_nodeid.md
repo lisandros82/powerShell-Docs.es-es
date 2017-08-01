@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 5b9eea1c90bfd5a8cee3897d832bf7775a750308
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="separation-of-node-and-configuration-ids"></a>Separación de los identificadores de nodo y de configuración
 
 ## <a name="overview"></a>Introducción

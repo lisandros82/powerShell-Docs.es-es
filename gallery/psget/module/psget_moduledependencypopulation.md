@@ -11,7 +11,8 @@ title: psget_moduledependencypopulation
 ms.technology: powershell
 ms.openlocfilehash: 3d89dddf2fc31a9fdb1a57f21baaf757990989c7
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="logic-for-preparing-the-module-dependencies-during-publish-operation"></a>Lógica para preparar las dependencias de módulo durante la operación de publicación
 1.  Los módulos indicados como parte de RequiredModules se consideran dependencias.

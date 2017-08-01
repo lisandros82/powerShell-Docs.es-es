@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: c7318552969c44f3b79f82efd71e6a72bfabef6b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="new-language-features-in-powershell-50"></a>Nuevas características de lenguaje de PowerShell 5.0 
 
 PowerShell 5.0 presenta los siguientes nuevos elementos de lenguaje en Windows PowerShell:
@@ -323,3 +334,4 @@ function Style
 #
 function Html ([HTML] $doc) { return $doc }
 ```
+

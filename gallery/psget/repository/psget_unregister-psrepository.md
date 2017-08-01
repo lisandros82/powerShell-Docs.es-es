@@ -1,17 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_unregister psrepository
-ms.technology: powershell
-ms.openlocfilehash: c90710db47dbfdc58e1ca7f84c6d6fd8f04b5109
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Unregister-PSRepository
+ms.openlocfilehash: 91380210f262208fce39d596bd6c2ad05a819fbf
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="unregister-psrepository"></a>Unregister-PSRepository
 

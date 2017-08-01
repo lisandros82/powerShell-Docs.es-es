@@ -1,16 +1,12 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Instalación y uso de Windows PowerShell Web Access"
-ms.technology: powershell
-ms.openlocfilehash: f2a908b670d1a0aba3ca0912aed0ff7e3c5bba1f
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: a860f7c22829da46f0458ea729fa0afd1fe4fb6f
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 #  <a name="install-and-use-windows-powershell-web-access"></a>Instalación y uso de Windows PowerShell Web Access
 
@@ -211,7 +207,7 @@ Puede completar la configuración de la aplicación web Windows PowerShell Web A
 </colgroup>
 <thead>
 <tr class="header">
-<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> Nota de seguridad </span></th>
+<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">Nota de seguridad</span></th>
 </tr>
 </thead>
 <tbody>

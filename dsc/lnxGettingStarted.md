@@ -1,16 +1,14 @@
 ---
-title: "Introducción a la configuración de estado deseado (DSC) para Linux"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: c585dc929e85a404aecfb1e9f06daf2dfaf21832
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Introducción a la configuración de estado deseado (DSC) para Linux"
+ms.openlocfilehash: 2d4276a0ffcb4fd7b872cbc4771f86cb850c0b83
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Introducción a la configuración de estado deseado (DSC) para Linux
 

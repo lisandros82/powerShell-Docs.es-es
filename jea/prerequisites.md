@@ -1,18 +1,14 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2017-03-07
+ms.topic: conceptual
+keywords: jea,powershell,security
 title: Requisitos previos de JEA
-ms.technology: powershell
-ms.openlocfilehash: a38c9e948190b9384c62eec3e40758a782c9f72b
-ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.openlocfilehash: 75d5db2ba446df1d461050d187dc1495a22fef18
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="prerequisites"></a>Requisitos previos
 
@@ -115,3 +111,4 @@ También puede habilitar la transcripción de PowerShell de todo el sistema a tr
 
 - [Información adicional sobre la seguridad de WinRM y comunicación remota de PowerShell](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
 - [Entrada de blog sobre seguridad de *PowerShell ♥ the Blue Team*](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+

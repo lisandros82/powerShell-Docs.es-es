@@ -9,7 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: 1666b85402f17230090f7290c8cb400dd9fbf0a6
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método ResourceGet de la clase MSFT_DSCLocalConfigurationManager
 

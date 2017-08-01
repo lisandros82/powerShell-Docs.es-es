@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: fbc537cacb8dd58ab989a0bb71cd942cedae844c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>Interactuar con los vínculos simbólicos mediante cmdlets Item mejorados
 
 Para admitir vínculos simbólicos, se ampliaron **\*-Item** y algunos cmdlets relacionados. Ahora puede crear vínculos simbólicos en una única línea simple con **New-Item**. Observará que los cmdlets relacionados con Item (**Remove-Item, Get-ChildItem**) se comportan prácticamente igual que antes.
@@ -113,3 +124,4 @@ Remove-Item C:\Temp\MySymLinkDir
 # Removes the files in the target directory and MySymLinkDir
 Remove-Item C:\Temp\MySymLinkDir -Force
 ```
+

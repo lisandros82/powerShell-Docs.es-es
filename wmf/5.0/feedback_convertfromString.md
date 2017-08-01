@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Extraer y analizar objetos estructurados fuera de la cadena
 También presenta algunas funciones adicionales para el cmdlet ConvertFrom-String:
 
@@ -17,8 +28,7 @@ Este cmdlet admite dos modos: análisis delimitado básico y análisis controlad
 
 De forma predeterminada, el análisis delimitado divide la entrada en el espacio en blanco y asigna los nombres de propiedad a los grupos resultantes. Puede personalizar el delimitador:
 
-> 1 \[C:\\temp\]
-> &gt;&gt; "Hello World" | ConvertFrom-String | Format-Table -Auto
+> 1 \[C:\\temp\] &gt;&gt;"Hello World" | ConvertFrom-String | Format-Table -Auto
 
 P1    P2
 --    --

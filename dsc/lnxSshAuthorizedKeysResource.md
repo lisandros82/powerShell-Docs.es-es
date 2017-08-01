@@ -9,7 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: edc906b4e9c925320c4ed00c5ab295189066ccb9
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>Recurso de DSC para Linux nxSshAuthorizedKeys
 

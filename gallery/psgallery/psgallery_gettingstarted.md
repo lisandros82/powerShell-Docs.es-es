@@ -11,7 +11,8 @@ title: psgallery_gettingstarted
 ms.technology: powershell
 ms.openlocfilehash: 4c06d1ebd4417da4bd58e3536d123f8285ba189e
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>Introducción a la Galería de PowerShell
 

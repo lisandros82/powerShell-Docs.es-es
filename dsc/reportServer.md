@@ -1,15 +1,14 @@
 ---
-title: Uso de un servidor de informes de DSC
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 17b56a0ce25d3154e21f18269926a0c41aae833b
-ms.sourcegitcommit: d7b28f28a09caa7fa48b0f66c5c437f128ce316f
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Uso de un servidor de informes de DSC
+ms.openlocfilehash: dd61d6ffff43ac2d1ec663b566e39dfc7d6c6565
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="using-a-dsc-report-server"></a>Uso de un servidor de informes de DSC
 

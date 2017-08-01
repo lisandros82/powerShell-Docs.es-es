@@ -9,7 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: a8faf242fcc8c72461d6cb7609a562fbb92dfdb9
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="using-dsc-on-nano-server"></a>Uso de DSC on Nano Server
 

@@ -9,11 +9,12 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: 0a27a40b995393c41f0496a5f7fa3f56fbd865dd
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="dsc-resources"></a>Recursos de DSC
 
->Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Los recursos de la configuración de estado deseado (DSC) ofrecen los bloques de creación para una configuración DSC. Un recurso expone las propiedades que se pueden configurar (el esquema) y contiene las funciones de script de PowerShell a las que el administrador de configuración local (LCM) llama para "que sea así".
 

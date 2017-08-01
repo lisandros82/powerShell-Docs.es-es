@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Administración de servicios"
-ms.technology: powershell
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: b4910eed852e777a1b407d436b2e6daa8c12a003
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 9fd6c8bcfecc99756188409629ddf94b880aab91
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="managing-services"></a>Administración de servicios
 Existen ocho cmdlets Service principales, diseñados para una amplia gama de tareas de servicio. Solo veremos la enumeración y el cambio del estado de ejecución de los servicios, pero puede obtener una lista de cmdlets Service mediante **Get-Help \&#42;-Service**. También puede encontrar información sobre cada cmdlet Service mediante **Get-Help<Cmdlet-Name>**, como **Get-Help New-Service**.

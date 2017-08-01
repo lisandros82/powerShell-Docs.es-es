@@ -1,18 +1,14 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2017-04-25
+ms.topic: conceptual
+keywords: jea,powershell,security
 title: "Configuraciones de sesión de JEA"
-ms.technology: powershell
-ms.openlocfilehash: 8773096627217663362e61fb158cc900aea20f43
-ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.openlocfilehash: 0a8931ae15caf04a3639ab46f130e5f5b0498d8c
+ms.sourcegitcommit: 0733db9a05e89e6a23f6b52b9edd784fcbe8beec
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 06/22/2017
 ---
 # <a name="jea-session-configurations"></a>Configuraciones de sesión de JEA
 
@@ -96,7 +92,7 @@ No tendrá derechos de administrador en los equipos o servicios de forma automá
 
 ```powershell
 # Configure JEA sessions to use the gMSA account in the local computer's domain with the sAMAccountName of 'MyJEAgMSA'
-GroupManagedServiceAccount = 'MyJEAgMSA'
+GroupManagedServiceAccount = 'Domain\MyJEAgMSA'
 ```
 
 Las cuentas gMSA solo deben usarse cuando se necesite acceso a recursos de red por diversas razones:
@@ -256,3 +252,4 @@ Al volver a registrar la configuración de sesión de JEA, use un archivo de con
 
 - [Registrar una configuración de JEA](register-jea.md)
 - [Crear roles de JEA](role-capabilities.md)
+

@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Cómo escribir y ejecutar scripts en Windows PowerShell ISE"
-ms.technology: powershell
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 2478db382639ef315574bb7c79faec7cf2ae1c96
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 871a4b6f4575af4f823a6957dc971335497320a4
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Cómo escribir y ejecutar scripts en Windows PowerShell ISE
 En este tema se describe cómo crear, editar, ejecutar y guardar scripts en el panel de scripts.
@@ -22,7 +18,7 @@ En este tema se describe cómo crear, editar, ejecutar y guardar scripts en el p
 
 -   [Cómo guardar un script](#bkmk_3)
 
-## <a name="a-namebkmk1ahow-to-create-and-run-scripts"></a><a name="bkmk_1"></a>Cómo crear y ejecutar scripts
+## <a name="bkmk_1"></a>Cómo crear y ejecutar scripts
 Puede abrir y editar archivos de Windows PowerShell® en el panel de scripts. Los tipos de archivo de interés específicos de Windows PowerShell® son los archivos de script (.ps1), los archivos de datos de script (.psd1) y los archivos de módulo de script (.psm1). Estos tipos de archivo presentan color de sintaxis en el editor de panel de scripts. Otros tipos de archivo comunes que puede abrir en el panel de scripts son los archivos de configuración (.ps1xml), los archivos XML y los archivos de texto.
 
 > [!NOTE]
@@ -58,7 +54,7 @@ En la barra de herramientas, haga clic en **Ejecutar script**, o bien, en el men
 ### <a name="to-stop-a-running-script"></a>Para detener un script que se está ejecutando
 En la barra de herramientas, haga clic en **Detener la operación**, presione CTRL+Interrumpir, o bien, en el menú **Archivo**, haga clic en **Detener la operación**. Presionar **CTRL+C** también funciona a menos que ya haya texto seleccionado, en cuyo caso **CTRL+C** se asigna a la función de copia del texto seleccionado.
 
-## <a name="a-namebkmk2ahow-to-write-and-edit-text-in-the-script-pane"></a><a name="bkmk_2"></a>Cómo escribir y editar texto en el panel de scripts
+## <a name="bkmk_2"></a>Cómo escribir y editar texto en el panel de scripts
 Use los siguientes pasos para editar texto en el panel de scripts. Puede copiar, cortar, pegar, buscar y reemplazar texto. También puede deshacer y rehacer la última acción que ha realizado. Los métodos abreviados de teclado para realizar estas acciones son los mismos que los usados para todas las aplicaciones de Windows.
 
 ### <a name="to-enter-text-in-the-script-pane"></a>Para escribir texto en el panel de scripts
@@ -107,7 +103,7 @@ Presione **CTRL+Z** o haga clic en el icono **Deshacer** de la barra de herramie
 ### <a name="to-redo-an-action-in-the-script-pane"></a>Para rehacer una acción en el panel de scripts
 Presione **CTRL+Y** o haga clic en el icono **Rehacer** de la barra de herramientas. O bien, en el menú **Edición**, haga clic en **Rehacer**.
 
-## <a name="a-namebkmk3ahow-to-save-a-script"></a><a name="bkmk_3"></a>Cómo guardar un script
+## <a name="bkmk_3"></a>Cómo guardar un script
 Use los pasos siguientes para guardar un script y asignarle un nombre. Aparece un asterisco junto al nombre del script para marcar un archivo que no se ha guardado desde que se modificó. El asterisco desaparecerá cuando se guarda el archivo.
 
 ### <a name="to-save-a-script"></a>Para guardar un script

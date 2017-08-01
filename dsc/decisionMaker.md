@@ -1,15 +1,14 @@
 ---
-title: "Información general sobre la configuración de estado deseado para responsables de toma de decisiones"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: carmonm
-ms.prod: powershell
-ms.openlocfilehash: 052e0bbf49e50867cc1cb5bca95e860c6706bedb
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Información general sobre la configuración de estado deseado para responsables de toma de decisiones"
+ms.openlocfilehash: e8cb26c659dbacde814b1ceaedc0b1fb8dae9d63
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Información general sobre la configuración de estado deseado para responsables de toma de decisiones
 
@@ -39,9 +38,9 @@ Las configuraciones también pueden compartirse a través de la [Galería de Pow
 
 Las configuraciones también están [controladas por datos](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), lo que facilita que los equipos de operaciones identifiquen y cambien los entornos sin intervención del programador. 
 
-## <a name="desired-state-configuration-on--and-off-premise"></a>Configuración de estado deseado local y remota
+## <a name="desired-state-configuration-on--and-off-premises"></a>Desired State Configuration local y remota
 
-DSC se puede utilizar para administrar implementaciones locales y remotas. Para las soluciones locales, DSC tiene un [servidor de extracción](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver) que puede utilizarse para centralizar la administración de máquinas e informar sobre su estado. Para las soluciones de nube, DSC se puede utilizar siempre que se pueda usar Windows. También hay ofertas específicas de Azure basadas en la configuración de estado deseado, como [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), que centraliza la creación de informes de DSC. 
+DSC se puede usar para administrar implementaciones locales y remotas. Para las soluciones locales, DSC tiene un [servidor de extracción](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver) que puede utilizarse para centralizar la administración de máquinas e informar sobre su estado. Para las soluciones de nube, DSC se puede utilizar siempre que se pueda usar Windows. También hay ofertas específicas de Azure basadas en la configuración de estado deseado, como [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), que centraliza la creación de informes de DSC. 
 
 ## <a name="dsc-and-compatibility"></a>DSC y la compatibilidad
 

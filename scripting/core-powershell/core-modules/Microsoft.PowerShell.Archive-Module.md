@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Módulo Microsoft.PowerShell.Archive"
-ms.technology: powershell
 ms.assetid: 71a727b5-49a5-47a9-8034-161c86cf042b
-ms.openlocfilehash: faebb9161a89854e64af9e07081804958710f45a
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 2fd418ae92c2190aa1aa2c4353e49bf6cb5f5d89
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="microsoftpowershellarchive-module"></a>Módulo Microsoft.PowerShell.Archive
 Esta sección contiene los temas de Ayuda relativos a los cmdlets que se instalan con el módulo **Microsoft.PowerShell.Archive** de Windows PowerShell. El módulo Archive contiene cmdlets que permiten crear y extraer el o los archivos ZIP.
