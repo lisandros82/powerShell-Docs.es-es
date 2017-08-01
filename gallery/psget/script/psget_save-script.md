@@ -11,7 +11,8 @@ title: psget_save script
 ms.technology: powershell
 ms.openlocfilehash: 58003350b991ca10b1d8bc65964bbfdd324334b5
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="save-script"></a>Save-Script
 

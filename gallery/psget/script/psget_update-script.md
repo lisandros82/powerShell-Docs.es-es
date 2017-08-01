@@ -11,7 +11,8 @@ title: psget_update script
 ms.technology: powershell
 ms.openlocfilehash: b95ab77ba04d70d470a9740b452f415c872f8fa7
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="update-script"></a>Update-Script
 

@@ -11,7 +11,8 @@ title: psget_save module
 ms.technology: powershell
 ms.openlocfilehash: 9e83f1eeeb8e4bee666aeb845702f6562a487d6b
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="save-module"></a>Save-Module
 

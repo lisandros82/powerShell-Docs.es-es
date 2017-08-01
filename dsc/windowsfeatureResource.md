@@ -9,11 +9,12 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: 98c39d11122d26502723a302ebd7ad4cff0be35d
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="dsc-windowsfeature-resource"></a>Recurso de DSC WindowsFeature
 
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 El recurso **WindowsFeature** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para asegurarse de que los roles y las características se agreguen o quiten en un nodo de destino.
 

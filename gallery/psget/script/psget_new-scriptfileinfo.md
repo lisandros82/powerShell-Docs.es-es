@@ -11,7 +11,8 @@ title: psget_new scriptfileinfo
 ms.technology: powershell
 ms.openlocfilehash: d6b8790c3dd7ce366d608ff7bfd083ca12b201fd
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="new-scriptfileinfo"></a>New-ScriptFileInfo
 

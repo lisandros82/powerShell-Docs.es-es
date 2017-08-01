@@ -11,7 +11,8 @@ title: Eliminar elementos
 ms.technology: powershell
 ms.openlocfilehash: 0bc8261992802c75463c454dd990dccdbfb2eb12
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="deleting-items"></a>Eliminar elementos
 

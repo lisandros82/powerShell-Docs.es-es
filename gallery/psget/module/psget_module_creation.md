@@ -11,7 +11,8 @@ title: psget_module_creation
 ms.technology: powershell
 ms.openlocfilehash: f7a789fd11371371c90c1104cda84ba94c38c5d0
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 ## <a name="when-to-include-a-project-site-license-url-custom-icon"></a>¿Cuándo se debe incluir un sitio de proyecto, una dirección URL de licencia o un icono personalizado?
 

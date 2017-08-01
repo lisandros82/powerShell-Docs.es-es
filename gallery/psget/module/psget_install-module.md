@@ -11,7 +11,8 @@ title: psget_install module
 ms.technology: powershell
 ms.openlocfilehash: 82e4bb1ec76b1a51e1a99de85bc77a5429d46e26
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="install-module"></a>Install-Module
 

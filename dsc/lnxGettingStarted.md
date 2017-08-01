@@ -9,11 +9,12 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: c585dc929e85a404aecfb1e9f06daf2dfaf21832
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Introducción a la configuración de estado deseado (DSC) para Linux
 
-En este tema se ofrece una introducción al uso de la configuración de estado deseado (DSC) de PowerShell para Linux. Para obtener información general sobre DSC, consulte [Introducción a la configuración de estado deseado de Windows PowerShell](overview.md).
+En este tema se ofrece una introducción al uso de la configuración de estado deseado (DSC) de PowerShell para Linux. Para obtener información general sobre DSC, consulte [Introducción a la configuración de estado deseado de Windows PowerShell](overview.md).
 
 ## <a name="supported-linux-operation-system-versions"></a>Versiones de sistemas operativos Linux compatibles
 
@@ -135,7 +136,7 @@ Ejecute el comando siguiente para insertar la configuración DSC en el nodo de L
 
 ### <a name="distribute-the-configuration-with-a-pull-server"></a>Distribuir la configuración con un servidor de extracción
 
-Las configuraciones se pueden distribuir a un equipo Linux con un servidor de extracción, igual que con equipos Windows. Para obtener instrucciones sobre el uso de un servidor de extracción, consulte [Servidores de extracción de la configuración de estado deseado de Windows PowerShell](pullServer.md). Para obtener información adicional y conocer las limitaciones relativas al uso de equipos Linux con un servidor de extracción, consulte las notas de la versión de la configuración de estado deseado para Linux.
+Las configuraciones se pueden distribuir a un equipo Linux con un servidor de extracción, igual que con equipos Windows. Para obtener instrucciones sobre el uso de un servidor de extracción, consulte [Servidores de extracción de la configuración de estado deseado de Windows PowerShell](pullServer.md). Para obtener información adicional y conocer las limitaciones relativas al uso de equipos Linux con un servidor de extracción, consulte las notas de la versión de la configuración de estado deseado para Linux.
 
 ### <a name="working-with-configurations-locally"></a>Trabajar con configuraciones de forma local
 

@@ -9,7 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: df330cede5466f4d8da3b4be0057f6a822d15f00
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>Creación de un recurso de DSC en C`#`
 

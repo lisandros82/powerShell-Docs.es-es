@@ -11,7 +11,8 @@ title: psgallery_dispute_resolution
 ms.technology: powershell
 ms.openlocfilehash: b7a76a6d8746b4a22154f8a8c7dde89d61046116
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="dispute-resolution"></a>Resolución de conflictos
 

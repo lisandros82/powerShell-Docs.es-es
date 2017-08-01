@@ -11,7 +11,8 @@ title: psget_update modulemanifest
 ms.technology: powershell
 ms.openlocfilehash: 85153872326c5af8f869bc2254040eca1a152f8b
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="update-modulemanifest"></a>Update-ModuleManifest
 Actualiza un archivo de manifiesto de módulo.

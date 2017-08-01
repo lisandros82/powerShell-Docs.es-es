@@ -11,7 +11,8 @@ title: bootstrapping_nuget_proivder_and_exe
 ms.technology: powershell
 ms.openlocfilehash: 3ba2289f83f2de5f7be7e4e0cced1988ee17b466
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="bootstrap-both-nuget-provider-and-nugetexe-for-publish-operations-with-single-prompt-message-and-bootstrap-only-nuget-provider-for-non-publish-operations"></a>Arrancar el proveedor de NuGet y NuGet.exe para operaciones de publicación con un solo mensaje de solicitud y arrancar solo el proveedor de NuGet para operaciones que no son de publicación
 

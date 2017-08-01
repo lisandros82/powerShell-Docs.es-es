@@ -9,7 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: 099755bf8dc41adfedf77de451dbcdf390c298e9
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Escribir ayuda para configuraciones de DSC
 

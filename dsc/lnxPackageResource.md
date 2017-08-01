@@ -9,7 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: 31867cc7af96a3d8d527f5906d77bed5206940b4
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>Recurso nxPackage de DSC para Linux
 

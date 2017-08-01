@@ -11,7 +11,8 @@ title: psget_update module
 ms.technology: powershell
 ms.openlocfilehash: 3f843bcf667bdb40f45613911647acf464cbbf29
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="update-module"></a>Update-Module
 

@@ -11,7 +11,8 @@ title: psgallery_scriptanalyzer_rule_profile
 ms.technology: powershell
 ms.openlocfilehash: 3274b66203044c0ed9fc1135cea7472428eb753e
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="scriptanazlyer-rule-profile-for-gallery"></a>Perfil de las reglas ScryptAnalyzer para la Galería
 Para garantizar la calidad de los elementos que se publican en la Galería de PowerShell, ejecutamos reglas de [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) para determinar si se produce alguna infracción en los scripts que se envían.

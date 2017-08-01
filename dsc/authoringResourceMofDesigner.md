@@ -9,7 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.openlocfilehash: 4478806e46c9c6cdc314b1ecadd8554d6558e8f5
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="using-the-resource-designer-tool"></a>Uso de la herramienta Diseñador de recursos
 

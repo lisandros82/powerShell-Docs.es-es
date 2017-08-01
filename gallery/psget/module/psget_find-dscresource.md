@@ -11,7 +11,8 @@ title: psget_find dscresource
 ms.technology: powershell
 ms.openlocfilehash: afd13e1dd791794d62be4601477bcc77448586c5
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="find-dscresource"></a>Find-DscResource
 

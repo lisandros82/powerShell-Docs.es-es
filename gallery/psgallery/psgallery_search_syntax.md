@@ -11,7 +11,8 @@ title: psgallery_search_syntax
 ms.technology: powershell
 ms.openlocfilehash: 36b551cd6576b1d2a9ca696f2bfdab570ea2523f
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="gallery-search-syntax"></a>Sintaxis de búsqueda de la Galería
 

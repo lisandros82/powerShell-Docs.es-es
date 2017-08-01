@@ -11,7 +11,8 @@ title: psget_register psrepository
 ms.technology: powershell
 ms.openlocfilehash: aceee6fc411dafb915643996d57c23b5c8b25f53
 ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="register-psrepository"></a>Register-PSRepository
 
