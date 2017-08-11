@@ -58,18 +58,7 @@
         "AzurePSModulePage": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes",
-      "customized_template_paths": [
-        "_dependentPackages/azurecli.plugins/azurecli"
-      ],
-      "customized_tasks": {
-        "docset_prebuild": [
-          "_dependentPackages/Microsoft.OpenPublishing.AzurePSPlugin/tools/Restructure.ps1"
-        ]
-      },
-      "monikerPath": [
-        "mapping/monikerMapping.json"
-      ]
+      "template_folder": "_themes"
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_wmf",
@@ -121,8 +110,8 @@
     {
       "id": "Microsoft.OpenPublishing.AzurePSPlugin",
       "path_to_root": "_dependentPackages/Microsoft.OpenPublishing.AzurePSPlugin",
-      "version": "latest",
-      "nuget_feed": "https://www.myget.org/F/op/api/v2"
+      "version": "latest-prerelease",
+      "nuget_feed": "https://www.myget.org/F/op-dev/api/v2"
     }
   ]
 }
