@@ -1,15 +1,14 @@
 ---
-title: "Inicio rápido de la configuración de estado deseado"
-ms.date: 2017-03-13
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12T00:00:00.000Z
 author: eslesar
-manager: carmonm
-ms.prod: powershell
-ms.openlocfilehash: 7b905a887c5ca6121d7bda246e241f3ffae80210
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Inicio rápido de la configuración de estado deseado"
+ms.openlocfilehash: e8a73296827297bab3229392c4193fed940c53bf
+ms.sourcegitcommit: 46feddbc753523f464f139b5d272794620072fc8
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 08/02/2017
 ---
 > Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -18,7 +17,7 @@ translationtype: HT
 Este ejercicio le guía a través de la creación y aplicación de una especificación de la configuración de estado deseado (DSC) de principio a fin.
 En el ejemplo, nos aseguraremos de que un servidor tiene habilitada la característica `Web-Server` (IIS) y de que el contenido de un sitio web "Hello World" simple está presente en el directorio `intetpub\wwwroot` de ese servidor.
 
-Para información general de lo que es DSC y cómo funciona, consulte [Información general sobre la configuración de estado deseado para responsables de toma de decisiones](DscForEngineers.md).
+Para información general de lo que es DSC y cómo funciona, consulte [Información general sobre la configuración de estado deseado para responsables de toma de decisiones](decisionMaker.md).
 
 ## <a name="requirements"></a>Requisitos
 
@@ -59,7 +58,7 @@ Configuration WebsiteTest {
         # The first resource block ensures that the Web-Server (IIS) feature is enabled.
         WindowsFeature WebServer {
             Ensure = "Present"
-            Name =    "Web-Server"
+            Name   = "Web-Server"
         }
 
         # The second resource block ensures that the website content copied to the website root folder.
@@ -69,7 +68,7 @@ Configuration WebsiteTest {
             DestinationPath = 'c:\inetpub\wwwroot'
         }
     }
-} 
+}
 ```
 
 Guarde el archivo como `WebsiteTest.ps1`.
@@ -98,19 +97,20 @@ Esto genera la siguiente salida:
 Directory: C:\ConfigurationTest\WebsiteTest
 
 
-Mode                LastWriteTime         Length Name                                                                                                                                                       
-----                -------------         ------ ----                                                                                                                                                       
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
 -a----        3/13/2017   5:20 PM           2746 localhost.mof
 ```
 
 La primera línea hace que la función de configuración esté disponible en la consola.
 La segunda línea ejecuta la configuración.
 El resultado es que se crea una carpeta nueva llamada `WebsiteTest` como una subcarpeta de la carpeta actual.
-La carpeta `WebsiteTest` contiene un archivo denominado `localhost.mof`. Este es el archivo que se puede aplicar al nodo de destino.
+La carpeta `WebsiteTest` contiene un archivo denominado `localhost.mof`.
+Este es el archivo que se puede aplicar al nodo de destino.
 
 ## <a name="apply-the-configuration"></a>Aplicación de la configuración
 
-Ahora que ha compilado MOF, puede aplicar la configuración al nodo de destino (en este caso, el equipo local) mediante una llamada al cmdlet [Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration.md).
+Ahora que ha compilado MOF, puede aplicar la configuración al nodo de destino (en este caso, el equipo local) mediante una llamada al cmdlet [Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration).
 
 El cmdlet `Start-DscConfiguration` indica el [administrador de configuración local (LCM)](metaConfig.md), que es el motor de DSC, para aplicar la configuración.
 El LCM se encarga de llamar a los recursos de DSC para aplicar la configuración.
@@ -123,9 +123,10 @@ Start-DscConfiguration .\WebsiteTest
 
 ## <a name="test-the-configuration"></a>Probar la configuración
 
-Puede llamar al cmdlet [DscConfigurationStatus Get](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus.md) para ver si la configuración se realizó correctamente. 
+Puede llamar al cmdlet [DscConfigurationStatus Get](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) para ver si la configuración se realizó correctamente. 
 
-También puede probar los resultados directamente, en este caso examinando `http://localhost/` en un explorador web. Debería ver la página HTML "Hello World" que creó como el primer paso en este ejemplo.
+También puede probar los resultados directamente, en este caso examinando `http://localhost/` en un explorador web.
+Debería ver la página HTML "Hello World" que creó como el primer paso en este ejemplo.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

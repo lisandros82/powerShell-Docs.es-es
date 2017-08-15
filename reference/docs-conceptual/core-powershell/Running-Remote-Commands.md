@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: Ejecutar comandos remotos
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: a8645a348ebc25533f60cd049ed5872e49565b96
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 755c3c4ac93219c1d0f75394d1c900e8b5fea4be
+ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/08/2017
 ---
 # <a name="running-remote-commands"></a>Ejecutar comandos remotos
 Puede ejecutar comandos en un equipo o en cientos de ellos usando un solo comando de Windows PowerShell. Windows PowerShell admite la informática remota a través de varias tecnologías, como WS-Management, RPC y WMI.
@@ -27,7 +27,7 @@ Estos cmdlets son:
 
 -   [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
 
--   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
+ -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
 
 -   [Get-Service](https://technet.microsoft.com/en-us/library/dd347591.aspx)
 
@@ -72,7 +72,7 @@ Para ejecutar cualquier comando en uno o varios equipos remotos, use el cmdlet [
 Por ejemplo, para ejecutar un comando [Get-UICulture](https://technet.microsoft.com/en-us/library/dd347742.aspx) en los equipos remotos Server01 y Server02, escriba:
 
 ```
-Invoke-Command -ComputerName Server01, Server02 {Get-UICulture}
+Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
 ```
 
 El resultado se muestra en su equipo.
@@ -83,7 +83,6 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server01.corp.fabrikam.com
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
-
 Para más información sobre el cmdlet Invoke-Command, vea [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462).
 
 ### <a name="run-a-script"></a>Ejecutar un script
@@ -117,14 +116,14 @@ Invoke-Command -Session $s {$h = Get-HotFix}
 Ahora puede usar los datos de la variable $h en los siguientes comandos, como en el siguiente. Los resultados se muestran en el equipo local.
 
 ```
-Invoke-Command -Session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"}}
+Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
 ```
 
 ### <a name="advanced-remoting"></a>Comunicación remota avanzada
 La administración remota de Windows PowerShell empieza aquí. Con los cmdlets que se instalan con Windows PowerShell puede, entre otras muchas cosas, establecer y configurar sesiones remotas desde extremos tanto locales como remotos, crear sesiones personalizadas y restringidas, dejar que los usuarios importen comandos desde una sesión remota que se ejecutan implícitamente en la sesión remota o configurar la seguridad de una sesión remota.
 
 Para facilitar la configuración remota, Windows PowerShell incluye un proveedor WSMan. La unidad WSMAN: que este proveedor crea permite desplazarse por una jerarquía de valores de configuración en el equipo local y en los equipos remotos.
-Para obtener más información sobre el proveedor WSMan, vea el tema sobre el [proveedor WSMan](https://technet.microsoft.com/en-us/library/dd819476.aspx) y el tema   [About WS-Management Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx) (Acerca de los cmdlets de WS-Management). También puede escribir "Get-Help wsman" en la consola de Windows PowerShell.
+Para obtener más información sobre el proveedor WSMan, vea el tema sobre el [proveedor WSMan](https://technet.microsoft.com/en-us/library/dd819476.aspx) y el tema [About WS-Management Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx) (Acerca de los cmdlets de WS-Management). También puede escribir "Get-Help wsman" en la consola de Windows PowerShell.
 
 Para obtener más información, consulte:
 - [Acerca de las Preguntas más frecuentes sobre el acceso remoto](https://technet.microsoft.com/en-us/library/dd315359.aspx)

@@ -1,10 +1,21 @@
+---
+ms.date: 2017-06-12T00:00:00.000Z
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 6e0493a75e02efd81e833760f941f98566235efe
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 07/27/2017
+---
 # <a name="format-hex"></a>Format-Hex
 **Format-Hex** le permite ver datos de texto o binarios en formato hexadecimal, consulte [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)
 
 ## <a name="example-1"></a>Ejemplo 1
 Vea el contenido de una cadena en formato hexadecimal.
 
-```PowerShell
+```powershell
 "This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 ```
 
@@ -24,3 +35,4 @@ PS C:\> This is a very long line to force the line folding in Format-Hex cmdlet"
 
 PS C:\>
 ```
+

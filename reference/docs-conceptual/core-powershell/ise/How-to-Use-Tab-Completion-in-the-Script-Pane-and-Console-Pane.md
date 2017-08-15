@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Cómo usar la finalización con tabulación en el panel de scripts y en el panel de consola"
 ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
 ms.openlocfilehash: ba8d0af7e7fc0f1df9f65116be899097b0a97a3c
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="how-to-use-tab-completion-in-the-script-pane-and-console-pane"></a>Cómo usar la finalización con tabulación en el panel de scripts y en el panel de consola
 La finalización con tabulación proporciona ayuda automática al escribir en el panel de scripts o el panel de comandos. Para aprovechar esta característica, siga estos pasos:

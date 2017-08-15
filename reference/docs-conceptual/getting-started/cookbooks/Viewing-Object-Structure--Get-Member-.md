@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: Ver la estructura del objeto Get Member
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
 ms.openlocfilehash: eaa6cc44ecab04c76b90418115f388f6ff30e437
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="viewing-object-structure-get-member"></a>Ver la estructura del objeto (Get-Member)
 Dado que los objetos desempeñan una función esencial en Windows PowerShell, existen varios comandos nativos diseñados para trabajar con tipos de objetos arbitrarios. El más importante es el comando **Get-Member**.

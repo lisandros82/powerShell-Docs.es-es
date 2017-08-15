@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Explorar Windows PowerShell ISE"
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 ms.openlocfilehash: 979209d4b200728b7e78e341bb9595741d2b8e68
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Explorar Windows PowerShell ISE
 Puede usar el Entorno de scripting integrado (ISE) de Windows PowerShell® para crear, ejecutar y depurar scripts y comandos. Windows PowerShell ISE consta de la barra de menús, las pestañas de Windows PowerShell, la barra de herramientas, las pestañas de script, un panel de scripts, un panel de consola, una barra de estado, un control deslizante de tamaño de texto y la ayuda contextual.

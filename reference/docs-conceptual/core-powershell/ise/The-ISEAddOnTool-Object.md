@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: El objeto ISEAddOnTool
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
 ms.openlocfilehash: 15f0cdd1425b9f87edeb0404fc385275e4a9d1d8
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-iseaddontool-object"></a>El objeto ISEAddOnTool
   Un objeto **ISEAddonTool** representa una herramienta de complemento instalada que proporciona funcionalidad adicional a Windows PowerShell ISE. Un ejemplo es la herramienta **Comandos** que se puede mostrar haciendo clic en **Ver** y, después, en **Show Command Add-on** (Mostrar complemento Comandos). Esta herramienta es accesible mediante la manipulación de los distintos objetos **ISEAddOnTool** disponibles.

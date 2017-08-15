@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Administrar unidades de Windows PowerShell"
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
 ms.openlocfilehash: 92fa70785bcaeac2bd75a5ada91f3adff4fa10eb
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="managing-windows-powershell-drives"></a>Administrar unidades de Windows PowerShell
 Una *unidad de Windows PowerShell* es una ubicación de almacén de datos a la que se puede acceder como una unidad del sistema de archivos en Windows PowerShell. Los proveedores de Windows PowerShell crean algunas unidades automáticamente, como las unidades de sistema de archivos (C: y D:), las unidades de Registro (HKCU: y HKLM:) y la unidad de certificado (Cert:). También puede crear sus propias unidades de Windows PowerShell. Estas unidades son muy útiles, pero estarán disponibles solo en Windows PowerShell. No se puede tener acceso a ellas con otras herramientas de Windows, como el Explorador de archivos o Cmd.exe.

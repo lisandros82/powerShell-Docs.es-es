@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Canalización de objetos"
 ms.assetid: 523d8ae4-d743-47a4-b79a-806130ca688a
 ms.openlocfilehash: 3fa41cc744cf3ab66fc5ef186ead8eb919429a76
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="object-pipeline"></a>Canalización de objetos
 Las canalizaciones actúan como una serie de segmentos de canalización conectados. Los elementos que se mueven por la canalización pasan a través de cada segmento. Para crear una canalización en Windows PowerShell, se conectan comandos con el operador de canalización "|". La salida de cada comando se usa como entrada para el siguiente.

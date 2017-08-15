@@ -1,15 +1,14 @@
 ---
-title: "Opciones de credenciales en los datos de configuración"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12T00:00:00.000Z
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: e6ea0992f90a72da6426d9112950c925ab6cd32b
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Opciones de credenciales en los datos de configuración"
+ms.openlocfilehash: ec4eeb8e519158b2bf929b949e381cdba54f8928
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 07/27/2017
 ---
 # <a name="credentials-options-in-configuration-data"></a>Opciones de credenciales en los datos de configuración
 >Se aplica a: Windows PowerShell 5.0
@@ -137,7 +136,7 @@ Los recursos más recientes y los recursos personalizados pueden utilizar esta p
 
 Para encontrar las propiedades de credenciales disponibles en un recurso, use `Get-DscResource -Name ResourceName -Syntax` o Intellisense en el ISE (`CTRL+SPACE`).
 
-```PowerShell
+```powershell
 PS C:\> Get-DscResource -Name Group -Syntax
 Group [String] #ResourceName
 {
@@ -174,7 +173,7 @@ En la mayoría de casos esto podría deberse a una cuenta de usuario genérica y
 
 En el ejemplo de código siguiente se utiliza DSC para rellenar un grupo local con un usuario de dominio:
 
-```PowerShell
+```powershell
 Configuration DomainCredentialExample
 {
     param
@@ -233,7 +232,7 @@ Para más información sobre certificados y DSC, [lea esta publicación](http://
 
 Para forzar una contraseña de texto sin formato, el recurso requiere la palabra clave `PsDscAllowPlainTextPassword` en la sección de datos de configuración, como se indica a continuación:
 
-```PowerShell
+```powershell
 Configuration DomainCredentialExample
 {
     param
@@ -285,7 +284,7 @@ Existen excepciones para "localhost", "127.0.0.1" y "::1" en la parte del domini
 En el ejemplo del recurso `Group` de DSC anterior, la consulta a un dominio de Active Directory *requiere* una cuenta de dominio.
 En este caso, agregue la propiedad `PSDscAllowDomainUser` al bloque `ConfigurationData` como se indica a continuación:
 
-```PowerShell
+```powershell
 $cd = @{
     AllNodes = @(
         @{

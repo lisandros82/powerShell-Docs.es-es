@@ -1,16 +1,14 @@
 ---
+ms.date: 2017-06-12T00:00:00.000Z
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
 title: Problemas conocidos de WMF 5.1
-ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: krishna
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 260a3bc443302f2d582f455aafb30ed717d95c84
-ms.sourcegitcommit: cfe32f213819ae76de05da564c3e2c4b7ecfda2f
-translationtype: HT
+ms.openlocfilehash: bb8967a55ec32f0ce21812e065725985010bfc8e
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 07/27/2017
 ---
 # <a name="known-issues-in-wmf-51"></a>Problemas conocidos de WMF 5.1 #
 
@@ -32,7 +30,7 @@ En esta versión, hay dos problemas que deben tenerse en cuenta cuando se utilic
 
 ## <a name="dsc-after-uninstall-wmf"></a>DSC después de desinstalar WMF 
 * La desinstalación de WMF no elimina los documentos MOF de DSC desde la carpeta de configuración. DSC no funcionará correctamente si los documentos MOF contienen propiedades más recientes que no están disponibles en los sistemas más antiguos. En este caso, ejecute el siguiente script desde la consola de PowerShell con privilegios elevados para limpiar los estados de DSC.
- ```PowerShell
+ ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
             "$env:windir\system32\configuration\*.mof.checksum",
             "$env:windir\system32\configuration\PartialConfiguration\*.mof",
@@ -63,3 +61,4 @@ Register-PSSessionConfiguration -Name $jea.Name -Path $pssc.FullName -Force
 # Ensure the access policies remain the same
 Set-PSSessionConfiguration -Name $newjea.Name -SecurityDescriptorSddl $jea.SecurityDescriptorSddl
 ```
+

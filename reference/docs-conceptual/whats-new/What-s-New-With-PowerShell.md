@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: Novedades de PowerShell
 ms.openlocfilehash: 146b6cbfb5903874d27872711369d517ade67a93
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="what39s-new-with-powershell"></a>Novedades de PowerShell
 Windows PowerShell® 5.0 incluye nuevas características importantes que amplían y mejoran su uso, y permiten controlar y administrar entornos basados en Windows de forma más sencilla y completa.  Las principales mejoras se encuentran en las áreas de Configuración de estado deseado, seguridad, rendimiento, comunicación remota y mejoras del lenguaje.

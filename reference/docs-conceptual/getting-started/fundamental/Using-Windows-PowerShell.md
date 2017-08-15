@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Uso de Windows PowerShell"
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
 ms.openlocfilehash: d035d1c1b8315e2efaeefb40ad02dfada15bfba8
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="using-windows-powershell"></a>Uso de Windows PowerShell
 Windows PowerShell® es un lenguaje de scripting y shell de línea de comandos basado en tareas diseñado especialmente para la administración del sistema. Basado en .NET Framework, Windows PowerShell ayuda a los profesionales de TI y a los usuarios avanzados a controlar y automatizar la administración tanto del sistema operativo Windows como de las aplicaciones que se ejecutan en Windows.

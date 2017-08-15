@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: El objeto ISEAddOnToolCollection
-ms.technology: powershell
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
-ms.openlocfilehash: 35327fafed0f6c6b1303f3bc99e9be8a9db4f61a
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: ba8b4e0e3952226407f00dea8b32785633256089
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-iseaddontoolcollection-object"></a>El objeto ISEAddOnToolCollection
   El objeto **ISEAddOnToolCollection** es una colección de objetos **ISEAddOnTool**. Un ejemplo es el objeto **$psISE.CurrentPowerShellTab.VerticalAddOnTools**.
@@ -29,7 +25,7 @@ translationtype: HT
 
  **\[IsVisible\]** (booleano opcional). Si se establece en **$true**, la herramienta de complemento está visible inmediatamente en el panel de herramientas asociado.
 
-```PowerShell
+```powershell
 # Load a DLL with an add-on and then add it to the ISE
 [reflection.assembly]::LoadFile("c:\test\ISESimpleSolution\ISESimpleSolution.dll")
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
@@ -42,7 +38,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  **Item** (Microsoft.PowerShell.Host.ISE.ISEAddOnTool). Especifica el objeto que se quitará de Windows PowerShell ISE.
 
-```PowerShell
+```powershell
 # Load a DLL with an add-on and then add it to the ISE
 [reflection.assembly]::LoadFile("c:\test\ISESimpleSolution\ISESimpleSolution.dll")
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
@@ -55,7 +51,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  **psTab** (Microsoft.PowerShell.Host.ISE.PowerShellTab). La pestaña de PowerShell que se seleccionará.
 
-```PowerShell
+```powershell
       $newTab = $psISE.PowerShellTabs.Add()
 # Change the DisplayName of the new PowerShell tab. 
 $newTab.DisplayName="Brand New Tab"
@@ -68,7 +64,7 @@ $newTab.DisplayName="Brand New Tab"
 
  **psTab** (Microsoft.PowerShell.Host.ISE.PowerShellTab). La pestaña de PowerShell que se quitará.
 
-```PowerShell
+```powershell
 $newTab = $psISE.PowerShellTabs.Add()
 Change the DisplayName of the new PowerShell tab. 
 $newTab.DisplayName="This tab will go away in 5 seconds" 

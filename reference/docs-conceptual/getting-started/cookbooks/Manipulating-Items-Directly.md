@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: Manipular elementos directamente
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
 ms.openlocfilehash: d9aa95dcb0da2e8203cbe32d64b95bf33d914166
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="manipulating-items-directly"></a>Manipular elementos directamente
 Los elementos que se ven en las unidades de Windows PowerShell (como los archivos y carpetas en las unidades del sistema de archivos y las claves del Registro en las unidades de Registro de Windows PowerShell) se denominan *elementos* en Windows PowerShell. Los cmdlets que funcionan con los elementos contienen el término **Item** en sus nombres.

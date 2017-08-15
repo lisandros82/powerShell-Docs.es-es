@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: Trabajar con archivos, carpetas y claves del Registro
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
 ms.openlocfilehash: 2bae8d6931c84bee4aa30a43742acd052b82d079
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Trabajar con archivos, carpetas y claves del Registro
 En Windows PowerShell se usa el término **Item** para hacer referencia a los elementos contenidos en una unidad de Windows PowerShell. Cuando se trabaja con el proveedor FileSystem de Windows PowerShell, un **Item** puede ser un archivo, una carpeta o la unidad de Windows PowerShell. Enumerar estos elementos y trabajar con ellos son tareas críticas básicas en la mayoría de las configuraciones administrativas, de modo que conviene abordar estas tareas en profundidad.

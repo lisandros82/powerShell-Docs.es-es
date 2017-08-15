@@ -1,16 +1,14 @@
 ---
+ms.date: 2017-06-12T00:00:00.000Z
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
 title: "Nuevos escenarios y características de WMF 5.1"
-ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 1ea650d5dd69251c0407133f649ea8efb1315dd2
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 7340fb38a2f6992bb922a81ee2227754252899d7
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 07/27/2017
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Nuevos escenarios y características de WMF 5.1 #
 
@@ -37,7 +35,7 @@ Hemos agregado dos nuevos cmdlets en el módulo [Microsoft.PowerShell.Security](
 
 New-FileCatalog crea un archivo de catálogo de Windows para un conjunto de carpetas y archivos. Este archivo de catálogo contiene hashes para todos los archivos de las rutas de acceso especificadas. Los usuarios pueden distribuir el conjunto de carpetas junto con el correspondiente archivo de catálogo que representa a esas carpetas. Esta información es útil para validar si se han realizado cambios en las carpetas desde que se creó el catálogo.    
 
-```PowerShell
+```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 Se admiten las versiones 1 y 2 del catálogo. La versión 1, utiliza el algoritmo hash SHA1 para crear los hashes de archivo y la versión 2 utiliza SHA256. La versión 2 del catálogo no es compatible con *Windows Server 2008 R2* o *Windows 7*. Deberá utilizar la versión 2 del catálogo en *Windows 8*, *Windows Server 2012* y sistemas operativos posteriores.  
@@ -58,7 +56,7 @@ Para comprobar la integridad del archivo de catálogo (Pester.cat en el ejemplo 
 
 Test-FileCatalog valida el catálogo que representa un conjunto de carpetas. 
 
-```PowerShell
+```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -75,20 +73,20 @@ La caché normalmente se lee en el inicio al buscar un comando y se escribe en u
 
 Para cambiar la ubicación predeterminada de la memoria caché, establezca la variable de entorno `$env:PSModuleAnalysisCachePath` antes de iniciar PowerShell. Los cambios en esta variable de entorno solo afectarán a los procesos secundarios. El valor debe asignar un nombre a una ruta de acceso completa (nombre de archivo incluido) en la que PowerShell tiene permiso para crear y escribir archivos. Para deshabilitar la caché del archivo, establezca este valor en una ubicación no válida, como por ejemplo:
 
-```PowerShell
+```powershell
 $env:PSModuleAnalysisCachePath = 'nul'
 ```
 
 Esto establece la ruta de acceso en un dispositivo no válido. Si PowerShell no puede escribir en la ruta de acceso, no se devuelve ningún error, pero se pueden ver informes del error a través de un seguimiento:
 
-```PowerShell
+```powershell
 Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
 ```
 
 Al escribir en la caché, PowerShell buscará si hay módulos que no existen, con el fin de evitar que la caché sea demasiado grande.
 A veces no interesa que se realicen estas comprobaciones, en cuyo caso se pueden desactivar estableciendo:
 
-```PowerShell
+```powershell
 $env:PSDisableModuleAnalysisCacheCleanup = 1
 ```
 
@@ -112,3 +110,4 @@ En WMF 5.1:
 En WMF 5.1, se actualizó la versión de Pester que se incluye con PowerShell de la versión 3.3.5 a la 3.4.0, con la adición de confirmación https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, lo que permite un mejor comportamiento para Pester en Nano Server. 
 
 Puede revisar los cambios en las versiones 3.3.5 a 3.4.0 inspeccionando el archivo ChangeLog.md en: https://github.com/pester/Pester/blob/master/CHANGELOG.md
+

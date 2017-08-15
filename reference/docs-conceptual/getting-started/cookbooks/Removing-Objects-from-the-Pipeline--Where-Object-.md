@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Quitar objetos de la canalización Where Object"
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
 ms.openlocfilehash: 4140c4c3ebb26223d03ca139992fedf6e184a38b
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Quitar objetos de la canalización (Where-Object)
 En Windows PowerShell, se suelen generar y pasar más objetos de los deseados a una canalización. Puede especificar las propiedades de los objetos concretos que quiere que se muestren mediante los cmdlets **Format**, pero esto no ayuda a resolver el problema de eliminación de objetos completos de la presentación. Es posible que quiera filtrar objetos antes del final de una canalización, para poder realizar acciones solo en un subconjunto de los objetos generados inicialmente.

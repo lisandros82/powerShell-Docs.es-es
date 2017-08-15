@@ -1,16 +1,14 @@
 ---
-title: "Especificación de dependencias entre nodos"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12T00:00:00.000Z
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: c99ef444027a82d3adeba6a060f60fba3a0fe530
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Especificación de dependencias entre nodos"
+ms.openlocfilehash: 885c130fb050629aac4c072e18a147d77b9deb8f
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 07/27/2017
 ---
 # <a name="specifying-cross-node-dependencies"></a>Especificación de dependencias entre nodos
 
@@ -28,11 +26,31 @@ Para usar los recursos **WaitForXXXX**, cree un bloque de recursos de ese tipo d
 
 Por ejemplo, en la configuración siguiente, el nodo de destino está esperando que el recurso **xADDomain** finalice en el nodo **MyDC** con un número máximo de 30 reintentos, a intervalos de 15 segundos, antes de que el nodo de destino pueda unirse al dominio.
 
-```PowerShell
+```powershell
 Configuration JoinDomain
 
 {
-    Import-DscResource -Module xComputerManagement
+    Import-DscResource -Module xComputerManagement, xActiveDirectory
+
+    Node myDC
+    {
+        WindowsFeature InstallAD
+        {
+            Ensure = 'Present' 
+            Name = 'AD-Domain-Services' 
+        }
+
+        xADDomain NewDomain 
+        { 
+            DomainName = 'Contoso.com'            
+            DomainAdministratorCredential = (Get-Credential)
+            SafemodeAdministratorPassword = (Get-Credential)
+            DatabasePath = "C:\Windows\NTDS"
+            LogPath = "C:\Windows\NTDS"
+            SysvolPath = "C:\Windows\Sysvol"
+        }
+
+    }
 
     Node myDomainJoinedServer
     {
@@ -47,7 +65,7 @@ Configuration JoinDomain
 
         xComputer JoinDomain
         {
-            Name             = 'MyPC'
+            Name             = 'myPC'
             DomainName       = 'Contoso.com'
             Credential       = (Get-Credential)
             DependsOn        ='[WaitForAll]DC'

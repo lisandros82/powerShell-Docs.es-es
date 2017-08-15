@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: Aprendizaje de los nombres de Windows PowerShell
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
 ms.openlocfilehash: 28c821c4a617b6ac775dbdda8ade3d15c3f218c3
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="learning-windows-powershell-names"></a>Aprendizaje de los nombres de Windows PowerShell
 El aprendizaje de nombres de comandos y parámetros de comando supone una inversión de tiempo considerable con la mayoría de las interfaces de línea de comandos. El problema es que hay muy pocos patrones, por lo que es la única manera de aprender consiste en memorizar cada comando y cada parámetro que necesite usar de forma regular.
