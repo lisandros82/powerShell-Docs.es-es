@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: El objeto ISEFile
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ms.openlocfilehash: 0e1c09c4a92868448d76cc7b4954d250773ce2f2
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-isefile-object"></a>El objeto ISEFile
   Un objeto **ISEFile** representa un archivo en el Entorno de scripting integrado (ISE) de Windows PowerShell®. Es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEFile. Este tema enumera sus métodos de miembro y propiedades de miembro. **$psISE.CurrentFile** y los archivos de la colección de archivos en una pestaña de PowerShell son todas las instancias de la clase Microsoft.PowerShell.Host.ISE.ISEFile.
@@ -19,8 +19,7 @@ ms.lasthandoff: 06/08/2017
 
  Guarda el archivo en disco.
 
- **\[saveEncoding\]**: [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) opcional.
- Un parámetro de codificación de carácter opcional que se usará para el archivo guardado. El valor predeterminado es **UTF8**.
+ **\[saveEncoding\]**: [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) opcional. Un parámetro de codificación de carácter opcional que se usará para el archivo guardado. El valor predeterminado es **UTF8**.
 
  **Excepciones**
  -   **System.IO.IOException**: no se pudo guardar el archivo.
@@ -45,8 +44,7 @@ $myfile.Encoding
 
  **filename**: cadena. El nombre que se utilizará para guardar el archivo.
 
- **\[saveEncoding\]**: [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) opcional.
- Un parámetro de codificación de carácter opcional que se usará para el archivo guardado. El valor predeterminado es **UTF8**.
+ **\[saveEncoding\]**: [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) opcional. Un parámetro de codificación de carácter opcional que se usará para el archivo guardado. El valor predeterminado es **UTF8**.
 
  **Excepciones**
  -   **System.ArgumentNullException**: el parámetro **nombre_de_archivo** es null.

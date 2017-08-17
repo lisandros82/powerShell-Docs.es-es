@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Ayuda para la línea de comandos de PowerShell.exe"
-ms.technology: powershell
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: 609682294c344129f96afd0241116bb19154d19e
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 4a14223dd024d967810a90dec10e416e4e35d6a2
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="powershellexe-command-line-help"></a>Ayuda de línea de comandos de PowerShell.exe
 Inicia una sesión de Windows PowerShell. Puede usar PowerShell.exe para iniciar una sesión de Windows PowerShell desde la línea de comandos de otra herramienta, como Cmd.exe, o usarlo en la línea de comandos de Windows PowerShell para iniciar una nueva sesión. Use los parámetros para personalizar la sesión.
@@ -50,13 +46,12 @@ Establece la directiva de ejecución predeterminada para la sesión actual y la 
 ### <a name="-file-filepath-parameters"></a>-File <FilePath> \[<Parameters>]
 Ejecuta el script especificado en el ámbito local ("origen de puntos"), para que las funciones y variables que crea el script estén disponibles en la sesión actual. Escriba la ruta de acceso del archivo de script y los parámetros. **File** debe ser el último parámetro del comando, puesto que todos los caracteres escritos después del nombre de parámetro **File** se interpretan como la ruta de acceso de archivo de script seguido de los parámetros de los parámetros del script y sus valores.
 
-Puede incluir los parámetros de un script, así como los valores de parámetro, en el valor del parámetro **File**. Por ejemplo: `-File .\Get-Script.ps1 -Domain Central`
+Puede incluir los parámetros de un script, así como los valores de parámetro, en el valor del parámetro **File**. Por ejemplo: `-File .\Get-Script.ps1 -Domain Central`. Debe tenerse en cuenta que los parámetros que se pasan al script lo hacen como cadenas literales (una vez interpretados por el shell actual).
+Por ejemplo, si se está en cmd.exe y se quiere pasar un valor de la variable de entorno, se usará la sintaxis de cmd.exe: `powershell -File .\test.ps1 -Sample %windir%`. En caso de usar la sintaxis de PowerShell, el script en este ejemplo recibirá el literal "$env:windir" en lugar del valor de esa variable de entorno: `powershell -File .\test.ps1 -Sample $env:windir`.
 
 Normalmente, los parámetros de modificador de un script se incluyen o se omiten. Por ejemplo, el siguiente comando usa el parámetro **All** del archivo de script Get-Script.ps1: `-File .\Get-Script.ps1 -All`
 
-En raras ocasiones, es posible que deba proporcionar un valor booleano para un parámetro de modificador. Para proporcionar un valor booleano para un parámetro de modificador en el valor del parámetro **File**, escriba el nombre y el valor de parámetro entre llaves, como en el ejemplo siguiente: `-File .\Get-Script.ps1 {-All:$False}`
-
-### <a name="-inputformat-text--xml"></a>-InputFormat {Text | XML}
+### <a name="-inputformat-text--xml"></a>\-InputFormat {Text | XML}
 Describe el formato de los datos que se envían a Windows PowerShell. Los valores válidos son "Text" (cadenas de texto) o "XML" (formato CLIXML serializado).
 
 ### <a name="-mta"></a>-Mta
@@ -95,6 +90,7 @@ Establece el estilo de ventana de la sesión. Los valores válidos son Normal, M
 
 ### <a name="-command"></a>-Command
 Ejecuta los comandos especificados (y todos los parámetros) como si se hubiesen escrito en el símbolo del sistema de Windows PowerShell y, después, se cierra, a menos que se especifique el parámetro NoExit.
+Básicamente, cualquier texto situado tras `-Command` se envía como una sola línea de comandos a PowerShell (esto es diferente a cómo `-File` controla los parámetros que se envían a un script).
 
 El valor del comando puede ser "-", una cadena. o un bloque de scripts. Si el valor de Command es "-", el texto del comando se lee de la entrada estándar.
 

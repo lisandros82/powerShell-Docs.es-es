@@ -3,10 +3,10 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Reglas de autorización y características de seguridad de Windows PowerShell Web Access"
 ms.openlocfilehash: 706830f618173879185f5b84570fdc7782434d59
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reglas de autorización y características de seguridad de Windows PowerShell Web Access
 
@@ -35,7 +35,7 @@ Las reglas de autenticación de Windows PowerShell Web Access son reglas de la l
 </colgroup>
 <thead>
 <tr class="header">
-<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">Nota de seguridad</span></th>
+<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> Nota de seguridad </span></th>
 </tr>
 </thead>
 <tbody>
@@ -111,7 +111,7 @@ Para más información sobre la configuración de reglas de autorización, consu
 <a href="" id="BKMK_sec"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Seguridad</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Seguridad</span></a>
 
 ------------------------------------------------------------------------
 
@@ -167,7 +167,7 @@ En la siguiente tabla, se describen los cuatro niveles de seguridad entre los us
 <a href="" id="BKMK_configrules"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Configuración de reglas de autorización</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Configuración de reglas de autorización</span></a>
 
 ------------------------------------------------------------------------
 
@@ -183,7 +183,7 @@ Los cmdlets de Windows PowerShell Web Access admiten un carácter comodín: un a
 </colgroup>
 <thead>
 <tr class="header">
-<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">Nota </span></th>
+<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">Nota</span></th>
 </tr>
 </thead>
 <tbody>
@@ -235,7 +235,7 @@ Los cmdlets de Windows PowerShell Web Access admiten un carácter comodín: un a
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">Nota </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">Nota</span></th>
     </tr>
     </thead>
     <tbody>
@@ -248,7 +248,7 @@ Los cmdlets de Windows PowerShell Web Access admiten un carácter comodín: un a
 <a href="" id="BKMK_others"></a>
 ####
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Ejemplos de otros escenarios de reglas de autorización</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Ejemplos de otros escenarios de reglas de autorización</span></a>
 
 ------------------------------------------------------------------------
 
@@ -268,7 +268,7 @@ Cada sesión de Windows PowerShell usa una configuración de sesión. Si esta no
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">Nota de seguridad</span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> Nota de seguridad </span></th>
     </tr>
     </thead>
     <tbody>
@@ -298,7 +298,7 @@ Cada sesión de Windows PowerShell usa una configuración de sesión. Si esta no
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">Nota </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">Nota</span></th>
     </tr>
     </thead>
     <tbody>
@@ -310,7 +310,7 @@ Cada sesión de Windows PowerShell usa una configuración de sesión. Si esta no
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Uso de un solo conjunto de reglas de autorización para varios sitios</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Uso de un solo conjunto de reglas de autorización para varios sitios</span></a>
 
 ------------------------------------------------------------------------
 
@@ -320,8 +320,8 @@ La ruta de acceso al archivo XML de reglas de autorización se almacena en el ar
 
 <a href="" id="BKMK_sesmgmt"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Administración de sesiones</span></a>
-<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Administración de sesiones</span></a>
+<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Haga clic con el botón derecho para copiar y compartir el vínculo de esta sección."></a>
 
 ------------------------------------------------------------------------
 
@@ -331,7 +331,7 @@ De manera predeterminada, Servidor web (IIS) está configurado para reiniciar el
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Establecer parámetros predeterminados en la página de inicio de sesión</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Establecer parámetros predeterminados en la página de inicio de sesión</span></a>
 
 ------------------------------------------------------------------------
 
@@ -352,7 +352,7 @@ Si la puerta de enlace de Windows PowerShell Web Access se ejecuta en Windows Se
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Tiempos de espera y desconexiones no planeadas</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Tiempos de espera y desconexiones no planeadas</span></a>
 
 ------------------------------------------------------------------------
 
@@ -362,8 +362,8 @@ En Windows PowerShell Web Access cuando se ejecuta en Windows Server 2012 R2, se
 
 Si el servidor de puerta de enlace está ejecutando Windows Server 2012 R2, Windows PowerShell Web Access permite a los usuarios volver a conectarse a las sesiones guardadas en otro momento, pero cuando errores de red, apagados no planificados u otros errores desconectan las sesiones, los usuarios no pueden ver o volver a conectarse a las sesiones guardadas hasta que haya vencido el período de tiempo de espera especificado por el administrador de la puerta de enlace.
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Consulte también</span></a>
-<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Vea también</span></a>
+<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Haga clic con el botón derecho para copiar y compartir el vínculo de esta sección."></a>
 
 ------------------------------------------------------------------------
 

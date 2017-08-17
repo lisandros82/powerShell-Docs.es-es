@@ -3,10 +3,10 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Uso de la consola de Windows PowerShell basada en web
 ms.openlocfilehash: 48ed1646c00f909c4e950f197f51a30205060ef0
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 #  <a name="use-the-web-based-windows-powershell-console"></a>Uso de la consola de Windows PowerShell basada en web
 
@@ -35,7 +35,7 @@ Windows PowerShell Web Access admite los siguientes exploradores de Internet. Au
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Exploradores de equipos de escritorio admitidos</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Exploradores de equipos de escritorio admitidos</span></a>
 
 ------------------------------------------------------------------------
 
@@ -51,7 +51,7 @@ Windows PowerShell Web Access admite los siguientes exploradores de Internet. Au
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Exploradores o dispositivos móviles mínimamente probados</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Exploradores o dispositivos móviles mínimamente probados</span></a>
 
 ------------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ Windows PowerShell Web Access admite los siguientes exploradores de Internet. Au
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Requisitos de explorador</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Requisitos de explorador</span></a>
 
 ------------------------------------------------------------------------
 
@@ -79,8 +79,8 @@ Para usar la consola de Windows PowerShell Web Access basada en web, los explora
 
 <a href="" id="BKMK_sign"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Inicio de sesión en Windows PowerShell Web Access</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Inicio de sesión en Windows PowerShell Web Access</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Haga clic con el botón derecho para copiar y compartir el vínculo de esta sección."></a>
 
 ------------------------------------------------------------------------
 
@@ -98,7 +98,7 @@ El administrador de Windows PowerShell Web Access debe proporcionar una direcci�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">Nota </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">Nota</span></th>
     </tr>
     </thead>
     <tbody>
@@ -124,8 +124,8 @@ El administrador de Windows PowerShell Web Access debe proporcionar una direcci�
 
 <a href="" id="BKMK_timeout"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Cierre de sesión y tiempo de espera agotado</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Cierre de sesión y tiempo de espera agotado</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Haga clic con el botón derecho para copiar y compartir el vínculo de esta sección."></a>
 
 ------------------------------------------------------------------------
 
@@ -155,8 +155,8 @@ Si desea volver a iniciar sesión, abra de nuevo la página web de Windows Power
 
 <a href="" id="BKMK_web"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Diferencias de la consola de Windows PowerShell basada en web</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Diferencias de la consola de Windows PowerShell basada en web</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Haga clic con el botón derecho para copiar y compartir el vínculo de esta sección."></a>
 
 ------------------------------------------------------------------------
 
@@ -164,7 +164,7 @@ Tras iniciar sesión en Windows PowerShell Web Access, una consola de Windows Po
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Diferencias funcionales con PowerShell.exe</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Diferencias funcionales con PowerShell.exe</span></a>
 
 ------------------------------------------------------------------------
 
@@ -276,7 +276,7 @@ La mayoría de las funcionalidades del host de Windows PowerShell están disponi
 <a href="" id="BKMK_limits"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Limitaciones de la consola basada en web</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Limitaciones de la consola basada en web</span></a>
 
 ------------------------------------------------------------------------
 
@@ -329,8 +329,8 @@ La mayoría de las funcionalidades del host de Windows PowerShell están disponi
 
         En el [blog del equipo de Windows PowerShell](http://blogs.msdn.com/b/powershell/), encontrará más ejemplos para personalizar la visualización de la consola.
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Consulte también</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Contraer"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Vea también</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Haga clic con el botón derecho para copiar y compartir el vínculo de esta sección."></a>
 
 ------------------------------------------------------------------------
 

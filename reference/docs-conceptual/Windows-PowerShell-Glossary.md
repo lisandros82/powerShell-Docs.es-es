@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Glosario de Windows PowerShell
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 9b8ff47a568b8a71cc51f50b3f3ba5ad3dab1ad1
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 48e5d832ead720c8bc7753c94f757ddb21846fc9
+ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/08/2017
 ---
 # <a name="windows-powershell-glossary"></a>Glosario de Windows PowerShell
 
@@ -15,7 +15,7 @@ ms.lasthandoff: 06/08/2017
 |Término|Definición|
 |--------|--------------|
 |módulo binario|Módulo de Windows PowerShell cuyo módulo raíz es un archivo de módulo binario (.dll). Un módulo binario puede o no incluir un manifiesto de módulo.|
-|parámetro común|Parámetro que el motor de Windows PowerShell agrega a todos los cmdlets y a las funciones avanzadas.|
+|parámetro común|Parámetro que el motor de Windows PowerShell agrega a todos los cmdlets, a las funciones avanzadas y a los flujos de trabajo.|
 |usar el operador punto|En Windows PowerShell, iniciar un comando escribiendo un punto y un espacio antes del comando. Los comandos que usan el operador punto se ejecutan en el ámbito actual en lugar de en un nuevo ámbito. Las variables, los alias, las funciones o las unidades que crea el comando se crean en el ámbito actual y están disponibles para los usuarios cuando se completa el comando.|
 |módulo dinámico|Módulo que solo existe en memoria. Los cmdlets New-Module e Import-PSSession permiten crear módulos dinámicos.|
 |parámetro dinámico|Parámetro que se agrega a un cmdlet, una función o un script de Windows PowerShell en determinadas condiciones. Los cmdlets, las funciones, los proveedores y los scripts pueden agregar parámetros dinámicos.|

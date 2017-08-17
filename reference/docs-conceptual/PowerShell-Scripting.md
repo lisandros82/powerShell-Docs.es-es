@@ -2,15 +2,15 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Scripting de PowerShell
-ms.openlocfilehash: 4e27f81bd06f0994a86ffa3bd23e8fa6f4fe344d
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 98b95339fb30ee95a006d10d68e266ed8243cd68
+ms.sourcegitcommit: 289fe8fbf8ff48ca8999aca10aebd3af44bf9b23
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/07/2017
 ---
 #  <a name="powershell"></a>PowerShell
 
-Windows PowerShell, basado en .NET Framework, es un lenguaje de scripting y shell de línea de comandos basado en tareas. Está diseñado específicamente para que los administradores del sistema y los usuarios avanzados automaticen rápidamente la administración de varios sistemas operativos (Linux, OSX, Unix y Windows) y los procesos relacionados con las aplicaciones que se ejecutan en dichos sistemas operativos.
+Windows PowerShell, basado en .NET Framework, es un lenguaje de scripting y shell de línea de comandos basado en tareas. Está diseñado específicamente para que los administradores del sistema y los usuarios avanzados automaticen rápidamente la administración de varios sistemas operativos (Linux, macOS, Unix y Windows) y los procesos relacionados con las aplicaciones que se ejecutan en dichos sistemas operativos.
 
 ###  <a name="powershell-is-now-open-source"></a>PowerShell es ahora de código abierto
 

@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: El objeto PowerShellTab
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 ms.openlocfilehash: d4e9374202d352a30b3eb46bcf1e4e40dea49822
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-powershelltab-object"></a>El objeto PowerShellTab
   El objeto **PowerShellTab** representa un entorno de runtime de Windows PowerShell.
@@ -40,8 +40,7 @@ $psise.PowerShellTabs[1].Invoke({dir})
 
  **Script**: System.Management.Automation.ScriptBlock o cadena. El bloque de script para ejecutar.
 
- **\[useNewScope\]**: booleano opcional cuyo valor predeterminado es **$true**
-. Si está establecido en **$true**, se crea un nuevo ámbito en el que ejecutar el comando. No modifica el entorno de tiempo de ejecución de la pestaña de PowerShell que se especifica mediante el comando.
+ **\[useNewScope\]**: booleano opcional cuyo valor predeterminado es **$true**. Si está establecido en **$true**, se crea un nuevo ámbito en el que ejecutar el comando. No modifica el entorno de tiempo de ejecución de la pestaña de PowerShell que se especifica mediante el comando.
 
  **\[millisecondsTimeout\]**: entero opcional cuyo valor predeterminado es **500**.
 Si el comando no finaliza dentro del tiempo especificado, inicia **TimeoutException** con el mensaje "La operación ha agotado el tiempo de espera.".
