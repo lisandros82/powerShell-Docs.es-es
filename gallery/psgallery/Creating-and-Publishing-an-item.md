@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: Crear y publicar un elemento
-ms.openlocfilehash: e71381d1a3efda73832fab6189bda26cee411d9e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b6bcd3e923b77ad7d19a1d92aeb78222bff7ea7e
+ms.sourcegitcommit: e08f036021e9f115dbb52c697941706cc4ee51dd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 08/15/2017
 ---
 # <a name="creating-and-publishing-an-item"></a>Crear y publicar un elemento 
 La Galería de PowerShell es el lugar para publicar módulos, scripts y recursos de DSC estables de PowerShell y compartirlos con la comunidad de usuarios más amplia de PowerShell.    
