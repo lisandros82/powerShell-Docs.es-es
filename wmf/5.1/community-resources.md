@@ -1,16 +1,14 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
 title: Recursos de la comunidad
-ms.date: 2016-05-16
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 82e6539484aa11bb370f3011bb12ea51f9d55047
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 1a4b49f0773c7d54b6dbb504a9d44cae7e0ef924
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="community-resources"></a>Recursos de la comunidad #
 > Nota: Esta información es preliminar y está sujeta a cambios.
@@ -32,5 +30,5 @@ Mantenemos y usamos muchos repositorios para el desarrollo de código abierto y 
 * [PowerShell-Docs](https://github.com/PowerShell/powershell-docs), donde se mantiene toda la documentación (incluido este contenido). 
 * [PowerShell](https://github.com/PowerShell/powershell) es la ubicación de PowerShell Core, que es la versión futura de PowerShell. Este es el lugar en el que sugerir recomendaciones de característica o plantear problemas de PowerShell Core.   
 * El repositorio [PowerShellGet](https://github.com/PowerShell/powershellget) es para los cmdlets y el módulo PowerShellGet.
-* [DSCResources] (https://github.com/PowerShell/DscResources) contiene el conjunto de módulos de DSC que mantiene el equipo de PowerShell y que está publicado en la Galería de PowerShell en el Kit de recursos de DSC.
+* [DSCResources](https://github.com/PowerShell/DscResources) contiene el conjunto de módulos de DSC que mantiene el equipo de PowerShell y que está publicado en la Galería de PowerShell en el Kit de recursos de DSC.
 

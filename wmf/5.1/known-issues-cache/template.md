@@ -1,10 +1,14 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
 title: "plantilla de ejemplo de una escritura de problema o limitación conocida"
-contributor: 
-ms.openlocfilehash: e3b98044902cb6665e06582c8259bd5defd6f2ca
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: b93393b2c84e76a301e6406d1388e82e95a2959c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 >Nota: Especifique un título descriptivo propuesto y una breve descripción
 
@@ -18,3 +22,4 @@ Para resolverlo, establezca **ExecutionPolicy** en **RemoteSigned**. Para ello, 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
 ```
+

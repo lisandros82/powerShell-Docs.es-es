@@ -1,8 +1,20 @@
+---
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery,psget
+title: "Galería de PowerShell"
+ms.openlocfilehash: 3e324f15b251822163c3ea9b6655767419a5ac4e
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="the-powershell-gallery"></a>Galería de PowerShell
 
 La Galería de PowerShell es el repositorio central del contenido de PowerShell. En la Galería encontrará nuevos comandos de PowerShell o recursos de configuración de estado deseado (DSC).
 
-# <a name="powershellget-overview"></a>Información general de PowerShellGet
+## <a name="powershellget-overview"></a>Información general de PowerShellGet
 
 El módulo PowerShellGet contiene cmdlets para detectar, instalar, actualizar y publicar los artefactos de PowerShell como módulos, recursos de DSC, funcionalidades de rol y scripts desde https://www.PowerShellGallery.com y otros repositorios privados.
 

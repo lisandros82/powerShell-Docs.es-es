@@ -1,16 +1,14 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2017-03-07
+ms.topic: conceptual
+keywords: jea,powershell,security
 title: "Información general de Just Enough Administration"
-ms.technology: powershell
-ms.openlocfilehash: 2206ccbbcf5996b1bf8db9a46acab2f18f8020dd
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: a664a8ad44916f8112f7ef7bac145a54b83f126d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="just-enough-administration"></a>Just Enough Administration
 
@@ -55,3 +53,4 @@ Para obtener más información sobre los requisitos para usar JEA y cómo crear,
 ## <a name="samples-and-dsc-resource"></a>Ejemplos y recurso de DSC
 
 En el [repositorio de GitHub de JEA](https://github.com/PowerShell/JEA) puede encontrar configuraciones de JEA de ejemplo y el recurso de DSC de JEA.
+
