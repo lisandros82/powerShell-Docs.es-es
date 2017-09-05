@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Cómo crear una pestaña de PowerShell en Windows PowerShell ISE"
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
-ms.openlocfilehash: 7dc92275c30ad783ad71b2a4825e9cc0d26d1691
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: b8648b3c23e5a7edaa195f2aa4bfad2757e39e75
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>Cómo crear una pestaña de PowerShell en Windows PowerShell ISE
 Las pestañas del Entorno de scripting integrado de Windows PowerShell® permiten crear y usar varios entornos de ejecución simultáneamente dentro de la misma aplicación. Cada pestaña de PowerShell corresponde a una sesión o un entorno de ejecución independiente.
@@ -15,7 +15,7 @@ Las pestañas del Entorno de scripting integrado de Windows PowerShell® permite
 > [!NOTE]
 > Las variables, las funciones y los alias que se crean en una pestaña no se mantienen en otra. Son sesiones diferentes de Windows PowerShell.
 
-Use los pasos siguientes para abrir o cerrar una pestaña en Windows PowerShell. Para cambiar el nombre de una pestaña, configure la propiedad [DisplayName](The-PowerShellTab-Object.md#Displayname) del objeto de scripting Tab de Windows PowerShell.
+Use los pasos siguientes para abrir o cerrar una pestaña en Windows PowerShell. Para cambiar el nombre de una pestaña, configure la propiedad [DisplayName]() del objeto de scripting Tab de Windows PowerShell.
 
 ## <a name="to-create-and-use-a-new-powershell-tab"></a>Para crear y usar una nueva pestaña de PowerShell
 En el menú **Archivo**, haga clic en **Nueva pestaña de PowerShell**. La nueva pestaña de PowerShell se abre siempre como la ventana activa. Las pestañas de PowerShell se numeran de forma incremental en el orden en que se abren. Cada pestaña está asociada a su propia ventana de la consola de Windows PowerShell. Puede tener hasta 32 pestañas de PowerShell con su propia sesión abierta a la vez (este valor se limita a 8 en Windows PowerShell ISE 2.0).

@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: El objeto ISEEditor
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-ms.openlocfilehash: c4effde470a7a76a21f983b172f0af651dfc5d11
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e2ddb0de1089c832f130e1f5c7c8dcb199aca2fa
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="the-iseeditor-object"></a>El objeto ISEEditor
   Un objeto **ISEEditor** es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEEditor. El panel de consola es un objeto **ISEEditor**. Cada objeto [ISEFile](The-ISEFile-Object.md) tiene asociado un objeto **ISEEditor**. En las secciones siguientes se enumeran los métodos y las propiedades de un objeto **ISEEditor**.
@@ -63,7 +63,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### <a name="gotomatch"></a>GoToMatch\(\)
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. 
 
- Mueve el símbolo de intercalación al carácter coincidente si la propiedad **CanGoToMatch** del objeto del editor es **$true**, lo que ocurre cuando el símbolo de intercalación está inmediatamente antes de un paréntesis, corchete o llave de apertura \(,\[,{ - o inmediatamente después de un paréntesis, corchete o llave de cierre - \),\],}.  El símbolo de intercalación se coloca delante de un carácter de apertura o después de un carácter de cierre. Si la propiedad **CanGoToMatch** es **$false**, el método no hace nada. Consulte [CanGoToMatch](#cangotomatch).
+ Mueve el símbolo de intercalación al carácter coincidente si la propiedad **CanGoToMatch** del objeto del editor es **$true**, lo que ocurre cuando el símbolo de intercalación está inmediatamente antes de un paréntesis, corchete o llave de apertura \(,\[,{ - o inmediatamente después de un paréntesis, corchete o llave de cierre - \),\],}.  El símbolo de intercalación se coloca delante de un carácter de apertura o después de un carácter de cierre. Si la propiedad **CanGoToMatch** es **$false**, el método no hace nada. Consulte [CanGoToMatch]().
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -76,7 +76,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **text** (cadena); el texto que se inserta.
 
- Vea [Ejemplo de scripting](#example) más adelante en este tema.
+ Vea [Ejemplo de scripting]() más adelante en este tema.
 
 ### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
@@ -91,7 +91,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **endColumn** (entero); la columna de la línea de fin en que acaba la selección.
 
- Vea [Ejemplo de scripting](#example) más adelante en este tema.
+ Vea [Ejemplo de scripting]() más adelante en este tema.
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
@@ -186,14 +186,14 @@ $psISE.CurrentFile.Editor.LineCount
 
  Propiedad de solo lectura que obtiene el texto seleccionado del editor.
 
- Vea [Ejemplo de scripting](#example) más adelante en este tema.
+ Vea [Ejemplo de scripting]() más adelante en este tema.
 
 ###  <a name="Text"></a> Text
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Propiedad de lectura y escritura que obtiene o establece el texto en el editor.
 
- Vea [Ejemplo de scripting](#example) más adelante en este tema.
+ Vea [Ejemplo de scripting]() más adelante en este tema.
 
 ##  <a name="example"></a> Ejemplo de scripting
 
