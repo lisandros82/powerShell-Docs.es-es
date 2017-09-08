@@ -1,28 +1,28 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Accesibilidad en ISE de Windows PowerShell
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 1231271067f32ff888504344bc324b13aade9c33
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 05e7b8c3166b3530552d082dd4b0431dd7046b90
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Accesibilidad en ISE de Windows PowerShell
-En este tema se describen las características de accesibilidad del Entorno de scripting integrado (ISE) de Windows PowerShell® que pueden resultar útiles.
+En este tema se describen las características de accesibilidad del Entorno de scripting integrado (ISE) de Windows PowerShell® que pueden resultarle útiles.
 
-* [Cómo cambiar el tamaño y la ubicación de los paneles de consola y de scripts](#bkmk_1)
-* [Métodos abreviados de teclado para editar texto](#bkmk_2)
-* [Métodos abreviados de teclado para ejecutar scripts](#bkmk_3)
-* [Métodos abreviados de teclado para personalizar la vista](#bkmk_4)
-* [Métodos abreviados de teclado para depurar scripts](#bkmk_5)
-* [Métodos abreviados de teclado para las pestañas de Windows PowerShell](#bkmk_6)
-* [Métodos abreviados de teclado para iniciar y salir](#bkmk_7)
+* [Cómo cambiar el tamaño y la ubicación de los paneles de consola y de scripts]()
+* [Métodos abreviados de teclado para editar texto]()
+* [Métodos abreviados de teclado para ejecutar scripts]()
+* [Métodos abreviados de teclado para personalizar la vista]()
+* [Métodos abreviados de teclado para depurar scripts]()
+* [Métodos abreviados de teclado para las pestañas de Windows PowerShell]()
+* [Métodos abreviados de teclado para iniciar y salir]()
 
 Microsoft tiene el compromiso de que todas las personas puedan utilizar fácilmente sus productos y servicios. En los siguientes temas se proporciona información sobre las características, los productos y los servicios que permiten que Windows PowerShell ISE sea más accesible para las personas con discapacidades.
 
-Windows PowerShell ISE admite el modo de contraste alto. Para las personas con discapacidad visual, existe información de punto de interrupción disponible a través de los cmdlets de administración de puntos de interrupción, como [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) y [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). Para obtener más información, consulte "Cómo administrar los puntos de interrupción" en [Cómo depurar scripts en ISE de Windows PowerShell](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md#bkmk_1). Además de las características de accesibilidad y las utilidades de Microsoft Windows, las siguientes características hacen que Windows PowerShell ISE sea más accesible para las personas con discapacidades:
+Windows PowerShell ISE admite el modo de contraste alto. Para las personas con discapacidad visual, existe información de punto de interrupción disponible a través de los cmdlets de administración de puntos de interrupción, como [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) y [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). Para más información, vea "Cómo administrar los puntos de interrupción" en [Cómo depurar scripts en ISE de Windows PowerShell](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). Además de las características de accesibilidad y las utilidades de Microsoft Windows, las siguientes características hacen que Windows PowerShell ISE sea más accesible para las personas con discapacidades:
 
 -   Métodos abreviados de teclado.
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Obtener información de ayuda detallada"
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 3260b5ec0a91749d3b7b126412137aa9d603ef0e
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: c786ce089073abccdf186dc1d9e8ee383f83655d
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="getting-detailed-help-information"></a>Obtener información de ayuda detallada
 Windows PowerShell incluye temas de ayuda detallados que explican conceptos de Windows PowerShell y el lenguaje de Windows PowerShell. También hay temas de Ayuda para cada cmdlet y proveedor y temas de Ayuda para muchas funciones y scripts.
@@ -75,7 +75,7 @@ Para mostrar solo los ejemplos de un tema de Ayuda, use el parámetro *Example* 
 get-help get-childitem -examples
 ```
 
-Para obtener información sobre cómo escribir temas de Ayuda para los cmdlets que escribe, vea el tema sobre cómo escribir ayuda de cmdlets ("How to Write Cmdlet Help") en MSDN.
+Para obtener información sobre cómo escribir temas de ayuda para los cmdlets que escribe, vea [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (Cómo escribir ayuda para cmdlet) en la biblioteca de MSDN.
 
 ## <a name="getting-conceptual-help"></a>Obtener ayuda conceptual
 El cmdlet Get-Help también muestra información sobre temas conceptuales en Windows PowerShell, incluidos los temas sobre el lenguaje de Windows PowerShell. Los temas de Ayuda conceptual comienzan por el prefijo "about_", como about_line_editing. (Los nombres de temas conceptuales deben especificarse en inglés, incluso en versiones no inglesas de Windows PowerShell).
@@ -165,7 +165,7 @@ A continuación, se muestra la primera línea de la sección Vínculos relaciona
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-Para obtener más información sobre cómo proporcionar soporte técnico en línea para sus temas de ayuda, vea [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) y el tema sobre cómo escribir ayuda de cmdlets ("How to Write Cmdlet Help", [http://go.microsoft.com/fwlink/?LinkID=123415](http://go.microsoft.com/fwlink/?LinkID=123415)) en la biblioteca de MSDN (Microsoft Developer Network).
+Para obtener información sobre cómo proporcionar soporte técnico en línea para sus temas de ayuda, vea [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) y [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (Cómo escribir ayuda para cmdlet) en la biblioteca de MSDN.
 
 ## <a name="see-also"></a>Véase también
 - [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)

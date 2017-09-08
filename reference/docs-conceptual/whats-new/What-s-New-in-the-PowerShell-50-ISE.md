@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Novedades de PowerShell ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: e772c31ae407e73a96364ffedf98057760037836
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: d816d717752579c79477daa35e7c0b15e944a6b7
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Novedades de Windows PowerShell ISE
-En este tema se explican las características nuevas y actualizadas que se introdujeron en las versiones de Entorno de scripting integrado (ISE) de Windows PowerShell®.
+En este tema se explican las características nuevas y actualizadas que se han introducido en las versiones de Entorno de scripting integrado (ISE) de Windows PowerShell®.
 
 ## <a name="overview"></a>Descripción de la característica
 Windows PowerShell ISE es una aplicación host que permite escribir, ejecutar y probar scripts y módulos en un entorno gráfico e intuitivo. Las características principales, como el coloreado de la sintaxis, el procedimiento para completar con el tabulador, la depuración visual, la compatibilidad con Unicode y la Ayuda contextual, proporcionan una rica experiencia de scripting.
@@ -22,16 +22,16 @@ En la tabla siguiente se enumeran las características nuevas y modificadas de e
 
 |Característica/funcionalidad|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-|**[IntelliSense](#BKMK_Intellisense)**|X|X||
-|**[Fragmentos de código](#bkmk_snippets)**|X|X||
-|**[Herramientas de complemento](#BKMK_AddOnTools)**|X|X||
-|**[Administrador de reinicio y guardado automático](#BKMK_RestartMgr)**|X|X||
-|**[Panel de consola](#BKMK_ConsolePane)**|X|X||
-|**[Lista Usados más recientemente](#BKMK_MRU)**|X|X||
-|**[Modificadores de la línea de comandos](#BKMK_CommandLine)**|X|X||
-|**[Nuevas características del editor](#BKMK_NewEditorFeatures)**|X|X||
-|**[Ventana del nuevo visor de Ayuda](#BKMK_NewHelpViewer)**|X|X||
-|**[Cmdlet Show-Command](#BKMK_ShowCommand)**|X|X||
+|**[IntelliSense]()**|X|X||
+|**[Fragmentos de código]()**|X|X||
+|**[Herramientas de complemento]()**|X|X||
+|**[Administrador de reinicio y guardado automático]()**|X|X||
+|**[Panel de consola]()**|X|X||
+|**[Lista Usados más recientemente]()**|X|X||
+|**[Modificadores de la línea de comandos]()**|X|X||
+|**[Nuevas características del editor]()**|X|X||
+|**[Ventana del nuevo visor de Ayuda]()**|X|X||
+|**[Cmdlet Show-Command]()**|X|X||
 
 ### <a name="BKMK_Intellisense"></a>IntelliSense
 **Agregado en ISE 3.0**

@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 description: Instrucciones para publicadores
 title: "Instrucciones y procedimientos recomendados para publicar en la Galería de PowerShell"
-ms.openlocfilehash: 394e69e189761f3c5a4bb54dfa8df15c4ab240d6
-ms.sourcegitcommit: e63f09c005b6bbf39c3c001944f307c2b155765b
+ms.openlocfilehash: 85486c409382472420a67fc124bd07a30486cb62
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Instrucciones y procedimientos recomendados para publicar en PowerShellGallery
 
@@ -69,9 +69,9 @@ La documentación es el aspecto más útil que se debe incluir en los elementos 
 Por lo general, los usuarios omitirán los elementos que no incluyan documentación, dado que la alternativa es leer el código para entender de qué se trata el elemento y cómo usarlo.
 En MSDN hay varios artículos disponibles sobre cómo proporcionar documentación con los elementos de PowerShell, entre los que se incluyen los siguientes:
 
-* Instrucciones sobre cómo prestar ayuda, en el artículo sobre [cómo escribir ayuda para cmdlet](https://msdn.microsoft.com/en-us/library/aa965353(VS.85).aspx)
+* Instrucciones sobre cómo prestar ayuda, en el artículo sobre [cómo escribir ayuda para cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415)
 * Cómo crear ayuda para cmdlet, que es el mejor enfoque para cualquier script, función o cmdlet de PowerShell.
-  Para información sobre cómo crear ayuda para cmdlet, comience con [este artículo](http://go.microsoft.com/fwlink/?LinkID=123415) de la biblioteca de MSDN (Microsoft Developer Network).
+  Para obtener información sobre cómo crear ayuda para cmdlet, comience con [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (Cómo escribir ayuda para cmdlet) en la biblioteca de MSDN.
   Para agregar ayuda dentro de un script, consulte el artículo sobre [la ayuda basada en comentarios](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
 * Muchos módulos también incluyen documentación en formato de texto, como archivos Markdown.
   Esto puede resultar especialmente útil cuando hay un sitio de proyecto en GitHub, donde el formato Markdown se usa mucho.
