@@ -2,12 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: El objeto ISEEditor
-ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-ms.openlocfilehash: e2ddb0de1089c832f130e1f5c7c8dcb199aca2fa
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 149eda44fea5b02324442970324e3010015e7ae5
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-iseeditor-object"></a>El objeto ISEEditor
   Un objeto **ISEEditor** es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEEditor. El panel de consola es un objeto **ISEEditor**. Cada objeto [ISEFile](The-ISEFile-Object.md) tiene asociado un objeto **ISEEditor**. En las secciones siguientes se enumeran los métodos y las propiedades de un objeto **ISEEditor**.
@@ -63,7 +62,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### <a name="gotomatch"></a>GoToMatch\(\)
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. 
 
- Mueve el símbolo de intercalación al carácter coincidente si la propiedad **CanGoToMatch** del objeto del editor es **$true**, lo que ocurre cuando el símbolo de intercalación está inmediatamente antes de un paréntesis, corchete o llave de apertura \(,\[,{ - o inmediatamente después de un paréntesis, corchete o llave de cierre - \),\],}.  El símbolo de intercalación se coloca delante de un carácter de apertura o después de un carácter de cierre. Si la propiedad **CanGoToMatch** es **$false**, el método no hace nada. Consulte [CanGoToMatch]().
+ Mueve el símbolo de intercalación al carácter coincidente si la propiedad **CanGoToMatch** del objeto del editor es **$true**, lo que ocurre cuando el símbolo de intercalación está inmediatamente antes de un paréntesis, corchete o llave de apertura \(,\[,{ - o inmediatamente después de un paréntesis, corchete o llave de cierre - \),\],}.  El símbolo de intercalación se coloca delante de un carácter de apertura o después de un carácter de cierre. Si la propiedad **CanGoToMatch** es **$false**, el método no hace nada.
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -76,7 +75,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **text** (cadena); el texto que se inserta.
 
- Vea [Ejemplo de scripting]() más adelante en este tema.
+ Vea [Ejemplo de scripting](#-scripting-example) más adelante en este tema.
 
 ### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
@@ -91,7 +90,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **endColumn** (entero); la columna de la línea de fin en que acaba la selección.
 
- Vea [Ejemplo de scripting]() más adelante en este tema.
+ Vea [Ejemplo de scripting](#-scripting-example) más adelante en este tema.
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
@@ -131,7 +130,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 ## <a name="properties"></a>Propiedades
 
-###  <a name="CanGoToMatch"></a> CanGoToMatch
+### <a name="cangotomatch"></a>CanGoToMatch
   Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. 
 
  Propiedad booleana de solo lectura que indica si el símbolo de intercalación está al lado de paréntesis, corchetes o llaves: \(\), \[\], {}. Si el símbolo de intercalación está inmediatamente antes del carácter de apertura o inmediatamente después del carácter de cierre de un par, el valor de esta propiedad es **$true**. Si no, es **$false**.
@@ -141,7 +140,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 $psISE.CurrentFile.Editor.CanGoToMatch
 ```
 
-###  <a name="CaretColumn"></a> CaretColumn
+### <a name="caretcolumn"></a>CaretColumn
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Propiedad de solo lectura que obtiene el número de columna que corresponde a la posición del símbolo de intercalación.
@@ -151,7 +150,7 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 $psISE.CurrentFile.Editor.CaretColumn
 ```
 
-###  <a name="CaretLine"></a> CaretLine
+### <a name="caretline"></a>CaretLine
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Propiedad de solo lectura que obtiene el número de la línea que contiene el símbolo de intercalación.
@@ -161,7 +160,7 @@ $psISE.CurrentFile.Editor.CaretColumn
 $psISE.CurrentFile.Editor.CaretLine
 ```
 
-###  <a name="CaretLineText"></a> CaretLineText
+### <a name="caretlinetext"></a>CaretLineText
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Propiedad de solo lectura que obtiene la línea de texto completa que contiene el símbolo de intercalación.
@@ -171,7 +170,7 @@ $psISE.CurrentFile.Editor.CaretLine
 $psISE.CurrentFile.Editor.CaretLineText
 ```
 
-###  <a name="LineCount"></a> LineCount
+### <a name="linecount"></a>LineCount
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Propiedad de solo lectura que obtiene el recuento de líneas del editor.
@@ -181,21 +180,21 @@ $psISE.CurrentFile.Editor.CaretLineText
 $psISE.CurrentFile.Editor.LineCount
 ```
 
-###  <a name="SelectedText"></a> SelectedText
+### <a name="selectedtext"></a>SelectedText
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Propiedad de solo lectura que obtiene el texto seleccionado del editor.
 
- Vea [Ejemplo de scripting]() más adelante en este tema.
+ Vea [Ejemplo de scripting](#-scripting-example) más adelante en este tema.
 
-###  <a name="Text"></a> Text
+### <a name="text"></a>Texto
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
  Propiedad de lectura y escritura que obtiene o establece el texto en el editor.
 
- Vea [Ejemplo de scripting]() más adelante en este tema.
+ Vea [Ejemplo de scripting](#-scripting-example) más adelante en este tema.
 
-##  <a name="example"></a> Ejemplo de scripting
+## <a name="scripting-example"></a>Ejemplo de scripting
 
 ```powershell
 # This illustrates how you can use the length of a line to

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Instalar el motor de Windows PowerShell 2.0
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-ms.openlocfilehash: 37a300d2f0517a819f520c44f0eb92e168444890
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: ff6c2b52b8948472ace3ee35cd4c6aa2dbf46c25
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>Instalar el motor de Windows PowerShell 2.0
 En este tema se explica cómo instalar el motor de Windows PowerShell 2.0.
@@ -25,46 +25,46 @@ En Windows 8.1 y Windows 8, la característica del motor de Windows PowerShell 2
 
 #### <a name="to-turn-on-net-framework-35"></a>Para activar .NET Framework 3.5
 
-1.  En la pantalla **Inicio**, escriba **Características de Windows**.
+1. En la pantalla **Inicio**, escriba **Características de Windows**.
 
-2.  En la barra **Aplicaciones**, haga clic en **Configuración** y, después, en **Activar o desactivar las características de Windows**.
+2. En la barra **Aplicaciones**, haga clic en **Configuración** y, después, en **Activar o desactivar las características de Windows**.
 
-3.  En el cuadro **Características de Windows**, haga clic en **.NET Framework 3.5 (incluye .NET 2.0 y 3.0)** para seleccionar esta opción.
+3. En el cuadro **Características de Windows**, haga clic en **.NET Framework 3.5 (incluye .NET 2.0 y 3.0)** para seleccionar esta opción.
 
     Al seleccionar **.NET Framework 3.5 (incluye .NET 2.0 y 3.0)**, el cuadro se rellena para indicar que solo una parte de la característica está seleccionada. Sin embargo, esto es suficiente para el motor de Windows PowerShell 2.0.
 
 #### <a name="to-turn-the-windows-powershell-20-engine-on-and-off"></a>Para activar y desactivar el motor de Windows PowerShell 2.0
 
-1.  En la pantalla **Inicio**, escriba **Características de Windows**.
+1. En la pantalla **Inicio**, escriba **Características de Windows**.
 
-2.  En la barra **Aplicaciones**, haga clic en **Configuración** y, después, en **Activar o desactivar las características de Windows**.
+2. En la barra **Aplicaciones**, haga clic en **Configuración** y, después, en **Activar o desactivar las características de Windows**.
 
-3.  En el cuadro **Características de Windows**, expanda el nodo **Windows PowerShell 2.0** y haga clic en la casilla **Motor de Windows PowerShell 2.0** para activarla o desactivarla.
+3. En el cuadro **Características de Windows**, expanda el nodo **Windows PowerShell 2.0** y haga clic en la casilla **Motor de Windows PowerShell 2.0** para activarla o desactivarla.
 
 ## <a name="on-windows-server-2012-r2-and-windows-server-2012"></a>En Windows Server 2012 R2 y Windows Server 2012
 Use los procedimientos siguientes para agregar las características del motor de Windows PowerShell 2.0 y Microsoft .NET Framework 3.5. El motor de Windows PowerShell 2.0 requiere Microsoft .NET Framework 2.0.50727 como mínimo. Este requisito se cumple con Microsoft .NET Framework 3.5.
 
 #### <a name="to-add-the-net-framework-35-feature"></a>Para agregar la característica de .NET Framework 3.5
 
-1.  En el menú **Administrador del servidor** del menú **Administrar**, haga clic en **Agregar roles y características**.
+1. En el menú **Administrador del servidor** del menú **Administrar**, haga clic en **Agregar roles y características**.
 
     O bien en **Administrador del servidor**, haga clic en **Todos los servidores**, haga clic con el botón derecho en el nombre de un servidor y luego seleccione **Agregar roles y características**.
 
-2.  En la página **Tipo de instalación**, seleccione **Instalación basada en características o en roles**.
+2. En la página **Tipo de instalación**, seleccione **Instalación basada en características o en roles**.
 
-3.  En la página **Características**, expanda el nodo **Características de .NET Framework 3.5** y seleccione **.NET Framework 3.5 (incluye .NET 2.0 y 3.0)**.
+3. En la página **Características**, expanda el nodo **Características de .NET Framework 3.5** y seleccione **.NET Framework 3.5 (incluye .NET 2.0 y 3.0)**.
 
     Las demás opciones bajo ese nodo no son necesarias para el motor de Windows PowerShell 2.0.
 
 #### <a name="to-add-the-windows-powershell-20-engine-feature"></a>Para agregar la característica del motor de Windows PowerShell 2.0
 
--   En el menú **Administrador del servidor** del menú **Administrar**, haga clic en **Agregar roles y características**.
+- En el menú **Administrador del servidor** del menú **Administrar**, haga clic en **Agregar roles y características**.
 
     En **Administrador del servidor**, haga clic en **Todos los servidores**, haga clic con el botón derecho en el nombre de un servidor y luego seleccione **Agregar roles y características**.
 
--   En la página **Tipo de instalación**, seleccione **Instalación basada en características o en roles**.
+- En la página **Tipo de instalación**, seleccione **Instalación basada en características o en roles**.
 
--   En la página **Características**, expanda el nodo **Windows PowerShell (instalado)** y seleccione **Motor de Windows PowerShell 2.0**.
+- En la página **Características**, expanda el nodo **Windows PowerShell (instalado)** y seleccione **Motor de Windows PowerShell 2.0**.
 
 Para obtener información sobre cómo iniciar el motor de Windows PowerShell 2.0, vea [Iniciar el motor de Windows PowerShell 2.0](Starting-the-Windows-PowerShell-2.0-Engine.md).
 

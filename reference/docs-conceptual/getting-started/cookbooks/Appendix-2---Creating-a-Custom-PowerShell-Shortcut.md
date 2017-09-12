@@ -1,34 +1,34 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Apéndice 2 Crear un acceso directo de PowerShell personalizado"
 ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
-ms.openlocfilehash: 31fdc388ae8859191f75c3c4120667cdbeff1669
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: d5e554f6f062fc5bf1beddd2aca1acf0b93d2133
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>Apéndice 2: Crear de un acceso directo de PowerShell personalizado
 El siguiente procedimiento describe cómo crear un acceso directo a Windows PowerShell que tenga varias opciones prácticas personalizadas.
 
-1.  Crear un acceso directo que apunte a Powershell.exe.
+1. Crear un acceso directo que apunte a Powershell.exe.
 
-2.  Haga clic con el botón derecho en el acceso directo y, después, haga clic en **Propiedades**.
+2. Haga clic con el botón derecho en el acceso directo y, después, haga clic en **Propiedades**.
 
-3.  Haga clic en la pestaña **Opciones**.
+3. Haga clic en la pestaña **Opciones**.
 
-4.  En la sección **Editar opciones**, active la casilla **Edición rápida**.
+4. En la sección **Editar opciones**, active la casilla **Edición rápida**.
 
     Esta configuración permite seleccionar texto en la ventana de la consola de Windows PowerShell arrastrando el botón izquierdo del ratón, así como copiar texto en el Portapapeles presionando ENTRAR o haciendo clic con el botón derecho.
 
-5.  En la sección **Editar opciones**, active la casilla **Modo de inserción**. Esta configuración permite hacer clic con el botón derecho en la ventana de la consola para pegar texto automáticamente desde el Portapapeles.
+5. En la sección **Editar opciones**, active la casilla **Modo de inserción**. Esta configuración permite hacer clic con el botón derecho en la ventana de la consola para pegar texto automáticamente desde el Portapapeles.
 
-6.  En la sección **Historial de comandos**, escriba o seleccione un número entre 1 y 999 en el cuadro **Tamaño del búfer**. Esta acción establece el número de comandos escritos que se mantendrán en el búfer de la consola.
+6. En la sección **Historial de comandos**, escriba o seleccione un número entre 1 y 999 en el cuadro **Tamaño del búfer**. Esta acción establece el número de comandos escritos que se mantendrán en el búfer de la consola.
 
-7.  En la sección **Historial de comandos**, active la casilla **Descartar duplicados antiguos** para eliminar los comandos repetidos del búfer de la consola.
+7. En la sección **Historial de comandos**, active la casilla **Descartar duplicados antiguos** para eliminar los comandos repetidos del búfer de la consola.
 
-8.  Haga clic en la pestaña **Diseño**.
+8. Haga clic en la pestaña **Diseño**.
 
 9. En la sección **Tamaño del búfer de pantalla** escriba un número entre 1 y 9999 en el cuadro **Alto**. El alto representa el número de líneas de salida que se almacenan en búfer. Este es el número máximo de líneas que se conservan para ver cuándo se desplaza por la ventana de la consola. Si este número es inferior al alto que se muestra en la sección **Tamaño de la ventana**, el alto del tamaño de la ventana se reducirá automáticamente al mismo valor.
 

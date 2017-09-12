@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Conceptos básicos de Windows PowerShell"
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-ms.openlocfilehash: f8a520f1fbe97737c7d0c2acab0129f88b5ed425
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 7b5cdfce876aa7d5559fe772379829011b275a02
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="windows-powershell-basics"></a>Conceptos básicos de Windows PowerShell
 Las interfaces gráficas de usuario usan algunos conceptos básicos con los que la mayoría de los usuarios de equipos están familiarizados. Los usuarios confían en la sencillez de estas interfaces para realizar tareas. Los sistemas operativos presentan a los usuarios una representación gráfica de los elementos que se pueden examinar, generalmente menús desplegables para acceder a funcionalidades específicas y menús contextuales para acceder a la funcionalidades específicas del contexto.
@@ -18,13 +18,13 @@ La mayoría de las CLI no tienen patrones que puedan ayudar al usuario a obtener
 
 Windows PowerShell se diseñó para aprovechar el conocimiento histórico que un usuario tenía de las CLI. En este capítulo, hablaremos de algunas herramientas y conceptos básicos que puede usar para aprender a usar Windows PowerShell rápidamente. Incluyen:
 
--   Uso de Get-Command
+- Uso de Get-Command
 
--   Uso de los comandos de Cmd.exe y UNIX
+- Uso de los comandos de Cmd.exe y UNIX
 
--   Uso de comandos External
+- Uso de comandos External
 
--   Uso de Tab-Completion
+- Uso de Tab-Completion
 
--   Uso de Get-Help
+- Uso de Get-Help
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Entorno de scripting integrado (ISE) de Windows PowerShell
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 93b3322ae5634d3611f3c2743e7460e266dc7ab8
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e5c4e6ef002d6d6ede014a3147d1fed15f6d76d8
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Entorno de scripting integrado (ISE) de Windows PowerShell
 El Entorno de scripting integrado (ISE ) de Windows PowerShell es uno de los dos hosts para el motor y el lenguaje de Windows PowerShell. Puede escribir, ejecutar y probar scripts de maneras que no están disponibles en la consola de Windows PowerShell. El ISE agrega color de sintaxis, finalización con tabulación, IntelliSense, depuración visual y ayuda contextual.
@@ -34,21 +34,21 @@ Ahora, la **lista Usados más recientemente** forma parte del menú Abrir archiv
 
 Las **nuevas características del editor** facilitan la creación y lectura del código:
 
--   **Color de la sintaxis XML**. El editor de ISE colorea ahora la sintaxis XML de la misma manera que la sintaxis de código de Windows PowerShell.
+- **Color de la sintaxis XML**. El editor de ISE colorea ahora la sintaxis XML de la misma manera que la sintaxis de código de Windows PowerShell.
 
--   **Coincidencia de llaves**. Windows PowerShell ISE resalta las llaves coincidentes para que pueda asegurarse de tener la cantidad correcta de llaves de cierre según la cantidad de llaves de apertura. Use CTRL-\[ para ubicar la llave de cierre que coincida con la llave de apertura en la que se encuentra en cursor.
+- **Coincidencia de llaves**. Windows PowerShell ISE resalta las llaves coincidentes para que pueda asegurarse de tener la cantidad correcta de llaves de cierre según la cantidad de llaves de apertura. Use CTRL-\[ para ubicar la llave de cierre que coincida con la llave de apertura en la que se encuentra en cursor.
 
--   **Vista Esquema**. Puede contraer o expandir las secciones del código haciendo clic en los signos más y menos del margen izquierdo. De este modo, podrá encontrar fácilmente el código que busca en un script largo.
+- **Vista Esquema**. Puede contraer o expandir las secciones del código haciendo clic en los signos más y menos del margen izquierdo. De este modo, podrá encontrar fácilmente el código que busca en un script largo.
 
--   **Editar texto con arrastrar y colocar**. Puede seleccionar un bloque de texto y arrastrarlo a otra ubicación para moverlo. Si mantiene presionada la tecla Ctrl mientras arrastra el texto seleccionado, lo copiará en lugar de moverlo.
+- **Editar texto con arrastrar y colocar**. Puede seleccionar un bloque de texto y arrastrarlo a otra ubicación para moverlo. Si mantiene presionada la tecla Ctrl mientras arrastra el texto seleccionado, lo copiará en lugar de moverlo.
 
--   **Presentación de errores de análisis**. Windows PowerShell examina el script a medida que escribe. Si detecta un error, muestra un zigzag rojo bajo el código incorrecto. Al mantener el puntero sobre el error indicado, la información sobre herramientas muestra el problema encontrado.
+- **Presentación de errores de análisis**. Windows PowerShell examina el script a medida que escribe. Si detecta un error, muestra un zigzag rojo bajo el código incorrecto. Al mantener el puntero sobre el error indicado, la información sobre herramientas muestra el problema encontrado.
 
--   **Zoom**. Puede acercar el texto para que resulte más fácil de leer o alejarlo para ver la imagen más grande mediante el control deslizante de la esquina inferior derecha de la ventana del ISE.
+- **Zoom**. Puede acercar el texto para que resulte más fácil de leer o alejarlo para ver la imagen más grande mediante el control deslizante de la esquina inferior derecha de la ventana del ISE.
 
--   **Copia y pegado de texto enriquecido**. Al copia texto del ISE en el Portapapeles, se incluye la información de fuente, tamaño y de color del texto seleccionado.
+- **Copia y pegado de texto enriquecido**. Al copia texto del ISE en el Portapapeles, se incluye la información de fuente, tamaño y de color del texto seleccionado.
 
--   **Selección de bloques**. Para seleccionar un fragmento de texto en forma de bloque, puede mantener presionada la tecla ALT y seleccionar texto en el panel de scripts con el ratón, o bien presionar **Alt+Mayús+Flecha**.
+- **Selección de bloques**. Para seleccionar un fragmento de texto en forma de bloque, puede mantener presionada la tecla ALT y seleccionar texto en el panel de scripts con el ratón, o bien presionar **Alt+Mayús+Flecha**.
 
 ### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>Agregado en PowerShell 2.0 (Windows Server 2008 R2, Windows 7)
 El ISE se introdujo con PowerShell 2.0.

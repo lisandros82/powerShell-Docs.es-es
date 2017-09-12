@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Introducción a Windows PowerShell"
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-ms.openlocfilehash: 8dbdd5d7b2dcb80e5562ff0f0f211b2baf5357cf
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 93a4d4a6bc0ebef6b6af7f7f8af59dec865bcfa3
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="getting-started-with-windows-powershell"></a>Introducción a Windows PowerShell
 Windows PowerShell es un shell de línea de comandos de Windows diseñado especialmente para los administradores del sistema. Windows PowerShell incluye un aviso interactivo y un entorno de scripting que puede usarse de forma independiente o conjunta.
@@ -22,11 +22,11 @@ Esta guía de introducción proporciona una introducción a Windows PowerShell: 
 
 En este tema:
 
--   [Requisitos del sistema de Windows PowerShell](../setup/Windows-PowerShell-System-Requirements.md)
+- [Requisitos del sistema de Windows PowerShell](../setup/Windows-PowerShell-System-Requirements.md)
 
--   [Instalación de Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
+- [Instalación de Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 
--   [Inicio de Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
+- [Inicio de Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
 
--   [Preparativos para usar Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
+- [Preparativos para usar Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
 

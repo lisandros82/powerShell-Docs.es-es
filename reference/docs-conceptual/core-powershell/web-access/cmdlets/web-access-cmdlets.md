@@ -8,13 +8,13 @@ keywords: powershell,cmdlet
 ms.date: 2016-12-12
 title: Cmdlets de Web Access
 ms.technology: powershell
-ms.openlocfilehash: ac8717c2aa97d0482b4d88f1b57d621d7ff47535
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: daebe2fe2cbccaf8d3f41d265d23dc45d3bb99b6
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="windows-powershell-web-access-cmdlets"></a>Cmdlets de Windows PowerShell Web Access
+# <a name="windows-powershell-web-access-cmdlets"></a>Cmdlets de Windows PowerShell Web Access
 
 Este tema de referencia ofrece descripciones y sintaxis de todos los cmdlets específicos de Windows PowerShell® Web Access. Enumera los cmdlets por orden alfabético según el verbo que aparece al principio del cmdlet.
 
@@ -54,13 +54,13 @@ donde *&lt;nombre del cmdlet&gt;* es el nombre del cmdlet que quiere investigar.
 
 Para obtener información más detallada, puede ejecutar cualquiera de los siguientes cmdlets:
 
--  `Get-Help `*&lt;nombre del cmdlet&gt;*` -Detailed`
--  `Get-Help `*&lt;nombre del cmdlet&gt;*` -Examples`
--  `Get-Help `*&lt;nombre del cmdlet&gt;*` -Full`
+- `Get-Help `*&lt;nombre del cmdlet&gt;*` -Detailed`
+- `Get-Help `*&lt;nombre del cmdlet&gt;*` -Examples`
+- `Get-Help `*&lt;nombre del cmdlet&gt;*` -Full`
 
 ### <a name="more-information"></a>Más información
 
 Para más información sobre PowerShell Web Access, vea lo siguiente:
 
--   [Instalación y uso de Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md)
+- [Instalación y uso de Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md)
 

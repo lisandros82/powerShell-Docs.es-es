@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Iniciar el motor de Windows PowerShell 2.0
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 15f578e2fbf0b10afa307cde0a32123a8026a282
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 2e5c13cafdfd9fbe479fcad8ac81725cbd7ac3d9
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>Iniciar el motor de Windows PowerShell 2.0
 En esta sección se explica cómo iniciar el motor de Windows PowerShell 2.0 en Windows 8.1, Windows Server 2012 R2, Windows 8 y Windows Server 2012, que incluyen el motor de Windows PowerShell 2.0, y en otros sistemas que tienen instalado Windows PowerShell 2.0, Windows PowerShell 3.0 y Windows PowerShell 4.0.
@@ -39,7 +39,7 @@ Para más información sobre los archivos de configuración de sesión, vea [abo
 
 #### <a name="to-start-a-remote-windows-powershell-20-session"></a>Iniciar una sesión de Windows PowerShell 2.0
 
-1.  Para crear una configuración de sesión que requiera el motor de Windows PowerShell 2.0, use el parámetro **PSVersion** del cmdlet [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) con un valor de "2.0". Ejecute este comando en el equipo en el "lado servidor" o en el extremo receptor de la conexión.
+1. Para crear una configuración de sesión que requiera el motor de Windows PowerShell 2.0, use el parámetro **PSVersion** del cmdlet [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) con un valor de "2.0". Ejecute este comando en el equipo en el "lado servidor" o en el extremo receptor de la conexión.
 
     El siguiente comando de ejemplo crea la configuración de sesión PS2 en el equipo Server01. Para ejecutar este comando, inicie Windows PowerShell 4.0 o Windows PowerShell 3.0 con la opción **Ejecutar como administrador**.
 
@@ -47,7 +47,7 @@ Para más información sobre los archivos de configuración de sesión, vea [abo
     Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
     ```
 
-2.  Para crear una sesión en el equipo Server01 que use la configuración de sesión PS2, use el parámetro **ConfigurationName** de los cmdlets que crean una sesión remota, como el cmdlet [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f).
+2. Para crear una sesión en el equipo Server01 que use la configuración de sesión PS2, use el parámetro **ConfigurationName** de los cmdlets que crean una sesión remota, como el cmdlet [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f).
 
     Cuando se inicia una sesión que usa la configuración de sesión, el motor de Windows PowerShell 2.0 se carga automáticamente en la sesión.
 
