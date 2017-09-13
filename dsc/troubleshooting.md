@@ -623,5 +623,5 @@ onlyProperty                            PSComputerName
 * [<span data-ttu-id="6ac1f-236">Crear recursos de configuración de estado deseado de Windows PowerShell personalizados</span><span class="sxs-lookup"><span data-stu-id="6ac1f-236">Build Custom Windows PowerShell Desired State Configuration Resources</span></span>](authoringResource.md)
 
 ### <a name="other-resources"></a><span data-ttu-id="6ac1f-237">Otros recursos</span><span class="sxs-lookup"><span data-stu-id="6ac1f-237">Other Resources</span></span>
-* [<span data-ttu-id="6ac1f-238">Cmdlets de configuración de estado deseado (DSC) de Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="6ac1f-238">Windows PowerShell Desired State Configuration Cmdlets</span></span>](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
+* <span data-ttu-id="6ac1f-238">[Cmdlets de configuración de estado deseado (DSC) de Windows PowerShell](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)</span><span class="sxs-lookup"><span data-stu-id="6ac1f-238">[Windows PowerShell Desired State Configuration Cmdlets](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)</span></span>
 

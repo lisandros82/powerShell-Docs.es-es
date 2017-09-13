@@ -77,6 +77,6 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 3.  <span data-ttu-id="b9eca-141">Para guardar el archivo de perfil, en el menú **Archivo**, haga clic en **Guardar**.</span><span class="sxs-lookup"><span data-stu-id="b9eca-141">To save your profile file, on the **File** menu, click **Save**.</span></span> <span data-ttu-id="b9eca-142">La próxima vez que abra Windows PowerShell ISE, se aplicarán sus opciones personalizadas.</span><span class="sxs-lookup"><span data-stu-id="b9eca-142">Next time you open the Windows PowerShell ISE, your customizations are applied.</span></span>
 
 ## <a name="see-also"></a><span data-ttu-id="b9eca-143">Véase también</span><span class="sxs-lookup"><span data-stu-id="b9eca-143">See Also</span></span>
-- [<span data-ttu-id="b9eca-144">about_Profiles [v4]</span><span class="sxs-lookup"><span data-stu-id="b9eca-144">about_Profiles [v4]</span></span>](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))
+- <span data-ttu-id="b9eca-144">[about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))</span><span class="sxs-lookup"><span data-stu-id="b9eca-144">[about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))</span></span>
 - [<span data-ttu-id="b9eca-145">Usar Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="b9eca-145">Using the Windows PowerShell ISE</span></span>](Using-the-Windows-PowerShell-ISE.md)
 
