@@ -2,11 +2,11 @@
 ms.date: 2017-06-27
 keywords: powershell,cmdlet
 title: "Reglas de autorización y características de seguridad de Windows PowerShell Web Access"
-ms.openlocfilehash: 4b076ca1ecdab293f3acadc466d39ba3e7a6444f
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reglas de autorización y características de seguridad de Windows PowerShell Web Access
 
@@ -14,7 +14,7 @@ Actualizado: 24 de junio de 2013
 
 Se aplica a: Windows Server 2012 R2, Windows Server 2012
 
-Windows PowerShell® Web Access en Windows Server® 2012 R2 y Windows Server® 2012 tiene un modelo de seguridad restrictiva.
+Windows PowerShell Web Access en Windows Server 2012 R2 y Windows Server 2012 tienen un modelo de seguridad restrictiva.
 Los usuarios tienen que tener el acceso concedido explícitamente antes de iniciar sesión en la puerta de enlace de Windows PowerShell ISE y usar la consola basada en web de Windows PowerShell.
 
 ## <a name="configuring-authorization-rules-and-site-security"></a>Configurar las reglas de autorización y la seguridad del sitio
@@ -45,10 +45,10 @@ Los cmdlets a los que se hace referencia en [Cmdlets de Windows PowerShell Web A
 Las reglas difieren de las listas de control de acceso (ACL) en el equipo de destino y proporcionan un nivel de seguridad adicional para el acceso web.
 En la siguiente sección, se proporcionan más detalles sobre la seguridad.
 
-Si los usuarios no pueden pasar alguno de los niveles de seguridad anteriores, recibirán un mensaje de “acceso denegado” genérico en la ventana del explorador.
+Si los usuarios no pueden pasar alguno de los niveles de seguridad anteriores, recibirán un mensaje de "acceso denegado" genérico en la ventana del explorador.
 Si bien los detalles de seguridad se registran en el servidor de puerta de enlace, los usuarios finales no verán ninguna información acerca de cuántos niveles de seguridad pasaron ni en qué nivel se produjo el error de autenticación o de inicio de sesión.
 
-Para más información sobre cómo configurar las reglas de autorización, vea [Configuración de reglas de autorización]() en este tema.
+Para más información sobre cómo configurar las reglas de autorización, vea [Configuración de reglas de autorización](#configuring-authorization-rules-and-site-security) en este tema.
 
 ### <a name="security"></a>Seguridad
 
@@ -62,17 +62,17 @@ En la siguiente tabla, se describen los cuatro niveles de seguridad entre los us
 
 |Nivel|Nivel|
 |-|-|
-|1|[características de seguridad de servidor web de IIS]()|
-|2|[autenticación de puerta de enlace basada en formularios de Windows PowerShell Web Access]()|
-|3|[reglas de autorización de Windows PowerShell Web Access]()|
-|4|[reglas de autorización y autenticación de destino]()|
+|1|[características de seguridad de servidor web de IIS](#iis-web-server-security-features)|
+|2|[autenticación de puerta de enlace basada en formularios de Windows PowerShell Web Access](#windows-powershell-web-access-forms-based-gateway-authentication)|
+|3|[reglas de autorización de Windows PowerShell Web Access](#windows-powershell-web-access-authorization-rules)|
+|4|[reglas de autorización y autenticación de destino](#target-authentication-and-authorization-rules)|
 
 En los siguientes encabezados encontrará información detallada sobre cada nivel:
 
 #### <a name="iis-web-server-security-features"></a>Características de seguridad de Servidor web de IIS
 
 Los usuarios de Windows PowerShell Web Access siempre deben proporcionar un nombre de usuario y una contraseña para autenticar sus cuentas en la puerta de enlace.
-Pero los administradores de Windows PowerShell Web Access también pueden activar o desactivar la autenticación de certificados de cliente opcional (vea [Instalación y uso de Windows PowerShell Web Access]() para habilitar un certificado de prueba y luego configurar un certificado original).
+Pero los administradores de Windows PowerShell Web Access también pueden activar o desactivar la autenticación de certificados de cliente opcional (consulte [Instalación y uso de Windows PowerShell Web Access](install-and-use-windows-powershell-web-access.md) para habilitar un certificado de prueba y luego configurar un certificado original).
 
 La característica de certificado de cliente opcional, que forma parte de la configuración de Servidor web (IIS), requiere que los usuarios finales tengan un certificado de cliente válido, además de sus nombres de usuario y contraseñas.
 Cuando el nivel de certificado de cliente está habilitado, la página de inicio de sesión de Windows PowerShell Web Access solicita a los usuarios que proporcionen certificados válidos antes de evaluar sus credenciales de inicio de sesión.
@@ -89,12 +89,12 @@ La página de inicio de sesión de Windows PowerShell Web Access requiere un con
 Si el usuario no proporciona credenciales alternativas, el nombre de usuario y la contraseña principales usados para la conexión con la puerta de enlace también se usarán para la conexión con el equipo de destino.
 
 Las credenciales requeridas se autentican en la puerta de enlace de Windows PowerShell Web Access.
-Estas credenciales deben ser cuentas de usuario válidas en el servidor de puerta de enlace de Windows PowerShell Web Access local o en Active Directory®.
+Estas credenciales deben ser cuentas de usuario válidas en el servidor de puerta de enlace de Windows PowerShell Web Access local o en Active Directory.
 
 #### <a name="windows-powershell-web-access-authorization-rules"></a>Reglas de autorización de Windows PowerShell Web Access
 
 Una vez autenticado un usuario en la puerta de enlace, Windows PowerShell Web Access comprueba las reglas de autorización para averiguar si el usuario tiene acceso al equipo de destino solicitado.
-Una vez completada correctamente la autorización, las credenciales del usuario se pasan al equipo de destino.
+Una vez completada la autorización correctamente, las credenciales del usuario se pasan al equipo de destino.
 
 Estas reglas solo se evalúan una vez que la puerta de enlace ha autenticado al usuario y antes de que el usuario pueda autenticarse en el equipo de destino.
 
@@ -129,7 +129,7 @@ No se admiten los caracteres comodín dentro de las cadenas. Use un solo asteris
 
 > **Nota**
 >
-> Para conocer otros modos de usar las reglas de autorización para conceder acceso a los usuarios y ayudar a proteger el entorno de Windows PowerShell Web Access, vea [Otros ejemplos de escenarios de reglas de autorización]() en este tema.
+> Para conocer otros modos de usar las reglas de autorización para conceder acceso a los usuarios y ayudar a proteger el entorno de Windows PowerShell Web Access, vea [Otros ejemplos de escenarios de reglas de autorización](#other-authorization-rule-scenario-examples) en este tema.
 
 #### <a name="to-add-a-restrictive-authorization-rule"></a>Para agregar una regla de autorización restrictiva
 
@@ -160,7 +160,7 @@ Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -
 
 #### <a name="to-remove-an-authorization-rule"></a>Para quitar una regla de autorización
 
-1. Si aún no tiene abierta ninguna sesión de Windows PowerShell, vea el paso 1 de [Agregar una regla de autorización restrictiva]() de esta sección.
+1. Si aún no tiene abierta ninguna sesión de Windows PowerShell, vea el paso 1 de [Agregar una regla de autorización restrictiva](#to-add-a-restrictive-authorization-rule) de esta sección.
 
 2. Escriba lo siguiente y, a continuación, presione **Entrar**, donde *identificador de regla* representa el número de identificación único de la regla que desea quitar.
 
@@ -181,9 +181,9 @@ A continuación, se proporcionan algunos ejemplos de este escenario.
 
 - Un administrador crea un punto de conexión, llamado **PswaEndpoint**, con un espacio de ejecución restringido. Después, crea una regla, **\*,\*,PswaEndpoint** y distribuye el punto de conexión a otros equipos. La regla permite a todos los usuarios obtener acceso a todos los equipos con el punto de conexión **PswaEndpoint**. Si esta es la única regla de autorización definida en el conjunto de reglas, no se podrá obtener acceso a los equipos que no tengan ese extremo.
 
--   Un administrador ha creado un punto de conexión con un espacio de ejecución restringido, llamado **PswaEndpoint**, y desea restringir el acceso a usuarios específicos. El administrador crea un grupo de usuarios llamado **Level1Support** y define la siguiente regla: **Level1Support,\*,PswaEndpoint**. La regla concede a cualquier usuario del grupo **Level1Support** acceso a todos los equipos con la configuración **PswaEndpoint**. De modo semejante, se puede restringir el acceso a un conjunto específico de equipos.
+- Un administrador ha creado un punto de conexión con un espacio de ejecución restringido, llamado **PswaEndpoint**, y desea restringir el acceso a usuarios específicos. El administrador crea un grupo de usuarios llamado **Level1Support** y define la siguiente regla: **Level1Support,\*,PswaEndpoint**. La regla concede a cualquier usuario del grupo **Level1Support** acceso a todos los equipos con la configuración **PswaEndpoint**. De modo semejante, se puede restringir el acceso a un conjunto específico de equipos.
 
--   Algunos administradores proporcionan a determinados usuarios más acceso que a otros. Por ejemplo, un administrador crea dos grupos de usuarios, **Admins** y **BasicSupport**. También crea un punto de conexión con un espacio de ejecución restringido llamado **PswaEndpoint** y define las dos reglas siguientes: **Admins,\*,\*** y **BasicSupport,\*,PswaEndpoint**. La primera regla proporciona a todos los usuarios del grupo **Admin** acceso a todos los equipos y la segunda regla proporciona a todos los usuarios del grupo **BasicSupport** acceso únicamente a los equipos con **PswaEndpoint**.
+- Algunos administradores proporcionan a determinados usuarios más acceso que a otros. Por ejemplo, un administrador crea dos grupos de usuarios, **Admins** y **BasicSupport**. También crea un punto de conexión con un espacio de ejecución restringido llamado **PswaEndpoint** y define las dos reglas siguientes: **Admins,\*,\*** y **BasicSupport,\*,PswaEndpoint**. La primera regla proporciona a todos los usuarios del grupo **Admin** acceso a todos los equipos y la segunda regla proporciona a todos los usuarios del grupo **BasicSupport** acceso únicamente a los equipos con **PswaEndpoint**.
 
 - Un administrador ha configurado un entorno de prueba privado y desea conceder a todos los usuarios de red autorizados acceso a todos los equipos de la red a los que tienen acceso normalmente, con acceso a todas las configuraciones de sesión a las que tienen acceso normalmente. Como se trata de un entorno de prueba privado, el administrador crea una regla de autorización que no es segura.
   - Ejecuta el cmdlet `Add-PswaAuthorizationRule * * *`, que usa el carácter comodín **\*** para representar todos los usuarios, todos los equipos y todas las configuraciones.
@@ -209,7 +209,7 @@ En el escenario anterior, Windows PowerShell Web Access solo establecerá una co
 
   >**Nota**:
   >
-  >Si los equipos de destino y de la puerta de enlace se encuentran en grupos de trabajo o dominios diferentes, se debe establecer una relación de confianza entre los dos equipos del grupo de trabajo, entre los dos dominios o entre el grupo de trabajo y el dominio. Esta relación no se puede configurar mediante los cmdlets de reglas de autorización de Windows PowerShell Web Access. Las reglas de autorización no definen una relación de confianza entre equipos; solo pueden autorizar a los usuarios para que se conecten a equipos de destino y configuraciones de sesión específicos. Para más información sobre el modo de configurar una relación de confianza entre dominios diferentes, consulte [Creating Domain and Forest Trusts](https://technet.microsoft.com/library/cc794775.aspx") (Creación de confianzas entre dominios y bosques). Para más información sobre el modo de agregar equipos del grupo de trabajo a una lista de hosts de confianza, vea [Administración remota con el Administrador del servidor](href="https://technet.microsoft.com/library/dd759202.aspx).
+  >Si los equipos de destino y de la puerta de enlace se encuentran en grupos de trabajo o dominios diferentes, se debe establecer una relación de confianza entre los dos equipos del grupo de trabajo, entre los dos dominios o entre el grupo de trabajo y el dominio. Esta relación no se puede configurar mediante los cmdlets de reglas de autorización de Windows PowerShell Web Access. Las reglas de autorización no definen una relación de confianza entre equipos; solo pueden autorizar a los usuarios para que se conecten a equipos de destino y configuraciones de sesión específicos. Para más información sobre el modo de configurar una relación de confianza entre dominios diferentes, consulte [Creating Domain and Forest Trusts](https://technet.microsoft.com/library/cc794775.aspx") (Creación de confianzas entre dominios y bosques). Para más información sobre el modo de agregar equipos del grupo de trabajo a una lista de hosts de confianza, vea [Administración remota con el Administrador del servidor](https://technet.microsoft.com/library/dd759202.aspx).
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Uso de un solo conjunto de reglas de autorización para varios sitios
 

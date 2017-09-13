@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: El objeto PowerShellTab
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
-ms.openlocfilehash: 482984272b2f1be027cf2be49bdfa2c6e2c52070
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 15d9a7474e4c2cf2a9ff8edb88802106489cdba1
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-powershelltab-object"></a>El objeto PowerShellTab
   El objeto **PowerShellTab** representa un entorno de runtime de Windows PowerShell.
@@ -20,7 +20,7 @@ ms.lasthandoff: 08/31/2017
  Ejecuta el script especificado en la pestaña de PowerShell.
 
 > [!NOTE]
->  Este método solo funciona en otras pestañas de PowerShell, no en la pestaña de PowerShell desde la que se ejecuta. No devuelve ningún objeto o valor. Si el código modifica cualquier variable, esos cambios se conservan en la pestaña en la que se invocó el comando.
+> Este método solo funciona en otras pestañas de PowerShell, no en la pestaña de PowerShell desde la que se ejecuta. No devuelve ningún objeto o valor. Si el código modifica cualquier variable, esos cambios se conservan en la pestaña en la que se invocó el comando.
 
  **Script**: System.Management.Automation.ScriptBlock o cadena. El bloque de script para ejecutar.
 
@@ -36,7 +36,7 @@ $psise.PowerShellTabs[1].Invoke({dir})
  Ejecuta el script especificado en la pestaña de PowerShell.
 
 > [!NOTE]
->  Este método solo funciona en otras pestañas de PowerShell, no en la pestaña de PowerShell desde la que se ejecuta. El bloque de script se ejecuta y cualquier valor que se devuelve desde el script se devuelve al entorno de ejecución desde el que se invocó el comando. Si el comando tarda más tiempo en ejecutarse que lo que especifica el valor de **tiempoEsperaMilisegundos**, el comando no se ejecuta correctamente e inicia una excepción: "La operación ha agotado el tiempo de espera.".
+> Este método solo funciona en otras pestañas de PowerShell, no en la pestaña de PowerShell desde la que se ejecuta. El bloque de script se ejecuta y cualquier valor que se devuelve desde el script se devuelve al entorno de ejecución desde el que se invocó el comando. Si el comando tarda más tiempo en ejecutarse que lo que especifica el valor de **tiempoEsperaMilisegundos**, el comando no se ejecuta correctamente e inicia una excepción: "La operación ha agotado el tiempo de espera.".
 
  **Script**: System.Management.Automation.ScriptBlock o cadena. El bloque de script para ejecutar.
 
@@ -52,7 +52,7 @@ $psISE.PowerShellTabs.SetSelectedPowerShellTab($psISE.PowerShellTabs[0])
 
 # Invoke a simple command on the other tab, in its own scope
 $psISE.PowerShellTabs[1].InvokeSynchronous('$x=1',$false)
-# You can switch to the other tab and type â€œ$xâ€ to see that the value is saved there.
+# You can switch to the other tab and type 'œ$x' to see that the value is saved there.
 
 # This example sets a value in the other tab (in a different scope) 
 # and returns it through the pipeline to this tab to store in $a
@@ -88,7 +88,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 ### <a name="caninvoke"></a>CanInvoke
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
- La propiedad booleana de solo lectura que devuelve un valor **$true** si se puede invocar un script con el método [Invoke( Script )]().
+ La propiedad booleana de solo lectura que devuelve un valor **$true** si se puede invocar un script con el método [Invoke( Script )](#invoke-script-).
 
 ```
 # CanInvoke will be false if the PowerShell
@@ -162,7 +162,7 @@ $psise.CurrentPowerShellTab.output.clear()
 ### <a name="prompt"></a>Prompt
   Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
- La propiedad de solo lectura que obtiene el texto de la petición actual. Nota: El perfil del usuario puede reemplazar la función **Prompt**. Si el resultado es distinto de una cadena simple, esta propiedad no devuelve nada.
+ La propiedad de solo lectura que obtiene el texto de la petición actual. Nota: El perfil del usuario puede reemplazar a la función **Prompt**. Si el resultado es distinto de una cadena simple, esta propiedad no devuelve nada.
 
 ```
 # Gets the current prompt text.

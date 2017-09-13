@@ -1,6 +1,17 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 60055b6755a31397c49686ea9ee1a69ada3516de
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 09/08/2017
+---
 # <a name="cryptographic-message-syntax-cms-cmdlets"></a>Cmdlets de sintaxis de mensajes de cifrado (CMS)
 
-Los cmdlets de sintaxis de mensajes de cifrado admiten el cifrado y descifrado de contenido mediante el formato estándar IETF para proteger los mensajes de forma criptográfica según se documenta en [RFC5652](http://tools.ietf.org/html/rfc5652).
+Los cmdlets de sintaxis de mensajes de cifrado admiten el cifrado y descifrado de contenido mediante el formato estándar IETF para proteger los mensajes de forma criptográfica según se documenta en [RFC5652](https://tools.ietf.org/html/rfc5652).
 
 ```powershell
 Get-CmsMessage [-Content] <string>
@@ -17,7 +28,7 @@ Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>] [-I
 
 El estándar de cifrado de CMS implementa la criptografía de clave pública, donde las claves usadas para cifrar contenido (la *clave pública*) y las claves usadas para descifrar contenido (la *clave privada*) son independientes.
 
-La clave pública se puede compartir y no se considera información confidencial. Si cualquier contenido está cifrado con esta clave pública, solo su clave privada puede descifrarlo. Para más información acerca de la criptografía de clave pública, consulte: <http://en.wikipedia.org/wiki/Public-key_cryptography>.
+La clave pública se puede compartir y no se considera información confidencial. Si cualquier contenido está cifrado con esta clave pública, solo su clave privada puede descifrarlo. Para obtener más información, consulte [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) (Criptografía mediante claves públicas).
 
 Para que puedan reconocerse en PowerShell, los certificados de cifrado requieren un identificador de uso de claves único (EKU) para identificarlos como certificados de cifrado de datos (por ejemplo, los identificadores de "Firma de código" y "Correo cifrado").
 
@@ -82,3 +93,4 @@ Para ver los certificados de cifrado del documento en el proveedor de certificad
 ```powershell
 dir -DocumentEncryptionCert
 ```
+
