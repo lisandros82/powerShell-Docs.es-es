@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Iniciar el motor de Windows PowerShell 2.0
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 2e5c13cafdfd9fbe479fcad8ac81725cbd7ac3d9
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 88d4374891e38501f6bbcd0793c86692eaed2f22
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>Iniciar el motor de Windows PowerShell 2.0
 En esta sección se explica cómo iniciar el motor de Windows PowerShell 2.0 en Windows 8.1, Windows Server 2012 R2, Windows 8 y Windows Server 2012, que incluyen el motor de Windows PowerShell 2.0, y en otros sistemas que tienen instalado Windows PowerShell 2.0, Windows PowerShell 3.0 y Windows PowerShell 4.0.
@@ -66,5 +66,5 @@ El comando siguiente inicia un trabajo en segundo plano con el motor de Windows 
 Start-Job {Get-Process} -PSVersion 2.0
 ```
 
-Para más información sobre los trabajos en segundo plano, consulte [about_Jobs [v4]](https://technet.microsoft.com/en-us/library/7362512a-8a4e-4575-b2ea-a740e5c4f002).
+Para más información sobre los trabajos en segundo plano, consulte [about_Jobs [v4]](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-4.0).
 

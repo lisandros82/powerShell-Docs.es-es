@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: "desinstalación de Windows PowerShell Web Access"
-ms.openlocfilehash: 7c71a245be244c1883598cdcddbf35e43c0fc7b0
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: b6e6a2374e6b4b2be8742019c5f1e4d5b5d1abe3
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Desinstalar Windows PowerShell Web Access
 
@@ -20,10 +20,8 @@ Los pasos descritos en este tema quitan el sitio web de Windows PowerShell Web A
 
 Antes de comenzar, notifique a los usuarios de la consola basada en web de que quitará el sitio web.
 
-
-Antes de desinstalar Windows PowerShell Web Access del servidor de puerta de enlace, ejecute el cmdlet `Uninstall-PswaWebApplication` para quitar el sitio web y las aplicaciones web de Windows PowerShell Web Access, o bien use el procedimiento del Administrador de IIS, [para eliminar el sitio web y las aplicaciones web de Windows PowerShell Web Access mediante el Administrador de IIS]().
-
-Al desinstalar Windows PowerShell Web Access, no se desinstalan IIS ni las demás características que se instalaron automáticamente porque eran necesarias para la ejecución de Windows PowerShell Web Access. El proceso de desinstalación deja instaladas las características de las cuales dependía Windows PowerShell Web Access. Si necesita desinstalarlas, puede hacerlo de manera individual.
+Al desinstalar Windows PowerShell Web Access, no se desinstalan IIS ni las demás características que se instalaron automáticamente porque eran necesarias para la ejecución de Windows PowerShell Web Access.
+El proceso de desinstalación deja instaladas las características de las cuales dependía Windows PowerShell Web Access. Si necesita desinstalarlas, puede hacerlo de manera individual.
 
 ## <a name="recommended-quick-uninstallation"></a>Desinstalación (rápida) recomendada
 

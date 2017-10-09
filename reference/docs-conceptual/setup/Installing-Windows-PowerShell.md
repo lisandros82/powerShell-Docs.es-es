@@ -2,11 +2,11 @@
 ms.date: 2017-08-09
 keywords: powershell,cmdlet,descargar,instalar,configurar,windows 10,windows 8.1,windows 8.0,windows 7
 title: "Instalación de Windows PowerShell"
-ms.openlocfilehash: 7ccbee66d01dd8e0e6e6ab09c6c8a399bee59ce8
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 781bf50b6ac649e72bcdbb708555275fb7422d94
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="installing-windows-powershell"></a>Instalación de Windows PowerShell
 
@@ -54,7 +54,7 @@ Las ediciones de Windows Server sin GUI se conocen como ediciones **básicas**, 
 
 En todas las ediciones básicas, se mostrará una ventana del símbolo del sistema de Windows al iniciar sesión en el servidor.
 
-Escriba `powerhell` y pulse **ENTRAR** para iniciar PowerShell en la sesión del símbolo del sistema. Escriba `exit` para finalizar la sesión de PowerShell y volver al símbolo del sistema.
+Escriba `powershell` y pulse **ENTRAR** para iniciar PowerShell en la sesión del símbolo del sistema. Escriba `exit` para finalizar la sesión de PowerShell y volver al símbolo del sistema.
 
 ### <a name="windows-server-desktop-editions"></a>Ediciones de escritorio de Windows Server
 

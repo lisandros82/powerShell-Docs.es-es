@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "referencia de guías básicas"
-ms.openlocfilehash: a745048eb47a983fa90616ccbd58184080706096
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: d6f0bf97c9491f1a4c9ba13aae837c17860aa6c7
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="basic-cookbooks-reference"></a>Referencia de guías básicas
 
@@ -26,7 +26,6 @@ ms.lasthandoff: 09/08/2017
 - [Cuadros de lista de selección múltiple](Multiple-selection-List-Boxes.md)
 - [Otros objetos de scripting útiles](Other-Useful-Scripting-Objects.md)
 - [Realizar tareas de redes](Performing-Networking-Tasks.md)
-- [Módulo PowerShellGet](PowerShellGet-Module.md)
 - [Redirigir datos con cmdlet   Out](Redirecting-Data-with-Out---Cmdlets.md)
 - [Quitar objetos de la canalización  Where Object ](Removing-Objects-from-the-Pipeline--Where-Object-.md)
 - [Repetir una tarea para varios objetos  ForEach Object ](Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)

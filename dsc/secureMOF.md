@@ -1,16 +1,14 @@
 ---
-title: Proteger el archivo MOF
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 395ebe88fcf1f4d79c4eb91bf10c63c82cb1d799
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Proteger el archivo MOF
+ms.openlocfilehash: dc900f53c954637a407fbd026d24d20c2fdabf6e
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="securing-the-mof-file"></a>Proteger el archivo MOF
 
@@ -149,7 +147,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
-Una vez exportado, el ```DscPrivateKey.cer``` tendría que copiarse en el **nodo de destino**.
+Una vez exportado, el ```DscPrivateKey.pfx``` tendría que copiarse en el **nodo de destino**.
 
 >Nodo de destino: Windows Server 2012 R2/Windows 8.1 y versiones anteriores
 
@@ -306,7 +304,7 @@ configuration CredentialEncryptionExample
 
 En este punto, puede ejecutar la configuración, lo que dará como resultado dos archivos:
 
- * Un archivo *.meta.mof que configura el administrador de configuración local para descifrar las credenciales mediante el certificado que está almacenado en el almacén de la máquina local y que se identifica a través de su huella digital. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) se aplica al archivo *.meta.mof.
+ * Un archivo *.meta.mof que configura el administrador de configuración local para que descifre las credenciales mediante el certificado que está almacenado en el almacén de la máquina local y se identifique mediante su huella digital. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) se aplica al archivo *.meta.mof.
  * Un archivo MOF que aplica realmente la configuración. Start-DscConfiguration aplica la configuración.
 
 Estos comandos llevará a cabo esos pasos:

@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Uso de Windows PowerShell"
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
-ms.openlocfilehash: c942caa6cea3b24fe5e6442e28600363466380bd
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 874c6fc6f0b09b0f586725ed7df7bc68c31e1733
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="using-windows-powershell"></a>Uso de Windows PowerShell
 Windows PowerShell® es un lenguaje de scripting y shell de línea de comandos basado en tareas diseñado especialmente para la administración del sistema. Basado en .NET Framework, Windows PowerShell ayuda a los profesionales de TI y a los usuarios avanzados a controlar y automatizar la administración tanto del sistema operativo Windows como de las aplicaciones que se ejecutan en Windows.
@@ -67,6 +67,3 @@ En los siguientes temas se detalla cómo puede obtener la Ayuda más reciente de
     Para más información sobre el sistema de ayuda actualizable de Windows PowerShell, incluido cómo instalarla en equipos aislados de red, vea [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx) (Acerca de la ayuda actualizable), [Save-Help](http://technet.microsoft.com/library/hh849724.aspx) (Ayuda para guardar) y [Supporting Updatable Help](http://msdn.microsoft.com/library/hh852754.aspx) (Compatibilidad con la ayuda actualizable).
 
 - cmdlet [Get-Help](http://technet.microsoft.com/library/hh849696(v=wps.630).aspx). Cmdlet de Windows PowerShell que puede usar para obtener información sobre los cmdlets y proveedores instalados en el sistema.
-
-- Si se suscribe a la siguiente fuente RSS, recibirá notificaciones sobre las actualizaciones de archivos de Ayuda publicados: [http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions).
-

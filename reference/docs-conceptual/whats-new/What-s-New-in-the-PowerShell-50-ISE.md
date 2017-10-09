@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Novedades de PowerShell ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 1e315351d0e5dde146881b0e6527c38e59777a1e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 89dcc905ce200d06029e148c9675269e6f518fa3
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Novedades de Windows PowerShell ISE
 En este tema se explican las características nuevas y actualizadas que se introdujeron en las versiones de Entorno de scripting integrado (ISE) de Windows PowerShell.
@@ -22,16 +22,16 @@ En la tabla siguiente se enumeran las características nuevas y modificadas de e
 
 |Característica/funcionalidad|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-|**[IntelliSense]()**|X|X||
-|**[Fragmentos de código]()**|X|X||
-|**[Herramientas de complemento]()**|X|X||
-|**[Administrador de reinicio y guardado automático]()**|X|X||
-|**[Panel de consola]()**|X|X||
-|**[Lista Usados más recientemente]()**|X|X||
-|**[Modificadores de la línea de comandos]()**|X|X||
-|**[Nuevas características del editor]()**|X|X||
-|**[Ventana del nuevo visor de Ayuda]()**|X|X||
-|**[Cmdlet Show-Command]()**|X|X||
+|**[IntelliSense](#intellisense)**|X|X||
+|**[Fragmentos de código](#snippets)**|X|X||
+|**[Herramientas de complemento](#add-on-tools)**|X|X||
+|**[Administrador de reinicio y guardado automático](#restart-manager-and-auto-save)**|X|X||
+|**[Lista Usados más recientemente](#most-recently-used-list)**|X|X||
+|**[Panel de consola](#console-pane)**|X|X||
+|**[Modificadores de la línea de comandos](#command-line-switches)**|X|X||
+|**[Nuevas características del editor](#new-editor-features)**|X|X||
+|**[Ventana del nuevo visor de Ayuda](#new-help-viewer-window)**|X|X||
+|**[Cmdlet Show-Command](#show-command-cmdlet)**|X|X||
 
 ### <a name="intellisense"></a>Intellisense
 **Agregado en ISE 3.0**
