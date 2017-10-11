@@ -1,239 +1,252 @@
-- name: Scripting de PowerShell
+- name: docs-conceptual (Documentación conceptual)
   href: PowerShell-Scripting.md
   items:
-    - name: Novedades de PowerShell
-      href: whats-new/What-s-New-With-PowerShell.md
-      items:
-        - name: PowerShell v5.0
-          href: whats-new/What-s-New-in-Windows-PowerShell-50.md
-        - name: PowerShell 5.0 ISE
-          href: whats-new/What-s-New-in-the-PowerShell-50-ISE.md
-    - name: Instalación
-      href: setup/setup-reference.md
-      items:
-        - name: Requisitos del sistema de PowerShell
-          href: setup/Windows-PowerShell-System-Requirements.md
-        - name: Instalar PowerShell
-          href: setup/Installing-Windows-PowerShell.md
-        - name: Iniciar PowerShell
-          href: setup/Starting-Windows-PowerShell.md
-          items:
-            - name: Iniciar la versión de 32 bits de PowerShell
-              href: setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md
-            - name: Iniciar PowerShell en versiones anteriores de Windows
-              href: setup/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md
-        - name: Instalar el motor de Windows PowerShell 2.0
-          href: setup/Installing-the-Windows-PowerShell-2.0-Engine.md
-        - name: Iniciar el motor de Windows PowerShell 2.0
-          href: setup/Starting-the-Windows-PowerShell-2.0-Engine.md
-        - name: Instalar el SDK de Windows PowerShell
-          href: setup/Installing-the-Windows-PowerShell-SDK.md
-        - name: Seguridad
-          href: setup/security.md
-          items:
-            - name: Consideraciones de seguridad de comunicación remota de PowerShell
-              href: setup/WinRMSecurity.md
-            - name: Realizar el segundo salto en la comunicación remota de PowerShell
-              href: setup/PS-remoting-second-hop.md
-        - name: Accesibilidad
-          href: setup/Accessibility-in-Windows-PowerShell-ISE.md
-    - name: Introducción
-      href: getting-started/Getting-Started-with-Windows-PowerShell.md
-      items:
-        - name: Configuración básica para aprendizaje de PowerShell
-          href: getting-started/Getting-Ready-to-Use-Windows-PowerShell.md
-        - name: Conceptos fundamentales
-          href: getting-started/fundamental-concepts.md
-          items:
-            - name: Conceptos básicos de PowerShell
-              href: getting-started/fundamental/Windows-PowerShell-Basics.md
-            - name: Obtener información de ayuda detallada
-              href: getting-started/fundamental/Getting-Detailed-Help-Information.md
-            - name: "Explorar Windows\_PowerShell\_ISE"
-              href: getting-started/fundamental/Exploring-the-Windows-PowerShell-ISE.md
-            - name: Obtener información sobre los comandos
-              href: getting-started/fundamental/Getting-Information-About-Commands.md
-            - name: Aprendizaje de los nombres de PowerShell
-              href: getting-started/fundamental/Learning-Windows-PowerShell-Names.md
-            - name: Usar Windows PowerShell para la administración
-              href: getting-started/fundamental/Using-Windows-PowerShell-for-Administration.md
-            - name: Usar variables para almacenar objetos
-              href: getting-started/fundamental/Using-Variables-to-Store-Objects.md
-            - name: Acerca de Windows PowerShell
-              href: getting-started/fundamental/About-Windows-PowerShell.md
-            - name: Entorno de scripting integrado (ISE) de Windows PowerShell
-              href: getting-started/fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md
-            - name: Descripción de los conceptos importantes de Windows PowerShell (ISE)
-              href: getting-started/fundamental/Understanding-Important-Windows-PowerShell-Concepts.md
-            - name: Descripción de la canalización de PowerShell
-              href: getting-started/fundamental/Understanding-the-Windows-PowerShell-Pipeline.md
-            - name: Usar nombres de comando conocidos
-              href: getting-started/fundamental/Using-Familiar-Command-Names.md
-            - name: Canalización de objetos
-              href: getting-started/fundamental/Object-Pipeline.md
-            - name: "Scripting con Windows\_PowerShell"
-              href: getting-started/fundamental/Scripting-with-Windows-PowerShell.md
-            - name: "Uso de Windows\_PowerShell"
-              href: getting-started/fundamental/Using-Windows-PowerShell.md
-        - name: Guías básicas
-          href: getting-started/basic-cookbooks.md
-          items:
-            - name: Cambiar el estado del equipo
-              href: getting-started/cookbooks/Changing-Computer-State.md
-            - name: Recopilar información acerca de los equipos
-              href: getting-started/cookbooks/Collecting-Information-About-Computers.md
-            - name: Alias de compatibilidad
-              href: getting-started/cookbooks/Appendix-1---Compatibility-Aliases.md
-            - name: Crear objetos .NET y COM (New-Object)
-              href: getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md
-            - name: Crear un cuadro de entrada personalizado
-              href: getting-started/cookbooks/Creating-a-Custom-Input-Box.md
-            - name: Crear un acceso directo de PowerShell personalizado
-              href: getting-started/cookbooks/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md
-            - name: Crear un selector de fecha gráfico
-              href: getting-started/cookbooks/Creating-a-Graphical-Date-Picker.md
-            - name: Obtener objetos de WMI (Get-WmiObject)
-              href: getting-started/cookbooks/Getting-WMI-Objects--Get-WmiObject-.md
-            - name: Administración de procesos con cmdlets de proceso
-              href: getting-started/cookbooks/Managing-Processes-with-Process-Cmdlets.md
-            - name: Administración de servicios
-              href: getting-started/cookbooks/Managing-Services.md
-            - name: "Administrar unidades de Windows\_PowerShell"
-              href: getting-started/cookbooks/Managing-Windows-PowerShell-Drives.md
-            - name: Administrar la ubicación actual
-              href: getting-started/cookbooks/Managing-Current-Location.md
-            - name: Manipular elementos directamente
-              href: getting-started/cookbooks/Manipulating-Items-Directly.md
-            - name: Cuadros de lista de selección múltiple
-              href: getting-started/cookbooks/Multiple-selection-List-Boxes.md
-            - name: Otros objetos de scripting útiles
-              href: getting-started/cookbooks/Other-Useful-Scripting-Objects.md
-            - name: Realizar tareas de redes
-              href: getting-started/cookbooks/Performing-Networking-Tasks.md
-            - name: Módulo PowerShell Get
-              href: getting-started/cookbooks/PowerShellGet-Module.md
-            - name: Redirigir datos con cmdlets Out-*
-              href: getting-started/cookbooks/Redirecting-Data-with-Out---Cmdlets.md
-            - name: Quitar objetos de la canalización (Where-Object)
-              href: getting-started/cookbooks/Removing-Objects-from-the-Pipeline--Where-Object-.md
-            - name: Repetir una tarea para varios objetos (ForEach-Object)
-              href: getting-started/cookbooks/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md
-            - name: Seleccionar elementos de un cuadro de lista
-              href: getting-started/cookbooks/Selecting-Items-from-a-List-Box.md
-            - name: Seleccionar partes de objetos (Select-Object)
-              href: getting-started/cookbooks/Selecting-Parts-of-Objects--Select-Object-.md
-            - name: Ordenar objetos
-              href: getting-started/cookbooks/Sorting-Objects.md
-            - name: Usar comandos de formato para cambiar la vista de salida
-              href: getting-started/cookbooks/Using-Format-Commands-to-Change-Output-View.md
-            - name: Usar métodos y clases estáticas
-              href: getting-started/cookbooks/Using-Static-Classes-and-Methods.md
-            - name: Ver la estructura del objeto (Get-Member)
-              href: getting-started/cookbooks/Viewing-Object-Structure--Get-Member-.md
-            - name: 'Trabajar con archivos, carpetas y claves del Registro'
-              href: getting-started/cookbooks/Working-With-Files-Folders-and-Registry-Keys.md
-            - name: Trabajar con archivos y carpetas
-              href: getting-started/cookbooks/Working-with-Files-and-Folders.md
-            - name: Trabajar con objetos
-              href: getting-started/cookbooks/Working-with-Objects.md
-            - name: Trabajar con impresoras
-              href: getting-started/cookbooks/Working-with-Printers.md
-            - name: Trabajar con entradas del Registro
-              href: getting-started/cookbooks/Working-with-Registry-Entries.md
-            - name: Trabajar con claves del Registro
-              href: getting-started/cookbooks/Working-with-Registry-Keys.md
-            - name: Trabajar con instalaciones de software
-              href: getting-started/cookbooks/Working-with-Software-Installations.md
-        - name: ¿Dónde puedo aprender más?
-          href: getting-started/more-powershell-learning.md
     - name: PowerShell común
       href: core-powershell/core-powershell.md
       items:
-        - name: Entorno de scripting integrado (ISE)
-          href: core-powershell/ise-guide.md
+        - name: consola
+          href: ''
           items:
-            - name: Referencia del modelo de objetos ISE
-              href: core-powershell/ise/Windows-PowerShell-ISE-Object-Model-Reference.md
-            - name: Objeto de objetos de scripting ISE
-              href: core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md
-            - name: "Usar Windows\_PowerShell\_ISE"
-              href: core-powershell/ise/Using-the-Windows-PowerShell-ISE.md
-            - name: El objeto ISE File
-              href: core-powershell/ise/The-ISEFile-Object.md
-            - name: El objeto ISE Options
-              href: core-powershell/ise/The-ISEOptions-Object.md
-            - name: El objeto ISE Snippet Collection
-              href: core-powershell/ise/The-ISESnippetCollection-Object.md
-            - name: El objeto ISE Snippet
-              href: core-powershell/ise/The-ISESnippetObject.md
-            - name: El objeto ISO Object Model Root
-              href: core-powershell/ise/The-ObjectModelRoot-Object.md
-            - name: Creación de una pestaña de PowerShell en PowerShell ISE
-              href: core-powershell/ise/How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md
-            - name: Depuración de scripts en PowerShell ISE
-              href: core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md
-            - name: Uso de perfiles en PowerShell ISE
-              href: core-powershell/ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md
-            - name: Uso del panel de consola en PowerShell ISE
-              href: core-powershell/ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md
-            - name: Cómo usar la finalización con tabulación en el panel de scripts y en el panel de consola
-              href: core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md
-            - name: Cómo escribir y ejecutar scripts en Windows PowerShell ISE
-              href: core-powershell/ise/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md
-            - name: "Introducción a PowerShell\_ISE"
-              href: core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md
-            - name: Módulo ISE
-              href: core-powershell/ise/ISE-Module.md
-            - name: Métodos abreviados de teclado para PowerShell ISE
-              href: core-powershell/ise/Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md
-            - name: El objeto PowerShell Tab
-              href: core-powershell/ise/The-PowerShellTab-Object.md
-            - name: El objeto PowerShell Tab Collection
-              href: core-powershell/ise/The-PowerShellTabCollection-Object.md
-            - name: Finalidad del modelo de objetos de scripting de PowerShell ISE
-              href: core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md
-            - name: La jerarquía del modelo de objetos de ISE
-              href: core-powershell/ise/The-ISE-Object-Model-Hierarchy.md
-            - name: El objeto ISE Add On Tool
-              href: core-powershell/ise/The-ISEAddOnTool-Object.md
-            - name: El objeto ISE Add On Tool Collection
-              href: core-powershell/ise/The-ISEAddOnToolCollection-Object.md
-            - name: El objeto ISE Editor
-              href: core-powershell/ise/The-ISEEditor-Object.md
-            - name: El objeto ISE File Collection
-              href: core-powershell/ise/The-ISEFileCollection-Object.md
-            - name: El objeto ISE Menu Item
-              href: core-powershell/ise/The-ISEMenuItem-Object.md
-            - name: El objeto ISE Menu Item Collection
-              href: core-powershell/ise/The-ISEMenuItemCollection-Object.md
-        - name: Consola
-          href: core-powershell/console-guide.md
-          items:
-            - name: Referencia de la línea de comandos de consola
-              href: core-powershell/console/PowerShell.exe-Command-Line-Help.md
+            - name: Ayuda de línea de comandos de PowerShell.exe
+              href: core-powershell/console/powershell.exe-command-line-help.md
             - name: Usar expansión de pestañas
-              href: core-powershell/console/Using-Tab-Expansion.md
-        - name: Ejecutar comandos remotos
-          href: core-powershell/Running-Remote-Commands.md
-        - name: Flujos de trabajo
-          href: core-powershell/workflows-guide.md
+              href: core-powershell/console/using-tab-expansion.md
+        - name: Guía de la consola
+          href: core-powershell/console-guide.md
+        - name: ISE
+          href: ise/introducing-the-windows-powershell-ise.md
           items:
-            - name: Módulo de flujo de trabajo
-              href: core-powershell/workflows/PSWorkflow-Module.md
-            - name: Módulo de utilidad de flujo de trabajo
-              href: core-powershell/workflows/PSWorkflowUtility-Module.md
-        - name: Acceso web
+            - name: Cómo crear una pestaña de PowerShell en Windows PowerShell ISE
+              href: core-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+            - name: Cómo depurar scripts en ISE de Windows PowerShell
+              href: core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+            - name: Cómo usar perfiles en ISE de Windows PowerShell
+              href: core-powershell/ise/how-to-use-profiles-in-windows-powershell-ise.md
+            - name: Cómo usar la finalización con tabulación en el panel de scripts y en el panel de consola
+              href: core-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+            - name: Cómo usar el panel de consola en Windows PowerShell ISE
+              href: core-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+            - name: Cómo escribir y ejecutar scripts en Windows PowerShell ISE
+              href: core-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+            - name: Introducción a Windows PowerShell ISE
+              href: core-powershell/ise/introducing-the-windows-powershell-ise.md
+            - name: Módulo ISE
+              href: core-powershell/ise/ise-module.md
+            - name: Métodos abreviados de teclado para Windows PowerShell ISE
+              href: core-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+            - name: Finalidad del modelo de objetos de scripting de Windows PowerShell ISE
+              href: core-powershell/ise/purpose-of-the-windows-powershell-ise-scripting-object-model.md
+            - name: El objeto ISEAddOnToolCollection
+              href: core-powershell/ise/the-iseaddontoolcollection-object.md
+            - name: The-ISEAddOnTool-Object (El objeto ISEAddOnTool)
+              href: core-powershell/ise/the-iseaddontool-object.md
+            - name: El objeto ISEEditor
+              href: core-powershell/ise/the-iseeditor-object.md
+            - name: El objeto ISEFileCollection
+              href: core-powershell/ise/the-isefilecollection-object.md
+            - name: El objeto ISEFile
+              href: core-powershell/ise/the-isefile-object.md
+            - name: El objeto ISEMenuItemCollection
+              href: core-powershell/ise/the-isemenuitemcollection-object.md
+            - name: El objeto ISEMenuItem
+              href: core-powershell/ise/the-isemenuitem-object.md
+            - name: La jerarquía del modelo de objetos de ISE
+              href: core-powershell/ise/the-ise-object-model-hierarchy.md
+            - name: El objeto ISEOptions
+              href: core-powershell/ise/the-iseoptions-object.md
+            - name: El objeto ISESnippetCollection
+              href: core-powershell/ise/the-isesnippetcollection-object.md
+            - name: El objeto ISESnippet
+              href: core-powershell/ise/the-isesnippetobject.md
+            - name: El objeto ObjectModelRoot
+              href: core-powershell/ise/the-objectmodelroot-object.md
+            - name: El objeto PowerShellTabCollection
+              href: core-powershell/ise/the-powershelltabcollection-object.md
+            - name: El objeto PowerShellTab
+              href: core-powershell/ise/the-powershelltab-object.md
+            - name: El modelo de objetos de scripting de ISE de Windows PowerShell
+              href: core-powershell/ise/the-windows-powershell-ise-scripting-object-model.md
+            - name: Usar Windows PowerShell ISE
+              href: core-powershell/ise/using-the-windows-powershell-ise.md
+            - name: Referencia del modelo de objetos de ISE de Windows PowerShell
+              href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
+        - name: Guía de ISE
+          href: core-powershell/ise-guide.md
+        - name: Ejecutar comandos remotos
+          href: core-powershell/running-remote-commands.md
+        - name: Web Access
+          href: ''
+        - name: Web Access
           href: core-powershell/web-access.md
           items:
             - name: Reglas de autorización y características de seguridad de Windows PowerShell Web Access
               href: core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
+            - name: Cmdlets
+              href: ''
+            - name: Imágenes
+              href: ''
             - name: Instalación y uso de Windows PowerShell Web Access
               href: core-powershell/web-access/install-and-use-windows-powershell-web-access.md
             - name: Solución de problemas de acceso en Windows PowerShell Web Access
               href: core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
-            - name: Desinstalación de Windows PowerShell Web Access
+            - name: Desinstalar Windows PowerShell Web Access
               href: core-powershell/web-access/uninstall-windows-powershell-web-access.md
             - name: Uso de la consola de Windows PowerShell basada en web
               href: core-powershell/web-access/use-the-web-based-windows-powershell-console.md
-    - name: Glosario de PowerShell
-      href: Windows-PowerShell-Glossary.md
+        - name: Módulo PSWorkflow
+          href: core-powershell/workflows-guide.md
+    - name: Introducción
+      href: ''
+      items:
+        - name: Referencia de guías básicas
+          href: getting-started/basic-cookbooks.md
+        - name: Guías básicas
+          href: ''
+          items:
+            - name: 'Apéndice 1: Alias de compatibilidad'
+              href: getting-started/cookbooks/appendix-1---compatibility-aliases.md
+            - name: 'Apéndice 2: Crear un acceso directo de PowerShell personalizado'
+              href: getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut.md
+            - name: Referencia de guías básicas
+              href: getting-started/cookbooks/basic-cookbooks-reference.md
+            - name: Cambiar el estado del equipo
+              href: getting-started/cookbooks/changing-computer-state.md
+            - name: Recopilar información acerca de los equipos
+              href: getting-started/cookbooks/collecting-information-about-computers.md
+            - name: Crear objetos .NET y COM (New-Object)
+              href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
+            - name: Crear un cuadro de entrada personalizado
+              href: getting-started/cookbooks/creating-a-custom-input-box.md
+            - name: Crear un selector de fecha gráfico
+              href: getting-started/cookbooks/creating-a-graphical-date-picker.md
+            - name: Obtener objetos de WMI (Get-WmiObject)
+              href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
+            - name: Administración de la ubicación actual
+              href: getting-started/cookbooks/managing-current-location.md
+            - name: Administración de procesos con cmdlets de proceso
+              href: getting-started/cookbooks/managing-processes-with-process-cmdlets.md
+            - name: Administración de servicios
+              href: getting-started/cookbooks/managing-services.md
+            - name: Administrar unidades de Windows PowerShell
+              href: getting-started/cookbooks/managing-windows-powershell-drives.md
+            - name: Manipular elementos directamente
+              href: getting-started/cookbooks/manipulating-items-directly.md
+            - name: Cuadros de lista de selección múltiple
+              href: getting-started/cookbooks/multiple-selection-list-boxes.md
+            - name: Otros objetos de scripting útiles
+              href: getting-started/cookbooks/other-useful-scripting-objects.md
+            - name: Realizar tareas de redes
+              href: getting-started/cookbooks/performing-networking-tasks.md
+            - name: Redirigir datos con cmdlets Out-
+              href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
+            - name: Quitar objetos de la canalización (Where-Object)
+              href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
+            - name: Repetir una tarea para varios objetos (ForEach-Object)
+              href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
+            - name: Seleccionar elementos de un cuadro de lista
+              href: getting-started/cookbooks/selecting-items-from-a-list-box.md
+            - name: Seleccionar partes de objetos (Select-Object)
+              href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
+            - name: Ordenar objetos
+              href: getting-started/cookbooks/sorting-objects.md
+            - name: Usar comandos de formato para cambiar la vista de salida
+              href: getting-started/cookbooks/using-format-commands-to-change-output-view.md
+            - name: Usar métodos y clases estáticas
+              href: getting-started/cookbooks/using-static-classes-and-methods.md
+            - name: Ver la estructura del objeto (Get-Member)
+              href: getting-started/cookbooks/viewing-object-structure--get-member-.md
+            - name: Trabajar con archivos y carpetas
+              href: getting-started/cookbooks/working-with-files-and-folders.md
+            - name: 'Trabajar con archivos, carpetas y claves del Registro'
+              href: getting-started/cookbooks/working-with-files-folders-and-registry-keys.md
+            - name: Trabajar con objetos
+              href: getting-started/cookbooks/working-with-objects.md
+            - name: Trabajar con impresoras
+              href: getting-started/cookbooks/working-with-printers.md
+            - name: Trabajar con entradas del Registro
+              href: getting-started/cookbooks/working-with-registry-entries.md
+            - name: Trabajar con claves del Registro
+              href: getting-started/cookbooks/working-with-registry-keys.md
+            - name: Trabajar con instalaciones de software
+              href: getting-started/cookbooks/working-with-software-installations.md
+        - name: conceptos fundamentales
+          href: ''
+          items:
+            - name: Acerca de Windows PowerShell
+              href: getting-started/fundamental/about-windows-powershell.md
+            - name: Explorar Windows PowerShell ISE
+              href: getting-started/fundamental/exploring-the-windows-powershell-ise.md
+            - name: Obtener información de ayuda detallada
+              href: getting-started/fundamental/getting-detailed-help-information.md
+            - name: Obtener información sobre los comandos
+              href: getting-started/fundamental/getting-information-about-commands.md
+            - name: Aprendizaje de los nombres de Windows PowerShell
+              href: getting-started/fundamental/learning-windows-powershell-names.md
+            - name: Canalización de objetos
+              href: getting-started/fundamental/object-pipeline.md
+            - name: Scripting con Windows PowerShell
+              href: getting-started/fundamental/scripting-with-windows-powershell.md
+            - name: Descripción de los conceptos importantes de Windows PowerShell
+              href: getting-started/fundamental/understanding-important-windows-powershell-concepts.md
+            - name: Descripción de la canalización de Windows PowerShell
+              href: getting-started/fundamental/understanding-the-windows-powershell-pipeline.md
+            - name: Usar nombres de comando conocidos
+              href: getting-started/fundamental/using-familiar-command-names.md
+            - name: Usar variables para almacenar objetos
+              href: getting-started/fundamental/using-variables-to-store-objects.md
+            - name: Uso de Windows PowerShell
+              href: getting-started/fundamental/using-windows-powershell.md
+            - name: Usar Windows PowerShell para la administración
+              href: getting-started/fundamental/using-windows-powershell-for-administration.md
+            - name: Conceptos básicos de Windows PowerShell
+              href: getting-started/fundamental/windows-powershell-basics.md
+            - name: Entorno de scripting integrado (ISE) de Windows PowerShell
+              href: getting-started/fundamental/windows-powershell-integrated-scripting-environment--ise-.md
+        - name: Conceptos fundamentales
+          href: getting-started/fundamental-concepts.md
+        - name: Preparativos para usar Windows PowerShell
+          href: getting-started/getting-ready-to-use-windows-powershell.md
+        - name: Introducción a Windows PowerShell
+          href: getting-started/getting-started-with-windows-powershell.md
+        - name: Más aprendizaje de PowerShell
+          href: getting-started/more-powershell-learning.md
+        - name: Descripción de conceptos
+          href: getting-started/understanding-concepts-reference.md
+    - name: Instalación
+      href: ''
+      items:
+        - name: Accesibilidad en ISE de Windows PowerShell
+          href: setup/accessibility-in-windows-powershell-ise.md
+        - name: Instalar el motor de Windows PowerShell 2.0
+          href: setup/installing-the-windows-powershell-2.0-engine.md
+        - name: Instalar el SDK de Windows PowerShell
+          href: setup/installing-the-windows-powershell-sdk.md
+        - name: Instalación de Windows PowerShell
+          href: setup/installing-windows-powershell.md
+        - name: Realizar el segundo salto en la comunicación remota de PowerShell
+          href: setup/ps-remoting-second-hop.md
+        - name: Referencia de instalación
+          href: setup/setup-reference.md
+        - name: Iniciar la versión de 32 bits de Windows PowerShell
+          href: setup/starting-the-32-bit-version-of-windows-powershell.md
+        - name: Iniciar el motor de Windows PowerShell 2.0
+          href: setup/starting-the-windows-powershell-2.0-engine.md
+        - name: Iniciar Windows PowerShell
+          href: setup/starting-windows-powershell.md
+        - name: Iniciar Windows PowerShell en versiones anteriores de Windows
+          href: setup/starting-windows-powershell-on-earlier-versions-of-windows.md
+        - name: Requisitos del sistema de Windows PowerShell
+          href: setup/windows-powershell-system-requirements.md
+        - name: WinRMSecurity
+          href: setup/winrmsecurity.md
+    - name: Novedades
+      href: ''
+      items:
+        - name: Novedades de Windows PowerShell ISE
+          href: whats-new/what-s-new-in-the-powershell-50-ise.md
+        - name: Novedades de Windows PowerShell 50
+          href: whats-new/what-s-new-in-windows-powershell-50.md
+        - name: Novedades de PowerShell
+          href: whats-new/what-s-new-with-powershell.md
+    - name: Glosario de Windows PowerShell
+      href: windows-powershell-glossary.md

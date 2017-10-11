@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Introducción a la configuración de estado deseado (DSC) para Linux"
-ms.openlocfilehash: 9dbc4c22cff9df4028c5655cdfba3bb1aac1bb90
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: bf87125309a3f6b556fd7546057cb9491fb34229
+ms.sourcegitcommit: 4ab9a86e47b6effe8fe22ebeb81e8fadff41d31c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 10/04/2017
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Introducción a la configuración de estado deseado (DSC) para Linux
 
@@ -37,11 +37,11 @@ En la tabla siguiente se describen las dependencias de paquetes necesarios para 
 
 ## <a name="installing-dsc-for-linux"></a>Instalación de DSC para Linux
 
-Debe instalar la [infraestructura de administración abierta (OMI)](https://collaboration.opengroup.org/omi/) antes de instalar DSC para Linux.
+Debe instalar la [infraestructura de administración abierta (OMI)](https://github.com/Microsoft/omi) antes de instalar DSC para Linux.
 
 ### <a name="installing-omi"></a>Instalación de la OMI
 
-La configuración de estado deseado para Linux requiere el servidor CIM de infraestructura de administración abierta (OMI), versión 1.0.8.1. OMI puede descargarse en The Open Group: [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/).
+La configuración de estado deseado para Linux requiere el servidor CIM de infraestructura de administración abierta (OMI), versión 1.0.8.1 o posterior. OMI puede descargarse en The Open Group: [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi).
 
 Para instalar OMI, instale el paquete que sea adecuado para su sistema Linux (.rpm o .deb) y versión de OpenSSL (ssl_098 o ssl_100), y la arquitectura (x64/x86). Los paquetes RPM son adecuados para CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server y Oracle Linux. Los paquetes DEB son adecuados para Debian GNU/Linux y Ubuntu Server. Los paquetes ssl_098 son adecuados para equipos con OpenSSL 0.9.8 instalado, mientras que los paquetes ssl_100 son adecuados para equipos con OpenSSL 1.0 instalado.
 

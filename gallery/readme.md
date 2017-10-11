@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery,psget
 title: "Galería de PowerShell"
-ms.openlocfilehash: 3e324f15b251822163c3ea9b6655767419a5ac4e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 83a1f4e20b985a502637aee9d50ecc1d3f9a4616
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="the-powershell-gallery"></a>Galería de PowerShell
 
@@ -28,11 +28,11 @@ Para instalar elementos desde la Galería se requiere la versión más reciente 
 
 Con la última versión del módulo [PowerShellGet](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), puede:
 
--   Buscar elementos en la Galería con [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) y [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
--   Guardar los elementos en el sistema desde la Galería con [**Save-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) y [**Save-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
--   Instalar elementos desde la Galería con [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) e [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
--   Cargar elementos en la Galería con [**Publish-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) y [**Publish-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
--   Agregue su propio repositorio personalizado con [**Register-PSRepository**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+-   Buscar elementos en la Galería con [Find-Module](https://go.microsoft.com/fwlink/?LinkId=821658) y [Find-Script](https://go.microsoft.com/fwlink/?LinkId=822322)
+-   Guardar los elementos en el sistema desde la Galería con [Save-Module](https://go.microsoft.com/fwlink/?LinkId=821669) y [Save-Script](https://go.microsoft.com/fwlink/?LinkId=822334)
+-   Instalar elementos desde la Galería con [Install-Module](https://go.microsoft.com/fwlink/?LinkId=821663) e [Install-Script](https://go.microsoft.com/fwlink/?LinkId=822327)
+-   Cargar elementos en la Galería con [Publish-Module](https://go.microsoft.com/fwlink/?LinkId=821666) y [Publish-Script](https://go.microsoft.com/fwlink/?LinkId=822331)
+-   Agregue su propio repositorio personalizado con [Register-PSRepository](https://go.microsoft.com/fwlink/?LinkId=821668)
 
 Consulte la página [Introducción](psgallery/psgallery_gettingstarted.md) para obtener más información sobre el uso de comandos PowerShellGet con la Galería. También puede ejecutar *Update-Help -Module PowerShellGet* para instalar la Ayuda local para estos comandos.
 
@@ -46,7 +46,7 @@ Por lo tanto, **PowerShellGet** requiere uno de los siguientes sistemas operativ
 - Windows 8.1 Pro
 - Windows 8.1 Enterprise
 - Windows 7 SP1
-- Windows Server 2016 TP5
+- Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 

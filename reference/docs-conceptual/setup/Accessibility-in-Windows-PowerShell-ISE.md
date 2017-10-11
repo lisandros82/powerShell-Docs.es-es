@@ -3,22 +3,22 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Accesibilidad en ISE de Windows PowerShell
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: fce9e2e2f177174a7359351738a0e02201448fc6
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 505ec3aca84b5ad0b9d58a1ec84d80e3aa86db7a
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Accesibilidad en ISE de Windows PowerShell
 En este tema se describen las características de accesibilidad del Entorno de scripting integrado (ISE) de Windows PowerShell que pueden resultar útiles.
 
-* [Cómo cambiar el tamaño y la ubicación de los paneles de consola y de scripts]()
-* [Métodos abreviados de teclado para editar texto]()
-* [Métodos abreviados de teclado para ejecutar scripts]()
-* [Métodos abreviados de teclado para personalizar la vista]()
-* [Métodos abreviados de teclado para depurar scripts]()
-* [Métodos abreviados de teclado para las pestañas de Windows PowerShell]()
-* [Métodos abreviados de teclado para iniciar y salir]()
+* [Cómo cambiar el tamaño y la ubicación de los paneles de consola y de scripts](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
+* [Métodos abreviados de teclado para editar texto](#keyboard-shortcuts-for-editing-text)
+* [Métodos abreviados de teclado para ejecutar scripts](#keyboard-shortcuts-for-running-scripts)
+* [Métodos abreviados de teclado para personalizar la vista](#keyboard-shortcuts-for-customizing-the-view)
+* [Métodos abreviados de teclado para depurar scripts](#keyboard-shortcuts-for-debugging-scripts)
+* [Métodos abreviados de teclado para las pestañas de Windows PowerShell](#keyboard-shortcuts-for-windows-powershell-tabs)
+* [Métodos abreviados de teclado para iniciar y salir](#keyboard-shortcuts-for-starting-and-exiting)
 
 Microsoft tiene el compromiso de que todas las personas puedan utilizar fácilmente sus productos y servicios. En los siguientes temas se proporciona información sobre las características, los productos y los servicios que permiten que Windows PowerShell ISE sea más accesible para las personas con discapacidades.
 
@@ -113,7 +113,8 @@ Puede usar los siguientes métodos abreviados de teclado cuando depure scripts.
 |**Quitar todos los puntos de interrupción**|CTRL+MAYÚS+F9|Panel de scripts, al depurar un script|
 |**Detener el depurador**|MAYÚS+F5|Panel de scripts, al depurar un script|
 
-> [!NOTE]
+> ![NOTA](../core-powershell/web-access/images/Note.jpeg)**Nota**
+>
 > También puede usar los métodos abreviados de teclado diseñados para la consola de Windows PowerShell cuando depure scripts en Windows PowerShell ISE. Para usar estos métodos abreviados, debe escribir el método abreviado en el panel de consola y presionar ENTRAR.
 
 |Acción|Método abreviado de teclado|Usar en|

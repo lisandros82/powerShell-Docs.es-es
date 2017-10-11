@@ -1,18 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_gettingstarted
-ms.technology: powershell
-ms.openlocfilehash: 4c06d1ebd4417da4bd58e3536d123f8285ba189e
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: d13c23cd6f9cce433cd3fe1ad5f2d00e3ef0527c
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>Introducción a la Galería de PowerShell
 
@@ -32,16 +28,16 @@ Para descargar elementos de la Galería de PowerShell en el sistema, se requiere
 
 Para funcionar con la Galería de PowerShell, PowerShellGet también requiere el [proveedor de NuGet](http://go.microsoft.com/fwlink/?LinkId=722208). Se le pedirá que instale el proveedor de NuGet automáticamente la primera vez que use PowerShellGet si el proveedor de NuGet no se encuentra en ninguna de las siguientes ubicaciones:
 
--   $env:ProgramFiles\\PackageManagement\\ProviderAssemblies
--   $env:LOCALAPPDATA\\PackageManagement\\ProviderAssemblies
+- `$env:ProgramFiles\PackageManagement\ProviderAssemblies`
+- `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies`
 
-También puede ejecutar **Install-PackageProvider -Name NuGet -Force** para automatizar la descarga y la instalación del proveedor de NuGet.
+También puede ejecutar `Install-PackageProvider -Name NuGet -Force` para automatizar la descarga y la instalación del proveedor de NuGet.
 
   
 Si tiene una versión de NuGet anterior a 2.8.5.201, debe llamar a los siguientes cmdlets de PowerShell para instalar la versión más reciente de NuGet y cambiar a dicha versión.
 
-1.  Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force
-2.  Import-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force
+1.  `Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
+2.  `Import-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
 3.  Elimine la versión anterior de NuGet de la ubicación de instalación anterior.
 
 Para obtener más información, consulte <http://oneget.org/>.
@@ -52,9 +48,9 @@ PowerShellGet también forma parte de Windows Management Framework (WMF) 5.0, qu
 
 ## <a name="discovering-items-from-the-powershell-gallery"></a>Detectar elementos de la Galería de PowerShell
 
-Puede buscar elementos en la Galería de PowerShell mediante el control de **búsqueda** en este sitio web o la examinación de las páginas Scripts y Módulos. También puede buscar elementos de la Galería de PowerShell al ejecutar los cmdlets [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) y [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), en función del tipo de elemento, con **-Repository PSGallery**.
+Puede buscar elementos en la Galería de PowerShell mediante el control de **búsqueda** en este sitio web o la examinación de las páginas Scripts y Módulos. También puede buscar elementos de la Galería de PowerShell al ejecutar los cmdlets [Find-Module](https://go.microsoft.com/fwlink/?LinkId=821658) y [Find-Script](https://go.microsoft.com/fwlink/?LinkId=822322), en función del tipo de elemento, con `-Repository PSGallery`.
 
-Puede filtrar los resultados de la Galería mediante los siguientes parámetros de [Find-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) y [Find-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).
+Puede filtrar los resultados de la Galería mediante los siguientes parámetros de [Find-Module](https://go.microsoft.com/fwlink/?LinkId=821658) y [Find-Script](https://go.microsoft.com/fwlink/?LinkId=822322).
 
 - Nombre
 - AllVersions
@@ -67,8 +63,8 @@ Puede filtrar los resultados de la Galería mediante los siguientes parámetros 
 - Comando
 - Filtro
 
-Si solo le interesa detectar recursos de DSC específicos en la Galería, puede ejecutar el cmdlet [**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).
-[**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) devuelve datos sobre los recursos de DSC contenidos en la Galería. Dado que los recursos de DSC siempre se entregan como parte de un módulo, debe ejecutar [Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) para instalar dichos recursos de DSC.
+Si solo le interesa detectar recursos de DSC específicos en la Galería, puede ejecutar el cmdlet [Find-DscResource](https://go.microsoft.com/fwlink/?LinkId=517196).
+[Find-DscResource](https://go.microsoft.com/fwlink/?LinkId=517196) devuelve datos sobre los recursos de DSC contenidos en la Galería. Dado que los recursos de DSC siempre se entregan como parte de un módulo, debe ejecutar [Install-Module](https://go.microsoft.com/fwlink/?LinkId=821663) para instalar dichos recursos de DSC.
 
 ## <a name="learning-about-items-in-the-powershell-gallery"></a>Obtener información sobre los elementos de la Galería de PowerShell
 
@@ -76,7 +72,8 @@ Una vez que haya identificado el elemento que le interesa, tal vez quiera obtene
 
 Si cree que un elemento no se ha publicado de buena fe, haga clic en **Notificar abuso** en la página de ese elemento.
 
-Si está ejecutando [Find-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) o [Find-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), puede ver estos datos en el objeto PSGetModuleInfo devuelto. Por ejemplo, si ejecuta [**Find-Module -Name PSReadLine -Repository PSGallery | Get-Member**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), se devuelven datos en el módulo PSReadLine de la Galería.
+Si está ejecutando [Find-Module](https://go.microsoft.com/fwlink/?LinkId=821658) o [Find-Script](https://go.microsoft.com/fwlink/?LinkId=822322), puede ver estos datos en el objeto PSGetModuleInfo devuelto.
+Por ejemplo, la ejecución de `Find-Module -Name PSReadLine -Repository PSGallery | Get-Member` devuelve datos en el módulo PSReadLine de la galería.
 
 ## <a name="downloading-items-from-the-powershell-gallery"></a>Descargar elementos de la Galería de PowerShell
 
@@ -84,7 +81,7 @@ Se recomienda el proceso siguiente al descargar elementos de la Galería de Powe
 
 ### <a name="inspect"></a>Inspeccionar
 
-Para descargar un elemento de la Galería para su inspección, ejecute el cmdlet [**Save-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) o [**Save-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), en función del tipo de elemento. Esto le permite guardar el elemento localmente sin instalarlo e inspeccionar su contenido. Recuerde eliminar el elemento guardado manualmente.
+Para descargar un elemento de la Galería para su inspección, ejecute el cmdlet [Save-Module](https://go.microsoft.com/fwlink/?LinkId=821669) o [Save-Script](https://go.microsoft.com/fwlink/?LinkId=822334), en función del tipo de elemento. Esto le permite guardar el elemento localmente sin instalarlo e inspeccionar su contenido. Recuerde eliminar el elemento guardado manualmente.
 
 Algunos de estos elementos son creación de Microsoft y otros son creación de la comunidad de PowerShell. Microsoft recomienda que se revisen el contenido y el código de los elementos de esta Galería antes de la instalación.
 
@@ -92,13 +89,15 @@ Si cree que un elemento no se ha publicado de buena fe, haga clic en **Notificar
 
 ### <a name="install"></a>Instalar
 
-Para instalar un elemento desde la Galería para su uso, ejecute el cmdlet [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) o [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), en función del tipo de elemento.
+Para instalar un elemento desde la Galería para su uso, ejecute el cmdlet [Install-Module](https://go.microsoft.com/fwlink/?LinkId=821663) o [Install-Script](https://go.microsoft.com/fwlink/?LinkId=822327), en función del tipo de elemento.
 
-[Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) instala el módulo en $env:ProgramFiles\\WindowsPowerShell\\Modules de forma predeterminada. Para ello es necesaria una cuenta de administrador. Si agrega el parámetro **-Scope CurrentUser**, el módulo se instala en $env:USERPROFILE\\Documents\\WindowsPowerShell\\Modules.
+[Install-Module](https://go.microsoft.com/fwlink/?LinkId=821663) instala el módulo en `$env:ProgramFiles\WindowsPowerShell\Modules` de manera predeterminada. Para ello es necesaria una cuenta de administrador. Si agrega el parámetro `-Scope
+CurrentUser`, el módulo se instala en `$env:USERPROFILE\Documents\WindowsPowerShell\Modules`.
 
-[Install-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) instala el script en $env:ProgramFiles\\WindowsPowerShell\\Scripts de forma predeterminada. Para ello es necesaria una cuenta de administrador. Si agrega el parámetro **-Scope CurrentUser**, el script se instala en $env:USERPROFILE\\Documents\\WindowsPowerShell\\Scripts.
+[Install-Script](https://go.microsoft.com/fwlink/?LinkId=822327) instala el script en `$env:ProgramFiles\WindowsPowerShell\Scripts` de manera predeterminada. Para ello es necesaria una cuenta de administrador. Si agrega el parámetro `-Scope
+CurrentUser`, el script se instala en `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts`.
 
-De forma predeterminada, [Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) e [Install-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) instalan la versión más reciente de un elemento. Para instalar una versión anterior del elemento, agregue el parámetro **-RequiredVersion**.
+De forma predeterminada, [Install-Module](https://go.microsoft.com/fwlink/?LinkId=821663) e [Install-Script](https://go.microsoft.com/fwlink/?LinkId=822327) instalan la versión más reciente de un elemento. Para instalar una versión anterior del elemento, agregue el parámetro `-RequiredVersion`.
 
 ### <a name="deploy"></a>Implementar
 
@@ -108,15 +107,15 @@ Para obtener más información sobre Automatización de Azure, consulte el [siti
 
 ## <a name="updating-items-from-the-powershell-gallery"></a>Actualizar elementos de la Galería de PowerShell
 
-Para actualizar elementos instalados desde la Galería de PowerShell, ejecute el cmdlet [Update-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) o [Update-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409). Cuando se ejecuta sin parámetros adicionales, [Update-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) intenta actualizar cada módulo instalado mediante la ejecución de [Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).
-Para actualizar módulos de forma selectiva, agregue el parámetro **-Name**.
+Para actualizar elementos instalados desde la Galería de PowerShell, ejecute el cmdlet [Update-Module](https://go.microsoft.com/fwlink/?LinkID=398576) o [Update-Script](http://go.microsoft.com/fwlink/?LinkId=619787). Cuando se ejecuta sin parámetros adicionales, [Update-Module](https://go.microsoft.com/fwlink/?LinkID=398576) intenta actualizar cada módulo instalado mediante la ejecución de [Install-Module](https://go.microsoft.com/fwlink/?LinkId=821663).
+Para actualizar módulos de forma selectiva, agregue el parámetro `-Name`.
 
-Del mismo modo, cuando se ejecuta sin parámetros adicionales, [Update-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) también intenta actualizar cada script instalado mediante la ejecución de [Install-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).
-Para actualizar scripts de forma selectiva, agregue el parámetro **-Name**.
+Del mismo modo, cuando se ejecuta sin parámetros adicionales, [Update-Script](http://go.microsoft.com/fwlink/?LinkId=619787) también intenta actualizar cada script instalado mediante la ejecución de [Install-Script](https://go.microsoft.com/fwlink/?LinkId=822327).
+Para actualizar scripts de forma selectiva, agregue el parámetro `-Name`.
 
 ## <a name="list-items-that-you-have-installed-from-the-powershell-gallery"></a>Enumerar los elementos instalados desde la Galería de PowerShell
 
-Para averiguar qué módulos ha instalado desde la Galería de PowerShell, ejecute el cmdlet [**Get-InstalledModule**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409). Este comando enumera todos los módulos del sistema que se instalaron directamente desde la Galería de PowerShell.
+Para averiguar qué módulos ha instalado desde la Galería de PowerShell, ejecute el cmdlet [Get-InstalledModule](https://go.microsoft.com/fwlink/?LinkId=526863). Este comando enumera todos los módulos del sistema que se instalaron directamente desde la Galería de PowerShell.
 
-Del mismo modo, para averiguar qué scripts ha instalado desde la Galería de PowerShell, ejecute el cmdlet [**Get-InstalledScript**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409). Este comando enumera todos los scripts del sistema que se instalaron directamente desde la Galería de PowerShell.
+Del mismo modo, para averiguar qué scripts ha instalado desde la Galería de PowerShell, ejecute el cmdlet [Get-InstalledScript](https://go.microsoft.com/fwlink/?LinkId=619790). Este comando enumera todos los scripts del sistema que se instalaron directamente desde la Galería de PowerShell.
 
