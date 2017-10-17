@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: "Instalación y uso de Windows PowerShell Web Access"
-ms.openlocfilehash: a4b812e2aa32450bc68f761e7b85e8f2ee2b34ee
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 63e25fa2b1fc7c0a2b57763e337c25ece17a3296
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Instalación y uso de Windows PowerShell Web Access
 
@@ -58,10 +58,10 @@ Aunque los exploradores móviles no se admiten oficialmente, muchos de ellos pue
 
 ### <a name="minimally-tested-mobile-devices-or-browsers"></a>Exploradores o dispositivos móviles mínimamente probados
 
-- Windows Phone 7 y 7.5
-- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
+- Windows Phone 7 y 7.5
+- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 - Apple Safari para sistema operativo iPhone 5.0.1
-- Apple Safari para el sistema operativo 5.0.1 de iPad 2
+- Apple Safari para sistema operativo iPad 2 5.0.1
 
 ### <a name="browser-requirements"></a>Requisitos de explorador
 
