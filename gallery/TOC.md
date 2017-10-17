@@ -19,6 +19,8 @@
 ### [Ponerse en contacto con propietarios de elementos](psgallery/psgallery_contacting_item_owners.md)
 ### [Ponerse en contacto con administradores](psgallery/psgallery_contacting_administrators.md)
 ### [Envío de comentarios a través de medios sociales o comentarios](psgallery/psgallery-SocialMediaFeedback.md)
+### [Requerir la aceptación de licencia de Detalles de elementos](psgallery/psgallery_requires_license_acceptance.md)
+### [Requerir la aceptación de licencia de Implementar en Azure Automation](psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)
 
 # [PowerShellGet](psget/overview.md)
 ## [Obtención del módulo PowerShellGet](psget/get_psget_module.md)
@@ -36,6 +38,7 @@
 ### [Actualizar el manifiesto del módulo](psget/module/psget_update-modulemanifest.md)
 ### [Publicar](psget/module/psget_publish-module.md)
 ### [Módulos con PSEditions](psget/module/modulewithpseditionsupport.md)
+### [Módulos que requieren la aceptación de la licencia](psget/module/RequireLicenseAcceptance.md)
 ### [Solucionar problemas](psget/psget_cmdlets_troubleshooting.md)
 
 ## Script
@@ -50,6 +53,7 @@
 ### [Actualizar los metadatos del archivo de script](psget/script/psget_update-scriptfileinfo.md)
 ### [Publicar](psget/script/psget_publish-script.md)
 ### [Scripts con PSEditions](psget/script/scriptwithpseditionsupport.md)
+### [Requerir la aceptación de la licencia para Scripts](psget/script/script_RequireLicenseAcceptance.md)
 
 ## Administración de repositorios
 ### [Arrancar el proveedor de NuGet y NuGet.exe](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
