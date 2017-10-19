@@ -1,4 +1,16 @@
-# <a name="desired-state-configuration-overview-for-engineers"></a>Información general sobre la configuración de estado deseado para ingenieros #
+---
+ms.date: 2017-10-13
+author: eslesar;mgreenegit
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Información general sobre la configuración de estado deseado para responsables de toma de decisiones"
+ms.openlocfilehash: 66822d9a60f98aab3d4f27d14b27ebc6ec90b2c9
+ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 10/16/2017
+---
+# <a name="desired-state-configuration-overview-for-engineers"></a>Información general sobre la configuración de estado deseado para ingenieros
 
 Este documento está pensado para que los equipos de operaciones y desarrolladores comprendan los beneficios de la configuración de estado deseado (DSC) de PowerShell.
 Para una vista de nivel superior del valor que ofrece DSC, consulte [Información general sobre la configuración de estado deseado para responsables de toma de decisiones](decisionMaker.md)
@@ -6,23 +18,23 @@ Para una vista de nivel superior del valor que ofrece DSC, consulte [Informació
 ## <a name="benefits-of-desired-state-configuration"></a>Beneficios de la configuración de estado deseado
 
 DSC existe para:
+
 - Disminuir la complejidad del scripting en Windows
 - Aumentar la velocidad de la iteración
 
-El concepto de "implementación continua" es cada vez más importante. La implementación continua se refiere a la capacidad de realizar implementaciones con frecuencia, potencialmente muchas veces al día.
+El concepto de "implementación continua" es cada vez más importante.
+La implementación continua se refiere a la capacidad de realizar implementaciones con frecuencia, potencialmente muchas veces al día.
 El propósito de estas implementaciones no es corregir algo, sino publicar rápidamente algún contenido.
 Al obtener características nuevas durante todo el desarrollo y hasta la operación de la manera más fluida y confiable posible, puede disminuir el tiempo para recuperar la inversión de la nueva lógica de negocios.
 
-Hay dos tendencias en curso que agudizan esta necesidad de actuar rápidamente. La migración hacia la informática en la nube implica un cambio rápido, a gran escala, con una amenaza de errores constante.
-Estas implicaciones obligan a la automatización para poder mantener el ritmo.
-La creación de la mentalidad de "DevOps" es una respuesta a estos cambios. 
+La migración hacia la informática en la nube implica una solución de implementación que use un modelo de plantilla "declarativa", donde se declare un entorno de estado final como texto y se publique en un motor de implementación.
+Esta técnica de implementación permite realizar un cambio rápido, a gran escala, que resista la amenaza de errores, porque en cualquier momento la implementación se puede repetir de manera coherente para garantizar un estado final.
+La creación de las herramientas y los servicios que admiten este estilo de operaciones mediante la automatización es una respuesta a estos cambios.
 
-
-DSC es una plataforma que ofrece implementación, configuración y cumplimiento declarativos, autónomos e idempotentes (repetibles).
+DSC es una plataforma que ofrece implementación, configuración y cumplimiento declarativos e idempotentes (repetibles).
 La plataforma de DSC le permite asegurarse de que los componentes del centro de datos tienen la configuración correcta, lo que permite evitar errores y previene costosas fallas en la implementación.
 Si las configuraciones de DSC se tratan como parte del código de la aplicación, DSC permite la implementación continua.
 La configuración de DSC se debe actualizar como parte de la aplicación, lo que garantiza que el conocimiento necesario para implementar la aplicación siempre esté actualizado y listo para usar.
-
 
 ## <a name="i-have-powershell-why-do-i-need-desired-state-configuration"></a>"Ya tengo PowerShell. ¿Por qué necesito la configuración de estado deseado?"
 
@@ -36,9 +48,10 @@ Como ejemplo, los scripts de PowerShell deben verse similares al siguiente:
 # Create a share in Windows Server 8
 New-SmbShare -Name MyShare -Path C:\Demo\Temp -FullAccess Alice -ReadAccess Bob
 ```
-Este script es simple, entendible y sencillo. Sin embargo, si intenta poner ese script en el entorno de producción, se encontrará con varios problemas.
+Este script es simple, entendible y sencillo.
+Sin embargo, si intenta poner ese script en el entorno de producción, se encontrará con varios problemas.
 ¿Qué sucede si el script se ejecuta dos veces seguidas?
-¿Qué pasa sin Antonio tenía anteriormente acceso completo al recurso compartido? 
+¿Qué pasa sin Antonio tenía anteriormente acceso completo al recurso compartido?
 
 Para compensar por estos problemas, una versión "real" del script se verá un poco más similar a lo siguiente:
 ```powershell
@@ -102,21 +115,21 @@ Start-DscConfiguration Sample_Share
 ```
 
 El script tiene un formato limpio y es fácil de leer.
-El control de errores y las rutas lógicas siguen presentes en la implementación de [recursos](resources.md), pero son invisibles para el autor del script. 
-
-
+El control de errores y las rutas lógicas siguen presentes en la implementación de [recursos](resources.md), pero son invisibles para el autor del script.
 
 ## <a name="separating-environment-from-structure"></a>Separación del entorno de la estructura
 
-Un patrón común en DevOps es tener varios entornos para la implementación. Por ejemplo, es posible que haya un entorno "dev" (desarrollo) que se usa para crear un prototipo de código nuevo.
+Un patrón común en DevOps es tener varios entornos para la implementación.
+Por ejemplo, es posible que haya un entorno "dev" (desarrollo) que se usa para crear un prototipo de código nuevo.
 El código del entorno "dev" (desarrollo) pasa a un entorno "test" (prueba), en el que otras personas comprueban la funcionalidad nueva.
 Finalmente, el código pasa a "prod" (producción), el entorno de producción del sitio activo.
 
 Las configuraciones de DSC adaptan esta canalización de dev-test-prod a través del uso de los [datos de configuración](configData.md).
 Esto abstrae aún más la diferencia entre la estructura de la configuración de los nodos que se administran.
-Por ejemplo, puede definir una configuración que requiere un servidor SQL Server, un servidor IIS y un servidor de nivel intermedio. Independientemente de cuáles son los nodos que reciben las distintas partes de esta configuración, siempre existirán estos tres elementos.
+Por ejemplo, puede definir una configuración que requiere un servidor SQL Server, un servidor IIS y un servidor de nivel intermedio.
+Independientemente de cuáles son los nodos que reciben las distintas partes de esta configuración, siempre existirán estos tres elementos.
 Puede usar los datos de configuración para apuntar los tres elementos a la misma máquina en un entorno de desarrollo, separarlos a tres máquinas distintas en un entorno de prueba y, por último, a todos los servidores de producción del entorno de producción.
-Para implementar los distintos entornos, puede invocar `Start-DscConfiguration` con los datos de configuración correctos correspondientes al entorno que desea tener como destino. 
+Para implementar los distintos entornos, puede invocar **Start-DscConfiguration** con los datos de configuración correctos correspondientes al entorno que desea tener como destino.
 
 ## <a name="see-also"></a>Véase también
 

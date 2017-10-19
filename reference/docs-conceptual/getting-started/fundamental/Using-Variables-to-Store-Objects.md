@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Usar variables para almacenar objetos
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: 067948d7c234fb70c7cf9966c9ae3e8df1f99757
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 9a95d421fa2686608a565987c16fecc41c3c6d20
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="using-variables-to-store-objects"></a>Usar variables para almacenar objetos
-Windows PowerShell funciona con objetos. Windows PowerShell permite crear variables (básicamente objetos con nombre) para conservar la salida para usos posteriores. Si está acostumbrado a trabajar con variables en otros shells, recuerde que las variables de Windows PowerShell son objetos, no texto.
+PowerShell funciona con objetos. PowerShell permite crear variables, básicamente objetos con nombre, para conservar la salida para usos posteriores. Si está acostumbrado a trabajar con variables en otros shells, recuerde que las variables de PowerShell son objetos, no texto.
 
 Las variables siempre se especifican con el carácter inicial $ y pueden incluir cualquier carácter alfanumérico o el carácter de subrayado en sus nombres.
 
@@ -22,13 +22,13 @@ PS> $loc
 PS>
 ```
 
-Esto no devuelve ningún resultado porque **$loc** no tiene un valor. Puede crear una variable y asignarle un valor en el mismo paso. Windows PowerShell solo crea la variable si no existe; de lo contrario, asigna el valor especificado a la variable existente. Para almacenar su ubicación actual en la variable **$loc**, escriba:
+Esto no devuelve ningún resultado porque **$loc** no tiene un valor. Puede crear una variable y asignarle un valor en el mismo paso. PowerShell solo crea la variable si no existe; de lo contrario, asigna el valor especificado a la variable existente. Para almacenar su ubicación actual en la variable **$loc**, escriba:
 
 ```
 $loc = Get-Location
 ```
 
-No se muestra ninguna salida cuando escribe este comando porque la salida se envía a $loc. En Windows PowerShell, la salida mostrada es un efecto secundario del hecho de que los datos siempre se envíen a la pantalla, si no se indica de otro modo. Al escribir $loc se mostrará su ubicación actual:
+No se muestra ninguna salida cuando escribe este comando porque la salida se envía a $loc. En PowerShell, la salida mostrada es un efecto secundario del hecho de que los datos siempre se envíen a la pantalla, si no se indica de otro modo. Al escribir $loc se mostrará su ubicación actual:
 
 ```
 PS> $loc
@@ -54,13 +54,13 @@ ProviderPath Property   System.String ProviderPath {get;}
 ```
 
 ### <a name="manipulating-variables"></a>Manipular variables
-Windows PowerShell proporciona varios comandos para manipular variables. Para ver una lista completa en un formato legible, escriba:
+PowerShell proporciona varios comandos para manipular variables. Para ver una lista completa en un formato legible, escriba:
 
 ```
 Get-Command -Noun Variable | Format-Table -Property Name,Definition -AutoSize -Wrap
 ```
 
-Además de las variables que crea en la sesión actual de Windows PowerShell, existen varias variables definidas por el sistema. Puede usar el cmdlet **Remove-Variable** para borrar todas las variables que no se controlan mediante Windows PowerShell. Escriba el siguiente comando para borrar todas las variables:
+Además de las variables que crea en la sesión actual de PowerShell, existen varias variables definidas por el sistema. Puede usar el cmdlet **Remove-Variable** para borrar todas las variables que no se controlan mediante PowerShell. Escriba el siguiente comando para borrar todas las variables:
 
 ```
 Remove-Variable -Name * -Force -ErrorAction SilentlyContinue
@@ -76,25 +76,25 @@ Performing operation "Remove Variable" on Target "Name: Error".
 (default is "Y"):A
 ```
 
-Si ejecuta el cmdlet **Get-Variable**, verá las demás variables de Windows PowerShell. Puesto que también existe una unidad de Windows PowerShell variable, también puede mostrar todas las variables de Windows PowerShell. Para ello, escriba:
+Si ejecuta el cmdlet **Get-Variable**, verá las demás variables de PowerShell. Puesto que también existe una unidad de PowerShell variable, también puede mostrar todas las variables de PowerShell. Para ello, escriba:
 
 ```
 Get-ChildItem variable:
 ```
 
 ### <a name="using-cmdexe-variables"></a>Usar variables de Cmd.exe
-Aunque Windows PowerShell no es Cmd.exe, se ejecuta en un entorno de shell de comandos y puede usar las mismas variables disponibles en cualquier entorno de Windows. Estas variables se exponen a través de una unidad denominada **env**:. Para ver estas variables, escriba:
+Aunque PowerShell no es Cmd.exe, se ejecuta en un entorno de shell de comandos y puede usar las mismas variables disponibles en cualquier entorno de Windows. Estas variables se exponen a través de una unidad denominada **env**:. Para ver estas variables, escriba:
 
 ```
 Get-ChildItem env:
 ```
 
-Aunque los cmdlets de variables estándar no están diseñados para trabajar con variables **env:**, puede seguir usándolos si especifica el prefijo **env:**. Por ejemplo, para ver el directorio raíz del sistema operativo, puede usar la variable **%SystemRoot%** del shell de comandos en Windows PowerShell. Para ello, escriba:
+Aunque los cmdlets de variables estándar no están diseñados para trabajar con variables **env:**, puede seguir usándolos si especifica el prefijo **env:**. Por ejemplo, para ver el directorio raíz del sistema operativo, puede usar la variable **%SystemRoot%** del shell de comandos en PowerShell. Para ello, escriba:
 
 ```
 PS> $env:SystemRoot
 C:\WINDOWS
 ```
 
-También puede crear y modificar variables de entorno desde Windows PowerShell. Las variables de entorno a las que se accede desde Windows PowerShell se ajustan a las reglas habituales para las variables de entorno en cualquier otra ubicación de Windows.
+También puede crear y modificar variables de entorno desde PowerShell. Las variables de entorno a las que se accede desde Windows PowerShell se ajustan a las reglas habituales para las variables de entorno en cualquier otra ubicación de Windows.
 

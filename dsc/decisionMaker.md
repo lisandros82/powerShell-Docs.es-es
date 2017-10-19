@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Información general sobre la configuración de estado deseado para responsables de toma de decisiones"
-ms.openlocfilehash: e8cb26c659dbacde814b1ceaedc0b1fb8dae9d63
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e39ab5138b20653e46ac35fa32b99d268f96b2df
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Información general sobre la configuración de estado deseado para responsables de toma de decisiones
 
@@ -27,9 +27,9 @@ DSC también tiene supervisión y generación de informes integradas. Si un sist
 
 Las configuraciones están diseñadas para que se puedan leer, almacenar y actualizar fácilmente. Las configuraciones declaran el estado en que deberían estar los dispositivos de destino, en lugar de escribir instrucciones sobre cómo hacer que lleguen a ese estado. Esto permite que la configuración mediante DSC sea mucho menos costosa de aprender, adoptar, implementar y mantener. 
 
-La creación de configuraciones implica que se capturen los pasos de implementación complejos como un "origen único de verdad" en una ubicación única. Esto hace que las implementaciones repetidas de un conjunto concreto de máquinas sean mucho menos propensas a errores. A su vez, esto hace que las implementaciones sean más rápidas y confiables. Esto permite un tiempo de entrega rápido en las implementaciones complejas.
+La creación de configuraciones implica que se capturen los pasos de implementación complejos como un "origen único de verdad" en una ubicación única. Esto hace que las implementaciones repetidas de un conjunto concreto de máquinas sean mucho menos propensas a errores. A su vez, hace que las implementaciones sean más rápidas y confiables, lo que permite un tiempo de entrega rápido en las implementaciones complejas.
 
-Las configuraciones también pueden compartirse a través de la [Galería de PowerShell](https://powershellgallery.com). Esto significa que puede que ya existan escenarios comunes y procedimientos recomendados para el trabajo que necesita.
+Las configuraciones también se pueden compartir mediante la [Galería de PowerShell](https://powershellgallery.com), lo que significa que es posible que ya existan escenarios comunes y procedimientos recomendados para el trabajo que necesita realizar.
 
 
 ## <a name="desired-state-configuration-and-devops"></a>Configuración de estado deseado y DevOps

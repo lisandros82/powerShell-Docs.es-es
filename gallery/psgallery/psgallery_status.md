@@ -1,20 +1,37 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_status
-ms.technology: powershell
-ms.openlocfilehash: a260b9b696b41947fbbb789fd165dfe4bdac1dc3
-ms.sourcegitcommit: 214b8442f05618d078837889cbb6a30b42c01edb
-translationtype: HT
+ms.openlocfilehash: af6111d3c511273571bd978c6d0e7447726c2917
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 10/13/2017
 ---
 <a name="powershell-gallery-status"></a>Estado de la Galería de PowerShell
 =========================
+## <a name="10102017---powershell-gallery-unavailable-for-2-hours-101017"></a>10-10-2017: La Galería de PowerShell no estuvo disponible durante dos horas 10-10-2017
+
+__Resumen del impacto__: la Galería de PowerShell experimentó un período de latencia muy alta, lo que generó problemas de conexión intermitente, los que comenzaron aproximadamente a las 5:00 p.m. (PDT) del 10-10-2017. Durante la resolución del problema, el sitio estuvo sin conexión por dos horas, desde aproximadamente las 10:00 p.m. (PDT). El sitio se restauró poco antes de la medianoche del 10-10-2017. 
+ 
+__Causa principal__: se sigue investigando la causa principal de la latencia alta.
+
+__Resolución__: hubo que desconectar los servicios web y restaurarlos para poder solucionar el problema principal. 
+
+__Pasos siguientes__: se investiga la causa principal del problema original.
+
+## <a name="06012017---deploy-to-azure-automation-currently-unavailable"></a>01-06-2017: Implementar en Azure Automation actualmente no disponible
+
+__Resumen del impacto__: la implementación de elementos con dependencias de Azure Automation desde la Galería de PowerShell actualmente no está disponible.  La importación de elementos de la Galería de PowerShell desde Azure Automation sigue disponible.  
+ 
+__Causa raíz__: los elementos que tienen dependencias de otros y que se implementaron anteriormente en Azure Automation no se implementarán en Azure Automation. Los ingenieros identificaron un problema con la forma en que se generan las plantillas de ARM para elementos con dependencias para la funcionalidad Implementar en Azure Automation.
+
+__Resolución__: los ingenieros están trabajando para solucionar el problema.  La solución alternativa actual para los usuarios es importar el elemento de la Galería de PowerShell desde Azure Automation. 
+
+__Pasos siguientes__: los ingenieros publicarán próximamente la corrección.  Mientras tanto, use la solución alternativa recomendada. 
+
 
 ## <a name="04112017---users-unable-to-log-in-with-azure-active-directory-aad-accounts"></a>11/04/2017: los usuarios no pueden iniciar sesión con cuentas de Azure Active Directory (AAD)
 
@@ -58,7 +75,7 @@ __Pasos siguientes__: si ha usado el vínculo Póngase en contacto con nosotros 
 
 __Resumen del impacto__: entre los días 11/7/2016 y 13/7/2016, un subconjunto de clientes experimentó problemas al descargar elementos de la Galería de PowerShell. Probablemente, el problema se manifestó en el siguiente mensaje de error que se ha devuelto de Install-Module/Install-Script y Save-Module/Save-Script:
 
-```PowerShell
+```powershell
 PS C:\> Install-Module xStorage 
 PackageManagement\Install-Package : Package 'xStorage' failed to be installed because: 
 End of Central Directory record could not be found. At C:\Program 
@@ -77,7 +94,7 @@ __Pasos siguientes__: investigar la causa principal subyacente y desarrollar una
 ## <a name="5192016---download-items-failed"></a>19/5/2016 - Error al descargar elementos
 __Resumen del impacto__: entre los días 17/5/2016 y 19/5/2016, un subconjunto de clientes experimentó problemas al descargar elementos de la Galería de PowerShell. Probablemente, el problema se manifestó en el siguiente mensaje de error que se ha devuelto de Install-Module/Install-Script y Save-Module/Save-Script:
 
-```PowerShell
+```powershell
 VERBOSE: Hash for package 'AzureRM.OperationalInsights' does not match hash provided from the server.
 VERBOSE: InstallPackageLocal' - name='AzureRM.OperationalInsights', version='1.0.8',
 destination='C:\Users\jbritt\AppData\Local\Temp\2\1741355729'

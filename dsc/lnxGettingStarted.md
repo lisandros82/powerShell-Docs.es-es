@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Introducción a la configuración de estado deseado (DSC) para Linux"
-ms.openlocfilehash: bf87125309a3f6b556fd7546057cb9491fb34229
-ms.sourcegitcommit: 4ab9a86e47b6effe8fe22ebeb81e8fadff41d31c
+ms.openlocfilehash: f88167cd039077574c3a84aa07ba78186adfa181
+ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2017
+ms.lasthandoff: 10/16/2017
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Introducción a la configuración de estado deseado (DSC) para Linux
 
@@ -106,7 +106,7 @@ ExampleConfiguration -OutputPath:"C:\temp"
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>Insertar la configuración en el equipo Linux
 
-Los documentos de configuración (archivos MOF) se pueden insertar en el equipo Linux mediante el cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx). Para usar este cmdlet, junto con los cmdlets [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx o [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx), de forma remota en un equipo Linux, debe usar un elemento CIMSession. El cmdlet [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) se usa para crear un elemento CIMSession para el equipo Linux.
+Los documentos de configuración (archivos MOF) se pueden insertar en el equipo Linux mediante el cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx). Para usar este cmdlet, junto con los cmdlets [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) o [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx), de forma remota en un equipo Linux, debe usar un elemento CIMSession. El cmdlet [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) se usa para crear un elemento CIMSession para el equipo Linux.
 
 En el código siguiente se muestra cómo crear un elemento CIMSession de DSC para Linux.
 

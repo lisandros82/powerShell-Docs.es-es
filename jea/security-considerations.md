@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: jea,powershell,security
 title: Consideraciones de seguridad de JEA
-ms.openlocfilehash: f85b342625d4dba0890619ef9680eaccbbde5224
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 2dcce34113998a1c31709b6afe6d0a21c991e79d
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="jea-security-considerations"></a>Consideraciones de seguridad de JEA
 
@@ -68,7 +68,7 @@ Los permisos efectivos de la gMSA se definen mediante los grupos de seguridad, y
 Cuando un punto de conexión de JEA se configura para usar una cuenta gMSA, parecerá que las acciones de todos los usuarios de JEA vienen de la misma cuenta de servicio administrada de grupo.
 La única manera de realizar un seguimiento de las acciones hasta un usuario específico es identificar el conjunto de comandos que se ejecutan en una transcripción de la sesión de PowerShell.
 
-Las **credenciales de paso a través** se utilizan cuando no especifica una cuenta de ejecución y desea que PowerShell use las credenciales del usuario que se conecta para ejecutar comandos en el servidor remoto.
+Las **credenciales de paso a través** se usan cuando no especifica una cuenta de ejecución y desea que PowerShell use las credenciales del usuario que se conecta para ejecutar comandos en el servidor remoto.
 Esta configuración *no* se recomienda para JEA, ya que requeriría conceder acceso directo al usuario que se conecta a grupos de administración con privilegios.
 Si el usuario que se conecta ya tiene privilegios de administrador, puede evitar JEA por completo y administrar el sistema a través de otro medio sin restricciones.
 Para obtener más información, consulte la sección siguiente en la que se detalla que [JEA no protege frente a administradores](#jea-does-not-protect-against-admins).
