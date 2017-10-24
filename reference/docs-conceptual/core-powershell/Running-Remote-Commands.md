@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Ejecutar comandos remotos
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: c3bf002e7a3daa5afc8219dd846145808eef3c9b
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 5cf9690b8fe4549a99186f172cb6f0de156a4dea
+ms.sourcegitcommit: c5251755c4442487f99ff74fadf7e37bbf039089
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="running-remote-commands"></a>Ejecutar comandos remotos
 Puede ejecutar comandos en un equipo o en cientos de ellos usando un solo comando de Windows PowerShell. Windows PowerShell admite la informática remota a través de varias tecnologías, como WS-Management, RPC y WMI.
@@ -16,26 +16,16 @@ Puede ejecutar comandos en un equipo o en cientos de ellos usando un solo comand
 Muchos de los cmdlets de Windows PowerShell tienen un parámetro ComputerName que les permite recopilar datos y cambiar la configuración de uno o más equipos remotos. Usan distintas tecnologías de comunicación y muchos de ellos funcionan con todos los sistemas operativos de Windows que Windows PowerShell admite sin necesidad de ninguna configuración especial.
 
 Estos cmdlets son:
-
-- [Restart-Computer](https://technet.microsoft.com/en-us/library/dd315301.aspx)
-
-- [Test-Connection](https://technet.microsoft.com/en-us/library/dd315259.aspx)
-
-- [Clear-EventLog](https://technet.microsoft.com/en-us/library/dd347552.aspx)
-
-- [Get-EventLog](https://technet.microsoft.com/en-us/library/dd315250.aspx)
-
-- [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
-
- -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
-
-- [Get-Service](https://technet.microsoft.com/en-us/library/dd347591.aspx)
-
-- [Set-Service](https://technet.microsoft.com/en-us/library/dd315324.aspx)
-
-- [Get-WinEvent](https://technet.microsoft.com/en-us/library/dd315358.aspx)
-
-- [Get-WmiObject](https://technet.microsoft.com/en-us/library/dd315295.aspx)
+* [Restart-Computer](https://go.microsoft.com/fwlink/?LinkId=821625)
+* [Test-Connection](https://go.microsoft.com/fwlink/?LinkId=821646)
+* [Clear-EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
+* [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
+* [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
+  - [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
+* [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
+* [Set-Service](https://go.microsoft.com/fwlink/?LinkId=821633)
+* [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
+* [Get-WmiObject](https://go.microsoft.com/fwlink/?LinkId=821595)
 
 Normalmente, los cmdlets que admiten la comunicación remota sin una configuración especial tienen un parámetro ComputerName y carecen de un parámetro Session. Para encontrar estos cmdlets en la sesión, escriba:
 
@@ -51,7 +41,8 @@ Para usar la comunicación remota de Windows PowerShell, el equipo remoto debe 
 Después de configurar la comunicación remota de Windows PowerShell, tendrá a su disposición un gran número de estrategias de comunicación remota. En lo que resta de este documento se mencionan solo algunas de ellas. Para más información, vea [About Remote](https://technet.microsoft.com/en-us/library/dd347744.aspx) (Acerca del acceso remoto) y [About Remote FAQ](https://technet.microsoft.com/en-us/library/dd347744.aspx) (Preguntas más frecuentes sobre el acceso remoto).
 
 ### <a name="start-an-interactive-session"></a>Iniciar una sesión interactiva
-Para iniciar una sesión interactiva con un único equipo remoto, use el cmdlet [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx). Por ejemplo, para iniciar una sesión interactiva con el equipo remoto Server01, escriba:
+Para iniciar una sesión interactiva con un único equipo remoto, use el cmdlet [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477).
+Por ejemplo, para iniciar una sesión interactiva con el equipo remoto Server01, escriba:
 
 ```
 Enter-PSSession Server01
@@ -65,11 +56,11 @@ Para finalizar la sesión interactiva, escriba:
 Exit-PSSession
 ```
 
-Para más información sobre los cmdlets Enter-PSSession y Exit-PSSession, vea [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) y [Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx).
+Para más información sobre los cmdlets Enter-PSSession y Exit-PSSession, vea [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) y [Exit-PSSession](https://go.microsoft.com/fwlink/?LinkID=821478).
 
 ### <a name="run-a-remote-command"></a>Ejecutar un comando remoto
-Para ejecutar cualquier comando en uno o varios equipos remotos, use el cmdlet [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx).
-Por ejemplo, para ejecutar un comando [Get-UICulture](https://technet.microsoft.com/en-us/library/dd347742.aspx) en los equipos remotos Server01 y Server02, escriba:
+Para ejecutar cualquier comando en uno o varios equipos remotos, use el cmdlet [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).
+Por ejemplo, para ejecutar un comando [Get-UICulture](https://go.microsoft.com/fwlink/?LinkId=821806) en los equipos remotos Server01 y Server02, escriba:
 
 ```
 Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
@@ -83,7 +74,7 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server01.corp.fabrikam.com
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
-Para más información sobre el cmdlet Invoke-Command, vea [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462).
+Para más información sobre el cmdlet Invoke-Command, vea [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).
 
 ### <a name="run-a-script"></a>Ejecutar un script
 Para ejecutar un script en uno o varios equipos remotos, use el parámetro FilePath del cmdlet Invoke-Command. El script debe estar en el equipo local o accesible desde este. Los resultados se devuelven en el equipo local.
@@ -94,7 +85,7 @@ Por ejemplo, el siguiente comando ejecuta el script DiskCollect.ps1 en los equip
 Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
-Para más información sobre el cmdlet Invoke-Command, vea [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx).
+Para más información sobre el cmdlet Invoke-Command, vea [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).
 
 ### <a name="establish-a-persistent-connection"></a>Establecer una conexión persistente
 Para ejecutar una serie de comandos relacionados que comparten datos, crear una sesión en el equipo remoto y, a continuación, use el cmdlet Invoke-Command para ejecutar comandos en la sesión que cree. Para crear una sesión remota, use el cmdlet New-PSSession.
@@ -127,8 +118,8 @@ Para obtener más información sobre el proveedor WSMan, vea el tema sobre el [p
 
 Para obtener más información, consulte:
 - [Acerca de las Preguntas más frecuentes sobre el acceso remoto](https://technet.microsoft.com/en-us/library/dd315359.aspx)
-- [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/dd819496.aspx)
-- [Import-PSSession](https://technet.microsoft.com/en-us/library/dd347575.aspx). 
+- [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
+- [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 
 Para obtener ayuda con los errores de comunicación remota, consulte [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/dd347642.aspx).
 
@@ -139,9 +130,8 @@ Para obtener ayuda con los errores de comunicación remota, consulte [about_Remo
 - [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/2f890148-8578-49ed-85ea-79a489dd6317)
 - [about_PSSessions](https://technet.microsoft.com/en-us/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
 - [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
-- [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)
-- [Import-PSSession](https://technet.microsoft.com/en-us/library/048c115e-a6fb-4e0d-8cea-c5ca24630c9d)
-- [New-PSSession](https://technet.microsoft.com/en-us/library/59452f12-a11d-4558-99ea-e6ca6ad5ffd3)
-- [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/af68867a-d201-4b19-a1de-594015ed8a25)
+- [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)
+- [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
+- [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
+- [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [Proveedor de WSMan](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
-

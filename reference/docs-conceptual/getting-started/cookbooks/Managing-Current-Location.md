@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Administrar la ubicación actual"
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: 20b3828d12587e675ed51863e5d96c37839b62d6
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: cbdebb84b3191e3bd549a1cf344cbeefaa91a23c
+ms.sourcegitcommit: c5251755c4442487f99ff74fadf7e37bbf039089
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="managing-current-location"></a>Administrar la ubicación actual
 Al navegar por los sistemas de carpeta en el Explorador de archivos, normalmente tiene una ubicación de trabajo específica; es decir, la carpeta abierta actual. Los elementos de la carpeta actual se pueden manipular fácilmente haciendo clic en ellos. En las interfaces de línea de comandos como Cmd.exe, si está en la misma carpeta que un archivo determinado, puede tener acceso a él especificando un nombre relativamente corto. No será necesario especificar la ruta de acceso completa al archivo. El directorio actual se conoce como el directorio de trabajo.
@@ -49,10 +49,13 @@ Puede especificar rutas relativas a la ubicación actual de la misma manera en q
 
 Así, si está en la carpeta **C:\\Windows**, un punto (**.**) representa a **C:\\Windows** y dos puntos (**..**), a **C:**. Puede cambiar su ubicación actual por la raíz de la unidad C:; para ello, escriba:
 
-<pre>PS> Set-Location -Path .. -PassThru
+```powershell
+PS> Set-Location -Path .. -PassThru
+
 Path
 ----
-C:\</pre>
+C:\
+```
 
 Esta misma técnica funciona en unidades de Windows PowerShell que no son unidades del sistema de archivos, como **HKLM:**. Puede establecer su ubicación en la clave HKLM\\Software del Registro escribiendo lo siguiente:
 
