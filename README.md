@@ -27,3 +27,8 @@ Incorporamos las contribuciones hechas a este repositorio mediante [solicitudes 
 Para obtener más información sobre las contribuciones, lea nuestra [guía de contribuciones](CONTRIBUTING.md).
 Hay una [guía de estilo](./STYLE.md) preliminar que puede revisar antes de realizar contribuciones.
 Use las plantillas de problemas y solicitud de extracción para ayudar a mantener la documentación coherente entre versiones. 
+
+## <a name="licenses"></a>Licencias
+
+Hay dos archivos de licencia para este proyecto. La licencia de MIT se aplica al código incluido en este repositorio.
+La licencia de Creative Commons se aplica a la documentación. 

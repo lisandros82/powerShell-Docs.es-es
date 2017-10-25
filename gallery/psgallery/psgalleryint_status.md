@@ -1,17 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: psgalleryint_status
-ms.technology: powershell
-ms.openlocfilehash: 58f06ca061a4f171288e75b30698910c701f1da1
-ms.sourcegitcommit: ba8ed836799ef465e507fa1b8d341ba38459d863
-translationtype: HT
+ms.openlocfilehash: 0b2f1ebcb365fcd24438a028a9c8181449266a8b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 <a name="powershell-gallery-status"></a>Estado de la Galería de PowerShell
 =========================
