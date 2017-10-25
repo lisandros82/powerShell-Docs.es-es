@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: c3645a6ba83081bd5ac31a13af0f67f6538db22a
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>Crear un punto de conexión de JEA y conectarse a este
 Para crear un punto de conexión de JEA, debe crear y registrar un archivo de configuración de sesión de PowerShell especialmente configurado, que se puede generar con el cmdlet **New-PSSessionConfigurationFile**.
 
@@ -137,3 +148,4 @@ La conexión a un punto de conexión de JEA funciona igual que la conexión a ot
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 Después de conectarse a la sesión de JEA, estará limitado a ejecutar la comandos de la lista de permitidos en las funcionalidades de rol a las que tenga acceso. Si intenta ejecutar cualquier comando no permitido para su rol, se producirá un error.
+

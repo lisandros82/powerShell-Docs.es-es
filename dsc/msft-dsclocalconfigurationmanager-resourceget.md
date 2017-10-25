@@ -1,16 +1,14 @@
 ---
-title: "Método ResourceGet de la clase MSFT_DSCLocalConfigurationManager"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 1666b85402f17230090f7290c8cb400dd9fbf0a6
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Método ResourceGet de la clase MSFT_DSCLocalConfigurationManager"
+ms.openlocfilehash: 7d8b185c49778253dcb4e983ad948775c4cb0842
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método ResourceGet de la clase MSFT_DSCLocalConfigurationManager
 

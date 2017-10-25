@@ -1,18 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_filelist_feature
-ms.technology: powershell
-ms.openlocfilehash: e5d9b7d9c6d233bc84f76f5311e5580bb9e5cd77
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 8335a78d4b08696a88f73fe0fd6936833316f264
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="filelist-feature-in-the-gallery"></a>Característica FileList de la Galería
 

@@ -1,16 +1,14 @@
 ---
-title: "Llamada directa a los métodos de recursos de DSC"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 97d97a36830088d6ee1296cda5310e087fc41893
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Llamada directa a los métodos de recursos de DSC"
+ms.openlocfilehash: ab00e66d526eda244500a41e450c56b0151274ee
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>Llamada directa a los métodos de recursos de DSC
 

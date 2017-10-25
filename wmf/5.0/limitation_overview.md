@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: e8620cdeb90792e86d091d3e19a169f9dfa690f9
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="known-issues-and-limitations"></a>Problemas y limitaciones conocidos
 
 <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>Los accesos directos de PowerShell se interrumpen cuando se usan por primera vez
@@ -105,3 +116,4 @@ Hay dos soluciones alternativas para este problema según la versión de Windows
       * Se supone que la copia modificada de Generalize.xml se ha copiado en C:\.
 
   10.   Generalize.xml se ha actualizado con la solución alternativa. Ejecute Sysprep con la opción de generalizar habilitada.
+

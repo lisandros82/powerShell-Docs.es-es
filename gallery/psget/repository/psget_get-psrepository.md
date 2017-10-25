@@ -1,18 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_get psrepository
-ms.technology: powershell
-ms.openlocfilehash: b1d5172232f0c2916382b6c35093a238f6b2cb4d
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Get-PSRepository
+ms.openlocfilehash: 96f87428312c233757aa5fcae405a192aadff385
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="get-psrepository"></a>Get-PSRepository
 

@@ -1,18 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
 title: psget_moduledependencypopulation
-ms.technology: powershell
-ms.openlocfilehash: 3d89dddf2fc31a9fdb1a57f21baaf757990989c7
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 126cd65ac35a31f4118474bc36dac1836ec0f22e
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="logic-for-preparing-the-module-dependencies-during-publish-operation"></a>Lógica para preparar las dependencias de módulo durante la operación de publicación
 1.  Los módulos indicados como parte de RequiredModules se consideran dependencias.

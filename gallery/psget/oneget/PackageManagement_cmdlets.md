@@ -1,18 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
 title: PackageManagement_cmdlets
-ms.technology: powershell
-ms.openlocfilehash: 954097f6f3516eb627902c126a70203818ef84db
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: aca4f461ff0e51aa812f8219c74bd7d85d1e7b2d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="packagemanagement-cmdlets"></a>Cmdlets PackageManagement
 Este es el núcleo de PackageManagement para admitir la detección, la instalación y el inventario de software (SDII). Pruebe los cmdlets para estas operaciones:

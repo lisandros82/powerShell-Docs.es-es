@@ -1,16 +1,14 @@
 ---
-title: Recurso de DSC para Linux nxSshAuthorizedKeys
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: edc906b4e9c925320c4ed00c5ab295189066ccb9
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Recurso de DSC para Linux nxSshAuthorizedKeys
+ms.openlocfilehash: 3c145eeb86d971dc00e1c7cea60fb50c83d7b9a2
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>Recurso de DSC para Linux nxSshAuthorizedKeys
 

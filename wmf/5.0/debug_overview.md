@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: aaf1809277f072c82e5a1a862ea64b75586e32d1
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="improvements-in-powershell-script-debugging"></a>Mejoras en la depuración de scripts de PowerShell
 
 PowerShell 5.0 incluye varias mejoras para ofrecer una experiencia de depuración superior:
@@ -42,3 +53,4 @@ Ahora puede establecer la conexión con cualquier proceso del equipo que tenga W
 
 -   Enter-PSHostProcess
 -   Exit-PSHostProcess
+

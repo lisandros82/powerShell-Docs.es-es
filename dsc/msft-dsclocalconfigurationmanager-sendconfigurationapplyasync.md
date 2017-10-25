@@ -1,16 +1,14 @@
 ---
-title: "Método SendConfigurationApplyAsync de la clase MSFT_DSCLocalConfigurationManager"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 41177f2eb2bbcf2dddaf232141fb483efaaeeea5
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Método SendConfigurationApplyAsync de la clase MSFT_DSCLocalConfigurationManager"
+ms.openlocfilehash: e680bfd1c5b39d364c90cf5ef6b43d0a568af23a
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método SendConfigurationApplyAsync de la clase MSFT_DSCLocalConfigurationManager
 

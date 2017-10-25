@@ -1,3 +1,14 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: f3c218fc668e35fa50047459d8031d77cdf985a2
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/12/2017
+---
 # <a name="reporting-on-jea"></a>Generación de informes en JEA
 Para informar sobre el estado de la configuración de JEA, puede usar:
 1.  **Get-PSSessionConfiguration** para devolver una lista de todos los puntos de conexión registrados en una máquina determinada.
@@ -32,3 +43,4 @@ Cmdlet          Restart-Service                                    3.0.0.0 Micro
 Para informar sobre las _acciones_ que los usuarios emprendieron durante una sesión de JEA, puede hacer lo siguiente:
 1. Habilitar las transcripciones de "consentimiento temporal" para ese punto de conexión de JEA y consulte el directorio de transcripción para obtener un registro completo de las acciones de cada usuario
 2. Active el registro del módulo de PowerShell e inspeccione los registros de eventos de PowerShell.
+
