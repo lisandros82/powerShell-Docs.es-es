@@ -118,7 +118,7 @@ Puede excluir elementos concretos con el parámetro **Exclude** de Get-ChildItem
 
 Por ejemplo, imaginemos que estamos buscando el archivo DLL del Servicio de hora de Windows en la carpeta System32, y todo lo que recuerda del nombre del archivo DLL es que comienza por "W" y contiene "32".
 
-Con una expresión como **w\&#42;32\&#42;.dll**, se detectarán todos los archivos DLL que cumplan las condiciones, pero también se pueden devolver los archivos DLL de compatibilidad de Windows 95 y Windows de 16 bits que incluyan "95" o "16" en sus nombres. Puede omitir todos los archivos que contengan cualquiera de estos números en sus nombres, para lo que debe usar el parámetro **Exclude** con el patrón **\&#42;\[9516]\&&#42;**:
+Con una expresión como **w\&#42;32\&#42;.dll**, se detectarán todos los archivos DLL que cumplan las condiciones, pero también se pueden devolver los archivos DLL de compatibilidad de Windows 95 y Windows de 16 bits que incluyan "95" o "16" en sus nombres. Puede omitir todos los archivos que contengan cualquiera de estos números en sus nombres, para lo que debe usar el parámetro **Exclude** con el patrón **\&#42;\[9516]\&#42;**:
 
 <pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
 Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32
