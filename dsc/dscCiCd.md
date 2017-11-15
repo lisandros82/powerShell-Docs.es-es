@@ -4,13 +4,13 @@ author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Creación de una canalización de integración continua e implementación continua con DSC"
-ms.openlocfilehash: 6d21faef6e58068456c6c454b4d50b7a9415850b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 60b41c5d279560d0121372e593879fe03cd52f7a
+ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 11/07/2017
 ---
-# <a name="building-a-continuous-integration-and-continuous-deplyoment-pipeline-with-dsc"></a>Creación de una canalización de integración continua e implementación continua con DSC
+# <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Creación de una canalización de integración continua e implementación continua con DSC
 
 En este ejemplo se muestra cómo crear una canalización de integración continua/implementación continua (CI/CD) con PowerShell, DSC, Pester y Visual Studio Team Foundation Server (TFS).
 
