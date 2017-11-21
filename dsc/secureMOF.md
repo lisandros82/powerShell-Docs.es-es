@@ -1,22 +1,31 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-10-31
 author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Proteger el archivo MOF
-ms.openlocfilehash: dc900f53c954637a407fbd026d24d20c2fdabf6e
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: f4ef2962710c7458ac947bf33270175a09de643c
+ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="securing-the-mof-file"></a>Proteger el archivo MOF
 
 >Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-DSC indica a los nodos de destino la configuración que deben tener mediante el envío de un archivo MOF con esa información a cada nodo, donde el administrador de configuración local (LCM) implementa la configuración deseada. Como este archivo contiene los detalles de la configuración, es importante que esté protegido. Para ello, puede establecer el LCM para comprobar las credenciales de un usuario. En este tema se describe cómo transmitir esas credenciales de forma segura al nodo de destino mediante su cifrado con certificados.
+DSC administra la configuración de nodos de servidor aplicando la información almacenada en un archivo MOF, donde el administrador de configuración local (LCM) implementa el estado final que quiere.
+Como este archivo contiene los detalles de la configuración, es importante que esté protegido.
+En este tema se describe cómo asegurarse de que el nodo de destino ha cifrado el archivo.
 
->**Nota:** En este tema se describen los certificados usados para el cifrado. Para el cifrado, un certificado autofirmado es suficiente, porque la clave privada se mantiene siempre secreta y el cifrado no implica la confianza del documento. Los certificados autofirmados *no* deben usarse con fines de autenticación. Debe usar un certificado de una entidad de certificación de confianza (CA) para fines de autenticación.
+Desde PowerShell 5.0, el archivo MOF completo se cifra de forma predeterminada cuando se aplica al nodo por medio del cmdlet **Start-DSCConfiguration**.
+El proceso descrito en este artículo únicamente es necesario si se implementa una solución a través del protocolo de servicio de incorporación de cambios cuando los certificados no se administran. De este modo, se garantiza que el sistema puede descifrar y leer las configuraciones descargadas por el nodo de destino antes de que se apliquen (por ejemplo, el servicio de incorporación de cambios disponible en Windows Server).
+El servicio instalará y administrará automáticamente los certificados relativos a los nodos registrados en [DSC de Azure Automation](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview), sin que ello suponga ninguna sobrecarga administrativa.
+
+>**Nota:** En este tema se describen los certificados usados para el cifrado.
+>Para el cifrado, un certificado autofirmado es suficiente, porque la clave privada se mantiene siempre secreta y el cifrado no implica la confianza del documento.
+>Los certificados autofirmados *no* deben usarse con fines de autenticación.
+>Debe usar un certificado de una entidad de certificación de confianza (CA) para fines de autenticación.
 
 ## <a name="prerequisites"></a>Requisitos previos
 
