@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Recurso de DSC WindowsFeature
-ms.openlocfilehash: a3433577a122f6c7e31360e094a089f6ceef77c2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b4f50cb9ee172600b1811175e9cf67f6a7ed2d55
+ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="dsc-windowsfeature-resource"></a>Recurso de DSC WindowsFeature
 
@@ -35,7 +35,7 @@ WindowsFeature [string] #ResourceName
 
 |  Propiedad  |  Descripción   | 
 |---|---| 
-| Nombre| Indica el nombre del rol o la característica que quiere garantizar que se agregue o se quite. Esto es el mismo que la propiedad __Name__ del cmdlet [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) y no el nombre para mostrar del rol o la característica.| 
+| Nombre| Indica el nombre del rol o la característica que quiere garantizar que se agregue o se quite. Esto es el mismo que la propiedad __Name__ del cmdlet [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) y no el nombre para mostrar del rol o la característica.| 
 | Credential| Indica las credenciales que se usarán para agregar o quitar el rol o la característica.| 
 | Ensure| Indica si se agrega el rol o la característica. Para asegurarse de que el rol o la característica se agregue, establezca esta propiedad en "Present"; para asegurarse de que se quite el rol o característica, establezca la propiedad a "Absent".| 
 | IncludeAllSubFeature| Establezca esta propiedad en __$true__ para garantizar el estado de todas las subcaracterísticas requeridas con el estado de la característica que se especifique con la propiedad __Name__.| 
