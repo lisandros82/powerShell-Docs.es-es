@@ -3,7 +3,8 @@ title: Error de cmdlets de Network Switch Manager
 contributor: vaibch
 ms.openlocfilehash: 8495d79aec54d93f94e745e2efccb5116ad5d944
 ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 Los cmdlets de Network Switch Manager se pueden usar para administrar modificadores de red a través de WSMAN. Algunos cmdlets de este módulo pueden aceptar valores de canalizaciones. En la versión preliminar de WMF 5.1, los cmdlets que pueden aceptar el valor de la canalización no pueden ejecutarse si los valores no pasan a través de canalizaciones.
 

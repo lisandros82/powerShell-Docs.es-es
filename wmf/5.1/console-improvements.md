@@ -10,7 +10,8 @@ ms.prod: powershell
 ms.technology: WMF
 ms.openlocfilehash: fc0c78f59a2c4cda5c6aad625a5eaf5121485bad
 ms.sourcegitcommit: 26f4e52f3dd008b51b7eae7b634f0216eec6200e
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: es-ES
 ---
 # <a name="console-improvements-in-wmf-51"></a>Mejoras de la consola en WMF 5.1#
 
