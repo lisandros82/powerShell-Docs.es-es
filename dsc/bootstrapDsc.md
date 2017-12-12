@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Configuración de máquinas virtuales en el arranque inicial mediante DSC"
-ms.openlocfilehash: a3592c50fa7f2232538fbec07129fac86c1d00b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c793e36eb9caa194104f9dda2aa1d335b21b676c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 >Se aplica a: Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ Para obtener información sobre cómo configurar nuevas máquinas virtuales en e
 
 Para ejecutar estos ejemplos, necesitará:
 
-- Un VHD de arranque con el que trabajar. Puede descargar una imagen ISO con una copia de evaluación de Windows Server 2016 en   [Centro de evaluación de TechNet](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Puede encontrar instrucciones sobre cómo crear un VHD desde una imagen ISO en [Creación de discos duros virtuales de arranque](https://technet.microsoft.com/en-us/library/gg318049.aspx).
+- Un VHD de arranque con el que trabajar. Puede descargar una imagen ISO con una copia de evaluación de Windows Server 2016 en [Centro de evaluación de TechNet](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Puede encontrar instrucciones sobre cómo crear un VHD desde una imagen ISO en [Creación de discos duros virtuales de arranque](https://technet.microsoft.com/en-us/library/gg318049.aspx).
 - Un equipo host con Hyper-V habilitado. Para obtener más información, consulte [Introducción a Hyper-V](https://technet.microsoft.com/library/hh831531.aspx).
 
 Mediante el uso de DSC, puede automatizar la instalación de software y configuración de un equipo en el arranque inicial.
@@ -83,7 +83,7 @@ Configuration SampleIISInstall
 Cambie el nombre y mueva ese archivo a la ubicación adecuada en el VHD como `Pending.mof` utilizando el cmdlet [Move-Item](https://technet.microsoft.comlibrary/hh849852.aspx). Por ejemplo:
 
     ```powershell
-        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\Sytem32\Configuration\Pending.mof
+        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
     ```
 6. Desmonte el VHD mediante una llamada al cmdlet [Dismount-VHD](https://technet.microsoft.com/library/hh848562.aspx). Por ejemplo:
 
