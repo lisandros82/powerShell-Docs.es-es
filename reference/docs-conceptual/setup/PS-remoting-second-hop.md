@@ -1,12 +1,12 @@
 ---
 ms.date: 2017-06-05
-keywords: powershell,cmdlet
+keywords: powershell, cmdlet
 title: "Realizar el segundo salto en la comunicación remota de PowerShell"
-ms.openlocfilehash: f3b8280819e43bd67bd608ffd0ba9484c2bbc26c
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 2518409369a75a49b975b9b944320c1878819421
+ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Realizar el segundo salto en la comunicación remota de PowerShell
 
@@ -256,12 +256,12 @@ Se pueden pasar credenciales dentro del parámetro **ScriptBlock** de una llamad
 - No requiere configuración especial del servidor.
 - Funciona en cualquier servidor que ejecute WMF 2.0 o versiones posteriores.
 
-## <a name="cons"></a>Contras
+### <a name="cons"></a>Contras
 
 - Se requiere una técnica de código complicada.
 - Si ejecuta WMF 2.0, requiere una sintaxis diferente para pasar argumentos a una sesión remota.
 
-## <a name="example"></a>Ejemplo
+### <a name="example"></a>Ejemplo
 
 En el ejemplo siguiente, se muestra cómo pasar las credenciales en un bloque de script **Invoke-Command**:
 
