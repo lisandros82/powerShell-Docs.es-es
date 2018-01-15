@@ -72,8 +72,17 @@
               href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
         - name: Guía sobre ISE
           href: core-powershell/ise-guide.md
+        - name: Visual Studio Code
+          items:
+            - name: Uso de Visual Studio Code
+              href: core-powershell/vscode/using-vscode.md
         - name: Ejecutar comandos remotos
           href: core-powershell/running-remote-commands.md
+          items:
+            - name: Comunicación remota de PowerShell a través de SSH
+              href: core-powershell/SSH-Remoting-in-PowerShell-Core.md
+            - name: Comunicación remota de WS-Management (WSMan) en PowerShell Core
+              href: core-powershell/WSMan-Remoting-in-PowerShell-Core.md
         - name: Acceso web
           href: core-powershell/web-access.md
           items:
@@ -129,7 +138,7 @@
               href: getting-started/cookbooks/other-useful-scripting-objects.md
             - name: Realizar tareas de redes
               href: getting-started/cookbooks/performing-networking-tasks.md
-            - name: Redirigir datos con cmdlets Out
+            - name: Redirigir datos con cmdlets "Out"
               href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
             - name: Quitar objetos de la canalización "Where-Object"
               href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
@@ -207,6 +216,10 @@
     - name: Instalación
       href: ''
       items:
+        - name: Instalación de PowerShell Core en Windows
+          href: setup/Installing-PowerShell-Core-on-Windows.md
+        - name: Instalación de PowerShell Core en macOS y Linux
+          href: setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
         - name: Accesibilidad en ISE de Windows PowerShell
           href: setup/accessibility-in-windows-powershell-ise.md
         - name: Instalar el motor de Windows PowerShell 2.0
@@ -234,11 +247,15 @@
     - name: Novedades
       href: ''
       items:
-        - name: Novedades de PowerShell 50 ISE
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
-        - name: Novedades de Windows PowerShell 50
-          href: whats-new/what-s-new-in-windows-powershell-50.md
         - name: Novedades de PowerShell
           href: whats-new/what-s-new-with-powershell.md
+        - name: Novedades de Windows PowerShell 5.0
+          href: whats-new/what-s-new-in-windows-powershell-50.md
+        - name: Novedades de PowerShell 5.0 ISE
+          href: whats-new/what-s-new-in-the-powershell-50-ise.md
+        - name: Novedades de PowerShell Core 6.0
+          href: whats-new/what-s-new-in-powershell-core-60.md
+    - name: Ciclo de vida de soporte técnico de PowerShell Core
+      href: PowerShell-Core-Support.md
     - name: glosario
       href: windows-powershell-glossary.md
