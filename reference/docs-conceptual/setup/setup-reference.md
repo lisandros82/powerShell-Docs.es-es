@@ -1,15 +1,17 @@
 ---
 ms.date: 2017-06-05
-keywords: powershell,cmdlet
+keywords: powershell, cmdlet
 title: "referencia de instalación"
-ms.openlocfilehash: 60092e11f882d4e378da83dfb1eb1d2d5d79346b
-ms.sourcegitcommit: 9910675e8758042b5949c99b381a926d2b4e8c21
+ms.openlocfilehash: 39da5f2b524d908270066926ff2cdc56a665fe35
+ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="setup-guide"></a>Guía de instalación
 
+- [Instalación de PowerShell Core en macOS y Linux](Installing-PowerShell-Core-on-macOS-and-Linux.md)
+- [Instalación de PowerShell Core en Windows](Installing-PowerShell-Core-on-Windows.md)
 - [Instalación de Windows PowerShell](Installing-Windows-PowerShell.md)
 - [Instalar el motor de Windows PowerShell 2.0](Installing-the-Windows-PowerShell-2.0-Engine.md)
 - [Instalar el SDK de Windows PowerShell](Installing-the-Windows-PowerShell-SDK.md)
@@ -21,4 +23,3 @@ ms.lasthandoff: 11/03/2017
 - [Inicio de Windows PowerShell](Starting-Windows-PowerShell.md)
 - [Requisitos del sistema de Windows PowerShell](Windows-PowerShell-System-Requirements.md)
 - [WinRMSecurity](WinRMSecurity.md)
-
