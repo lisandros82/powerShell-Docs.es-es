@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-11
-author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Configuración del administrador de configuración local"
-ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
-ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
+ms.openlocfilehash: 947bc17347204f6f15a24f83b449582afe65a4ee
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Configuración del administrador de configuración local
 
@@ -46,7 +45,7 @@ configuration LCMConfig
             RefreshMode = 'Push'
         }
     }
-} 
+}
 ```
 
 El proceso de aplicar los valores al LCM es similar a la aplicación de una configuración DSC.
@@ -130,7 +129,7 @@ Para definir un servidor de configuración basado en web, cree un bloque **Confi
 Un bloque **ConfigurationRepositoryWeb** define las siguientes propiedades.
 
 |Propiedad|Tipo|Descripción|
-|---|---|---| 
+|---|---|---|
 |AllowUnsecureConnection|bool|Establézcala en **$TRUE** para permitir conexiones desde el nodo al servidor sin autenticación. Establézcala en **$FALSE** para que se requiera autenticación.|
 |CertificateID|cadena|La huella digital de un certificado usado para autenticar el servidor.|
 |ConfigurationNames|String[]|Una matriz de nombres de configuraciones que el nodo de destino extraerá. Solo se usan si el nodo se registra con el servicio de extracción mediante un elemento **RegistrationKey**. Para más información, consulte [Configuración de un cliente de extracción con nombres de configuración](pullClientConfigNames.md).|
@@ -191,7 +190,7 @@ Para más información sobre configuraciones parciales, consulte [Configuracione
 **PartialConfiguration** define las siguientes propiedades.
 
 |Propiedad|Tipo|Descripción|
-|---|---|---| 
+|---|---|---|
 |ConfigurationSource|string[]|Una matriz de nombres de servidores de configuración, definidos previamente en bloques **ConfigurationRepositoryWeb** y **ConfigurationRepositoryShare**, desde donde se extrae la configuración parcial.|
 |DependsOn|string{}|Una lista de nombres de otras configuraciones que se deben completar antes de que se aplique esta configuración parcial.|
 |Descripción|cadena|Texto utilizado para describir la configuración parcial.|
@@ -201,11 +200,11 @@ Para más información sobre configuraciones parciales, consulte [Configuracione
 
 __Note:__ DSC de Azure Automation admite configuraciones parciales, pero solo se puede extraer una configuración de cada cuenta de automatización por nodo.
 
-## <a name="see-also"></a>Véase también 
+## <a name="see-also"></a>Véase también
 
 ### <a name="concepts"></a>Conceptos
 [Información de Desired State Configuration](overview.md)
- 
+
 [Introducción a DSC de Azure Automation](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
 
 ### <a name="other-resources"></a>Otros recursos

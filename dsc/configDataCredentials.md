@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Opciones de credenciales en los datos de configuración"
-ms.openlocfilehash: 94ff541fc517254ef2876c424307513eaf1d362a
-ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
+ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Opciones de credenciales en los datos de configuración
 >Se aplica a: Windows PowerShell 5.0
@@ -21,7 +20,10 @@ Para suprimir estos mensajes de advertencia y de error, utilice las palabras cla
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
->**Notas:** <p>En general, no es seguro almacenar o transmitir contraseñas de texto sin formato y no cifradas. Se recomienda proteger las credenciales mediante el uso de las técnicas que se describirán más adelante en este tema.</p> <p>El servicio DSC de Azure Automation le permite administrar de forma centralizada las credenciales que se deben compilar en las configuraciones y almacenar de forma segura.  Para obtener información, vea los artículos [Compilación de configuraciones DSC y Recursos de credenciales](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets).</p>
+> [!NOTE]
+> En general, no es seguro almacenar o transmitir contraseñas de texto sin formato y no cifradas. Se recomienda proteger las credenciales mediante el uso de las técnicas que se describirán más adelante en este tema.
+> El servicio DSC de Azure Automation le permite administrar de forma centralizada las credenciales que se deben compilar en las configuraciones y almacenar de forma segura.
+> Para obtener información, vea los artículos [Compilación de configuraciones DSC y Recursos de credenciales](/azure/automation/automation-dsc-compile#credential-assets).
 
 A continuación se muestra un ejemplo de transferencia de credenciales de texto sin formato:
 
@@ -133,7 +135,8 @@ WMF 5.0 agregó una propiedad `PsDscRunAsCredential` automática para todos los 
 Para obtener más información sobre cómo usar `PsDscRunAsCredential`, vea [DSC de ejecución con las credenciales de usuario](runAsUser.md).
 Los recursos más recientes y los recursos personalizados pueden utilizar esta propiedad automática en lugar de crear su propia propiedad para las credenciales.
 
->**Nota:** El diseño de algunos recursos implica que se van a usar varias credenciales para un motivo concreto y tendrán sus propias propiedades de credencial.
+> [!NOTE]
+> El diseño de algunos recursos implica que se van a usar varias credenciales para un motivo concreto y tendrán sus propias propiedades de credencial.
 
 Para encontrar las propiedades de credenciales disponibles en un recurso, use `Get-DscResource -Name ResourceName -Syntax` o Intellisense en el ISE (`CTRL+SPACE`).
 
@@ -222,8 +225,8 @@ for node 'localhost'.
 ```
 
 Este ejemplo tiene dos problemas:
-1.  Un error explica que no se recomiendan las contraseñas de texto sin formato.
-2.  Una advertencia recomienda que no se use una credencial de dominio.
+1. Un error explica que no se recomiendan las contraseñas de texto sin formato.
+2. Una advertencia recomienda que no se use una credencial de dominio.
 
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
@@ -266,9 +269,11 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
->**Nota:** El nodo `NodeName` no puede ser igual a asterisco, es obligatorio un nombre de nodo específico.
+> [!NOTE]
+> `NodeName` no puede ser igual a asterisco, es obligatorio un nombre de nodo específico.
 
 **Microsoft aconseja evitar las contraseñas de texto sin formato por sus riesgos de seguridad considerables.**
+
 Se produciría una excepción al usar el servicio DSC de Azure Automation solo porque los datos se almacenan siempre cifrados (en tránsito, en reposo en el servicio y en reposo en el nodo).
 
 ## <a name="domain-credentials"></a>Credenciales de dominio

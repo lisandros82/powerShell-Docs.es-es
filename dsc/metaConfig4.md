@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-12
-author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Administrador de configuración local (LCM) de la configuración de estado deseado de Windows PowerShell 4.0"
-ms.openlocfilehash: d46862f9ea0f8e3206c596af7232160fc4a97939
-ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.openlocfilehash: 6ff8fa75f8ed33dc8da5285373ec1f3858cfa917
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Administrador de configuración local (LCM) de la configuración de estado deseado de Windows PowerShell 4.0
 
@@ -34,7 +33,7 @@ A continuación se enumeran las propiedades del administrador de configuración 
 - **DownloadManagerCustomData**: representa una matriz que contiene datos personalizados específicos del administrador de descargas.
 - **DownloadManagerName**: indica el nombre de la configuración y el administrador de descargas del módulo.
 - **RebootNodeIfNeeded**: determinados cambios de configuración en un nodo de destino pueden requerir que deba reiniciarse para que se apliquen los cambios. Con el valor **True**, esta propiedad reiniciará el nodo en cuanto la configuración se haya aplicado completamente, sin ninguna advertencia más. Si es **False** (el valor predeterminado), la configuración se completará, pero el nodo deberá reiniciarse manualmente para que los cambios surtan efecto.
-- **RefreshFrequencyMins**: se usa cuando se ha configurado un servicio de extracción. Representa la frecuencia (en minutos) con que el administrador de configuración local contacta con un servicio de extracción para descargar la configuración actual. Este valor se puede establecer junto con ConfigurationModeFrequencyMins. Cuando el valor de RefreshMode se establece en PULL, el nodo de destino contacta con el servicio de extracción "pull" en un intervalo que establece el valor de RefreshFrequencyMins y descarga la configuración actual. En el intervalo que define ConfigurationModeFrequencyMins, el motor de coherencia aplica la configuración más reciente que se haya descargado en el nodo de destino. Si el valor de RefreshFrequencyMins no se establece en un entero que sea múltiplo del valor de ConfigurationModeFrequencyMins, el sistema lo redondeará al alza. El valor predeterminado es 30.
+- **RefreshFrequencyMins**: se usa cuando se ha configurado un servicio de extracción. Representa la frecuencia (en minutos) con que el administrador de configuración local contacta con un servicio de extracción para descargar la configuración actual. Este valor se puede establecer junto con ConfigurationModeFrequencyMins. Cuando el valor de RefreshMode se establece en PULL, el nodo de destino contacta con el servicio de extracción "pull" en un intervalo que establece el valor de RefreshFrequencyMins y descarga la configuración actual. En el intervalo que define ConfigurationModeFrequencyMins, el motor de coherencia aplica la configuración más reciente que se haya descargado en el nodo de destino. Si el valor de RefreshFrequencyMins no se establece en un entero que sea múltiplo del valor de ConfigurationModeFrequencyMins, el sistema lo redondeará al alza. El valor predeterminado es 30.
 - **RefreshMode**: los valores posibles son **Push** (el valor predeterminado) y **Pull**. En la configuración "push", debe colocar un archivo de configuración en cada nodo de destino, mediante cualquier equipo cliente. En el modo "pull", debe configurar un servicio de extracción con el que el administrador de configuración local contacte y acceda a los archivos de configuración.
 
 ### <a name="example-of-updating-local-configuration-manager-settings"></a>Ejemplo de actualización de la configuración del administrador de configuración local
