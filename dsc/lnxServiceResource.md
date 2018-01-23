@@ -1,20 +1,19 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Recurso nxService de DSC para Linux
-ms.openlocfilehash: be9f1f090eacc38bcdb77e53020d559bab72c156
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 4273ad59f15eedd08b07888ebb6ee51d039b72b3
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="dsc-for-linux-nxservice-resource"></a><span data-ttu-id="ce1fd-103">Recurso nxService de DSC para Linux</span><span class="sxs-lookup"><span data-stu-id="ce1fd-103">DSC for Linux nxService Resource</span></span>
+# <a name="dsc-for-linux-nxservice-resource"></a><span data-ttu-id="6d271-103">Recurso nxService de DSC para Linux</span><span class="sxs-lookup"><span data-stu-id="6d271-103">DSC for Linux nxService Resource</span></span>
 
-<span data-ttu-id="ce1fd-104">El recurso **nxService** de la configuración de estado deseado (DSC) de PowerShell ofrece un mecanismo para administrar servicios en un nodo de Linux.</span><span class="sxs-lookup"><span data-stu-id="ce1fd-104">The **nxService** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage services on a Linux node.</span></span>
+<span data-ttu-id="6d271-104">El recurso **nxService** de la configuración de estado deseado (DSC) de PowerShell ofrece un mecanismo para administrar servicios en un nodo de Linux.</span><span class="sxs-lookup"><span data-stu-id="6d271-104">The **nxService** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage services on a Linux node.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="ce1fd-105">Sintaxis</span><span class="sxs-lookup"><span data-stu-id="ce1fd-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="6d271-105">Sintaxis</span><span class="sxs-lookup"><span data-stu-id="6d271-105">Syntax</span></span>
 
 ```
 nxService <string> #ResourceName
@@ -28,23 +27,23 @@ nxService <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="ce1fd-106">Propiedades</span><span class="sxs-lookup"><span data-stu-id="ce1fd-106">Properties</span></span>
-|  <span data-ttu-id="ce1fd-107">Propiedad</span><span class="sxs-lookup"><span data-stu-id="ce1fd-107">Property</span></span> |  <span data-ttu-id="ce1fd-108">Descripción</span><span class="sxs-lookup"><span data-stu-id="ce1fd-108">Description</span></span> | 
+## <a name="properties"></a><span data-ttu-id="6d271-106">Propiedades</span><span class="sxs-lookup"><span data-stu-id="6d271-106">Properties</span></span>
+|  <span data-ttu-id="6d271-107">Propiedad</span><span class="sxs-lookup"><span data-stu-id="6d271-107">Property</span></span> |  <span data-ttu-id="6d271-108">Descripción</span><span class="sxs-lookup"><span data-stu-id="6d271-108">Description</span></span> | 
 |---|---|
-| <span data-ttu-id="ce1fd-109">Nombre</span><span class="sxs-lookup"><span data-stu-id="ce1fd-109">Name</span></span>| <span data-ttu-id="ce1fd-110">El nombre del servicio o el demonio que se configurará.</span><span class="sxs-lookup"><span data-stu-id="ce1fd-110">The name of the service/daemon to configure.</span></span>| 
-| <span data-ttu-id="ce1fd-111">Controlador</span><span class="sxs-lookup"><span data-stu-id="ce1fd-111">Controller</span></span>| <span data-ttu-id="ce1fd-112">El tipo de controlador de servicio que se debe usar al configurar el servicio.</span><span class="sxs-lookup"><span data-stu-id="ce1fd-112">The type of service controller to use when configuring the service.</span></span>| 
-| <span data-ttu-id="ce1fd-113">Habilitada</span><span class="sxs-lookup"><span data-stu-id="ce1fd-113">Enabled</span></span>| <span data-ttu-id="ce1fd-114">Indica si el servicio se inicia en el arranque.</span><span class="sxs-lookup"><span data-stu-id="ce1fd-114">Indicates whether the service starts on boot.</span></span>| 
-| <span data-ttu-id="ce1fd-115">Estado</span><span class="sxs-lookup"><span data-stu-id="ce1fd-115">State</span></span>| <span data-ttu-id="ce1fd-116">Indica si el servicio se está ejecutando.</span><span class="sxs-lookup"><span data-stu-id="ce1fd-116">Indicates whether the service is running.</span></span> <span data-ttu-id="ce1fd-117">Establezca esta propiedad en "Stopped" para garantizar que el servicio no se esté ejecutando.</span><span class="sxs-lookup"><span data-stu-id="ce1fd-117">Set this property to "Stopped" to ensure that the service is not running.</span></span> <span data-ttu-id="ce1fd-118">Establézcala en "Running" para garantizar que el servicio no se esté ejecutando.</span><span class="sxs-lookup"><span data-stu-id="ce1fd-118">Set it to "Running" to ensure that the service is not running.</span></span>| 
-| <span data-ttu-id="ce1fd-119">DependsOn</span><span class="sxs-lookup"><span data-stu-id="ce1fd-119">DependsOn</span></span> | <span data-ttu-id="ce1fd-120">Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso.</span><span class="sxs-lookup"><span data-stu-id="ce1fd-120">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="ce1fd-121">Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="ce1fd-121">For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>| 
+| <span data-ttu-id="6d271-109">Nombre</span><span class="sxs-lookup"><span data-stu-id="6d271-109">Name</span></span>| <span data-ttu-id="6d271-110">El nombre del servicio o el demonio que se configurará.</span><span class="sxs-lookup"><span data-stu-id="6d271-110">The name of the service/daemon to configure.</span></span>| 
+| <span data-ttu-id="6d271-111">Controlador</span><span class="sxs-lookup"><span data-stu-id="6d271-111">Controller</span></span>| <span data-ttu-id="6d271-112">El tipo de controlador de servicio que se debe usar al configurar el servicio.</span><span class="sxs-lookup"><span data-stu-id="6d271-112">The type of service controller to use when configuring the service.</span></span>| 
+| <span data-ttu-id="6d271-113">Habilitada</span><span class="sxs-lookup"><span data-stu-id="6d271-113">Enabled</span></span>| <span data-ttu-id="6d271-114">Indica si el servicio se inicia en el arranque.</span><span class="sxs-lookup"><span data-stu-id="6d271-114">Indicates whether the service starts on boot.</span></span>| 
+| <span data-ttu-id="6d271-115">Estado</span><span class="sxs-lookup"><span data-stu-id="6d271-115">State</span></span>| <span data-ttu-id="6d271-116">Indica si el servicio se está ejecutando.</span><span class="sxs-lookup"><span data-stu-id="6d271-116">Indicates whether the service is running.</span></span> <span data-ttu-id="6d271-117">Establezca esta propiedad en "Stopped" para garantizar que el servicio no se esté ejecutando.</span><span class="sxs-lookup"><span data-stu-id="6d271-117">Set this property to "Stopped" to ensure that the service is not running.</span></span> <span data-ttu-id="6d271-118">Establézcala en "Running" para garantizar que el servicio no se esté ejecutando.</span><span class="sxs-lookup"><span data-stu-id="6d271-118">Set it to "Running" to ensure that the service is not running.</span></span>| 
+| <span data-ttu-id="6d271-119">DependsOn</span><span class="sxs-lookup"><span data-stu-id="6d271-119">DependsOn</span></span> | <span data-ttu-id="6d271-120">Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso.</span><span class="sxs-lookup"><span data-stu-id="6d271-120">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="6d271-121">Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="6d271-121">For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>| 
 
 
-## <a name="additional-information"></a><span data-ttu-id="ce1fd-122">Información adicional</span><span class="sxs-lookup"><span data-stu-id="ce1fd-122">Additional Information</span></span>
+## <a name="additional-information"></a><span data-ttu-id="6d271-122">Información adicional</span><span class="sxs-lookup"><span data-stu-id="6d271-122">Additional Information</span></span>
 
-<span data-ttu-id="ce1fd-123">El recurso **nxService** no creará una definición de servicio ni un script para el servicio si no existe.</span><span class="sxs-lookup"><span data-stu-id="ce1fd-123">The **nxService** resource will not create a service definition or script for the service if it does not exist.</span></span> <span data-ttu-id="ce1fd-124">Puede usar el recurso **nxFile** de la configuración de estado deseado de PowerShell para administrar la existencia o el contenido del script o el archivo de definición del servicio.</span><span class="sxs-lookup"><span data-stu-id="ce1fd-124">You can use the PowerShell Desired State Configuration **nxFile** Resource resource to manage the existence or contents of the service definition file or script.</span></span>
+<span data-ttu-id="6d271-123">El recurso **nxService** no creará una definición de servicio ni un script para el servicio si no existe.</span><span class="sxs-lookup"><span data-stu-id="6d271-123">The **nxService** resource will not create a service definition or script for the service if it does not exist.</span></span> <span data-ttu-id="6d271-124">Puede usar el recurso **nxFile** de la configuración de estado deseado de PowerShell para administrar la existencia o el contenido del script o el archivo de definición del servicio.</span><span class="sxs-lookup"><span data-stu-id="6d271-124">You can use the PowerShell Desired State Configuration **nxFile** Resource resource to manage the existence or contents of the service definition file or script.</span></span>
 
-## <a name="example"></a><span data-ttu-id="ce1fd-125">Ejemplo</span><span class="sxs-lookup"><span data-stu-id="ce1fd-125">Example</span></span>
+## <a name="example"></a><span data-ttu-id="6d271-125">Ejemplo</span><span class="sxs-lookup"><span data-stu-id="6d271-125">Example</span></span>
 
-<span data-ttu-id="ce1fd-126">En el ejemplo siguiente se muestra la configuración del servicio "httpd" (para el servidor HTTP Apache), registrado con el controlador de servicio **SystemD**.</span><span class="sxs-lookup"><span data-stu-id="ce1fd-126">The following example shows configuration of the “httpd” service (for Apache HTTP Server), registered with the **SystemD** service controller.</span></span>
+<span data-ttu-id="6d271-126">En el ejemplo siguiente se muestra la configuración del servicio "httpd" (para el servidor HTTP Apache), registrado con el controlador de servicio **SystemD**.</span><span class="sxs-lookup"><span data-stu-id="6d271-126">The following example shows configuration of the “httpd” service (for Apache HTTP Server), registered with the **SystemD** service controller.</span></span>
 
 ```
 Import-DSCResource -Module nx 
