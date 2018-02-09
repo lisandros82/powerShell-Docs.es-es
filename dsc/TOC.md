@@ -108,7 +108,7 @@
 
 # El modelo de extracción de DSC
 
-## [Configuración de un servidor de extracción web](pullServer.md)
+## [Servicio de extracción de DSC](pullServer.md)
 
 ## [Configuración de un servidor de extracción SMB de DSC](pullServerSMB.md)
 
