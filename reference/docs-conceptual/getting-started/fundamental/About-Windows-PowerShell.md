@@ -1,13 +1,13 @@
 ---
 ms.date: 2017-06-05
-keywords: powershell,cmdlet
+keywords: powershell, cmdlet
 title: Acerca de Windows PowerShell
 ms.assetid: 979654ae-7994-47f8-be43-d79e7a140143
 ms.openlocfilehash: 5e6d1bb4d8915ba3c83ba0020b959e444b5211cd
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="about-windows-powershell"></a>Acerca de Windows PowerShell
 Windows PowerShell está diseñado para mejorar el entorno de scripting y línea de comandos mediante la eliminación de antiguos problemas y la adición de nuevas características.

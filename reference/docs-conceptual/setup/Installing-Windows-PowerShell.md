@@ -2,11 +2,11 @@
 ms.date: 2017-08-09
 keywords: powershell,cmdlet,descargar,instalar,configurar,windows 10,windows 8.1,windows 8.0,windows 7
 title: "Instalación de Windows PowerShell"
-ms.openlocfilehash: 781bf50b6ac649e72bcdbb708555275fb7422d94
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: ec8f09087a5c5f2e7ea6237faa01ea3f447ad1f3
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="installing-windows-powershell"></a>Instalación de Windows PowerShell
 
@@ -17,7 +17,7 @@ Los usuarios de Linux, macOS y Windows que quieran instalar **PowerShell 6** (be
 1. Obtener PowerShell para el sistema operativo adecuado y su versión específica en [GitHub](https://github.com/powershell/powershell#get-powershell)
 1. Instrucciones de instalación
   - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
-  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012)
+  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md)
   - [Windows](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)
 
 PowerShell 6 también está disponible para Docker; consulte las instrucciones de [instalación de Docker](https://github.com/PowerShell/PowerShell/tree/master/docker).

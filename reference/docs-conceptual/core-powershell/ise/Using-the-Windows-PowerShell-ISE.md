@@ -1,13 +1,13 @@
 ---
 ms.date: 2017-06-05
-keywords: powershell,cmdlet
+keywords: powershell, cmdlet
 title: "Usar Windows PowerShell ISE"
 ms.assetid: 64fb5f37-90a8-4b89-9fc8-c6b8fcc0c7d0
 ms.openlocfilehash: 5da609363dc0498a5a62157b49cf3de5683a8510
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="using-the-windows-powershell-ise"></a>Usar Windows PowerShell ISE
 En los temas de este documento se describe cómo usar las características de Entorno de scripting integrado (ISE) de Windows PowerShell® para ser más productivo.
