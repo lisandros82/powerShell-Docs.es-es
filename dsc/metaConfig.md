@@ -3,11 +3,11 @@ ms.date: 2017-10-11
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Configuración del administrador de configuración local"
-ms.openlocfilehash: 81434b57e453ba7b64cc32dffdf309da16ef8882
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+ms.openlocfilehash: b8e0749cf2f67e395e9fd8eaf9cde33b97c0cb67
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Configuración del administrador de configuración local
 
@@ -25,7 +25,7 @@ También es responsable de diversos otros aspectos de DSC, entre los que se incl
 Se utiliza un tipo especial de configuración para configurar el LCM a fin de que especifique cada uno de estos comportamientos.
 En las siguientes secciones se describe cómo configurar el LCM.
 
-> **Nota**: Este tema se aplica al LCM que se introdujo en Windows PowerShell 5.0.
+Con Windows PowerShell 5.0 se incluyeron nuevas configuraciones para administrar el Administrador de configuración local.
 Para obtener información sobre cómo configurar el LCM en Windows PowerShell 4.0, consulte [Administrador de configuración local (LCM) de la configuración de estado deseado de Windows PowerShell 4.0](metaconfig4.md).
 
 ## <a name="writing-and-enacting-an-lcm-configuration"></a>Escritura y aplicación de una configuración de LCM
@@ -90,38 +90,13 @@ Las propiedades siguientes están disponibles en un bloque **Settings**.
 
 ## <a name="pull-service"></a>Servicio de extracción
 
-La configuración DSC permite administrar un nodo mediante la extracción de configuraciones y módulos, y la publicación de datos de informes en una ubicación remota.
-Las opciones actuales del servicio de extracción incluyen:
-
-- Servicio Desired State Configuration de Azure Automation
-- Una instancia del servicio de extracción que se ejecuta en Windows Server
-- Un recurso compartido SMB (no admite la publicación de datos de informes)
-
 La configuración de LCM admite la definición de los siguientes puntos de conexión del servicio de extracción:
 
 - **Servidor de configuración**: un repositorio para las configuraciones DSC. Defina servidores de configuración mediante el uso de bloques **ConfigurationRepositoryWeb** (para servidores basados en web) y **ConfigurationRepositoryShare** (para servidores basados en SMB).
 - **Servidor de recursos**: un repositorio para recursos de DSC, empaquetado como módulos de PowerShell. Defina servidores de recursos mediante el uso de bloques **ResourceRepositoryWeb** (para servidores basados en web) y **ResourceRepositoryShare** (para servidores basados en SMB).
 - **Servidor de informes**: un servicio al que DSC envía datos de informes. Defina servidores de informes mediante bloques **ReportServerWeb**. Un servidor de informes debe ser un servicio web.
 
-**La solución recomendada**, y la opción que tiene la mayor cantidad de características disponibles, es [DSC de Azure Automation](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started).
-
-El servicio de Azure puede administrar nodos locales en centros de datos privados, o bien en nubes públicas como Azure y AWS.
-En el caso de entornos privados donde los servidores no se pueden conectar directamente a Internet, considere limitar el tráfico de salida solo al intervalo IP de Azure (consulte los [intervalos IP del centro de datos de Azure](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
-
-Las características del servicio en línea que no están disponibles actualmente en el servicio de extracción de Windows Server incluyen las siguientes:
-- Se cifran todos los datos, ya sea que estén en tránsito o en reposo
-- Los certificados de cliente se crean y administran de manera automática
-- Almacén de secretos para administrar de manera centralizada las [contraseñas/credenciales](https://docs.microsoft.com/en-us/azure/automation/automation-credentials) o las [variables](https://docs.microsoft.com/en-us/azure/automation/automation-variables), como nombres de servidor o cadenas de conexión
-- Administración centralizada de la [configuración de LCM](metaConfig.md#basic-settings) del nodo
-- Asignación centralizada de las configuraciones a los nodos cliente
-- Publicación de los cambios de configuración en "grupos de valor controlado" para pruebas antes de llegar a producción
-- Informes gráficos
-  - Detalle de estado en el nivel de recurso DSC de granularidad
-  - Mensajes detallados de error de equipos cliente para la solución de problemas
-- [Integración de Azure Log Analytics](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-diagnostics) para alertas, tareas automatizadas, aplicación Android/iOS para informes y alertas
-
-De manera alternativa, para información sobre cómo configurar y usar el servicio de extracción HTTP en Windows Server, consulte [Configuración de un servidor de extracción de DSC](pullServer.md).
-Tenga en cuenta que se trata de una implementación limitada solo con funcionalidades básicas de almacenamiento de configuraciones o módulos y de captura de datos de informes en una base de datos local.
+Para ver más detalles sobre el servicio de extracción, consulte [Servicio de extracción de Desired State Configuration](pullServer.md).
 
 ## <a name="configuration-server-blocks"></a>Bloques del servidor de configuración
 

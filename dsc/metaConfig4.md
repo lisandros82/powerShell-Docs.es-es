@@ -2,16 +2,18 @@
 ms.date: 2017-10-12
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Administrador de configuración local (LCM) de la configuración de estado deseado de Windows PowerShell 4.0"
-ms.openlocfilehash: 6ff8fa75f8ed33dc8da5285373ec1f3858cfa917
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: "Configuración del Administrador de configuración local en versiones anteriores de Windows PowerShell"
+ms.openlocfilehash: 65eb2a8d5a99e977cf2f3dbd726240ec2d5a6142
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/09/2018
 ---
-# <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Administrador de configuración local (LCM) de la configuración de estado deseado de Windows PowerShell 4.0
+# <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>Configuración del Administrador de configuración local en versiones anteriores de Windows PowerShell
 
 >Se aplica a Windows PowerShell 4.0
+
+**Para obtener información relacionada con Windows PowerShell 5.0 y versiones posteriores, consulte [Configuración del administrador de configuración local](metaConfig.md).**
 
 El administrador de configuración local es el motor de la configuración de estado deseado (DSC) de Windows PowerShell.
 Se ejecuta en todos los nodos de destino y es el responsable de llamar a los recursos de configuración que se incluyen en un script de configuración DSC.
