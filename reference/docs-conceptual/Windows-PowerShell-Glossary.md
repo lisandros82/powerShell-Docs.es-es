@@ -1,13 +1,13 @@
 ---
 ms.date: 2017-06-05
-keywords: powershell,cmdlet
+keywords: powershell, cmdlet
 title: Glosario de Windows PowerShell
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 48e5d832ead720c8bc7753c94f757ddb21846fc9
-ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
+ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="windows-powershell-glossary"></a>Glosario de Windows PowerShell
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 08/08/2017
 |host|Interfaz que el motor de Windows PowerShell usa para comunicarse con el usuario. Por ejemplo, el host especifica cómo se controlan los mensajes entre Windows PowerShell y el usuario.|
 |aplicación host|Programa que carga el motor de Windows PowerShell en su proceso y lo usa para realizar operaciones.|
 |método de procesamiento de entrada|Método que un cmdlet puede usar para procesar los registros que recibe como entrada. Los métodos de procesamiento de entrada incluyen el método BeginProcessing, el método ProcessRecord, el método EndProcessing y el método StopProcessing.|
-|módulo de manifiesto|Módulo de Windows PowerShell que tiene un manifiesto y cuya clave ModulesToProcess está vacía.|
+|módulo de manifiesto|Módulo de Windows PowerShell que tiene un manifiesto y cuya clave RootModule está vacía.|
 |manifiesto de módulo|Archivo de datos de Windows PowerShell (.psd1) que describe el contenido de un módulo y que controla cómo se procesa un módulo.|
 |estado de sesión del módulo|Estado de sesión que contiene los datos públicos y privados de un módulo de Windows PowerShell. Los datos privados en este estado de sesión no están disponibles para el usuario de una sesión de Windows PowerShell.|
 |error de no terminación|Error que no impide que Windows PowerShell continúe procesando el comando.|
@@ -33,7 +33,7 @@ ms.lasthandoff: 08/08/2017
 |canalizar|En Windows PowerShell, enviar los resultados del comando anterior como entrada para el comando siguiente en la canalización.|
 |canalización|Serie de comandos conectados mediante operadores de canalización (&#124;) (ASCII 124). Cada operador de canalización envía los resultados del comando anterior como entrada para el comando siguiente.|
 |PSSession|Tipo de sesión de Windows PowerShell que crea, administra y cierra el usuario.|
-|módulo raíz|Módulo especificado en la clave ModuleToProcess en un manifiesto de módulo.|
+|módulo raíz|Módulo especificado en la clave RootModule en un manifiesto de módulo.|
 |espacio de ejecución|En Windows PowerShell, entorno operativo en el que se ejecuta cada comando de una canalización.|
 |bloque de script|En el lenguaje de programación de Windows PowerShell, colección de instrucciones o expresiones que se pueden usar como una sola unidad. Un bloque de script puede aceptar argumentos y valores devueltos.|
 |módulo de script|Módulo de Windows PowerShell cuyo módulo raíz es un archivo de módulo de script (.psm1). Un módulo binario puede o no incluir un manifiesto de módulo.|
