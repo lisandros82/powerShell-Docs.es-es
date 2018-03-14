@@ -54,7 +54,7 @@ Este certificado de clave pública tiene requisitos específicos que debe usar p
  2. **Uso mejorado de clave**:
    - Debe contener: cifrado del documento (1.3.6.1.4.1.311.80.1).
    - _No_ debe contener: autenticación de cliente (1.3.6.1.5.5.7.3.2) ni autenticación de servidor (1.3.6.1.5.5.7.3.1).
- 3. La clave privada del certificado está disponible en el nodo de destino.
+ 3. La clave privada del certificado está disponible en el *nodo de destino.
  4. El **proveedor** del certificado debe ser "Proveedor de servicios criptográficos de Microsoft RSA SChannel".
  
 >**Procedimiento recomendado:** aunque puede usar un certificado que contenga un uso de clave de "Firma digital" o uno de los EKU de autenticación, esto permitirá que la clave de cifrado se use más fácilmente de forma inadecuada y sea vulnerable a ataques. Por lo tanto, le recomendamos que utilice un certificado creado específicamente con el fin de proteger las credenciales de DSC que omita estos EKU y usos de clave.
