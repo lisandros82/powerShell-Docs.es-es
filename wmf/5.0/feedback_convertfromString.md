@@ -4,10 +4,10 @@ author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
 ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
-ms.translationtype: HT
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Extraer y analizar objetos estructurados fuera de la cadena
 También presenta algunas funciones adicionales para el cmdlet ConvertFrom-String:
@@ -89,5 +89,5 @@ De este conjunto de ejemplos, **ConvertFrom-String** puede ahora extraer automá
 > ----------                     ----               ----     -----
 > Ana Trujillo...                Ana Trujillo       Redmond  WA Antonio Moreno...              Antonio Moreno     Renton   WA Thomas Hardy...                Thomas Hardy       Seattle  WA Christina Berglund...          Christina Berglund Redmond  WA Hanna Moos...                  Hanna Moos         Puyallup WA
 
-Para manipular datos adicionales en el texto extraído, la propiedad **ExtentText** captura el texto sin formato del que se extrajo el registro. Para proporcionar comentarios sobre esta característica o compartir el contenido que presenta dificultades para escribir ejemplos, envíe un correo electrónico a <psdmfb@microsoft.com>.
+Para manipular datos adicionales en el texto extraído, la propiedad **ExtentText** captura el texto sin formato del que se extrajo el registro. Para proporcionar comentarios sobre esta característica o compartir el contenido que presenta dificultades para escribir ejemplos, envíe un correo electrónico <psdmfb@microsoft.com>.
 
