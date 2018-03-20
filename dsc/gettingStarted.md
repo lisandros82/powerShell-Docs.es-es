@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Introducción a la configuración de estado deseado de PowerShell"
-ms.openlocfilehash: 856528f1e52eafa8b2c93b825a60376a0d64cab2
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 04404696bef128805e4f1c191711eaab33cf7e4c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="getting-started-with-powershell-desired-state-configuration"></a>Introducción a la configuración de estado deseado de PowerShell #
 
@@ -16,7 +16,7 @@ En esta guía se describe cómo empezar a crear documentos de configuración de 
 
 ## <a name="create-a-configuration"></a>Crear una configuración ##
 
-Las [**configuraciones**](https://msdn.microsoft.com/en-us/powershell/dsc/configurations) son documentos que describen un entorno. Los entornos constan de elementos "**nodo**", que normalmente son máquinas físicas o virtuales. 
+Las [**configuraciones**](https://msdn.microsoft.com/powershell/dsc/configurations) son documentos que describen un entorno. Los entornos constan de elementos "**nodo**", que normalmente son máquinas físicas o virtuales. 
 
 Las configuraciones pueden presentarse de diversas formas. La manera más fácil de crear una nueva configuración es crear un archivo .ps1 (script de PowerShell). Para hacerlo, abra el editor que prefiera. PowerShell ISE es una buena opción, ya que entiende DSC de forma nativa. Guarde lo siguiente como un archivo PS1:
 
@@ -44,9 +44,9 @@ La siguiente línea es una instrucción import, similar a la importación de un 
 
 "Node" define el nombre de la máquina en que actuará esta configuración. Aunque esta configuración se modifica localmente, las configuraciones pueden llegar a los nodos remotos y configurarlos. 
 
-Los nodos pueden ser los nombres de máquinas o direcciones IP. Puede tener varios nodos en un documento de configuración único. Mediante [datos de configuración](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), también puede hacer que se aplique la misma configuración a varios nodos. En este caso, el nodo es "localhost", que significa el equipo local. 
+Los nodos pueden ser los nombres de máquinas o direcciones IP. Puede tener varios nodos en un documento de configuración único. Mediante [datos de configuración](https://msdn.microsoft.com/powershell/dsc/configdata), también puede hacer que se aplique la misma configuración a varios nodos. En este caso, el nodo es "localhost", que significa el equipo local. 
 
-El elemento siguiente es un [**recurso**](https://msdn.microsoft.com/en-us/powershell/dsc/resources). Los recursos son bloques de creación de configuraciones. Cada recurso es un módulo que define la lógica de implementación de un único aspecto de una máquina. Puede ver todos los recursos en su máquina si ejecuta **Get-DscResource** en PowerShell. Los recursos deben estar presentes en la máquina local y haberse importado antes de que se puedan utilizar en una configuración con **Import-DscResource**, que se encuentra en la segunda línea de esta configuración. 
+El elemento siguiente es un [**recurso**](https://msdn.microsoft.com/powershell/dsc/resources). Los recursos son bloques de creación de configuraciones. Cada recurso es un módulo que define la lógica de implementación de un único aspecto de una máquina. Puede ver todos los recursos en su máquina si ejecuta **Get-DscResource** en PowerShell. Los recursos deben estar presentes en la máquina local y haberse importado antes de que se puedan utilizar en una configuración con **Import-DscResource**, que se encuentra en la segunda línea de esta configuración. 
 
 **Establecer una configuración**
 

@@ -3,11 +3,11 @@ ms.date: 2017-10-31
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Proteger el archivo MOF
-ms.openlocfilehash: fdb8fa17e9b5e92b56e0a62bf850529c241eee41
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 1bb257f3237344f32c9035f3836dd317b75eef0a
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="securing-the-mof-file"></a>Proteger el archivo MOF
 
@@ -19,7 +19,7 @@ En este tema se describe cómo asegurarse de que el nodo de destino ha cifrado e
 
 Desde PowerShell 5.0, el archivo MOF completo se cifra de forma predeterminada cuando se aplica al nodo por medio del cmdlet **Start-DSCConfiguration**.
 El proceso descrito en este artículo únicamente es necesario si se implementa una solución a través del protocolo de servicio de incorporación de cambios cuando los certificados no se administran. De este modo, se garantiza que el sistema puede descifrar y leer las configuraciones descargadas por el nodo de destino antes de que se apliquen (por ejemplo, el servicio de incorporación de cambios disponible en Windows Server).
-El servicio instalará y administrará automáticamente los certificados relativos a los nodos registrados en [DSC de Azure Automation](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview), sin que ello suponga ninguna sobrecarga administrativa.
+El servicio instalará y administrará automáticamente los certificados relativos a los nodos registrados en [DSC de Azure Automation](https://docs.microsoft.com/azure/automation/automation-dsc-overview), sin que ello suponga ninguna sobrecarga administrativa.
 
 >**Nota:** En este tema se describen los certificados usados para el cifrado.
 >Para el cifrado, un certificado autofirmado es suficiente, porque la clave privada se mantiene siempre secreta y el cifrado no implica la confianza del documento.
@@ -54,7 +54,7 @@ Este certificado de clave pública tiene requisitos específicos que debe usar p
  2. **Uso mejorado de clave**:
    - Debe contener: cifrado del documento (1.3.6.1.4.1.311.80.1).
    - _No_ debe contener: autenticación de cliente (1.3.6.1.5.5.7.3.2) ni autenticación de servidor (1.3.6.1.5.5.7.3.1).
- 3. La clave privada del certificado está disponible en el *nodo de destino.
+ 3. La clave privada del certificado está disponible en el nodo de destino.
  4. El **proveedor** del certificado debe ser "Proveedor de servicios criptográficos de Microsoft RSA SChannel".
  
 >**Procedimiento recomendado:** aunque puede usar un certificado que contenga un uso de clave de "Firma digital" o uno de los EKU de autenticación, esto permitirá que la clave de cifrado se use más fácilmente de forma inadecuada y sea vulnerable a ataques. Por lo tanto, le recomendamos que utilice un certificado creado específicamente con el fin de proteger las credenciales de DSC que omita estos EKU y usos de clave.
@@ -262,7 +262,7 @@ configuration CredentialEncryptionExample
 
 ## <a name="setting-up-decryption"></a>Configuración del descifrado
 
-Antes de que [`Start-DscConfiguration`](https://technet.microsoft.com/en-us/library/dn521623.aspx) pueda funcionar, debe indicar al administrador de configuración local en cada nodo de destino qué certificado se usará para descifrar las credenciales, mediante el recurso CertificateID para comprobar la huella digital del certificado. Esta función de ejemplo encontrará el certificado local adecuado (es posible que deba personalizarlo para que encuentre el certificado exacto que quiere utilizar):
+Antes de que [`Start-DscConfiguration`](https://technet.microsoft.com/library/dn521623.aspx) pueda funcionar, debe indicar al administrador de configuración local en cada nodo de destino qué certificado se usará para descifrar las credenciales, mediante el recurso CertificateID para comprobar la huella digital del certificado. Esta función de ejemplo encontrará el certificado local adecuado (es posible que deba personalizarlo para que encuentre el certificado exacto que quiere utilizar):
 
 ```powershell
 # Get the certificate that works for encryption 
@@ -311,7 +311,7 @@ configuration CredentialEncryptionExample
 
 En este punto, puede ejecutar la configuración, lo que dará como resultado dos archivos:
 
- * Un archivo *.meta.mof que configura el administrador de configuración local para que descifre las credenciales mediante el certificado que está almacenado en el almacén de la máquina local y se identifique mediante su huella digital. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) se aplica al archivo *.meta.mof.
+ * Un archivo *.meta.mof que configura el administrador de configuración local para que descifre las credenciales mediante el certificado que está almacenado en el almacén de la máquina local y se identifique mediante su huella digital. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) se aplica al archivo *.meta.mof.
  * Un archivo MOF que aplica realmente la configuración. Start-DscConfiguration aplica la configuración.
 
 Estos comandos llevará a cabo esos pasos:

@@ -1,12 +1,12 @@
 ---
 ms.date: 2017-06-27
-keywords: powershell,cmdlet
+keywords: powershell, cmdlet
 title: "Reglas de autorización y características de seguridad de Windows PowerShell Web Access"
-ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reglas de autorización y características de seguridad de Windows PowerShell Web Access
 
@@ -32,7 +32,7 @@ Como ocurre con otros cmdlets de Windows PowerShell que tienen un parámetro de 
 Para crear un objeto PSCredential que contenga las credenciales que quiere pasar a un equipo remoto, ejecute el cmdlet [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential).
 
 Las reglas de autenticación de Windows PowerShell Web Access son reglas de la lista blanca.
-Cada regla es una definición de una conexión permitida entre usuarios, equipos de destino y [configuraciones de sesión](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) de Windows PowerShell determinadas (también denominadas puntos de conexión o _espacios de ejecución_) en equipos de destino especificados.
+Cada regla es una definición de una conexión permitida entre usuarios, equipos de destino y [configuraciones de sesión](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) de Windows PowerShell determinadas (también denominadas puntos de conexión o _espacios de ejecución_) en equipos de destino especificados.
 Para ver una explicación sobre los **espacios de ejecución**, vea [Beginning Use of PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/) (Uso inicial de los espacios de ejecución de PowerShell).
 
 > **Nota de seguridad**
@@ -103,7 +103,7 @@ Estas reglas solo se evalúan una vez que la puerta de enlace ha autenticado al 
 El nivel de seguridad final de Windows PowerShell Web Access es la configuración de seguridad propia del equipo de destino.
 Los usuarios deben tener configurados los derechos de acceso correspondientes en el equipo de destino, y en la reglas de autorización de Windows PowerShell Web Access, para ejecutar una consola de Windows PowerShell basada en web que afecte a un equipo de destino mediante Windows PowerShell Web Access.
 
-Este nivel ofrece los mismos mecanismos de seguridad que evaluarían los intentos de conexión si los usuarios intentaran crear una sesión remota de Windows PowerShell a un equipo de destino desde dentro de Windows PowerShell mediante la ejecución de los cmdlets [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) o [New-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/new-pssession).
+Este nivel ofrece los mismos mecanismos de seguridad que evaluarían los intentos de conexión si los usuarios intentaran crear una sesión remota de Windows PowerShell a un equipo de destino desde dentro de Windows PowerShell mediante la ejecución de los cmdlets [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) o [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/new-pssession).
 
 De manera predeterminada, Windows PowerShell Web Access usa el nombre de usuario y la contraseña principales para la autenticación, tanto en la puerta de enlace como en el equipo de destino.
 La página de inicio de sesión basada en web, en una sección titulada **Configuración de conexión opcional**, ofrece a los usuarios la opción de proporcionar distintas credenciales para el equipo de destino, en caso de que sean necesarias.

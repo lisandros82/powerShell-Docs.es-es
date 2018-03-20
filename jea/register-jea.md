@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: jea,powershell,security
 title: Registro de configuraciones de JEA
-ms.openlocfilehash: 0684a1c7acffbccbedab9dba4689611a24c8ae25
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: d6b007fed97be6470bfe4cf4d42f72cb4edc3a45
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="registering-jea-configurations"></a>Registro de configuraciones de JEA
 
@@ -19,7 +19,7 @@ Este proceso aplica la información de configuración de sesión en el sistema y
 
 ## <a name="single-machine-configuration"></a>Configuración de la máquina sencilla
 
-Para entornos pequeños, puede implementar JEA al registrar el archivo de configuración de sesión mediante el cmdlet [Register-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration).
+Para entornos pequeños, puede implementar JEA al registrar el archivo de configuración de sesión mediante el cmdlet [Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration).
 
 Antes de comenzar, asegúrese de que se cumplen los requisitos previos siguientes:
 - Se han creado uno o varios roles y se han colocado en la carpeta "RoleCapabilities" de un módulo de PowerShell válido.
@@ -28,7 +28,7 @@ Antes de comenzar, asegúrese de que se cumplen los requisitos previos siguiente
 
 También debe seleccionar un nombre para el punto de conexión de JEA.
 El nombre del punto de conexión de JEA será necesario cuando los usuarios quieran conectarse al sistema mediante JEA.
-Puede usar el cmdlet [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) para comprobar los nombres de los puntos de conexión existentes en el sistema.
+Puede usar el cmdlet [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) para comprobar los nombres de los puntos de conexión existentes en el sistema.
 Los puntos de conexión que empiezan por "microsoft" se entregan normalmente con Windows.
 El punto de conexión "microsoft.powershell" es el que se usa de manera predeterminada al conectarse a un punto de conexión remoto de PowerShell.
 

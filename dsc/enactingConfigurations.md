@@ -3,11 +3,11 @@ ms.date: 2017-10-16
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Establecer configuraciones
-ms.openlocfilehash: 4285dbe04c9745ec2a859e479848da2881c18de0
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 01294b85d33e147593299de8ecf46c027a69f7a3
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="enacting-configurations"></a>Establecer configuraciones
 
@@ -19,9 +19,9 @@ Hay dos maneras de establecer las configuraciones de la configuración de estado
 
 ![Modo de inserción](images/pushModel.png "Cómo funciona el modo de inserción")
 
-El modo de inserción se refiere a un usuario que aplica activamente una configuración a un nodo de destino mediante una llamada al cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx).
+El modo de inserción se refiere a un usuario que aplica activamente una configuración a un nodo de destino mediante una llamada al cmdlet [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).
 
-Después de crear y compilar una configuración, puede establecerla en el modo de inserción con una llamada al cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx), estableciendo el parámetro -Path del cmdlet en la ruta de acceso donde se encuentra el MOF de configuración.
+Después de crear y compilar una configuración, puede establecerla en el modo de inserción con una llamada al cmdlet [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx), estableciendo el parámetro -Path del cmdlet en la ruta de acceso donde se encuentra el MOF de configuración.
 Por ejemplo, si el MOF de configuración está ubicado en `C:\DSC\Configurations\localhost.mof`, se aplicaría a la máquina local con el comando siguiente: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
 > __Nota__: De forma predeterminada, DSC ejecuta una configuración como un trabajo en segundo plano. Para ejecutar la configuración de forma interactiva, llame a [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) con el parámetro __-Wait__.
@@ -40,7 +40,7 @@ El LCM comprueba que el cliente es conforme con la configuración a intervalos r
 El LCM busca configuraciones actualizadas en el servicio de extracción a intervalos regulares especificados por la propiedad **RefreshModeFrequency** del LCM.
 Para obtener información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local](metaConfig.md).
 
-La solución recomendada para hospedar un servicio de extracción es [Azure Automation](https://azure.microsoft.com/en-us/services/automation/), el servicio en la nube de DSC.
+La solución recomendada para hospedar un servicio de extracción es [Azure Automation](https://azure.microsoft.com/services/automation/), el servicio en la nube de DSC.
 Esta solución hospedada ofrece administración de gráficos, informes y administración centralizada.
 
 Para más información sobre la configuración de un servicio de extracción de Windows Server, consulte [Configuración de un servidor de extracción web de DSC](pullServer.md).

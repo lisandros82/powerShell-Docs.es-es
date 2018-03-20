@@ -1,12 +1,12 @@
 ---
 ms.date: 2017-08-23
-keywords: powershell,cmdlet
+keywords: powershell, cmdlet
 title: "Solución de problemas de acceso en Windows PowerShell Web Access"
-ms.openlocfilehash: 08a9fd286ed8a40e9423deb7d29dc0a8ecf8e5b1
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Solución de problemas de acceso en Windows PowerShell Web Access
 
@@ -34,7 +34,7 @@ El error puede producirse por uno de los siguientes motivos.
 
   Compruebe que la administración remota esté habilitada en el equipo al que intenta conectarse el usuario.
 
-  Para más información, vea [How to Configure Your Computer for Remoting](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting) (Cómo configurar el equipo para la comunicación remota).
+  Para más información, vea [How to Configure Your Computer for Remoting](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting) (Cómo configurar el equipo para la comunicación remota).
 
 ## <a name="internal-server-error"></a>error interno del servidor
 
@@ -132,7 +132,7 @@ Las reglas de autorización no admiten direcciones IPv6 en forma de nombre de do
 Para especificar un equipo de destino mediante una dirección IPv6, use la dirección IPv6 original (que contiene caracteres de dos puntos) en la regla de autorización.
 Tanto las direcciones IPv6 de dominio como las numéricas (con caracteres de dos puntos) se admiten como nombre del equipo de destino en la página de inicio de sesión de Windows PowerShell Web Access, pero no en las reglas de autorización. 
 
-Para obtener más información sobre las direcciones IPv6, consulte [How IPv6 Works](https://technet.microsoft.com/en-us/library/cc781672(v=ws.10).aspx) (Funcionamiento de IPv6).
+Para obtener más información sobre las direcciones IPv6, consulte [How IPv6 Works](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx) (Funcionamiento de IPv6).
 
 ## <a name="see-also"></a>Véase también
 

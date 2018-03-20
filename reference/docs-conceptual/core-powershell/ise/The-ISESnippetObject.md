@@ -1,21 +1,21 @@
 ---
 ms.date: 2017-06-05
-keywords: powershell,cmdlet
+keywords: powershell, cmdlet
 title: ISESnippetObject
 ms.assetid: 98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
-ms.openlocfilehash: 6112f5252d2d1e868092da4a6cd04feb1875b597
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: f1b023291826d5568eb8bdf5a898a00228825276
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="the-isesnippetobject"></a>ISESnippetObject
-  Un objeto **ISESnippet** es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISESnippet. Los miembros de la colección **$psISE.CurrentPowerShellTab.Snippets** son todos ejemplos de objetos **ISESnippet**. La manera más fácil de crear un fragmento de código es usar el cmdlet [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/en-us/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0).
+  Un objeto **ISESnippet** es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISESnippet. Los miembros de la colección **$psISE.CurrentPowerShellTab.Snippets** son todos ejemplos de objetos **ISESnippet**. La manera más fácil de crear un fragmento de código es usar el cmdlet [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0).
 
 ## <a name="properties"></a>Propiedades
 
 ### <a name="author"></a>Autor
-  Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. 
+  Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores.
 
  La propiedad de solo lectura que obtiene el nombre del autor del fragmento de código.
 
@@ -26,7 +26,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).Author
 ```
 
 ### <a name="codefragment"></a>CodeFragment
-  Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. 
+  Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores.
 
  La propiedad de solo lectura que obtiene el fragmento de código que va a insertar en el editor.
 
@@ -37,7 +37,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).CodeFragment
 ```
 
 ### <a name="shortcut"></a>Directa
-  Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. 
+  Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores.
 
  La propiedad de solo lectura que obtiene el método abreviado de teclado de Windows para el elemento de menú.
 
@@ -49,9 +49,6 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
 ## <a name="see-also"></a>Véase también
-- [El objeto ISESnippetCollection](The-ISESnippetCollection-Object.md) 
-- [El modelo de objetos de scripting de ISE de Windows PowerShell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [Referencia del modelo de objetos de ISE de Windows PowerShell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [El objeto ISESnippetCollection](The-ISESnippetCollection-Object.md)
+- [Finalidad del modelo de objetos de scripting de Windows PowerShell ISE](purpose-of-the-windows-powershell-ise-scripting-object-model.md)
 - [La jerarquía del modelo de objetos de ISE](The-ISE-Object-Model-Hierarchy.md)
-
-  

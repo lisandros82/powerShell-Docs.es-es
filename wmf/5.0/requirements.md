@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: e4e5c6fff2eea12b9cfbba325d5519f6266218e8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 510e1baa2933932cfd4c3bcb4e0973f3eb8095f3
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="system-requirements"></a>Requisitos del sistema
 
@@ -18,9 +18,9 @@ ms.lasthandoff: 06/12/2017
     |------------------------|--------------|------------------|----------------------| --------------|
     | Windows Server 2012 R2 |  |  | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
     | Windows Server 2012    |  |  | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) |
-    | Windows Server 2008 R2 SP1 | Todas, excepto IA64 | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) y [.NET Framework 4.5 o superior](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) están instalados.| [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)|
+    | Windows Server 2008 R2 SP1 | Todas, excepto IA64 | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) y [.NET Framework 4.5 o superior](https://msdn.microsoft.com/library/5a4x27ek.aspx) están instalados.| [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)|
     | Windows 8.1 | Pro, Enterprise | | **x64:**  [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86:**  [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
-    | Windows 7 SP1 | Todos | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) y [.NET Framework 4.5 o superior](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) están instalados. | **x64:** [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86:**  [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
+    | Windows 7 SP1 | Todos | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) y [.NET Framework 4.5 o superior](https://msdn.microsoft.com/library/5a4x27ek.aspx) están instalados. | **x64:** [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86:**  [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
 
 # <a name="installation-instructions"></a>Instrucciones de instalación
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 06/12/2017
 Asegúrese de que se cumplen los requisitos previos siguientes:
 - El Service Pack más reciente está instalado.
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) está instalado.
-- [.NET Framework 4.5 o superior](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) está instalado.
+- [.NET Framework 4.5 o superior](https://msdn.microsoft.com/library/5a4x27ek.aspx) está instalado.
 
 **Dependencia de WMF 4.0**
 

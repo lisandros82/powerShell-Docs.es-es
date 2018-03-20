@@ -2,8 +2,8 @@
 
 Este tema proporciona a los editores información resumida sobre cómo modificar el manifiesto para sus publicaciones de Galería de PowerShell de modo que las características de los cmdlets de PowerShellGet y la interfaz de usuario de Galería de PowerShell se vean afectadas. Este contenido está organizado por donde aparecerá el cambio, primero por la sección central y después por el área de navegación a la izquierda. Hay una sección detallada que cubre las etiquetas, que identifica las etiquetas importantes, así como algunas de las etiquetas más utilizadas. Hay dos temas que proporcionan ejemplos de manifiestos: 
 
-* Para los módulos, consulte el artículo para [actualizar un archivo de manifiesto de módulo](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/psget_update-modulemanifest).
-* Para los scripts, consulte el artículo para [crear un archivo de script con metadatos](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo).
+* Para los módulos, consulte el artículo para [actualizar un archivo de manifiesto de módulo](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest).
+* Para los scripts, consulte el artículo para [crear un archivo de script con metadatos](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo).
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>Elementos de la característica Galería de PowerShell controlados por el manifiesto
 

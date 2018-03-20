@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: jea,powershell,security
 title: "Configuraciones de sesión de JEA"
-ms.openlocfilehash: 0a8931ae15caf04a3639ab46f130e5f5b0498d8c
-ms.sourcegitcommit: 0733db9a05e89e6a23f6b52b9edd784fcbe8beec
+ms.openlocfilehash: c475a90a59d91b074f954cfb656b00142444c052
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-session-configurations"></a>Configuraciones de sesión de JEA
 
@@ -38,7 +38,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 Puede abrir el archivo de configuración de sesión en cualquier editor de texto.
 El campo `-SessionType RestrictedRemoteServer` indica que JEA usará la configuración de sesión para administrarla de forma segura.
-Las sesiones configuradas de esta forma funcionarán en [modo NoLanguage](https://technet.microsoft.com/en-us/library/dn433292.aspx) y solo tendrán los siguientes 8 comandos (y alias) predeterminados disponibles:
+Las sesiones configuradas de esta forma funcionarán en [modo NoLanguage](https://technet.microsoft.com/library/dn433292.aspx) y solo tendrán los siguientes 8 comandos (y alias) predeterminados disponibles:
 
 - Clear-Host (cls, clear)
 - Exit-PSSession (exsn, exit)
@@ -128,7 +128,7 @@ Los usuarios estándar no deben tener acceso a la carpeta y un conjunto limitado
 ### <a name="user-drive"></a>Unidad de usuario
 
 Si los usuarios que se conectan necesitan copiar archivos desde o al punto de conexión de JEA para ejecutar un comando, puede habilitar la unidad de usuario en el archivo de configuración de sesión.
-La unidad de usuario es una [PSDrive](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) que se asigna a una carpeta única para cada usuario que se conecta.
+La unidad de usuario es una [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) que se asigna a una carpeta única para cada usuario que se conecta.
 Esta carpeta sirve como espacio para que puedan copiar archivos del o en el sistema, sin concederles acceso al sistema de archivos completo ni exponer el proveedor FileSystem.
 El contenido de la unidad de usuario es persistente en todas las sesiones para adaptarse a situaciones en que se podría interrumpir la conectividad de red.
 

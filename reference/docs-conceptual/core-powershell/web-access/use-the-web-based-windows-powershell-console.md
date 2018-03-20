@@ -1,12 +1,12 @@
 ---
 ms.date: 2017-08-23
-keywords: powershell,cmdlet
+keywords: powershell, cmdlet
 title: Uso de la consola de Windows PowerShell basada en web
-ms.openlocfilehash: 31ab17f1a1ea1353abc6f770285a2dca70da446d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Uso de la consola de Windows PowerShell basada en web
 
@@ -58,7 +58,7 @@ De forma predeterminada, la dirección de este sitio web es *https://\<nombre_se
 
 Antes de iniciar sesión en Windows PowerShell Web Access, asegúrese de contar con el nombre o la dirección IP del equipo remoto que desea administrar.
 Debe ser un usuario autorizado en el equipo remoto, y el equipo debe estar configurado para admitir la administración remota.
-Para más información sobre de la configuración del equipo para que admita la administración remota, consulte el tema sobre cómo [Enable and Use Remote Commands in Windows PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting) (Habilitación y uso de comandos remotos en Windows PowerShell).
+Para más información sobre de la configuración del equipo para que admita la administración remota, consulte el tema sobre cómo [Enable and Use Remote Commands in Windows PowerShell](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting) (Habilitación y uso de comandos remotos en Windows PowerShell).
 
 El método más sencillo de configurar el equipo para que admita la administración remota consiste en ejecutar el cmdlet **Enable-PSRemoting -force** en el equipo, en una sesión de Windows PowerShell abierta con permisos del usuario elevados (**Ejecutar como administrador**).
 
@@ -74,7 +74,7 @@ El método más sencillo de configurar el equipo para que admita la administraci
     > - Si el equipo de destino es el servidor de puerta de enlace, puede especificar `localhost` en el campo Nombre de equipo.
     > - Si el equipo de destino es el servidor de puerta de enlace y este se encuentra en un grupo de trabajo, debe usar `<workgroup name>\<user_name>` en el campo Nombre de usuario. Puede usar `localhost` en el campo Nombre de equipo.
 
-1. La sección **Configuración de conexión opcional** está relacionada con los requisitos de autorización del equipo remoto que desea administrar. Para más información sobre los parámetros equivalentes a la configuración de conexión opcional, vea la ayuda del cmdlet [Enter-PSSession](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession).
+1. La sección **Configuración de conexión opcional** está relacionada con los requisitos de autorización del equipo remoto que desea administrar. Para más información sobre los parámetros equivalentes a la configuración de conexión opcional, vea la ayuda del cmdlet [Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession).
 
     Por lo general, las credenciales que use para pasar a través de la puerta de enlace de Windows PowerShell Web Access serán las mismas que reconoce el equipo remoto que desea administrar. No obstante, si desea usar credenciales diferentes de las especificadas en el paso 2 para administrar el equipo remoto, expanda la sección **Configuración de conexión opcional** y proporcione las credenciales alternativas. De lo contrario, vaya al paso 6.
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Método ResourceSet de la clase MSFT_DSCLocalConfigurationManager"
-ms.openlocfilehash: 7291641098578226449f8cbd360da0a3f9842598
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 3486ef559102929f8d05994a4bf6e45d49a0c140
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método ResourceSet de la clase MSFT_DSCLocalConfigurationManager
 
@@ -35,7 +35,7 @@ Nombre del recurso al que se llamará.
 Nombre del módulo que contiene el recurso al que se llamará.
 
 *resourceProperty* \[in\]  
-Especifica el nombre de la propiedad del recurso y su valor en una tabla hash como clave y valor, respectivamente. Use el cmdlet [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) para descubrir las propiedades del recurso y sus tipos.
+Especifica el nombre de la propiedad del recurso y su valor en una tabla hash como clave y valor, respectivamente. Use el cmdlet [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) para descubrir las propiedades del recurso y sus tipos.
 
 *RebootRequired* \[out\]  
 En la devolución, esta propiedad se establece en **true** si el nodo de destino debe reiniciarse.

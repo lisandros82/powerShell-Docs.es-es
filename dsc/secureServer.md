@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Procedimientos recomendados del servidor de extracción"
-ms.openlocfilehash: 045f98475d6182b329ecf048038a98e933684a82
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="pull-server-best-practices"></a>Procedimientos recomendados del servidor de extracción
 
@@ -24,7 +24,7 @@ Publicado | Abril de 2015
 ## <a name="abstract"></a>Resumen
 
 Este documento está diseñado para proporcionar orientación oficial a cualquiera que esté planeando una implementación de servidor de extracción de la configuración de estado deseado de Windows PowerShell. Un servidor de extracción es un servicio sencillo cuya implementación solo debería llevar unos minutos. Aunque en este documento se ofrece orientación técnica de procedimientos que se puede usar durante una implementación, su valor es constituir una referencia de procedimientos recomendados y de aspectos que se deben tener en cuenta antes de implementar.
-Los lectores deberían tener conocimientos básicos de DSC y de los términos empleados para describir los componentes incluidos en una implementación de DSC. Para más información, vea el tema [Información general sobre la configuración de estado deseado de Windows PowerShell](https://technet.microsoft.com/en-us/library/dn249912.aspx).
+Los lectores deberían tener conocimientos básicos de DSC y de los términos empleados para describir los componentes incluidos en una implementación de DSC. Para más información, vea el tema [Información general sobre la configuración de estado deseado de Windows PowerShell](https://technet.microsoft.com/library/dn249912.aspx).
 Dado que se espera que DSC evolucione al ritmo de la nube, también se espera que la tecnología subyacente, incluido el servidor de extracción, evolucione e incorpore nuevas características. Este documento incluye una tabla de versiones en el apéndice que proporciona referencias a versiones anteriores y a soluciones futuras para fomentar diseños orientados al futuro.
 
 Las dos secciones principales de este documento son estas:
@@ -43,7 +43,7 @@ Windows PowerShell proporciona un conjunto de extensiones de lenguaje para Confi
 ### <a name="pull-server-role"></a>Rol de servidor de extracción  
 Un servidor de extracción proporciona un servicio centralizado para almacenar configuraciones que sean accesibles a los nodos de destino.
  
-El rol de servidor de extracción puede implementarse como una instancia de servidor web o como un recurso compartido de archivos SMB. La característica de servidor web incluye una interfaz OData y opcionalmente puede incluir capacidades para que los nodos de destino confirmen el éxito o el error a medida que se apliquen las configuraciones. Esta funcionalidad es útil en entornos donde hay muchos nodos de destino. Después de configurar un nodo de destino (también conocido como cliente) para que apunte al servidor de extracción, se descargan y se aplican los datos de configuración más recientes y los scripts necesarios. Puede ser como una implementación única o como un trabajo recurrente, lo que también convierte al servidor de extracción en un activo importante para administrar el cambio a escala. Para más información, vea [Windows PowerShell Desired State Configuration Pull Servers (Servidores de extracción de la configuración de estado deseado de Windows PowerShell)](https://technet.microsoft.com/en-us/library/dn249913.aspx) y [Push and Pull Configuration Modes (Modos de configuración de inserción y extracción)](https://technet.microsoft.com/en-us/library/dn249913.aspx).
+El rol de servidor de extracción puede implementarse como una instancia de servidor web o como un recurso compartido de archivos SMB. La característica de servidor web incluye una interfaz OData y opcionalmente puede incluir capacidades para que los nodos de destino confirmen el éxito o el error a medida que se apliquen las configuraciones. Esta funcionalidad es útil en entornos donde hay muchos nodos de destino. Después de configurar un nodo de destino (también conocido como cliente) para que apunte al servidor de extracción, se descargan y se aplican los datos de configuración más recientes y los scripts necesarios. Puede ser como una implementación única o como un trabajo recurrente, lo que también convierte al servidor de extracción en un activo importante para administrar el cambio a escala. Para más información, vea [Windows PowerShell Desired State Configuration Pull Servers (Servidores de extracción de la configuración de estado deseado de Windows PowerShell)](https://technet.microsoft.com/library/dn249913.aspx) y [Push and Pull Configuration Modes (Modos de configuración de inserción y extracción)](https://technet.microsoft.com/library/dn249913.aspx).
 
 ## <a name="configuration-planning"></a>Planeamiento de configuración
 
