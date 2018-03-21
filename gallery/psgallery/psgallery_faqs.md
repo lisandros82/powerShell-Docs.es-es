@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_faqs
-ms.openlocfilehash: 80aaaa5e50e1bd85b93df721a4859e3020d1f315
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b856c44f3733d4a7c236d901edb391091d9d546e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
@@ -18,7 +18,7 @@ Un módulo de PowerShell es un paquete reutilizable que contiene algunas funcion
 
 ## <a name="what-is-a-powershell-script"></a>¿Qué es un script de PowerShell?
 
-Un script de PowerShell es una serie de comandos que se almacenan en un archivo .ps1 para permitir la reutilización y el uso compartido. Los flujos de trabajo de PowerShell también son scripts de PowerShell, que describen un conjunto de tareas y proporcionan la secuenciación de dichas tareas. Para obtener más información, consulte [Introducción al flujo de trabajo de Windows PowerShell](https://technet.microsoft.com/en-us/library/jj134242.aspx).
+Un script de PowerShell es una serie de comandos que se almacenan en un archivo .ps1 para permitir la reutilización y el uso compartido. Los flujos de trabajo de PowerShell también son scripts de PowerShell, que describen un conjunto de tareas y proporcionan la secuenciación de dichas tareas. Para obtener más información, consulte [Introducción al flujo de trabajo de Windows PowerShell](https://technet.microsoft.com/library/jj134242.aspx).
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>¿En qué se diferencian los scripts de PowerShell de los módulos de PowerShell?
 
@@ -48,7 +48,7 @@ Este error puede producirse por los motivos siguientes:
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>¿Por qué no puedo iniciar sesión con mi cuenta personal, si ayer podía hacerlo?
 
-Tenga en cuenta que la cuenta de la Galería no se adapta a los cambios que se produzcan en el alias de su correo electrónico principal. Para obtener más información, consulte el tema sobre los [alias de correo electrónico de Microsoft](https://windows.microsoft.com/en-us/windows/outlook/add-alias-account).
+Tenga en cuenta que la cuenta de la Galería no se adapta a los cambios que se produzcan en el alias de su correo electrónico principal. Para obtener más información, consulte el tema sobre los [alias de correo electrónico de Microsoft](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
 ## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>¿Por qué no veo todos los elementos de la Galería al activar todas las casillas de categoría en la pestaña Elementos?
 
@@ -156,7 +156,7 @@ Por lo tanto, **PowerShellGet** requiere uno de los siguientes sistemas operativ
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** también requiere .NET Framework 4.5 o posterior. Puede instalar .NET Framework 4.5 o posterior desde [aquí](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx).
+**PowerShellGet** también requiere .NET Framework 4.5 o posterior. Puede instalar .NET Framework 4.5 o posterior desde [aquí](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
 ## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>¿Es posible reservar nombres para los elementos que se publicarán en el futuro?
 

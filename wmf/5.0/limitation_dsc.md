@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: f39328b240a36deb40d484c4aedb889cee91dc8d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: ad1d19eeb70a19cd3d1493b9a09b115af755feb4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Problemas y limitaciones conocidos de la configuración de estado deseado (DSC)
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 06/12/2017
 
 En las versiones WMF 4.0 y WMF 5.0 Preview, DSC no permitía que las contraseñas de la configuración tuvieran más de 121 caracteres de longitud. DSC obligaba a usar contraseñas cortas, aunque se deseasen contraseñas largas y seguras. Este cambio de última hora permite que las contraseñas tengan una longitud arbitraria en la configuración de DSC.
 
-**Resolución:** vuelva a crear el certificado mediante el cifrado de datos o el cifrado de clave, así como con el uso mejorado de claves de cifrado de documentos (1.3.6.1.4.1.311.80.1). En el artículo de TechNet <https://technet.microsoft.com/es-es/library/dn807171.aspx> puede encontrar más información.
+**Resolución:** vuelva a crear el certificado mediante el cifrado de datos o el cifrado de clave, así como con el uso mejorado de claves de cifrado de documentos (1.3.6.1.4.1.311.80.1). En el artículo de TechNet <https://technet.microsoft.com/library/dn807171.aspx> encontrará más información.
 
 
 <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>Los cmdlets de DSC puede producir un error después de instalar WMF 5.0 RTM

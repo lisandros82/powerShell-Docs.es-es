@@ -4,17 +4,17 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: "Creación de una cuenta de la Galería de PowerShell"
-ms.openlocfilehash: e21575320f220c1ba7ecd9bd464a814b3ebf49d9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 5af38884d819cb9c600a061109233614bd33666f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 ## <a name="creating-a-powershell-gallery-account"></a>Creación de una cuenta de la Galería de PowerShell
 
 Es necesario establecer una cuenta de la Galería de PowerShell antes de publicar contenido en la galería. Las cuentas de la Galería de PowerShell se deben vincular a una cuenta habilitada para recibir correo electrónico de Azure Active Directory o a una cuenta de correo electrónico de Microsoft (con dominio outlook.com, hotmail.com, etc.).
 
-Para crear una cuenta de la Galería de PowerShell, vaya a https://PowerShellGallery.com y haga clic en "Register" (Registrarse) (ver imagen a continuación). 
+Para crear una cuenta de la Galería de PowerShell, vaya a https://PowerShellGallery.com y haga clic en "Register" (Registrarse). Consulte la imagen siguiente. 
 
 ![Registro de una cuenta nueva](./images/CreatingAccount-Register.png)
 
@@ -23,7 +23,7 @@ En la página siguiente, para usar una cuenta de Azure Active Directory, selecci
 Una vez que inicie sesión, se le solicitará crear un nombre de usuario para la Galería de PowerShell. Revise los Términos de uso y la Directiva de privacidad a las que se proporcionan vínculos, escriba un nombre de usuario y haga clic en Register (Registrarse).
 
 Nota: Este nombre de cuenta no se puede cambiar una vez creado.  
-Consulte [Administrar propietarios de elementos](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners) para detalles adicionales al respecto.
+Consulte [Administrar propietarios de elementos](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) para detalles adicionales al respecto.
 
 ## <a name="recommended-practices-for-powershell-gallery-accounts"></a>Procedimientos recomendados para cuentas de la Galería de PowerShell
 
@@ -35,5 +35,5 @@ Las organizaciones que publican en la Galería de PowerShell a menudo crean una 
 En muchos casos, no se supervisa con regularidad esa cuenta. En ese caso, un procedimiento recomendado es usar el reenvío de Outlook para enviar el correo electrónico a otra cuenta, habitualmente una dentro de la organización, que el propietario del elemento sí supervisará.
 
 Si un elemento tiene asociados varios propietarios, toda comunicación que provenga de la Galería de PowerShell llegará a todos los propietarios.
-Consulte [Administrar propietarios de elementos](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners) para detalles adicionales sobre cómo agregar propietarios a un elemento. 
+Consulte [Administrar propietarios de elementos](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) para detalles adicionales sobre cómo agregar propietarios a un elemento. 
 

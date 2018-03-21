@@ -1,12 +1,12 @@
 ---
 ms.date: 2017-08-23
-keywords: powershell,cmdlet
+keywords: powershell, cmdlet
 title: "Instalación y uso de Windows PowerShell Web Access"
-ms.openlocfilehash: 63e25fa2b1fc7c0a2b57763e337c25ece17a3296
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Instalación y uso de Windows PowerShell Web Access
 
@@ -29,7 +29,7 @@ El proceso de instalación y configuración de Windows PowerShell Web Access con
 1. [Configurar una regla de autorización restrictiva](#configure-a-restrictive-authorization-rule)
 
 Antes de instalar y configurar Windows PowerShell Web Access, se recomienda leer toda la guía, que incluye instrucciones sobre cómo instalar, proteger y desinstalar Windows PowerShell Web Access.
-En el tema [Uso de la consola de Windows PowerShell basada en web](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx) se describe cómo los usuarios inician sesión en la consola basada en web y se explican las limitaciones y diferencias entre la consola de Windows PowerShell basada en web y la consola de **powershell.exe**. Los usuarios finales de la consola basada en web deben leer [Uso de la consola de Windows PowerShell basada en web](use-the-web-based-windows-powershell-console.md), pero no es necesario que lean el resto de esta guía.
+En el tema [Uso de la consola de Windows PowerShell basada en web](https://technet.microsoft.com/library/hh831417(v=ws.11).aspx) se describe cómo los usuarios inician sesión en la consola basada en web y se explican las limitaciones y diferencias entre la consola de Windows PowerShell basada en web y la consola de **powershell.exe**. Los usuarios finales de la consola basada en web deben leer [Uso de la consola de Windows PowerShell basada en web](use-the-web-based-windows-powershell-console.md), pero no es necesario que lean el resto de esta guía.
 
 En este tema no se proporciona una guía de operaciones exhaustiva de servidor web de IIS, sino solo los pasos necesarios para configurar la puerta de enlace de Windows PowerShell Web Access. Para obtener más información sobre la configuración y protección de sitios web en IIS, vea los recursos de documentación de IIS en la sección Vea también.
 
@@ -212,7 +212,7 @@ Para obtener más información sobre la seguridad y las reglas de autorización 
 
     - En la pantalla **Inicio** de Windows, haga clic con el botón derecho en **Windows PowerShell** y, luego, en **Ejecutar como administrador**.
 
-2. Paso opcional para restringir el acceso del usuario mediante configuraciones de sesión: Compruebe que las configuraciones de sesión que quiere usar en las reglas ya existen. Si aún no se han creado, use las instrucciones para crear configuraciones de sesión proporcionadas en [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+2. Paso opcional para restringir el acceso del usuario mediante configuraciones de sesión: Compruebe que las configuraciones de sesión que quiere usar en las reglas ya existen. Si aún no se han creado, use las instrucciones para crear configuraciones de sesión proporcionadas en [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Escriba lo siguiente y, después, presione **Entrar**.
 
@@ -296,7 +296,7 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
 11. Abra una sesión del explorador en un dispositivo cliente. Para más información sobre los dispositivos y exploradores admitidos, consulte [Compatibilidad con exploradores y dispositivos cliente](#browser-and-client-device-support) en este tema.
 
-12. Abra el nuevo sitio web de Windows PowerShell Web Access, **https://\<*nombre_servidor_puertaEnlace*\>/pswa**.
+12. Abra el nuevo sitio web de Windows PowerShell Web Access, **https://\<*nombre-servidor-puerta-enlace*\>/pswa**.
 
     El explorador debe mostrar la página de inicio de sesión de la consola de Windows PowerShell Web Access.
 
@@ -361,7 +361,7 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
 15. Abra el nuevo sitio web de Windows PowerShell Web Access.
 
-    Como el sitio web raíz apunta a la carpeta de Windows PowerShell Web Access, el explorador debería mostrar la página de inicio de sesión de Windows PowerShell Web Access cuando abra **https://\<*nombre_servidor_puertaEnlace*\>**. No será necesario que agregue **/pswa** a la dirección URL.
+    Como el sitio web raíz apunta a la carpeta de Windows PowerShell Web Access, el explorador debería mostrar la página de inicio de sesión de Windows PowerShell Web Access cuando abra **https://\<*nombre-servidor-puerta-enlace*\>**. No será necesario que agregue **/pswa** a la dirección URL.
 
     >**![Nota](images/note.jpeg) Nota** 
     > 
@@ -384,7 +384,7 @@ Para obtener más información sobre la seguridad y las reglas de autorización 
 
 2. ![Nota de seguridad](images/SecurityNote.jpeg) Paso opcional para restringir el acceso de usuario con el uso de configuraciones de sesión:
 
-    Compruebe que las configuraciones de sesión que quiere usar en las reglas ya existen. Si aún no se han creado, use las instrucciones para crear configuraciones de sesión proporcionadas en [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+    Compruebe que las configuraciones de sesión que quiere usar en las reglas ya existen. Si aún no se han creado, use las instrucciones para crear configuraciones de sesión proporcionadas en [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Escriba lo siguiente y, después, presione **Entrar**.
 

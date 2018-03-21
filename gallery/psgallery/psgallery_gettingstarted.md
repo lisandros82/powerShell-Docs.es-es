@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_gettingstarted
-ms.openlocfilehash: d13c23cd6f9cce433cd3fe1ad5f2d00e3ef0527c
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>Introducción a la Galería de PowerShell
 
@@ -40,7 +40,7 @@ Si tiene una versión de NuGet anterior a 2.8.5.201, debe llamar a los siguiente
 2.  `Import-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
 3.  Elimine la versión anterior de NuGet de la ubicación de instalación anterior.
 
-Para obtener más información, consulte <http://oneget.org/>.
+Para obtener más información, vea <http://oneget.org/>.
 
   
 Nota: Debido a cambios en los formatos de empaquetado, se recomienda actualizar a la versión más reciente de PowerShellGet y PackageManagement para instalar los elementos que se han actualizado recientemente. PowerShellGet se incluye en Windows 10. Puede obtener más información [aquí](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409).
@@ -103,7 +103,7 @@ De forma predeterminada, [Install-Module](https://go.microsoft.com/fwlink/?LinkI
 
 Para implementar un elemento desde la Galería de PowerShell en Automatización de Azure, haga clic en **Deploy to Azure Automation** (Implementar en Automatización de Azure) en la página de detalles del elemento. Se le redirigirá al Portal de administración de Azure, donde deberá iniciar sesión con sus credenciales de la cuenta de Azure. Tenga en cuenta que si se implementan elementos con dependencias, se implementarán todas las dependencias en Automatización de Azure. El botón Deploy to Azure Automation (Implementar en Automatización de Azure) se puede deshabilitar agregando la etiqueta **AzureAutomationNotSupported** a los metadatos del elemento.
 
-Para obtener más información sobre Automatización de Azure, consulte el [sitio web de Automatización de Azure](http://azure.microsoft.com/en-us/services/automation/).
+Para obtener más información sobre Automatización de Azure, consulte el [sitio web de Automatización de Azure](http://azure.microsoft.com/services/automation/).
 
 ## <a name="updating-items-from-the-powershell-gallery"></a>Actualizar elementos de la Galería de PowerShell
 

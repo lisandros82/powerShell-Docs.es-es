@@ -4,18 +4,18 @@ author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
 title: "Nuevos escenarios y características de WMF 5.1"
-ms.openlocfilehash: 430781c5c9a59fc544db4f94098313ae1e9cf610
-ms.sourcegitcommit: a6ee6e64d369ecf82c730411bed9750278fdb5c1
+ms.openlocfilehash: da3dfb2243c00e3faf637d3dbcb70016cfabb011
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Nuevos escenarios y características de WMF 5.1 #
 
 > Nota: Esta información es preliminar y está sujeta a cambios.
 
 ## <a name="powershell-editions"></a>Ediciones de PowerShell ##
-A partir de la versión 5.1, PowerShell está disponible en diferentes ediciones que denotan distintos conjuntos de características y compatibilidad con varias plataformas.
+A partir de la versión 5.1, PowerShell está disponible en diferentes ediciones que denotan distintos conjuntos de características y compatibilidad de la plataforma.
 
 - **Desktop Edition:** basado en .NET Framework y proporciona compatibilidad con scripts y módulos destinados a las versiones de PowerShell que se ejecutan en las ediciones de superficie completa de Windows como Server Core y Windows Desktop.
 - **Core Edition:** basado en .NET Core y proporciona compatibilidad con scripts y módulos destinados a las versiones de PowerShell que se ejecutan en las ediciones de superficie completa de Windows como Nano Server y Windows IoT.
@@ -28,7 +28,7 @@ A partir de la versión 5.1, PowerShell está disponible en diferentes ediciones
 
 ## <a name="catalog-cmdlets"></a>Cmdlets del catálogo  
 
-Hemos agregado dos nuevos cmdlets en el módulo [Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) para generar y validar los archivos de catálogo de Windows.  
+Hemos agregado dos nuevos cmdlets en el módulo [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) para generar y validar los archivos de catálogo de Windows.  
 
 ###<a name="new-filecatalog"></a>New-FileCatalog 
 --------------------------------
@@ -62,7 +62,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-Este cmdlet compara los hashes y rutas de acceso relativas de los archivos que se encuentran en el *catálogo* con los de los que están en el *disco*. Si se detecta cualquier error de coincidencia entre los hashes y las rutas de acceso de los archivos devuelve el estado *ValidationFailed*. Los usuarios pueden recuperar toda esta información mediante el parámetro *-Detailed*. También muestra el estado de firma del catálogo en la propiedad *Signature*, lo que equivale a llamar al cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) en el archivo de catálogo. El usuario también puede omitir cualquier archivo durante la validación mediante el parámetro *FilesToSkip -*. 
+Este cmdlet compara los hashes y rutas de acceso relativas de los archivos que se encuentran en el *catálogo* con los de los que están en el *disco*. Si se detecta cualquier error de coincidencia entre los hashes y las rutas de acceso de los archivos devuelve el estado *ValidationFailed*. Los usuarios pueden recuperar toda esta información mediante el parámetro *-Detailed*. También muestra el estado de firma del catálogo en la propiedad *Signature*, lo que equivale a llamar al cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) en el archivo de catálogo. El usuario también puede omitir cualquier archivo durante la validación mediante el parámetro *FilesToSkip -*. 
 
 
 ## <a name="module-analysis-cache"></a>Caché de análisis de módulo ##
@@ -107,7 +107,7 @@ En WMF 5.1:
 
 
 ##<a name="improvements-to-pester"></a>Mejoras en Pester
-En WMF 5.1, se actualizó la versión de Pester que se incluye con PowerShell de la versión 3.3.5 a la 3.4.0, con la adición de confirmación https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, lo que permite un mejor comportamiento para Pester en Nano Server. 
+En WMF 5.1, se ha actualizado la versión de Pester que se incluye con PowerShell de la versión 3.3.5 a la 3.4.0, con la adición de confirmación https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, lo que permite un mejor comportamiento de Pester en Nano Server. 
 
-Puede revisar los cambios en las versiones 3.3.5 a 3.4.0 inspeccionando el archivo ChangeLog.md en: https://github.com/pester/Pester/blob/master/CHANGELOG.md
+Para consultar los cambios de la versión 3.3.5 a la 3.4.0, vea el archivo ChangeLog.md en: https://github.com/pester/Pester/blob/master/CHANGELOG.md
 
