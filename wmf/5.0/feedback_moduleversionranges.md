@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: fa972b68015d9b6e14508ccda562cfa5ebd632ac
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 12c47d3583274e58edbd2171fef50c779aac9fce
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="modules-support-for-declaring-version-ranges-1-etc"></a><span data-ttu-id="9ce38-102">Compatibilidad de los módulos para la declaración de intervalos de versiones (1.\*, etc.)</span><span class="sxs-lookup"><span data-stu-id="9ce38-102">Modules support for declaring version ranges (1.\*, etc)</span></span>
-<span data-ttu-id="9ce38-103">Combinado con **-MinimumVersion**, **-MaximumVersion** permite ahora al usuario obtener o importar el módulo dentro de un intervalo específico.</span><span class="sxs-lookup"><span data-stu-id="9ce38-103">Combined with **-MinimumVersion**, **-MaximumVersion** now allows user to get/import module within specific range.</span></span> <span data-ttu-id="9ce38-104">El parámetro también admite **.**\*.</span><span class="sxs-lookup"><span data-stu-id="9ce38-104">The parameter also support \*\*.\*\*\*.</span></span> <span data-ttu-id="9ce38-105">El siguiente ejemplo muestra funciona:</span><span class="sxs-lookup"><span data-stu-id="9ce38-105">The following example shows how it works:</span></span>
+# <a name="modules-support-for-declaring-version-ranges-1-etc"></a><span data-ttu-id="38cca-102">Compatibilidad de los módulos para la declaración de intervalos de versiones (1.\*, etc.)</span><span class="sxs-lookup"><span data-stu-id="38cca-102">Modules support for declaring version ranges (1.\*, etc)</span></span>
+<span data-ttu-id="38cca-103">Combinado con **-MinimumVersion**, **-MaximumVersion** permite ahora al usuario obtener o importar el módulo dentro de un intervalo específico.</span><span class="sxs-lookup"><span data-stu-id="38cca-103">Combined with **-MinimumVersion**, **-MaximumVersion** now allows user to get/import module within specific range.</span></span> <span data-ttu-id="38cca-104">El parámetro también admite **.** \*.</span><span class="sxs-lookup"><span data-stu-id="38cca-104">The parameter also support **.**\*.</span></span> <span data-ttu-id="38cca-105">El siguiente ejemplo muestra funciona:</span><span class="sxs-lookup"><span data-stu-id="38cca-105">The following example shows how it works:</span></span>
 
 ```powershell
 Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:
@@ -25,4 +25,3 @@ VERBOSE: Importing cmdlet 'Set-PSReadlineKeyHandler'.
 VERBOSE: Importing cmdlet 'Set-PSReadlineOption'.
 VERBOSE: Importing function 'PSConsoleHostReadline'.
 ```
-
