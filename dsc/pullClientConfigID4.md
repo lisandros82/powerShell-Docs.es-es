@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Configuración de un cliente de extracción mediante un id. de configuración en PowerShell 4.0"
-ms.openlocfilehash: 2449a4ddfea5c0ee7096ad7478e80166eb095bbe
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: Configuración de un cliente de extracción mediante un id. de configuración en PowerShell 4.0
+ms.openlocfilehash: 7074d842b7b99ef3fb6498b6dbc1e561b14caf16
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>Configuración de un cliente de extracción mediante un id. de configuración en PowerShell 4.0
 
@@ -18,28 +18,28 @@ Es necesario indicar a cada nodo de destino que debe usar el modo de extracción
 El script siguiente configura el LCM para que extraiga configuraciones de un servidor denominado "PullServer":
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "WebDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "http://PullServer:8080/PSDSCPullServer/PSDSCPullServer.svc"; AllowUnsecureConnection = “TRUE”}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-En el script, **DownloadManagerCustomData** pasa la dirección URL del servidor de incorporación de cambios y (en este ejemplo) permite una conexión no segura. 
+En el script, **DownloadManagerCustomData** pasa la dirección URL del servidor de incorporación de cambios y (en este ejemplo) permite una conexión no segura.
 
 Después de que se ejecute este script, se crea una nueva carpeta de salida denominada **SimpleMetaConfigurationForPull** y se coloca un archivo MOF de metaconfiguración en ella.
 
-Para aplicar la configuración, utilice **Set-DscLocalConfigurationManager** con parámetros para **ComputerName** (utilice "localhost") y **Path** (la ruta de acceso a la ubicación del archivo de localhost.meta.mof del nodo de destino). Por ejemplo: 
+Para aplicar la configuración, utilice **Set-DscLocalConfigurationManager** con parámetros para **ComputerName** (utilice "localhost") y **Path** (la ruta de acceso a la ubicación del archivo de localhost.meta.mof del nodo de destino). Por ejemplo:
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
@@ -53,20 +53,20 @@ Si el servidor de incorporación de cambios está configurado como un recurso co
 **DscFileDownloadManager** toma una propiedad **SourcePath** en lugar de **ServerUrl**. El script siguiente configura el LCM para que extraiga configuraciones de un recurso compartido SMB denominado "SmbDscShare" en un servidor denominado "CONTOSO-SERVER":
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "DscFileDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "\\CONTOSO-SERVER\SmbDscShare"}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
@@ -74,4 +74,3 @@ SimpleMetaConfigurationForPull -Output "."
 
 - [Configuración de un servidor de extracción web de DSC](pullServer.md)
 - [Configuración de un servidor de extracción SMB de DSC](pullServerSMB.md)
-

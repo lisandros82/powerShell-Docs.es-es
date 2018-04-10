@@ -1,20 +1,19 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Notas del producto
-ms.openlocfilehash: bb3fd6bb31990060ce9f96e3c8525e3bb7431b8f
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 48ce9d5264c1f3570b1d65c517924b0da6417e94
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="whitepapers"></a>Notas del producto
 
 Las siguientes notas del producto se han publicado para proporcionar información adicional sobre temas relacionados con la configuración de estado deseado de PowerShell.
 
 ## <a name="the-release-pipeline-model"></a>Modelo de canalización de versiones
-Existen ventajas a obtener cuando los patrones y prácticas de las técnicas de desarrollador se aplican a las operaciones. En concreto, una solución completamente automatizada donde se administra la infraestructura como código y todos los cambios se validan automáticamente antes de llegar a producción. Se trata de un cambio de procesos que se reconoce entre innovadores del sector. Para las organizaciones que ya aprovechan estos procesos, debe quedar claro cómo aprovechar las plataformas de Microsoft. Para las organizaciones que son nuevas en el tema, debe quedar claro cómo aplicar este proceso a su entorno y lo que significa para su cultura corporativa. En este documento se explican los componentes de una canalización de versiones para la configuración como código, el valor de las operaciones y las soluciones que se usan al diseñar una nueva arquitectura de canalización de versiones. 
+Existen ventajas a obtener cuando los patrones y prácticas de las técnicas de desarrollador se aplican a las operaciones. En concreto, una solución completamente automatizada donde se administra la infraestructura como código y todos los cambios se validan automáticamente antes de llegar a producción. Se trata de un cambio de procesos que se reconoce entre innovadores del sector. Para las organizaciones que ya aprovechan estos procesos, debe quedar claro cómo aprovechar las plataformas de Microsoft. Para las organizaciones que son nuevas en el tema, debe quedar claro cómo aplicar este proceso a su entorno y lo que significa para su cultura corporativa. En este documento se explican los componentes de una canalización de versiones para la configuración como código, el valor de las operaciones y las soluciones que se usan al diseñar una nueva arquitectura de canalización de versiones.
 
 **[Descargar PDF](http://aka.ms/thereleasepipelinemodelpdf)**
-

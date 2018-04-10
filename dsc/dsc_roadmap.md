@@ -5,4 +5,4 @@
 | Paquete descargable | Por determinar | Por determinar | Por determinar | Por determinar |
 | Por determinar | Por determinar | Por determinar | Por determinar | Por determinar |
 
-*Nota: Esta tabla actualmente es solo un marcador de posición. La actualizaremos en los próximos meses y la mantendremos actualizada a medida que avancemos con nuestros planes.* 
+*Nota: Esta tabla actualmente es solo un marcador de posición. La actualizaremos en los próximos meses y la mantendremos actualizada a medida que avancemos con nuestros planes.*

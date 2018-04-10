@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Introducción a la configuración de estado deseado de PowerShell"
-ms.openlocfilehash: 04404696bef128805e4f1c191711eaab33cf7e4c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Introducción a la configuración de estado deseado de PowerShell
+ms.openlocfilehash: b5aff5008db5a5e45b77d8094b0e48ad98dc63fa
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-started-with-powershell-desired-state-configuration"></a>Introducción a la configuración de estado deseado de PowerShell #
 
-En esta guía se describe cómo empezar a crear documentos de configuración de estado deseado de PowerShell y aplicarlos a las máquinas. Supone una familiarización básica con los cmdlets, módulos y funciones de PowerShell. 
+En esta guía se describe cómo empezar a crear documentos de configuración de estado deseado de PowerShell y aplicarlos a las máquinas. Supone una familiarización básica con los cmdlets, módulos y funciones de PowerShell.
 
 
 ## <a name="create-a-configuration"></a>Crear una configuración ##
 
-Las [**configuraciones**](https://msdn.microsoft.com/powershell/dsc/configurations) son documentos que describen un entorno. Los entornos constan de elementos "**nodo**", que normalmente son máquinas físicas o virtuales. 
+Las [**configuraciones**](https://msdn.microsoft.com/powershell/dsc/configurations) son documentos que describen un entorno. Los entornos constan de elementos "**nodo**", que normalmente son máquinas físicas o virtuales.
 
 Las configuraciones pueden presentarse de diversas formas. La manera más fácil de crear una nueva configuración es crear un archivo .ps1 (script de PowerShell). Para hacerlo, abra el editor que prefiera. PowerShell ISE es una buena opción, ya que entiende DSC de forma nativa. Guarde lo siguiente como un archivo PS1:
 
@@ -32,21 +32,21 @@ configuration MyFirstConfiguration
             Name = "IIS"
 
         }
-        
+
     }
 
 }
 ```
 ## <a name="parts-of-a-configuration"></a>Partes de una configuración ##
-**Configuration** es una palabra clave que se agregó a PowerShell 4.0. Indica un tipo especial de función de PowerShell que utiliza la configuración de estado deseado. En este ejemplo, la función se denomina myFirstConfiguration. 
+**Configuration** es una palabra clave que se agregó a PowerShell 4.0. Indica un tipo especial de función de PowerShell que utiliza la configuración de estado deseado. En este ejemplo, la función se denomina myFirstConfiguration.
 
 La siguiente línea es una instrucción import, similar a la importación de un módulo. Se explicará más adelante.
 
-"Node" define el nombre de la máquina en que actuará esta configuración. Aunque esta configuración se modifica localmente, las configuraciones pueden llegar a los nodos remotos y configurarlos. 
+"Node" define el nombre de la máquina en que actuará esta configuración. Aunque esta configuración se modifica localmente, las configuraciones pueden llegar a los nodos remotos y configurarlos.
 
-Los nodos pueden ser los nombres de máquinas o direcciones IP. Puede tener varios nodos en un documento de configuración único. Mediante [datos de configuración](https://msdn.microsoft.com/powershell/dsc/configdata), también puede hacer que se aplique la misma configuración a varios nodos. En este caso, el nodo es "localhost", que significa el equipo local. 
+Los nodos pueden ser los nombres de máquinas o direcciones IP. Puede tener varios nodos en un documento de configuración único. Mediante [datos de configuración](https://msdn.microsoft.com/powershell/dsc/configdata), también puede hacer que se aplique la misma configuración a varios nodos. En este caso, el nodo es "localhost", que significa el equipo local.
 
-El elemento siguiente es un [**recurso**](https://msdn.microsoft.com/powershell/dsc/resources). Los recursos son bloques de creación de configuraciones. Cada recurso es un módulo que define la lógica de implementación de un único aspecto de una máquina. Puede ver todos los recursos en su máquina si ejecuta **Get-DscResource** en PowerShell. Los recursos deben estar presentes en la máquina local y haberse importado antes de que se puedan utilizar en una configuración con **Import-DscResource**, que se encuentra en la segunda línea de esta configuración. 
+El elemento siguiente es un [**recurso**](https://msdn.microsoft.com/powershell/dsc/resources). Los recursos son bloques de creación de configuraciones. Cada recurso es un módulo que define la lógica de implementación de un único aspecto de una máquina. Puede ver todos los recursos en su máquina si ejecuta **Get-DscResource** en PowerShell. Los recursos deben estar presentes en la máquina local y haberse importado antes de que se puedan utilizar en una configuración con **Import-DscResource**, que se encuentra en la segunda línea de esta configuración.
 
 **Establecer una configuración**
 
@@ -63,8 +63,7 @@ Para establecer la configuración:
 ```powershell
 Start-DscConfiguration -Path ./myFirstConfiguration
 ```
-Esto crea un trabajo de PowerShell que llega a los nodos de la configuración y los configura. Para ver la salida del trabajo, use -Wait. 
+Esto crea un trabajo de PowerShell que llega a los nodos de la configuración y los configura. Para ver la salida del trabajo, use -Wait.
 ```powershell
 Start-DscConfiguration -Path ./myFirstConfiguration -Wait
 ```
-

@@ -1,16 +1,24 @@
 ---
-title: Error de cmdlets de Network Switch Manager
+ms.date: 06/12/2017
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
 contributor: vaibch
-ms.openlocfilehash: 8495d79aec54d93f94e745e2efccb5116ad5d944
-ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
+title: Error de cmdlets de Network Switch Manager
+ms.openlocfilehash: 626809513e7a8f1aa2c47a48c74e69ca4077f598
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
+ms.lasthandoff: 04/09/2018
 ---
-Los cmdlets de Network Switch Manager se pueden usar para administrar modificadores de red a través de WSMAN. Algunos cmdlets de este módulo pueden aceptar valores de canalizaciones. En la versión preliminar de WMF 5.1, los cmdlets que pueden aceptar el valor de la canalización no pueden ejecutarse si los valores no pasan a través de canalizaciones.
+Los cmdlets de Network Switch Manager se pueden usar para administrar modificadores de red a través de WSMAN.
+Algunos cmdlets de este módulo pueden aceptar valores de canalizaciones.
+En la versión preliminar de WMF 5.1, los cmdlets que pueden aceptar el valor de la canalización no pueden ejecutarse si los valores no pasan a través de canalizaciones.
 
 Si no se usa el parámetro "InputObject", el cmdlet debería continuar ejecutándose sin errores.
 
-Esta es la lista de cmdlets afectados; es decir, estos cmdlets pueden aceptar el valor del parámetro "InputObject" de la canalización. Si no se pasa este valor de la canalización, se producirá un error en la ejecución del cmdlet.
+Esta es la lista de cmdlets afectados; es decir, estos cmdlets pueden aceptar el valor del parámetro "InputObject" de la canalización.
+Si no se pasa este valor de la canalización, se producirá un error en la ejecución del cmdlet.
 
 - Disable-NetworkSwitchEthernetPort
 - Enable-NetworkSwitchEthernetPort

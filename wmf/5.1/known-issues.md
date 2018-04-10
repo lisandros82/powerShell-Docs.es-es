@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
 title: Problemas conocidos de WMF 5.1
-ms.openlocfilehash: bb8967a55ec32f0ce21812e065725985010bfc8e
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: 467a191f40d85bfca7c794915d6274a9a1b201e7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="known-issues-in-wmf-51"></a>Problemas conocidos de WMF 5.1 #
 
@@ -21,14 +21,14 @@ Vuelva a abrir el acceso directo como no administrador y este ya funcionará inc
 ## <a name="pester"></a>Pester
 En esta versión, hay dos problemas que deben tenerse en cuenta cuando se utilice Pester en Nano Server:
 
-* La realización de pruebas en el propio Pester puede provocar errores debido a las diferencias entre FULL CLR y CORE CLR. En concreto, el método Validate no está disponible en el tipo XmlDocument. Se sabe que seis pruebas que intentan validar el esquema de los registros de salida de NUnit generan un error. 
+* La realización de pruebas en el propio Pester puede provocar errores debido a las diferencias entre FULL CLR y CORE CLR. En concreto, el método Validate no está disponible en el tipo XmlDocument. Se sabe que seis pruebas que intentan validar el esquema de los registros de salida de NUnit generan un error.
 * En la actualidad, una prueba de cobertura de código genera un error porque el recurso de DSC *WindowsFeature* no existe en Nano Server. Sin embargo, estos errores suelen ser poco preocupantes y pueden ignorarse.
 
-## <a name="operation-validation"></a>Validación de operaciones 
+## <a name="operation-validation"></a>Validación de operaciones
 
 * Se produce un error de Update-Help para el módulo Microsoft.PowerShell.Operation.Validation porque el URI de ayuda no funciona.
 
-## <a name="dsc-after-uninstall-wmf"></a>DSC después de desinstalar WMF 
+## <a name="dsc-after-uninstall-wmf"></a>DSC después de desinstalar WMF
 * La desinstalación de WMF no elimina los documentos MOF de DSC desde la carpeta de configuración. DSC no funcionará correctamente si los documentos MOF contienen propiedades más recientes que no están disponibles en los sistemas más antiguos. En este caso, ejecute el siguiente script desde la consola de PowerShell con privilegios elevados para limpiar los estados de DSC.
  ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
@@ -38,7 +38,7 @@ En esta versión, hay dos problemas que deben tenerse en cuenta cuando se utilic
            )
 
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
- ```  
+ ```
 
 ## <a name="jea-virtual-accounts"></a>Cuentas virtuales de JEA
 Los puntos de conexión de JEA y las configuraciones de sesión configuradas para usar las cuentas virtuales de WMF 5.0 no se configurará para utilizar una cuenta virtual después de actualizar a WMF 5.1.
@@ -61,4 +61,3 @@ Register-PSSessionConfiguration -Name $jea.Name -Path $pssc.FullName -Force
 # Ensure the access policies remain the same
 Set-PSSessionConfiguration -Name $newjea.Name -SecurityDescriptorSddl $jea.SecurityDescriptorSddl
 ```
-

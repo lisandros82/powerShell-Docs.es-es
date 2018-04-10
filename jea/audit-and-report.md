@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
 keywords: jea,powershell,security
-title: "Auditoría y creación de informes en JEA"
-ms.openlocfilehash: 57148bc3753bdd751bfa21fc3198aca3f8654849
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Auditoría y creación de informes en JEA
+ms.openlocfilehash: 7fc670c77b5fbf9bce8fb55dd99a2f9a984100d2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Auditoría y creación de informes en JEA
 
@@ -144,11 +144,11 @@ Para cada comando que ejecuta un usuario, se escribirá una línea "CommandInvoc
 ParameterBindings sigue a cada CommandInvocation para informarle sobre cada parámetro y valor que se ha proporcionado con el comando.
 En el ejemplo anterior, puede ver que el parámetro "Name" ha proporcionado el valor "Dns" para el cmdlet "Get-Service".
 
-El resultado de cada comando también desencadenará un CommandInvocation, normalmente para Out-Default. El InputObject de Out-Default es el objeto de PowerShell que devuelve el comando.
+El resultado de cada comando también desencadenará un CommandInvocation, normalmente para Out-Default.
+El InputObject de Out-Default es el objeto de PowerShell que devuelve el comando.
 Los detalles de ese objeto se imprimen unas líneas más adelante, imitando detenidamente lo que habría visto el usuario.
 
 ## <a name="see-also"></a>Vea también
 
 - [Auditar acciones del usuario en una sesión JEA](audit-and-report.md)
 - [Entrada de blog sobre seguridad de *PowerShell ♥ the Blue Team*](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
-

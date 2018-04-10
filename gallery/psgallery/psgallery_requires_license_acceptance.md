@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: Farehar
 ms.topic: conceptual
 keywords: gallery,powershell,psgallery
 title: psgallery_require_license_acceptance
-ms.openlocfilehash: c07f6cc16e40d5cf1bf8d687c2d124b248009760
-ms.sourcegitcommit: cd66d4f49ea762a31887af2c72d087b219ddbe10
+ms.openlocfilehash: 16036377eb3df715fc5e87e93866f3946d68105e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 04/09/2018
 ---
 <a name="require-license-acceptance"></a>Requerir la aceptación de la licencia
 ===========================
@@ -17,7 +17,7 @@ El texto Requerir la aceptación de la licencia aparece en la página de detalle
 
 ![Requerir la aceptación de la licencia](Images/RequireLicenseAcceptance.png)
 
-Se le pedirá a los usuarios que acepten la licencia cuando instalen, guarden o actualicen el módulo mediante PowerShellGet o cuando realicen una implementación en Azure Automation. 
+Se le pedirá a los usuarios que acepten la licencia cuando instalen, guarden o actualicen el módulo mediante PowerShellGet o cuando realicen una implementación en Azure Automation.
 
 ## <a name="more-details"></a>Más detalles
 ### <a name="require-license-acceptance-in-powershellgetpsgetmodulerequirelicenseacceptancemd"></a>[Requerir la aceptación de la licencia en PowerShellGet](../psget/module/RequireLicenseAcceptance.md)

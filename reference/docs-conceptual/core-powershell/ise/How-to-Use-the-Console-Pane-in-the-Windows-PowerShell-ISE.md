@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
-keywords: powershell,cmdlet
-title: "Cómo usar el panel de consola en Windows PowerShell ISE"
+ms.date: 06/05/2017
+keywords: powershell, cmdlet
+title: Cómo usar el panel de consola en Windows PowerShell ISE
 ms.assetid: 44d67705-87c7-4a69-a53e-6471fdebb757
-ms.openlocfilehash: 59e97bbc12269d855c4f3715171636647d4cc634
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 5bbbdd3b1f0324ff1a4f2298459f58640c4dc9a6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a>Cómo usar el panel de consola en Windows PowerShell ISE
+
 El panel de consola del Entorno de scripting integrado (ISE) de Windows PowerShell funciona exactamente igual que la ventana de consola independiente de Windows PowerShell ISE.
 
 Para ejecutar un comando en el panel de consola, escriba un comando y, a continuación, presione ENTRAR. Para escribir varios comandos que quiera ejecutar en secuencia, escriba MAYÚS+ENTRAR entre comandos. Consulte [Cómo usar la finalización con tabulación en el panel de scripts y en el panel de consola](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) para obtener ayuda sobre la escritura de los comandos.
@@ -25,5 +26,5 @@ A partir de Windows PowerShell v3, el panel de salida se combinó con el panel d
 - Borrar todo el texto del panel de consola. Para borrar el panel de consola, puede hacer clic en el icono **Borrar panel de consola** de la barra de herramientas, o ejecutar el comando **Clear-Host** o su alias, **cls**.
 
 ## <a name="see-also"></a>Véase también
-- [Usar Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 
+- [Presentación de Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)

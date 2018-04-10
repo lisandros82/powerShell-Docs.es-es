@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell, cmdlet
-title: "Realizar el segundo salto en la comunicación remota de PowerShell"
-ms.openlocfilehash: 726b4d1b7a41e9e344347543ecde26da6547bcf3
-ms.sourcegitcommit: fff6c0522508eeb408cb055ba4c9337a2759b392
+title: Realizar el segundo salto en la comunicación remota de PowerShell
+ms.openlocfilehash: 893b4353c4244dc96c4b234bb4062b583a5cd36d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Realizar el segundo salto en la comunicación remota de PowerShell
 
@@ -55,7 +55,7 @@ También puede usar la delegación Kerberos sin restricciones para realizar el s
 
 ## <a name="kerberos-constrained-delegation"></a>Delegación limitada de Kerberos
 
-Puede usar la delegación limitada heredada (no basada en recursos) para realizar el segundo salto. 
+Puede usar la delegación limitada heredada (no basada en recursos) para realizar el segundo salto.
 
 >**Nota:** No se pueden delegar las cuentas de Active Directory que tienen la propiedad **La cuenta es importante y no se puede delegar** establecida. Para obtener más información, consulte [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) (Enfoque de seguridad: analizar "La cuenta es importante y no se puede delegar" para cuentas con privilegios) y [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) (Configuración y herramientas de la autenticación Kerberos).
 
@@ -89,7 +89,7 @@ En el escenario del segundo salto descrito anteriormente, puede configurar el _S
 
 - Necesita Windows Server 2012 o versiones posteriores.
 - No se admite el segundo salto para WinRM.
-- Requiere derechos para actualizar objetos y nombres de entidad de seguridad de servicio (SPN). 
+- Requiere derechos para actualizar objetos y nombres de entidad de seguridad de servicio (SPN).
 
 ### <a name="example"></a>Ejemplo
 
@@ -108,8 +108,8 @@ Varios cmdlets disponibles tienen ahora un parámetro **PrincipalsAllowedToDeleg
 ```powershell
 PS C:\> Get-Command -ParameterName PrincipalsAllowedToDelegateToAccount
 
-CommandType Name                 ModuleName     
------------ ----                 ----------     
+CommandType Name                 ModuleName
+----------- ----                 ----------
 Cmdlet      New-ADComputer       ActiveDirectory
 Cmdlet      New-ADServiceAccount ActiveDirectory
 Cmdlet      New-ADUser           ActiveDirectory
@@ -123,10 +123,10 @@ El parámetro **PrincipalsAllowedToDelegateToAccount** establece el atributo de 
 Ahora vamos a configurar las variables que usaremos para representar los servidores:
 
 ```powershell
-# Set up variables for reuse            
-$ServerA = $env:COMPUTERNAME            
-$ServerB = Get-ADComputer -Identity ServerB            
-$ServerC = Get-ADComputer -Identity ServerC            
+# Set up variables for reuse
+$ServerA = $env:COMPUTERNAME
+$ServerB = Get-ADComputer -Identity ServerB
+$ServerC = Get-ADComputer -Identity ServerC
 ```
 
 WinRM (y, por tanto, la comunicación remota de PowerShell) se ejecuta como la cuenta de equipo de forma predeterminada. Puede ver esto si atiende a la propiedad **StartName** del servicio `winrm`:
@@ -140,22 +140,22 @@ StartName : NT AUTHORITY\NetworkService
 Para que _ServidorC_ permita la delegación desde una sesión de comunicación remota de PowerShell en _ServidorB_, le concederemos acceso al establecer el parámetro **PrincipalsAllowedToDelegateToAccount** en _ServidorC_ al objeto de equipo de _ServidorB_:
 
 ```powershell
-# Grant resource-based Kerberos constrained delegation            
-Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB            
-            
-# Check the value of the attribute directly            
-$x = Get-ADComputer -Identity $ServerC -Properties msDS-AllowedToActOnBehalfOfOtherIdentity            
-$x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access            
-            
-# Check the value of the attribute indirectly            
+# Grant resource-based Kerberos constrained delegation
+Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
+
+# Check the value of the attribute directly
+$x = Get-ADComputer -Identity $ServerC -Properties msDS-AllowedToActOnBehalfOfOtherIdentity
+$x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
+
+# Check the value of the attribute indirectly
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
 El [Centro de distribución de claves (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) de Kerberos copia en caché los intentos de acceso denegados (caché negativa) durante 15 minutos. Si _ServidorB_ ha intentado previamente obtener acceso a _ServidorC_, deberá borrar la caché de _ServidorB_ al invocar el comando siguiente:
 
 ```powershell
-Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {            
-    klist purge -li 0x3e7            
+Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
+    klist purge -li 0x3e7
 }
 ```
 
@@ -164,14 +164,14 @@ También puede reiniciar el equipo o esperar al menos 15 minutos para borrar la 
 Después de borrar la caché, puede ejecutar correctamente código desde el _ServidorA_ a través del _ServidorB_ hasta el _ServidorC_:
 
 ```powershell
-# Capture a credential            
-$cred = Get-Credential Contoso\Alice            
-            
-# Test kerberos double hop            
-Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {            
-    Test-Path \\$($using:ServerC.Name)\C$            
-    Get-Process lsass -ComputerName $($using:ServerC.Name)            
-    Get-EventLog -LogName System -Newest 3 -ComputerName $($using:ServerC.Name)            
+# Capture a credential
+$cred = Get-Credential Contoso\Alice
+
+# Test kerberos double hop
+Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
+    Test-Path \\$($using:ServerC.Name)\C$
+    Get-Process lsass -ComputerName $($using:ServerC.Name)
+    Get-EventLog -LogName System -Newest 3 -ComputerName $($using:ServerC.Name)
 }
 ```
 
@@ -180,13 +180,13 @@ En este ejemplo, la variable `$using` se usa para hacer visible la variable `$Se
 Para permitir que varios servidores deleguen credenciales en el _ServidorC_, establezca el valor del parámetro **PrincipalsAllowedToDelegateToAccount** en el _ServidorC_ a una matriz:
 
 ```powershell
-# Set up variables for each server            
-$ServerB1 = Get-ADComputer -Identity ServerB1            
-$ServerB2 = Get-ADComputer -Identity ServerB2            
-$ServerB3 = Get-ADComputer -Identity ServerB3            
-$ServerC  = Get-ADComputer -Identity ServerC            
-            
-# Grant resource-based Kerberos constrained delegation            
+# Set up variables for each server
+$ServerB1 = Get-ADComputer -Identity ServerB1
+$ServerB2 = Get-ADComputer -Identity ServerB2
+$ServerB3 = Get-ADComputer -Identity ServerB3
+$ServerC  = Get-ADComputer -Identity ServerC
+
+# Grant resource-based Kerberos constrained delegation
 Set-ADComputer -Identity $ServerC `
     -PrincipalsAllowedToDelegateToAccount @($ServerB1,$ServerB2,$ServerB3)
 ```
@@ -194,9 +194,9 @@ Set-ADComputer -Identity $ServerC `
 Si quiere realizar el segundo salto entre dominios, agregue el nombre de dominio completo (FQDN) del controlador del dominio al que pertenece el _ServidorB_:
 
 ```powershell
-# For ServerC in Contoso domain and ServerB in other domain            
-$ServerB = Get-ADComputer -Identity ServerB -Server dc1.alpineskihouse.com            
-$ServerC = Get-ADComputer -Identity ServerC            
+# For ServerC in Contoso domain and ServerB in other domain
+$ServerB = Get-ADComputer -Identity ServerB -Server dc1.alpineskihouse.com
+$ServerC = Get-ADComputer -Identity ServerC
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
 ```
 
@@ -266,24 +266,15 @@ Se pueden pasar credenciales dentro del parámetro **ScriptBlock** de una llamad
 En el ejemplo siguiente, se muestra cómo pasar las credenciales en un bloque de script **Invoke-Command**:
 
 ```powershell
-# This works without delegation, passing fresh creds            
-# Note $Using:Cred in nested request            
-$cred = Get-Credential Contoso\Administrator            
-Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {            
-    hostname            
-    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}            
+# This works without delegation, passing fresh creds
+# Note $Using:Cred in nested request
+$cred = Get-Credential Contoso\Administrator
+Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
+    hostname
+    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}
 }
 ```
 
 ## <a name="see-also"></a>Vea también
 
 [Consideraciones de seguridad de comunicación remota de PowerShell](WinRMSecurity.md)
-
-
-
-
-
-
-
-
- 

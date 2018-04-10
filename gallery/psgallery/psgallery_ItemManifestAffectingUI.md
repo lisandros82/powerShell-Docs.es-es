@@ -1,6 +1,8 @@
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valores de los archivos de manifiesto de los elementos que afectan a la interfaz de usuario de Galería de PowerShell
 
-Este tema proporciona a los editores información resumida sobre cómo modificar el manifiesto para sus publicaciones de Galería de PowerShell de modo que las características de los cmdlets de PowerShellGet y la interfaz de usuario de Galería de PowerShell se vean afectadas. Este contenido está organizado por donde aparecerá el cambio, primero por la sección central y después por el área de navegación a la izquierda. Hay una sección detallada que cubre las etiquetas, que identifica las etiquetas importantes, así como algunas de las etiquetas más utilizadas. Hay dos temas que proporcionan ejemplos de manifiestos: 
+Este tema proporciona a los editores información resumida sobre cómo modificar el manifiesto para sus publicaciones de Galería de PowerShell de modo que las características de los cmdlets de PowerShellGet y la interfaz de usuario de Galería de PowerShell se vean afectadas.
+Este contenido está organizado por donde aparecerá el cambio, primero por la sección central y después por el área de navegación a la izquierda. Hay una sección detallada que cubre las etiquetas, que identifica las etiquetas importantes, así como algunas de las etiquetas más utilizadas.
+Hay dos temas que proporcionan ejemplos de manifiestos:
 
 * Para los módulos, consulte el artículo para [actualizar un archivo de manifiesto de módulo](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest).
 * Para los scripts, consulte el artículo para [crear un archivo de script con metadatos](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo).
@@ -10,7 +12,7 @@ Este tema proporciona a los editores información resumida sobre cómo modificar
 En la tabla siguiente se muestran los elementos de la interfaz de usuario de Galería de PowerShell que controla el editor.
 Cada elemento indica si se puede controlar por el manifiesto del módulo o del script.
 
-| Elemento de UI | Descripción | Módulo | Script | 
+| Elemento de UI | Descripción | Módulo | Script |
 | --- | --- | --- | --- |
 | **Título** | Este es el nombre del elemento que se publica en la galería  | No | No |
 | **Versión** | La versión que se muestra es la cadena de versión de los metadatos y una versión preliminar si está especificada. La parte principal de la versión en un manifiesto de módulo es ModuleVersion. Para un script, se identifica como .VERSION. Si se especifica una cadena de versión preliminar, se anexará a ModuleVersion para los módulos, o se especificará como parte de .VERSION para los scripts. Hay documentación para especificar las cadenas de versión preliminar en los [módulos](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule) y en los [scripts](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript). | Sí | Sí |
@@ -49,18 +51,26 @@ La página Editar elemento de Galería de PowerShell permite a los editores camb
 * Notas de la versión
 * Se requiere licencia
 
-No se suele recomendar este enfoque, excepto cuando es necesario corregir lo que se muestra para una versión anterior de un módulo. Los usuarios que adquieren el módulo verán que los metadatos no coinciden con lo que se muestra en Galería de PowerShell, lo que plantea preocupaciones sobre el elemento. Esto provocará con frecuencia consultas dirigidas a los propietarios de los elementos para confirmar el cambio. Se recomienda encarecidamente que cada vez que se utilice este enfoque, se publique una nueva versión del elemento con los mismos cambios. 
+No se suele recomendar este enfoque, excepto cuando es necesario corregir lo que se muestra para una versión anterior de un módulo.
+Los usuarios que adquieren el módulo verán que los metadatos no coinciden con lo que se muestra en Galería de PowerShell, lo que plantea preocupaciones sobre el elemento.
+Esto provocará con frecuencia consultas dirigidas a los propietarios de los elementos para confirmar el cambio.
+Se recomienda encarecidamente que cada vez que se utilice este enfoque, se publique una nueva versión del elemento con los mismos cambios.
 
 ## <a name="tag-details"></a>Detalles de las etiquetas
 
-Las etiquetas son cadenas simples que se utilizan los consumidores para buscar elementos. Las etiquetas son más útiles cuando se utilizan de forma coherente en muchos elementos relacionados con el mismo tema. El uso de varias versiones de la misma palabra (por ejemplo, base de datos y bases de datos, o prueba y pruebas) suele ofrecer muchas ventajas. Las etiquetas son cadenas de palabras únicas que no distinguen entre mayúsculas y minúsculas y que no pueden incluir espacios en blanco. Si hay una frase que cree que los usuarios van a buscar, agréguela a la descripción del elemento y se encontrará en los resultados de la búsqueda. Utilice mayúsculas y minúsculas como en Pascal, guiones, subrayados o puntos si desea mejorar la legibilidad. Tenga cuidado al crear etiquetas largas, complejas y poco habituales, ya que frecuentemente se suelen escribir mal. 
+Las etiquetas son cadenas simples que se utilizan los consumidores para buscar elementos.
+Las etiquetas son más útiles cuando se utilizan de forma coherente en muchos elementos relacionados con el mismo tema. El uso de varias versiones de la misma palabra (por ejemplo, base de datos y bases de datos, o prueba y pruebas) suele ofrecer muchas ventajas.
+Las etiquetas son cadenas de palabras únicas que no distinguen entre mayúsculas y minúsculas y que no pueden incluir espacios en blanco. Si hay una frase que cree que los usuarios van a buscar, agréguela a la descripción del elemento y se encontrará en los resultados de la búsqueda. Utilice mayúsculas y minúsculas como en Pascal, guiones, subrayados o puntos si desea mejorar la legibilidad. Tenga cuidado al crear etiquetas largas, complejas y poco habituales, ya que frecuentemente se suelen escribir mal.
 
-Hay determinadas etiquetas que hay que tener en cuenta, ya que Galería de PowerShell y los cmdlets de PowerShellGet las tratan de forma única. PSEdition_Desktop y PSEdition_Core son ejemplos específicos y se han descrito más arriba. 
+Hay determinadas etiquetas que hay que tener en cuenta, ya que Galería de PowerShell y los cmdlets de PowerShellGet las tratan de forma única. PSEdition_Desktop y PSEdition_Core son ejemplos específicos y se han descrito más arriba.
 
-Tal y como se mencionó antes, las etiquetas proporcionan el máximo valor cuando son específicas y se usan de forma coherente por muchos elementos. Como el editor siempre busca las mejores etiquetas para utilizar, el enfoque más sencillo es buscar en Galería de PowerShell las etiquetas que está considerando. Idealmente, habrá muchos elementos devueltos, y las descripciones de los mismos se alinearán con el uso que se haga de esa palabra clave. 
+Tal y como se mencionó antes, las etiquetas proporcionan el máximo valor cuando son específicas y se usan de forma coherente por muchos elementos.
+Como el editor siempre busca las mejores etiquetas para utilizar, el enfoque más sencillo es buscar en Galería de PowerShell las etiquetas que está considerando.
+Idealmente, habrá muchos elementos devueltos, y las descripciones de los mismos se alinearán con el uso que se haga de esa palabra clave.
 
-Como referencia, estas son algunas etiquetas más utilizadas desde el 14/12/2017. En algunos casos, hay opciones similares pero quizá menos adecuadas que se muestran al lado de la etiqueta.
-Es un procedimiento recomendado usar la etiqueta preferida, ya que producirá menos ruido y mejorará los resultados de búsqueda para los consumidores. 
+Como referencia, estas son algunas etiquetas más utilizadas desde el 14/12/2017.
+En algunos casos, hay opciones similares pero quizá menos adecuadas que se muestran al lado de la etiqueta.
+Es un procedimiento recomendado usar la etiqueta preferida, ya que producirá menos ruido y mejorará los resultados de búsqueda para los consumidores.
 
 
 | **Etiqueta preferida** | **Alternativas y notas** |
@@ -125,5 +135,3 @@ Es un procedimiento recomendado usar la etiqueta preferida, ya que producirá me
 | **MSI** |  |
 | **Mac** |  |
 | **PoshBot** |  |
-
-

@@ -1,18 +1,20 @@
 ---
-ms.date: 2017-06-05
-keywords: powershell,cmdlet
+ms.date: 06/05/2017
+keywords: powershell, cmdlet
 title: Trabajar con archivos, carpetas y claves del Registro
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: 22a2390686659033bfd8b02a151b3397cfd46a22
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: a09b127d4ba37d33cb4c0f0ce0819e645fd4b137
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Trabajar con archivos, carpetas y claves del Registro
+
 En Windows PowerShell se usa el término **Item** para hacer referencia a los elementos contenidos en una unidad de Windows PowerShell. Cuando se trabaja con el proveedor FileSystem de Windows PowerShell, un **Item** puede ser un archivo, una carpeta o la unidad de Windows PowerShell. Enumerar estos elementos y trabajar con ellos son tareas críticas básicas en la mayoría de las configuraciones administrativas, de modo que conviene abordar estas tareas en profundidad.
 
 ### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Enumerar archivos, carpetas y claves del Registro (Get-ChildItem)
+
 Hacerse con una colección de elementos de una ubicación determinada es una tarea extremadamente común, por lo que el cmdlet **Get-ChildItem** está diseñado específicamente para devolver todos los elementos dentro de un contenedor, como, por ejemplo, una carpeta.
 
 Si desea que se devuelvan todos los archivos y carpetas contenidos directamente dentro de la carpeta C:\\Windows, escriba:
@@ -20,6 +22,7 @@ Si desea que se devuelvan todos los archivos y carpetas contenidos directamente 
 ```
 PS> Get-ChildItem -Path C:\Windows
     Directory: Microsoft.Windows PowerShell.Core\FileSystem::C:\Windows
+
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a---        2006-05-16   8:10 AM          0 0.log
@@ -32,13 +35,14 @@ La lista es similar a lo que se obtendría si se especificara el comando **dir**
 
 Si se usan los parámetros del cmdlet **Get-ChildItem**, se pueden confeccionar listas de enorme complejidad. Pasemos a ver algunos escenarios sobre esto. La sintaxis del cmdlet **Get-ChildItem** se puede ver escribiendo lo siguiente:
 
-```
-PS> Get-Command -Name Get-ChildItem -Syntax
+```powershell
+Get-Command -Name Get-ChildItem -Syntax
 ```
 
 Estos parámetros se pueden mezclar y relacionar para obtener resultados muy personalizados.
 
 #### <a name="listing-all-contained-items--recurse"></a>Enumerar todos los elementos contenidos (-Recurse)
+
 Para ver tanto los elementos que hay dentro de una carpeta de Windows como cualquier elemento dentro de sus subcarpetas, use el parámetro **Recurse** de **Get-ChildItem**. La lista muestra todos los elementos dentro de la carpeta de Windows y los elementos de sus subcarpetas. Por ejemplo:
 
 ```
@@ -53,6 +57,7 @@ Mode                LastWriteTime     Length Name
 ```
 
 #### <a name="filtering-items-by-name--name"></a>Filtrar elementos por su nombre (-Name)
+
 Para mostrar solo los nombres de los elementos, use el parámetro **Name** de **Get-Childitem**:
 
 ```
@@ -64,15 +69,17 @@ assembly
 ```
 
 #### <a name="forcibly-listing-hidden-items--force"></a>Enumerar forzosamente los elementos ocultos (-Force)
+
 Los elementos que normalmente son invisibles en el Explorador de archivos o en Cmd.exe no aparecen en la salida de un comando **Get-ChildItem**. Para ver los elementos ocultos, use el parámetro **Force** de **Get-ChildItem**. Por ejemplo:
 
-```
+```powershell
 Get-ChildItem -Path C:\Windows -Force
 ```
 
 Este parámetro se llama Force porque permite anular a la fuerza el comportamiento normal del comando **Get-ChildItem**. Force es un parámetro muy usado que fuerza una acción que un cmdlet normalmente no realizaría, si bien no llevará a cabo ninguna acción que ponga en peligro la seguridad del sistema.
 
 #### <a name="matching-item-names-with-wildcards"></a>Buscar nombres de elemento coincidentes con caracteres comodín
+
 **El comando Get-ChildItem** acepta caracteres comodín en la ruta de acceso de los elementos que se van a enumerar.
 
 Dado que las coincidencias con caracteres comodín se controla mediante el motor de Windows PowerShell, todos los cmdlets que acepten caracteres comodín usan la misma notación y tienen el mismo comportamiento de búsqueda de coincidencias. La notación de caracteres comodín de Windows PowerShell conlleva las siguientes reglas:
@@ -89,6 +96,7 @@ Escriba el siguiente comando para encontrar todos los archivos en el directorio 
 
 ```
 PS> Get-ChildItem -Path C:\Windows\?????.log
+
     Directory: Microsoft.Windows PowerShell.Core\FileSystem::C:\Windows
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -103,24 +111,27 @@ Mode                LastWriteTime     Length Name
 
 Escriba lo siguiente para encontrar todos los archivos que comienzan por la letra **x** en el directorio de Windows:
 
-```
+```powershell
 Get-ChildItem -Path C:\Windows\x*
 ```
 
 Escriba lo siguiente para encontrar todos los archivos cuyos nombres comiencen por **x** o **z**:
 
-```
+```powershell
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
 #### <a name="excluding-items--exclude"></a>Excluir elementos (-Exclude)
+
 Puede excluir elementos concretos con el parámetro **Exclude** de Get-ChildItem. Esto le permite realizar filtrados complejos en una sola instrucción.
 
 Por ejemplo, imaginemos que estamos buscando el archivo DLL del Servicio de hora de Windows en la carpeta System32, y todo lo que recuerda del nombre del archivo DLL es que comienza por "W" y contiene "32".
 
 Con una expresión como **w\&#42;32\&#42;.dll**, se detectarán todos los archivos DLL que cumplan las condiciones, pero también se pueden devolver los archivos DLL de compatibilidad de Windows 95 y Windows de 16 bits que incluyan "95" o "16" en sus nombres. Puede omitir todos los archivos que contengan cualquiera de estos números en sus nombres, para lo que debe usar el parámetro **Exclude** con el patrón **\&#42;\[9516]\&#42;**:
 
-<pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
+```
+PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
+
 Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -132,13 +143,15 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      82944 ws2_32.dll
 -a---        2004-08-04   8:00 AM      42496 wsnmp32.dll
 -a---        2004-08-04   8:00 AM      22528 wsock32.dll
--a---        2004-08-04   8:00 AM      18432 wtsapi32.dll</pre>
+-a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
+```
 
 #### <a name="mixing-get-childitem-parameters"></a>Mezclar parámetros de Get-ChildItem
+
 Se pueden usar varios de los parámetros del cmdlet **Get-ChildItem** en el mismo comando. Antes de mezclar parámetros, asegúrese de que comprende el concepto de búsqueda de coincidencias con caracteres comodín. Por ejemplo, el siguiente comando no devuelve ningún resultado:
 
-```
-PS> Get-ChildItem -Path C:\Windows\*.dll -Recurse -Exclude [a-y]*.dll
+```powershell
+Get-ChildItem -Path C:\Windows\*.dll -Recurse -Exclude [a-y]*.dll
 ```
 
 No hay ningún resultado, a pesar de que hay dos archivos DLL que comienzan por la letra "z" en la carpeta de Windows.
@@ -162,4 +175,3 @@ Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a---        2004-08-04   8:00 AM     337920 zipfldr.dll
 ```
-

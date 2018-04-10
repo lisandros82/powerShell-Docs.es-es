@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Configuraciones DSC
-ms.openlocfilehash: 14db60126fd6c3d11d425a28c749a8e8b81122ca
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 8b44fd9a715c217ee198ea343cdffbfab1193625
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-configurations"></a>Configuraciones DSC
 
 >Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Las configuraciones DSC son scripts de PowerShell que definen un tipo especial de función. Para definir una configuración, se utiliza la palabra clave de PowerShell **Configuration**.
+Las configuraciones DSC son scripts de PowerShell que definen un tipo especial de función.
+Para definir una configuración, se utiliza la palabra clave de PowerShell **Configuration**.
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -70,21 +71,22 @@ En este ejemplo, especifique el nombre del nodo, pasando como parámetro **Compu
 
 ## <a name="compiling-the-configuration"></a>Compilación de la configuración
 
-Antes de que se pueda establecer una configuración, debe compilarla en un documento MOF. Para ello, llame a la configuración, como lo haría con una función de PowerShell.  
+Antes de que se pueda establecer una configuración, debe compilarla en un documento MOF.
+Para ello, llame a la configuración, como lo haría con una función de PowerShell.
 La última línea del ejemplo que contiene sólo el nombre de la configuración llama a la configuración.
 
->**Nota:** Para llamar a una configuración, la función debe estar en el ámbito global (como ocurre con cualquier otra función de PowerShell). 
->Puede conseguirlo si precede el script con el operador punto ".", o si ejecuta el script de configuración presionando F5 o haciendo clic en el botón **Ejecutar Script** del ISE. 
+>**Nota:** Para llamar a una configuración, la función debe estar en el ámbito global (como ocurre con cualquier otra función de PowerShell).
+>Puede conseguirlo si precede el script con el operador punto ".", o si ejecuta el script de configuración presionando F5 o haciendo clic en el botón **Ejecutar Script** del ISE.
 >Para anteponer el operador punto al script, ejecute el comando `. .\myConfig.ps1`, donde `myConfig.ps1` es el nombre del archivo de script que contiene la configuración.
 
 Cuando llama a la configuración:
 
-- Resuelve todas las variables 
+- Resuelve todas las variables
 - Crea una carpeta en el directorio actual con el mismo nombre que la configuración.
-- Crea un archivo denominado _NodeName_.mof en el directorio nuevo, donde _NodeName_ es el nombre del nodo de destino de la configuración. 
+- Crea un archivo denominado _NodeName_.mof en el directorio nuevo, donde _NodeName_ es el nombre del nodo de destino de la configuración.
     Si hay más de un nodo, se creará un archivo MOF por cada nodo.
 
->**Nota**: El archivo MOF contiene toda la información de configuración del nodo de destino. Por este motivo, es importante protegerlo adecuadamente. 
+>**Nota**: El archivo MOF contiene toda la información de configuración del nodo de destino. Por este motivo, es importante protegerlo adecuadamente.
 >Para obtener más información, consulte [Proteger el archivo MOF](secureMOF.md).
 
 Cuando se compila la primera configuración anterior, el resultado es la estructura de carpetas siguiente:
@@ -96,10 +98,10 @@ MyDscConfiguration
 
 ```
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
-Mode                LastWriteTime         Length Name                                                                                              
-----                -------------         ------ ----                                                                                         
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
 -a----       10/23/2015   4:32 PM           2842 localhost.mof
-```  
+```
 
 Si la configuración toma un parámetro, como en el segundo ejemplo, se debe proporcionar en tiempo de compilación. Este sería su aspecto:
 
@@ -110,14 +112,16 @@ MyDscConfiguration -ComputerName 'MyTestNode'
 
 ```
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
-Mode                LastWriteTime         Length Name                                                                                              
-----                -------------         ------ ----                                                                                         
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
 -a----       10/23/2015   4:32 PM           2842 MyTestNode.mof
-```      
+```
 
 ## <a name="using-dependson"></a>Uso de DependsOn
 
-Una palabra clave de DSC bastante útil es **DependsOn**. Normalmente (aunque no necesariamente siempre), DSC aplica a los recursos en el orden en que aparecen en la configuración. Sin embargo, **DependsOn** especifica qué recursos dependen de otros recursos y el LCM se asegura de que se apliquen en el orden correcto, independientemente del orden en que se definan las instancias de los recursos. Por ejemplo, una configuración puede especificar que una instancia del recurso **User** depende de la existencia de una instancia de **Group**:
+Una palabra clave de DSC bastante útil es **DependsOn**. Normalmente (aunque no necesariamente siempre), DSC aplica a los recursos en el orden en que aparecen en la configuración.
+Sin embargo, **DependsOn** especifica qué recursos dependen de otros recursos y el LCM se asegura de que se apliquen en el orden correcto, independientemente del orden en que se definan las instancias de los recursos.
+Por ejemplo, una configuración puede especificar que una instancia del recurso **User** depende de la existencia de una instancia de **Group**:
 
 ```powershell
 Configuration DependsOnExample {
@@ -141,14 +145,16 @@ Configuration DependsOnExample {
 ## <a name="using-new-resources-in-your-configuration"></a>Uso de nuevos recursos en la configuración
 
 Si ha ejecutado los ejemplos anteriores, habrá observado que se le mostró una advertencia respecto a que se estaba utilizando un recurso sin importarlo explícitamente.
-En la actualidad, DSC incluye 12 recursos como parte del módulo PSDesiredStateConfiguration. Otros recursos de los módulos externos deben colocarse en `$env:PSModulePath` para que el LCM los reconozca. Un cmdlet nuevo, [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), puede utilizarse para determinar qué recursos están instalados en el sistema y están disponibles para que el LCM los use. Cuando estos módulos se hayan colocado en `$env:PSModulePath` y [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) los reconozca correctamente, es necesario que se carguen en la configuración. 
-**Import-DscResource** es una palabra clave dinámica que solo puede reconocerse dentro de un bloque **Configuration** (es decir, no es un cmdlet). 
+En la actualidad, DSC incluye 12 recursos como parte del módulo PSDesiredStateConfiguration.
+Otros recursos de los módulos externos deben colocarse en `$env:PSModulePath` para que el LCM los reconozca.
+Un cmdlet nuevo, [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), puede utilizarse para determinar qué recursos están instalados en el sistema y están disponibles para que el LCM los use.
+Cuando estos módulos se hayan colocado en `$env:PSModulePath` y [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) los reconozca correctamente, es necesario que se carguen en la configuración.
+**Import-DscResource** es una palabra clave dinámica que solo puede reconocerse dentro de un bloque **Configuration** (es decir, no es un cmdlet).
 **Import-DscResource** admite dos parámetros:
-- **ModuleName** es la manera recomendada de usar **Import-DscResource**. Acepta el nombre del módulo que contiene los recursos que se importarán (así como una matriz de cadenas de nombres de módulo). 
-- **Name** es el nombre del recurso que se importará. Este no es el nombre descriptivo que [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) devuelve como "Name", sino el nombre de clase que se usa al definir el esquema del recurso (que [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) devuelve como **ResourceType**). 
+- **ModuleName** es la manera recomendada de usar **Import-DscResource**. Acepta el nombre del módulo que contiene los recursos que se importarán (así como una matriz de cadenas de nombres de módulo).
+- **Name** es el nombre del recurso que se importará. Este no es el nombre descriptivo que [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) devuelve como "Name", sino el nombre de clase que se usa al definir el esquema del recurso (que [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) devuelve como **ResourceType**).
 
 ## <a name="see-also"></a>Véase también
 * [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
 * [Recursos de DSC](resources.md)
 * [Configuración del administrador de configuración local](metaConfig.md)
-

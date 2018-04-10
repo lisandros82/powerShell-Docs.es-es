@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
-keywords: powershell,cmdlet
+ms.date: 06/05/2017
+keywords: powershell, cmdlet
 title: Novedades de Windows PowerShell 5.0
-ms.openlocfilehash: 3a412b35c593c99fb8ea8307b12ccc05871863f4
-ms.sourcegitcommit: e2360ac94fe4deb0ed0f5c8c8d9b293551ec8030
+ms.openlocfilehash: f1134a37e7027b00c948ce1db186a21dc5a311c6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Novedades de Windows PowerShell 5.0
 Windows PowerShell 5.0 incluye nuevas características importantes que amplían y mejoran su uso, y permiten controlar y administrar entornos basados en Windows de forma más sencilla y completa.
@@ -14,7 +14,7 @@ Windows PowerShell 5.0 incluye nuevas características importantes que amplían 
 Windows PowerShell 5.0 es compatible con versiones anteriores. Los cmdlets, proveedores, módulos, complementos, scripts, funciones y perfiles diseñados para Windows PowerShell 4.0, Windows PowerShell 3.0 y Windows PowerShell 2.0 suelen funcionar en Windows PowerShell 5.0 sin tener que cambiar nada.
 
 # <a name="installing-windows-powershell"></a>Instalación de Windows PowerShell
-Windows PowerShell 5.0 está instalado de manera predeterminada en Windows Server 2016 Technical Preview y Windows 10. 
+Windows PowerShell 5.0 está instalado de manera predeterminada en Windows Server 2016 Technical Preview y Windows 10.
 
 Para instalar Windows PowerShell 5.0 en Windows Server 2012 R2, Windows 8.1 Enterprise o Windows 8.1 Pro, descargue e instale [Windows Management Framework 5.0](http://aka.ms/wmf5download). Procure leer los detalles de la descarga y cumplir todos los requisitos del sistema antes de instalar Windows Management Framework 5.0.
 
@@ -216,7 +216,7 @@ Muchas actualizaciones y mejoras en la configuración de estado deseado (DSC) de
 
 - El valor de **$PSVersionTable.PSVersion** se ha actualizado a 5.0.
 
-### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Nuevas características de configuración de estado deseado de Windows PowerShell
+### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Nuevas características de configuración de estado deseado de Windows PowerShell
 
 - Las mejoras en el lenguaje de Windows PowerShell permiten definir los recursos de configuración de estado deseado (DSC) de Windows PowerShell mediante clases. Import-DscResource es ahora una verdadera palabra clave dinámica; Windows PowerShell analiza el módulo raíz del módulo especificado y busca las clases que contienen el atributo DscResource. Ahora puede usar clases para definir recursos de DSC, en los que no se requiere un archivo MOF ni una subcarpeta DSCResource en la carpeta del módulo. Un archivo de módulo de Windows PowerShell puede contener varias clases de recursos de DSC.
 
@@ -358,7 +358,7 @@ Windows PowerShell 4.0 incluye las siguientes características nuevas.
 
 - Windows PowerShell ISE admite la depuración tanto del flujo de trabajo de Windows PowerShell como de scripts remotos.
 
-- Se ha agregado compatibilidad con IntelliSense para los proveedores y configuraciones de la configuración de estado deseado de Windows PowerShell.
+- Se agregó compatibilidad con IntelliSense para los proveedores y configuraciones de la configuración de estado deseado de Windows PowerShell.
 
 ### <a name="new-features-in-windows-powershell-workflow"></a>Nuevas características del flujo de trabajo de Windows PowerShell
 
@@ -507,7 +507,7 @@ Para obtener más información, consulte [Windows PowerShell Web Access](http://
 En Windows PowerShell 3.0, Entorno de scripting integrado de Windows PowerShell (ISE) posee un gran número de características nuevas, como IntelliSense, la ventana Show-Command, un panel de consola unificado, fragmentos de código, coincidencia de llaves, expansión y contracción de secciones, guardado automático, lista de elementos recientes, copia enriquecida, copia en bloque y plena compatibilidad para escribir flujos de trabajo de scripts de Windows PowerShell. Para más información, consulte [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb).
 
 ### <a name="support-for-microsoft-net-framework-4"></a>Compatibilidad con Microsoft .NET Framework 4
-Windows PowerShell se basa en Common Language Runtime 4.0. Los autores de cmdlets, scripts y flujos de trabajo pueden usar las nuevas clases de Microsoft .NET Framework 4 en Windows PowerShell, con características como compatibilidad e implementación de aplicaciones, Managed Extensibility Framework, informática en paralelo, redes, Windows Communication Foundation y Windows Workflow Foundation.
+Windows PowerShell se basa en Common Language Runtime 4.0. Los autores de cmdlets, scripts y flujos de trabajo pueden usar las nuevas clases de Microsoft .NET Framework 4 en Windows PowerShell, con características como compatibilidad e implementación de aplicaciones, Managed Extensibility Framework, informática en paralelo, redes, Windows Communication Foundation y Windows Workflow Foundation.
 
 ### <a name="support-for-windows-preinstallation-environment"></a>Compatibilidad con el Entorno de preinstalación de Windows
 Windows PowerShell 3.0 es un componente opcional del Entorno de preinstalación de Windows (Windows PE) 4.0 para Windows 8. Windows PE es un sistema operativo mínimo que inicia un equipo que no tiene ningún sistema operativo y lo prepara para instalar Windows. Windows PE se puede usar para particionar y formatear discos duros, copiar imágenes de disco en un equipo e iniciar el programa de instalación de Windows desde un recurso compartido de red. Windows PowerShell 3.0, a su vez, se puede usar en Windows PE para administrar la implementación, los diagnósticos y los escenarios de recuperación.
@@ -570,7 +570,7 @@ También puede incluir un valor de **HelpUri** en el primer vínculo relacionado
 Para más información sobre cómo admitir la ayuda en línea, consulte [Supporting Online Help](http://go.microsoft.com/fwlink/?LinkId=242132) (Compatibilidad con la ayuda en línea) en MSDN.
 
 ### <a name="cim-integration"></a>Integración de CIM
-Windows PowerShell 3.0 incluye compatibilidad con el Modelo de información común (CIM), el que proporciona definiciones comunes de información de administración de sistemas, redes, aplicaciones y servicios, lo que permite intercambiar información de administración entre sistemas heterogéneos. La compatibilidad con CIM de Windows PowerShell 3.0 incluye la posibilidad de crear cmdlets de Windows PowerShell basados en clases de CIM nuevas o existentes, comandos basados en archivos XML de definición de cmdlet, compatibilidad con la API de .NET de CIM. CIM, cmdlets de administración de CIM y proveedores de WMI 2.0.
+Windows PowerShell 3.0 incluye compatibilidad con el Modelo de información común (CIM), el que proporciona definiciones comunes de información de administración de sistemas, redes, aplicaciones y servicios, lo que permite intercambiar información de administración entre sistemas heterogéneos. La compatibilidad con CIM de Windows PowerShell 3.0 incluye la posibilidad de crear cmdlets de Windows PowerShell basados en clases de CIM nuevas o existentes, comandos basados en archivos XML de definición de cmdlet, compatibilidad con la API de .NET de CIM. CIM, cmdlets de administración de CIM y proveedores de WMI 2.0.
 
 ### <a name="session-configuration-files"></a>Archivos de configuración de sesión
 A partir de Windows PowerShell 3.0, puede diseñar una configuración de sesión personalizada con un archivo. Este nuevo archivo de configuración de sesión permite definir el entorno de sesiones en el que se usa la configuración de sesión, incluido los módulos, scripts y archivos de formato que se cargan en las sesiones, los cmdlets y elementos de lenguaje que pueden usar los usuarios, los módulos y scripts que pueden ejecutar y las variables que pueden ver.
@@ -695,7 +695,7 @@ El programa host de la consola de Windows PowerShell presenta nuevas caracterís
 Para más información, consulte [about_Run_With_PowerShell](https://technet.microsoft.com/en-us/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb).
 
 ### <a name="new-cmdlet-and-hosting-apis"></a>Nuevas API de cmdlets y de hospedaje
-Las nuevas API de cmdlet y API de hospedaje incluyen API públicas de árbol de sintaxis avanzada (AST) y API para la paginación de canalizaciones, canalizaciones anidadas, finalización con tabulación de grupos de espacio de ejecución, Windows RT, el atributo de cmdlet Obsolete y las propiedades Verb y Noun del objeto FunctionInfo.
+Las nuevas API de cmdlet y API de hospedaje incluyen API públicas de árbol de sintaxis avanzada (AST) y API para la paginación de canalizaciones, canalizaciones anidadas, finalización con tabulación de grupos de espacio de ejecución, Windows RT, el atributo de cmdlet Obsolete y las propiedades Verb y Noun del objeto FunctionInfo.
 
 ### <a name="performance-improvements"></a>Mejoras en el rendimiento
 Las notables mejoras de rendimiento de Windows PowerShell se deben al nuevo analizador de lenguaje, que se basa en Dynamic Runtime Language (DLR) de .NET Framework 4, además de a la compilación de scripts en tiempo de ejecución, a mejoras en la confiabilidad del motor y a los cambios en el algoritmo de [Get-ChildItem](https://technet.microsoft.com/en-us/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) que mejoran su rendimiento, especialmente al buscar recursos de compartidos de red.
@@ -713,4 +713,3 @@ A fin de mejorar la capacidad de Windows PowerShell 3.0 de interpretar y tratar 
 ## <a name="see-also"></a>Véase también
 - [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
-

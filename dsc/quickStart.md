@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Inicio rápido de la configuración de estado deseado"
-ms.openlocfilehash: e21017f24db8c90229063895c1a7e4c6f0546d0c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: Inicio rápido de la configuración de estado deseado
+ms.openlocfilehash: 25bcd46bbf62a6ebb727519a65732377363e68c0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 > Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -37,7 +37,7 @@ En un editor de texto, escriba el texto siguiente:
 </body>
 ```
 
-Guárdelo como `index.htm` en la carpeta `test` que creó anteriormente. 
+Guárdelo como `index.htm` en la carpeta `test` que creó anteriormente.
 
 ## <a name="write-the-configuration"></a>Escritura de la configuración
 
@@ -122,7 +122,7 @@ Start-DscConfiguration .\WebsiteTest
 
 ## <a name="test-the-configuration"></a>Probar la configuración
 
-Puede llamar al cmdlet [DscConfigurationStatus Get](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) para ver si la configuración se realizó correctamente. 
+Puede llamar al cmdlet [DscConfigurationStatus Get](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) para ver si la configuración se realizó correctamente.
 
 También puede probar los resultados directamente, en este caso examinando `http://localhost/` en un explorador web.
 Debería ver la página HTML "Hello World" que creó como el primer paso en este ejemplo.
@@ -132,6 +132,3 @@ Debería ver la página HTML "Hello World" que creó como el primer paso en este
 - Conozca más sobre las configuraciones de DSC en [Configuraciones DSC](configurations.md).
 - Vea qué recursos de DSC están disponibles y cómo crear recursos personalizados de DSC en [recursos de DSC](resources.md).
 - Encuentre las configuraciones y los recursos de DSC en la [Galería de PowerShell](https://www.powershellgallery.com/).
-
-
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery,psget
-title: "Galería de PowerShell"
-ms.openlocfilehash: 7389ce8286c515b0bfc25f32634a482b060cb74c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Galería de PowerShell
+ms.openlocfilehash: 9519b8bcca9f43419a33db380c3b852e9bb354ac
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="the-powershell-gallery"></a>Galería de PowerShell
 
@@ -56,4 +56,3 @@ Por lo tanto, **PowerShellGet** requiere uno de los siguientes sistemas operativ
 ## <a name="got-a-question-have-feedback"></a>¿Tiene alguna pregunta? ¿Tiene comentarios?
 
 Encontrará más información sobre la Galería de PowerShell y PowerShellGet en la página [Introducción](psgallery/psgallery_gettingstarted.md). Proporcione comentarios e informe de problemas mediante [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Recurso nxFileLine de DSC para Linux
-ms.openlocfilehash: 281f08c1dbf42372762a2b1b9838427b910ea791
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 798bfa4150996622c33c77d6a5aa3be4af342f1b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>Recurso nxFileLine de DSC para Linux
 
@@ -28,25 +28,24 @@ nxFileLine <string> #ResourceName
 
 ## <a name="properties"></a>Propiedades
 
-|  Propiedad |  Descripción | 
+|  Propiedad |  Descripción |
 |---|---|
-| FilePath| La ruta de acceso completa al archivo para administrar las líneas en el nodo de destino.| 
-| ContainsLine| Una línea que debe asegurarse que exista en el archivo. Esta línea se anexará al archivo si no existe en él. **ContainsLine** es una propiedad obligatoria, pero se puede establecer en una cadena vacía (`ContainsLine = ‘’``) si no se necesita.| 
-| DoesNotContainPattern| Un patrón de expresiones regulares para las líneas que no deben existir en el archivo. Para todas las líneas que existan en el archivo y coincidan con esta expresión regular, se quitará la línea del archivo.| 
-| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
+| FilePath| La ruta de acceso completa al archivo para administrar las líneas en el nodo de destino.|
+| ContainsLine| Una línea que debe asegurarse que exista en el archivo. Esta línea se anexará al archivo si no existe en él. **ContainsLine** es una propiedad obligatoria, pero se puede establecer en una cadena vacía (`ContainsLine = ‘’``) si no se necesita.|
+| DoesNotContainPattern| Un patrón de expresiones regulares para las líneas que no deben existir en el archivo. Para todas las líneas que existan en el archivo y coincidan con esta expresión regular, se quitará la línea del archivo.|
+| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Ejemplo
 
 En este ejemplo se muestra cómo utilizar el recurso **nxFileLine** para configurar el archivo `/etc/sudoers`, asegurándose de que el usuario monuser esté configurado como not requiretty.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 nxFileLine DoNotRequireTTY
 {
    FilePath = “/etc/sudoers”
    ContainsLine = 'Defaults:monuser !requiretty'
    DoesNotContainPattern = "Defaults:monuser[ ]+requiretty"
-} 
+}
 ```
-

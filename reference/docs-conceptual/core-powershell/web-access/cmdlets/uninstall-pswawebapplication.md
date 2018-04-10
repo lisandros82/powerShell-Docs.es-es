@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell, cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: uninstall pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: cc54c94426d754ff2d3bf658e3e92083f02cd6c7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 139c8358a24e54dec630f8c78737728330ba4aa2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
 
@@ -36,7 +36,7 @@ El cmdlet **Uninstall-PswaWebApplication** desinstala la aplicación web de Wind
 Indica que se han eliminado los certificados de prueba creados por el cmdlet **Install\_PswaWebApplication** (con el parámetro **UseTestCertificate**).
 Solo se quita el certificado de prueba que tiene el mismo nombre que el que ha creado el cmdlet **Install-PswaWebApplication**.
 
-|||  
+|||
 |-|-|
 | Alias                              | ninguno                                 |
 | ¿Requerido?                            | falso                                |
@@ -49,7 +49,7 @@ Solo se quita el certificado de prueba que tiene el mismo nombre que el que ha c
 
 Especifica el nombre de la aplicación web que se va a desinstalar.
 
-|||  
+|||
 |-|-|
 | Alias                              | ninguno                                 |
 | ¿Requerido?                            | falso                                |
@@ -62,7 +62,7 @@ Especifica el nombre de la aplicación web que se va a desinstalar.
 
 Especifica el nombre del sitio web donde está instalada la aplicación web.
 
-|||  
+|||
 |-|-|
 | Alias                              | ninguno                                 |
 | ¿Requerido?                            | falso                                |
@@ -75,7 +75,7 @@ Especifica el nombre del sitio web donde está instalada la aplicación web.
 
 Solicita confirmación antes de ejecutar el cmdlet.
 
-|||  
+|||
 |-|-|
 | ¿Requerido?                            | falso                                |
 | ¿Posición?                            | llamada                                |
@@ -88,7 +88,7 @@ Solicita confirmación antes de ejecutar el cmdlet.
 Muestra lo que sucedería si se ejecutara el cmdlet.
 El cmdlet no se ejecuta.
 
-|||  
+|||
 |-|-|
 | ¿Requerido?                            | falso                                |
 | ¿Posición?                            | llamada                                |

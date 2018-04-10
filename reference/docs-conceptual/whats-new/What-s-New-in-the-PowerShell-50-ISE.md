@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Novedades de PowerShell ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 9fd25a4759602bebf2b5df2c17d0c816a15e5e2b
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 35b825cfa6ea720d0af3537c5d1b16c5ececb701
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Novedades de Windows PowerShell ISE
 En este tema se explican las características nuevas y actualizadas que se introdujeron en las versiones de Entorno de scripting integrado (ISE) de Windows PowerShell.
@@ -225,4 +225,3 @@ Para más información sobre cómo usar Windows PowerShell ISE en Windows PowerS
 - [Exploración del Entorno de scripting integrado de Windows PowerShell](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [ISE en el Wiki de TechNet](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 - [Centro de scripts](http://technet.microsoft.com/scriptcenter/default)
-

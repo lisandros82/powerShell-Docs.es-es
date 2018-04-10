@@ -1,17 +1,17 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell, cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: add pswaauthorizationrule
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 71954fc115daee4c05662d11baa2bc6a0a417896
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 07ddd4df6a776f3ef6763242f8682747b9b97061
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -62,7 +62,7 @@ Las reglas de autorización evalúan la credencial de inicio de sesión principa
 
 Especifica el nombre de un grupo de equipos de Active Directory Domain Services (AD DS) o de grupos locales a los que concede acceso esta regla.
 
-|||  
+|||
 |-|-|
 | Alias                              | ninguno                                 |
 | ¿Requerido?                            | true                                 |
@@ -75,7 +75,7 @@ Especifica el nombre de un grupo de equipos de Active Directory Domain Services 
 
 Especifica el nombre del equipo al que concede acceso esta regla.
 
-|||  
+|||
 |-|-|
 | Alias                              | ninguno                                 |
 | ¿Requerido?                            | true                                 |
@@ -88,7 +88,7 @@ Especifica el nombre del equipo al que concede acceso esta regla.
 
 Especifica el nombre de la configuración de sesión de Windows PowerShell (también conocida como "espacio de ejecución") a la que concede acceso esta regla.
 
-|||  
+|||
 |-|-|
 | Alias                              | ninguno                                 |
 | ¿Requerido?                            | true                                 |
@@ -101,7 +101,7 @@ Especifica el nombre de la configuración de sesión de Windows PowerShell (tamb
 
 Especifica un objeto **PSCredential** para una cuenta de usuario que quiera usar para cambiar las reglas de autorización de Windows PowerShell Web Access. Si no agrega este parámetro, el cmdlet usará la cuenta del usuario que ha iniciado la sesión. Para obtener un objeto **PSCredential**, necesario para agregar reglas de autorización de forma remota, ejecute el cmdlet [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential).
 
-|||  
+|||
 |-|-|
 | Alias                              | ninguno                                 |
 | ¿Requerido?                            | falso                                |
@@ -115,7 +115,7 @@ Especifica un objeto **PSCredential** para una cuenta de usuario que quiera usar
 Obliga al comando a ejecutarse sin solicitar la confirmación del usuario. \
 También pide confirmación al escribir un nombre de equipo corto o simple (por ejemplo, un nombre que no es un nombre de dominio o un nombre no completo). La confirmación se solicita por motivos de seguridad, de modo que puede usar el nombre simple para agregar un equipo únicamente si dicho equipo se encuentra en un grupo de trabajo.
 
-|||  
+|||
 |-|-|
 | Alias                              | ninguno                                 |
 | ¿Requerido?                            | falso                                |
@@ -128,7 +128,7 @@ También pide confirmación al escribir un nombre de equipo corto o simple (por 
 
 Especifica el nombre descriptivo de esta regla.
 
-|||  
+|||
 |-|-|
 | Alias                              | ninguno                                 |
 | ¿Requerido?                            | falso                                |
@@ -141,7 +141,7 @@ Especifica el nombre descriptivo de esta regla.
 
 Especifica el nombre de uno o varios grupos de usuarios en AD DS o en grupos locales a los que concede acceso esta regla.
 
-|||  
+|||
 |-|-|
 | Alias                              | ninguno                                 |
 | ¿Requerido?                            | true                                 |
@@ -155,7 +155,7 @@ Especifica el nombre de uno o varios grupos de usuarios en AD DS o en grupos loc
 Especifica uno o varios usuarios a los que concede acceso esta regla. El nombre de usuario puede ser una cuenta de usuario local del equipo de la puerta de enlace o un usuario de AD DS.
 El formato es `domain\user` o `computer\user`.
 
-|||  
+|||
 |-|-|
 | Alias                              | ninguno                                 |
 | ¿Requerido?                            | true                                 |
@@ -217,9 +217,9 @@ En este ejemplo se muestra cómo se especifican valores de nombre de usuario a t
 En este ejemplo se muestra cómo todos los parámetros toman valores de la canalización por nombre de propiedad.
 
 ````PowerShell
-$o = New-Object -TypeName PSObject | 
-    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru | 
-    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru | 
+$o = New-Object -TypeName PSObject |
+    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
+    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
     Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell

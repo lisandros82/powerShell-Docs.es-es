@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Recurso WaitForAll Resource de DSC
-ms.openlocfilehash: 2b6d9e11acd429eecb30926316d1033331524edc
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 7cb2fc134f4391de0e5df2cd719902097bf2ebf5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-waitforall-resource"></a>Recurso WaitForAll Resource de DSC
 
@@ -26,7 +26,7 @@ WaitForAll [string] #ResourceName
     ResourceName = [string]
     NodeName = [string]
     [ RetryIntervalSec = [Uint64] ]
-    [ RetryCount = [Uint32] ] 
+    [ RetryCount = [Uint32] ]
     [ ThrottleLimit = [Uint32]]
     [ DependsOn = [string[]] ]
 }
@@ -34,17 +34,16 @@ WaitForAll [string] #ResourceName
 
 ## <a name="properties"></a>Propiedades
 
-|  Propiedad  |  Descripción   | 
-|---|---| 
-| nombreDelRecurso| El nombre del recurso de dependencia. Si el recurso pertenece a una configuración diferente, asegúrese de que el formato del nombre sea el siguiente: "[__TipoDeRecurso__]__NombreDeRecurso__::[__NombreDeConfiguración__]::[__NombreDeConfiguración__]".| 
-| NodeName| Los nodos de destino del recurso de dependencia.| 
-| RetryIntervalSec| El número de segundos antes de reintentar la operación. El valor mínimo es 1.| 
-| RetryCount| El número máximo de reintentos.| 
-| ThrottleLimit| El número de máquinas que se pueden conectar de forma simultánea. El valor predeterminado es new-cimsession.| 
+|  Propiedad  |  Descripción   |
+|---|---|
+| nombreDelRecurso| El nombre del recurso de dependencia. Si el recurso pertenece a una configuración diferente, asegúrese de que el formato del nombre sea el siguiente: "[__TipoDeRecurso__]__NombreDeRecurso__::[__NombreDeConfiguración__]::[__NombreDeConfiguración__]".|
+| NodeName| Los nodos de destino del recurso de dependencia.|
+| RetryIntervalSec| El número de segundos antes de reintentar la operación. El valor mínimo es 1.|
+| RetryCount| El número máximo de reintentos.|
+| ThrottleLimit| El número de máquinas que se pueden conectar de forma simultánea. El valor predeterminado es new-cimsession.|
 | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.|
 
 
 ## <a name="example"></a>Ejemplo
 
 Para un ejemplo de cómo usar este recurso, consulte [Especificación de dependencias entre nodos](crossNodeDependencies.md)
-

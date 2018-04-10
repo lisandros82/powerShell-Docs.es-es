@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: d3a625d05eaf4e7448b4abf90499f6a94e2f7718
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: d5ba6a5c5ba8ff54a4f4d6ba07cf04124baf65ef
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Permitir recursos duplicados idénticos en una configuración
 
@@ -52,7 +52,7 @@ Configuration WebApplication
 }
 ```
 
-En versiones anteriores, el resultado sería un error de compilación debido a un conflicto entre las instancias de WindowsFeature FE_IIS y WindowsFeature Worker_IIS al intentar comprobar la instalación del rol "Servidor web". Observe que *todas* las propiedades que se están configurando son idénticas en estas dos configuraciones. Puesto que *todas* las propiedades de estos dos recursos son idénticas, el resultado será una compilación correcta. 
+En versiones anteriores, el resultado sería un error de compilación debido a un conflicto entre las instancias de WindowsFeature FE_IIS y WindowsFeature Worker_IIS al intentar comprobar la instalación del rol "Servidor web". Observe que *todas* las propiedades que se están configurando son idénticas en estas dos configuraciones. Puesto que *todas* las propiedades de estos dos recursos son idénticas, el resultado será una compilación correcta.
 
 Si cualquiera de las propiedades difiere entre los dos recursos, no se considerarán idénticas y se producirá un error de compilación:
 
@@ -96,4 +96,3 @@ Configuration WebApplication
 ```
 
 Esta configuración muy similar se podrá realizarse porque los recursos WindowsFeature FE_IIS y WindowsFeature Worker_IIS ya no son idénticos y, por tanto, están en conflicto.
-

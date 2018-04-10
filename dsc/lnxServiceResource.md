@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Recurso nxService de DSC para Linux
-ms.openlocfilehash: 4273ad59f15eedd08b07888ebb6ee51d039b72b3
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: b02fb1153570f628682533cb57a7d429e5cc8762
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>Recurso nxService de DSC para Linux
 
@@ -28,13 +28,13 @@ nxService <string> #ResourceName
 ```
 
 ## <a name="properties"></a>Propiedades
-|  Propiedad |  Descripción | 
+|  Propiedad |  Descripción |
 |---|---|
-| Nombre| El nombre del servicio o el demonio que se configurará.| 
-| Controlador| El tipo de controlador de servicio que se debe usar al configurar el servicio.| 
-| Habilitada| Indica si el servicio se inicia en el arranque.| 
-| Estado| Indica si el servicio se está ejecutando. Establezca esta propiedad en "Stopped" para garantizar que el servicio no se esté ejecutando. Establézcala en "Running" para garantizar que el servicio no se esté ejecutando.| 
-| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
+| Nombre| El nombre del servicio o el demonio que se configurará.|
+| Controlador| El tipo de controlador de servicio que se debe usar al configurar el servicio.|
+| Habilitada| Indica si el servicio se inicia en el arranque.|
+| Estado| Indica si el servicio se está ejecutando. Establezca esta propiedad en "Stopped" para garantizar que el servicio no se esté ejecutando. Establézcala en "Running" para garantizar que el servicio no se esté ejecutando.|
+| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.|
 
 
 ## <a name="additional-information"></a>Información adicional
@@ -46,11 +46,11 @@ El recurso **nxService** no creará una definición de servicio ni un script par
 En el ejemplo siguiente se muestra la configuración del servicio "httpd" (para el servidor HTTP Apache), registrado con el controlador de servicio **SystemD**.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 #Apache Service
-nxService ApacheService 
+nxService ApacheService
 {
 Name = "httpd"
 State = "running"
@@ -59,4 +59,3 @@ Controller = "systemd"
 }
 }
 ```
-

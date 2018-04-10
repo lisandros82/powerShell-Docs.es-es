@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Anidamiento de configuraciones
-ms.openlocfilehash: 89badda86707a129909b1c3cc3f79afa0b5f5df6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 9c6dbce462f7481e5714039a95ae85f85be0072e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="nesting-dsc-configurations"></a>Anidamiento de configuraciones DSC
 
@@ -17,7 +17,7 @@ Ambas configuraciones deben definirse en el mismo archivo.
 Veamos un ejemplo sencillo:
 
 ```powershell
-Configuration FileConfig 
+Configuration FileConfig
 {
     param (
         [Parameter(Mandatory = $true)]
@@ -35,7 +35,7 @@ Configuration FileConfig
            DestinationPath = $CopyTo
            Ensure = 'Present'
        }
-    
+
 }
 
 Configuration NestedFileConfig
@@ -51,10 +51,10 @@ Configuration NestedFileConfig
 }
 ```
 
-En este ejemplo, `FileConfig` toma dos parámetros obligatorios, **CopyFrom** y **CopyTo**, que se utilizan como los valores para las propiedades **SourcePath** y **DestinationPath** en el bloque de recursos `File`. La configuración `NestedConfig` llamada a `FileConfig` como si fuera un recurso.
+En este ejemplo, `FileConfig` toma dos parámetros obligatorios, **CopyFrom** y **CopyTo**, que se utilizan como los valores para las propiedades **SourcePath** y **DestinationPath** en el bloque de recursos `File`.
+La configuración `NestedConfig` llamada a `FileConfig` como si fuera un recurso.
 Las propiedades del bloque de recursos `NestedConfig` (**CopyFrom** y **CopyTo**) son los parámetros de la configuración `FileConfig`.
 
 ## <a name="see-also"></a>Véase también
 
 - [Recursos compuestos: uso de una configuración DSC como un recurso](authoringResourceComposite.md)
-

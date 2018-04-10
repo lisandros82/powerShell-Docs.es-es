@@ -1,18 +1,20 @@
 ---
-ms.date: 2017-06-05
-keywords: powershell,cmdlet
-title: "Métodos abreviados de teclado para Windows PowerShell ISE"
+ms.date: 06/05/2017
+keywords: powershell, cmdlet
+title: Métodos abreviados de teclado para Windows PowerShell ISE
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: 21c4b43b1ab94e2b533413362319ec42ac8a15aa
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e17fee4cf0cc8ac7aa0bb36acde3b452919312d0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Métodos abreviados de teclado para Windows PowerShell ISE
+
 Use los siguientes métodos abreviados de teclado para realizar acciones en el Entorno de scripting integrado (ISE) de Windows PowerShell®. Windows PowerShell ISE está disponible como parte de los sistemas operativos Windows Server y cliente de Windows, pero también se puede instalar en algunos sistemas operativos anteriores de Windows como parte del [paquete de descarga de Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881).
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Métodos abreviados de teclado para editar texto
+
 Puede usar los siguientes métodos abreviados de teclado cuando edite texto.
 
 |Acción|Métodos abreviados de teclado.|Usar en|
@@ -34,6 +36,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando edite texto.
 |**Deshacer**|CTRL+Z|Panel de scripts, Panel de comandos|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Métodos abreviados de teclado para ejecutar scripts
+
 Puede usar los siguientes métodos abreviados de teclado cuando ejecute scripts en el panel de scripts.
 
 |Acción|Método abreviado de teclado|
@@ -47,6 +50,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando ejecute scripts 
 |**Tabulación** (para el script anterior)|CTRL+MAYÚS+TAB **Nota:** La pestaña para el script anterior solo funciona si tiene una sola pestaña de Windows PowerShell abierta, o bien si tiene más de una abierta pero el foco está en el panel de scripts.|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Métodos abreviados de teclado para personalizar la vista
+
 Puede usar los siguientes métodos abreviados de teclado cuando personalice la vista en Windows PowerShell ISE. Son accesibles desde todos los paneles de la aplicación.
 
 |Acción|Método abreviado de teclado|
@@ -63,6 +67,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando personalice la v
 |**Alejar**|CTRL+SIGNO MENOS|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Métodos abreviados de teclado para depurar scripts
+
 Puede usar los siguientes métodos abreviados de teclado cuando depure scripts.
 
 |Acción|Método abreviado de teclado|Usar en|
@@ -93,6 +98,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando depure scripts.
 |**Mostrar los comandos de depuración de la consola**|H o ?|Panel de consola, al depurar un script|
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Métodos abreviados de teclado para las pestañas de Windows PowerShell
+
 Puede usar los siguientes métodos abreviados de teclado cuando use las pestañas de Windows PowerShell.
 
 |Acción|Método abreviado de teclado|
@@ -103,6 +109,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando use las pestaña
 |**Pestaña de Windows PowerShell siguiente**|CTRL+TAB Este método abreviado solo funciona si no hay archivos abiertos en ninguna pestaña de Windows PowerShell.|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Métodos abreviados de teclado para iniciar y salir
+
 Puede usar los siguientes métodos abreviados de teclado para iniciar la consola de Windows PowerShell (PowerShell.exe) o para salir de Windows PowerShell ISE.
 
 |Acción|Método abreviado de teclado|
@@ -111,5 +118,5 @@ Puede usar los siguientes métodos abreviados de teclado para iniciar la consola
 |**Iniciar PowerShell.exe** (consola de Windows PowerShell)|CTRL+MAYÚS+P|
 
 ## <a name="see-also"></a>Véase también
-- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/) (Lista completa de métodos abreviados de teclado de Windows PowerShell ISE)
 
+- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/) (Lista completa de métodos abreviados de teclado de Windows PowerShell ISE)

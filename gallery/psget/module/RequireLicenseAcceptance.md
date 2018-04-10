@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-09
+ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: RequireLicenseAcceptance
-ms.openlocfilehash: 260ccc1ee52d09a640e88203c5644f20f9723d6f
-ms.sourcegitcommit: cd66d4f49ea762a31887af2c72d087b219ddbe10
+ms.openlocfilehash: d78f8cb7f84869880e9a88a0f0407d18dc5c64cb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="modules-requiring-license-acceptance"></a>Módulos que requieren la aceptación de la licencia
 
@@ -17,7 +17,7 @@ Los departamentos jurídicos de los publicadores de algunos módulos requieren q
 ## <a name="publish-requirements-for-modules"></a>Requisitos de publicación de los módulos
 
 Los módulos que requieran que los usuarios acepten la licencia deberán cumplir los requisitos siguientes:
-    
+
 - La sección PSData del manifiesto del módulo debe incluir RequireLicenseAcceptance = $True.
 - El módulo debe incluir el archivo license.txt en el directorio raíz.
 - El manifiesto del módulo debe incluir el URI de la licencia.
@@ -31,13 +31,13 @@ Los módulos que requieran que los usuarios acepten la licencia deberán cumplir
     - **Save-Module:** el módulo se copiará en el sistema del usuario.
     - **Install-Module:** el módulo se copiará en el sistema del usuario, en la carpeta correspondiente (según el ámbito).
     - **Update-Module:** el módulo se actualizará.
-  - Si se rechaza la licencia 
+  - Si se rechaza la licencia
     - Se cancelará la operación.
 - Todos los cmdlets buscarán los metadatos (requireLicenseAcceptance y Format Version) que indican que se requiere aceptar la licencia
   - Si la versión del formato de cliente es anterior a 2.0, la operación presentará un error y le pedirá al usuario que actualice el cliente.
   - Si el módulo se publicó con una versión del formato anterior a 2.0, se omitirá la marca requireLicenseAcceptance.
 
-    
+
  ## <a name="module-dependencies"></a>Dependencias de módulo
 - Durante la operación Install/Save/Update, si un módulo dependiente (si algo más depende del módulo) requiere aceptar la licencia, se requerirá el comportamiento de aceptación de la licencia (ya mencionado).
 - Si la versión del módulo ya aparece en el catálogo local como instalada en el sistema, se omitirá la comprobación de la licencia.
@@ -59,7 +59,7 @@ PrivateData = @{
         # Flag to indicate whether the module requires explicit user acceptance
         RequireLicenseAcceptance = $true
     } # End of PSData hashtable
-    
+
  } # End of PrivateData hashtable
 ```
 Este comando actualiza el archivo de manifiesto y establece la marca RequireLicenseAcceptance en true.
@@ -78,7 +78,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 
 ```
 Este comando muestra la licencia del archivo license.txt y le pide al usuario que acepte la licencia.
@@ -117,7 +117,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 ### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Ejemplo 6: instalación de un módulo con dependencias que requiere la aceptación de la licencia y -AcceptLicense
@@ -147,7 +147,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 Este comando muestra la licencia del archivo license.txt y le pide al usuario que acepte la licencia.
 
@@ -172,7 +172,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 Este comando muestra la licencia del archivo license.txt y le pide al usuario que acepte la licencia.
 

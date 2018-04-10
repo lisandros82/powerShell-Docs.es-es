@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Recurso ProcessSet de DSC
-ms.openlocfilehash: ec1d6a04b5debc22fe2f3b4a4396c385514a3b0c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: d3c7383da5fd10580612527465ab621004ee7269
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-windowsprocess-resource"></a>Recurso de DSC WindowsProcess
 
@@ -26,22 +26,21 @@ WindowsProcess [string] #ResourceName
     [ Ensure = [string] { Absent | Present }  ]
     [ StandardOutputPath = [string] ]
     [ StandardErrorPath = [string] ]
-    [ StandardInputPath = [string] ]   
+    [ StandardInputPath = [string] ]
     [ WorkingDirectory = [string] ]
     [ DependsOn = [string[]] ]
 }
 ```
 
 ## <a name="properties"></a>Propiedades
-|  Propiedad  |  Descripción   | 
-|---|---| 
-| Argumentos| Una cadena que tiene argumentos que se pasa al proceso tal cual. Si necesita pasar varios argumentos, colóquelos en esta cadena.| 
-| Ruta| Las rutas de acceso a los ejecutables del proceso. Si estos son los nombres de archivo de los ejecutables (no las rutas de acceso completas), el recurso de DSC buscará la variable **Path** del entorno (`$env:Path`) para buscar los archivos. Si los valores de esta propiedad son rutas completas, DSC no usará la variable de entorno **Path** para buscar los archivos y generará un error si alguna de las rutas de acceso no existe. No se permiten rutas de acceso relativas.| 
-| Credential| Indica las credenciales para iniciar el proceso.| 
-| Ensure| Especifica si los procesos existen. Establezca esta propiedad en "Present" para asegurarse de que el proceso exista. De lo contrario, establézcala en "Absent". El valor predeterminado es "Present".| 
-| StandardErrorPath| La ruta de acceso en la que los procesos escriben los errores estándar. Se sobrescribirá cualquier archivo existente en la ubicación.| 
-| StandardInputPath| La secuencia desde la que el proceso recibe las entradas estándar.| 
-| StandardOutputPath| La ruta de acceso del archivo en la que los procesos escriben las salidas estándar. Se sobrescribirá cualquier archivo existente en la ubicación.| 
-| WorkingDirectory| La ubicación utilizada como directorio de trabajo actual de los procesos.| 
-| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"``.| 
-
+|  Propiedad  |  Descripción   |
+|---|---|
+| Argumentos| Una cadena que tiene argumentos que se pasa al proceso tal cual. Si necesita pasar varios argumentos, colóquelos en esta cadena.|
+| Ruta| Las rutas de acceso a los ejecutables del proceso. Si estos son los nombres de archivo de los ejecutables (no las rutas de acceso completas), el recurso de DSC buscará la variable **Path** del entorno (`$env:Path`) para buscar los archivos. Si los valores de esta propiedad son rutas completas, DSC no usará la variable de entorno **Path** para buscar los archivos y generará un error si alguna de las rutas de acceso no existe. No se permiten rutas de acceso relativas.|
+| Credential| Indica las credenciales para iniciar el proceso.|
+| Ensure| Especifica si los procesos existen. Establezca esta propiedad en "Present" para asegurarse de que el proceso exista. De lo contrario, establézcala en "Absent". El valor predeterminado es "Present".|
+| StandardErrorPath| La ruta de acceso en la que los procesos escriben los errores estándar. Se sobrescribirá cualquier archivo existente en la ubicación.|
+| StandardInputPath| La secuencia desde la que el proceso recibe las entradas estándar.|
+| StandardOutputPath| La ruta de acceso del archivo en la que los procesos escriben las salidas estándar. Se sobrescribirá cualquier archivo existente en la ubicación.|
+| WorkingDirectory| La ubicación utilizada como directorio de trabajo actual de los procesos.|
+| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"``.|

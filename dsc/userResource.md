@@ -1,17 +1,17 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Recurso de DSC User
-ms.openlocfilehash: c1b8487d9adc899950d185036ada3a2fa3747417
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 1c3efa8e3bf945c45834cbea7ddb0a6c3ffc5f45
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 #<a name="dsc-user-resource"></a>Recurso de DSC User#
 
- 
+
 >Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 
@@ -37,18 +37,18 @@ User [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Propiedades
-|  Propiedad  |  Descripción   | 
-|---|---| 
-| UserName| Indica el nombre de la cuenta para la que quiere garantizar un estado específico.| 
-| Descripción| Indica la descripción que se quiere utilizar para la cuenta de usuario.| 
-| Deshabilitada| Indica si la cuenta se encuentra habilitada. Establezca esta propiedad en __$true__ para asegurarse de que esta cuenta esté deshabilitada y establézcala como __$false__ para asegurarse de que esté habilitada.| 
-| Ensure| Indica si existe la cuenta. Establezca esta propiedad en "Present" para asegurarse de que la cuenta exista y establézcala como "Absent" para asegurarse de que la cuenta no exista.| 
-| FullName| Representa una cadena con el nombre completo que quiere utilizar para la cuenta de usuario.| 
-| Contraseña| Indica la contraseña que quiere usar para esta cuenta. | 
-| PasswordChangeNotAllowed| Indica si el usuario puede cambiar la contraseña. Establezca esta propiedad en __$true__ para asegurarse de que el usuario no pueda cambiar la contraseña y establézcala como __$false__ para permitir al usuario cambiar la contraseña. El valor predeterminado es __$false__.| 
-| PasswordChangeRequired| Indica si el usuario debe cambiar la contraseña en el próximo inicio de sesión. Establezca esta propiedad en __$true__ si el usuario debe cambiar la contraseña. El valor predeterminado es __$true__.| 
-| PasswordNeverExpires| Indica si la contraseña expirará. Para asegurarse de que la contraseña para esta cuenta no expire nunca, establezca esta propiedad en __$true__; establézcala en __$false__ si la contraseña expirará. El valor predeterminado es __$false__.| 
-| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
+|  Propiedad  |  Descripción   |
+|---|---|
+| UserName| Indica el nombre de la cuenta para la que quiere garantizar un estado específico.|
+| Descripción| Indica la descripción que se quiere utilizar para la cuenta de usuario.|
+| Deshabilitada| Indica si la cuenta se encuentra habilitada. Establezca esta propiedad en __$true__ para asegurarse de que esta cuenta esté deshabilitada y establézcala como __$false__ para asegurarse de que esté habilitada.|
+| Ensure| Indica si existe la cuenta. Establezca esta propiedad en "Present" para asegurarse de que la cuenta exista y establézcala como "Absent" para asegurarse de que la cuenta no exista.|
+| FullName| Representa una cadena con el nombre completo que quiere utilizar para la cuenta de usuario.|
+| Contraseña| Indica la contraseña que quiere usar para esta cuenta. |
+| PasswordChangeNotAllowed| Indica si el usuario puede cambiar la contraseña. Establezca esta propiedad en __$true__ para asegurarse de que el usuario no pueda cambiar la contraseña y establézcala como __$false__ para permitir al usuario cambiar la contraseña. El valor predeterminado es __$false__.|
+| PasswordChangeRequired| Indica si el usuario debe cambiar la contraseña en el próximo inicio de sesión. Establezca esta propiedad en __$true__ si el usuario debe cambiar la contraseña. El valor predeterminado es __$true__.|
+| PasswordNeverExpires| Indica si la contraseña expirará. Para asegurarse de que la contraseña para esta cuenta no expire nunca, establezca esta propiedad en __$true__; establézcala en __$false__ si la contraseña expirará. El valor predeterminado es __$false__.|
+| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Ejemplo
 
@@ -61,4 +61,3 @@ User UserExample
     DependsOn = "[Group]GroupExample" # Configures GroupExample first
 }
 ```
-

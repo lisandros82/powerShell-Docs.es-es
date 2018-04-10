@@ -1,28 +1,29 @@
 ---
-ms.date: 2017-06-05
-keywords: powershell,cmdlet
+ms.date: 06/05/2017
+keywords: powershell, cmdlet
 title: Ver la estructura del objeto Get Member
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
-ms.openlocfilehash: 618f34bca7bfb76ce5d48ada642a687e279c8aad
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: cc93e45e4306b3d623c1d3d1096dd20c1afc59c8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="viewing-object-structure-get-member"></a>Ver la estructura del objeto (Get-Member)
+
 Dado que los objetos desempeñan una función esencial en Windows PowerShell, existen varios comandos nativos diseñados para trabajar con tipos de objetos arbitrarios. El más importante es el comando **Get-Member**.
 
 Es la técnica más sencilla para analizar los objetos que devuelve un comando es canalizar la salida del comando al cmdlet **Get-Member**. El cmdlet **Get-Member** muestra el nombre formal del tipo de objeto y una lista completa de sus miembros. En ocasiones, el número de elementos devuelto puede ser excesivo. Por ejemplo, un objeto de proceso puede tener más de 100 miembros.
 
 Para ver a todos los miembros de un objeto de proceso y paginar la salida para verla completamente, escriba:
 
-```
-PS> Get-Process | Get-Member | Out-Host -Paging
+```powershell
+Get-Process | Get-Member | Out-Host -Paging
 ```
 
 La salida de este comando tendrá un aspecto similar al siguiente:
 
-```
+```output
 TypeName: System.Diagnostics.Process
 
 Name                           MemberType     Definition
@@ -68,4 +69,3 @@ Existen más de 60 propiedades para un proceso. La razón por la que Windows Pow
 > Windows PowerShell determina cómo mostrar un tipo de objeto mediante la información almacenada en archivos XML cuyos nombres terminan con .format.ps1xml. Los datos de formato de objetos de proceso, que son objetos System.Diagnostics.Process de .NET, se almacenan en DotNetTypes.format.ps1xml.
 
 Si necesita consultar propiedades distintas de las que Windows PowerShell muestra de forma predeterminada, deberá formatear los datos de salida personalmente. Esto se puede hacer mediante los cmdlets de formato.
-

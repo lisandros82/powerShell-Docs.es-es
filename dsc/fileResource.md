@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Recurso de DSC File
-ms.openlocfilehash: 54d01bf0769eeed0354606eb3543973b0f850a6f
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 7964eabe5f4585600ae80f3e5ff7439c0d954769
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-file-resource"></a>Recurso de DSC File
 
@@ -15,8 +15,8 @@ ms.lasthandoff: 01/17/2018
 
 El recurso File de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para administrar archivos y carpetas en el nodo de destino.
 
->**Nota:** Si la propiedad **MatchSource** está establecida en **$false** (que es el valor predeterminado), los contenidos que desea copiar se almacenarán en caché la primera vez que se aplique la configuración. 
->Las aplicaciones subsiguientes de la configuración no buscarán archivos o carpetas actualizados en la ruta especificada por **SourcePath**. Si desea buscar actualizaciones para los archivos y carpetas de **SourcePath** cada vez que se aplique la configuración, establezca **MatchSource** en **$true**. 
+>**Nota:** Si la propiedad **MatchSource** está establecida en **$false** (que es el valor predeterminado), los contenidos que desea copiar se almacenarán en caché la primera vez que se aplique la configuración.
+>Las aplicaciones subsiguientes de la configuración no buscarán archivos o carpetas actualizados en la ruta especificada por **SourcePath**. Si desea buscar actualizaciones para los archivos y carpetas de **SourcePath** cada vez que se aplique la configuración, establezca **MatchSource** en **$true**.
 
 ## <a name="syntax"></a>Sintaxis
 ```
@@ -27,32 +27,32 @@ File [string] #ResourceName
     [ Checksum = [string] { CreatedDate | ModifiedDate | SHA-1 | SHA-256 | SHA-512 } ]
     [ Contents = [string] ]
     [ Credential = [PSCredential] ]
-    [ Ensure = [string] { Absent | Present } ] 
+    [ Ensure = [string] { Absent | Present } ]
     [ Force = [bool] ]
     [ Recurse = [bool] ]
     [ DependsOn = [string[]] ]
     [ SourcePath = [string] ]
-    [ Type = [string] { Directory | File } ] 
+    [ Type = [string] { Directory | File } ]
     [ MatchSource = [bool] ]
 }
 ```
 
 ## <a name="properties"></a>Propiedades
 
-|  Propiedad  |  Descripción   | 
-|---|---| 
-| DestinationPath| Indica la ubicación donde desea garantizar el estado de un archivo o directorio.| 
-| Atributos| Especifica el estado deseado de los atributos del archivo o directorio de destino.| 
-| Checksum| Indica el tipo de suma de comprobación para determinar si dos archivos son iguales. Si no se especifica __Checksum__, solo se usa el nombre del archivo o directorio para la comparación. Los valores válidos son: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate.| 
-| Contenido| Especifica el contenido de un archivo, como una cadena determinada.| 
-| Credential| Indica las credenciales necesarias para acceder a recursos, como archivos de origen, si es necesario dicho acceso.| 
-| Ensure| Indica si el archivo o directorio existe. Establezca esta propiedad en "Absent" para asegurarse de que el archivo o directorio no exista. Establézcala en "Present" para asegurarse de que el archivo o directorio exista. El valor predeterminado es "Present".| 
-| Force| Determinadas operaciones de archivos (por ejemplo, sobrescribir un archivo o eliminar un directorio que no está vacío) provocarán un error. Si se usa la propiedad Force, se invalidan estos errores. El valor predeterminado es __$false__.| 
-| Recurse| Indica si se incluyen los subdirectorios. Establezca esta propiedad en __$true__ para indicar que quiere que los subdirectorios se incluyan. El valor predeterminado es __$false__. **Nota**: Esta propiedad solo es válida cuando la propiedad Type está establecida en Directory.| 
-| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
-| SourcePath| Indica la ruta de acceso de la que se copiará el recurso de archivo o carpeta.| 
-| Tipo| Indica si el recurso que se está configurando es un directorio o un archivo. Establezca esta propiedad en "Directory" para indicar que el recurso es un directorio. Establézcala en "File" para indicar que el recurso es un archivo. El valor predeterminado es "File".| 
-| MatchSource| Si se establece en el valor predeterminado de __$false__, los archivos en el origen (por ejemplo, los archivos A, B y C) se agregarán al destino la primera vez que se aplique la configuración. Si se agrega un nuevo archivo (D) al origen, no se agregará al destino, incluso aunque la configuración se vuelva a aplicar más adelante. Si el valor es __$true__, cada vez que se aplique la configuración, se agregan los nuevos archivos encontrados posteriormente en el origen (como el archivo D de este ejemplo) al destino. El valor predeterminado es **$false**.| 
+|  Propiedad  |  Descripción   |
+|---|---|
+| DestinationPath| Indica la ubicación donde desea garantizar el estado de un archivo o directorio.|
+| Atributos| Especifica el estado deseado de los atributos del archivo o directorio de destino.|
+| Checksum| Indica el tipo de suma de comprobación para determinar si dos archivos son iguales. Si no se especifica __Checksum__, solo se usa el nombre del archivo o directorio para la comparación. Los valores válidos son: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate.|
+| Contenido| Especifica el contenido de un archivo, como una cadena determinada.|
+| Credential| Indica las credenciales necesarias para acceder a recursos, como archivos de origen, si es necesario dicho acceso.|
+| Ensure| Indica si el archivo o directorio existe. Establezca esta propiedad en "Absent" para asegurarse de que el archivo o directorio no exista. Establézcala en "Present" para asegurarse de que el archivo o directorio exista. El valor predeterminado es "Present".|
+| Force| Determinadas operaciones de archivos (por ejemplo, sobrescribir un archivo o eliminar un directorio que no está vacío) provocarán un error. Si se usa la propiedad Force, se invalidan estos errores. El valor predeterminado es __$false__.|
+| Recurse| Indica si se incluyen los subdirectorios. Establezca esta propiedad en __$true__ para indicar que quiere que los subdirectorios se incluyan. El valor predeterminado es __$false__. **Nota**: Esta propiedad solo es válida cuando la propiedad Type está establecida en Directory.|
+| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.|
+| SourcePath| Indica la ruta de acceso de la que se copiará el recurso de archivo o carpeta.|
+| Tipo| Indica si el recurso que se está configurando es un directorio o un archivo. Establezca esta propiedad en "Directory" para indicar que el recurso es un directorio. Establézcala en "File" para indicar que el recurso es un archivo. El valor predeterminado es "File".|
+| MatchSource| Si se establece en el valor predeterminado de __$false__, los archivos en el origen (por ejemplo, los archivos A, B y C) se agregarán al destino la primera vez que se aplique la configuración. Si se agrega un nuevo archivo (D) al origen, no se agregará al destino, incluso aunque la configuración se vuelva a aplicar más adelante. Si el valor es __$true__, cada vez que se aplique la configuración, se agregan los nuevos archivos encontrados posteriormente en el origen (como el archivo D de este ejemplo) al destino. El valor predeterminado es **$false**.|
 
 ## <a name="example"></a>Ejemplo
 
@@ -69,7 +69,7 @@ Configuration FileResourceDemo
             Type = "Directory" # Default is "File".
             Recurse = $true # Ensure presence of subdirectories, too
             SourcePath = "C:\Users\Public\Documents\DSCDemo\DemoSource"
-            DestinationPath = "C:\Users\Public\Documents\DSCDemo\DemoDestination"    
+            DestinationPath = "C:\Users\Public\Documents\DSCDemo\DemoDestination"
         }
 
         Log AfterDirectoryCopy
@@ -81,4 +81,3 @@ Configuration FileResourceDemo
     }
 }
 ```
-

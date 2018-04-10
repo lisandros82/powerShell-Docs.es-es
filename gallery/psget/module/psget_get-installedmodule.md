@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: gallery,powershell,cmdlet,psget
 title: Get-InstalledModule
-ms.openlocfilehash: 6f485d04503ea6d9a51a68ae7ec3d0dc2e6facab
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: f82d8f3b6b6a9283deef44c2705b97d4717b634c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-installedmodule"></a>Get-InstalledModule
 
@@ -24,7 +24,7 @@ Para cada módulo instalado, Get-InstalledModule devuelve un objeto PSRepository
 - Get-InstalledModule puede filtrar con parámetros de versión: MinimumVersion, MaximumVersion, RequiredVersion y AllVersions.
   - Estos parámetros se excluyen mutuamente, excepto MinmimumVersion y MaximumVersion.
   - Estos parámetros de versión solo se permiten con el nombre de módulo único sin ningún carácter comodín.
-  - Si no se especifica el parámetro RequiredVersion, Get-InstalledModule devuelve la versión más reciente del módulo instalado que sea igual o mayor que la versión mínima especificada, o la versión más reciente del módulo si no se especifica ninguna versión mínima. 
+  - Si no se especifica el parámetro RequiredVersion, Get-InstalledModule devuelve la versión más reciente del módulo instalado que sea igual o mayor que la versión mínima especificada, o la versión más reciente del módulo si no se especifica ninguna versión mínima.
   - Si se especifica el parámetro RequiredVersion, Get-InstalledModule solo devuelve la versión del módulo instalado que coincida exactamente con la versión especificada.
 
 ## <a name="cmdlet-syntax"></a>Sintaxis de cmdlet
@@ -126,4 +126,3 @@ Name          InstalledDate         UpdatedDate
 ----          -------------         -----------
 ContosoServer 2/29/2016 11:59:14 AM 2/29/2016 12:00:15 PM
 ```
-

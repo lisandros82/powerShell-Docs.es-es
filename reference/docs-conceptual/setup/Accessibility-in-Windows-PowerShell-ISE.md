@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Accesibilidad en ISE de Windows PowerShell
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 7f758a46bdc722482b9e8a9baaff0a075f64ece9
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 65d159905660f4f3e025b385626679e02a785fd7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Accesibilidad en ISE de Windows PowerShell
+
 En este tema se describen las características de accesibilidad del Entorno de scripting integrado (ISE) de Windows PowerShell que pueden resultar útiles.
 
 * [Cómo cambiar el tamaño y la ubicación de los paneles de consola y de scripts](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
@@ -31,6 +32,7 @@ Windows PowerShell ISE admite el modo de contraste alto. Para las personas con d
 - Cambio de tamaño del texto.
 
 ## <a name="how-to-change-the-size-and-location-of-the-console-and-script-panes"></a>Cómo cambiar el tamaño y la ubicación de los paneles de consola y de scripts
+
 Puede usar los siguientes pasos para cambiar el tamaño y la ubicación del panel de consola y el panel de scripts. Al abrir de nuevo Windows PowerShell ISE, se conservarán los cambios realizados en el tamaño y la ubicación.
 
 ### <a name="to-resize-the-script-pane-and-console-pane"></a>Para cambiar el tamaño del panel de scripts y el panel de consola
@@ -40,6 +42,7 @@ Puede usar los siguientes pasos para cambiar el tamaño y la ubicación del pane
 2. Cuando el puntero del ratón cambie a una flecha con dos puntas, arrastre el borde para cambiar el tamaño del panel.
 
 ### <a name="to-move-the-script-pane-and-console-pane"></a>Para mover el panel de scripts y el panel de consola
+
 Realice una de las siguientes acciones:
 
 - Para mover el panel de scripts encima del panel de consola, presione **CTRL+1** o, en la barra de herramientas, haga clic en el icono **Mostrar panel de scripts arriba** o, en el menú **Ver**, haga clic en **Mostrar panel de scripts arriba**.
@@ -53,6 +56,7 @@ Realice una de las siguientes acciones:
 - Para mostrar el panel de scripts cuando el panel de consola esté maximizado, en el extremo derecho de la fila de pestañas, haga clic en el icono **Mostrar panel de scripts** o, en el menú **Ver**, haga clic para seleccionar la opción de menú **Mostrar panel de scripts**.
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Métodos abreviados de teclado para editar texto
+
 Puede usar los siguientes métodos abreviados de teclado cuando edite texto.
 
 |Acción|Métodos abreviados de teclado.|Usar en|
@@ -70,6 +74,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando edite texto.
 |**Deshacer**|CTRL+Z|Panel de scripts, panel de consola|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Métodos abreviados de teclado para ejecutar scripts
+
 Puede usar los siguientes métodos abreviados de teclado cuando ejecute scripts en el panel de scripts.
 
 |Acción|Método abreviado de teclado|
@@ -83,6 +88,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando ejecute scripts 
 |**Tabulación** (para el script anterior)|CTRL+MAYÚS+TAB **Nota:** La pestaña para el script anterior solo funciona si tiene una sola pestaña de Windows PowerShell abierta, o bien si tiene más de una abierta pero el foco está en el panel de scripts.|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Métodos abreviados de teclado para personalizar la vista
+
 Puede usar los siguientes métodos abreviados de teclado cuando personalice la vista en Windows PowerShell ISE. Son accesibles desde todos los paneles de la aplicación.
 
 |Acción|Método abreviado de teclado|
@@ -99,6 +105,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando personalice la v
 |**Alejar**|CTRL+SIGNO MENOS|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Métodos abreviados de teclado para depurar scripts
+
 Puede usar los siguientes métodos abreviados de teclado cuando depure scripts.
 
 |Acción|Método abreviado de teclado|Usar en|
@@ -130,6 +137,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando depure scripts.
 |**Mostrar los comandos de depuración de la consola**|H o ?|Panel de consola, al depurar un script|
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Métodos abreviados de teclado para las pestañas de Windows PowerShell
+
 Puede usar los siguientes métodos abreviados de teclado cuando use las pestañas de Windows PowerShell.
 
 |Acción|Método abreviado de teclado|
@@ -140,6 +148,7 @@ Puede usar los siguientes métodos abreviados de teclado cuando use las pestaña
 |**Pestaña de Windows PowerShell siguiente**|CTRL+TAB Este método abreviado solo funciona si no hay archivos abiertos en ninguna pestaña de PowerShell.|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Métodos abreviados de teclado para iniciar y salir
+
 Puede usar los siguientes métodos abreviados de teclado para iniciar la consola de Windows PowerShell (PowerShell.exe) o para salir de Windows PowerShell ISE.
 
 |Acción|Método abreviado de teclado|
@@ -148,5 +157,5 @@ Puede usar los siguientes métodos abreviados de teclado para iniciar la consola
 |**Iniciar PowerShell.exe** (consola de Windows PowerShell)|CTRL+MAYÚS+P|
 
 ## <a name="see-also"></a>Véase también
-- [Usar Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
+- [Presentación de Windows PowerShell ISE](../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_search_syntax
-ms.openlocfilehash: 409ae607557af760f9cec4e3c54f39e51b5fac18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 337b4b1e702994fcbc456eb31a2d8632f5220d09
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="gallery-search-syntax"></a>Sintaxis de búsqueda de la Galería
 
@@ -49,7 +49,7 @@ es otra manera de buscar elementos con "AzureRM.Profile" en el campo ID.
 El filtro "Id" es una coincidencia de subcadena, por lo que si busca lo siguiente:
 
     Id:"azure"
-    
+
 obtendrá resultados como "AzureRM.Profile" y "Azure.Storage".
 
 También puede buscar varias palabras clave en un único campo, o mezclar y combinar campos.
@@ -71,7 +71,7 @@ Para buscar todos los elementos con la función especificada.
     Functions:"Update-AzureRM"
 
 Para buscar todos los elementos con el cmdlet especificado.
-    
+
     Cmdlets:"Get-AzureRmEnvironment"
 
 Para buscar todos los elementos con el nombre del recurso de DSC especificado.
@@ -88,8 +88,7 @@ Para buscar todos los elementos con el valor de PowerShellVersion especificado.
 Por último, si usa un campo que no se admite (como "commands"), se omitirá y se buscará en todos los campos. Así pues, la consulta siguiente:
 
     commands:blobs storage
-    
+
 se interpreta exactamente igual que esta consulta:
 
     blobs storage
-

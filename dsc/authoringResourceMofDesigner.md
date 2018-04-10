@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Uso de la herramienta Diseñador de recursos"
-ms.openlocfilehash: c39b48f67d3874ee3cd2f2704aeb7390fa186fe4
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Uso de la herramienta Diseñador de recursos
+ms.openlocfilehash: e0282671861755a5f147de4d07783a4680024ec5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-the-resource-designer-tool"></a>Uso de la herramienta Diseñador de recursos
 
@@ -21,7 +21,7 @@ Use el cmdlet [Install-Module](https://technet.microsoft.com/library/dn807162.as
 
 ## <a name="creating-resource-properties"></a>Crear propiedades de recursos
 Lo primero que es necesario hacer es decidir qué propiedades expondrá el recurso. En este ejemplo, definimos un usuario de Active Directory con las siguientes propiedades.
- 
+
 Nombre del parámetro: descripción
 * **Nombre de UserName**: propiedad clave que identifica de forma única un usuario.
 * **Ensure**: especifica si la cuenta de usuario debe tener el valor Present o Absent. Este parámetro solo tendrá dos valores posibles.
@@ -33,7 +33,7 @@ Para crear las propiedades, use el cmdlet **New-xDscResourceProperty**. Los sigu
 ```powershell
 $UserName = New-xDscResourceProperty –Name UserName -Type String -Attribute Key
 $Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet “Present”, “Absent”
-$DomainCredential = New-xDscResourceProperty –Name DomainCredential-Type PSCredential -Attribute Write
+$DomainCredential = New-xDscResourceProperty –Name DomainCredential -Type PSCredential -Attribute Write
 $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
 

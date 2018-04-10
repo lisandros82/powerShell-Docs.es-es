@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Recurso nxFile de DSC para Linux
-ms.openlocfilehash: 7ee8a37ee63a70b1c8c69dc79dfbc77c1f583234
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 41b5ebde299c47b38d7a6e7f71607332b24ca0e4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>Recurso nxFile de DSC para Linux
 
@@ -37,20 +37,20 @@ nxFile <string> #ResourceName
 
 ## <a name="properties"></a>Propiedades
 
-|  Propiedad |  Descripción | 
+|  Propiedad |  Descripción |
 |---|---|
-| DestinationPath| Especifica la ubicación donde desea garantizar el estado de un archivo o directorio.| 
-| SourcePath| Especifica la ruta de acceso de la que se copiará el recurso de archivo o carpeta. Esta ruta de acceso puede ser una ruta de acceso local o una dirección URL `http/https/ftp`. Las direcciones URL remotas `http/https/ftp` solo se admiten cuando el valor de la propiedad **Type** propiedad es file.| 
-| Ensure| Determina si se debe comprobar si existe el archivo. Establezca esta propiedad en "Present" para asegurarse de que el archivo exista. Establézcala en "Absent" para asegurarse de que el archivo no exista. El valor predeterminado es "Present".| 
-| Tipo| Especifica si el recurso que se está configurando es un directorio o un archivo. Establezca esta propiedad en "directory" para indicar que el recurso es un directorio. Establézcala en "file" para indicar que el recurso es un archivo. El valor predeterminado es "file".| 
-| Contenido| Especifica el contenido de un archivo, como una cadena determinada.| 
-| Checksum| Define el tipo que se usará cuando se determine si dos archivos son iguales. Si no se especifica **Checksum**, solo se usa el nombre del archivo o directorio para la comparación. Los valores son: "ctime", "mtime" o "md5".| 
-| Recurse| Indica si se incluyen los subdirectorios. Establezca esta propiedad en **$true** para indicar que quiere que los subdirectorios se incluyan. El valor predeterminado es **$false**. **Nota**: Esta propiedad solo es válida cuando la propiedad **Type** está establecida en directory.| 
-| Force| Determinadas operaciones de archivos (por ejemplo, sobrescribir un archivo o eliminar un directorio que no está vacío) provocarán un error. Si se usa la propiedad **Force**, se invalidan estos errores. El valor predeterminado es **$false**.| 
-| Vínculos| Especifica el comportamiento deseado de los vínculos simbólicos. Establezca esta propiedad en "follow" para seguir los vínculos simbólicos y actuar sobre el destino de los vínculos (por ejemplo, copiar el archivo en lugar del vínculo). Establezca esta propiedad en "manage" para actuar sobre el vínculo (por ejemplo, copiar el propio vínculo). Establezca esta propiedad en "ignore" para omitir los vínculos simbólicos.| 
-| Grupo| El nombre del elemento **Group** propietario del archivo o directorio.| 
-| Modo| Especifica los permisos deseados para el recurso, en notación octal o simbólica. (por ejemplo, 777 o rwxrwxrwx). Si utiliza la notación simbólica, no especifique el primer carácter que indica el directorio o archivo.| 
-| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
+| DestinationPath| Especifica la ubicación donde desea garantizar el estado de un archivo o directorio.|
+| SourcePath| Especifica la ruta de acceso de la que se copiará el recurso de archivo o carpeta. Esta ruta de acceso puede ser una ruta de acceso local o una dirección URL `http/https/ftp`. Las direcciones URL remotas `http/https/ftp` solo se admiten cuando el valor de la propiedad **Type** propiedad es file.|
+| Ensure| Determina si se debe comprobar si existe el archivo. Establezca esta propiedad en "Present" para asegurarse de que el archivo exista. Establézcala en "Absent" para asegurarse de que el archivo no exista. El valor predeterminado es "Present".|
+| Tipo| Especifica si el recurso que se está configurando es un directorio o un archivo. Establezca esta propiedad en "directory" para indicar que el recurso es un directorio. Establézcala en "file" para indicar que el recurso es un archivo. El valor predeterminado es "file".|
+| Contenido| Especifica el contenido de un archivo, como una cadena determinada.|
+| Checksum| Define el tipo que se usará cuando se determine si dos archivos son iguales. Si no se especifica **Checksum**, solo se usa el nombre del archivo o directorio para la comparación. Los valores son: "ctime", "mtime" o "md5".|
+| Recurse| Indica si se incluyen los subdirectorios. Establezca esta propiedad en **$true** para indicar que quiere que los subdirectorios se incluyan. El valor predeterminado es **$false**. **Nota**: Esta propiedad solo es válida cuando la propiedad **Type** está establecida en directory.|
+| Force| Determinadas operaciones de archivos (por ejemplo, sobrescribir un archivo o eliminar un directorio que no está vacío) provocarán un error. Si se usa la propiedad **Force**, se invalidan estos errores. El valor predeterminado es **$false**.|
+| Vínculos| Especifica el comportamiento deseado de los vínculos simbólicos. Establezca esta propiedad en "follow" para seguir los vínculos simbólicos y actuar sobre el destino de los vínculos (por ejemplo, copiar el archivo en lugar del vínculo). Establezca esta propiedad en "manage" para actuar sobre el vínculo (por ejemplo, copiar el propio vínculo). Establezca esta propiedad en "ignore" para omitir los vínculos simbólicos.|
+| Grupo| El nombre del elemento **Group** propietario del archivo o directorio.|
+| Modo| Especifica los permisos deseados para el recurso, en notación octal o simbólica. (por ejemplo, 777 o rwxrwxrwx). Si utiliza la notación simbólica, no especifique el primer carácter que indica el directorio o archivo.|
+| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>Información adicional
 
@@ -67,11 +67,11 @@ nxFile resolvConf
 {
     SourcePath = "http://10.185.85.11/conf/resolv.conf"
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
-    
+
 }
-        
+
 }
 ```
 
@@ -89,7 +89,7 @@ $Contents = Get-Content C:\temp\resolv.conf
 nxFile resolvConf
 {
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
     Contents = "$Contents"
 }
@@ -122,10 +122,10 @@ $Contents = LinuxString $Contents
 nxFile resolvConf
 {
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
     Contents = $Contents
-    
+
 }
 }
 ```
@@ -135,7 +135,7 @@ nxFile resolvConf
 El ejemplo siguiente se asegura de que el directorio `/opt/mydir` exista y de que un archivo con el contenido especificado exista en este directorio.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 nxFile DirectoryExample
@@ -151,10 +151,9 @@ nxFile FileExample
     Destinationpath = "/opt/mydir/myfile"
     Contents=@"
 #!/bin/bash`necho "hello world"`n
-"@ 
+"@
     Mode = “755”
     DependsOn = "[nxFile]DirectoryExample"
-} 
+}
 }
 ```
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_faqs
-ms.openlocfilehash: b856c44f3733d4a7c236d901edb391091d9d546e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: f00372d75b3e73bdc1499c3a2c8895bffb0902f9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
@@ -169,4 +169,3 @@ Consulte [Administrar propietarios de elementos en PowerShellGallery.com](Managi
 ## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>¿Cómo actúo en caso de que el propietario de un elemento infrinja la licencia de mi elemento?
 
 Recomendamos que la comunidad de PowerShell colabore para resolver los conflictos que puedan surgir entre los propietarios de elementos.  Hemos diseñado un [proceso de resolución de conflictos](psgallery_dispute_resolution.md) que le pedimos que siga antes de que tengan que intervenir los administradores de PowerShellGallery.com.
-

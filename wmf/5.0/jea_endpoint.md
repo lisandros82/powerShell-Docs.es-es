@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: c3645a6ba83081bd5ac31a13af0f67f6538db22a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 9065315ef39129e6a28234d972fe350fd5e7e11d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>Crear un punto de conexión de JEA y conectarse a este
 Para crear un punto de conexión de JEA, debe crear y registrar un archivo de configuración de sesión de PowerShell especialmente configurado, que se puede generar con el cmdlet **New-PSSessionConfigurationFile**.
 
 ```powershell
-New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc" 
+New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-Se creará un archivo de configuración de sesión como el siguiente: 
+Se creará un archivo de configuración de sesión como el siguiente:
 ```powershell
 @{
 
@@ -52,7 +52,7 @@ RoleDefinitions = @{
     'CONTOSO\NonAdmin_Operators' = @{
         'RoleCapabilities' = 'Maintenance' } }
 
-} 
+}
 ```
 Al crear un punto de conexión de JEA, se deben establecer los parámetros siguientes del comando (y las claves correspondientes en el archivo):
 1.  SessionType en RestrictedRemoteServer.
@@ -64,7 +64,7 @@ Al crear un punto de conexión de JEA, se deben establecer los parámetros sigui
 El campo RoleDefinitions define los grupos que tienen acceso a las "funcionalidades de los roles".  Una funcionalidad de rol es un archivo que define un conjunto de funcionalidades que se expondrán a los usuarios que se conecten.  Puede crear funcionalidades de rol con el comando **New-PSRoleCapabilityFile**.
 
 ```powershell
-New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc" 
+New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
 Se generará una funcionalidad de rol de plantilla con el siguiente aspecto:
@@ -128,7 +128,7 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # Assemblies to load when applied to a session
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
-} 
+}
 
 ```
 Para poder usarse en una configuración de sesión de JEA, las funcionalidades de rol deben guardarse como un módulo de PowerShell válido en un directorio denominado "RoleCapabilities". Un módulo puede tener varios archivos de funcionalidad de rol, si lo desea.
@@ -138,7 +138,7 @@ Para empezar a configurar los cmdlets, las funciones, los alias y los scripts a 
 Por último, cuando termine de personalizar la configuración de la sesión y las funcionalidades de rol relacionadas, ejecute **Register-PSSessionConfiguration** para registrar esta configuración de la sesión y crear el punto de conexión.
 
 ```powershell
-Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
+Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
 ## <a name="connect-to-a-jea-endpoint"></a>Conectarse a un punto de conexión de JEA
@@ -148,4 +148,3 @@ La conexión a un punto de conexión de JEA funciona igual que la conexión a ot
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 Después de conectarse a la sesión de JEA, estará limitado a ejecutar la comandos de la lista de permitidos en las funcionalidades de rol a las que tenga acceso. Si intenta ejecutar cualquier comando no permitido para su rol, se producirá un error.
-

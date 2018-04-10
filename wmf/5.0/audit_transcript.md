@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 9f26960ea118eccf92b1f931535347383a4b177d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 814b1172505e1bac59a75fee494e9741f7d1f820
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="enhanced-transcription-options"></a>Opciones de transcripción mejoradas
 
@@ -16,4 +16,3 @@ La transcripción de Windows PowerShell se mejoró para aplicarse a todas las ap
 Además de extenderse para la transcripción, la propia funcionalidad de transcripción se actualizó para admitir el anidamiento arbitrario de transcripciones, los metadatos adicionales en el encabezado de transcripción resultante y la configuración de un directorio de salida de transcripción (para admitir la recopilación de registro centralizada).
 
 Las opciones de transcripción (incluida la habilitación de una transcripción de todo el sistema) pueden configurarse con la opción de Directiva de grupo **Activar la transcripción de PowerShell** (en Plantillas administrativas -> Componentes de Windows -> Windows PowerShell).
-

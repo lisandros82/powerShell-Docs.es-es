@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Recursos de DSC Environment
-ms.openlocfilehash: 9c166d719ba3f168c936278acd6fb5fb7658613e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4f024afe2d70c13e19406745ec7fd69821ab229b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-environment-resource"></a>Recursos de DSC Environment
 
@@ -29,13 +29,13 @@ Environment [string] #ResourceName
 
 ## <a name="properties"></a>Propiedades
 
-|  Propiedad  |  Descripción   | 
-|---|---| 
-| Nombre| Indica el nombre de la variable de entorno para la que quiere garantizar un estado específico.| 
-| Ensure| Indica si existe una variable. Establezca esta propiedad en __Present__ para crear la variable de entorno si no existe o para garantizar que su valor coincida con el que se proporciona mediante la propiedad __Value__ si la variable ya existe. Establézcala en __Absent__ para eliminar la variable si existe.| 
-| Ruta| Define la variable de entorno que se está configurando. Establezca esta propiedad en __$true__ si la variable es la variable __Path__; de lo contrario, establézcala en __$false__. El valor predeterminado es __$false__. Si la variable que se está configurando es la variable __Path__, el valor facilitado mediante la propiedad __Value__ se anexará al valor existente.| 
-| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
-| Value| Valor que se asigna a la variable de entorno.| 
+|  Propiedad  |  Descripción   |
+|---|---|
+| Nombre| Indica el nombre de la variable de entorno para la que quiere garantizar un estado específico.|
+| Ensure| Indica si existe una variable. Establezca esta propiedad en __Present__ para crear la variable de entorno si no existe o para garantizar que su valor coincida con el que se proporciona mediante la propiedad __Value__ si la variable ya existe. Establézcala en __Absent__ para eliminar la variable si existe.|
+| Ruta| Define la variable de entorno que se está configurando. Establezca esta propiedad en __$true__ si la variable es la variable __Path__; de lo contrario, establézcala en __$false__. El valor predeterminado es __$false__. Si la variable que se está configurando es la variable __Path__, el valor facilitado mediante la propiedad __Value__ se anexará al valor existente.|
+| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.|
+| Value| Valor que se asigna a la variable de entorno.|
 
 ## <a name="example"></a>Ejemplo
 
@@ -49,4 +49,3 @@ Environment EnvironmentExample
     Value = "TestValue"
 }
 ```
-

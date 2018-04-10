@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 03/15/2018
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Uso de DSC en Microsoft Azure
-ms.openlocfilehash: d164fc107ec9fecbb8e399d0089501cababde8c4
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 5b0d577e1fecdeac38c2c5f8e955a2d23b1eb707
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-dsc-on-microsoft-azure"></a>Uso de DSC en Microsoft Azure
 
@@ -15,7 +15,8 @@ La configuración de estado deseado (DSC) es compatible con Microsoft Azure a tr
 
 ## <a name="azure-desired-state-configuration-extension-handler"></a>Controlador de extensiones de la configuración de estado deseado de Azure
 
-La extensión de DSC de Azure permite que las máquinas virtuales hospedadas en Microsoft Azure se administren con DSC. Para obtener más información, vea los temas siguientes:
+La extensión de DSC de Azure permite que las máquinas virtuales hospedadas en Microsoft Azure se administren con DSC.
+Para obtener más información, vea los temas siguientes:
 
 - [Controlador de extensiones de la configuración de estado deseado de Azure](/azure/virtual-machines/virtual-machines-windows-extensions-dsc-overview)
 - [VMSS de Windows y configuración de estado deseado con plantillas de Azure Resource Manager](/azure/virtual-machines/virtual-machines-windows-extensions-dsc-template)
@@ -24,9 +25,8 @@ La extensión de DSC de Azure permite que las máquinas virtuales hospedadas en 
 
 ## <a name="azure-automation-dsc"></a>DSC de Azure Automation
 
-El [servicio Azure Automation](/services/automation/) le permite administrar configuraciones de DSC, recursos y nodos administrados dentro de Azure. Para obtener más información, vea los temas siguientes:
+El [servicio Azure Automation](https://azure.microsoft.com/services/automation/) le permite administrar configuraciones de DSC, recursos y nodos administrados dentro de Azure. Para obtener más información, vea los temas siguientes:
 
 - [DSC de Azure Automation](/azure/automation/automation-dsc-overview)
 - [Introducción a DSC de Azure Automation](/azure/automation/automation-dsc-getting-started)
 - [Incorporación de máquinas para administrarlas con DSC de Azure Automation](/azure/automation/automation-dsc-onboarding)
-

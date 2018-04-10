@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Configuración de un servidor de incorporación de cambios SMB de DSC"
-ms.openlocfilehash: ff3faeb1952e6116cf97b1aaf8f125d8931dd35e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Configuración de un servidor de incorporación de cambios SMB de DSC
+ms.openlocfilehash: e9228c050d6f496e30e94404a564ed2e425a5412
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Configuración de un servidor de incorporación de cambios SMB de DSC
 
@@ -37,19 +37,19 @@ Configuration SmbShare {
 
 Import-DscResource -ModuleName PSDesiredStateConfiguration
 Import-DscResource -ModuleName xSmbShare
- 
+
     Node localhost {
- 
+
         File CreateFolder {
- 
+
             DestinationPath = 'C:\DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
- 
+
         }
- 
+
         xSMBShare CreateShare {
- 
+
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
             FullAccess = 'admininstrator'
@@ -57,11 +57,11 @@ Import-DscResource -ModuleName xSmbShare
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
- 
+
         }
-        
+
     }
- 
+
 }
 ```
 
@@ -78,19 +78,19 @@ Configuration DSCSMB {
 Import-DscResource -ModuleName PSDesiredStateConfiguration
 Import-DscResource -ModuleName xSmbShare
 Import-DscResource -ModuleName cNtfsAccessControl
- 
+
     Node localhost {
- 
+
         File CreateFolder {
- 
+
             DestinationPath = 'DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
- 
+
         }
- 
+
         xSMBShare CreateShare {
- 
+
             Name = 'DscSmbShare'
             Path = 'DscSmbShare'
             FullAccess = 'administrator'
@@ -98,11 +98,11 @@ Import-DscResource -ModuleName cNtfsAccessControl
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
- 
+
         }
 
         cNtfsPermissionEntry PermissionSet1 {
-            
+
         Ensure = 'Present'
         Path = 'C:\DSCSMB'
         Principal = 'myDomain\Contoso-Server$'
@@ -116,12 +116,12 @@ Import-DscResource -ModuleName cNtfsAccessControl
             }
         )
         DependsOn = '[File]CreateFolder'
-        
+
         }
- 
-        
+
+
     }
- 
+
 }
 ```
 
@@ -133,10 +133,12 @@ Todos los archivos MOF de configuración deben denominarse _ConfigurationID_.mof
 
 >**Nota:** Debe usar identificadores de configuración si está utilizando un servidor de incorporación de cambios SMB. Los nombres de configuración no son compatibles con SMB.
 
-Cada módulo de recursos se debe comprimir y se le debe asignar un nombre de acuerdo con el siguiente patrón `{Module Name}_{Module Version}.zip`. Por ejemplo, un módulo denominado xWebAdminstration con una versión de módulo de 3.1.2.0 se denominaría 'xWebAdministration_3.2.1.0.zip'. Cada versión de un módulo debe incluirse en un solo archivo ZIP. Dado que solo hay una versión de un recurso en cada archivo ZIP, no se admite el formato de módulo que se agrega en WMF 5.0 con compatibilidad con varias versiones de módulo en un único directorio. Esto significa que antes de empaquetar los módulos de recursos de DSC para su uso con el servidor de incorporación de cambios, debe realizar un pequeño cambio en la estructura de directorios. El formato predeterminado de los módulos que contienen recursos de DSC en WMF 5.0 es '{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'. Antes de empaquetar el servidor de extracción, quite la carpeta **{Module version}** para que la ruta de acceso se convierta en '{Module Folder}\DscResources\{DSC Resource Folder}\'. Con este cambio, comprima la carpeta según lo descrito anteriormente y coloque estos archivos ZIP en la carpeta compartida SMB. 
+Cada módulo de recursos se debe comprimir y se le debe asignar un nombre de acuerdo con el siguiente patrón `{Module Name}_{Module Version}.zip`. Por ejemplo, un módulo denominado xWebAdminstration con una versión de módulo de 3.1.2.0 se denominaría 'xWebAdministration_3.2.1.0.zip'. Cada versión de un módulo debe incluirse en un solo archivo ZIP. Dado que solo hay una versión de un recurso en cada archivo ZIP, no se admite el formato de módulo que se agrega en WMF 5.0 con compatibilidad con varias versiones de módulo en un único directorio. Esto significa que antes de empaquetar los módulos de recursos de DSC para su uso con el servidor de incorporación de cambios, debe realizar un pequeño cambio en la estructura de directorios. El formato predeterminado de los módulos que contienen recursos de DSC en WMF 5.0 es '{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'. Antes de empaquetar el servidor de extracción, quite la carpeta **{Module version}** para que la ruta de acceso se convierta en '{Module Folder}\DscResources\{DSC Resource Folder}\'. Con este cambio, comprima la carpeta según lo descrito anteriormente y coloque estos archivos ZIP en la carpeta compartida SMB.
 
 ## <a name="creating-the-mof-checksum"></a>Creación de la suma de comprobación MOF
-Un archivo de configuración MOF debe emparejarse con un archivo de suma de comprobación para que un LCM de un nodo de destino pueda validar la configuración. Para crear una suma de comprobación, llame al cmdlet [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx). El cmdlet toma un parámetro **Path** que especifica la carpeta donde se encuentra el MOF de configuración. El cmdlet crea un archivo de suma de comprobación denominado `ConfigurationMOFName.mof.checksum`, donde `ConfigurationMOFName` es el nombre del archivo mof de configuración. Si hay más de un archivo MOF de configuración en la carpeta especificada, se crea una suma de comprobación para cada una de las configuraciones de la carpeta.
+Un archivo de configuración MOF debe emparejarse con un archivo de suma de comprobación para que un LCM de un nodo de destino pueda validar la configuración.
+Para crear una suma de comprobación, llame al cmdlet [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx). El cmdlet toma un parámetro **Path** que especifica la carpeta donde se encuentra el MOF de configuración. El cmdlet crea un archivo de suma de comprobación denominado `ConfigurationMOFName.mof.checksum`, donde `ConfigurationMOFName` es el nombre del archivo mof de configuración.
+Si hay más de un archivo MOF de configuración en la carpeta especificada, se crea una suma de comprobación para cada una de las configuraciones de la carpeta.
 
 El archivo de suma de comprobación debe estar en el mismo directorio que el archivo MOF de configuración (de forma predeterminada, `$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration`) y tener el mismo nombre con la extensión `.checksum` anexada.
 
@@ -164,12 +166,12 @@ configuration SmbCredTest
         Settings
         {
             RefreshMode = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
             ConfigurationID    = '16db7357-9083-4806-a80c-ebbaf4acd6c1'
         }
-         
-         ConfigurationRepositoryShare SmbConfigShare      
+
+         ConfigurationRepositoryShare SmbConfigShare
         {
             SourcePath = '\\WIN-E0TRU6U11B1\DscSmbShare'
             Credential = $mycreds
@@ -179,8 +181,8 @@ configuration SmbCredTest
         {
             SourcePath = '\\WIN-E0TRU6U11B1\DscSmbShare'
             Credential = $mycreds
-            
-        }      
+
+        }
     }
 }
 
@@ -198,7 +200,7 @@ $ConfigurationData = @{
 
         })
 
-        
+
 
 }
 ```
@@ -214,5 +216,3 @@ Agradecimientos especiales a:
 - [Información general sobre la configuración de estado deseado de Windows PowerShell](overview.md)
 - [Establecer configuraciones](enactingConfigurations.md)
 - [Configuración de un cliente de extracción mediante id. de configuración](pullClientConfigID.md)
-
- 

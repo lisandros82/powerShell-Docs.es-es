@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Configuraciones parciales de la configuración de estado deseado de PowerShell"
-ms.openlocfilehash: 4401ea80cffd09f4b92c9fcca16d5dcad7f6a327
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Configuraciones parciales de la configuración de estado deseado de PowerShell
+ms.openlocfilehash: cd2812724c2279a7effc4739f23193c1dc836ce5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Configuraciones parciales de la configuración de estado deseado de PowerShell
 
 >Se aplica a: Windows PowerShell 5.0 y posterior.
 
-En PowerShell 5.0, la configuración de estado deseado (DSC) permite que las configuraciones se entreguen en fragmentos y desde varios orígenes. El administrador de configuración local (LCM) en el nodo de destino reúne los fragmentos antes de aplicarlos como una configuración única. Esta capacidad permite compartir el control de la configuración entre equipos o usuarios. Por ejemplo, si dos o más equipos de desarrolladores colaboran en un servicio, es posible que cada uno de ellos prefiera crear configuraciones para administrar su parte del servicio. Cada una de estas configuraciones se podría extraer de servidores de extracción diferentes y se podría agregar en diferentes fases del desarrollo. Las configuraciones parciales también permiten que distintas personas o equipos controlen aspectos diferentes de los nodos de configuración, sin tener que coordinar la edición de un documento de configuración único. Por ejemplo, un equipo podría ser responsable de la implementación de una máquina virtual y un sistema operativo, mientras que otro equipo podría implementar otras aplicaciones y servicios en esa máquina virtual. Con las configuraciones parciales, cada equipo puede crear su propia configuración, sin que ninguna de ellas sea innecesariamente complicada.
+En PowerShell 5.0, la configuración de estado deseado (DSC) permite que las configuraciones se entreguen en fragmentos y desde varios orígenes. El administrador de configuración local (LCM) en el nodo de destino reúne los fragmentos antes de aplicarlos como una configuración única. Esta capacidad permite compartir el control de la configuración entre equipos o usuarios.
+Por ejemplo, si dos o más equipos de desarrolladores colaboran en un servicio, es posible que cada uno de ellos prefiera crear configuraciones para administrar su parte del servicio. Cada una de estas configuraciones se podría extraer de servidores de extracción diferentes y se podría agregar en diferentes fases del desarrollo. Las configuraciones parciales también permiten que distintas personas o equipos controlen aspectos diferentes de los nodos de configuración, sin tener que coordinar la edición de un documento de configuración único. Por ejemplo, un equipo podría ser responsable de la implementación de una máquina virtual y un sistema operativo, mientras que otro equipo podría implementar otras aplicaciones y servicios en esa máquina virtual. Con las configuraciones parciales, cada equipo puede crear su propia configuración, sin que ninguna de ellas sea innecesariamente complicada.
 
 Puede utilizar las configuraciones parciales en el modo de inserción, el modo de extracción o una combinación de ambos.
 
@@ -21,7 +22,8 @@ Puede utilizar las configuraciones parciales en el modo de inserción, el modo d
 Para utilizar configuraciones parciales en modo de inserción, debe configurar el LCM en el nodo de destino para que reciba las configuraciones parciales. Cada configuración parcial se debe insertar en el destino mediante el cmdlet Publish-DSCConfiguration. El nodo de destino combina entonces la configuración parcial en una configuración única, que puede aplicar mediante una llamada al cmdlet [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Configurar el LCM para configuraciones parcial del modo de inserción
-Para configurar el LCM para configuraciones parciales en el modo de inserción, debe crear una configuración **DSCLocalConfigurationManager** con un bloque **PartialConfiguration** para cada configuración parcial. Para más información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local de Windows](https://technet.microsoft.com/library/mt421188.aspx). En el ejemplo siguiente se muestra una configuración de LCM que espera dos configuraciones parciales: una que implemente el sistema operativo y otra que implemente y configure SharePoint.
+Para configurar el LCM para configuraciones parciales en el modo de inserción, debe crear una configuración **DSCLocalConfigurationManager** con un bloque **PartialConfiguration** para cada configuración parcial. Para más información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local de Windows](https://technet.microsoft.com/library/mt421188.aspx).
+En el ejemplo siguiente se muestra una configuración de LCM que espera dos configuraciones parciales: una que implemente el sistema operativo y otra que implemente y configure SharePoint.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -29,7 +31,7 @@ configuration PartialConfigDemo
 {
     Node localhost
     {
-        
+
            PartialConfiguration ServiceAccountConfig
         {
             Description = 'Configuration to add the SharePoint service account to the Administrators group.'
@@ -42,7 +44,7 @@ configuration PartialConfigDemo
         }
     }
 }
-PartialConfigDemo 
+PartialConfigDemo
 ```
 
 El valor **RefreshMode** de cada configuración parcial se establece en "Push". Los nombres de los bloques **PartialConfiguration** (en este caso, "ServiceAccountConfig" y "SharePointConfig") deben coincidir exactamente con los nombres de las configuraciones que se inserten en el nodo de destino.
@@ -62,26 +64,26 @@ PS C:\PartialConfigTest> Get-ChildItem -Recurse
     Directory: C:\PartialConfigTest
 
 
-Mode                LastWriteTime         Length Name                                                                                                                                         
-----                -------------         ------ ----                                                                                                                                         
-d-----        8/11/2016   1:55 PM                ServiceAccountConfig                                                                                                                  
-d-----       11/17/2016   4:14 PM                SharePointConfig                                                                                                                                    
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        8/11/2016   1:55 PM                ServiceAccountConfig
+d-----       11/17/2016   4:14 PM                SharePointConfig
 
 
     Directory: C:\PartialConfigTest\ServiceAccountConfig
 
 
-Mode                LastWriteTime         Length Name                                                                                                                                         
-----                -------------         ------ ----                                                                                                                                         
--a----        8/11/2016   2:02 PM           2034 TestVM.mof                                                                                                                                
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        8/11/2016   2:02 PM           2034 TestVM.mof
 
 
     Directory: C:\DscTests\SharePointConfig
 
 
-Mode                LastWriteTime         Length Name                                                                                                                                         
-----                -------------         ------ ----                                                                                                                                         
--a----       11/17/2016   4:14 PM           1930 TestVM.mof                                                                                                                                     
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----       11/17/2016   4:14 PM           1930 TestVM.mof
 ```
 
 Publicaría y ejecutaría las configuraciones de la forma siguiente:
@@ -91,8 +93,8 @@ PS C:\PartialConfigTest> Publish-DscConfiguration .\ServiceAccountConfig -Comput
 PS C:\PartialConfigTest> Publish-DscConfiguration .\SharePointConfig -ComputerName 'TestVM'
 PS C:\PartialConfigTest> Start-DscConfiguration -UseExisting -ComputerName 'TestVM'
 
-Id     Name            PSJobTypeName   State         HasMoreData     Location             Command                  
---     ----            -------------   -----         -----------     --------             -------                  
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
@@ -106,7 +108,8 @@ Las configuraciones parciales pueden extraerse de uno o varios servidores de ext
 
 Para configurar el LCM para extraer configuraciones parciales de un servidor de extracción, debe definir el servidor de extracción en un bloque **ConfigurationRepositoryWeb** (para un servidor de extracción HTTP) o **ConfigurationRepositoryShare** (para un servidor de extracción SMB). A continuación, cree bloques **PartialConfiguration** que hagan referencia al servidor de extracción mediante la propiedad **ConfigurationSource**. También debe crear un bloque **Settings** para especificar que el LCM usa el modo de extracción y para especificar los valores de **ConfigurationNames** o **ConfigurationID** que el servidor de extracción y el nodo de destino usan para identificar las configuraciones. La metaconfiguración siguiente define un servidor de extracción HTTP denominado CONTOSO-PullSrv y dos configuraciones parciales que usan dicho servidor de extracción.
 
-Para obtener más información sobre cómo configurar el LCM mediante **ConfigurationNames**, consulte [Configuración de un cliente de extracción mediante nombres de configuración](pullClientConfigNames.md). Para obtener más información sobre cómo configurar el LCM mediante **ConfigurationID**, consulte [Configuración de un cliente de extracción mediante id. de configuración](pullClientConfigID.md).
+Para obtener más información sobre cómo configurar el LCM mediante **ConfigurationNames**, consulte [Configuración de un cliente de extracción mediante nombres de configuración](pullClientConfigNames.md).
+Para obtener más información sobre cómo configurar el LCM mediante **ConfigurationID**, consulte [Configuración de un cliente de extracción mediante id. de configuración](pullClientConfigID.md).
 
 #### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configuration-names"></a>Configurar el LCM para configuraciones de modo de extracción mediante nombres de configuración
 
@@ -125,26 +128,26 @@ Configuration PartialConfigDemoConfigNames
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
-            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'    
-            RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38     
+            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38
             ConfigurationNames              = @("ServiceAccountConfig", "SharePointConfig")
-        }     
-        
-        PartialConfiguration ServiceAccountConfig 
+        }
+
+        PartialConfiguration ServiceAccountConfig
         {
             Description                     = "ServiceAccountConfig"
-            ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv") 
+            ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
         }
- 
+
         PartialConfiguration SharePointConfig
         {
             Description                     = "SharePointConfig"
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
             DependsOn                       = '[PartialConfiguration]ServiceAccountConfig'
         }
-   
+
 }
-``` 
+```
 
 #### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configurationid"></a>Configurar el LCM para configuraciones de modo de extracción mediante ConfigurationID
 
@@ -158,15 +161,15 @@ configuration PartialConfigDemoConfigID
         {
             RefreshMode                     = 'Pull'
             ConfigurationID                 = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins            = 30 
+            RefreshFrequencyMins            = 30
             RebootNodeIfNeeded              = $true
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
+
         }
-        
+
            PartialConfiguration ServiceAccountConfig
         {
             Description                     = 'Configuration for the Base OS'
@@ -182,7 +185,7 @@ configuration PartialConfigDemoConfigID
         }
     }
 }
-PartialConfigDemo 
+PartialConfigDemo
 ```
 
 Puede extraer configuraciones parciales de más de un servidor de extracción; solo sería necesario definir cada servidor de extracción y, después, hacer referencia al servidor de extracción adecuado en cada bloque **PartialConfiguration**.
@@ -191,11 +194,13 @@ Después de crear la metaconfiguración, debe ejecutar para crear un documento d
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>Nomenclatura y ubicación de los documentos de configuración en el servidor de extracción (ConfigurationNames)
 
-Los documentos de configuración parcial deben ubicarse en la carpeta especificada en el valor **ConfigurationPath** del archivo `web.config` del servidor de extracción (normalmente `C:\Program Files\WindowsPowerShell\DscService\Configuration`). 
+Los documentos de configuración parcial deben ubicarse en la carpeta especificada en el valor **ConfigurationPath** del archivo `web.config` del servidor de extracción (normalmente `C:\Program Files\WindowsPowerShell\DscService\Configuration`).
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>Nomenclatura de los documentos de configuración en el servidor de extracción en PowerShell 5.1
 
-Si extrae una sola configuración parcial de un servidor de extracción individual, el documento de configuración puede tener cualquier nombre. Si está extrayendo los más de una configuración parcial de un servidor de extracción, el documento de configuración podría denominarse `<ConfigurationName>.mof`, donde _ConfigurationName_ es el nombre de la configuración parcial, o `<ConfigurationName>.<NodeName>.mof`, donde _ConfigurationName_ es el nombre de la configuración parcial y _NodeName_ es el nombre del nodo de destino. Esto le permite extraer las configuraciones del servidor de extracción de DSC de Azure Automation.
+Si extrae una sola configuración parcial de un servidor de extracción individual, el documento de configuración puede tener cualquier nombre.
+Si está extrayendo los más de una configuración parcial de un servidor de extracción, el documento de configuración podría denominarse `<ConfigurationName>.mof`, donde _ConfigurationName_ es el nombre de la configuración parcial, o `<ConfigurationName>.<NodeName>.mof`, donde _ConfigurationName_ es el nombre de la configuración parcial y _NodeName_ es el nombre del nodo de destino.
+Esto le permite extraer las configuraciones del servidor de extracción de DSC de Azure Automation.
 
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>Nomenclatura de los documentos de configuración en el servidor de extracción en PowerShell 5.0
@@ -228,7 +233,8 @@ Cuando se haya configurado el LCM en el nodo de destino y se hayan creado los do
 
 ## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>Configuraciones parciales en los modos de inserción y extracción mixtos
 
-También puede mezclar los modos de inserción y extracción para las configuraciones parciales. Es decir, podría tener una configuración parcial que se haya extraído de un servidor de extracción, mientras que otra configuración parcial se inserta. Especifique el modo de actualización de cada configuración parcial, tal como se describe en las secciones anteriores. Por ejemplo, la metaconfiguración siguiente describe el mismo ejemplo, con la configuración parcial de la cuenta de `ServiceAccountConfig` en el modo de extracción y la configuración parcial de `SharePointConfig` en el modo de inserción.
+También puede mezclar los modos de inserción y extracción para las configuraciones parciales. Es decir, podría tener una configuración parcial que se haya extraído de un servidor de extracción, mientras que otra configuración parcial se inserta. Especifique el modo de actualización de cada configuración parcial, tal como se describe en las secciones anteriores.
+Por ejemplo, la metaconfiguración siguiente describe el mismo ejemplo, con la configuración parcial de la cuenta de `ServiceAccountConfig` en el modo de extracción y la configuración parcial de `SharePointConfig` en el modo de inserción.
 
 ### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>Modos de inserción y extracción mixtos mediante ConfigurationNames
 
@@ -247,27 +253,27 @@ Configuration PartialConfigDemoConfigNames
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
-            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'    
-            RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38     
+            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38
             ConfigurationNames              = @("ServiceAccountConfig", "SharePointConfig")
-        }     
-        
-        PartialConfiguration ServiceAccountConfig 
+        }
+
+        PartialConfiguration ServiceAccountConfig
         {
             Description                     = "ServiceAccountConfig"
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
-            RefreshMode                     = 'Pull' 
+            RefreshMode                     = 'Pull'
         }
- 
+
         PartialConfiguration SharePointConfig
         {
             Description                     = "SharePointConfig"
             DependsOn                       = '[PartialConfiguration]ServiceAccountConfig'
             RefreshMode                     = 'Push'
         }
-   
+
 }
-``` 
+```
 
 ### <a name="mixed-push-and-pull-modes-using-configurationid"></a>Modos de inserción y extracción mixtos mediante ConfigurationID
 
@@ -281,15 +287,15 @@ configuration PartialConfigDemo
         {
             RefreshMode             = 'Pull'
             ConfigurationID         = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins    = 30 
+            RefreshFrequencyMins    = 30
             RebootNodeIfNeeded      = $true
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL               = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
+
         }
-        
+
            PartialConfiguration ServiceAccountConfig
         {
             Description             = 'Configuration for the Base OS'
@@ -304,7 +310,7 @@ configuration PartialConfigDemo
         }
     }
 }
-PartialConfigDemo 
+PartialConfigDemo
 ```
 
 Tenga en cuenta que el valor de **RefreshMode** especificado en el bloque Settings es "Pull", pero el valor de **RefreshMode** para configuración parcial de `SharePointConfig` es "Push".
@@ -335,7 +341,7 @@ Configuration ServiceAccountConfig
                                   'admins@example.domain'
             Ensure              = 'Present'
             Credential          = $Credential
-            
+
         }
 
         WindowsFeature Telnet
@@ -372,10 +378,9 @@ Configuration SharePointConfig
 }
 SharePointConfig
 ```
-##<a name="see-also"></a>Véase también 
+##<a name="see-also"></a>Véase también
 
 **Conceptos**
-[Servidores de extracción de la configuración de estado deseado de Windows PowerShell](pullServer.md) 
+[Servidores de extracción de la configuración de estado deseado de Windows PowerShell](pullServer.md)
 
-[Configuración del administrador de configuración local de Windows](https://technet.microsoft.com/library/mt421188.aspx) 
-
+[Configuración del administrador de configuración local de Windows](https://technet.microsoft.com/library/mt421188.aspx)

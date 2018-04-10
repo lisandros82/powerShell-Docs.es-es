@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Recurso WaitForSome de DSC
-ms.openlocfilehash: 8b0ad0dbd31816cc673c7f77945927987e90e08b
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 8132b584fad350530f6fc80175980881a399ac2e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-waitforsome-resource"></a>Recurso WaitForSome de DSC
 
@@ -15,7 +15,7 @@ ms.lasthandoff: 03/15/2018
 
 El recurso **WaitForAny** de Desired State Configuration (DSC) se puede usar dentro de un bloque de nodos en una [configuración de DSC](configurations.md) para especificar las dependencias de las configuraciones de otros nodos.
 
-Este recurso se ejecuta si el recurso especificado por la propiedad **ResourceName** está en el estado deseado en un número mínimo de nodos (especificado por **NodeCount**) definido por la propiedad **NodeName**. 
+Este recurso se ejecuta si el recurso especificado por la propiedad **ResourceName** está en el estado deseado en un número mínimo de nodos (especificado por **NodeCount**) definido por la propiedad **NodeName**.
 
 
 ## <a name="syntax"></a>Sintaxis
@@ -36,14 +36,14 @@ WaitForSome [String] #ResourceName
 
 ## <a name="properties"></a>Propiedades
 
-|  Propiedad  |  Descripción   | 
-|---|---| 
+|  Propiedad  |  Descripción   |
+|---|---|
 | NodeCount| El número mínimo de nodos que deben tener el estado deseado para que se ejecute este recurso.|
-| NodeName| Los nodos de destino del recurso de dependencia.| 
-| nombreDelRecurso| El nombre del recurso de dependencia. Si el recurso pertenece a una configuración diferente, asegúrese de que el formato del nombre sea el siguiente: "[__TipoDeRecurso__]__NombreDeRecurso__::[__NombreDeConfiguración__]::[__NombreDeConfiguración__]".| 
-| RetryIntervalSec| El número de segundos antes de reintentar la operación. El valor mínimo es 1.| 
-| RetryCount| El número máximo de reintentos.| 
-| ThrottleLimit| El número de máquinas que se pueden conectar de forma simultánea. El valor predeterminado es new-cimsession.| 
+| NodeName| Los nodos de destino del recurso de dependencia.|
+| nombreDelRecurso| El nombre del recurso de dependencia. Si el recurso pertenece a una configuración diferente, asegúrese de que el formato del nombre sea el siguiente: "[__TipoDeRecurso__]__NombreDeRecurso__::[__NombreDeConfiguración__]::[__NombreDeConfiguración__]".|
+| RetryIntervalSec| El número de segundos antes de reintentar la operación. El valor mínimo es 1.|
+| RetryCount| El número máximo de reintentos.|
+| ThrottleLimit| El número de máquinas que se pueden conectar de forma simultánea. El valor predeterminado es new-cimsession.|
 | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.|
 | PsDscRunAsCredential | Consulte el artículo sobre el [uso de DSC con credenciales de usuario](https://docs.microsoft.com/powershell/dsc/runasuser) |
 
@@ -51,4 +51,3 @@ WaitForSome [String] #ResourceName
 ## <a name="example"></a>Ejemplo
 
 Para un ejemplo de cómo usar este recurso, consulte [Especificación de dependencias entre nodos](crossNodeDependencies.md)
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: gallery,powershell,cmdlet,psget
 title: modulewithpseditionsupport
-ms.openlocfilehash: 8a762ddf307f47ecec8d2a63098e75cde97c391f
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: cc4ab8d41d4c6aace72cbeeabcf510fab6d3a999
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Módulos con las ediciones compatibles de PowerShell
 A partir de la versión 5.1, PowerShell está disponible en diferentes ediciones que denotan distintos conjuntos de características y compatibilidad con varias plataformas.
@@ -68,7 +68,7 @@ Core
 
 ```
 
-## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>Los autores de módulos pueden publicar un único módulo destinado a una de las ediciones de PowerShell o a ambas (Core o Desktop) 
+## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>Los autores de módulos pueden publicar un único módulo destinado a una de las ediciones de PowerShell o a ambas (Core o Desktop)
 
 Un único módulo puede trabajar tanto en la edición Desktop como Core; en este módulo, el autor tiene que agregar la lógica necesaria en RootModule o en el manifiesto del módulo mediante la variable $PSEdition.
 Los módulos pueden tener dos conjuntos de archivos DLL compilados que se dirijan a CoreCLR y a FullCLR.
@@ -77,18 +77,18 @@ A continuación, se indican un par de formas de empaquetar un módulo con la ló
 ### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Opción 1: empaquetar un módulo para dirigirlo a varias versiones y varias ediciones de PowerShell
 
 #### <a name="module-folder-contents"></a>Contenido de la carpeta del módulo
-- Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
+- Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - PSScriptAnalyzer.psd1
 - PSScriptAnalyzer.psm1
 - ScriptAnalyzer.format.ps1xml
 - ScriptAnalyzer.types.ps1xml
-- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
+- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - es-ES\about_PSScriptAnalyzer.help.txt
 - es-ES\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll-Help.xml
-- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
+- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - Settings\CmdletDesign.psd1
 - Settings\DSC.psd1
 - Settings\ScriptFunctions.psd1
@@ -99,7 +99,7 @@ A continuación, se indican un par de formas de empaquetar un módulo con la ló
 
 ```powershell
 @{
- 
+
 # Author of this module
 Author = 'Microsoft Corporation'
 
@@ -137,7 +137,7 @@ else
 {
     if ($PSVersionTable.PSVersion -lt [Version]'5.0') {
         $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'PSv3'
-    }    
+    }
 }
 
 $binaryModulePath = Join-Path -Path $binaryModuleRoot -ChildPath 'Microsoft.Windows.PowerShell.ScriptAnalyzer.dll'
@@ -146,14 +146,14 @@ $binaryModule = Import-Module -Name $binaryModulePath -PassThru
 # When the module is unloaded, remove the nested binary module that was loaded with it
 $PSModule.OnRemove = {
     Remove-Module -ModuleInfo $binaryModule
-} 
+}
 
 ```
 
 ### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>Opción 2: usar la variable $PSEdition en el archivo. PSD1 para cargar los archivos DLL adecuados y los módulos anidados o necesarios
 
 En PS 5.1 y versiones posteriores, se permite usar la variable global $PSEdition en el archivo de manifiesto de módulo.
-Mediante esta variable el autor del módulo puede especificar los valores condicionales en el archivo de manifiesto de módulo. Se puede hacer referencia a la variable $PSEdition en modo de lenguaje restringido o en una sección de datos. 
+Mediante esta variable el autor del módulo puede especificar los valores condicionales en el archivo de manifiesto de módulo. Se puede hacer referencia a la variable $PSEdition en modo de lenguaje restringido o en una sección de datos.
 
 *NOTA* Una vez que se especifica un manifiesto de módulo con la clave CompatiblePSEditions (o cuando usa la variable $PSEdition), no se puede importar en versiones anteriores de PowerShell.
 
@@ -161,9 +161,9 @@ Mediante esta variable el autor del módulo puede especificar los valores condic
 #### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a>Ejemplo de un archivo de manifiesto de módulo con la clave CompatiblePSEditions
 
 ```powershell
-@{ 
+@{
 # - - -
- 
+
 # Script module or binary module file associated with this manifest.
 RootModule = if($PSEdition -eq 'Core')
 {
@@ -173,10 +173,10 @@ else # Desktop
 {
 'clr\MyFullClrRM.dll'
 }
- 
+
 # Supported PSEditions
 CompatiblePSEditions = 'Desktop', 'Core'
- 
+
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
 NestedModules = if($PSEdition -eq 'Core')
 {
@@ -188,7 +188,7 @@ else # Desktop
 'clr\MyFullClrNM1.dll',
 'clr\MyFullClrNM2.dll'
 }
- 
+
 # -- - -
 }
 ```
@@ -198,30 +198,30 @@ else # Desktop
 ```powershell
 
 PS C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions> dir -Recurse
- 
+
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
- 
-Mode                LastWriteTime         Length Name                                                                                
-----                -------------         ------ ----                                                                                
-d-----         7/5/2016   1:37 PM                clr                                                                                 
-d-----         7/5/2016   1:36 PM                coreclr                                                                             
--a----         7/5/2016   1:34 PM           4906 ModuleWithEditions.psd1                                                             
- 
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         7/5/2016   1:37 PM                clr
+d-----         7/5/2016   1:36 PM                coreclr
+-a----         7/5/2016   1:34 PM           4906 ModuleWithEditions.psd1
+
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\clr
- 
-Mode                LastWriteTime         Length Name                                                                                
-----                -------------         ------ ----                                                                                
--a----         7/5/2016   1:35 PM              0 MyFullClrNM1.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyFullClrNM2.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyFullClrRM.dl                                                                      
- 
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         7/5/2016   1:35 PM              0 MyFullClrNM1.dll
+-a----         7/5/2016   1:35 PM              0 MyFullClrNM2.dll
+-a----         7/5/2016   1:35 PM              0 MyFullClrRM.dl
+
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\coreclr
- 
-Mode                LastWriteTime         Length Name                                                                                
-----                -------------         ------ ----                                                                                
--a----         7/5/2016   1:35 PM              0 MyCoreClrNM1.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyCoreClrNM2.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl                                                                      
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         7/5/2016   1:35 PM              0 MyCoreClrNM1.dll
+-a----         7/5/2016   1:35 PM              0 MyCoreClrNM2.dll
+-a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl
 ```
 
 ## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a>Los usuarios de la Galería de PowerShell pueden encontrar la lista de los módulos admitidos para una edición específica de PowerShell mediante las etiquetas PSEdition_Desktop y PSEdition_Core.
@@ -242,4 +242,3 @@ Find-Module -Tag PSEditon_Core
 ### <a name="scripts-with-pseditionsscriptscriptwithpseditionsupportmd"></a>[Scripts con PSEditions](../script/scriptwithpseditionsupport.md)
 ### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[Compatibilidad con PSEditions en la Galería de PowerShell](../../psgallery/psgallery_pseditions.md)
 ### <a name="update-module-manifest-psgetupdate-modulemanifestmd"></a>[Actualizar manifiesto de módulo] (./psget_update-modulemanifest.md)
-

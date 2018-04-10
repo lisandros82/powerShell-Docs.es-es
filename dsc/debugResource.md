@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Depuración de recursos de DSC"
-ms.openlocfilehash: c9534deb755e2d3ce59dbb44e55b58b59af2e7f4
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Depuración de recursos de DSC
+ms.openlocfilehash: 6a1f4b04a11185c2cfe9be26324bd66ed13ca7dd
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="debugging-dsc-resources"></a>Depuración de recursos de DSC
 
@@ -16,7 +16,8 @@ ms.lasthandoff: 03/15/2018
 En PowerShell 5.0, se introdujo una nueva característica en la configuración de estado deseado (DSC) que permite depurar un recurso de DSC mientras se aplica una configuración.
 
 ## <a name="enabling-dsc-debugging"></a>Habilitar la depuración de DSC
-Antes de poder depurar un recurso, tendrá que habilitar la depuración mediante una llamada al cmdlet [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx). Este cmdlet toma un parámetro obligatorio, **BreakAll**. 
+Antes de poder depurar un recurso, tendrá que habilitar la depuración mediante una llamada al cmdlet [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx).
+Este cmdlet toma un parámetro obligatorio, **BreakAll**.
 
 Puede comprobar que se ha habilitado la depuración si examina el resultado de una llamada a [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).
 
@@ -42,7 +43,8 @@ PS C:\DebugTest>
 
 
 ## <a name="starting-a-configuration-with-debug-enabled"></a>Iniciar una configuración con la depuración habilitada
-Para depurar un recurso de DSC, debe iniciar una configuración que llame a ese recurso. En este ejemplo, se examinará una configuración simple que llama al recurso [WindowsFeature](windowsfeatureResource.md) para garantizar que se instale la característica "WindowsPowerShellWebAccess":
+Para depurar un recurso de DSC, debe iniciar una configuración que llame a ese recurso.
+En este ejemplo, se examinará una configuración simple que llama al recurso [WindowsFeature](windowsfeatureResource.md) para garantizar que se instale la característica "WindowsPowerShellWebAccess":
 
 ```powershell
 Configuration PSWebAccess
@@ -59,7 +61,9 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-Después de compilar la configuración, iníciela mediante una llamada a [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx). La configuración se detendrá cuando el administrador de configuración local (LCM) llame al primer recurso de la configuración. Si usa los parámetros `-Verbose` y `-Wait`, la salida mostrará las líneas que se deben especificar para iniciar la depuración.
+Después de compilar la configuración, iníciela mediante una llamada a [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).
+La configuración se detendrá cuando el administrador de configuración local (LCM) llame al primer recurso de la configuración.
+Si usa los parámetros `-Verbose` y `-Wait`, la salida mostrará las líneas que se deben especificar para iniciar la depuración.
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -68,31 +72,36 @@ Manager,'namespaceName' = root/Microsoft/Windows/DesiredStateConfiguration'.
 VERBOSE: An LCM method call arrived from computer TEST-SRV with user sid S-1-5-21-2127521184-1604012920-1887927527-108583.
 VERBOSE: An LCM method call arrived from computer TEST-SRV with user sid S-1-5-21-2127521184-1604012920-1887927527-108583.
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Set      ]
-WARNING: [TEST-SRV]:                            [DSCEngine] Warning LCM is in Debug 'ResourceScriptBreakAll' mode.  Resource script processing will 
+WARNING: [TEST-SRV]:                            [DSCEngine] Warning LCM is in Debug 'ResourceScriptBreakAll' mode.  Resource script processing will
 be stopped to wait for PowerShell script debugger to attach.
 VERBOSE: [TEST-SRV]:                            [DSCEngine] Importing the module C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateCo
 nfiguration\DscResources\MSFT_RoleResource\MSFT_RoleResource.psm1 in force mode.
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Resource ]  [[WindowsFeature]PSWA]
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Test     ]  [[WindowsFeature]PSWA]
 VERBOSE: [TEST-SRV]:                            [[WindowsFeature]PSWA] Importing the module MSFT_RoleResource in force mode.
-WARNING: [TEST-SRV]:                            [[WindowsFeature]PSWA] Resource is waiting for PowerShell script debugger to attach. 
+WARNING: [TEST-SRV]:                            [[WindowsFeature]PSWA] Resource is waiting for PowerShell script debugger to attach.
 Use the following commands to begin debugging this resource script:
 Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
-En este punto, el LCM ha llamado al recurso y alcanza el primer punto de interrupción. En las tres últimas líneas de la salida se muestra cómo adjuntarse al proceso y empezar a depurar el script del recurso.
+En este punto, el LCM ha llamado al recurso y alcanza el primer punto de interrupción.
+En las tres últimas líneas de la salida se muestra cómo adjuntarse al proceso y empezar a depurar el script del recurso.
 
 ## <a name="debugging-the-resource-script"></a>Depuración del script del recurso
 
-Inicie una nueva instancia de PowerShell ISE. En el panel de la consola, escriba las tres últimas líneas de la salida `Start-DscConfiguration` como comandos, reemplazando `<credentials>` por credenciales de usuario válidas. Ahora debería ver un aviso parecido a:
+Inicie una nueva instancia de PowerShell ISE.
+En el panel de la consola, escriba las tres últimas líneas de la salida `Start-DscConfiguration` como comandos, reemplazando `<credentials>` por credenciales de usuario válidas.
+Ahora debería ver un aviso parecido a:
 
 ```powershell
 [TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
 ```
 
 El script de recursos se abrirá en el panel de scripts y el depurador se detendrá en la primera línea de la función **Test-TargetResource** (el método **Test()** de un recurso basado en clases).
-Ahora, puede utilizar los comandos de depuración en el ISE para seguir los pasos del script de recursos, consultar valores variables, ver la pila de llamadas, etc. Para obtener más información sobre la depuración en PowerShell ISE, vea [How to Debug Scripts in Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/dd819480.aspx) (Cómo depurar scripts de Windows PowerShell ISE). Recuerde que cada línea del script de recursos (o clase) se define como un punto de interrupción.
+Ahora, puede utilizar los comandos de depuración en el ISE para seguir los pasos del script de recursos, consultar valores variables, ver la pila de llamadas, etc.
+Para obtener más información sobre la depuración en PowerShell ISE, vea [How to Debug Scripts in Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/dd819480.aspx) (Cómo depurar scripts de Windows PowerShell ISE).
+Recuerde que cada línea del script de recursos (o clase) se define como un punto de interrupción.
 
 ## <a name="disabling-dsc-debugging"></a>Deshabilitar la depuración de DSC
 
@@ -102,6 +111,5 @@ Después de llamar a [Enable-DscDebug](https://technet.microsoft.com/library/mt5
 
 
 ## <a name="see-also"></a>Véase también
-- [Escribir un recurso de DSC personalizado con MOF](authoringResourceMOF.md) 
+- [Escribir un recurso de DSC personalizado con MOF](authoringResourceMOF.md)
 - [Escribir un recurso de DSC personalizado con clases de PowerShell](authoringResourceClass.md)
-

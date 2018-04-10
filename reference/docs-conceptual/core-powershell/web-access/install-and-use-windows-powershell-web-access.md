@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: powershell, cmdlet
-title: "Instalación y uso de Windows PowerShell Web Access"
-ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Instalación y uso de Windows PowerShell Web Access
+ms.openlocfilehash: 8f140e73ce833fd1cfadbe1d8ee0fe0bb2d08873
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Instalación y uso de Windows PowerShell Web Access
 
@@ -96,7 +96,7 @@ Puede instalar la puerta de enlace de Windows PowerShell Web Access en un servid
    >**![Nota](images/note.jpeg) Nota**
    >
    >Al instalarse Windows PowerShell Web Access mediante el uso de los cmdlets de Windows PowerShell, no se agregan herramientas de administración de Servidor web (IIS) de forma predeterminada. Si quiere instalar las herramientas de administración en el mismo servidor que el de la puerta de enlace de Windows PowerShell Web Access, agregue el parámetro `-IncludeManagementTools` al comando de instalación (como se indica en este paso). Si administra el sitio web de Windows PowerShell Web Access desde un equipo remoto, instale el complemento Administrador de IIS mediante la instalación de las [Herramientas de administración remota del servidor para Windows 8.1](http://go.microsoft.com/fwlink/?LinkID=304145) o [Herramientas de administración remota del servidor para Windows 8](http://go.microsoft.com/fwlink/p/?LinkID=238560) en el equipo desde el que quiere administrar la puerta de enlace.
-   
+
    Para instalar roles y características en un VHD sin conexión, debe agregar los parámetros `-ComputerName` y `-VHD`. El parámetro `-ComputerName` contiene el nombre del servidor en el que se montará el VHD y el parámetro `-VHD` contiene la ruta de acceso al archivo VHD en el servidor especificado.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart`
@@ -113,8 +113,8 @@ Los administradores pueden reemplazar el certificado de prueba por un certificad
 Puede completar la configuración de la aplicación web Windows PowerShell Web Access mediante la ejecución del cmdlet `Install-PswaWebApplication` o mediante los pasos de configuración basados en GUI del Administrador de IIS. De manera predeterminada, el cmdlet instala la aplicación web, **pswa** (y un grupo de aplicaciones, **pswa\_pool**), en el contenedor **Sitio web predeterminado**, como se muestra en el Administrador de IIS. Si lo desea, puede indicar al cmdlet que cambie el contenedor de sitio predeterminado de la aplicación web. El Administrador de IIS proporciona opciones de configuración que se encuentran disponibles para las aplicaciones web, como cambiar el número de puerto o el certificado de Capa de sockets seguros (SSL).
 
 >**![Nota de seguridad](images/securitynote.jpeg) Nota de seguridad**
-> 
->Se recomienda encarecidamente que los administradores configuren la puerta de enlace para que use un certificado válido firmado por una CA. 
+>
+>Se recomienda encarecidamente que los administradores configuren la puerta de enlace para que use un certificado válido firmado por una CA.
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>Para configurar la puerta de enlace de Windows PowerShell Web Access con un certificado de prueba mediante Install-PswaWebApplication
 
@@ -145,8 +145,8 @@ La siguiente configuración se establece mediante la ejecución del cmdlet. Pued
 
 En este ejemplo, el sitio web resultante para Windows PowerShell Web Access es https://\<*nombre_servidor*\>/myWebApp.
 
->**![Nota](images/note.jpeg) Nota** 
-> 
+>**![Nota](images/note.jpeg) Nota**
+>
 >No podrá iniciar sesión hasta que se haya concedido a los usuarios acceso al sitio web mediante la adición de reglas de autorización. Para más información, vea [Configurar una regla de autorización restrictiva](#configure-a-restrictive-authorization-rule) y [Reglas de autorización y características de seguridad de Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>Para configurar la puerta de enlace de Windows PowerShell Web Access con un certificado original mediante Install-PswaWebApplication y el Administrador de IIS
@@ -193,9 +193,9 @@ En este ejemplo, el sitio web resultante para Windows PowerShell Web Access es h
 
     Para obtener acceso a Windows PowerShell Web Access, abra **https://\<nombre-servidor\>/pswa** en una ventana del explorador.
 
->**![Nota](images/note.jpeg) Nota** 
-> 
->No podrá iniciar sesión hasta que se haya concedido a los usuarios acceso al sitio web mediante la adición de reglas de autorización. 
+>**![Nota](images/note.jpeg) Nota**
+>
+>No podrá iniciar sesión hasta que se haya concedido a los usuarios acceso al sitio web mediante la adición de reglas de autorización.
 >Para más información, vea [Configurar una regla de autorización restrictiva](#configure-a-restrictive-authorization-rule) en este tema y [Reglas de autorización y características de seguridad de Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>configurar una regla de autorización restrictiva
@@ -219,7 +219,7 @@ Para obtener más información sobre la seguridad y las reglas de autorización 
    `Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>`
 
    Esta regla de autorización concede a un usuario específico acceso a un equipo de la red al que tiene acceso normalmente, con acceso a una configuración de sesión determinada en el ámbito de las necesidades de cmdlet y scripting típicas del usuario.
-   
+
    En el siguiente ejemplo, se concede acceso a un usuario llamado `JSmith` en el dominio `Contoso` para administrar el equipo `Contoso_214` y usar una configuración de sesión llamada `NewAdminsOnly`.
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
@@ -254,7 +254,7 @@ Puede instalar la puerta de enlace de Windows PowerShell Web Access en un servid
 
 6. Se le pedirá que agregue las características necesarias, como .NET Framework 4.5 y los servicios de rol de Servidor web (IIS). Agregue las características necesarias y continúe.
 
-    >**![Nota](images/note.jpeg) Nota** 
+    >**![Nota](images/note.jpeg) Nota**
     >
     >Al instalar Windows PowerShell Web Access mediante el uso del Asistente para agregar roles y características también se instala Servidor web (IIS), incluido el complemento Administrador de IIS. El complemento y otras herramientas de administración de IIS se instalan de manera predeterminada si usa el Asistente para agregar roles y características. Si instala Windows PowerShell Web Access mediante cmdlets de Windows PowerShell, como se describe en el siguiente procedimiento, las herramientas de administración no se agregan de manera predeterminada.
 
@@ -292,7 +292,10 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
 10. ![](images/SecurityNote.jpeg) Paso de seguridad opcional:
 
-    Con el sitio web seleccionado en el panel del árbol, haga doble clic en **Configuración de SSL** en el panel de contenido. Seleccione **Requerir SSL** y, a continuación, en el panel **Acciones**, haga clic en **Aplicar**. De forma opcional, en el panel **Configuración de SSL**, puede requerir que los usuarios que se conecten al sitio web de Windows PowerShell Web Access tengan certificados de cliente. Los certificados de cliente ayudan a comprobar la identidad de un usuario del dispositivo cliente. Para más información sobre el modo en que se puede incrementar la seguridad de Windows PowerShell Web Access al requerir certificados de cliente, consulte [Reglas de autorización y características de seguridad de Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) en esta guía.
+    Con el sitio web seleccionado en el panel del árbol, haga doble clic en **Configuración de SSL** en el panel de contenido.
+Seleccione **Requerir SSL** y, a continuación, en el panel **Acciones**, haga clic en **Aplicar**.
+De forma opcional, en el panel **Configuración de SSL**, puede requerir que los usuarios que se conecten al sitio web de Windows PowerShell Web Access tengan certificados de cliente. Los certificados de cliente ayudan a comprobar la identidad de un usuario del dispositivo cliente.
+Para más información sobre el modo en que se puede incrementar la seguridad de Windows PowerShell Web Access al requerir certificados de cliente, consulte [Reglas de autorización y características de seguridad de Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) en esta guía.
 
 11. Abra una sesión del explorador en un dispositivo cliente. Para más información sobre los dispositivos y exploradores admitidos, consulte [Compatibilidad con exploradores y dispositivos cliente](#browser-and-client-device-support) en este tema.
 
@@ -300,9 +303,9 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
     El explorador debe mostrar la página de inicio de sesión de la consola de Windows PowerShell Web Access.
 
-    >**![Nota](images/note.jpeg) Nota** 
-    > 
-    >No podrá iniciar sesión hasta que se haya concedido a los usuarios acceso al sitio web mediante la adición de reglas de autorización. 
+    >**![Nota](images/note.jpeg) Nota**
+    >
+    >No podrá iniciar sesión hasta que se haya concedido a los usuarios acceso al sitio web mediante la adición de reglas de autorización.
     >Para más información, vea [Configurar una regla de autorización restrictiva](#configure-a-restrictive-authorization-rule) en este tema y [Reglas de autorización y características de seguridad de Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 13. En una sesión de Windows PowerShell abierta con derechos de usuario elevados (Ejecutar como administrador), ejecute el siguiente script, en el que *application_pool_name* representa el nombre del grupo de aplicaciones creado en el paso 3, para conceder al grupo de aplicaciones derechos de acceso en el archivo de autorización.
@@ -363,9 +366,9 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
     Como el sitio web raíz apunta a la carpeta de Windows PowerShell Web Access, el explorador debería mostrar la página de inicio de sesión de Windows PowerShell Web Access cuando abra **https://\<*nombre-servidor-puerta-enlace*\>**. No será necesario que agregue **/pswa** a la dirección URL.
 
-    >**![Nota](images/note.jpeg) Nota** 
-    > 
-    >No podrá iniciar sesión hasta que se haya concedido a los usuarios acceso al sitio web mediante la adición de reglas de autorización. 
+    >**![Nota](images/note.jpeg) Nota**
+    >
+    >No podrá iniciar sesión hasta que se haya concedido a los usuarios acceso al sitio web mediante la adición de reglas de autorización.
     >Para más información, vea [Configurar una regla de autorización restrictiva](#configure-a-restrictive-authorization-rule) en este tema y [Reglas de autorización y características de seguridad de Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>configurar una regla de autorización restrictiva
@@ -390,13 +393,13 @@ Para obtener más información sobre la seguridad y las reglas de autorización 
 
         Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    Esta regla de autorización concede a un usuario específico acceso a un equipo de la red al que tiene acceso normalmente, con acceso a una configuración de sesión determinada en el ámbito de las necesidades de cmdlet y scripting típicas del usuario. 
-    
+    Esta regla de autorización concede a un usuario específico acceso a un equipo de la red al que tiene acceso normalmente, con acceso a una configuración de sesión determinada en el ámbito de las necesidades de cmdlet y scripting típicas del usuario.
+
     En el siguiente ejemplo, se concede acceso a un usuario llamado `JSmith` en el dominio `Contoso` para administrar el equipo `Contoso_214` y usar una configuración de sesión llamada `NewAdminsOnly`.
 
         Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4. Compruebe que la regla se haya creado mediante la ejecución del cmdlet `Get-PswaAuthorizationRule` o `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`. 
+4. Compruebe que la regla se haya creado mediante la ejecución del cmdlet `Get-PswaAuthorizationRule` o `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
 
     Por ejemplo, `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 

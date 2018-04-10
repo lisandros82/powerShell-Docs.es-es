@@ -1,15 +1,18 @@
 ---
-ms.date: 2017-06-05
-keywords: powershell,cmdlet
-title: "La jerarquía del modelo de objetos de ISE"
-ms.openlocfilehash: 2df6d40f39dbe14bd3f46a6400cde4a6e91052ef
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.date: 06/05/2017
+keywords: powershell, cmdlet
+title: La jerarquía del modelo de objetos de ISE
+ms.openlocfilehash: 0159707b1050c412a74da3d3ca02a46cea982556
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="the-ise-object-model-hierarchy"></a>La jerarquía del modelo de objetos de ISE
-En este tema se muestra la jerarquía de objetos que forman parte del Entorno de scripting integrado (ISE) de Windows PowerShell. Windows PowerShell ISE se incluye en Windows PowerShell 3.0 y Windows PowerShell 4.0. Haga clic en un objeto para ir a la documentación de referencia de la clase que define el objeto.
+
+En este tema se muestra la jerarquía de objetos que forman parte del Entorno de scripting integrado (ISE) de Windows PowerShell.
+Windows PowerShell ISE se incluye en Windows PowerShell 3.0 y Windows PowerShell 4.0.
+Haga clic en un objeto para ir a la documentación de referencia de la clase que define el objeto.
 
 ## <a name="psise-object"></a>Objeto $psISE
 
@@ -43,8 +46,10 @@ Es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEOptions.
 ## <a name="psisepowershelltabsthe-powershelltabcollection-objectmd"></a>[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)
 
 El objeto **$psISE.PowerShellTabs** es una instancia de la clase [PowerShellTabCollection](The-PowerShellTabCollection-Object.md).
-Es una colección de todas las pestañas de PowerShell abiertas actualmente que representan los entornos de ejecución de Windows PowerShell disponibles en el equipo local o en equipos remotos conectados. Cada miembro de la colección es una instancia de la clase [PowerShellTab](The-PowerShellTab-Object.md).
+Es una colección de todas las pestañas de PowerShell abiertas actualmente que representan los entornos de ejecución de Windows PowerShell disponibles en el equipo local o en equipos remotos conectados.
+Cada miembro de la colección es una instancia de la clase [PowerShellTab](The-PowerShellTab-Object.md).
 
 ## <a name="see-also"></a>Véase también
-- [El modelo de objetos de scripting de ISE de Windows PowerShell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Referencia del modelo de objetos de ISE de Windows PowerShell](Windows-PowerShell-ISE-Object-Model-Reference.md)
+
+- [Finalidad del modelo de objetos de scripting de Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [La jerarquía del modelo de objetos de ISE](The-ISE-Object-Model-Hierarchy.md)

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 2c3cc6d5d226daf22c7ee83a1b7068d6a08b7f45
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b440ea4a8208d5c576fa566a19e2de377bf5f475
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="script-tracing-and-logging"></a>Seguimiento y registro de scripts
 
@@ -52,7 +52,7 @@ function SuperDecrypt
 {
     param($script)
     $bytes = [Convert]::FromBase64String($script)
-             
+
     ## XOR “encryption”
     $xorKey = 0x42
     for($counter = 0; $counter -lt $bytes.Length; $counter++)
@@ -107,4 +107,3 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
 Al igual que con todos los sistemas de registro que tienen un búfer de retención limitado (es decir, registros de ETW), un ataque contra esta infraestructura es inundar el registro de eventos falsos para ocultar las pruebas anteriores. Para protegerse de este ataque, asegúrese de que tiene algún tipo de colección de registro de eventos configurado (es decir, Colección de reenvío de eventos de Windows, [Spotting the Adversary with Windows Event Log Monitoring](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)) para desplazar los registros de eventos del equipo tan pronto como sea posible.
-

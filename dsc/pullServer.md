@@ -1,13 +1,13 @@
 ---
-ms.date: 2018-02-02
+ms.date: 02/02/2018
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Servicio de extracción de DSC"
-ms.openlocfilehash: d5e24dcc093c73d8ebbaa618517193dacc4f2aaf
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+title: Servicio de extracción de DSC
+ms.openlocfilehash: 1547092d5ea6733296bf89f05dd96f70c0a000ac
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="desired-state-configuration-pull-service"></a>Servicio de extracción de Desired State Configuration
 
@@ -67,7 +67,7 @@ A continuación se muestra un script de ejemplo.
 La manera más fácil de configurar un servidor de extracción web es usar el recurso xWebService, incluido en el módulo xPSDesiredStateConfiguration.
 En los siguientes pasos se explica cómo usar el recurso en una configuración que configure el servicio web.
 
-1. Llame al cmdlet [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) para instalar el módulo **xPSDesiredStateConfiguration**. **Nota**: **Install-Module** está incluido en el módulo **PowerShellGet**, que se incluye en PowerShell 5.0. Puede descargar el módulo **PowerShellGet** para PowerShell 3.0 y 4.0 en [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186) (Vista previa de los módulos de PowerShell PackageManagement). 
+1. Llame al cmdlet [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) para instalar el módulo **xPSDesiredStateConfiguration**. **Nota**: **Install-Module** está incluido en el módulo **PowerShellGet**, que se incluye en PowerShell 5.0. Puede descargar el módulo **PowerShellGet** para PowerShell 3.0 y 4.0 en [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186) (Vista previa de los módulos de PowerShell PackageManagement).
 1. Obtenga un certificado SSL para el servidor de extracción de DSC de una entidad de certificación de confianza, ya sea dentro de su organización o de una entidad pública. El certificado recibido de la entidad suele tener el formato PFX. Instale el certificado en el nodo que se convertirá en el servidor de incorporación de cambios de DSC en la ubicación predeterminada que debe ser CERT: \LocalMachine\My. Anote la huella digital del certificado.
 1. Seleccione un GUID para usarlo como clave de registro. Para generar uno con PowerShell, escriba lo siguiente en el aviso de PS y presione ENTRAR: '``` [guid]::newGuid()```' o '```New-Guid```'. Esta clave la utilizarán los nodos de cliente como una clave compartida para la autenticación durante el registro. Para más información, consulte la sección Clave de registro más adelante.
 1. En PowerShell ISE, inicie (F5) el siguiente script de configuración (incluido en la carpeta Example del módulo **xPSDesiredStateConfiguration** como Sample_xDscWebService.ps1). Este script configura el servidor de incorporación de cambios.
@@ -127,7 +127,7 @@ En los siguientes pasos se explica cómo usar el recurso en una configuración q
 1. Ejecute la configuración pasando la huella digital del certificado SSL como el parámetro **certificateThumbPrint** y una clave de registro GUID como el parámetro **RegistrationKey**:
 
 ```powershell
-    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store 
+    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
     # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
     dir Cert:\LocalMachine\my
 
@@ -142,7 +142,7 @@ En los siguientes pasos se explica cómo usar el recurso en una configuración q
 #### <a name="registration-key"></a>Clave de registro
 
 Para permitir que los nodos de cliente se registren con el servidor de forma que puedan usar nombres de configuración en lugar de un identificador de configuración, se guarda una clave de registro creada mediante la configuración anterior en un archivo denominado `RegistrationKeys.txt` en `C:\Program Files\WindowsPowerShell\DscService`. La clave de registro funciona como un secreto compartido que se usa durante el registro inicial del cliente con el servidor de incorporación de cambios. El cliente generará un certificado autofirmado que se utiliza para autenticar el servidor de incorporación de cambios inequívocamente una vez que el registro se complete correctamente. La huella digital del certificado se almacena localmente y se asocia con la dirección URL del servidor de extracción.
-> **Nota**: No se admiten claves del registro en PowerShell 4.0. 
+> **Nota**: No se admiten claves del registro en PowerShell 4.0.
 
 Para configurar un nodo para que se autentique con el servidor de extracción, la clave de registro debe estar en la metaconfiguration de cualquier nodo de destino que se registre con este servidor de extracción. Tenga en cuenta que el elemento **RegistrationKey** de la siguiente metaconfiguration se quita una vez que el equipo de destino se ha registrado correctamente, y que el valor '140a952b-b9d6-406b-b416-e0f759c9c0e4' debe coincidir con el valor almacenado en el archivo RegistrationKeys.txt del servidor de incorporación de cambios. Trate siempre el valor de clave de registro de forma segura, porque conocer esta clave conlleva que cualquier máquina de destino se registre al servidor de incorporación de cambios.
 
@@ -155,7 +155,7 @@ configuration PullClientConfigID
         Settings
         {
             RefreshMode          = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded   = $true
         }
 
@@ -223,8 +223,8 @@ Con el fin de facilitar la configuración, la validación y la administración d
 
     ```powershell
         # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
-         $moduleList = @("xWebAdministration", "xPhp") 
-         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList 
+         $moduleList = @("xWebAdministration", "xPhp")
+         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList
 
          # Example 2 - Package modules and mof documents from c:\LocalDepot
          Publish-DSCModuleAndMof -Source C:\LocalDepot -Force

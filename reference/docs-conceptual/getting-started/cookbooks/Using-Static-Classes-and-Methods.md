@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
-keywords: powershell,cmdlet
-title: "Usar métodos y clases estáticas"
+ms.date: 06/05/2017
+keywords: powershell, cmdlet
+title: Usar métodos y clases estáticas
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: fe41c7d6b45564e7b5bc2b922a18587c9745e26d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-static-classes-and-methods"></a>Usar métodos y clases estáticas
 No todas las clases de .NET Framework se pueden crear mediante **New-Object**. Por ejemplo, si intenta crear un objeto **System.Environment** o **System.Math** con **New-Object**, obtendrá los siguientes mensajes de error:
@@ -18,6 +18,7 @@ New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Environment.
 At line:1 char:11
 + New-Object  <<<< System.Environment
+
 PS> New-Object System.Math
 New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Math.
@@ -88,6 +89,7 @@ TickCount                               ExitCode
 Ahora podemos seleccionar las propiedades que queremos ver desde System.Environment.
 
 #### <a name="displaying-static-properties-of-systemenvironment"></a>Visualizar propiedades estáticas de System.Environment
+
 Las propiedades de System.Environment también son estáticas y deben especificarse de manera diferente que las propiedades normales. Usamos **::** para indicar a Windows PowerShell que queremos trabajar con una propiedad o un método estático. Para ver el comando que se usó para iniciar Windows PowerShell, comprobamos la propiedad **CommandLine**, para lo cual escribimos:
 
 ```
@@ -113,6 +115,7 @@ False
 ```
 
 ### <a name="doing-math-with-systemmath"></a>Operaciones matemáticas con System.Math
+
 La clase estática System.Math es útil para realizar algunas operaciones matemáticas. Los miembros importantes de **System.Math** son principalmente métodos, que podemos mostrar mediante **Get-Member**.
 
 > [!NOTE]
@@ -181,4 +184,3 @@ PS> [System.Math]::Truncate(9.3)
 PS> [System.Math]::Truncate(-9.3)
 -9
 ```
-

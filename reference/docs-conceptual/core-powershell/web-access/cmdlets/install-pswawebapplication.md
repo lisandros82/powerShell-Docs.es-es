@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell, cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: install pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: ce4d01fbe8a83924e7023d792c68c903a32e07d4
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c7f7768a41b6784d8c29afa1fccf0b855160b777
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
@@ -35,7 +35,7 @@ El cmdlet **Install-PswaWebApplication** configura la aplicación web de Windows
 
 Especifica que se crea un certificado de prueba. Si este parámetro se establece en true, este cmdlet crea un certificado de prueba y configura la aplicación web de Windows PowerShell Web Access para usar el certificado para las solicitudes HTTPS. Si este parámetro se establece en false, no se creará ningún certificado o enlace. Establezca este valor en false si se usa otro certificado para Windows PowerShell Web Access.
 
-|||  
+|||
 |-|-|
 | Alias                              | ninguno                                 |
 | ¿Requerido?                            | falso                                |
@@ -48,7 +48,7 @@ Especifica que se crea un certificado de prueba. Si este parámetro se establece
 
 Especifica el nombre de la aplicación web. Aparece como la última parte de la dirección URL de Windows PowerShell Web Access.
 
-|||  
+|||
 |-|-|
 | Alias                              | ninguno                                 |
 | ¿Requerido?                            | falso                                |
@@ -61,7 +61,7 @@ Especifica el nombre de la aplicación web. Aparece como la última parte de la 
 
 Especifica el nombre del sitio web del Servidor web (IIS) en el que se va a instalar esta aplicación web de Windows PowerShell Web Access.
 
-|||  
+|||
 |-|-|
 | Alias                              | ninguno                                 |
 | ¿Requerido?                            | falso                                |
@@ -74,7 +74,7 @@ Especifica el nombre del sitio web del Servidor web (IIS) en el que se va a inst
 
 Solicita confirmación antes de ejecutar el cmdlet.
 
-|||  
+|||
 |-|-|
 | ¿Requerido?                            | falso                                |
 | ¿Posición?                            | llamada                                |
@@ -87,7 +87,7 @@ Solicita confirmación antes de ejecutar el cmdlet.
 Muestra lo que sucedería si se ejecutara el cmdlet.
 El cmdlet no se ejecuta.
 
-|||  
+|||
 |-|-|
 | ¿Requerido?                            | falso                                |
 | ¿Posición?                            | llamada                                |

@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell, cmdlet
-title: "Introducción a Windows PowerShell ISE"
-ms.openlocfilehash: 7b529c9da7c91c6ca699c70f2674c8bc8734dd33
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+title: Introducción a Windows PowerShell ISE
+ms.openlocfilehash: b09e64d0258d11f1f16f96b319ef232ebdfa0c49
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="introducing-the-windows-powershell-ise"></a>Introducción a Windows PowerShell ISE
 
@@ -20,13 +20,13 @@ Pruebe estas características de Windows PowerShell ISE.
 
 Windows PowerShell ISE permite personalizar algunos aspectos de su apariencia. También tiene su propio perfil de Windows PowerShell, donde puede almacenar las funciones, los alias, las variables y los comandos que usa en Windows PowerShell ISE.
 
-### <a name="to-start-the-windows-powershell-ise"></a>Para iniciar Windows PowerShell ISE
+## <a name="to-start-the-windows-powershell-ise"></a>Para iniciar Windows PowerShell ISE
 
 Realice una de las siguientes acciones:
 
 - Haga clic en **Inicio**, elija **Todos los programas** y **Windows Powershell V2** y, después, haga clic en **Windows Powershell ISE**.
 - En Cmd.exe en la consola de Windows PowerShell, o en el cuadro Ejecutar, escriba **powershell_ise.exe**.
 
-### <a name="to-get-help-in-the-windows-powershell-ise"></a>Para obtener ayuda de Windows PowerShell ISE
+## <a name="to-get-help-in-the-windows-powershell-ise"></a>Para obtener ayuda de Windows PowerShell ISE
 
 En el menú **Ayuda**, haga clic en **Ayuda de Windows PowerShell**. También puede presionar F1. El archivo que se abre contiene información detallada sobre Windows PowerShell ISE y Windows PowerShell, además de toda la ayuda disponible en el cmdlet Get-Help.

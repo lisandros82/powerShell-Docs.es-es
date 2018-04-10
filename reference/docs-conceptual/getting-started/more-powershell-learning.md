@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-05
-keywords: powershell,cmdlet
-title: "Más aprendizaje de PowerShell"
-ms.openlocfilehash: 32d7006010a4808a77d9800ec77c4352213d12b9
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.date: 06/05/2017
+keywords: powershell, cmdlet
+title: Más aprendizaje de PowerShell
+ms.openlocfilehash: bed263df0ff52ec687bc7a644470f0397d0106ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="more-powershell-learning"></a>Más aprendizaje de PowerShell
 
-Otras fuentes para obtener información sobre PowerShell  
+Otras fuentes para obtener información sobre PowerShell
 
 ## <a name="resources-for-windows-powershell-users"></a>Recursos para usuarios de Windows PowerShell
 
@@ -51,4 +51,3 @@ Los siguientes recursos sirven para ayudar a los desarrolladores a crear sus pro
 
 - [Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595). Incluye contenido de referencia.
 - [Manual del programador de Windows PowerShell](http://go.microsoft.com/fwlink/p/?LinkID=89596). Incluye tutoriales También contiene información sobre los conceptos esenciales de Windows PowerShell.
-

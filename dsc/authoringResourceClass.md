@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Escribir un recurso de DSC personalizado con clases de PowerShell
-ms.openlocfilehash: 53757f965c51fee699409b5a8ecda802dda9801f
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 23669a6db17855e8d69aa0144c541bb4c799a9eb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Escribir un recurso de DSC personalizado con clases de PowerShell
 
@@ -30,8 +30,8 @@ Para implementar un recurso de DSC personalizado con una clase de PowerShell, cr
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1 
-           MyDscResource.psd1 
+        |- MyDscResource.psm1
+           MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>Crear la clase
@@ -72,10 +72,10 @@ Observe que las propiedades se modifican mediante atributos. El significado de l
 Las propiedades **$Path** y **$SourcePath** son cadenas. **$CreationTime** es una propiedad [DateTime](https://technet.microsoft.com/library/system.datetime.aspx). La propiedad **$Ensure** es un tipo de enumeración, que se define como se indica a continuación.
 
 ```powershell
-enum Ensure 
-{ 
-    Absent 
-    Present 
+enum Ensure
+{
+    Absent
+    Present
 }
 ```
 
@@ -83,7 +83,7 @@ enum Ensure
 
 Los métodos **Get()**, **Set()** y **Test()** son análogos a las funciones **Get-TargetResource**, **Set-TargetResource** y **Test-TargetResource** de un recurso de script.
 
-Este código también incluye la función CopyFile(), una función auxiliar que copia el archivo de **$SourcePath** a **$Path**. 
+Este código también incluye la función CopyFile(), una función auxiliar que copia el archivo de **$SourcePath** a **$Path**.
 
 ```powershell
 
@@ -450,7 +450,7 @@ PowerShellVersion = '5.0'
 
 # Name of the Windows PowerShell host required by this module
 # PowerShellHostName = ''
-} 
+}
 ```
 
 ## <a name="test-the-resource"></a>Probar el recurso
@@ -466,7 +466,7 @@ Configuration Test
         Path = "C:\test\test.txt"
         SourcePath = "c:\test.txt"
         Ensure = "Present"
-    } 
+    }
 }
 Test
 Start-DscConfiguration -Wait -Force Test
@@ -512,4 +512,3 @@ if (PsDscContext.RunAsUser) {
 ## <a name="see-also"></a>Véase también
 ### <a name="concepts"></a>Conceptos
 [Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md)
-

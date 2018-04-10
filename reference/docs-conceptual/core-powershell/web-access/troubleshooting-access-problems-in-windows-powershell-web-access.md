@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: powershell, cmdlet
-title: "Solución de problemas de acceso en Windows PowerShell Web Access"
-ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Solución de problemas de acceso en Windows PowerShell Web Access
+ms.openlocfilehash: ef476d8e386e5380cb2c9dda69180dfce8748bf4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Solución de problemas de acceso en Windows PowerShell Web Access
 
@@ -130,7 +130,7 @@ No puede iniciar sesión en un equipo de destino que se ha especificado en las r
 Las reglas de autorización no admiten direcciones IPv6 en forma de nombre de dominio.
 
 Para especificar un equipo de destino mediante una dirección IPv6, use la dirección IPv6 original (que contiene caracteres de dos puntos) en la regla de autorización.
-Tanto las direcciones IPv6 de dominio como las numéricas (con caracteres de dos puntos) se admiten como nombre del equipo de destino en la página de inicio de sesión de Windows PowerShell Web Access, pero no en las reglas de autorización. 
+Tanto las direcciones IPv6 de dominio como las numéricas (con caracteres de dos puntos) se admiten como nombre del equipo de destino en la página de inicio de sesión de Windows PowerShell Web Access, pero no en las reglas de autorización.
 
 Para obtener más información sobre las direcciones IPv6, consulte [How IPv6 Works](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx) (Funcionamiento de IPv6).
 

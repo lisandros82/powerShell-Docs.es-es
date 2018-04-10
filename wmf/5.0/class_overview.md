@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 8b414331bbfb7dc71d960241a6bc83b0b22641db
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 7eaa4dfb68bc299ad31bce81af96b6a760c4fcc5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>Creación de tipos personalizados mediante clases de PowerShell
 
@@ -20,4 +20,3 @@ Hemos mejorado el lenguaje de PowerShell para la definición de clases y otros t
 -   Compatibilidad de herencia con la clase de PowerShell y el recurso de DSC basado en la clase.
 -   Depuración de tipos mediante el lenguaje de PowerShell.
 -   Generación y control de excepciones mediante mecanismos formales y en el nivel correcto.
-

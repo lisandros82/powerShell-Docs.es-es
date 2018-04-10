@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 668a5b20add58ff5e23f35d6cebddc39c64ce926
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 89f0deaece27e2d207dfb820d4df80e427c9cb94
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="installation-instructions"></a>Instrucciones de instalación
 
 Descargue el paquete correcto para su sistema operativo y arquitectura:
 
-| Sistema operativo       | Arquitectura | Nombre del paquete              | 
-|------------------------|--------------|---------------------------| 
-| Windows Server 2012 R2 | x64      | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) | 
-| Windows Server 2012    | x64      | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) | 
+| Sistema operativo       | Arquitectura | Nombre del paquete              |
+|------------------------|--------------|---------------------------|
+| Windows Server 2012 R2 | x64      | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
+| Windows Server 2012    | x64      | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) |
 | Windows Server 2008 R2 | x64      | [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504) |
 | Windows 8.1            | x64          | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
 | Windows 8.1            | x86          | [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963) |
@@ -30,7 +30,7 @@ Descargue el paquete correcto para su sistema operativo y arquitectura:
 
 2. Haga doble clic en el archivo MSU para ejecutarlo.
 
-**Para instalar WMF 5.0 desde el símbolo del sistema:** 
+**Para instalar WMF 5.0 desde el símbolo del sistema:**
 
 1. Después de descargar el paquete correcto para la arquitectura del equipo, abra una ventana del símbolo del sistema con derechos de usuario elevados (Ejecutar como administrador). En las opciones de instalación de Server Core de Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2 SP1, el símbolo del sistema se abre de forma predeterminada con derechos de usuario elevados.
 
@@ -50,5 +50,3 @@ Asegúrese de que se cumplen los requisitos previos siguientes:
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) está instalado.
 
 *Dependencia de WinRM:* la configuración de estado deseado (DSC) de Windows PowerShell depende de WinRM. WinRM no está habilitado de forma predeterminada en Windows Server 2008 R2 y Windows 7. Para habilitar WinRM, en una sesión de Windows PowerShell con permisos elevados, ejecute **Set-WSManQuickConfig**.
-
-

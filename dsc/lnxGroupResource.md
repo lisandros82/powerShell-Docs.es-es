@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Recurso nxGroup de DSC para Linux
-ms.openlocfilehash: bc01f6ae5ed61aff63958fe55f30d82f9b81b2b9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 750b7c38a38fb8a7781585a3a7776f832ee62495
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>Recurso nxGroup de DSC para Linux
 
@@ -30,22 +30,22 @@ nxGroup <string> #ResourceName
 
 ## <a name="properties"></a>Propiedades
 
-|  Propiedad |  Descripción | 
+|  Propiedad |  Descripción |
 |---|---|
-| NombreDeGrupo| Especifica el nombre del grupo para el que quiere garantizar un estado específico.| 
-| Ensure| Determina si se debe comprobar si existe el grupo. Establezca esta propiedad en "Present" para asegurarse de que el grupo exista. Establézcala en "Absent" para asegurarse de que el grupo no exista. El valor predeterminado es "Present".| 
-| Miembros| Especifica a los miembros que forman el grupo.| 
-| MembersToInclude| Especifica los usuarios que quiera garantizar que sean miembros del grupo.| 
-| MembersToExclude| Especifica los usuarios que quiera garantizar que no sean miembros del grupo.| 
-| PreferredGroupID| Establece el identificador de grupo en el valor proporcionado, si es posible. Si el identificador de grupo está actualmente en uso, se utiliza el siguiente identificador de grupo disponible.| 
-| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.| 
+| NombreDeGrupo| Especifica el nombre del grupo para el que quiere garantizar un estado específico.|
+| Ensure| Determina si se debe comprobar si existe el grupo. Establezca esta propiedad en "Present" para asegurarse de que el grupo exista. Establézcala en "Absent" para asegurarse de que el grupo no exista. El valor predeterminado es "Present".|
+| Miembros| Especifica a los miembros que forman el grupo.|
+| MembersToInclude| Especifica los usuarios que quiera garantizar que sean miembros del grupo.|
+| MembersToExclude| Especifica los usuarios que quiera garantizar que no sean miembros del grupo.|
+| PreferredGroupID| Establece el identificador de grupo en el valor proporcionado, si es posible. Si el identificador de grupo está actualmente en uso, se utiliza el siguiente identificador de grupo disponible.|
+| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Ejemplo
 
 El ejemplo siguiente se asegura de que el usuario "monuser" exista y de que sea un miembro del grupo "DBusers".
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 
@@ -56,13 +56,12 @@ nxUser UserExample{
    Ensure = "Present"
    HomeDirectory = "/home/monuser"
 }
- 
+
 nxGroup GroupExample{
    GroupName = "DBusers"
    Ensure = "Present"
    MembersToInclude = "monuser"
-   DependsOn = "[nxUser]UserExample"            
+   DependsOn = "[nxUser]UserExample"
 }
 }
 ```
-

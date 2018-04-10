@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
-keywords: powershell,cmdlet
-title: "Usar expansión de pestañas"
+ms.date: 06/05/2017
+keywords: powershell, cmdlet
+title: Usar expansión de pestañas
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
-ms.openlocfilehash: 8412bd97a95719f07b16c6671d3b8801bbfab8e3
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: 3d047bf0691c8a304d7637aa50fba6ae99709a82
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-tab-expansion"></a>Usar expansión de pestañas
+
 Los shells de línea de comandos suelen ofrecer un método para completar los nombres de archivos largos o comandos automáticamente, lo que acelera la entrada de comando y proporciona sugerencias. Windows PowerShell permite rellenar los nombres de archivo y los nombres de cmdlet presionando la tecla **Tab**.
 
 > [!NOTE]
@@ -45,4 +46,3 @@ PS> Get-Content C:\windows\actsetup.log
 
 > [!NOTE]
 > Una limitación del proceso de expansión de pestañas es que las pestañas se interpretan siempre como intentos de completar una palabra. Si copia y pega ejemplos de comandos en una consola de PowerShell, asegúrese de que el ejemplo no contiene pestañas; si es así, los resultados serán impredecibles y seguramente no serán los esperados.
-

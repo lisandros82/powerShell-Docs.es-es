@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
-keywords: powershell,cmdlet
+ms.date: 06/05/2017
+keywords: powershell, cmdlet
 title: Aprendizaje de los nombres de Windows PowerShell
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 28c821c4a617b6ac775dbdda8ade3d15c3f218c3
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 381aa619a41ccacb2ff3a4cdbc2b75b7f04282d1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="learning-windows-powershell-names"></a>Aprendizaje de los nombres de Windows PowerShell
 El aprendizaje de nombres de comandos y parámetros de comando supone una inversión de tiempo considerable con la mayoría de las interfaces de línea de comandos. El problema es que hay muy pocos patrones, por lo que es la única manera de aprender consiste en memorizar cada comando y cada parámetro que necesite usar de forma regular.
@@ -57,7 +57,7 @@ Cmdlet          Resume-Service                  Resume-Service [-Name] <Stri...
 Cmdlet          Set-Service                     Set-Service [-Name] <String>...
 Cmdlet          Start-Service                   Start-Service [-Name] <Strin...
 Cmdlet          Stop-Service                    Stop-Service [-Name] <String...
-Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str... 
+Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str...
 ...
 ```
 
@@ -91,4 +91,3 @@ Windows PowerShell presenta varios parámetros que se conocen como *parámetros 
 Los cmdlets principales de Windows PowerShell usan nombres estándar para parámetros similares. Aunque no se exige el uso de nombres de parámetro, existen un instrucciones explícitas para usarlos a fin de promover la estandarización.
 
 Por ejemplo, las instrucciones recomiendan denominar un parámetro que haga referencia a un equipo por su nombre, como **nombreDeEquipo**, en lugar de servidor, host, sistema, nodo u otras palabras alternativas comunes. Entre los nombres de parámetros importantes sugeridos se encuentran **Force**, **Exclude**, **Include**, **PassThru**, **Path** y **CaseSensitive**.
-

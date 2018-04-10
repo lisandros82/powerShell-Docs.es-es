@@ -1,67 +1,68 @@
 ---
-ms.date: 2017-06-05
-keywords: powershell,cmdlet
+ms.date: 06/05/2017
+keywords: powershell, cmdlet
 title: El objeto PowerShellTabCollection
 ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
-ms.openlocfilehash: dcdc16ae126453b6ade64917ac4950cc05e5f8ad
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: d9088b26de35360b8258d3f15924b3010a986d15
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="the-powershelltabcollection-object"></a>El objeto PowerShellTabCollection
-  El objeto de colección **PowerShellTab** es una colección de objetos **PowerShellTab**. Cada objeto **PowerShellTab** funciona como un entorno de runtime independiente. Es una instancia de la clase Microsoft.PowerShell.Host.ISE.PowerShellTabs. Un ejemplo es el objeto **$psISE.PowerShellTabs**.
+
+El objeto de colección **PowerShellTab** es una colección de objetos **PowerShellTab**. Cada objeto **PowerShellTab** funciona como un entorno de runtime independiente. Es una instancia de la clase Microsoft.PowerShell.Host.ISE.PowerShellTabs. Un ejemplo es el objeto **$psISE.PowerShellTabs**.
 
 ## <a name="methods"></a>Métodos
 
 ### <a name="add"></a>Add\(\)
-  Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
- Agrega una nueva pestaña de PowerShell a la colección. Devuelve la pestaña recién agregada.
+Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
-```
-$NewTab=$psISE.PowerShellTabs.Add()
-$newTab.DisplayName="Brand New Tab"
+Agrega una nueva pestaña de PowerShell a la colección. Devuelve la pestaña recién agregada.
+
+```powershell
+$newTab = $psISE.PowerShellTabs.Add()
+$newTab.DisplayName = 'Brand New Tab'
 ```
 
 ### <a name="removemicrosoftpowershellhostisepowershelltab-pstab"></a>Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
-  Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
- Quita la pestaña especificada por el parámetro **psTab**.
+Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
- **psTab** Pestaña de PowerShell que se quitará.
+Quita la pestaña especificada por el parámetro **psTab**.
 
-```
+**psTab** Pestaña de PowerShell que se quitará.
 
+```powershell
 $newTab = $psISE.PowerShellTabs.Add()
-Change the DisplayName of the new PowerShell tab. 
-$newTab.DisplayName="This tab will go away in 5 seconds" 
-sleep 5 
+Change the DisplayName of the new PowerShell tab.
+$newTab.DisplayName = 'This tab will go away in 5 seconds'
+sleep 5
 $psISE.PowerShellTabs.Remove($newTab)
 ```
 
 ### <a name="setselectedpowershelltabmicrosoftpowershellhostisepowershelltab-pstab"></a>SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
-  Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
 
- Selecciona la pestaña de PowerShell especificada por el parámetro **psTab** para que sea la pestaña activa de PowerShell.
+Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
- **psTab** Pestaña de PowerShell que se seleccionará.
+Selecciona la pestaña de PowerShell especificada por el parámetro **psTab** para que sea la pestaña activa de PowerShell.
 
-```
+**psTab** Pestaña de PowerShell que se seleccionará.
+
+```powershell
 # Save the current tab in a variable and rename it
-$OldTab = $psISE.CurrentPowerShellTab
-$psISE.CurrentPowerShellTab.DisplayName="Old Tab"
+$oldTab = $psISE.CurrentPowerShellTab
+$psISE.CurrentPowerShellTab.DisplayName = 'Old Tab'
 # Create a new tab and give it a new display name
 $newTab = $psISE.PowerShellTabs.Add()
-$newTab.DisplayName="Brand New Tab" 
+$newTab.DisplayName = 'Brand New Tab'
 # Switch back to the original tab
-$psISE.PowerShellTabs.SelectedPowerShellTab=$oldtab
+$psISE.PowerShellTabs.SelectedPowerShellTab = $oldTab
 ```
 
 ## <a name="see-also"></a>Véase también
-- [El objeto PowerShellTab](The-PowerShellTab-Object.md) 
-- [El modelo de objetos de scripting de ISE de Windows PowerShell](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [Referencia del modelo de objetos de ISE de Windows PowerShell](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
-- [La jerarquía del modelo de objetos de ISE](../ise/The-ISE-Object-Model-Hierarchy.md)
 
-  
+- [El objeto PowerShellTab](The-PowerShellTab-Object.md)
+- [Finalidad del modelo de objetos de scripting de Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [La jerarquía del modelo de objetos de ISE](The-ISE-Object-Model-Hierarchy.md)

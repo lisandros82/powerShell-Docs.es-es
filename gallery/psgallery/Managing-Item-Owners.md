@@ -1,23 +1,25 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: Administrar propietarios de elementos
-ms.openlocfilehash: fcd538148f9ff1ac96324b567d54d643f1756c93
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e550b74ebde00cfbb154dbf4fb1fa4ae0582e029
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-item-owners"></a>Administrar propietarios de elementos
 
 La propiedad de un elemento en la Galería de PowerShell está definida por la persona que publicó el elemento en la Galería.
 A veces estos metadatos deben administrarse después de la publicación inicial del elemento, lo que significa que los metadatos de propietario deben ser mutables, aunque el elemento en sí no lo es.
 
-Todos los propietarios del elemento son del mismo nivel. Esto significa que cualquier propietario del elemento puede publicar una versión nueva de un elemento. También significa que cualquier propietario del elemento puede quitar a otro propietario del elemento. Ningún propietario tiene más autoridad que los demás propietarios.  
+Todos los propietarios del elemento son del mismo nivel.
+Esto significa que cualquier propietario del elemento puede publicar una versión nueva de un elemento. También significa que cualquier propietario del elemento puede quitar a otro propietario del elemento.
+Ningún propietario tiene más autoridad que los demás propietarios.
 
-## <a name="setting-an-items-initial-owner"></a>Establecer el propietario inicial de un elemento 
+## <a name="setting-an-items-initial-owner"></a>Establecer el propietario inicial de un elemento
 
 Cuando se publica un elemento nuevo en la Galería de PowerShell, el propietario inicial es el usuario que publicó el elemento. Esto se determina mediante la clave de API que se usó en el cmdlet Publish-Module.
 
@@ -78,4 +80,3 @@ Iniciaremos un proceso para comprobar que es el propietario del elemento.
 Si llegamos a la conclusión de que usted debe ser el propietario del elemento, usaremos el vínculo "Manage Owners" (Administrar propietarios) para el elemento y le enviaremos una invitación para convertirse en propietario.
 Solo lo haremos después de comprobar que debe ser propietario. Este proceso de comprobación varía según las circunstancias.
 En ocasiones, usaremos la dirección URL del proyecto del elemento para ponernos en contacto con el propietario del proyecto, pero también podemos usar Twitter, el correo electrónico u otros medios para ponernos en contacto con el propietario del proyecto.
-

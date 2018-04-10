@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-25
-keywords: powershell,cmdlet
+ms.date: 08/25/2017
+keywords: powershell, cmdlet
 title: El objeto ObjectModelRoot
-ms.openlocfilehash: eb3424ff147c35364fa08543d59ebd30f6d2d857
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 2670321ebac1eac4ecc8457afb796f9f260da471
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="the-objectmodelroot-object"></a>El objeto ObjectModelRoot
 
@@ -17,7 +17,7 @@ En este tema se describen las propiedades del objeto **ObjectModelRoot**.
 
 ### <a name="currentfile"></a>CurrentFile
 
-> Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
+> Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
 La propiedad de solo lectura que obtiene el archivo, que está asociado a este objeto host que tiene actualmente el foco.
 
@@ -35,24 +35,23 @@ La propiedad de solo lectura que obtiene la herramienta de complemento de Window
 
 ### <a name="currentvisibleverticaltool"></a>CurrentVisibleVerticalTool
 
-> Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
+> Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
 La propiedad de solo lectura que obtiene la herramienta de complemento de Windows PowerShell ISE actualmente visible que se encuentra en el panel de herramientas vertical en el lado derecho del editor.
 
 ### <a name="options"></a>Options
 
-> Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
+> Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
 La propiedad de solo lectura que obtiene las distintas opciones que pueden cambiar la configuración de Windows PowerShell ISE.
 
 ### <a name="powershelltabs"></a>PowerShellTabs
 
-> Se admite en Windows PowerShell ISE 2.0 y versiones posteriores. 
+> Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
 La propiedad de solo lectura que obtiene la colección de las pestañas de PowerShell que están abiertas en Windows PowerShell ISE. De forma predeterminada, este objeto contiene una pestaña de PowerShell. Sin embargo, puede agregar más pestañas de PowerShell a este objeto mediante scripts o mediante los menús de Windows PowerShell ISE.
 
 ## <a name="see-also"></a>Véase también
 
-- [El modelo de objetos de scripting de ISE de Windows PowerShell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Referencia del modelo de objetos de ISE de Windows PowerShell](Windows-PowerShell-ISE-Object-Model-Reference.md)
+- [Finalidad del modelo de objetos de scripting de Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [La jerarquía del modelo de objetos de ISE](The-ISE-Object-Model-Hierarchy.md)

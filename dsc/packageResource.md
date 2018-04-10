@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Recursos de DSC Package
-ms.openlocfilehash: 68b996e0f51e60bc178c27e3a71f07fb7220f847
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: cfa9d53d5ea588b0ec97e5503302a451caa09e03
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-package-resource"></a>Recursos de DSC Package
 
@@ -33,17 +33,17 @@ Package [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Propiedades
-|  Propiedad  |  Descripción   | 
-|---|---| 
-| Nombre| Indica el nombre del paquete para el que quiere garantizar un estado específico.| 
-| Ruta| Indica la ruta de acceso donde reside el paquete.| 
-| ProductId| Indica el id. de producto que identifica el paquete.| 
-| Argumentos| Muestra una cadena de argumentos que se pasarán al paquete tal y como se faciliten.| 
-| Credential| Proporciona acceso al paquete en un origen remoto. Esta propiedad no se utiliza para instalar el paquete. El paquete siempre se instala en el sistema local.| 
-| Ensure| Indica si el paquete está instalado. Establezca esta propiedad en "Absent" para asegurarse de que el paquete no esté instalado (o se desinstale el paquete si está instalado). Establézcala en "Present" (el valor predeterminado) para asegurarse de que el paquete esté instalado.| 
-| LogPath| Indica la ruta de acceso completa donde quiere que el proveedor guarde un archivo de registro para instalar o desinstalar el paquete.| 
-| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"``.| 
-| ReturnCode| Indica el código de retorno esperado. Si el código de retorno real no a coincide con el valor esperado facilitado aquí, la configuración devolverá un error.| 
+|  Propiedad  |  Descripción   |
+|---|---|
+| Nombre| Indica el nombre del paquete para el que quiere garantizar un estado específico.|
+| Ruta| Indica la ruta de acceso donde reside el paquete.|
+| ProductId| Indica el id. de producto que identifica el paquete.|
+| Argumentos| Muestra una cadena de argumentos que se pasarán al paquete tal y como se faciliten.|
+| Credential| Proporciona acceso al paquete en un origen remoto. Esta propiedad no se utiliza para instalar el paquete. El paquete siempre se instala en el sistema local.|
+| Ensure| Indica si el paquete está instalado. Establezca esta propiedad en "Absent" para asegurarse de que el paquete no esté instalado (o se desinstale el paquete si está instalado). Establézcala en "Present" (el valor predeterminado) para asegurarse de que el paquete esté instalado.|
+| LogPath| Indica la ruta de acceso completa donde quiere que el proveedor guarde un archivo de registro para instalar o desinstalar el paquete.|
+| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"``.|
+| ReturnCode| Indica el código de retorno esperado. Si el código de retorno real no a coincide con el valor esperado facilitado aquí, la configuración devolverá un error.|
 
 ## <a name="example"></a>Ejemplo
 
@@ -58,7 +58,6 @@ Configuration PackageTest
         Path        = "$Env:SystemDrive\TestFolder\TestProject.msi"
         Name        = "TestPackage"
         ProductId   = "ACDDCDAF-80C6-41E6-A1B9-8ABD8A05027E"
-    } 
+    }
 }
 ```
-

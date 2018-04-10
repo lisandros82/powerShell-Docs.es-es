@@ -1,21 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: c7318552969c44f3b79f82efd71e6a72bfabef6b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 85e9206ffef76fb4bd7714d847888e6e5bbcc4ec
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="new-language-features-in-powershell-50"></a>Nuevas características de lenguaje de PowerShell 5.0 
+# <a name="new-language-features-in-powershell-50"></a>Nuevas características de lenguaje de PowerShell 5.0
 
 PowerShell 5.0 presenta los siguientes nuevos elementos de lenguaje en Windows PowerShell:
 
 ## <a name="class-keyword"></a>Palabra clave class
 
-La palabra clave **class** define una nueva clase. Se trata de un tipo verdadero de .NET Framework. Los miembros de clase son públicos, pero solo en el ámbito del módulo.
+La palabra clave **class** define una nueva clase. Se trata de un tipo verdadero de .NET Framework.
+Los miembros de clase son públicos, pero solo en el ámbito del módulo.
 No puede hacer referencia al nombre de tipo como una cadena (por ejemplo, `New-Object` no funciona) y, en esta versión, no puede usar un literal de tipo (por ejemplo, `[MyClass]`) fuera del archivo de script o módulo en el que se define la clase.
 
 ```powershell
@@ -64,11 +65,11 @@ PowerShell analiza el módulo raíz del módulo especificado y busca las clases 
 
 ## <a name="implementingassembly"></a>ImplementingAssembly
 
-Un nuevo campo, **ImplementingAssembly**, se agregó a ModuleInfo. Se establece en el ensamblado dinámico creado para un módulo de script si el script define clases, o en el ensamblado cargado en el caso de los módulos binarios. No se establece si ModuleType = Manifest. 
+Un nuevo campo, **ImplementingAssembly**, se agregó a ModuleInfo. Se establece en el ensamblado dinámico creado para un módulo de script si el script define clases, o en el ensamblado cargado en el caso de los módulos binarios. No se establece si ModuleType = Manifest.
 
 La reflexión en el campo **ImplementingAssembly** descubre los recursos de un módulo. Esto significa que puede descubrir recursos escritos en PowerShell o en otros lenguajes administrados.
 
-Campos con inicializadores:      
+Campos con inicializadores:
 
 ```powershell
 [int] $i = 5
@@ -86,11 +87,11 @@ Un tipo es opcional.
 $s = "hello"
 ```
 
-Todos los miembros son públicos. 
+Todos los miembros son públicos.
 
 ## <a name="constructors-and-instantiation"></a>Creación de instancias y constructores
 
-Las clases de Windows PowerShell pueden tener constructores; tienen el mismo nombre que su clase. Los constructores se pueden sobrecargar. Se admiten constructores estáticos. Las propiedades con expresiones de inicialización se inicializan antes de ejecutar cualquier código en un constructor. Las propiedades estáticas se inicializan antes del cuerpo de un constructor estático y las propiedades de instancia se inicializan antes del cuerpo del constructor no estático. Actualmente no hay ninguna sintaxis para llamar a un constructor desde otro constructor (como la sintaxis ": this()" de C\#). La solución consiste en definir un método Init común. 
+Las clases de Windows PowerShell pueden tener constructores; tienen el mismo nombre que su clase. Los constructores se pueden sobrecargar. Se admiten constructores estáticos. Las propiedades con expresiones de inicialización se inicializan antes de ejecutar cualquier código en un constructor. Las propiedades estáticas se inicializan antes del cuerpo de un constructor estático y las propiedades de instancia se inicializan antes del cuerpo del constructor no estático. Actualmente no hay ninguna sintaxis para llamar a un constructor desde otro constructor (como la sintaxis ": this()" de C\#). La solución consiste en definir un método Init común.
 
 Las siguientes son formas de crear instancias de clases en esta versión.
 
@@ -151,12 +152,12 @@ Invocación del método:
 
 ```powershell
 $b = [MyClass]::new()
-$b.DoSomething(42) 
+$b.DoSomething(42)
 ```
 
 También se admiten los métodos sobrecargados, es decir, aquellos con el mismo nombre que un método existente, pero que se diferencian por los valores especificados.
 
-## <a name="properties"></a>Propiedades 
+## <a name="properties"></a>Propiedades
 
 Todas las propiedades son públicas. Las propiedades requieren una nueva línea o un punto y coma. Si no se especifica ningún tipo de objeto, el tipo de propiedad es object.
 
@@ -210,7 +211,8 @@ $v -eq $d # true
 
 ## <a name="end-to-end-example"></a>Acceso de un extremo a otro
 
-En el ejemplo siguiente se crean varias clases nuevas y personalizadas para implementar un lenguaje de hojas de estilo dinámico (DSL) HTML. A continuación, el ejemplo agrega funciones auxiliares para crear tipos de elementos específicos como parte de la clase de elemento, tales como tablas y estilos de encabezado, porque los tipos no pueden usarse fuera del ámbito de un módulo.
+En el ejemplo siguiente se crean varias clases nuevas y personalizadas para implementar un lenguaje de hojas de estilo dinámico (DSL) HTML.
+A continuación, el ejemplo agrega funciones auxiliares para crear tipos de elementos específicos como parte de la clase de elemento, tales como tablas y estilos de encabezado, porque los tipos no pueden usarse fuera del ámbito de un módulo.
 
 ```powershell
 # Classes that define the structure of the document
@@ -220,7 +222,7 @@ class Html
     [string] $docType
     [HtmlHead] $Head
     [Element[]] $Body
-    
+
     [string] Render()
     {
         $text = "<html>`n<head>`n"
@@ -334,4 +336,3 @@ function Style
 #
 function Html ([HTML] $doc) { return $doc }
 ```
-

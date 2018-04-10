@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: gallery,powershell,cmdlet,psget
 title: Find-Script
-ms.openlocfilehash: df62a9934d8013d37bd0083c03f90fa7fa05ac0c
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: 1f5076d94015c0b1041591144f1f0fe36819204b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="find-script"></a>Find-Script
 
@@ -24,7 +24,7 @@ El cmdlet Find-Script permite detectar los archivos de script con criterios de b
 - Find-Script puede filtrar con parámetros de versión: MinimumVersion, MaximumVersion, RequiredVersion y AllVersions.
   - Estos parámetros se excluyen mutuamente, excepto MinmimumVersion y MaximumVersion.
   - Estos parámetros de versión solo se permiten con el nombre de script único sin ningún carácter comodín.
-  - Si no se especifica el parámetro RequiredVersion, Find-Script devuelve la versión más reciente del script que sea igual o mayor que la versión mínima especificada, o la versión más reciente del script si no se especifica ninguna versión mínima. 
+  - Si no se especifica el parámetro RequiredVersion, Find-Script devuelve la versión más reciente del script que sea igual o mayor que la versión mínima especificada, o la versión más reciente del script si no se especifica ninguna versión mínima.
   - Si se especifica el parámetro RequiredVersion, Find-Script solo devuelve la versión del script que coincida exactamente con la versión especificada.
 - Find-Script puede filtrar por los metadatos del script con el parámetro -Tag.
 - Find-Script puede filtrar por el idioma de búsqueda específico del repositorio con el parámetro -Filter.
@@ -61,7 +61,7 @@ Find-Script -Name *Azure*
 # Find all versions of a script
 Find-Script -Name Connect-O365 -AllVersions
 
-# Find a script with -MinimumVersion. 
+# Find a script with -MinimumVersion.
 # With MinimumVersion we can find a script whose version is greate than or equal to the specified MinimumVersion value.
 Find-Script Connect-O365 -MinimumVersion 1.4
 
@@ -155,4 +155,3 @@ Cmdlet                         {}
 
 
 ```
-

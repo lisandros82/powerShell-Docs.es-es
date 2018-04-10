@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: powershell, cmdlet
 title: Uso de la consola de Windows PowerShell basada en web
-ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Uso de la consola de Windows PowerShell basada en web
 
@@ -18,15 +18,18 @@ Windows PowerShell Web Access permite a los usuarios iniciar sesión en un sitio
 
 Dado que la consola de Windows PowerShell se ejecuta en un explorador web, se puede abrir en numerosos dispositivos cliente (son válidos casi todos los dispositivos que dispongan de un explorador web).
 
-La consola de Windows PowerShell basada en web está destinada a un equipo remoto que especifican los usuarios como parte del proceso de inicio de sesión. 
+La consola de Windows PowerShell basada en web está destinada a un equipo remoto que especifican los usuarios como parte del proceso de inicio de sesión.
 
 En este tema, se describe cómo iniciar sesión en la consola de Windows PowerShell Web Access basada en web y cómo comenzar a usarla.
 
-No se describe cómo usar Windows PowerShell ni cómo ejecutar cmdlets o scripts. Para más información sobre recursos de scripting y cómo usar Windows PowerShell, vea la sección [Consulte también](#see-also) al final de este tema.
+No se describe cómo usar Windows PowerShell ni cómo ejecutar cmdlets o scripts.
+Para más información sobre recursos de scripting y cómo usar Windows PowerShell, vea la sección [Consulte también](#see-also) al final de este tema.
 
 ## <a name="supported-browsers-and-client-devices"></a>Dispositivos cliente y exploradores admitidos
 
-Windows PowerShell Web Access admite los siguientes exploradores de Internet. Aunque los exploradores móviles no se admiten oficialmente, muchos de ellos pueden ejecutar la consola de Windows PowerShell basada en web. También se espera que funcionen otros exploradores que aceptan cookies y ejecutan JavaScript y sitios web HTTPS, pero no se han probado de manera oficial.
+Windows PowerShell Web Access admite los siguientes exploradores de Internet.
+Aunque los exploradores móviles no se admiten oficialmente, muchos de ellos pueden ejecutar la consola de Windows PowerShell basada en web.
+También se espera que funcionen otros exploradores que aceptan cookies y ejecutan JavaScript y sitios web HTTPS, pero no se han probado de manera oficial.
 
 ### <a name="supported-desktop-computer-browsers"></a>Exploradores de equipos de escritorio admitidos
 
