@@ -1,17 +1,17 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 4ccbdcc0eb3cd07b46ab51b63689fe21873cdd7e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 41a676939cb45e780b572b8e718ae315d641d4f8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="information-stream"></a><span data-ttu-id="827da-102">Flujo de información</span><span class="sxs-lookup"><span data-stu-id="827da-102">Information Stream</span></span>
+# <a name="information-stream"></a><span data-ttu-id="db419-102">Flujo de información</span><span class="sxs-lookup"><span data-stu-id="db419-102">Information Stream</span></span>
 
-<span data-ttu-id="827da-103">Un nuevo flujo de información estructurado se puede usar ahora para transmitir datos estructurados entre un script y su host.</span><span class="sxs-lookup"><span data-stu-id="827da-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="827da-104">**Write-Host** también se actualizó para emitir su salida en el flujo de información, donde ahora se puede capturar o silenciar.</span><span class="sxs-lookup"><span data-stu-id="827da-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="827da-105">El nuevo cmdlet **Write-Information** (junto con una API WriteInformation correspondiente) que se usa con los parámetros **-InformationVariable** y **-InformationAction** comunes ofrece más flexibilidad y capacidad.</span><span class="sxs-lookup"><span data-stu-id="827da-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
+<span data-ttu-id="db419-103">Un nuevo flujo de información estructurado se puede usar ahora para transmitir datos estructurados entre un script y su host.</span><span class="sxs-lookup"><span data-stu-id="db419-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="db419-104">**Write-Host** también se actualizó para emitir su salida en el flujo de información, donde ahora se puede capturar o silenciar.</span><span class="sxs-lookup"><span data-stu-id="db419-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="db419-105">El nuevo cmdlet **Write-Information** (junto con una API WriteInformation correspondiente) que se usa con los parámetros **-InformationVariable** y **-InformationAction** comunes ofrece más flexibilidad y capacidad.</span><span class="sxs-lookup"><span data-stu-id="db419-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script
@@ -91,7 +91,7 @@ WARNING: Some important logging information
 PS C:\Users\demo>
 PS C:\Users\demo> ## All output includes useful properties that you would expect
 PS C:\Users\demo> ## of a generic event stream
-PS C:\Users\demo> $ivOutput.Process 
+PS C:\Users\demo> $ivOutput.Process
 MessageData     : System.Diagnostics.Process (powershell)
 Source          : c:\temp\OutputGusher.ps1
 TimeGenerated   : 2/9/2015 5:08:52 PM
@@ -104,7 +104,7 @@ ManagedThreadId : 8
 
 PS C:\Users\demo> ## And of course, this works from hosting applications.
 PS C:\Users\demo> $ps = [PowerShell]::Create()
-PS C:\Users\demo> $ps.AddCommand('c:\temp\OutputGusher.ps1').Invoke() 
+PS C:\Users\demo> $ps.AddCommand('c:\temp\OutputGusher.ps1').Invoke()
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -123,4 +123,3 @@ ProcessId       : 4008
 NativeThreadId  : 2276
 ManagedThreadId : 14
 ```
-
