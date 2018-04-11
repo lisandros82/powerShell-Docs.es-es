@@ -1,20 +1,22 @@
 ---
-ms.date: 2017-06-05
-keywords: powershell,cmdlet
+ms.date: 06/05/2017
+keywords: powershell, cmdlet
 title: Obtener objetos de WMI Get-WmiObject
 ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
-ms.openlocfilehash: fbaac2797dd62eb03a2be581b3b5f8be6dafc0ad
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 67922426ae3f13ef5f4c70bc70bb3ce1594d3d05
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a>Obtener objetos de WMI (Get-WmiObject)
 
 ## <a name="getting-wmi-objects-get-wmiobject"></a>Obtener objetos de WMI (Get-WmiObject)
+
 Windows Management Instrumentation (WMI) es una tecnología principal para la administración del sistema de Windows porque expone una amplia gama de información de manera uniforme. Debido a la medida en que WMI lo hace posible, el cmdlet de Windows PowerShell para acceder a objetos WMI, **Get-WmiObject**, es uno de los más útiles para realizar el trabajo real. Vamos a explicar cómo usar Get-WmiObject para acceder a objetos WMI y, después, cómo usar objetos WMI para realizar acciones específicas.
 
 ### <a name="listing-wmi-classes"></a>Enumerar clases WMI
+
 El primer problema que la mayoría de los usuarios de WMI experimentan es intentar averiguar qué se puede hacer con WMI. Las clases WMI describen los recursos que se pueden administrar. Existen cientos de clases WMI, algunas de los cuales contienen decenas de propiedades.
 
 **Get-WmiObject** hace que WMI se pueda detectar para abordar este problema. Para obtener una lista de las clases WMI disponibles en el equipo local, escriba:
@@ -48,7 +50,7 @@ La lista de clases que devuelven los equipos remotos puede variar según el sist
 
 También puede incluir el parámetro ComputerName al conectarse al sistema local. Puede usar el nombre del equipo local, su dirección IP (o la dirección de bucle invertido 127.0.0.1) o el estilo de WMI '.' como nombre del equipo. Si está ejecutando Windows PowerShell en un equipo denominado Admin01 con la dirección IP 192.168.1.90, los siguientes comandos devolverán la lista de clases WMI de ese equipo:
 
-```
+```powershell
 Get-WmiObject -List
 Get-WmiObject -List -ComputerName .
 Get-WmiObject -List -ComputerName Admin01
@@ -68,6 +70,7 @@ __Provider                              __Win32Provider
 ```
 
 ### <a name="displaying-wmi-class-details"></a>Visualizar detalles de clases WMI
+
 Si conoce el nombre de una clase WMI, puede usarlo para obtener información inmediatamente. Por ejemplo, una de las clases WMI que se usa habitualmente para recuperar información sobre un equipo es **Win32_OperatingSystem**.
 
 ```
@@ -83,7 +86,7 @@ Version         : 5.1.2600
 
 Aunque vamos a presentar todos los parámetros, el comando se puede expresar de forma más concisa. El parámetro **ComputerName** no es necesario cuando se conecta al sistema local. Los presentamos para demostrar el caso más general y recordarle el parámetro. **Namespace** se establece de manera predeterminada en root/cimv2 y también se puede omitir. Por último, la mayoría de los cmdlets permite omitir el nombre de los parámetros comunes. Con Get-WmiObject, si no se especifica ningún nombre para el primer parámetro, Windows PowerShell lo trata como el parámetro **Class**. Esto significa que el último comando se podría haber emitido escribiendo:
 
-```
+```powershell
 Get-WmiObject Win32_OperatingSystem
 ```
 
@@ -105,6 +108,7 @@ BuildNumber                               Property   System.String BuildNumb...
 ```
 
 #### <a name="displaying-non-default-properties-with-format-cmdlets"></a>Visualizar propiedades no predeterminadas con cmdlets de formato
+
 Si quiere ver la información incluida en la clase **Win32_OperatingSystem** que no aparece de forma predeterminada, puede mostrarla mediante los cmdlets **Format**. Por ejemplo, si desea mostrar los datos de memoria disponible, escriba:
 
 ```
@@ -116,7 +120,7 @@ TotalVirtualMemorySize TotalVisibleMemory FreePhysicalMemory FreeVirtualMemory F
 ```
 
 > [!NOTE]
-> Los caracteres comodín funcionan con los nombres de propiedad de **Format-Table**, por lo que el elemento final de la canalización se puede reducir a **Format-Table -Property Total*,Free*.
+> Los caracteres comodín funcionan con los nombres de propiedad de **Format-Table**, por lo que el elemento final de la canalización se puede reducir a *Format-Table -Property Total*,Free*.
 
 Los datos de la memoria podrían ser más legibles si se formatean como una lista escribiendo:
 
@@ -129,4 +133,3 @@ FreePhysicalMemory     : 301876
 FreeVirtualMemory      : 2056724
 FreeSpaceInPagingFiles : 1556644
 ```
-

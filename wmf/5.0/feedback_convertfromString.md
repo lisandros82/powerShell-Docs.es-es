@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
-ms.translationtype: MT
+ms.openlocfilehash: cedda61241df4965fe5db723f03e3497f046fa44
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Extraer y analizar objetos estructurados fuera de la cadena
 También presenta algunas funciones adicionales para el cmdlet ConvertFrom-String:
@@ -67,7 +67,7 @@ Copie algunos ejemplos en un archivo, que se usará como plantilla:
 
     Renton, WA
 
-   
+
 
 Encierre los datos que quiera extraer con llaves y asígneles un nombre al hacerlo. Dado que la propiedad **Name** (y sus otras propiedades asociadas) puede aparecer varias veces, use un asterisco (\*) para indicar que se generan varios registros (en lugar de extraer un grupo de propiedades en un único registro):
 
@@ -89,5 +89,4 @@ De este conjunto de ejemplos, **ConvertFrom-String** puede ahora extraer automá
 > ----------                     ----               ----     -----
 > Ana Trujillo...                Ana Trujillo       Redmond  WA Antonio Moreno...              Antonio Moreno     Renton   WA Thomas Hardy...                Thomas Hardy       Seattle  WA Christina Berglund...          Christina Berglund Redmond  WA Hanna Moos...                  Hanna Moos         Puyallup WA
 
-Para manipular datos adicionales en el texto extraído, la propiedad **ExtentText** captura el texto sin formato del que se extrajo el registro. Para proporcionar comentarios sobre esta característica o compartir el contenido que presenta dificultades para escribir ejemplos, envíe un correo electrónico <psdmfb@microsoft.com>.
-
+Para manipular datos adicionales en el texto extraído, la propiedad **ExtentText** captura el texto sin formato del que se extrajo el registro. Para proporcionar comentarios sobre esta característica o compartir contenido que presenta dificultades para escribir ejemplos, envíe un correo electrónico a <psdmfb@microsoft.com>.

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Recurso PackageManagement de DSC
-ms.openlocfilehash: 4cd7625af7ed0bb3fe971c826ac2075841cdfdc5
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: e6eea9f0bae42e131976dacb9813da759ff31239
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-packagemanagement-resource"></a>Recurso PackageManagement de DSC
 
@@ -33,21 +33,21 @@ PackageManagement [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Propiedades
-|  Propiedad  |  Descripción   | 
-|---|---| 
-| Nombre| Especifica el nombre del paquete que se va a instalar o desinstalar.| 
-| Origen| Especifica el nombre del origen del paquete donde se encuentra el paquete. Puede ser un URI o un origen registrado con el recurso de registro de DSC Register-PackageSource o PackageManagementSource. El recurso MSFT_PackageManagementSource de DSC también puede registrar un origen del paquete.| 
-| Ensure| Determina si el paquete se puede instalar o desinstalar.| 
-| RequiredVersion| Especifica la versión exacta del paquete que desea instalar. Si no se especifica este parámetro, este recurso de DSC instala la versión más reciente disponible del paquete que también admite cualquier versión máxima especificada por el parámetro MaximumVersion.| 
-| MinimumVersion| Especifica la versión mínima permitida del paquete que desea instalar. Si no se agrega este parámetro, este recurso de DSC instala la versión más alta disponible del paquete que también admite cualquier versión máxima especificada por el parámetro MaximumVersion.| 
-| MaximumVersion| Especifica la versión máxima permitida del paquete que desea instalar. Si no se especifica este parámetro, este recurso de DSC instala la versión del paquete disponible con el número mayor.| 
-| SourceCredential | Especifica una cuenta de usuario que tenga derechos para instalar un paquete para un proveedor u origen de paquetes especificado.| 
-| ProviderName| Especifica un nombre de proveedor del paquete que se va a dirigir la búsqueda del paquete. Puede obtener los nombres de proveedor del paquete mediante la ejecución del cmdlet Get-PackageProvider.| 
-| AdditionalParameters| Parámetros específicos del proveedor que se pasan como una tabla hash. Por ejemplo, para el proveedor NuGet puede pasar parámetros adicionales, como DestinationPath.| 
+|  Propiedad  |  Descripción   |
+|---|---|
+| Nombre| Especifica el nombre del paquete que se va a instalar o desinstalar.|
+| Origen| Especifica el nombre del origen del paquete donde se encuentra el paquete. Puede ser un URI o un origen registrado con el recurso de registro de DSC Register-PackageSource o PackageManagementSource. El recurso MSFT_PackageManagementSource de DSC también puede registrar un origen del paquete.|
+| Ensure| Determina si el paquete se puede instalar o desinstalar.|
+| RequiredVersion| Especifica la versión exacta del paquete que desea instalar. Si no se especifica este parámetro, este recurso de DSC instala la versión más reciente disponible del paquete que también admite cualquier versión máxima especificada por el parámetro MaximumVersion.|
+| MinimumVersion| Especifica la versión mínima permitida del paquete que desea instalar. Si no se agrega este parámetro, este recurso de DSC instala la versión más alta disponible del paquete que también admite cualquier versión máxima especificada por el parámetro MaximumVersion.|
+| MaximumVersion| Especifica la versión máxima permitida del paquete que desea instalar. Si no se especifica este parámetro, este recurso de DSC instala la versión del paquete disponible con el número mayor.|
+| SourceCredential | Especifica una cuenta de usuario que tenga derechos para instalar un paquete para un proveedor u origen de paquetes especificado.|
+| ProviderName| Especifica un nombre de proveedor del paquete que se va a dirigir la búsqueda del paquete. Puede obtener los nombres de proveedor del paquete mediante la ejecución del cmdlet Get-PackageProvider.|
+| AdditionalParameters| Parámetros específicos del proveedor que se pasan como una tabla hash. Por ejemplo, para el proveedor NuGet puede pasar parámetros adicionales, como DestinationPath.|
 
 ## <a name="additional-parameters"></a>Parámetros adicionales
 En la tabla siguiente se enumeran las opciones de la propiedad AdditionalParameters.
-|  Parámetro  | Descripción   | 
+|  Parámetro  | Descripción   |
 |---|---|
 | DestinationPath| Usada por proveedores como el proveedor integrado de Nuget. Especifica una ubicación del archivo donde desea que se instale el paquete.|
 | InstallationPolicy| Usada por proveedores como el proveedor integrado de Nuget. Determina si puede confiar en el origen del paquete. Uno de los valores siguientes: "No es de confianza", "De confianza".|
@@ -58,41 +58,40 @@ Este ejemplo se instala el paquete NuGet **JQuery** y el módulo **GistProvider*
 
 ```powershell
 Configuration PackageTest
-{    
-    PackageManagementSource SourceRepository 
-    { 
-        Ensure      = "Present" 
-        Name        = "MyNuget" 
-        ProviderName= "Nuget" 
-        SourceUri   = "http://nuget.org/api/v2/"   
-        InstallationPolicy ="Trusted" 
-    }    
-    
-    PackageManagementSource PSGallery 
-    { 
-        Ensure      = "Present" 
-        Name        = "psgallery" 
-        ProviderName= "PowerShellGet" 
-        SourceUri   = "https://www.powershellgallery.com/api/v2/"   
-        InstallationPolicy ="Trusted" 
-    } 
-          
-    PackageManagement NugetPackage 
-    { 
-        Ensure               = "Present"  
+{
+    PackageManagementSource SourceRepository
+    {
+        Ensure      = "Present"
+        Name        = "MyNuget"
+        ProviderName= "Nuget"
+        SourceUri   = "http://nuget.org/api/v2/"
+        InstallationPolicy ="Trusted"
+    }
+
+    PackageManagementSource PSGallery
+    {
+        Ensure      = "Present"
+        Name        = "psgallery"
+        ProviderName= "PowerShellGet"
+        SourceUri   = "https://www.powershellgallery.com/api/v2/"
+        InstallationPolicy ="Trusted"
+    }
+
+    PackageManagement NugetPackage
+    {
+        Ensure               = "Present"
         Name                 = "JQuery"
         AdditionalParameters = "$env:HomeDrive\nuget"
-        RequiredVersion      = "2.0.1" 
-        DependsOn            = "[PackageManagementSource]SourceRepository" 
+        RequiredVersion      = "2.0.1"
+        DependsOn            = "[PackageManagementSource]SourceRepository"
     }
-    
-    PackageManagement PSModule 
-    { 
-        Ensure               = "Present"  
+
+    PackageManagement PSModule
+    {
+        Ensure               = "Present"
         Name                 = "gistprovider"
         Source               = "PSGallery"
-        DependsOn            = "[PackageManagementSource]PSGallery" 
+        DependsOn            = "[PackageManagementSource]PSGallery"
     }
 }
 ```
-

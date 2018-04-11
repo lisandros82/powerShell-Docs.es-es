@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
 contributor: ryanpu
 title: Mejoras de Just Enough Administration (JEA)
-ms.openlocfilehash: 2811b4deb3f4fca513791c7389ee5f9f877dbfe8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c80472fa4372331bf2cf9ab0b7513021354d1408
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Mejoras de Just Enough Administration (JEA)
 
@@ -50,7 +50,7 @@ Después, puede escribir funciones personalizadas para procesar los datos almace
 
 En algunos casos, puede que una tarea que tenga que realizar un usuario en una sesión JEA necesite acceso a recursos más allá de la máquina local.
 Cuando una sesión JEA está configurada para usar una cuenta virtual, cualquier intento de tener acceso a esos recursos parecerá que proviene de la identidad de la máquina local, y no de la cuenta virtual ni del usuario conectado.
-En TP5, hemos habilitado la compatibilidad para ejecutar JEA en el contexto de una [cuenta de servicio administrada de grupo](https://technet.microsoft.com/es-es/library/jj128431(v=ws.11\).aspx), lo que facilita el acceso a recursos de red mediante una identidad de dominio.
+En TP5, hemos habilitado la compatibilidad para ejecutar JEA en el contexto de una [cuenta de servicio administrada de grupo](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), lo que facilita el acceso a recursos de red mediante una identidad de dominio.
 
 Para configurar una sesión JEA para que se ejecute en una cuenta de gMSA, use la siguiente clave nueva en el archivo PSSC:
 
@@ -93,4 +93,3 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Solucionado: las cuentas virtuales ahora son compatibles con Windows Server 2008 R2
 En WMF 5.1, ahora puede usar cuentas virtuales en Windows Server 2008 R2, lo que permite configuraciones coherentes y paridad de funcionalidades en Windows Server 2008 R2 - 2016.
 Las cuentas virtuales siguen sin admitirse al usar JEA en Windows 7.
-

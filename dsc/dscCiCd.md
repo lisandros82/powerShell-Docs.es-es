@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Creación de una canalización de integración continua e implementación continua con DSC"
-ms.openlocfilehash: 5f7583fb93b69bbe4103b34b79b3a859c9cee8a9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: Creación de una canalización de integración continua e implementación continua con DSC
+ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Creación de una canalización de integración continua e implementación continua con DSC
 
 En este ejemplo se muestra cómo crear una canalización de integración continua/implementación continua (CI/CD) con PowerShell, DSC, Pester y Visual Studio Team Foundation Server (TFS).
 
-Una vez que se construye y configura la canalización, puede usarla para implementar, configurar y probar completamente un servidor DSN y los registros host asociados. Este proceso simula la primera parte de una canalización que se usaría en un entorno de desarrollo.
+Una vez que se construye y configura la canalización, puede usarla para implementar, configurar y probar completamente un servidor DSN y los registros host asociados.
+Este proceso simula la primera parte de una canalización que se usaría en un entorno de desarrollo.
 
 Una canalización CI/CD automatizada le ayuda a actualizar software de forma más rápida y confiable, garantizando que se pruebe todo el código y que una compilación actual del código esté disponible en todo momento.
 
@@ -36,7 +37,7 @@ El equipo donde llevará a cabo todo el trabajo de configuración y ejecución d
 
 El equipo cliente debe ser un equipo Windows que tenga instalado lo siguiente:
 - [Git](https://git-scm.com/)
-- Un repositorio git local clonado de https://github.com/PowerShell/Demo_CI
+- Un repositorio Git local clonado a partir de https://github.com/PowerShell/Demo_CI
 - Un editor de texto, como [Visual Studio Code](https://code.visualstudio.com/)
 
 ### <a name="tfssrv1"></a>TFSSrv1
@@ -60,7 +61,7 @@ El equipo debe ejecutar [Windows Server 2016](https://www.microsoft.com/en-us/ev
 ### <a name="testagent2"></a>TestAgent2
 
 El equipo que hospeda el sitio web que se configura en este ejemplo.
-El equipo debe ejecutar [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). 
+El equipo debe ejecutar [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
 
 ## <a name="add-the-code-to-tfs"></a>Incorporación del código en TFS
 
@@ -156,7 +157,8 @@ Esta instrucción encuentra cualquier nodo que se haya definido con un rol de `D
 
 Usar datos de configuración para definir nodos es importantes cuando se hace CI, porque es probable que la información de los nodos cambie entre los entornos y usar los datos de configuración le permite hacer cambios con facilidad en la información de los nodos sin cambiar el código de configuración.
 
-En el primer bloque de recursos, la configuración llama a [WindowsFeature](windowsFeatureResource.md) para asegurarse de que la característica DNS está habilitada. Los bloques de recursos siguientes llaman a recursos del módulo [xDnsServer](https://github.com/PowerShell/xDnsServer) para configurar la zona principal y los registros DNS.
+En el primer bloque de recursos, la configuración llama a [WindowsFeature](windowsFeatureResource.md) para asegurarse de que la característica DNS está habilitada.
+Los bloques de recursos siguientes llaman a recursos del módulo [xDnsServer](https://github.com/PowerShell/xDnsServer) para configurar la zona principal y los registros DNS.
 
 Tenga en cuenta que los dos bloques `xDnsRecord` están encapsulados en bucles `foreach` que iteran a través de matrices en los datos de configuración.
 Como ya indicamos, el script `DevEnv.ps1` crea los datos de configuración, los que analizaremos a continuación.
@@ -199,7 +201,8 @@ En el caso en cuestión, solo se usa el parámetro `RawEnvData`.
 ### <a name="the-psake-build-script"></a>El script de compilación psake
 
 El script de compilación [psake](https://github.com/psake/psake) definido en `Build.ps1` (de la raíz del repositorio Demo_CI, `./InfraDNS/Build.ps1`) define las tareas que forman parte de la compilación.
-También define las otras tareas de las que depende cada tarea. Cuando se invoca, el script psake garantiza que la tarea especificada (o la tarea llamada `Default`, si no se especifica ninguna) se ejecute y que también se ejecuten todas las dependencias (esta acción es recursiva, por lo que se ejecutan las dependencias de las dependencias, y así sucesivamente).
+También define las otras tareas de las que depende cada tarea.
+Cuando se invoca, el script psake garantiza que la tarea especificada (o la tarea llamada `Default`, si no se especifica ninguna) se ejecute y que también se ejecuten todas las dependencias (esta acción es recursiva, por lo que se ejecutan las dependencias de las dependencias, y así sucesivamente).
 
 En este ejemplo, la tarea `Default` se define de la siguiente manera:
 
@@ -422,10 +425,3 @@ Para comprobar el resultado de la implementación, abra un explorador en la máq
 En este ejemplo se configura el servidor DNS `TestAgent1` para que la dirección URL `www.contoso.com` se resuelva en `TestAgent2`, pero en realidad no implemente un sitio web.
 La estructura para hacerlo se proporciona en el repositorio que se encuentra en la carpeta `WebApp`.
 Puede usar los códigos auxiliares que se proporcionan para crear scripts psake, pruebas Pester y configuraciones de DSC a fin de implementar su propio sitio web.
-
-
-
-
-
-
-

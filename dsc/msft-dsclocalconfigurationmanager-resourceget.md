@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Método ResourceGet de la clase MSFT_DSCLocalConfigurationManager"
-ms.openlocfilehash: 2c055b3fab468f85c9e2f91cf1eaf1a4353b4660
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Método ResourceGet de la clase MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: 3fd7ae54eb3ae782156dc4619ee0b6905dfb1212
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método ResourceGet de la clase MSFT_DSCLocalConfigurationManager
 
@@ -28,17 +28,13 @@ uint32 ResourceGet(
 <a name="parameters"></a>Parámetros
 ----------
 
-*ResourceType* \[in\]  
-Nombre del recurso al que se llamará.
+*ResourceType* \[in\] Nombre del recurso al que se va a llamar.
 
-*ModuleName* \[in\]  
-Nombre del módulo que contiene el recurso al que se llamará.
+*ModuleName* \[in\] Nombre del módulo que contiene el recurso al que se va a llamar.
 
-*resourceProperty* \[in\]  
-Especifica el nombre de la propiedad del recurso y su valor en una tabla hash como clave y valor, respectivamente. Use el cmdlet [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) para descubrir las propiedades del recurso y sus tipos.
+*resourceProperty* \[in\] Especifica el nombre de la propiedad del recurso y su valor en una tabla hash como clave y valor, respectivamente. Use el cmdlet [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) para descubrir las propiedades del recurso y sus tipos.
 
-*configurations* \[out\]  
-En la devolución, contiene una instancia incrustada de las configuraciones.
+*configurations* \[out\] En la devolución, contiene una instancia insertada de las configuraciones.
 
 ## <a name="return-value"></a>Valor devuelto
 ------------
@@ -60,11 +56,3 @@ Se trata de un método estático.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

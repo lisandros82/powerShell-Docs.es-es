@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Método PerformRequiredConfigurationChecks de la clase MSFT_DSCLocalConfigurationManager"
-ms.openlocfilehash: 687c92f2dac5e8855731713e81390ac67615231e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: Método PerformRequiredConfigurationChecks de la clase MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: 9cc4384088fcc39b09979b8ae4d023fc46307b13
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método PerformRequiredConfigurationChecks de la clase MSFT_DSCLocalConfigurationManager
 
@@ -25,8 +25,7 @@ uint32 PerformRequiredConfigurationChecks(
 <a name="parameters"></a>Parámetros
 ----------
 
-*Flags* \[in\]  
-Máscara de bits que especifica el tipo de comprobación de coherencia que se ejecutará. Los valores siguientes son válidos y se pueden combinar mediante el uso de una operación **O** bit a bit:
+*Flags* \[in\] Máscara de bits que especifica el tipo de comprobación de coherencia que se va a ejecutar. Los valores siguientes son válidos y se pueden combinar mediante el uso de una operación **O** bit a bit:
 
 |Value |Descripción |
 |:--- |:---|
@@ -55,11 +54,3 @@ Se trata de un método estático.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

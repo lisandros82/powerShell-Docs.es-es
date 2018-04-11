@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 419223884b521487064dbfe53770a94e894c6138
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 59adc382d239b961b1e21ca58a0c64de01f498ad
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="software-discovery-install-and-inventory-with-packagemanagement"></a>Detección, instalación e inventario de software con PackageManagement
 
@@ -18,5 +18,4 @@ PackageManagement (también conocido como OneGet) es una nueva manera de descubr
 -   Detectar los paquetes de software necesarios.
 -   Instalar, desinstalar e inventariar paquetes de uno o varios repositorios de software sin problemas.
 
-Para obtener más información, consulte http://oneget.org/.
-
+Para obtener más información, vea http://oneget.org/.

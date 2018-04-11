@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Procedimientos recomendados del servidor de extracción"
-ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Procedimientos recomendados del servidor de extracción
+ms.openlocfilehash: 7de523ad16aee77d87ec4d3334d296997020aa19
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="pull-server-best-practices"></a>Procedimientos recomendados del servidor de extracción
 
@@ -17,8 +17,8 @@ Resumen: El objetivo de este documento es incluir el proceso y la extensibilidad
 
 | |Información del documento|
 |:---|:---|
-Autor | Michael Greene  
-Revisores | Ben Gelens, Ravikanth Chaganti y Aleksandar Nikolic  
+Autor | Michael Greene
+Revisores | Ben Gelens, Ravikanth Chaganti y Aleksandar Nikolic
 Publicado | Abril de 2015
 
 ## <a name="abstract"></a>Resumen
@@ -31,8 +31,8 @@ Las dos secciones principales de este documento son estas:
 
  - Planeamiento de configuración
  - Guía de instalación
- 
-### <a name="versions-of-the-windows-management-framework"></a>Versiones de Windows Management Framework 
+
+### <a name="versions-of-the-windows-management-framework"></a>Versiones de Windows Management Framework
 La información de este documento se aplica a Windows Management Framework 5.0. Aunque no se necesita WMF 5.0 para implementar ni usar un servidor de extracción, la versión 5.0 es el centro de este documento.
 
 ### <a name="windows-powershell-desired-state-configuration"></a>Configuración de estado deseado de Windows PowerShell
@@ -40,10 +40,11 @@ Configuración de estado deseado (DSC) es una plataforma de administración que 
 
 Windows PowerShell proporciona un conjunto de extensiones de lenguaje para Configuración de estado deseado que puede usar para crear y administrar configuraciones declarativas.
 
-### <a name="pull-server-role"></a>Rol de servidor de extracción  
+### <a name="pull-server-role"></a>Rol de servidor de extracción
 Un servidor de extracción proporciona un servicio centralizado para almacenar configuraciones que sean accesibles a los nodos de destino.
- 
-El rol de servidor de extracción puede implementarse como una instancia de servidor web o como un recurso compartido de archivos SMB. La característica de servidor web incluye una interfaz OData y opcionalmente puede incluir capacidades para que los nodos de destino confirmen el éxito o el error a medida que se apliquen las configuraciones. Esta funcionalidad es útil en entornos donde hay muchos nodos de destino. Después de configurar un nodo de destino (también conocido como cliente) para que apunte al servidor de extracción, se descargan y se aplican los datos de configuración más recientes y los scripts necesarios. Puede ser como una implementación única o como un trabajo recurrente, lo que también convierte al servidor de extracción en un activo importante para administrar el cambio a escala. Para más información, vea [Windows PowerShell Desired State Configuration Pull Servers (Servidores de extracción de la configuración de estado deseado de Windows PowerShell)](https://technet.microsoft.com/library/dn249913.aspx) y [Push and Pull Configuration Modes (Modos de configuración de inserción y extracción)](https://technet.microsoft.com/library/dn249913.aspx).
+
+El rol de servidor de extracción puede implementarse como una instancia de servidor web o como un recurso compartido de archivos SMB. La característica de servidor web incluye una interfaz OData y opcionalmente puede incluir capacidades para que los nodos de destino confirmen el éxito o el error a medida que se apliquen las configuraciones. Esta funcionalidad es útil en entornos donde hay muchos nodos de destino.
+Después de configurar un nodo de destino (también conocido como cliente) para que apunte al servidor de extracción, se descargan y se aplican los datos de configuración más recientes y los scripts necesarios. Puede ser como una implementación única o como un trabajo recurrente, lo que también convierte al servidor de extracción en un activo importante para administrar el cambio a escala. Para más información, vea [Windows PowerShell Desired State Configuration Pull Servers (Servidores de extracción de la configuración de estado deseado de Windows PowerShell)](https://technet.microsoft.com/library/dn249913.aspx) y [Push and Pull Configuration Modes (Modos de configuración de inserción y extracción)](https://technet.microsoft.com/library/dn249913.aspx).
 
 ## <a name="configuration-planning"></a>Planeamiento de configuración
 
@@ -59,7 +60,9 @@ Además de instalar el contenido más reciente desde Windows Update, hay dos des
 
 ### <a name="wmf"></a>WMF
 
-Windows Server 2012 R2 incluye una característica denominada Servicio de DSC. La característica Servicio de DSC proporciona la funcionalidad de servidor de extracción, incluidos los archivos binarios que admiten el punto de conexión de OData. WMF está incluido en Windows Server y se actualiza a un ritmo ágil entre versiones de Windows Server. [Las nuevas versiones de WMF 5.0](http://aka.ms/wmf5latest) pueden incluir actualizaciones de la característica Servicio de DSC. Por esta razón, se recomienda descargar la versión más reciente de WMF y revisar las notas de la versión para determinar si incluye una actualización de dicha característica. También debe revisar la sección de notas de la versión que indica si el estado de diseño de un escenario o una actualización es estable o experimental. Para permitir un ritmo de versiones ágil, hay características individuales que se pueden declarar estables, lo que indica que están listas para usarse en un entorno de producción, aunque WMF se haya publicado en versión preliminar.
+Windows Server 2012 R2 incluye una característica denominada Servicio de DSC. La característica Servicio de DSC proporciona la funcionalidad de servidor de extracción, incluidos los archivos binarios que admiten el punto de conexión de OData.
+WMF está incluido en Windows Server y se actualiza a un ritmo ágil entre versiones de Windows Server. [Las nuevas versiones de WMF 5.0](http://aka.ms/wmf5latest) pueden incluir actualizaciones de la característica Servicio de DSC. Por esta razón, se recomienda descargar la versión más reciente de WMF y revisar las notas de la versión para determinar si incluye una actualización de dicha característica. También debe revisar la sección de notas de la versión que indica si el estado de diseño de un escenario o una actualización es estable o experimental.
+Para permitir un ritmo de versiones ágil, hay características individuales que se pueden declarar estables, lo que indica que están listas para usarse en un entorno de producción, aunque WMF se haya publicado en versión preliminar.
 Otras características que históricamente se han actualizado con las versiones de WMF (vea las Notas de la versión de WMF para obtener más detalles):
 
  - Entorno de scripting integrado (ISE) de Windows PowerShell
@@ -77,7 +80,7 @@ Use el cmdlet **Install-Module** del módulo **PowerShellGet**.
 Install-Module xPSDesiredStateConfiguration
 ```
 
-El módulo **PowerShellGet** descargará el módulo en: 
+El módulo **PowerShellGet** descargará el módulo en:
 
 `C:\Program Files\Windows PowerShell\Modules`
 
@@ -93,10 +96,7 @@ Tarea de planeamiento|
 
 Las implementaciones de servidor de extracción se admiten tanto en servidores físicos como virtuales. Los requisitos de tamaño del servidor de extracción están en línea con los requisitos de Windows Server 2012 R2.
 
-CPU: procesador de 64 bits a 1,4 GHz  
-Memoria: 512 MB  
-Espacio en disco: 32 GB  
-Red: adaptador Gigabit Ethernet  
+CPU: procesador de 1,4 GHz y 64 bits. Memoria: 512 MB de espacio en disco: 32 GB. Red: adaptador de Gigabit Ethernet
 
 Tarea de planeamiento|
 ---|
@@ -107,15 +107,22 @@ Tarea de planeamiento|
 
 ### <a name="accounts"></a>Cuentas
 
-No hay ningún requisito de cuenta de servicio para implementar una instancia de servidor de extracción. Pero hay escenarios donde el sitio web podría ejecutarse en el contexto de una cuenta de usuario local. Por ejemplo, si hay que acceder a un recurso compartido de almacenamiento de contenido del sitio web y Windows Server o el dispositivo que hospeda el recurso compartido de almacenamiento no están unidos a dominio.
+No hay ningún requisito de cuenta de servicio para implementar una instancia de servidor de extracción.
+Pero hay escenarios donde el sitio web podría ejecutarse en el contexto de una cuenta de usuario local.
+Por ejemplo, si hay que acceder a un recurso compartido de almacenamiento de contenido del sitio web y Windows Server o el dispositivo que hospeda el recurso compartido de almacenamiento no están unidos a dominio.
 
 ### <a name="dns-records"></a>Registros DNS
 
-Al configurar clientes para trabajar con un entorno de servidor de extracción, tendrá que usar un nombre de servidor. En entornos de prueba, normalmente se usa el nombre de host del servidor o, si la resolución de nombres DNS no está disponible, se puede usar la dirección IP del servidor. En entornos de producción o en un entorno de laboratorio que sirve para representar una implementación de producción, el procedimiento recomendado es crear un registro CNAME DNS.
+Al configurar clientes para trabajar con un entorno de servidor de extracción, tendrá que usar un nombre de servidor.
+En entornos de prueba, normalmente se usa el nombre de host del servidor o, si la resolución de nombres DNS no está disponible, se puede usar la dirección IP del servidor.
+En entornos de producción o en un entorno de laboratorio que sirve para representar una implementación de producción, el procedimiento recomendado es crear un registro CNAME DNS.
 
-Un CNAME DNS le permite crear un alias para hacer referencia al registro de host (A). El objetivo del registro de nombre adicional es aumentar la flexibilidad por si se necesitara un cambio en el futuro. Un CNAME puede ayudar a aislar la configuración del cliente para que los cambios en el entorno de servidor, como la sustitución de un servidor de extracción o la adición de servidores adicionales de extracción, no exijan un cambio correspondiente en la configuración del cliente.
+Un CNAME DNS le permite crear un alias para hacer referencia al registro de host (A).
+El objetivo del registro de nombre adicional es aumentar la flexibilidad por si se necesitara un cambio en el futuro.
+Un CNAME puede ayudar a aislar la configuración del cliente para que los cambios en el entorno de servidor, como la sustitución de un servidor de extracción o la adición de servidores adicionales de extracción, no exijan un cambio correspondiente en la configuración del cliente.
 
-Al elegir un nombre para el registro DNS, tenga en cuenta la arquitectura de la solución. Si usa equilibrio de carga, el certificado empleado para proteger el tráfico a través de HTTPS tendrá que llevar el mismo nombre que el registro DNS. 
+Al elegir un nombre para el registro DNS, tenga en cuenta la arquitectura de la solución.
+Si usa equilibrio de carga, el certificado empleado para proteger el tráfico a través de HTTPS tendrá que llevar el mismo nombre que el registro DNS.
 
 Escenario |Procedimiento recomendado
 :---|:---
@@ -134,7 +141,8 @@ En caso necesario, ¿qué tipo de solución de equilibrio de carga usaría? (vea
 
 ### <a name="public-key-infrastructure"></a>Infraestructura de clave pública
 
-Hoy en día la mayoría de las organizaciones exigen que el tráfico de red, especialmente aquel que incluye datos confidenciales tales como la forma en que los servidores están configurados, se valide o se cifre durante el tránsito. Aunque es posible implementar un servidor de extracción mediante HTTP, que permite las solicitudes de cliente en texto sin cifrar, el procedimiento recomendado es proteger el tráfico mediante HTTPS. El servicio se puede configurar de modo que use HTTPS con un conjunto de parámetros en el recurso de DSC **xPSDesiredStateConfiguration**.
+Hoy en día la mayoría de las organizaciones exigen que el tráfico de red, especialmente aquel que incluye datos confidenciales tales como la forma en que los servidores están configurados, se valide o se cifre durante el tránsito.
+Aunque es posible implementar un servidor de extracción mediante HTTP, que permite las solicitudes de cliente en texto sin cifrar, el procedimiento recomendado es proteger el tráfico mediante HTTPS. El servicio se puede configurar de modo que use HTTPS con un conjunto de parámetros en el recurso de DSC **xPSDesiredStateConfiguration**.
 
 Los requisitos de certificado para proteger el tráfico HTTPS del servidor de extracción no difieren de la protección de cualquier otro sitio web HTTPS. La plantilla **servidor web** de Servicios de servidor de certificados de Windows Server satisface las capacidades necesarias.
 
@@ -149,9 +157,11 @@ Si las solicitudes de certificado no están automatizadas, ¿con quién tiene qu
 
 ### <a name="choosing-an-architecture"></a>Elección de una arquitectura
 
-Un servidor de extracción se puede implementar mediante un servicio web hospedado en IIS o un recurso compartido de archivos SMB. En la mayoría de los casos, la opción del servicio web proporcionará mayor flexibilidad. No es raro que el tráfico HTTPS atraviese límites de red, mientras que el tráfico SMB se suele filtrar o bloquear entre redes. El servicio web también ofrece la opción de incluir un servidor de conformidad o un administrador de informes web (ambos temas se tratarán en una versión futura de este documento) que proporcionan un mecanismo para que los clientes informen del estado a un servidor para una visibilidad centralizada. SMB proporciona una opción para entornos donde la directiva determina que no se debe usar un servidor web y para otros requisitos de entorno que convierten a un rol de servidor web en no deseado. En cualquier caso, no olvide evaluar los requisitos de firma y cifrado del tráfico. HTTPS, firma SMB y directivas IPSEC son opciones que vale la pena tener en cuenta.
+Un servidor de extracción se puede implementar mediante un servicio web hospedado en IIS o un recurso compartido de archivos SMB. En la mayoría de los casos, la opción del servicio web proporcionará mayor flexibilidad. No es raro que el tráfico HTTPS atraviese límites de red, mientras que el tráfico SMB se suele filtrar o bloquear entre redes. El servicio web también ofrece la opción de incluir un servidor de conformidad o un administrador de informes web (ambos temas se tratarán en una versión futura de este documento) que proporcionan un mecanismo para que los clientes informen del estado a un servidor para una visibilidad centralizada.
+SMB proporciona una opción para entornos donde la directiva determina que no se debe usar un servidor web y para otros requisitos de entorno que convierten a un rol de servidor web en no deseado.
+En cualquier caso, no olvide evaluar los requisitos de firma y cifrado del tráfico. HTTPS, firma SMB y directivas IPSEC son opciones que vale la pena tener en cuenta.
 
-#### <a name="load-balancing"></a>Equilibrio de carga  
+#### <a name="load-balancing"></a>Equilibrio de carga
 Los clientes que interactúan con el servicio web realizan una solicitud de información que se devuelve en una sola respuesta. No se necesitan solicitudes secuenciales, por lo que no es necesario que la plataforma de equilibrio de carga garantice el mantenimiento de las sesiones en un único servidor en cualquier momento.
 
 Tarea de planeamiento|
@@ -166,11 +176,11 @@ Si usa un equilibrador de carga de hardware, ¿quién recibirá la solicitud de 
 
 ### <a name="staging-configurations-and-modules-on-the-pull-server"></a>Preconfiguración de configuraciones y módulos en el servidor de extracción
 
-Como parte del planeamiento de configuración, debe pensar en los módulos y configuraciones de DSC que hospedará el servidor de extracción. A efectos del planeamiento de configuración, es importante tener un conocimiento básico de cómo preparar e implementar contenido en un servidor de extracción. 
+Como parte del planeamiento de configuración, debe pensar en los módulos y configuraciones de DSC que hospedará el servidor de extracción. A efectos del planeamiento de configuración, es importante tener un conocimiento básico de cómo preparar e implementar contenido en un servidor de extracción.
 
-En el futuro, esta sección se ampliará y se incluirá en una guía de funcionamiento del servidor de extracción de DSC.  En esa guía se hablará del proceso cotidiano de administrar módulos y configuraciones a lo largo del tiempo mediante automatización. 
+En el futuro, esta sección se ampliará y se incluirá en una guía de funcionamiento del servidor de extracción de DSC.  En esa guía se hablará del proceso cotidiano de administrar módulos y configuraciones a lo largo del tiempo mediante automatización.
 
-#### <a name="dsc-modules"></a>Módulos de DSC  
+#### <a name="dsc-modules"></a>Módulos de DSC
 Los clientes que soliciten una configuración necesitarán los módulos de DSC necesarios. Una funcionalidad del servidor de extracción es automatizar la distribución a petición de módulos de DSC a los clientes. Si está implementando un servidor de extracción por primera vez, quizás como laboratorio o prueba de concepto, es probable que vaya a depender de los módulos de DSC que hay disponibles en repositorios públicos, como la Galería de PowerShell, o los repositorios GitHub de PowerShell.org para los módulos de DSC.
 
 Es fundamental recordar que cualquier módulo descargado de un repositorio público, incluso orígenes en línea de confianza como la Galería de PowerShell, debe ser revisado por alguien con experiencia en PowerShell y conocimiento del entorno donde se van a usar los módulos antes de que estos se empleen en producción. Mientras se realiza esta tarea, es buen momento para buscar cualquier carga adicional en el módulo que pueda quitarse, como scripts de ejemplo y documentación. Esto reducirá el ancho de banda de red por cliente en la primera solicitud, cuando los módulos se descarguen a través de la red desde el servidor al cliente.
@@ -194,7 +204,8 @@ Si está planeando un entorno de producción, ¿qué usará como repositorio loc
 
 #### <a name="dsc-configurations"></a>Configuraciones DSC
 
-El fin de un servidor de extracción es proporcionar un mecanismo centralizado para distribuir configuraciones DSC a nodos cliente. Las configuraciones se almacenan en el servidor como documentos MOF. Cada documento tendrá como nombre un GUID único. Cuando se configuran los clientes para conectar con un servidor de extracción, se les da el GUID de la configuración que deben solicitar. Este sistema de referencia a las configuraciones por GUID garantiza la exclusividad global y es flexible, de modo que una configuración se pueda aplicar con granularidad por nodo, o como una configuración de rol que abarca varios servidores que deben tener configuraciones idénticas.
+El fin de un servidor de extracción es proporcionar un mecanismo centralizado para distribuir configuraciones DSC a nodos cliente. Las configuraciones se almacenan en el servidor como documentos MOF.
+Cada documento tendrá como nombre un GUID único. Cuando se configuran los clientes para conectar con un servidor de extracción, se les da el GUID de la configuración que deben solicitar. Este sistema de referencia a las configuraciones por GUID garantiza la exclusividad global y es flexible, de modo que una configuración se pueda aplicar con granularidad por nodo, o como una configuración de rol que abarca varios servidores que deben tener configuraciones idénticas.
 
 #### <a name="guids"></a>GUID
 
@@ -289,26 +300,26 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 #      * Automatically load certificate from Certificate Authority
 #      * Locate Modules and Configuration data on remote SMB share
 #      * Manage state of default websites in IIS
-    
+
 param (
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
         [System.String] $ServerName,
         [System.String] $DomainName,
         [System.String] $CARootName,
         [System.String] $CAServerFQDN,
         [System.String] $CertSubject,
         [System.String] $SMBShare,
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
         [PsCredential] $Credential
     )
-    
+
 Configuration PullServer {
     Import-DscResource -ModuleName xPSDesiredStateConfiguration, xWebAdministration, xCertificate, xComputerManagement
     Node localhost
     {
-            
+
         # Configure the server to automatically corret configuration drift including reboots if needed.
         LocalConfigurationManager
         {
@@ -316,14 +327,14 @@ Configuration PullServer {
             RebootNodeifNeeded = $node.RebootNodeifNeeded
             CertificateId = $node.Thumbprint
         }
-    
+
         # Remove all GUI interfaces so the server has minimum running footprint.
         WindowsFeature ServerCore
         {
             Ensure = 'Absent'
             Name = 'User-Interfaces-Infra'
         }
-    
+
         # Set the server name and if needed, join a domain. If not joining a domain, remove the DomainName parameter.
         xComputer DomainJoin
         {
@@ -331,7 +342,7 @@ Configuration PullServer {
             DomainName = $Node.DomainName
             Credential = $Node.Credential
         }
-    
+
         # The next series of settings disable SSL and enable TLS, for environments where that is required by policy.
         Registry TLS1_2ServerEnabled
         {
@@ -373,14 +384,14 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
-    
+
         # Install the Windows Server DSC Service feature
         WindowsFeature DSCServiceFeature
         {
             Ensure = 'Present'
             Name = 'DSC-Service'
         }
-    
+
         # If using a certificate from a local Active Directory Enterprise Root Certificate Authority, complete a request and install the certificate
         xCertReq SSLCert
         {
@@ -390,7 +401,7 @@ Configuration PullServer {
             AutoRenew = $Node.AutoRenew
             Credential = $Node.Credential
         }
-    
+
         # Use the DSC resource to simplify deployment of the web service.  You might also consider modifying the default port, possibly leveraging port 443 in environments where that is enforced as a standard.
         xDSCWebService PSDSCPullServer
         {
@@ -405,10 +416,10 @@ Configuration PullServer {
             State = 'Started'
             DependsOn = '[WindowsFeature]DSCServiceFeature'
         }
-    
+
         # Validate web config file contains current DB settings
         xWebConfigKeyValue CorrectDBProvider
-        { 
+        {
             ConfigSection = 'AppSettings'
             Key = 'dbprovider'
             Value = 'System.Data.OleDb'
@@ -416,17 +427,17 @@ Configuration PullServer {
             DependsOn = '[xDSCWebService]PSDSCPullServer'
         }
         xWebConfigKeyValue CorrectDBConnectionStr
-        { 
+        {
             ConfigSection = 'AppSettings'
             Key = 'dbconnectionstr'
             Value = 'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Program Files\WindowsPowerShell\DscService\Devices.mdb;'
             WebsitePath = 'IIS:\sites\PSDSCPullServer'
             DependsOn = '[xDSCWebService]PSDSCPullServer'
         }
-    
+
         # Stop the default website
-        xWebsite StopDefaultSite  
-        { 
+        xWebsite StopDefaultSite
+        {
             Ensure = 'Present'
             Name = 'Default Web Site'
             State = 'Stopped'
@@ -456,8 +467,8 @@ $configData = @{
 PullServer -ConfigurationData $configData -OutputPath 'C:\PullServerConfig\'
 Set-DscLocalConfigurationManager -ComputerName localhost -Path 'C:\PullServerConfig\'
 Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
-    
-# .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share' 
+
+# .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share'
 ```
 
 
@@ -468,7 +479,7 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 function Verify-DSCPullServer ($fqdn) {
     ([xml](invoke-webrequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
 }
-Verify-DSCPullServer 'INSERT SERVER FQDN' 
+Verify-DSCPullServer 'INSERT SERVER FQDN'
 
 Expected Result:
 Action
@@ -485,14 +496,14 @@ Configuration PullClient {
     $ID,
     $Server
     )
-        LocalConfigurationManager 
-                { 
+        LocalConfigurationManager
+                {
                     ConfigurationID = $ID;
                     RefreshMode = 'PULL';
                     DownloadManagerName = 'WebDownloadManager';
                     RebootNodeIfNeeded = $true;
                     RefreshFrequencyMins = 30;
-                    ConfigurationModeFrequencyMins = 15; 
+                    ConfigurationModeFrequencyMins = 15;
                     ConfigurationMode = 'ApplyAndAutoCorrect';
                     DownloadManagerCustomData = @{ServerUrl = "http://"+$Server+":8080/PSDSCPullServer.svc"; AllowUnsecureConnection = $true}
                 }
@@ -504,13 +515,13 @@ Set-DscLocalConfigurationManager -ComputerName 'Localhost' -Path 'C:\DSCConfig\'
 
 ## <a name="additional-references-snippets-and-examples"></a>Referencias, fragmentos de código y ejemplos adicionales
 
-En este ejemplo se muestra cómo iniciar manualmente una conexión de cliente (necesita WMF5) para realizar pruebas. 
+En este ejemplo se muestra cómo iniciar manualmente una conexión de cliente (necesita WMF5) para realizar pruebas.
 
 ```powershell
 Update-DSCConfiguration –Wait -Verbose
 ```
 
-Se usa el cmdlet [DnsServerResourceRecordName agregar](http://bit.ly/1G1H31L) para agregar un registro CNAME de tipo a una zona DNS. 
+Se usa el cmdlet [DnsServerResourceRecordName agregar](http://bit.ly/1G1H31L) para agregar un registro CNAME de tipo a una zona DNS.
 
 La función de PowerShell para [crear una suma de comprobación y publicar el MOF de DSC en el servidor de extracción SMB](http://bit.ly/1E46BhI) genera automáticamente la suma de comprobación necesaria y, luego, copia los archivos de suma de comprobación y de configuración MOF en el servidor de extracción SMB.
 
@@ -518,10 +529,7 @@ La función de PowerShell para [crear una suma de comprobación y publicar el MO
 
 Se almacena un archivo de datos para crear información durante la implementación de un servidor de extracción que incluye el servicio web OData. El tipo de archivo depende del sistema operativo, como se describe a continuación.
 
- - **Windows Server 2012**  
-El tipo de archivo siempre será .mdb
- - **Windows Server 2012 R2**  
-El tipo de archivo será .edb a menos que se especifique un archivo .mdb en la configuración
+ - **Windows Server 2012** El tipo de archivo siempre será .mdb.
+ - **Windows Server 2012 R2** El tipo de archivo será .edb a menos que se especifique un tipo .mdb en la configuración.
 
 En el [script de ejemplo avanzado](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) para instalar un servidor de extracción, también encontrará un ejemplo de cómo controlar automáticamente la configuración del archivo web.config para evitar cualquier posibilidad de error causado por el tipo de archivo.
-

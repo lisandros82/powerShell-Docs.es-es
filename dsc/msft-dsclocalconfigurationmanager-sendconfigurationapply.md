@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Método SendConfigurationApply de la clase MSFT_DSCLocalConfigurationManager"
-ms.openlocfilehash: 20f732d35860cccde4e507dc6916e27d0cf8c5f6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: Método SendConfigurationApply de la clase MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: 8edf8c55089e767394ba21b42fe74072777a45c9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método SendConfigurationApply de la clase MSFT_DSCLocalConfigurationManager
 
@@ -26,11 +26,9 @@ uint32 SendConfigurationApply(
 <a name="parameters"></a>Parámetros
 ----------
 
-*ConfigurationData* \[in\]  
-Datos del entorno para la configuración.
+*ConfigurationData* \[in\] Datos del entorno para la configuración.
 
-*force* \[in\]  
-**true** para forzar la configuración que se detendrá.
+*force* \[in\] **true** para forzar la configuración a detenerse.
 
 ## <a name="return-value"></a>Valor devuelto
 ------------
@@ -52,11 +50,3 @@ Se trata de un método estático.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

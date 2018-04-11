@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: 0522844fded847a3fd45c1b3890a141357edb2b2
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: e390a84b6f7a1932afdad84c7b09ce7da2ec5370
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>Consideraciones de seguridad de comunicación remota de PowerShell
 
@@ -33,60 +33,51 @@ En redes privadas, la regla de Firewall de Windows predeterminada para la comuni
 
 ## <a name="process-isolation"></a>Aislamiento de procesos
 
-La comunicación remota de PowerShell usa [Administración remota de Windows (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) para la comunicación entre equipos. WinRM se ejecuta como servicio en la cuenta servicio de red y genera procesos aislados que se ejecutan como cuentas de usuario para las instancias de host de PowerShell. Una instancia de PowerShell que se ejecuta como un usuario no tiene acceso a un proceso que ejecuta una instancia de PowerShell como otro usuario.
+La comunicación remota de PowerShell usa [Administración remota de Windows (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) para la comunicación entre equipos.
+WinRM se ejecuta como servicio en la cuenta servicio de red y genera procesos aislados que se ejecutan como cuentas de usuario para las instancias de host de PowerShell. Una instancia de PowerShell que se ejecuta como un usuario no tiene acceso a un proceso que ejecuta una instancia de PowerShell como otro usuario.
 
 ## <a name="event-logs-generated-by-powershell-remoting"></a>Registros de eventos generados por la comunicación remota de PowerShell
 
-FireEye ha proporcionado un buen resumen de los registros de eventos y otras pruebas de seguridad generados por las sesiones de comunicación remota de PowerShell, disponibles en  
-[Investigating PowerShell Attacks](https://www.fireeye.com/content/dam/fireeye-www/global/en/solutions/pdfs/wp-lazanciyan-investigating-powershell-attacks.pdf) (Investigación de los ataques de PowerShell).
+FireEye ha proporcionado un buen resumen de los registros de eventos y otras pruebas de seguridad generados por las sesiones de comunicación remota de PowerShell, disponible en [Investigating PowerShell Attacks](https://www.fireeye.com/content/dam/fireeye-www/global/en/solutions/pdfs/wp-lazanciyan-investigating-powershell-attacks.pdf) (Investigación de los ataques de PowerShell).
 
 ## <a name="encryption-and-transport-protocols"></a>Protocolos de transporte y cifrado
 
-Resulta útil tener en cuenta la seguridad de una conexión de comunicación remota de PowerShell desde dos perspectivas: autenticación inicial y comunicación continua. 
+Resulta útil tener en cuenta la seguridad de una conexión de comunicación remota de PowerShell desde dos perspectivas: autenticación inicial y comunicación continua.
 
 Independientemente del protocolo de transporte utilizado (HTTP o HTTPS), la comunicación remota de PowerShell siempre cifra toda la comunicación tras la autenticación inicial con una clave simétrica AES-256 por sesión.
-    
+
 ### <a name="initial-authentication"></a>Autenticación inicial
 
 La autenticación confirma la identidad del cliente al servidor, e idealmente, del servidor al cliente.
-    
+
 Cuando un cliente se conecta a un servidor de dominio mediante su nombre de equipo (por ejemplo: servidor01 o servidor01.contoso.com), el protocolo de autenticación predeterminado es [Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx).
 Kerberos garantiza la identidad del usuario y del servidor sin enviar ningún tipo de credencial reutilizable.
 
-Cuando un cliente se conecta a un servidor de dominio mediante su dirección IP, o se conecta a un servidor de grupo de trabajo, no es posible la autenticación de Kerberos. En ese caso, la comunicación remota de PowerShell se basa en el [protocolo de autenticación NTLM](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx). El protocolo de autenticación NTLM garantiza la identidad del usuario sin enviar ningún tipo de credenciales delegables. Para demostrar la identidad del usuario, el protocolo NTLM requiere que tanto el cliente como el servidor procesen una clave de sesión de la contraseña del usuario sin intercambiar la propia contraseña. El servidor normalmente no conoce la contraseña del usuario, por lo que se comunica con el controlador de dominio que conoce la contraseña del usuario y calcula la clave de sesión del servidor. 
-      
+Cuando un cliente se conecta a un servidor de dominio mediante su dirección IP, o se conecta a un servidor de grupo de trabajo, no es posible la autenticación de Kerberos. En ese caso, la comunicación remota de PowerShell se basa en el [protocolo de autenticación NTLM](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx). El protocolo de autenticación NTLM garantiza la identidad del usuario sin enviar ningún tipo de credenciales delegables. Para demostrar la identidad del usuario, el protocolo NTLM requiere que tanto el cliente como el servidor procesen una clave de sesión de la contraseña del usuario sin intercambiar la propia contraseña. El servidor normalmente no conoce la contraseña del usuario, por lo que se comunica con el controlador de dominio que conoce la contraseña del usuario y calcula la clave de sesión del servidor.
+
 Sin embargo, el protocolo NTLM no garantiza la identidad del servidor. De la misma forma que con todos los protocolos que usan NTLM para la autenticación, un atacante con acceso a una cuenta de equipo unido a un dominio podría invocar el controlador de dominio para procesar una clave de sesión NTLM y, por tanto, suplantar el servidor.
 
 La autenticación basada en NTLM está deshabilitada de forma predeterminada, pero puede permitirse al configurar SSL en el servidor de destino o el valor WinRM TrustedHosts del cliente.
-    
+
 #### <a name="using-ssl-certificates-to-validate-server-identity-during-ntlm-based-connections"></a>Uso de certificados SSL para validar la identidad del servidor durante las conexiones basadas en NTLM
 
 Puesto que el protocolo de autenticación NTLM no puede asegurar la identidad del servidor de destino (solo que ya conoce su contraseña), puede configurar los servidores de destino para usar SSL para la comunicación remota de PowerShell. La asignación de un certificado SSL al servidor de destino (si lo emite una entidad emisora de certificados en la que el cliente también confía) habilita la autenticación basada en NTLM que garantiza la identidad del usuario y del servidor.
-    
+
 #### <a name="ignoring-ntlm-based-server-identity-errors"></a>Omisión de errores de identidad de servidor basados en NTLM
-      
+
 Si no es factible implementar un certificado SSL en un servidor para las conexiones de NTLM, puede suprimir los errores de identidad resultantes mediante la adición del servidor a la lista WinRM **TrustedHosts**. Tenga en cuenta que la adición de un nombre de servidor a la lista TrustedHosts no se debe considerar como ninguna forma de instrucción de la confiabilidad de los mismos hosts, ya que el protocolo de autenticación NTLM no puede garantizar que, en realidad, se está conectando al host al que pretende conectarse.
 En su lugar, debe considerar que el valor de TrustedHosts sea la lista de hosts de la que quiere suprimir el error generado por la imposibilidad de comprobar la identidad del servidor.
-    
-    
+
+
 ### <a name="ongoing-communication"></a>Comunicación continua
 
-Una vez completada la autenticación inicial, el [Protocolo de comunicación remota de PowerShell](https://msdn.microsoft.com/en-us/library/dd357801.aspx) cifra toda la comunicación continua con una clave simétrica AES-256 por sesión.  
+Una vez completada la autenticación inicial, el [Protocolo de comunicación remota de PowerShell](https://msdn.microsoft.com/en-us/library/dd357801.aspx) cifra toda la comunicación continua con una clave simétrica AES-256 por sesión.
 
 
 ## <a name="making-the-second-hop"></a>Creación del segundo salto
 
 De forma predeterminada, la comunicación remota de PowerShell usa Kerberos (si está disponible) o NTLM para la autenticación. Ambos protocolos se autentican en el equipo remoto sin enviarle credenciales.
-Este es el modo más seguro de autenticación, pero dado que el equipo remoto no tiene las credenciales de usuario, no puede acceder a otros equipos o servicios en nombre del usuario. Esto se conoce como el "problema del segundo salto".
+Este es el modo más seguro de autenticación, pero dado que el equipo remoto no tiene las credenciales de usuario, no puede acceder a otros equipos o servicios en nombre del usuario.
+Esto se conoce como el "problema del segundo salto".
 
 Hay varias formas de evitar este problema. Para obtener descripciones de estos métodos y las ventajas e inconvenientes de cada uno, consulte [Realizar el segundo salto en la comunicación remota de PowerShell](PS-remoting-second-hop.md).
-
-
-
-
-
-
-
-
-
-

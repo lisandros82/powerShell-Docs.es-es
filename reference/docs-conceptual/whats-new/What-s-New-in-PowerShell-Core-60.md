@@ -133,7 +133,7 @@ Si instala el módulo [`WindowsPSModulePath`][windowspsmodulepath], puede usar m
 En primer lugar, instale el módulo `WindowsPSModulePath` desde la Galería de PowerShell:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
@@ -160,7 +160,7 @@ Lo único que debe hacer es registrar PowerShell como un subsistema con un servi
 
 Para más información sobre cómo configurar y usar la comunicación remota basada en SSH, vea [PowerShell Remoting over SSH][ssh-remoting] (Comunicación remota de PowerShell a través de SSH).
 
-## <a name="default-encoding-is-utf-8-without-a-bom"></a>La codificación predeterminada es UTF-8 sin una marca BOM
+## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>La codificación predeterminada es UTF-8 sin marca BOM excepto en el caso de New-ModuleManifest.
 
 Anteriormente, los cmdlets de Windows PowerShell como `Get-Content` y `Set-Content` usaban codificaciones diferentes, como ASCII y UTF-16.
 La discrepancia en los valores predeterminados de codificación causaba problemas cuando se mezclaban cmdlets sin especificar una codificación.
@@ -179,7 +179,6 @@ Los siguientes cmdlets se ven afectados por este cambio:
 - Format-Hex
 - Get-Content
 - Import-Csv
-- New-ModuleManifest
 - Out-File
 - Select-String
 - Send-MailMessage
@@ -190,6 +189,8 @@ Estos cmdlets también se han actualizado para que el parámetro `-Encoding` ace
 El valor predeterminado de `$OutputEncoding` también se ha cambiado a UTF-8.
 
 Se recomienda que establezca explícitamente codificaciones en scripts mediante el parámetro `-Encoding` para generar un comportamiento determinista entre las plataformas.
+
+El cmdlet `New-ModuleManifest` no tiene parámetro **Encoding**. La codificación del archivo de manifiesto (. psd1) del módulo creado con el cmdlet `New-ModuleManifest` depende del entorno: si se trata de PowerShell Core en Linux, la codificación es UTF-8 (sin marca BOM); en caso contrario, la codificación es UTF-16 (con marca BOM). (#3940)
 
 ## <a name="support-backgrounding-of-pipelines-with-ampersand--3360"></a>Compatibilidad con la colocación en segundo plano de canalizaciones con Y comercial (`&`) (#3360)
 
@@ -225,7 +226,7 @@ Para más información sobre los trabajos de PowerShell, vea [about_Jobs](https:
   - `GitCommitId`: es el identificador de confirmación de Git de la rama o la etiqueta de Git donde se ha compilado PowerShell.
     En las compilaciones publicadas, probablemente será igual que `PSVersion`.
   - `OS`: se trata de una cadena de versión de sistema operativo devuelta por `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`.
-  - `Platform`: la devuelve `[System.Environment]::OSVersion.Platform`. Se establece en `Win32NT` en Windows, en `MacOSX` en macOS y en `Unix` en Linux.
+  - `Platform`: la devuelve `[System.Environment]::OSVersion.Platform`. Se establece en `Win32NT` en Windows, en `Unix` en macOS y en `Unix` en Linux.
 - Se ha quitado la propiedad `BuildVersion` de `$PSVersionTable`.
   Esta propiedad estaba estrechamente ligada a la versión de compilación de Windows.
   En su lugar, se recomienda usar `GitCommitId` para recuperar la versión de compilación exacta de PowerShell Core. (#3877) (Gracias, @iSazonov).
@@ -251,7 +252,7 @@ Para más información sobre los trabajos de PowerShell, vea [about_Jobs](https:
 - Agregue compatibilidad con la autenticación de certificados para cmdlets web. (#4646) (Gracias, @markekraus).
 - Agregue compatibilidad con encabezados de contenido a los cmdlets de web. (#4494 y #4640) (Gracias, @markekraus).
 - Agregue compatibilidad con varios encabezados de vínculo a los cmdlets web. (#5265) (Gracias, @markekraus).
-- Compatibilidad con la paginación de encabezado de vínculo en los cmdlets web. (&#3828;)
+- Compatibilidad con la paginación de encabezado de vínculo en los cmdlets web. (3828 #)
   - Para `Invoke-WebRequest`, cuando la respuesta incluye un encabezado de vínculo, creamos una propiedad RelationLink, como un diccionario, que representa las direcciones URL y los atributos `rel`. Asegúrese de que las direcciones URL son absolutas para que al desarrollador le sea más fácil usarlas.
   - Para `Invoke-RestMethod`, cuando la respuesta incluye un encabezado de vínculo, exponemos un modificador `-FollowRelLink` que sigue automáticamente vínculos `next` `rel` hasta que ya no existan o se alcance el valor de parámetro opcional `-MaximumFollowRelLink`.
 - Agregue el parámetro `-CustomMethod` a cmdlets web para permitir los verbos de método no estándar. (#3142) (Gracias, @Lee303).

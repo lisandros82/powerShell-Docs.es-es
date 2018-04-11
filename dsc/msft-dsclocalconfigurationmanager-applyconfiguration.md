@@ -1,17 +1,17 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Método ApplyConfiguration de la clase MSFT_DSCLocalConfigurationManager"
-ms.openlocfilehash: 72fbedf30e5058d8003ed620400d6b443d50dff6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: Método ApplyConfiguration de la clase MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: 2844e354e0d054b13b92267ce314536d88a1c33e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método ApplyConfiguration de la clase MSFT_DSCLocalConfigurationManager
 
-Usa el agente de configuración para aplicar la configuración que está pendiente. 
+Usa el agente de configuración para aplicar la configuración que está pendiente.
 
 Si no hay ninguna configuración pendiente, este método vuelve a aplicar la configuración actual.
 
@@ -28,8 +28,7 @@ uint32 ApplyConfiguration(
 ## <a name="parameters"></a>Parámetros
 ----------
 
-*force* \[in\]  
-Si es **true**, se vuelve a aplicar la configuración actual, incluso si hay una configuración pendiente.
+*force* \[in\] Si este parámetro es **true**, se vuelve a aplicar la configuración actual, aunque haya una configuración pendiente.
 
 ## <a name="return-value"></a>Valor devuelto
 ------------
@@ -51,10 +50,3 @@ Se trata de un método estático.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
- 
-
- 
-
-
-
