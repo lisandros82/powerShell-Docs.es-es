@@ -3,28 +3,28 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Trabajar con archivos y carpetas
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: e47ea00c9d90d7e04a7af0cb1348849410a6e357
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6b1fcd438570c8708aa87e4b213f33474921d5f8
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="working-with-files-and-folders"></a>Trabajar con archivos y carpetas
 
-Navegar a través de unidades de Windows PowerShell y manipular los elementos son procesos similares al de manipulación de archivos y carpetas en unidades de disco físico de Windows. Explicaremos cómo tratar con tareas específicas de manipulación de archivos y carpetas en esta sección.
+Navegar a través de unidades de Windows PowerShell y manipular los elementos son procesos similares al de manipulación de archivos y carpetas en unidades de disco físico de Windows. En esta sección explicaremos cómo usar PowerShell para abordar tareas específicas de manipulación de archivos y carpetas.
 
 ### <a name="listing-all-the-files-and-folders-within-a-folder"></a>Enumerar todos los archivos y carpetas de una carpeta
 
 Puede obtener todos los elementos directamente dentro de una carpeta mediante **Get-ChildItem**. Agregue el parámetro **Force** opcional para mostrar elementos ocultos o del sistema. Por ejemplo, este comando muestra el contenido directo de la unidad C de Windows PowerShell (que es la misma que la unidad física de Windows C):
 
 ```powershell
-Get-ChildItem -Force C:\
+Get-ChildItem -Path C:\ -Force
 ```
 
 El comando muestra solo los elementos contenidos directamente, lo que se parece a usar el comando **DIR** de Cmd.exe o **ls** en un shell de UNIX. Para mostrar los elementos contenidos, también es preciso especificar el parámetro **-Recurse**. (Este proceso puede tardar mucho tiempo en completarse). Para mostrar todo el contenido de la unidad C:
 
 ```powershell
-Get-ChildItem -Force C:\ -Recurse
+Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
 **Get-ChildItem** puede filtrar elementos con sus parámetros **Path**, **Filter**, **Include** y **Exclude**, pero estos suelen basarse solo en el nombre. Puede realizar un filtrado complejo basado en otras propiedades de elementos mediante **Where-Object**.
@@ -40,13 +40,13 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 La copia se realiza con **Copy-Item**. El comando siguiente realiza una copia de seguridad de C:\\boot.ini en C:\\boot.bak:
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
 ```
 
-Si el archivo de destino ya existe, se produce un error en el intento de copia. Para sobrescribir un destino preexistente, use el parámetro Force:
+Si el archivo de destino ya existe, se produce un error en el intento de copia. Para sobrescribir un destino preexistente, use el parámetro **Force**:
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak -Force
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 ```
 
 Este comando funciona aunque el destino sea de solo lectura.
@@ -54,19 +54,19 @@ Este comando funciona aunque el destino sea de solo lectura.
 La copia de carpetas funciona del mismo modo. Este comando copia la carpeta C:\\temp\\test1 en la nueva carpeta c:\\temp\\DeleteMe de forma recursiva:
 
 ```powershell
-Copy-Item C:\temp\test1 -Recurse c:\temp\DeleteMe
+Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
 También puede copiar una selección de elementos. El siguiente comando copia todos los archivos .txt de cualquier ubicación en c:\\data en c:\\temp\\text:
 
 ```powershell
-Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination c:\temp\text
+Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
 Todavía puede usar otras herramientas para realizar copias del sistema de archivos. Todos los objetos XCOPY, ROBOCOPY y COM, como **Scripting.FileSystemObject**, funcionan en Windows PowerShell. Por ejemplo, puede usar la clase **Scripting.FileSystem COM** de Windows Script Host para realizar una copia de seguridad de C:\\boot.ini en C:\\boot.bak:
 
 ```powershell
-(New-Object -ComObject Scripting.FileSystemObject).CopyFile('c:\boot.ini', 'c:\boot.bak')
+(New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
 ### <a name="creating-files-and-folders"></a>Crear archivos y carpetas
@@ -90,7 +90,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 Puede quitar los elementos contenidos mediante **Remove-Item**, pero se le pedirá que confirme la eliminación si el elemento contiene algo más. Por ejemplo, si intenta eliminar la carpeta C:\\temp\\DeleteMe que contiene otros elementos, Windows PowerShell le pedirá confirmación antes de eliminar la carpeta:
 
 ```
-Remove-Item C:\temp\DeleteMe
+Remove-Item -Path C:\temp\DeleteMe
 
 Confirm
 The item at C:\temp\DeleteMe has children and the -recurse parameter was not
@@ -103,7 +103,7 @@ sure you want to continue?
 Si no quiere que se le solicite confirmación por cada elemento contenido, especifique el parámetro **Recurse**:
 
 ```powershell
-Remove-Item C:\temp\DeleteMe -Recurse
+Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
 ### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Asignar una carpeta local como una unidad accesible de Windows

@@ -3,15 +3,18 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Procedimientos recomendados del servidor de extracción
-ms.openlocfilehash: 7de523ad16aee77d87ec4d3334d296997020aa19
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d8d8667e2fc608e0c5948a0b5046bf92801b49db
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="pull-server-best-practices"></a>Procedimientos recomendados del servidor de extracción
 
 >Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> El servidor de extracción (característica de Windows *DSC-Service*) es un componente de Windows Server admitido, si bien no está previsto ofrecer nuevas características o funcionalidades. Se recomienda empezar a realizar la transición de los clientes administrados a [DSC de Azure Automation](/azure/automation/automation-dsc-getting-started) (incluye características más allá del servidor de extracción de Windows Server) o a una de las soluciones de la comunidad que figuran [aquí](pullserver.md#community-solutions-for-pull-service).
 
 Resumen: El objetivo de este documento es incluir el proceso y la extensibilidad para ayudar a los ingenieros que se estén preparando para la solución. En los detalles se deberían ofrecer procedimientos recomendados identificados por los clientes y después validados por el equipo del producto para garantizar que estén orientados al futuro y se consideren estables.
 
