@@ -34,30 +34,40 @@ Además deberá habilitar la autenticación de contraseña y, opcionalmente, la 
 
 ## <a name="setup-on-windows-machine"></a>Configuración en un equipo Windows
 
-1. [Instale la versión más reciente de PowerShell Core para Windows.][]
+1. Instalación de la versión más reciente de [PowerShell Core para Windows]
     - Para saber si tiene compatibilidad con la comunicación remota mediante SSH, examine los conjuntos de parámetros de New-PSSession.
+
     ```powershell
     PS> Get-Command New-PSSession -syntax
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
+
 1. Instale la compilación más reciente de [Win32 OpenSSH] de GitHub según las instrucciones de [instalación].
 1. Edite el archivo sshd_config en la ubicación en la que ha instalado Win32 OpenSSH.
     - Asegúrese de que la autenticación de contraseña esté habilitada.
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Agregue una entrada de subsistema de PowerShell y reemplace `c:/program files/powershell/6.0.0/pwsh.exe` por la ruta de acceso correcta de la versión que quiera usar.
-    ```none
+
+    ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
+
     - Opcionalmente, habilite la autenticación de clave.
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Reinicie el servicio sshd.
+
     ```powershell
     Restart-Service sshd
     ```
+
 1. Agregue la ruta de acceso donde está instalado OpenSSH a la variable Path Env.
     - Debe ser algo similar a `C:\Program Files\OpenSSH\`.
     - Esto permite encontrar el archivo ssh.exe.
@@ -66,24 +76,33 @@ Además deberá habilitar la autenticación de contraseña y, opcionalmente, la 
 
 1. Instale la compilación más reciente de [PowerShell para Linux] de GitHub.
 1. Instale [SSH de Ubuntu] según sea necesario.
+
     ```bash
     sudo apt install openssh-client
     sudo apt install openssh-server
     ```
+
 1. Edite el archivo sshd_config en la ubicación /etc/ssh.
     - Asegúrese de que la autenticación de contraseña esté habilitada.
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Agregue una entrada de subsistema de PowerShell.
-    ```none
+
+    ```
     Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
     ```
+
     - Opcionalmente, habilite la autenticación de clave.
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Reinicie el servicio sshd.
+
     ```bash
     sudo service sshd restart
     ```
@@ -98,22 +117,31 @@ Además deberá habilitar la autenticación de contraseña y, opcionalmente, la 
       - Permita el acceso a los usuarios adecuados.
 1. Edite el archivo `sshd_config` en ubicación `/private/etc/ssh/sshd_config`.
     - Use su editor favorito.
+
     ```bash
     sudo nano /private/etc/ssh/sshd_config
     ```
+
     - Asegúrese de que la autenticación de contraseña esté habilitada.
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Agregue una entrada de subsistema de PowerShell.
-    ```none
+
+    ```
     Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
     ```
+
     - Opcionalmente, habilite la autenticación de clave.
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Reinicie el servicio sshd.
+
     ```bash
     sudo launchctl stop com.openssh.sshd
     sudo launchctl start com.openssh.sshd
@@ -213,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. El comando sudo no funciona en una sesión remota con un equipo Linux.
 
-[PowerShell for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[PowerShell Core para Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH
 [instalación]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [PowerShell para Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [SSH de Ubuntu]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[PowerShell para MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012
+[PowerShell para MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
