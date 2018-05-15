@@ -1,130 +1,84 @@
 - name: Introducción
   href: readme.md
+- name: Instalación de PowerShellGet
+  href: installing-psget.md
+- name: Introducción
+  href: getting-started.md
+- name: Instrucciones
   items:
-    - name: Galería
+    - name: Búsqueda de elementos en la Galería
       items:
-        - name: Introducción
-          href: psgallery/psgallery_gettingstarted.md
-        - name: Estado de mantenimiento
-          href: psgallery/psgallery_status.md
-        - name: Preguntas más frecuentes de la Galería
-          href: psgallery/psgallery_faqs.md
-        - name: Pestaña Elementos de la Galería
-          href: psgallery/psgallery_items_tab.md
-        - name: Sintaxis de búsqueda de la Galería
-          href: psgallery/psgallery_search_syntax.md
-        - name: Elementos con PSEditions compatibles
-          href: psgallery/psgallery_pseditions.md
-        - name: Vista de FileList
-          href: psgallery/psgallery_filelist_feature.md
-        - name: Implementar en Automatización de Azure
-          href: psgallery/psgallery_deploy_to_azure_automation.md
-        - name: Crear una cuenta de la Galería de PowerShell
-          href: psgallery/psgallery_creating_an_account.md
+        - name: Búsqueda de elementos
+          href: how-to/finding-items/search-syntax.md
+        - name: Búsqueda por PSEdition
+          href: how-to/finding-items/searching-by-psedition.md
+        - name: Filtración de los resultados de la búsqueda
+          href: how-to/finding-items/filtering-items.md
+    - name: Publicación en la Galería
+      items:
         - name: Crear y publicar elementos
-          href: psgallery/Creating-and-Publishing-an-item.md
-        - name: Instrucciones y procedimientos recomendados de publicación
-          href: psgallery/psgallery-PublishingGuidelines.md
-        - name: Manifiesto de elemento y UI de la galerías
-          href: psgallery/psgallery_ItemManifestAffectingUI.md
+          href: how-to/publishing-items/publishing-an-item.md
+        - name: Crear una cuenta de la Galería de PowerShell
+          href: how-to/publishing-items/creating-an-account.md
         - name: Ocultar elementos
-          href: psgallery/psgallery_unlist_items.md
+          href: how-to/publishing-items/unlisting-items.md
         - name: Eliminar elementos
-          href: psgallery/Deleting-Items.md
+          href: how-to/publishing-items/deleting-items.md
         - name: Administrar propietarios de elementos
-          href: psgallery/Managing-Item-Owners.md
-        - name: Notificar abuso
-          href: psgallery/psgallery_report_abuse.md
-        - name: Resolución de conflictos
-          href: psgallery/psgallery_dispute_resolution.md
+          href: how-to/publishing-items/managing-item-owners.md
+    - name: Trabajo con elementos
+      items:
+        - name: Vista de FileList
+          href: how-to/working-with-items/filelist-view.md
+        - name: Implementar en Automatización de Azure
+          href: how-to/working-with-items/deploy-to-azure-automation.md
+        - name: Elementos que requieren aceptación de la licencia
+          href: how-to/working-with-items/items-that-require-license-acceptance.md
         - name: Ponerse en contacto con propietarios de elementos
-          href: psgallery/psgallery_contacting_item_owners.md
-        - name: Ponerse en contacto con administradores
-          href: psgallery/psgallery_contacting_administrators.md
+          href: how-to/working-with-items/contacting-item-owners.md
         - name: Envío de comentarios a través de medios sociales o comentarios
-          href: psgallery/psgallery-SocialMediaFeedback.md
-        - name: Requerir la aceptación de licencia de Detalles de elementos
-          href: psgallery/psgallery_requires_license_acceptance.md
-        - name: Requerir la aceptación de licencia de Implementar en Azure Automation
-          href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
-        - name: Cumplimiento del RGPD en la Galería de PowerShell
-          href: psgallery/psgallery_gdpr_dsr.md
-- name: PowerShellGet
-  href: psget/overview.md
+          href: how-to/working-with-items/social-media-feedback.md
+- name: Conceptos
   items:
-    - name: Obtención del módulo PowerShellGet
-      href: psget/get_psget_module.md
-    - name: Módulo
+    - name: Instrucciones y procedimientos recomendados de publicación
+      href: concepts/publishing-guidelines.md
+    - name: Manifiesto de elemento y UI de la galerías
+      href: concepts/item-manifest-affecting-ui.md
+    - name: Requisito de PSEditions específico
       items:
-        - name: Buscar módulos
-          href: psget/module/psget_find-module.md
-        - name: Buscar recursos de DSC
-          href: psget/module/psget_find-dscresource.md
-        - name: Buscar funcionalidades de rol
-          href: psget/module/psget_find-rolecapability.md
-        - name: Buscar comandos
-          href: psget/module/psget_find-command.md
-        - name: Guardar
-          href: psget/module/psget_save-module.md
-        - name: Instalar
-          href: psget/module/psget_install-module.md
-        - name: Actualizar
-          href: psget/module/psget_update-module.md
-        - name: Desinstalar
-          href: psget/module/psget_uninstall-module.md
-        - name: Obtener los módulos instalados
-          href: psget/module/psget_get-installedmodule.md
-        - name: Actualizar el manifiesto de módulo
-          href: psget/module/psget_update-modulemanifest.md
-        - name: Publicar
-          href: psget/module/psget_publish-module.md
-        - name: Módulos con PSEditions
-          href: psget/module/modulewithpseditionsupport.md
-        - name: Módulos que requieren la aceptación de la licencia
-          href: psget/module/RequireLicenseAcceptance.md
-        - name: Versiones preliminares
-          href: psget/module/PreReleaseModule.md
-        - name: Solucionar problemas
-          href: psget/psget_cmdlets_troubleshooting.md
-    - name: Script
+        - name: Escritura de scripts con compatibilidad con PSEditions
+          href: concepts/script-psedition-support.md
+        - name: Escritura de módulos con compatibilidad con PSEdition
+          href: concepts/module-psedition-support.md
+    - name: Requisito de aceptación de la licencia
       items:
-        - name: Buscar
-          href: psget/script/psget_find-script.md
-        - name: Guardar
-          href: psget/script/psget_save-script.md
-        - name: Instalar
-          href: psget/script/psget_install-script.md
-        - name: Actualizar
-          href: psget/script/psget_update-script.md
-        - name: Desinstalar
-          href: psget/script/psget_uninstall-script.md
-        - name: Obtener los scripts instalados
-          href: psget/script/psget_get-installedscript.md
-        - name: Crear un archivo de script con metadatos
-          href: psget/script/psget_new-scriptfileinfo.md
-        - name: Probar los metadatos del archivo de script
-          href: psget/script/psget_test-scriptfileinfo.md
-        - name: Actualizar los metadatos del archivo de script
-          href: psget/script/psget_update-scriptfileinfo.md
-        - name: Publicar
-          href: psget/script/psget_publish-script.md
-        - name: Scripts with PSEditions (Scripts con ediciones de PowerShell)
-          href: psget/script/scriptwithpseditionsupport.md
         - name: Requerir la aceptación de la licencia para Scripts
-          href: psget/script/script_RequireLicenseAcceptance.md
-        - name: Versiones preliminares
-          href: psget/script/PreReleaseScript.md
-    - name: Administración de repositorios
+          href: concepts/script-license-acceptance.md
+        - name: Requisito de aceptación de la licencia para módulos
+          href: concepts/module-license-acceptance.md
+    - name: Definición de elementos como versión preliminar
       items:
-        - name: Arrancar el proveedor de NuGet y NuGet.exe
-          href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
-        - name: Registrar un repositorio
-          href: psget/repository/psget_register-psrepository.md
-        - name: Enumerar repositorios registrados
-          href: psget/repository/psget_get-psrepository.md
-        - name: Modificar un repositorio registrado
-          href: psget/repository/psget_set-psrepository.md
-        - name: Anular el registro de un repositorio
-          href: psget/repository/psget_unregister-psrepository.md
-    - name: Cmdlets PackageManagement
-      href: psget/oneget/PackageManagement_cmdlets.md
+        - name: Definición de módulo como versión preliminar
+          href: concepts/module-prerelease-support.md
+        - name: Definición de script como versión preliminar
+          href: concepts/script-prerelease-support.md
+    - name: Perfil de la regla de PSScriptAnalyzer
+      href: concepts/scriptanalyzer-rule-profile.md
+- name: Obtención de soporte técnico
+  items:
+    - name: Notificar abuso
+      href: how-to/getting-support/report-abuse.md
+    - name: Resolución de conflictos
+      href: how-to/getting-support/dispute-resolution.md
+    - name: Ponerse en contacto con administradores
+      href: how-to/getting-support/contacting-administrators.md
+    - name: Solucionar problemas
+      href: how-to/getting-support/troubleshooting-cmdlets.md
+    - name: Arrancar el proveedor de NuGet y NuGet.exe
+      href: how-to/getting-support/bootstrapping-nuget.md
+    - name: Cumplimiento del RGPD
+      href: how-to/getting-support/gdpr-dsr-policy.md
+- name: Preguntas más frecuentes de la Galería
+  href: faqs.md
+- name: Cmdlet PowerShellGet
+  href: 'https://docs.microsoft.com/powershell/module/powershellget/'
