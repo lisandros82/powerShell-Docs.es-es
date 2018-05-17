@@ -1,16 +1,16 @@
 ---
 description: Obtenga información sobre el historial de versiones para la extensión Desired State Configuration (DSC) de Azure.
-ms.date: 03/14/2018
+ms.date: 05/09/2018
 ms.topic: conceptual
 keywords: dsc, powershell, azure, extensión
 title: Historial de versiones de la extensión DSC de Azure
 author: DCtheGeek
 ms.author: dacoulte
-ms.openlocfilehash: a183137dde302811874bd5466c35bccebca5d128
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 59c014b4b169a589561f57c1ee2a5e861137aee5
+ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Historial de versiones de la extensión Desired State Configuration de Azure
 
@@ -20,10 +20,10 @@ En este artículo se ofrece información sobre cada versión de la extensión DS
 
 ## <a name="latest-versions"></a>Últimas versiones
 
-### <a name="version-275"></a>Versión 2.75
+### <a name="version-276"></a>Versión 2.76
 
 - **Fecha de publicación:**
-  - 5 de marzo de 2018
+  - 9 de mayo de 2018
 - **Sistemas operativos admitidos:**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -38,6 +38,42 @@ En este artículo se ofrece información sobre cada versión de la extensión DS
   - WMF 4.0
 - **Entorno:**
   - Azure
+- **Comentarios:** En esta versión se usa DSC tal y como se incluye en Windows Server 2016. Para otros sistemas operativos Windows, instale [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/). Después de instalarlo, tendrá que reiniciar el equipo. En el caso de Nano Server, el rol de DSC se instala en la máquina virtual.
+- **Nuevas características**
+  - Se han mejorado los metadatos de extensión de los subestados y se han aplicado otras correcciones de errores.
+
+### <a name="version-219"></a>Versión 2.19
+
+- **Fecha de publicación:**
+  - 3 de junio de 2016
+- **Sistemas operativos admitidos:**
+  - Windows Server 2016 Technical Preview
+  - Windows Server 2012 R2
+  - Windows Server 2012
+  - Windows Server 2008 R2 SP1
+- **Compatibilidad con WMF:**
+  - WMF 5.0 RTM
+  - Actualización de WMF 4.0
+  - WMF 4.0
+- **Entorno:**
+  - Azure
+  - Azure China
+  - Azure Government
+- **Comentarios:** En esta versión se usa DSC tal y como se incluye en Windows Server 2016 Technical Preview. Para otros sistemas operativos, instale [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). Después de instalarlo, tendrá que reiniciar el equipo.
+- **Nuevas características**
+  - Ahora la extensión DSC está incorporada en Azure China. Esta versión contiene principalmente correcciones para ejecutar la extensión en Azure China.
+
+## <a name="supported-versions"></a>Versiones compatibles de
+
+> [!WARNING]
+> De la versión 2.4 a la 2.13 se usa WMF 5.0 Public Preview, cuyos certificados de firma expiraron en agosto de 2016.  Para obtener más información sobre este problema, vea la [entrada de blog](https://blogs.msdn.microsoft.com/powershell/2016/05/24/azure-dsc-extension-versions-2-4-up-to-2-13-will-retire-in-august/).
+
+### <a name="version-275"></a>Versión 2.75
+
+- **Fecha de publicación:** 5 de marzo de 2018
+- **Sistemas operativos admitidos:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows Client 7/8.1/10 y Nano Server
+- **Compatibilidad con WMF:** WMF 5.1, WMF 5.0 RTM, actualización de WMF 4.0 y WMF 4.0
+- **Entorno:** Azure
 - **Comentarios:** En esta versión se usa DSC tal y como se incluye en Windows Server 2016. Para otros sistemas operativos Windows, instale [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/). Después de instalarlo, tendrá que reiniciar el equipo. En el caso de Nano Server, el rol de DSC se instala en la máquina virtual.
 - **Nuevas características**
   - Debido a que ahora GitHub usa TLS 1.2, ya no puede incorporar una máquina virtual a DSC de Azure Automation con las plantillas personalizadas de Resource Manager disponibles en Azure Marketplace ni usar la extensión DSC para obtener cualquier configuración hospedada en GitHub. Verá un error similar al siguiente durante la implementación de la extensión:
@@ -68,32 +104,6 @@ En este artículo se ofrece información sobre cada versión de la extensión DS
     ```
 
   - En la nueva versión de la extensión se usa obligatoriamente TLS 1.2. Al implementar la extensión, si ya tenía AutoUpgradeMinorVersion establecido en "true" en la plantilla de Resource Manager, la extensión se actualizará automáticamente a la versión 2.75. En el caso de las actualizaciones manuales, especifique `TypeHandlerVersion = 2.75` en la plantilla de Resource Manager.
-
-### <a name="version-219"></a>Versión 2.19
-
-- **Fecha de publicación:**
-  - 3 de junio de 2016
-- **Sistemas operativos admitidos:**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 SP1
-- **Compatibilidad con WMF:**
-  - WMF 5.0 RTM
-  - Actualización de WMF 4.0
-  - WMF 4.0
-- **Entorno:**
-  - Azure
-  - Azure China
-  - Azure Government
-- **Comentarios:** En esta versión se usa DSC tal y como se incluye en Windows Server 2016 Technical Preview. Para otros sistemas operativos, instale [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). Después de instalarlo, tendrá que reiniciar el equipo.
-- **Nuevas características**
-  - Ahora la extensión DSC está incorporada en Azure China. Esta versión contiene principalmente correcciones para ejecutar la extensión en Azure China.
-
-## <a name="supported-versions"></a>Versiones compatibles de
-
-> [!WARNING]
-> De la versión 2.4 a la 2.13 se usa WMF 5.0 Public Preview, cuyos certificados de firma expiraron en agosto de 2016.  Para obtener más información sobre este problema, vea la [entrada de blog](https://blogs.msdn.microsoft.com/powershell/2016/05/24/azure-dsc-extension-versions-2-4-up-to-2-13-will-retire-in-august/).
 
 ### <a name="version-270---272"></a>Versiones 2.70 - 2.72
 
