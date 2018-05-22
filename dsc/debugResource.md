@@ -1,27 +1,26 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Depuración de recursos de DSC
-ms.openlocfilehash: 6a1f4b04a11185c2cfe9be26324bd66ed13ca7dd
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 30d49768fc2301b5306d0001e157d60e2e991883
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="debugging-dsc-resources"></a><span data-ttu-id="c3d3e-103">Depuración de recursos de DSC</span><span class="sxs-lookup"><span data-stu-id="c3d3e-103">Debugging DSC resources</span></span>
+# <a name="debugging-dsc-resources"></a><span data-ttu-id="92df8-103">Depuración de recursos de DSC</span><span class="sxs-lookup"><span data-stu-id="92df8-103">Debugging DSC resources</span></span>
 
-> <span data-ttu-id="c3d3e-104">Se aplica a: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="c3d3e-104">Applies To: Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="92df8-104">Se aplica a: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="92df8-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="c3d3e-105">En PowerShell 5.0, se introdujo una nueva característica en la configuración de estado deseado (DSC) que permite depurar un recurso de DSC mientras se aplica una configuración.</span><span class="sxs-lookup"><span data-stu-id="c3d3e-105">In PowerShell 5.0, a new feature was introduced in Desired State Configuraiton (DSC) that allows you to debug a DSC resource as a configuration is being applied.</span></span>
+<span data-ttu-id="92df8-105">En PowerShell 5.0, se introdujo una nueva característica en la configuración de estado deseado (DSC) que permite depurar un recurso de DSC mientras se aplica una configuración.</span><span class="sxs-lookup"><span data-stu-id="92df8-105">In PowerShell 5.0, a new feature was introduced in Desired State Configuraiton (DSC) that allows you to debug a DSC resource as a configuration is being applied.</span></span>
 
-## <a name="enabling-dsc-debugging"></a><span data-ttu-id="c3d3e-106">Habilitar la depuración de DSC</span><span class="sxs-lookup"><span data-stu-id="c3d3e-106">Enabling DSC debugging</span></span>
-<span data-ttu-id="c3d3e-107">Antes de poder depurar un recurso, tendrá que habilitar la depuración mediante una llamada al cmdlet [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx).</span><span class="sxs-lookup"><span data-stu-id="c3d3e-107">Before you can debug a resource, you have to enable debugging by calling the [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet.</span></span>
-<span data-ttu-id="c3d3e-108">Este cmdlet toma un parámetro obligatorio, **BreakAll**.</span><span class="sxs-lookup"><span data-stu-id="c3d3e-108">This cmdlet takes a mandatory parameter, **BreakAll**.</span></span>
+## <a name="enabling-dsc-debugging"></a><span data-ttu-id="92df8-106">Habilitar la depuración de DSC</span><span class="sxs-lookup"><span data-stu-id="92df8-106">Enabling DSC debugging</span></span>
+<span data-ttu-id="92df8-107">Antes de poder depurar un recurso, tendrá que habilitar la depuración mediante una llamada al cmdlet [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx).</span><span class="sxs-lookup"><span data-stu-id="92df8-107">Before you can debug a resource, you have to enable debugging by calling the [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet.</span></span>
+<span data-ttu-id="92df8-108">Este cmdlet toma un parámetro obligatorio, **BreakAll**.</span><span class="sxs-lookup"><span data-stu-id="92df8-108">This cmdlet takes a mandatory parameter, **BreakAll**.</span></span>
 
-<span data-ttu-id="c3d3e-109">Puede comprobar que se ha habilitado la depuración si examina el resultado de una llamada a [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).</span><span class="sxs-lookup"><span data-stu-id="c3d3e-109">You can verify that debugging has been enabled by looking at the result of a call to [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).</span></span>
+<span data-ttu-id="92df8-109">Puede comprobar que se ha habilitado la depuración si examina el resultado de una llamada a [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).</span><span class="sxs-lookup"><span data-stu-id="92df8-109">You can verify that debugging has been enabled by looking at the result of a call to [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).</span></span>
 
-<span data-ttu-id="c3d3e-110">En la siguiente salida de PowerShell se muestra el resultado de la habilitación de la depuración:</span><span class="sxs-lookup"><span data-stu-id="c3d3e-110">The following PowerShell output shows the result of enabling debugging:</span></span>
+<span data-ttu-id="92df8-110">En la siguiente salida de PowerShell se muestra el resultado de la habilitación de la depuración:</span><span class="sxs-lookup"><span data-stu-id="92df8-110">The following PowerShell output shows the result of enabling debugging:</span></span>
 
 
 ```powershell
@@ -42,9 +41,9 @@ PS C:\DebugTest>
 ```
 
 
-## <a name="starting-a-configuration-with-debug-enabled"></a><span data-ttu-id="c3d3e-111">Iniciar una configuración con la depuración habilitada</span><span class="sxs-lookup"><span data-stu-id="c3d3e-111">Starting a configuration with debug enabled</span></span>
-<span data-ttu-id="c3d3e-112">Para depurar un recurso de DSC, debe iniciar una configuración que llame a ese recurso.</span><span class="sxs-lookup"><span data-stu-id="c3d3e-112">To debug a DSC resource, you start a configuration that calls that resource.</span></span>
-<span data-ttu-id="c3d3e-113">En este ejemplo, se examinará una configuración simple que llama al recurso [WindowsFeature](windowsfeatureResource.md) para garantizar que se instale la característica "WindowsPowerShellWebAccess":</span><span class="sxs-lookup"><span data-stu-id="c3d3e-113">For this example, we'll look at a simple configuration that calls the [WindowsFeature](windowsfeatureResource.md) resource to ensure that the "WindowsPowerShellWebAccess" feature is installed:</span></span>
+## <a name="starting-a-configuration-with-debug-enabled"></a><span data-ttu-id="92df8-111">Iniciar una configuración con la depuración habilitada</span><span class="sxs-lookup"><span data-stu-id="92df8-111">Starting a configuration with debug enabled</span></span>
+<span data-ttu-id="92df8-112">Para depurar un recurso de DSC, debe iniciar una configuración que llame a ese recurso.</span><span class="sxs-lookup"><span data-stu-id="92df8-112">To debug a DSC resource, you start a configuration that calls that resource.</span></span>
+<span data-ttu-id="92df8-113">En este ejemplo, se examinará una configuración simple que llama al recurso [WindowsFeature](windowsfeatureResource.md) para garantizar que se instale la característica "WindowsPowerShellWebAccess":</span><span class="sxs-lookup"><span data-stu-id="92df8-113">For this example, we'll look at a simple configuration that calls the [WindowsFeature](windowsfeatureResource.md) resource to ensure that the "WindowsPowerShellWebAccess" feature is installed:</span></span>
 
 ```powershell
 Configuration PSWebAccess
@@ -61,9 +60,9 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-<span data-ttu-id="c3d3e-114">Después de compilar la configuración, iníciela mediante una llamada a [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).</span><span class="sxs-lookup"><span data-stu-id="c3d3e-114">After compiling the configuration, start it by calling [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).</span></span>
-<span data-ttu-id="c3d3e-115">La configuración se detendrá cuando el administrador de configuración local (LCM) llame al primer recurso de la configuración.</span><span class="sxs-lookup"><span data-stu-id="c3d3e-115">The configuration will stop when the Local Configuration Manager (LCM) calls into the first resource in the configuration.</span></span>
-<span data-ttu-id="c3d3e-116">Si usa los parámetros `-Verbose` y `-Wait`, la salida mostrará las líneas que se deben especificar para iniciar la depuración.</span><span class="sxs-lookup"><span data-stu-id="c3d3e-116">If you use the `-Verbose` and `-Wait` parameters, the output displays the lines you need to enter to start debugging.</span></span>
+<span data-ttu-id="92df8-114">Después de compilar la configuración, iníciela mediante una llamada a [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).</span><span class="sxs-lookup"><span data-stu-id="92df8-114">After compiling the configuration, start it by calling [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).</span></span>
+<span data-ttu-id="92df8-115">La configuración se detendrá cuando el administrador de configuración local (LCM) llame al primer recurso de la configuración.</span><span class="sxs-lookup"><span data-stu-id="92df8-115">The configuration will stop when the Local Configuration Manager (LCM) calls into the first resource in the configuration.</span></span>
+<span data-ttu-id="92df8-116">Si usa los parámetros `-Verbose` y `-Wait`, la salida mostrará las líneas que se deben especificar para iniciar la depuración.</span><span class="sxs-lookup"><span data-stu-id="92df8-116">If you use the `-Verbose` and `-Wait` parameters, the output displays the lines you need to enter to start debugging.</span></span>
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -85,31 +84,31 @@ Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
-<span data-ttu-id="c3d3e-117">En este punto, el LCM ha llamado al recurso y alcanza el primer punto de interrupción.</span><span class="sxs-lookup"><span data-stu-id="c3d3e-117">At this point, the LCM has called the resource, and come to the first break point.</span></span>
-<span data-ttu-id="c3d3e-118">En las tres últimas líneas de la salida se muestra cómo adjuntarse al proceso y empezar a depurar el script del recurso.</span><span class="sxs-lookup"><span data-stu-id="c3d3e-118">The last three lines in the output show you how to attach to the process and start debugging the resource script.</span></span>
+<span data-ttu-id="92df8-117">En este punto, el LCM ha llamado al recurso y alcanza el primer punto de interrupción.</span><span class="sxs-lookup"><span data-stu-id="92df8-117">At this point, the LCM has called the resource, and come to the first break point.</span></span>
+<span data-ttu-id="92df8-118">En las tres últimas líneas de la salida se muestra cómo adjuntarse al proceso y empezar a depurar el script del recurso.</span><span class="sxs-lookup"><span data-stu-id="92df8-118">The last three lines in the output show you how to attach to the process and start debugging the resource script.</span></span>
 
-## <a name="debugging-the-resource-script"></a><span data-ttu-id="c3d3e-119">Depuración del script del recurso</span><span class="sxs-lookup"><span data-stu-id="c3d3e-119">Debugging the resource script</span></span>
+## <a name="debugging-the-resource-script"></a><span data-ttu-id="92df8-119">Depuración del script del recurso</span><span class="sxs-lookup"><span data-stu-id="92df8-119">Debugging the resource script</span></span>
 
-<span data-ttu-id="c3d3e-120">Inicie una nueva instancia de PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="c3d3e-120">Start a new instance of the PowerShell ISE.</span></span>
-<span data-ttu-id="c3d3e-121">En el panel de la consola, escriba las tres últimas líneas de la salida `Start-DscConfiguration` como comandos, reemplazando `<credentials>` por credenciales de usuario válidas.</span><span class="sxs-lookup"><span data-stu-id="c3d3e-121">In the console pane, enter the last three lines of output from the `Start-DscConfiguration` output as commands, replacing `<credentials>` with valid user credentials.</span></span>
-<span data-ttu-id="c3d3e-122">Ahora debería ver un aviso parecido a:</span><span class="sxs-lookup"><span data-stu-id="c3d3e-122">You should now see a prompt that looks similar to:</span></span>
+<span data-ttu-id="92df8-120">Inicie una nueva instancia de PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="92df8-120">Start a new instance of the PowerShell ISE.</span></span>
+<span data-ttu-id="92df8-121">En el panel de la consola, escriba las tres últimas líneas de la salida `Start-DscConfiguration` como comandos, reemplazando `<credentials>` por credenciales de usuario válidas.</span><span class="sxs-lookup"><span data-stu-id="92df8-121">In the console pane, enter the last three lines of output from the `Start-DscConfiguration` output as commands, replacing `<credentials>` with valid user credentials.</span></span>
+<span data-ttu-id="92df8-122">Ahora debería ver un aviso parecido a:</span><span class="sxs-lookup"><span data-stu-id="92df8-122">You should now see a prompt that looks similar to:</span></span>
 
 ```powershell
 [TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
 ```
 
-<span data-ttu-id="c3d3e-123">El script de recursos se abrirá en el panel de scripts y el depurador se detendrá en la primera línea de la función **Test-TargetResource** (el método **Test()** de un recurso basado en clases).</span><span class="sxs-lookup"><span data-stu-id="c3d3e-123">The resource script will open in the script pane, and the debugger is stopped at the first line of the **Test-TargetResource** function (the **Test()** method of a class-based resource).</span></span>
-<span data-ttu-id="c3d3e-124">Ahora, puede utilizar los comandos de depuración en el ISE para seguir los pasos del script de recursos, consultar valores variables, ver la pila de llamadas, etc.</span><span class="sxs-lookup"><span data-stu-id="c3d3e-124">Now you can use the debug commands in the ISE to step through the resource script, look at variable values, view the call stack, and so on.</span></span>
-<span data-ttu-id="c3d3e-125">Para obtener más información sobre la depuración en PowerShell ISE, vea [How to Debug Scripts in Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/dd819480.aspx) (Cómo depurar scripts de Windows PowerShell ISE).</span><span class="sxs-lookup"><span data-stu-id="c3d3e-125">For information about debugging in the PowerShell ISE, see [How to Debug Scripts in Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/dd819480.aspx).</span></span>
-<span data-ttu-id="c3d3e-126">Recuerde que cada línea del script de recursos (o clase) se define como un punto de interrupción.</span><span class="sxs-lookup"><span data-stu-id="c3d3e-126">Remember that every line in the resource script (or class) is set as a break point.</span></span>
+<span data-ttu-id="92df8-123">El script de recursos se abrirá en el panel de scripts y el depurador se detendrá en la primera línea de la función **Test-TargetResource** (el método **Test()** de un recurso basado en clases).</span><span class="sxs-lookup"><span data-stu-id="92df8-123">The resource script will open in the script pane, and the debugger is stopped at the first line of the **Test-TargetResource** function (the **Test()** method of a class-based resource).</span></span>
+<span data-ttu-id="92df8-124">Ahora, puede utilizar los comandos de depuración en el ISE para seguir los pasos del script de recursos, consultar valores variables, ver la pila de llamadas, etc.</span><span class="sxs-lookup"><span data-stu-id="92df8-124">Now you can use the debug commands in the ISE to step through the resource script, look at variable values, view the call stack, and so on.</span></span>
+<span data-ttu-id="92df8-125">Para obtener más información sobre la depuración en PowerShell ISE, vea [How to Debug Scripts in Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/dd819480.aspx) (Cómo depurar scripts de Windows PowerShell ISE).</span><span class="sxs-lookup"><span data-stu-id="92df8-125">For information about debugging in the PowerShell ISE, see [How to Debug Scripts in Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/dd819480.aspx).</span></span>
+<span data-ttu-id="92df8-126">Recuerde que cada línea del script de recursos (o clase) se define como un punto de interrupción.</span><span class="sxs-lookup"><span data-stu-id="92df8-126">Remember that every line in the resource script (or class) is set as a break point.</span></span>
 
-## <a name="disabling-dsc-debugging"></a><span data-ttu-id="c3d3e-127">Deshabilitar la depuración de DSC</span><span class="sxs-lookup"><span data-stu-id="c3d3e-127">Disabling DSC debugging</span></span>
+## <a name="disabling-dsc-debugging"></a><span data-ttu-id="92df8-127">Deshabilitar la depuración de DSC</span><span class="sxs-lookup"><span data-stu-id="92df8-127">Disabling DSC debugging</span></span>
 
-<span data-ttu-id="c3d3e-128">Después de llamar a [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx), todas las llamadas a [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) darán como resultado que la configuración interrumpa al depurador.</span><span class="sxs-lookup"><span data-stu-id="c3d3e-128">After calling [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx), all calls to [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) will result in the configuration breaking into the debugger.</span></span> <span data-ttu-id="c3d3e-129">Para permitir que las configuraciones sigan ejecutándose con normalidad, debe deshabilitar la depuración mediante una llamada al cmdlet [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx).</span><span class="sxs-lookup"><span data-stu-id="c3d3e-129">To allow configurations to run normally, you must disable debugging by calling the [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet.</span></span>
+<span data-ttu-id="92df8-128">Después de llamar a [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx), todas las llamadas a [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) darán como resultado que la configuración interrumpa al depurador.</span><span class="sxs-lookup"><span data-stu-id="92df8-128">After calling [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx), all calls to [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) will result in the configuration breaking into the debugger.</span></span> <span data-ttu-id="92df8-129">Para permitir que las configuraciones sigan ejecutándose con normalidad, debe deshabilitar la depuración mediante una llamada al cmdlet [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx).</span><span class="sxs-lookup"><span data-stu-id="92df8-129">To allow configurations to run normally, you must disable debugging by calling the [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet.</span></span>
 
-><span data-ttu-id="c3d3e-130">**Nota:** Reiniciar no cambia el estado de depuración del LCM.</span><span class="sxs-lookup"><span data-stu-id="c3d3e-130">**Note:** Rebooting does not change the debug state of the LCM.</span></span> <span data-ttu-id="c3d3e-131">Si está habilitada la depuración, iniciar una configuración seguirá interrumpiendo el depurador tras reiniciar.</span><span class="sxs-lookup"><span data-stu-id="c3d3e-131">If debugging is enabled, starting a configuration will still break into the debugger after a reboot.</span></span>
+><span data-ttu-id="92df8-130">**Nota:** Reiniciar no cambia el estado de depuración del LCM.</span><span class="sxs-lookup"><span data-stu-id="92df8-130">**Note:** Rebooting does not change the debug state of the LCM.</span></span> <span data-ttu-id="92df8-131">Si está habilitada la depuración, iniciar una configuración seguirá interrumpiendo el depurador tras reiniciar.</span><span class="sxs-lookup"><span data-stu-id="92df8-131">If debugging is enabled, starting a configuration will still break into the debugger after a reboot.</span></span>
 
 
-## <a name="see-also"></a><span data-ttu-id="c3d3e-132">Véase también</span><span class="sxs-lookup"><span data-stu-id="c3d3e-132">See Also</span></span>
-- [<span data-ttu-id="c3d3e-133">Escribir un recurso de DSC personalizado con MOF</span><span class="sxs-lookup"><span data-stu-id="c3d3e-133">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
-- [<span data-ttu-id="c3d3e-134">Escribir un recurso de DSC personalizado con clases de PowerShell</span><span class="sxs-lookup"><span data-stu-id="c3d3e-134">Writing a custom DSC resource with PowerShell classes</span></span>](authoringResourceClass.md)
+## <a name="see-also"></a><span data-ttu-id="92df8-132">Véase también</span><span class="sxs-lookup"><span data-stu-id="92df8-132">See Also</span></span>
+- [<span data-ttu-id="92df8-133">Escribir un recurso de DSC personalizado con MOF</span><span class="sxs-lookup"><span data-stu-id="92df8-133">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
+- [<span data-ttu-id="92df8-134">Escribir un recurso de DSC personalizado con clases de PowerShell</span><span class="sxs-lookup"><span data-stu-id="92df8-134">Writing a custom DSC resource with PowerShell classes</span></span>](authoringResourceClass.md)
