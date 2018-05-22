@@ -118,7 +118,7 @@ PowerShell Core usa [.NET Standard][] 2.0 para proporcionar compatibilidad binar
 Muchos de los módulos de PowerShell dependen de estos ensamblados (con frecuencia, DLL), y .NET Standard permite que sigan funcionando con .NET Core.
 PowerShell Core también incluye una heurística para buscar en carpetas conocidas, como en la que suele residir en disco la caché global de ensamblados, para localizar dependencias de DLL de .NET Framework.
 
-Puede obtener más información sobre .NET Standard en el [blog de .NET][], en este vídeo de [YouTube][] y en estas [preguntas más frecuentes][] de GitHub.
+Puede obtener más información sobre .NET Standard en el [Blog de .NET][], en este vídeo de [YouTube][] y en estas [Preguntas más frecuentes][] de GitHub.
 
 Se han realizado esfuerzos para asegurarse de que los módulos "integrados" y de lenguaje de PowerShell (como `Microsoft.PowerShell.Management`, `Microsoft.PowerShell.Utility`, etc.) funcionen igual que en Windows PowerShell.
 En muchos casos, con la ayuda de la comunidad, hemos agregado nuevas características y correcciones de errores para estos cmdlets.
@@ -373,14 +373,14 @@ Encontrará más información sobre la forma en que usamos estos datos en esta [
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[breaking-changes]: https://github.com/PowerShell/PowerShell/tree/master/docs/BREAKINGCHANGES.md
+[breaking-changes]: breaking-changes-ps6.md
 [registro de cambios]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
 [.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
-[blog de .NET]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
+[Blog de .NET]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
-[preguntas más frecuentes]: https://github.com/dotnet/standard/blob/master/docs/faq.md
+[Preguntas más frecuentes]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXML]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [Docker]: https://github.com/PowerShell/PowerShell/tree/master/docker

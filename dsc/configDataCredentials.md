@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Opciones de credenciales en los datos de configuración
-ms.openlocfilehash: 3f1c75c65b357220856dd8e50694eb77808dee41
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2c6685f3b6992537d1652f172cf926b85dd634c6
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Opciones de credenciales en los datos de configuración
 >Se aplica a: Windows PowerShell 5.0
@@ -283,7 +282,7 @@ Si se utiliza una cuenta local, se elimina la posible exposición de credenciale
 
 **Cuando se usan credenciales con recursos de DSC, siempre que sea posible es preferible usar una cuenta local en lugar de una cuenta de dominio.**
 
-Si hay un carácter '\'' o '\@' en la propiedad `Username` de la credencial, DSC lo tratará como una cuenta de dominio.
+Si hay un carácter '\'' o '@' en la propiedad `Username` de la credencial, DSC lo tratará como una cuenta de dominio.
 Existen excepciones para "localhost", "127.0.0.1" y "::1" en la parte del dominio del nombre de usuario.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser

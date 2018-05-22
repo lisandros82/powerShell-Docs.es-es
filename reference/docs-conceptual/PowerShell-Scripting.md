@@ -1,12 +1,12 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell, cmdlet
+keywords: powershell,cmdlet
 title: Scripting de PowerShell
-ms.openlocfilehash: 3304ecc3129b710a003725715803a03b68f79b45
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7de5a3f3149d8d464b34101d94a5f9430d9b0f23
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -25,18 +25,18 @@ Windows PowerShell está diseñado para mejorar el entorno de scripting y línea
 ### <a name="discoverability"></a>Detectabilidad
 Windows PowerShell facilita la detección de sus características. Por ejemplo, para buscar una lista de cmdlets con la finalidad de ver y cambiar los servicios de Windows, escriba:
 
-```
+```powershell
 Get-Command *-Service
 ```
 
 Después de detectar qué cmdlet lleva a cabo una tarea, puede obtener más información sobre este mediante el cmdlet Get-Help. Por ejemplo, para mostrar la ayuda sobre el cmdlet Get-Service, escriba:
 
-```
+```powershell
 Get-Help Get-Service
 ```
 La mayoría de los cmdlets emiten objetos que se pueden manipular y después representar en texto para mostrar. Para comprender la salida de ese cmdlet, canalice su salida al cmdlet Get-Member. Por ejemplo, el siguiente comando muestra información sobre los miembros de la salida del objeto mediante el cmdlet Get-Service.
 
-```
+```powershell
 Get-Service | Get-Member
 ```
 
