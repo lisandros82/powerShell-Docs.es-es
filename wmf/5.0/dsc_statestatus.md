@@ -1,11 +1,11 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 272843efb68c42105af6eb88ad6a95b581da47ae
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7b4e4dbeaf9c3c48e7b2dfc74435dfa2cd9c7ea7
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Estado coherente unificado y representación de estado
 
@@ -21,7 +21,7 @@ La representación del estado de las operaciones de DSC y LCM se revisa y unific
 
 En la siguiente tabla se muestran el estado resultante y las propiedades relacionadas con el estado en algunos escenarios típicos.
 
-| **Scenario**                    | **LCMState\***       | **Status** | **Reboot Requested**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
+| Escenario                    | LCMState       | Estado | Reinicio solicitado  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | Inactivo                 | Correcto    | $false        | S                            | $null                          |
 | F**^**                          | PendingConfiguration | Error    | $false        | $null                        | F                              |
@@ -46,11 +46,13 @@ $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
 $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
 ```
+
 ## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Mejora en el cmdlet Get-DscConfigurationStatus
 
 En esta versión, se incluyen algunas mejoras en el cmdlet Get-DscConfigurationStatus. Anteriormente, la propiedad StartDate de los objetos devueltos por el cmdlet era de tipo String. Ahora, es de tipo Datetime, que facilita la selección y el filtrado complejos según las propiedades intrínsecas de un objeto Datetime.
+
 ```powershell
-(Get-DscConfigurationStatus).StartDate | fl \*
+(Get-DscConfigurationStatus).StartDate | fl *
 DateTime : Friday, November 13, 2015 1:39:44 PM
 Date : 11/13/2015 12:00:00 AM
 Day : 13
@@ -68,14 +70,16 @@ Year : 2015
 ```
 
 A continuación se ofrece un ejemplo que devuelve todos los registros de operaciones de DSC que se produjeron el mismo día de la semana que hoy.
+
 ```powershell
-(Get-DscConfigurationStatus –All) | where { $\_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
+(Get-DscConfigurationStatus –All) | where { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
 Se eliminaron los registros de las operaciones que no realizan cambios en la configuración del nodo (es decir, las operaciones de solo lectura). Por lo tanto, las operaciones Test-DscConfiguration, Get-DscConfiguration ya no están adulteradas en los objetos devueltos del cmdlet Get-DscConfigurationStatus.
 Los registros de la operación de metaconfiguración se agregaron a la devolución del cmdlet Get-DscConfigurationStatus.
 
 A continuación se ofrece un ejemplo de resultado devuelto del cmdlet Get-DscConfigurationStatus –All.
+
 ```powershell
 All configuration operations:
 
@@ -89,12 +93,15 @@ Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 ```
 
 ## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Mejora en el cmdlet Get-DSCLocalConfigurationManager
+
 Se agregó un nuevo campo de LCMStateDetail al objeto devuelto del cmdlet Get-DscLocalConfigurationManager. Este campo se rellena cuando el valor de LCMState es "Ocupado". Se puede recuperar mediante el siguiente cmdlet:
+
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail
 ```
 
 A continuación se ofrece un ejemplo de salidas de una supervisión continua en una configuración que requiere dos reinicios en un nodo remoto.
+
 ```powershell
 Start a configuration that requires two reboots
 
