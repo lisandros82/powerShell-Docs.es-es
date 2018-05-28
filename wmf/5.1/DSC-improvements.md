@@ -1,37 +1,38 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Mejoras de la configuración del estado deseado en WMF 5.1
-ms.openlocfilehash: 04bf8ed820d24f1062e05d19c8f3b0c041298979
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 32bdde6d43d17cc76c454fe10b00097753a9eebe
+ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Mejoras en la configuración de estado deseado (DSC) en WMF 5.1
 
 ## <a name="dsc-class-resource-improvements"></a>Mejoras en los recursos de la clase DSC
 
 En WMF 5.1, hemos corregido los siguientes problemas conocidos:
-* Get-DscConfiguration puede devolver valores vacíos (NULL) o errores si la función Get() de un recurso de DSC basado en clases devuelve un tipo complejo o de tabla hash.
-* Get-DscConfiguration devuelve un error si se usa la credencial RunAs en la configuración de DSC.
-* Un recurso basado en clases no se puede usar en una configuración compuesta.
-* Start-DscConfiguration se bloquea si el recurso basado en clases tiene una propiedad de un tipo propio.
-* Los recursos basados en clases no se pueden utilizar como recursos exclusivos.
 
+- Get-DscConfiguration puede devolver valores vacíos (NULL) o errores si la función Get() de un recurso de DSC basado en clases devuelve un tipo complejo o de tabla hash.
+- Get-DscConfiguration devuelve un error si se usa la credencial RunAs en la configuración de DSC.
+- Un recurso basado en clases no se puede usar en una configuración compuesta.
+- Start-DscConfiguration se bloquea si el recurso basado en clases tiene una propiedad de un tipo propio.
+- Los recursos basados en clases no se pueden utilizar como recursos exclusivos.
 
 ## <a name="dsc-resource-debugging-improvements"></a>Mejoras en la depuración de recursos de DSC
+
 En WMF 5.0, el depurador de PowerShell no se detenía directamente en el método de recursos basados en clases (Get/Set/Test).
 En WMF 5.1, el depurador se detiene en el método de recursos basados en clases de la misma manera que con los métodos de recursos basados en MOF.
 
 ## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>El cliente de extracción de DSC es compatible con TLS 1.1 y TLS 1.2
+
 Anteriormente, el cliente de extracción de DSC solo era compatible con SSL3.0 y TLS1.0 a través de conexiones HTTPS.
 Cuando se le obligaba a usar protocolos más seguros, el cliente de extracción dejaba de funcionar.
 En WMF 5.1, el cliente de extracción de DSC ya no es compatible con SSL 3.0 y, en cambio, ya es compatible con los protocolos TLS 1.1 y TLS 1.2 que son más seguros.
 
-## <a name="improved-pull-server-registration"></a>Registro de servidor de extracción mejorado ##
+## <a name="improved-pull-server-registration"></a>Registro de servidor de extracción mejorado
 
 En las versiones anteriores de WMF, si se realizaban solicitudes de informes y registros concurrentes al servidor de extracción de DSC mientras se usaba la base de datos ESENT, LCM no podía registrarlas ni informar al respecto.
 En tales casos, los registros de eventos del servidor de extracción tienen el error "El nombre de instancia ya está en uso".
@@ -41,7 +42,9 @@ Los informes o registros simultáneos (que implican la base de datos ESENT) func
 Este problema solo concierne a la base de datos ESENT, no se aplica a la base de datos OLEDB.
 
 ## <a name="enable-circular-log-on-esent-database-instance"></a>Habilitación del registro circular en la instancia de base de datos ESENT
+
 En versiones anteriores de DSC-PullServer, los archivos de registro de la base de datos ESENT llenaban el espacio en disco del servidor de extracción, porque la instancia de la base de datos se creó sin el registro circular. En esta versión, tiene la opción de controlar el comportamiento del registro circular de la instancia mediante el archivo web.config del servidor de extracción. De forma predeterminada, CircularLogging se establece en TRUE.
+
 ```
 <appSettings>
     <add key="dbprovider" value="ESENT" />
@@ -50,16 +53,18 @@ En versiones anteriores de DSC-PullServer, los archivos de registro de la base d
     <add key="UseCircularESENTLogs" value="TRUE" />
   </appSettings>
 ```
+
 ## <a name="pull-partial-configuration-naming-convention"></a>Convención de nomenclatura de configuración parcial de extracción
+
 En la versión anterior, la convención de nomenclatura de una configuración parcial consistía en que el nombre de archivo MOF en el servidor o servicio de extracción debía coincidir con el nombre de configuración parcial especificado en la configuración del administrador de configuración local, que a su vez debe coincidir con el nombre de configuración insertado en el archivo MOF.
 
 Vea las instantáneas siguientes:
 
-•   Opciones de configuración local que definen una configuración parcial que puede recibir un nodo.
+- Opciones de configuración local que definen una configuración parcial que puede recibir un nodo.
 
 ![Metaconfiguración de ejemplo](../images/MetaConfigPartialOne.png)
 
-•   Definición de configuración parcial de ejemplo.
+- Definición de configuración parcial de ejemplo.
 
 ```powershell
 Configuration PartialOne
@@ -76,11 +81,11 @@ Configuration PartialOne
 PartialOne
 ```
 
-•   "ConfigurationName" insertado en el archivo MOF generado.
+- "ConfigurationName" insertado en el archivo MOF generado.
 
 ![Archivo MOF de ejemplo generado](../images/PartialGeneratedMof.png)
 
-• FileName en el repositorio de configuración de extracción
+- FileName en el repositorio de configuración de extracción
 
 ![FileName en el repositorio de configuración](../images/PartialInConfigRepository.png)
 
@@ -111,42 +116,42 @@ Esta flexibilidad de nomenclatura le permite administrar los nodos parcialmente 
 La metaconfiguración siguiente configura un nodo que se debe administrar tanto localmente como mediante el servicio Azure Automation.
 
 ```powershell
-  [DscLocalConfigurationManager()]
-   Configuration RegistrationMetaConfig
-   {
-        Settings
-        {
-            RefreshFrequencyMins = 30
-            RefreshMode = "PULL"
-        }
+[DscLocalConfigurationManager()]
+Configuration RegistrationMetaConfig
+{
+    Settings
+    {
+        RefreshFrequencyMins = 30
+        RefreshMode = "PULL"
+    }
 
-        ConfigurationRepositoryWeb web
-        {
-            ServerURL =  $endPoint
-            RegistrationKey = $registrationKey
-            ConfigurationNames = $configurationName
-        }
+    ConfigurationRepositoryWeb web
+    {
+        ServerURL =  $endPoint
+        RegistrationKey = $registrationKey
+        ConfigurationNames = $configurationName
+    }
 
-        # Partial configuration managed by Azure Automation service.
-        PartialConfiguration PartialConfigurationManagedByAzureAutomation
-        {
-            ConfigurationSource = "[ConfigurationRepositoryWeb]Web"
-        }
+    # Partial configuration managed by Azure Automation service.
+    PartialConfiguration PartialConfigurationManagedByAzureAutomation
+    {
+        ConfigurationSource = "[ConfigurationRepositoryWeb]Web"
+    }
 
-        # This partial configuration is managed locally.
-        PartialConfiguration OnPremisesConfig
-        {
-            RefreshMode = "PUSH"
-            ExclusiveResources = @("Script")
-        }
+    # This partial configuration is managed locally.
+    PartialConfiguration OnPremisesConfig
+    {
+        RefreshMode = "PUSH"
+        ExclusiveResources = @("Script")
+    }
 
-   }
+}
 
-   RegistrationMetaConfig
-   Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
- ```
+RegistrationMetaConfig
+Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
+```
 
-# <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Uso de PsDscRunAsCredential con recursos compuestos de DSC
+## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Uso de PsDscRunAsCredential con recursos compuestos de DSC
 
 Hemos agregado compatibilidad para usar [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) con recursos [compuestos](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite) de DSC.
 
@@ -158,10 +163,7 @@ Si cualquier recurso de un recurso compuesto especifica su propio valor para PsD
 
 En este ejemplo se muestra el uso con el recurso compuesto [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) que se incluye en el módulo PSDesiredStateConfiguration.
 
-
-
 ```powershell
-
 Configuration InstallWindowsFeature
 {
     Import-DscResource -ModuleName PSDesiredStateConfiguration
@@ -176,7 +178,6 @@ Configuration InstallWindowsFeature
             PsDscRunAsCredential = Get-Credential
         }
     }
-
 }
 
 $configData = @{
@@ -190,21 +191,19 @@ $configData = @{
     )
 }
 
-
 InstallWindowsFeature -ConfigurationData $configData
-
 ```
 
-##<a name="dsc-module-and-configuration-signing-validations"></a>Validaciones de firmas de configuraciones y módulos de DSC
+## <a name="dsc-module-and-configuration-signing-validations"></a>Validaciones de firmas de configuraciones y módulos de DSC
+
 En DSC, las configuraciones y los módulos se distribuyen a los equipos administrados desde el servidor de extracción.
 Si el servidor de extracción está en peligro, un atacante puede modificar las configuraciones y los módulos del servidor de extracción y propagarlos a todos los nodos administrados, poniéndolos todos en peligro.
 
- En WMF 5.1, DSC admite la validación de las firmas digitales en los archivos del catálogo y de configuración (.MOF).
+En WMF 5.1, DSC admite la validación de las firmas digitales en los archivos del catálogo y de configuración (.MOF).
 Esta característica evita que los nodos ejecuten archivos de módulos o de configuración que no están firmados por un firmante de confianza o que se han alterado después de que los haya firmado un firmante de confianza.
 
+### <a name="how-to-sign-configuration-and-module"></a>Cómo firmar un módulo y una configuración
 
-
-###<a name="how-to-sign-configuration-and-module"></a>Cómo firmar un módulo y una configuración
 ***
 * Archivos de configuración (.MOF): el cmdlet de PowerShell existente [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) se amplía para admitir la firma de archivos MOF.
 * Módulos: la firma de módulos se realiza mediante la firma del catálogo de módulos correspondiente mediante los siguientes pasos:
@@ -215,9 +214,10 @@ Esta característica evita que los nodos ejecuten archivos de módulos o de conf
     3. Coloque el archivo de catálogo dentro de la carpeta del módulo.
 Por convención, el archivo de catálogo del módulo debe colocarse en la carpeta del módulo y debe tener el mismo nombre que este.
 
-###<a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>Configuración de LocalConfigurationManager para habilitar las validaciones de las firmas
+### <a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>Configuración de LocalConfigurationManager para habilitar las validaciones de las firmas
 
-####<a name="pull"></a>Extracción
+#### <a name="pull"></a>Extracción
+
 En un nodo, LocalConfigurationManager realiza la validación de las firmas de módulos y las configuraciones en función de su configuración actual.
 De forma predeterminada, la validación de firmas está deshabilitada.
 La validación de firmas se puede habilitar agregando un bloque "SignatureValidation" a la definición de metaconfiguración del nodo, tal como se muestra aquí:
@@ -238,7 +238,7 @@ Configuration EnableSignatureValidation
       RegistrationKey = 'd6750ff1-d8dd-49f7-8caf-7471ea9793fc' # Replace this with correct registration key.
     }
     SignatureValidation validations{
-        # By default, LCM uses the default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM uses this custom store for retrieving the trusted publishers to validate the content.
+        # If the TrustedStorePath property is provided then LCM will use the custom path. Otherwise, the LCM will use default trusted store path (Cert:\LocalMachine\DSCStore) to find the signing certificate.
         TrustedStorePath = 'Cert:\LocalMachine\DSCStore'
         SignedItemType = 'Configuration','Module'         # This is a list of DSC artifacts, for which LCM need to verify their digital signature before executing them on the node.
     }
@@ -246,7 +246,7 @@ Configuration EnableSignatureValidation
 }
 EnableSignatureValidation
 Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
- ```
+```
 
 El establecimiento de la metaconfiguración anterior en un nodo habilita la validación de firmas de los módulos y las configuraciones descargados.
 LocalConfigurationManager lleva a cabo los pasos siguientes para comprobar las firmas digitales.
@@ -272,12 +272,13 @@ De forma similar, la extracción de un módulo cuyo catálogo no esté firmado p
 
 ![Módulo de salida de error de ejemplo](../images/PullUnisgnedCatalog.png)
 
-####<a name="push"></a>Push
+#### <a name="push"></a>Push
+
 Una configuración entregada mediante inserción puede alterarse en su origen antes de que se entregue al nodo.
 El administrador de configuración local lleva a cabo pasos de validación de firmas similares para las configuraciones insertadas o publicadas.
 A continuación, se muestra un ejemplo completo de validación de firma para la inserción.
 
-* Habilite la validación de firma en el nodo.
+- Habilite la validación de firma en el nodo.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -296,7 +297,8 @@ Configuration EnableSignatureValidation
 EnableSignatureValidation
 Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 ```
-* Cree un archivo de configuración de ejemplo.
+
+- Cree un archivo de configuración de ejemplo.
 
 ```powershell
 # Sample configuration
@@ -312,17 +314,18 @@ Configuration Test
 Test
 ```
 
-* Intente insertar el archivo de configuración sin firmar en el nodo.
+- Intente insertar el archivo de configuración sin firmar en el nodo.
 
 ```powershell
 Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 ```
+
 ![ErrorUnsignedMofPushed](../images/PushUnsignedMof.png)
 
-* Firme el archivo configuración mediante el certificado de firma de código.
+- Firme el archivo configuración mediante el certificado de firma de código.
 
 ![SignMofFile](../images/SignMofFile.png)
 
-* Intente insertar el archivo MOF firmado.
+- Intente insertar el archivo MOF firmado.
 
 ![SignMofFile](../images/PushSignedMof.png)
