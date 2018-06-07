@@ -131,7 +131,7 @@ Además deberá habilitar la autenticación de contraseña y, opcionalmente, la 
     - Agregue una entrada de subsistema de PowerShell.
 
     ```
-    Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
+    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
     ```
 
     - Opcionalmente, habilite la autenticación de clave.
@@ -243,7 +243,7 @@ GitCommitId                    v6.0.0-alpha.17
 
 [PowerShell Core para Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
-[instalación]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
+[Instalación]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [PowerShell para Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [SSH de Ubuntu]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
 [PowerShell para MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
