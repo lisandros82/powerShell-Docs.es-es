@@ -3,21 +3,22 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Quitar objetos de la canalización Where Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 2d89defdb1b234a9d0021fc06e1f05a95bb1bce9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 46f210e1418098f4809174cd975ab8d783580285
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753845"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Quitar objetos de la canalización (Where-Object)
 
 En Windows PowerShell, se suelen generar y pasar más objetos de los deseados a una canalización. Puede especificar las propiedades de los objetos concretos que quiere que se muestren mediante los cmdlets **Format**, pero esto no ayuda a resolver el problema de eliminación de objetos completos de la presentación. Es posible que quiera filtrar objetos antes del final de una canalización, para poder realizar acciones solo en un subconjunto de los objetos generados inicialmente.
 
-Windows PowerShell incluye un cmdlet **Where-Object** que permite probar cada objeto de la canalización y pasarlo solo a la canalización si cumple una condición de prueba determinada. Los objetos que no pasan la prueba se quitan de la canalización. Debe indicar la condición de prueba como el valor del parámetro **Where-ObjectFilterScript**.
+Windows PowerShell incluye el cmdlet`Where-Object`, que permite probar cada objeto de la canalización y pasarlo solo a la canalización si cumple una condición de prueba determinada. Los objetos que no pasan la prueba se quitan de la canalización. Debe indicar la condición de prueba como el valor del parámetro `Where-Object` **FilterScript**.
 
 ### <a name="performing-simple-tests-with-where-object"></a>Realizar pruebas simples con Where-Object
 
-El valor de **FilterScript** es un *bloque de script*; es decir, uno o más comandos de Windows PowerShell entre llaves ({}), que se evalúa como true o false. Estos bloques de script pueden ser muy simples, pero su creación requiere el conocimiento de otro concepto de Windows PowerShell: los operadores de comparación. Un operador de comparación compara los elementos que aparecen en cada uno de sus lados. Los operadores de comparación comienzan con un carácter '-' seguido de un nombre. Los operadores de comparación básicos funcionan en casi todos los tipos de objeto. Es posible que los operadores de comparación más avanzados solo funcionen en texto o matrices.
+El valor de **FilterScript** es un *bloque de script*; es decir, uno o más comandos de Windows PowerShell entre llaves {}, que se evalúa como true o false. Estos bloques de script pueden ser muy simples, pero su creación requiere el conocimiento de otro concepto de Windows PowerShell: los operadores de comparación. Un operador de comparación compara los elementos que aparecen en cada uno de sus lados. Los operadores de comparación comienzan con un carácter '-' seguido de un nombre. Los operadores de comparación básicos funcionan en casi todos los tipos de objeto. Es posible que los operadores de comparación más avanzados solo funcionen en texto o matrices.
 
 > [!NOTE]
 > De manera predeterminada, al trabajar con texto, los operadores de comparación de Windows PowerShell no distinguen mayúsculas de minúsculas.

@@ -1,18 +1,22 @@
 ---
-ms.date: 06/12/2017
+ms.date: 06/20/2018
 keywords: dsc,powershell,configuration,setup
 title: Recurso PackageManagement de DSC
-ms.openlocfilehash: f850c389214fe5adf139c3bd01fb60addc5ec238
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3d52934b130d59acee4d7f8a92da2c743c1eb305
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753794"
 ---
 # <a name="dsc-packagemanagement-resource"></a>Recurso PackageManagement de DSC
 
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1
 
 El recurso **PackageManagement** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para instalar o desinstalar paquetes de administración de paquetes, en un nodo de destino. Este recurso requiere el módulo **PackageManagement**, disponible en http://PowerShellGallery.com.
+
+> [!IMPORTANT]
+> El módulo **PackageManagement** debe tener al menos la versión 1.1.7.0 para que la siguiente información de propiedad sea correcta.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -20,31 +24,35 @@ El recurso **PackageManagement** de la configuración de estado deseado (DSC) de
 PackageManagement [string] #ResourceName
 {
     Name = [string]
-    [ Source = [string] ]
-    [ Ensure = [string] { Absent | Present }  ]
-    [ RequiredVersion = [string] ]
-    [ MinimumVersion = [string] ]
-    [ MaximumVersion = [string] ]
-    [ SourceCredential = [PSCredential] ]
-    [ ProviderName = [string] ]
-    [ AdditionalParameters = [Microsoft.Management.Infrastructure.CimInstance[]] ]
+    [AdditionalParameters = [HashTable]]
+    [DependsOn = [string[]]]
+    [Ensure = [string]{ Absent | Present }]
+    [MaximumVersion = [string]]
+    [MinimumVersion = [string]]
+    [ProviderName = [string]]
+    [PsDscRunAsCredential = [PSCredential]]
+    [RequiredVersion = [string]]
+    [Source = [string]]
+    [SourceCredential = [PSCredential]]
 }
 ```
 
 ## <a name="properties"></a>Propiedades
+
 |  Propiedad  |  Descripción   |
 |---|---|
 | Nombre| Especifica el nombre del paquete que se va a instalar o desinstalar.|
-| Origen| Especifica el nombre del origen del paquete donde se encuentra el paquete. Puede ser un URI o un origen registrado con el recurso de registro de DSC Register-PackageSource o PackageManagementSource. El recurso MSFT_PackageManagementSource de DSC también puede registrar un origen del paquete.|
+| AdditionalParameters| La tabla hash de parámetros específica del proveedor que se pasará a `Get-Package -AdditionalArguments`. Por ejemplo, para el proveedor NuGet puede pasar parámetros adicionales, como DestinationPath.|
 | Ensure| Determina si el paquete se puede instalar o desinstalar.|
-| RequiredVersion| Especifica la versión exacta del paquete que desea instalar. Si no se especifica este parámetro, este recurso de DSC instala la versión más reciente disponible del paquete que también admite cualquier versión máxima especificada por el parámetro MaximumVersion.|
-| MinimumVersion| Especifica la versión mínima permitida del paquete que desea instalar. Si no se agrega este parámetro, este recurso de DSC instala la versión más alta disponible del paquete que también admite cualquier versión máxima especificada por el parámetro MaximumVersion.|
-| MaximumVersion| Especifica la versión máxima permitida del paquete que desea instalar. Si no se especifica este parámetro, este recurso de DSC instala la versión del paquete disponible con el número mayor.|
+| MaximumVersion|Especifica la versión máxima permitida del paquete que desea encontrar. Si no agrega este parámetro, el recurso busca la versión disponible más alta del paquete.|
+| MinimumVersion|Especifica la versión mínima permitida del paquete que desea encontrar. Si no se agrega este parámetro, este recurso busca la versión más alta disponible del paquete que también admite cualquier versión máxima especificada por el parámetro _MaximumVersion_.|
+| ProviderName| Especifica un nombre de proveedor del paquete que se va a dirigir la búsqueda del paquete. Puede obtener los nombres de proveedor del paquete mediante la ejecución del cmdlet `Get-PackageProvider`.|
+| RequiredVersion| Especifica la versión exacta del paquete que desea instalar. Si no se especifica este parámetro, este recurso de DSC instala la versión más reciente disponible del paquete que también admite cualquier versión máxima especificada por el parámetro _MaximumVersion_.|
+| Origen| Especifica el nombre del origen del paquete donde se encuentra el paquete. Puede ser un URI o un origen registrado con `Register-PackageSource` o el recurso de DSC PackageManagementSource.|
 | SourceCredential | Especifica una cuenta de usuario que tenga derechos para instalar un paquete para un proveedor u origen de paquetes especificado.|
-| ProviderName| Especifica un nombre de proveedor del paquete que se va a dirigir la búsqueda del paquete. Puede obtener los nombres de proveedor del paquete mediante la ejecución del cmdlet Get-PackageProvider.|
-| AdditionalParameters| Parámetros específicos del proveedor que se pasan como una tabla hash. Por ejemplo, para el proveedor NuGet puede pasar parámetros adicionales, como DestinationPath.|
 
 ## <a name="additional-parameters"></a>Parámetros adicionales
+
 En la tabla siguiente se enumeran las opciones de la propiedad AdditionalParameters.
 |  Parámetro  | Descripción   |
 |---|---|
@@ -63,7 +71,7 @@ Configuration PackageTest
         Ensure      = "Present"
         Name        = "MyNuget"
         ProviderName= "Nuget"
-        SourceUri   = "http://nuget.org/api/v2/"
+        SourceLocation   = "http://nuget.org/api/v2/"
         InstallationPolicy ="Trusted"
     }
 
@@ -72,7 +80,7 @@ Configuration PackageTest
         Ensure      = "Present"
         Name        = "psgallery"
         ProviderName= "PowerShellGet"
-        SourceUri   = "https://www.powershellgallery.com/api/v2/"
+        SourceLocation   = "https://www.powershellgallery.com/api/v2/"
         InstallationPolicy ="Trusted"
     }
 
