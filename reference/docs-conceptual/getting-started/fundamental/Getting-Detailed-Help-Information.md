@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Obtener información de ayuda detallada
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: bb0fac4eb338354e411458fad575c726a5f0da35
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483039"
 ---
 # <a name="getting-detailed-help-information"></a>Obtener información de ayuda detallada
 Windows PowerShell incluye temas de ayuda detallados que explican conceptos de Windows PowerShell y el lenguaje de Windows PowerShell. También hay temas de Ayuda para cada cmdlet y proveedor y temas de Ayuda para muchas funciones y scripts.
@@ -128,7 +129,7 @@ get-help c:\ps-test\TestScript.ps1
 
 Los parámetros diseñados para mostrar la Ayuda de cmdlets, como *Detailed*, *Full*, *Examples* y *Parameter*, también funcionan para la Ayuda de scripts y funciones. Sin embargo, al escribir "get-help \*" para que se muestre toda la Ayuda, la Ayuda de funciones y scripts no aparece.
 
-Para obtener información sobre cómo escribir la Ayuda de scripts y funciones, vea [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af) y [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
+Para obtener información sobre cómo escribir la Ayuda de scripts y funciones, vea [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af) y [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
 
 ## <a name="getting-help-online"></a>Obtener ayuda en línea
 Si está conectado a Internet, una de las mejores formas de obtener Ayuda es ver los temas de Ayuda en línea. Dado que los temas en línea son fáciles de actualizar, es probable que proporcionen el contenido más actualizado.
@@ -165,10 +166,10 @@ A continuación, se muestra la primera línea de la sección Vínculos relaciona
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-Para obtener información sobre cómo proporcionar soporte técnico en línea para sus temas de ayuda, vea [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) y [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (Cómo escribir ayuda para cmdlet) en la biblioteca de MSDN.
+Para obtener información sobre cómo proporcionar soporte técnico en línea para sus temas de ayuda, vea [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) y [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (Cómo escribir ayuda para cmdlet) en la biblioteca de MSDN.
 
 ## <a name="see-also"></a>Véase también
-- [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
-- [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
+- [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)
+- [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
+- [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
 - [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)

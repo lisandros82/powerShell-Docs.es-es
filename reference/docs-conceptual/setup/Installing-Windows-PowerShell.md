@@ -2,11 +2,12 @@
 ms.date: 08/09/2017
 keywords: powershell,cmdlet,descargar,instalar,configurar,windows 10,windows 8.1,windows 8.0,windows 7
 title: Instalación de Windows PowerShell
-ms.openlocfilehash: 320b271ce49768f8865c79c5c72749befe306fa4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 89f0f689ebfcd34dd4c8ec3824ec8ab4bddc34d9
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483005"
 ---
 # <a name="installing-windows-powershell"></a>Instalación de Windows PowerShell
 A partir de las ediciones Windows 7 SP1 y Windows Server 2008 R2 SP1, Windows PowerShell viene instalado en Windows de forma predeterminada.
@@ -81,9 +82,9 @@ Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.c
 
 ## <a name="need-azure-powershell"></a>Obtención de Azure PowerShell
 
-Si está buscando **Azure PowerShell**, puede empezar por el artículo [Overview of Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure) (Información general sobre Azure PowerShell).
+Si está buscando **Azure PowerShell**, puede empezar por el artículo [Overview of Azure PowerShell](https://docs.microsoft.com/powershell/azure) (Información general sobre Azure PowerShell).
 
-De lo contrario, consulte [Install and configure Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps) (Instalación y configuración de Azure PowerShell).
+De lo contrario, consulte [Install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps) (Instalación y configuración de Azure PowerShell).
 
 ## <a name="see-also"></a>Véase también
 

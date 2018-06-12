@@ -1,4 +1,14 @@
- and --- ms.date:  06/12/2017 contributor:  JKeithB keywords:  gallery,powershell,cmdlet,psgallery,psget title:  The PowerShell Gallery
+---
+ms.date: 06/12/2017
+contributor: JKeithB
+keywords: gallery,powershell,cmdlet,psgallery,psget
+title: Galería de PowerShell
+ms.openlocfilehash: dc7e8dd7e4d96d8424a62cb3256c3164b63a3684
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482937"
 ---
 # <a name="the-powershell-gallery"></a>Galería de PowerShell
 

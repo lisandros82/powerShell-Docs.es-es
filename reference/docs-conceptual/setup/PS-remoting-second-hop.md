@@ -2,11 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Realizar el segundo salto en la comunicación remota de PowerShell
-ms.openlocfilehash: 893b4353c4244dc96c4b234bb4062b583a5cd36d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1d24473178bc50321a81ebf1115a20f17078844f
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483022"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Realizar el segundo salto en la comunicación remota de PowerShell
 
@@ -21,7 +22,7 @@ Hay varias formas de abordar este problema. En este tema, analizaremos algunas d
 
 ## <a name="credssp"></a>CredSSP
 
-Puede usar el [proveedor de compatibilidad para seguridad de credenciales (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) para la autenticación. CredSSP copia en caché las credenciales en el servidor remoto (_ServidorB_), por lo que, al usarlo, le hace vulnerable a los ataques de robos de credenciales. Si el equipo remoto se ve comprometido, el atacante tiene acceso a las credenciales del usuario. CredSSP está deshabilitado de forma predeterminada tanto en el equipo del cliente como del servidor. Debe habilitar CredSSP solo en los entornos de mayor confianza. Por ejemplo, un administrador de dominio que se conecta a un controlador de dominio porque el controlador de dominio es de plena confianza.
+Puede usar el [proveedor de compatibilidad para seguridad de credenciales (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) para la autenticación. CredSSP copia en caché las credenciales en el servidor remoto (_ServidorB_), por lo que, al usarlo, le hace vulnerable a los ataques de robos de credenciales. Si el equipo remoto se ve comprometido, el atacante tiene acceso a las credenciales del usuario. CredSSP está deshabilitado de forma predeterminada tanto en el equipo del cliente como del servidor. Debe habilitar CredSSP solo en los entornos de mayor confianza. Por ejemplo, un administrador de dominio que se conecta a un controlador de dominio porque el controlador de dominio es de plena confianza.
 
 Para obtener más información sobre problemas de seguridad cuando se usa CredSSP para la comunicación remota de PowerShell, vea [Accidental Sabotage: Beware of CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp) (Sabotaje accidental: tenga cuidado con CredSSP).
 
@@ -175,7 +176,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-En este ejemplo, la variable `$using` se usa para hacer visible la variable `$ServerC` en el _ServidorB_. Para obtener más información sobre la variable `$using`, consulte [about_Remote_Variables](https://technet.microsoft.com/en-us/library/jj149005.aspx).
+En este ejemplo, la variable `$using` se usa para hacer visible la variable `$ServerC` en el _ServidorB_. Para obtener más información sobre la variable `$using`, consulte [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
 
 Para permitir que varios servidores deleguen credenciales en el _ServidorC_, establezca el valor del parámetro **PrincipalsAllowedToDelegateToAccount** en el _ServidorC_ a una matriz:
 
@@ -212,8 +213,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1) (Cómo simplifica Windows Server 2012 el proceso de delegación limitada de Kerberos, parte 1)
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2) (Cómo simplifica Windows Server 2012 el proceso de delegación limitada de Kerberos, parte 2)
 - [Understanding Kerberos Constrained Delegation for Azure Active Directory Application Proxy Deployments with Integrated Windows Authentication](http://aka.ms/kcdpaper) (Comprender la delegación limitada de Kerberos para implementaciones de proxy de aplicación de Active Directory con la autenticación integrada de Windows)
-- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/en-us/library/hh554126.aspx) ([MS-ADA2]: atributos de esquema de Active Directory, atributo M2.210 msDS-AllowedToActOnBehalfOfOtherIdentity)
-- [[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy](https://msdn.microsoft.com/en-us/library/cc246079.aspx) ([MS-SFU]: Extensiones de protocolo de Kerberos: protocolo de delegación limitada y de servicio para el usuario 1.3.2 S4U2proxy)
+- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx) ([MS-ADA2]: atributos de esquema de Active Directory, atributo M2.210 msDS-AllowedToActOnBehalfOfOtherIdentity)
+- [[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx) ([MS-SFU]: Extensiones de protocolo de Kerberos: protocolo de delegación limitada y de servicio para el usuario 1.3.2 S4U2proxy)
 - [Delegación limitada de Kerberos basada en recursos](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/) (Administración remota sin delegación limitada con PrincipalsAllowedToDelegateToAccount)
 
@@ -236,7 +237,7 @@ Para obtener información sobre el uso de PSSessionConfiguration y RunAs para re
 
 JEA le permite restringir qué comandos puede ejecutar un administrador durante una sesión de PowerShell. Se puede usar para resolver el problema del segundo salto.
 
-Para obtener información sobre JEA, consulte [Just Enough Administration](https://docs.microsoft.com/en-us/powershell/jea/overview).
+Para obtener información sobre JEA, consulte [Just Enough Administration](https://docs.microsoft.com/powershell/jea/overview).
 
 ### <a name="pros"></a>Pros
 
@@ -249,7 +250,7 @@ Para obtener información sobre JEA, consulte [Just Enough Administration](https
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Pasar credenciales dentro de un bloque de script de Invoke-Command
 
-Se pueden pasar credenciales dentro del parámetro **ScriptBlock** de una llamada al cmdlet [Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command).
+Se pueden pasar credenciales dentro del parámetro **ScriptBlock** de una llamada al cmdlet [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command).
 
 ### <a name="pros"></a>Pros
 

@@ -2,11 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell, cmdlet
 title: Uso de la consola de Windows PowerShell basada en web
-ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483158"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Uso de la consola de Windows PowerShell basada en web
 
@@ -81,7 +82,7 @@ El método más sencillo de configurar el equipo para que admita la administraci
 
     Por lo general, las credenciales que use para pasar a través de la puerta de enlace de Windows PowerShell Web Access serán las mismas que reconoce el equipo remoto que desea administrar. No obstante, si desea usar credenciales diferentes de las especificadas en el paso 2 para administrar el equipo remoto, expanda la sección **Configuración de conexión opcional** y proporcione las credenciales alternativas. De lo contrario, vaya al paso 6.
 
-1. Si el administrador de Windows PowerShell Web Access ha creado una configuración de sesión personalizada para los usuarios de Windows PowerShell Web Access, escriba el nombre de la configuración de sesión en el campo **Nombre de la configuración**. Para más información sobre las configuraciones de sesión, vea [about_Session_Configurations](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations) (Acerca de las configuraciones de sesión).
+1. Si el administrador de Windows PowerShell Web Access ha creado una configuración de sesión personalizada para los usuarios de Windows PowerShell Web Access, escriba el nombre de la configuración de sesión en el campo **Nombre de la configuración**. Para más información sobre las configuraciones de sesión, vea [about_Session_Configurations](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations) (Acerca de las configuraciones de sesión).
 
 1. Deje el **Tipo de autenticación** establecido en **Predeterminado**, a menos que el administrador de Windows PowerShell Web Access le haya dado otras indicaciones.
 
