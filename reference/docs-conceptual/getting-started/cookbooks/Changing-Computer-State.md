@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Cambiar el estado del equipo
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: 3d3983c6d9e9b11db62bd71805da51be83331fdb
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c659ad54325b0f7305f882e1cb9607062abad6a4
+ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251524"
 ---
 # <a name="changing-computer-state"></a>Cambiar el estado del equipo
 
@@ -49,16 +50,16 @@ Para obtener más información y otras características del método Win32Shutdow
 
 Apagar y reiniciar equipos suelen ser los mismos tipos de tarea. Las herramientas que apagan un equipo generalmente también lo reinician, y viceversa. Hay dos opciones sencillas para reiniciar un equipo desde Windows PowerShell. Use Tsshutdn.exe o Shutdown.exe con los argumentos apropiados. Puede obtener información de uso detallada en **tsshutdn.exe /?** o **shutdown.exe /?**.
 
-También puede realizar las operaciones de apagar y reiniciar mediante **Win32_OperatingSystem** directamente desde Windows PowerShell.
+También puede realizar las operaciones de apagar y reiniciar directamente desde Windows PowerShell.
 
-Para apagar el equipo, use el método Win32Shutdown con la marca **1**.
+Para apagar el equipo, use el comando Restart-Computer.
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(1)
+stop-computer
 ```
 
-Para reiniciar el sistema operativo, use el método Win32Shutdown con la marca **2**.
+Para reiniciar el sistema operativo, use el comando Restart-Computer.
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(2)
+restart-computer
 ```
