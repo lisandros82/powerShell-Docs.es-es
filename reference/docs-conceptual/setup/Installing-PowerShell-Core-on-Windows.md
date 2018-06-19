@@ -4,15 +4,15 @@
 
 Para instalar PowerShell en un cliente de Windows o Windows Server (funciona en Windows 7 SP1, Server 2008 R2 y versiones posteriores), descargue el paquete MSI desde nuestra página de [versiones][] de GitHub.
 
-El archivo MSI tiene este aspecto: `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+El archivo MSI tiene este aspecto: `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 Una vez descargado, haga doble clic en el instalador y siga las indicaciones.
 
 Tras la instalación, se coloca un acceso directo en el menú Inicio.
 
-- De forma predeterminada, el paquete se instala en `$env:ProgramFiles\PowerShell\`
-- Puede iniciar PowerShell mediante el menú Inicio o `$env:ProgramFiles\PowerShell\pwsh.exe`
+- De forma predeterminada, el paquete se instala en `$env:ProgramFiles\PowerShell\<version>`
+- Puede iniciar PowerShell mediante el menú Inicio o `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 ### <a name="prerequisites"></a>Requisitos previos
 
@@ -140,8 +140,4 @@ Para instalar PowerShell Core desde el artefacto de CoreCLR:
 3. Extraiga el archivo ZIP en el directorio `bin`.
 4. `./bin/pwsh.exe`
 
-<!-- [download-center]: TODO -->
-[versiones]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+<!-- [download-center]: TODO --> [releases]: https://github.com/PowerShell/PowerShell/releases [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell

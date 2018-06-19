@@ -1,6 +1,6 @@
 # <a name="installing-powershell-core-on-linux"></a>Instalación de PowerShell Core en Linux
 
-Admite [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.04][u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 25][fed25], [Fedora 26][fed26] y [Arch Linux][arch].
+Admite [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.04][u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 27][fedora], [Fedora 28][fedora] y [Arch Linux][arch].
 
 Para distribuciones de Linux que no sean compatibles oficialmente, puede usar el archivo [AppImage de PowerShell][lai].
 También puede intentar implementar los archivos binarios de PowerShell directamente mediante el [archivo `tar.gz`][tar] de Linux, pero deberá configurar las dependencias necesarias según el sistema operativo en pasos independientes.
@@ -16,8 +16,7 @@ Una vez que se haya instalado el paquete, ejecute `pwsh` desde un terminal.
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
 [opensuse]: #opensuse-422
-[fed25]: #fedora-25
-[fed26]: #fedora-26
+[fedora]: #fedora
 [arch]: #arch-linux
 [lai]: #linux-appimage
 [tar]: #binary-archives
@@ -408,58 +407,9 @@ sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v
 sudo zypper remove powershell
 ```
 
-## <a name="fedora-25"></a>Fedora 25
+## <a name="fedora"></a>Fedora
 
-### <a name="installation-via-package-repository-preferred---fedora-25"></a>Instalación mediante un repositorio de paquetes (opción preferida), Fedora 25
-
-PowerShell Core para Linux se publica en repositorios oficiales de Microsoft para facilitar la instalación (y las actualizaciones).
-
-```sh
-# Register the Microsoft signature key
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-
-# Register the Microsoft RedHat repository
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
-
-# Update the list of products
-sudo dnf update
-
-# Install PowerShell
-sudo dnf install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-### <a name="installation-via-direct-download---fedora-25"></a>Instalación mediante descarga directa, Fedora 25
-
-Descargue el paquete RPM `powershell-6.0.2-1.rhel.7.x86_64.rpm` desde la página de [versiones][] en la máquina Fedora.
-
-```sh
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
-```
-
-Después, ejecute lo siguiente en el terminal:
-
-```sh
-sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
-```
-
-También puede instalar el paquete RPM sin el paso intermedio de descargarlo:
-
-```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
-```
-
-### <a name="uninstallation---fedora-25"></a>Desinstalación, Fedora 25
-
-```sh
-sudo dnf remove powershell
-```
-
-## <a name="fedora-26"></a>Fedora 26
-
-### <a name="installation-via-package-repository-preferred---fedora-26"></a>Instalación mediante un repositorio de paquetes (opción preferida), Fedora 26
+### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Instalación mediante un repositorio de paquetes (opción preferida), Fedora 27, Fedora 28
 
 PowerShell Core para Linux se publica en repositorios oficiales de Microsoft para facilitar la instalación (y las actualizaciones).
 
@@ -483,14 +433,13 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-26"></a>Instalación mediante descarga directa, Fedora 26
+### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Instalación mediante descarga directa, Fedora 27, Fedora 28
 
 Descargue el paquete RPM `powershell-6.0.2-1.rhel.7.x86_64.rpm` desde la página de [versiones][] en la máquina Fedora.
 
 Después, ejecute lo siguiente en el terminal:
 
 ```sh
-sudo dnf update
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
@@ -498,12 +447,11 @@ sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
 También puede instalar el paquete RPM sin el paso intermedio de descargarlo:
 
 ```sh
-sudo dnf update
 sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-26"></a>Desinstalación, Fedora 26
+### <a name="uninstallation---fedora-27-fedora-28"></a>Desinstalación, Fedora 27, Fedora 28
 
 ```sh
 sudo dnf remove powershell
@@ -642,8 +590,8 @@ En la tabla siguiente se muestran las dependencias de .NET Core 2.0 que se admit
 | Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
 | Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 <br> Fedora 25 | libunwind, libcurl, openssl-libs, libicu |
-| Fedora 26          | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind, libcurl, openssl-libs, libicu |
+| Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
 
 Para implementar archivos binarios de PowerShell en distribuciones de Linux que no se admiten oficialmente, debe instalar las dependencias necesarias para el sistema operativo de destino en varios pasos.
 Por ejemplo, nuestro [dockerfile de Amazon Linux][amazon-dockerfile] instala primero las dependencias y, después, extrae el archivo `tar.gz` de Linux.
@@ -691,5 +639,5 @@ Los perfiles respetan la configuración de cada host de PowerShell, por lo que h
 
 PowerShell respeta la [especificación de directorio base de XDG][xdg-bds] en Linux.
 
-[versiones]: https://github.com/PowerShell/PowerShell/releases/latest
+[Versiones]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
