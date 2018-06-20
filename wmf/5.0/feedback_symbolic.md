@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222012"
 ---
 # <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a><span data-ttu-id="b9c82-102">Interactuar con los vínculos simbólicos mediante cmdlets Item mejorados</span><span class="sxs-lookup"><span data-stu-id="b9c82-102">Interact with Symbolic links using improved Item cmdlets</span></span>
 

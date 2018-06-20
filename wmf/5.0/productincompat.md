@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34186762"
 ---
 # <a name="product-compatibility-status"></a><span data-ttu-id="694e1-102">Estado de compatibilidad de producto</span><span class="sxs-lookup"><span data-stu-id="694e1-102">Product Compatibility Status</span></span>
 

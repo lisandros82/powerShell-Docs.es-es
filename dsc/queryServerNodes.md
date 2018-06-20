@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225630"
 ---
 # <a name="dsc-function-to-query-node-information-from-pull-server"></a><span data-ttu-id="f2728-103">Función de DSC para consultar información de un nodo de un servidor de extracción.</span><span class="sxs-lookup"><span data-stu-id="f2728-103">DSC function to query node information from pull server.</span></span>
 

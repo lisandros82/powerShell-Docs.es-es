@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30948217"
 ---
 # <a name="object-pipeline"></a><span data-ttu-id="83ce3-103">Canalización de objetos</span><span class="sxs-lookup"><span data-stu-id="83ce3-103">Object Pipeline</span></span>
 <span data-ttu-id="83ce3-104">Las canalizaciones actúan como una serie de segmentos de canalización conectados.</span><span class="sxs-lookup"><span data-stu-id="83ce3-104">Pipelines act like a series of connected segments of pipe.</span></span> <span data-ttu-id="83ce3-105">Los elementos que se mueven por la canalización pasan a través de cada segmento.</span><span class="sxs-lookup"><span data-stu-id="83ce3-105">Items moving along the pipeline pass through each segment.</span></span> <span data-ttu-id="83ce3-106">Para crear una canalización en Windows PowerShell, se conectan comandos con el operador de canalización "|".</span><span class="sxs-lookup"><span data-stu-id="83ce3-106">To create a pipeline in Windows PowerShell, you connect commands together with the pipe operator "|".</span></span> <span data-ttu-id="83ce3-107">La salida de cada comando se usa como entrada para el siguiente.</span><span class="sxs-lookup"><span data-stu-id="83ce3-107">The output of each command is used as input to the next command.</span></span>

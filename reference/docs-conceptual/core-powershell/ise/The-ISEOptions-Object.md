@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953657"
 ---
 # <a name="the-iseoptions-object"></a><span data-ttu-id="8ba9f-103">El objeto ISEOptions</span><span class="sxs-lookup"><span data-stu-id="8ba9f-103">The ISEOptions Object</span></span>
 

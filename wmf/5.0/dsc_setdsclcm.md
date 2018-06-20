@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187068"
 ---
 # <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a><span data-ttu-id="2046f-102">El cmdlet Set-DscLocalConfigurationManager admite el parámetro -force</span><span class="sxs-lookup"><span data-stu-id="2046f-102">Set-DscLocalConfigurationManager cmdlet supports -force parameter</span></span>
 

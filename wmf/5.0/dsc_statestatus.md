@@ -6,6 +6,7 @@ ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34482920"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a><span data-ttu-id="e63c6-102">Estado coherente unificado y representación de estado</span><span class="sxs-lookup"><span data-stu-id="e63c6-102">Unified and Consistent State and Status Representation</span></span>
 

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219494"
 ---
 # <a name="software-discovery-install-and-inventory-with-packagemanagement"></a><span data-ttu-id="fc09b-102">Detección, instalación e inventario de software con PackageManagement</span><span class="sxs-lookup"><span data-stu-id="fc09b-102">Software Discovery, Install and Inventory with PackageManagement</span></span>
 

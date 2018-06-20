@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219538"
 ---
 # <a name="register-a-powershell-repository"></a><span data-ttu-id="9ed5b-102">Registrar un repositorio de PowerShell</span><span class="sxs-lookup"><span data-stu-id="9ed5b-102">Register a PowerShell Repository</span></span>
 <span data-ttu-id="9ed5b-103">Puede configurar PowerShellGet para operar en repositorios internos.</span><span class="sxs-lookup"><span data-stu-id="9ed5b-103">You can configure PowerShellGet to operate against internal repositories.</span></span> <span data-ttu-id="9ed5b-104">Esto se realiza mediante las siguientes adiciones:</span><span class="sxs-lookup"><span data-stu-id="9ed5b-104">This is done by using the following additions:</span></span>

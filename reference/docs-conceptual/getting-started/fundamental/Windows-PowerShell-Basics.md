@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950544"
 ---
 # <a name="windows-powershell-basics"></a><span data-ttu-id="d2f5c-103">Conceptos básicos de Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="d2f5c-103">Windows PowerShell Basics</span></span>
 <span data-ttu-id="d2f5c-104">Las interfaces gráficas de usuario usan algunos conceptos básicos con los que la mayoría de los usuarios de equipos están familiarizados.</span><span class="sxs-lookup"><span data-stu-id="d2f5c-104">Graphical user interfaces use some basic concepts that are well known to most computer users.</span></span> <span data-ttu-id="d2f5c-105">Los usuarios confían en la sencillez de estas interfaces para realizar tareas.</span><span class="sxs-lookup"><span data-stu-id="d2f5c-105">Users rely on the familiarity of those interfaces to accomplish tasks.</span></span> <span data-ttu-id="d2f5c-106">Los sistemas operativos presentan a los usuarios una representación gráfica de los elementos que se pueden examinar, generalmente menús desplegables para acceder a funcionalidades específicas y menús contextuales para acceder a la funcionalidades específicas del contexto.</span><span class="sxs-lookup"><span data-stu-id="d2f5c-106">Operating systems present users with a graphical representation of items that can be browsed, usually with drop-down menus for accessing specific functionality and context menus for accessing context-specific functionality.</span></span>

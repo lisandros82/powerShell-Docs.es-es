@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189387"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a><span data-ttu-id="de79f-103">Configuración del Administrador de configuración local en versiones anteriores de Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="de79f-103">Configuring the Local Configuration Manager in Previous Versions of Windows PowerShell</span></span>
 

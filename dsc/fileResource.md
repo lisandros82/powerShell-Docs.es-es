@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218950"
 ---
 # <a name="dsc-file-resource"></a><span data-ttu-id="4c936-103">Recurso de DSC File</span><span class="sxs-lookup"><span data-stu-id="4c936-103">DSC File Resource</span></span>
 

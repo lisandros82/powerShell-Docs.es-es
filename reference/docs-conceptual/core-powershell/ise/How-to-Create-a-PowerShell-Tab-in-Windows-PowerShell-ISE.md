@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950053"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a><span data-ttu-id="79eb6-103">Cómo crear una pestaña de PowerShell en Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="79eb6-103">How to Create a PowerShell Tab in Windows PowerShell ISE</span></span>
 

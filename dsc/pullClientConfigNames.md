@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188098"
 ---
 # <a name="setting-up-a-pull-client-using-configuration-names"></a><span data-ttu-id="4ff1a-103">Configuración de un cliente de extracción mediante nombres de configuración</span><span class="sxs-lookup"><span data-stu-id="4ff1a-103">Setting up a pull client using configuration names</span></span>
 

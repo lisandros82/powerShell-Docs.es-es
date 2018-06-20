@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187017"
 ---
 # <a name="using-resources-with-multiple-versions"></a><span data-ttu-id="4d1c3-103">Uso de recursos con varias versiones</span><span class="sxs-lookup"><span data-stu-id="4d1c3-103">Using resources with multiple versions</span></span>
 

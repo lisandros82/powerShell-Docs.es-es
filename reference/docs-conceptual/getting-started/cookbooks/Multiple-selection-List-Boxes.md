@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954898"
 ---
 # <a name="multiple-selection-list-boxes"></a><span data-ttu-id="a29b0-103">Cuadros de lista de selección múltiple</span><span class="sxs-lookup"><span data-stu-id="a29b0-103">Multiple-selection List Boxes</span></span>
 

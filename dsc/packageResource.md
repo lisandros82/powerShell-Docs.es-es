@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188537"
 ---
 # <a name="dsc-package-resource"></a><span data-ttu-id="37d90-103">Recursos de DSC Package</span><span class="sxs-lookup"><span data-stu-id="37d90-103">DSC Package Resource</span></span>
 

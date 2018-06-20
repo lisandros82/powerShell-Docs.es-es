@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190356"
 ---
 # <a name="dsc-windowspackagecab-resource"></a><span data-ttu-id="489ed-103">Recurso WindowsPackageCab de DSC</span><span class="sxs-lookup"><span data-stu-id="489ed-103">DSC WindowsPackageCab Resource</span></span>
 

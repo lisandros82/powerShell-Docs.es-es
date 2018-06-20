@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222118"
 ---
 # <a name="managing-item-owners"></a><span data-ttu-id="b6aa1-103">Administrar propietarios de elementos</span><span class="sxs-lookup"><span data-stu-id="b6aa1-103">Managing item owners</span></span>
 

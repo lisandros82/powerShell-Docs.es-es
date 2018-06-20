@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951076"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a><span data-ttu-id="a40bd-103">Descripción de la canalización de Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="a40bd-103">Understanding the Windows PowerShell Pipeline</span></span>
 <span data-ttu-id="a40bd-104">La canalización funciona prácticamente en cualquier lugar en Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="a40bd-104">Piping works virtually everywhere in Windows PowerShell.</span></span> <span data-ttu-id="a40bd-105">Aunque se ve texto en la pantalla, Windows PowerShell no canaliza texto entre los comandos.</span><span class="sxs-lookup"><span data-stu-id="a40bd-105">Although you see text on the screen, Windows PowerShell does not pipe text between commands.</span></span> <span data-ttu-id="a40bd-106">En su lugar, canaliza objetos.</span><span class="sxs-lookup"><span data-stu-id="a40bd-106">Instead, it pipes objects.</span></span>

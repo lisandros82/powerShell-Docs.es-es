@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225545"
 ---
 # <a name="details-about-configuration-status"></a><span data-ttu-id="0f21e-102">Detalles sobre el estado de configuración</span><span class="sxs-lookup"><span data-stu-id="0f21e-102">Details about Configuration Status</span></span>
 

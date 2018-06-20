@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953827"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a><span data-ttu-id="dea44-103">Métodos abreviados de teclado para Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="dea44-103">Keyboard Shortcuts for the Windows PowerShell ISE</span></span>
 

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222027"
 ---
 # <a name="wow64-support-for-configuration-keyword"></a><span data-ttu-id="90d69-102">Compatibilidad de WOW64 con la palabra clave Configuration</span><span class="sxs-lookup"><span data-stu-id="90d69-102">WOW64 support for Configuration Keyword</span></span>
 

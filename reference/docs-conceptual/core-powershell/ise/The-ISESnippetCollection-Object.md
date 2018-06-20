@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950957"
 ---
 # <a name="the-isesnippetcollection-object"></a><span data-ttu-id="e7277-103">El objeto ISESnippetCollection</span><span class="sxs-lookup"><span data-stu-id="e7277-103">The ISESnippetCollection Object</span></span>
 

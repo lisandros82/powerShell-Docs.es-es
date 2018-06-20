@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188571"
 ---
 # <a name="prerelease-versions-of-scripts"></a><span data-ttu-id="b3071-103">Versiones preliminares de scripts</span><span class="sxs-lookup"><span data-stu-id="b3071-103">Prerelease versions of scripts</span></span>
 
