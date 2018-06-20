@@ -8,6 +8,7 @@ ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34048610"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>Requerir aceptación de licencia para scripts
 

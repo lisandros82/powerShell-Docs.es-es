@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953130"
 ---
 # <a name="starting-windows-powershell"></a>Iniciar Windows PowerShell
 PowerShell es una dll de motor de scripting que se inserta en varios hosts.  Los hosts más comunes que iniciará son la línea de comandos interactiva PowerShell.exe y el entorno de scripting interactivo PowerShell_ISE.exe.

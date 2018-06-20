@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34186837"
 ---
 # <a name="known-issues-and-limitations"></a>Problemas y limitaciones conocidos
 

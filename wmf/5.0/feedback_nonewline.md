@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189812"
 ---
 # <a name="nonewline-parameter"></a>Parámetro NoNewLine
 **Out-File**, **Add-Content** y **Set-Content** tienen ahora un nuevo modificador **–NoNewline**, que simplemente omite una nueva línea después de la salida.

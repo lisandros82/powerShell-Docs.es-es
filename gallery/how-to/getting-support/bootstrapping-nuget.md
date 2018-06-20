@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221806"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Arrancar el proveedor de NuGet y NuGet.exe
 
