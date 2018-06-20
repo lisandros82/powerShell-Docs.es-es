@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218389"
 ---
 # <a name="frequencies-for-refreshmode-and-configurationmode-dont-need-to-be-multiples-of-each-other"></a><span data-ttu-id="e1a4d-102">Las frecuencias de RefreshMode y ConfigurationMode no tienen que ser múltiplos una de la otra</span><span class="sxs-lookup"><span data-stu-id="e1a4d-102">Frequencies for RefreshMode and ConfigurationMode don't need to be multiples of each other</span></span>
 

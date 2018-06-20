@@ -8,6 +8,7 @@ ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/27/2018
+ms.locfileid: "32018066"
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a><span data-ttu-id="84dc9-103">Obtener objetos de WMI (Get-WmiObject)</span><span class="sxs-lookup"><span data-stu-id="84dc9-103">Getting WMI Objects (Get-WmiObject)</span></span>
 

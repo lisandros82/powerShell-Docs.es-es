@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187109"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a><span data-ttu-id="1b22c-102">Mejoras en la depuración de scripts de PowerShell</span><span class="sxs-lookup"><span data-stu-id="1b22c-102">Improvements in PowerShell Script Debugging</span></span>
 

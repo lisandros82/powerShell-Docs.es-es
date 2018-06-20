@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225528"
 ---
 # <a name="report-configuration-status-to-central-location"></a><span data-ttu-id="350b0-102">Notificar el estado de configuración a una ubicación central</span><span class="sxs-lookup"><span data-stu-id="350b0-102">Report Configuration Status to Central Location</span></span>
 
