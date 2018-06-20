@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950974"
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a>Preparativos para usar Windows PowerShell
 Cuando instale e inicie Windows PowerShell ISE, considere las siguientes opciones de configuración. Puede realizar estas tareas en cualquier momento.

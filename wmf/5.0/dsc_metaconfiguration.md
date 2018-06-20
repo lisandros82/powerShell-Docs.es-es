@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225715"
 ---
 # <a name="configure-dsc-lcm-with-new-meta-configuration-attribute"></a>Configurar el LCM de DSC con el nuevo atributo de metaconfiguración
 

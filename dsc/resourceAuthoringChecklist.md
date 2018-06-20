@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189965"
 ---
 # <a name="resource-authoring-checklist"></a>Lista de comprobación de creación de recursos
 Esta lista de comprobación es una lista de procedimientos recomendados cuando se crea un nuevo recurso de DSC.

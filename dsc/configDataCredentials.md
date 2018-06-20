@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190050"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Opciones de credenciales en los datos de configuración
 >Se aplica a: Windows PowerShell 5.0
