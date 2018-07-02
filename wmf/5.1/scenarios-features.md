@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Nuevos escenarios y características de WMF 5.1
-ms.openlocfilehash: 77b439e61c5802f8ddbc4a0f39923cc8c0c36fe9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
+ms.sourcegitcommit: 50b66cada6943784b8d3c103cebc3c1e3e286a16
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190322"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090370"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Nuevos escenarios y características de WMF 5.1
 
@@ -25,12 +25,12 @@ A partir de la versión 5.1, PowerShell está disponible en diferentes ediciones
 
 - [Determinación de la edición de ejecución de PowerShell con $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [Filtrado de los resultados de Get-Module mediante CompatiblePSEditions con el parámetro PSEdition](/powershell/module/microsoft.powershell.core/get-module)
-- [Impedir la ejecución de scripts, a menos que se ejecuten en una edición compatible de PowerShell](/powershell/gallery/psget/script/scriptwithpseditionsupport)
-- [Declarar la compatibilidad de un módulo con versiones específicas de PowerShell](/powershell/gallery/psget/module/modulewithpseditionsupport)
+- [Impedir la ejecución de scripts, a menos que se ejecuten en una edición compatible de PowerShell](/powershell/gallery/concepts/script-psedition-support)
+- [Declarar la compatibilidad de un módulo con versiones específicas de PowerShell](/powershell/gallery/concepts/module-psedition-support)
 
 ## <a name="catalog-cmdlets"></a>Cmdlets del catálogo
 
-Hemos agregado dos nuevos cmdlets en el módulo [Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) para generar y validar los archivos de catálogo de Windows.
+Hemos agregado dos nuevos cmdlets en el módulo [Microsoft.PowerShell.Security](/powershell/module/microsoft.powershell.security) para generar y validar los archivos de catálogo de Windows.
 
 ### <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
@@ -57,7 +57,7 @@ Esto crea el archivo de catálogo.
 
 ![](../images/CatalogFile2.jpg)
 
-Para comprobar la integridad del archivo de catálogo (Pester.cat en el ejemplo anterior), fírmelo mediante el cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx).
+Para comprobar la integridad del archivo de catálogo (Pester.cat en el ejemplo anterior), fírmelo mediante el cmdlet [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature).
 
 ### <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
@@ -73,7 +73,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 Este cmdlet compara los hashes y rutas de acceso relativas de los archivos que se encuentran en el *catálogo* con los de los que están en el *disco*.
 Si se detecta cualquier error de coincidencia entre los hashes y las rutas de acceso de los archivos devuelve el estado *ValidationFailed*.
 Los usuarios pueden recuperar toda esta información mediante el parámetro *-Detailed*.
-También muestra el estado de firma del catálogo en la propiedad *Signature*, lo que equivale a llamar al cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) en el archivo de catálogo.
+También muestra el estado de firma del catálogo en la propiedad *Signature*, lo que equivale a llamar al cmdlet [Get-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Get-AuthenticodeSignature) en el archivo de catálogo.
 El usuario también puede omitir cualquier archivo durante la validación mediante el parámetro *FilesToSkip -*.
 
 ## <a name="module-analysis-cache"></a>Caché de análisis de módulo
@@ -115,7 +115,7 @@ Antes no había forma de especificar una versión concreta del módulo; si habí
 
 En WMF 5.1:
 
-- Puede usar el [constructor ModuleSpecification (tabla hash)](https://msdn.microsoft.com/library/jj136290).
+- Puede usar el [constructor ModuleSpecification (tabla hash)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 Esta tabla hash tiene el mismo formato que `Get-Module -FullyQualifiedName`.
 
 **Ejemplo:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
