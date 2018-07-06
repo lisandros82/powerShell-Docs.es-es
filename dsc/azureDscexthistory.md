@@ -1,14 +1,14 @@
 ---
 description: Obtenga información sobre el historial de versiones para la extensión Desired State Configuration (DSC) de Azure.
-ms.date: 05/09/2018
+ms.date: 06/21/2018
 keywords: dsc, powershell, azure, extensión
 title: Historial de versiones de la extensión DSC de Azure
-ms.openlocfilehash: 81dfcf81bd8f8685a0c8c81cd07bc5447e1abf94
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 25248288291b9bf8efe6ce1eef203a552cd17736
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189948"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940334"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Historial de versiones de la extensión Desired State Configuration de Azure
 
@@ -16,12 +16,12 @@ La extensión para máquinas virtuales Desired State Configuration (DSC) de Azur
 
 En este artículo se ofrece información sobre cada versión de la extensión DSC de Azure para máquinas virtuales y los entornos con los que es compatible, así como comentarios sobre nuevas características o cambios.
 
-## <a name="latest-versions"></a>Últimas versiones
+## <a name="latest-version"></a>Versión más reciente
 
 ### <a name="version-276"></a>Versión 2.76
 
 - **Fecha de publicación:**
-  - 9 de mayo de 2018
+  - 9 de mayo de 2018 (Azure) | 21 de junio de 2018 (Azure China y Azure Government)
 - **Sistemas operativos admitidos:**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -36,30 +36,11 @@ En este artículo se ofrece información sobre cada versión de la extensión DS
   - WMF 4.0
 - **Entorno:**
   - Azure
+  - Azure China
+  - Azure Government
 - **Comentarios:** En esta versión se usa DSC tal y como se incluye en Windows Server 2016. Para otros sistemas operativos Windows, instale [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/). Después de instalarlo, tendrá que reiniciar el equipo. En el caso de Nano Server, el rol de DSC se instala en la máquina virtual.
 - **Nuevas características**
   - Se han mejorado los metadatos de extensión de los subestados y se han aplicado otras correcciones de errores.
-
-### <a name="version-219"></a>Versión 2.19
-
-- **Fecha de publicación:**
-  - 3 de junio de 2016
-- **Sistemas operativos admitidos:**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 SP1
-- **Compatibilidad con WMF:**
-  - WMF 5.0 RTM
-  - Actualización de WMF 4.0
-  - WMF 4.0
-- **Entorno:**
-  - Azure
-  - Azure China
-  - Azure Government
-- **Comentarios:** En esta versión se usa DSC tal y como se incluye en Windows Server 2016 Technical Preview. Para otros sistemas operativos, instale [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). Después de instalarlo, tendrá que reiniciar el equipo.
-- **Nuevas características**
-  - Ahora la extensión DSC está incorporada en Azure China. Esta versión contiene principalmente correcciones para ejecutar la extensión en Azure China.
 
 ## <a name="supported-versions"></a>Versiones compatibles de
 

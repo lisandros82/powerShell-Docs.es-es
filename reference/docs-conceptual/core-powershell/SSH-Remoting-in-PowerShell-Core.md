@@ -55,6 +55,22 @@ Además deberá habilitar la autenticación de contraseña y, opcionalmente, la 
     ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
+    
+    > [!NOTE]
+    Hay un error en OpenSSH para Windows que impide que los espacios funcionen en rutas de acceso ejecutables del subsistema.
+    Para obtener más información, vea [este problema en GitHub](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    
+    Una solución consiste en crear un vínculo simbólico al directorio de instalación de Powershell que no contenga espacios:
+    
+    ```powershell
+    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+    ```
+
+    Después, escríbalo en el subsistema:
+ 
+    ```
+    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
+    ```
 
     - Opcionalmente, habilite la autenticación de clave.
 
