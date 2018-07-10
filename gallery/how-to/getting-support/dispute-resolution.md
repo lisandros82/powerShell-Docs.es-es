@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Resolución de conflictos
-ms.openlocfilehash: 2a291773ae9391e417e14c4ec0b75379e0bf4640
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a3a3b160366dc17f2fe0d1721d275387700e71e4
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221840"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892357"
 ---
 # <a name="dispute-resolution"></a>Resolución de conflictos
 
@@ -17,11 +17,11 @@ Este documento contiene el proceso recomendado de resolución de conflictos para
 ## <a name="process"></a>Proceso
 
 1. Si tiene un conflicto, póngase en contacto con los propietarios del elemento mediante el vínculo **Contact Owners** (Ponerse en contacto con los propietarios) en la página de detalles del elemento.
-Explique amablemente el problema de manera concisa.
+   Explique amablemente el problema de manera concisa.
 2. Envíe una copia del mensaje a [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) para que los administradores de la Galería de PowerShell conozcan el conflicto.
 3. Espere un máximo de 30 días y, si no recibe una solución, envíe otra notificación a [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com).
-El equipo de soporte técnico de PowerShellGallery.com se encargará del asunto e intentará resolverlo.
 
+El equipo de soporte técnico de PowerShellGallery.com se encargará del asunto e intentará resolverlo.
 
 ## <a name="prohibited-use"></a>Uso prohibido
 
@@ -32,9 +32,8 @@ No está permitido lo siguiente en la Galería de PowerShell pública y se quita
 - Infracción de los derechos de autor o de la licencia.
 - Contenido ilegal.
 - Apropiarse de nombres de elemento que tiene pensado usar, pero que en realidad no usa. Esto también incluye la publicación de elementos sin contenido productivo.
-En estos casos, publique el código y prosiga con su trabajo o cédale el nombre a alguien que realmente tenga un producto que enviar.
+  En estos casos, publique el código y prosiga con su trabajo o cédale el nombre a alguien que realmente tenga un producto que enviar.
 - Intentar que la Galería haga algo para lo que no está diseñada explícitamente.
-
 
 Si detecta un elemento que infringe cualquiera de los puntos anteriores, haga clic en el vínculo Notificar abuso en la página de detalles del elemento y envíe un informe.
 

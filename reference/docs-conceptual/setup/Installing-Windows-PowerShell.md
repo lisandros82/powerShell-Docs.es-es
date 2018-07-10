@@ -2,14 +2,15 @@
 ms.date: 08/09/2017
 keywords: powershell,cmdlet,descargar,instalar,configurar,windows 10,windows 8.1,windows 8.0,windows 7
 title: Instalación de Windows PowerShell
-ms.openlocfilehash: 89f0f689ebfcd34dd4c8ec3824ec8ab4bddc34d9
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: e703d3444b1d661c482b314781cf9a1cb16ef7ed
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483005"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893528"
 ---
 # <a name="installing-windows-powershell"></a>Instalación de Windows PowerShell
+
 A partir de las ediciones Windows 7 SP1 y Windows Server 2008 R2 SP1, Windows PowerShell viene instalado en Windows de forma predeterminada.
 
 Si está interesado en PowerShell 6 y versiones posteriores, debe instalar PowerShell Core en lugar de Windows PowerShell. Para ello, consulte [Instalación de PowerShell Core en Windows](Installing-PowerShell-Core-on-Windows.md).
@@ -74,19 +75,20 @@ Windows 8.1<br/>Windows Server 2012 R2 | - | Instalado | [WMF 5.0](https://www.m
 Windows 8<br/>Windows Server 2012 | Instalado | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 
-> **Nota 1**:
-  >>
-  >> En la versión inicial de Windows 10, con las actualizaciones automáticas habilitadas, PowerShell se actualiza de la versión 5.0 a la 5.1.
-  >>
-  >> Si no se actualiza la versión original de Windows 10 mediante las actualizaciones de Windows, la versión de PowerShell será la 5.0.
+> [!NOTE]
+>
+> En la versión inicial de Windows 10, con las actualizaciones automáticas habilitadas, PowerShell se actualiza de la versión 5.0 a la 5.1.
+>
+> Si no se actualiza la versión original de Windows 10 mediante las actualizaciones de Windows, la versión de PowerShell será la 5.0.
 
 ## <a name="need-azure-powershell"></a>Obtención de Azure PowerShell
 
-Si está buscando **Azure PowerShell**, puede empezar por el artículo [Overview of Azure PowerShell](https://docs.microsoft.com/powershell/azure) (Información general sobre Azure PowerShell).
+Si está buscando **Azure PowerShell**, puede empezar por el artículo [Overview of Azure PowerShell](/powershell/azure/overview) (Información general sobre Azure PowerShell).
 
-De lo contrario, consulte [Install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps) (Instalación y configuración de Azure PowerShell).
+De lo contrario, consulte [Install and configure Azure PowerShell](/powershell/azure/install-azurerm-ps) (Instalación y configuración de Azure PowerShell).
 
 ## <a name="see-also"></a>Véase también
 
-- [Requisitos del sistema de Windows PowerShell](Windows-PowerShell-System-Requirements.md)
-- [Inicio de Windows PowerShell](Starting-Windows-PowerShell.md)
+[Requisitos del sistema de Windows PowerShell](Windows-PowerShell-System-Requirements.md)
+
+[Inicio de Windows PowerShell](Starting-Windows-PowerShell.md)

@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Valores de los archivos de manifiesto de los elementos que afectan a la interfaz de usuario de Galería de PowerShell
-ms.openlocfilehash: 39522396b179c54b981e6292cddacec27b32506c
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34048660"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893484"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valores de los archivos de manifiesto de los elementos que afectan a la interfaz de usuario de Galería de PowerShell
 
@@ -16,8 +16,8 @@ Este tema proporciona a los editores información resumida sobre cómo modificar
 Este contenido está organizado por donde aparecerá el cambio, primero por la sección central y después por el área de navegación a la izquierda. Hay una sección detallada que cubre las etiquetas, que identifica las etiquetas importantes, así como algunas de las etiquetas más utilizadas.
 Hay dos temas que proporcionan ejemplos de manifiestos:
 
-- Para los módulos, consulte el artículo para [actualizar un archivo de manifiesto de módulo](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest).
-- Para los scripts, consulte el artículo para [crear un archivo de script con metadatos](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo).
+- Para los módulos, consulte el artículo para [actualizar un archivo de manifiesto de módulo](/powershell/module/powershellget/Update-ModuleManifest).
+- Para los scripts, consulte el artículo para [crear un archivo de script con metadatos](/powershell/module/powershellget/New-ScriptFileInfo).
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>Elementos de la característica Galería de PowerShell controlados por el manifiesto
 
@@ -27,11 +27,11 @@ Cada elemento indica si se puede controlar por el manifiesto del módulo o del s
 | Elemento de UI | Descripción | Módulo | Script |
 | --- | --- | --- | --- |
 | **Título** | Este es el nombre del elemento que se publica en la galería  | No | No |
-| **Versión** | La versión que se muestra es la cadena de versión de los metadatos y una versión preliminar si está especificada. La parte principal de la versión en un manifiesto de módulo es ModuleVersion. Para un script, se identifica como .VERSION. Si se especifica una cadena de versión preliminar, se anexará a ModuleVersion para los módulos, o se especificará como parte de .VERSION para los scripts. Hay documentación para especificar las cadenas de versión preliminar en los [módulos](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule) y en los [scripts](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript). | Sí | Sí |
+| **Versión** | La versión que se muestra es la cadena de versión de los metadatos y una versión preliminar si está especificada. La parte principal de la versión en un manifiesto de módulo es ModuleVersion. Para un script, se identifica como .VERSION. Si se especifica una cadena de versión preliminar, se anexará a ModuleVersion para los módulos, o se especificará como parte de .VERSION para los scripts. Hay documentación para especificar las cadenas de versión preliminar en los [módulos](/powershell/gallery/concepts/module-prerelease-support) y en los [scripts](/powershell/gallery/concepts/script-prerelease-support). | Sí | Sí |
 | **Descripción** | Esta es la descripción del manifiesto de módulo y en un manifiesto del archivo de script es .DESCRIPTION. | Sí | Sí |
-| **Requerir aceptación de licencia** | Un módulo puede requerir que el usuario acepte una licencia modificando el manifiesto del módulo con RequireLicenseAcceptance = $true, suministrando un LicenseURI y proporcionando un archivo license.txt en la raíz de la carpeta del módulo. Está disponible información adicional en el tema [Requerir la aceptación de la licencia](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_requires_license_acceptance). | Sí | No |
+| **Requerir aceptación de licencia** | Un módulo puede requerir que el usuario acepte una licencia modificando el manifiesto del módulo con RequireLicenseAcceptance = $true, suministrando un LicenseURI y proporcionando un archivo license.txt en la raíz de la carpeta del módulo. Está disponible información adicional en el tema [Requerir la aceptación de la licencia](/powershell/gallery/how-to/working-with-items/items-that-require-license-acceptance). | Sí | No |
 | **Notas de la versión** | En los módulos, esta información se extrae de la sección ReleaseNotes, en PSData\PrivateData. En los manifiestos de scripts, es el elemento .RELEASENOTES. | Sí | Sí |
-| **Propietarios** | Los propietarios son la lista de usuarios en Galería de PowerShell que pueden actualizar un elemento. La lista de propietarios no se incluye en el manifiesto del elemento. Hay documentación adicional que describe cómo [administrar propietarios de elementos](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners). | No | No |
+| **Propietarios** | Los propietarios son la lista de usuarios en Galería de PowerShell que pueden actualizar un elemento. La lista de propietarios no se incluye en el manifiesto del elemento. Hay documentación adicional que describe cómo [administrar propietarios de elementos](/powershell/gallery/how-to/publishing-items/managing-item-owners). | No | No |
 | **Autor** | Se incluye en el manifiesto del módulo como Author y en un manifiesto del script como .AUTHOR. El campo Autor a menudo se usa para especificar una empresa u organización asociada a un elemento. | Sí | Sí |
 | **Copyright** | Este es el campo Copyright del manifiesto del módulo y .COPYRIGHT en un manifiesto del script. | Sí | Sí |
 | **Lista de archivos** | La lista de archivos se extrae desde el paquete cuando se publica en Galería de PowerShell. No se puede controlar mediante la información del manifiesto. Nota: Hay un archivo .nuspec adicional enumerado con cada elemento de Galería de PowerShell que no está presente después de instalar el elemento en un sistema. Es el manifiesto del paquete Nuget para el elemento y puede omitirse. | No | No |
@@ -41,7 +41,7 @@ Cada elemento indica si se puede controlar por el manifiesto del módulo o del s
 | **Recursos de DSC** | En los módulos que se usarán en PowerShell versión 5.0 y versiones posteriores, se proporciona en el manifiesto mediante DscResourcesToExport. Si el módulo se va a usar en PowerShell 4, no debe usarse DSCResourcesToExport ya que no es una clave de manifiestos compatible. (DSC no estaba disponible antes de PowerShell 4). | Sí | No |
 | **Flujos de trabajo** | Los flujos de trabajo se publican en Galería de PowerShell como scripts y se identifican como flujos de trabajo en el código (consulte [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) para obtener un ejemplo). Esto no lo controla el manifiesto. | No | No |
 | **Funcionalidades de rol** | Esto se mostrará cuando el módulo publicado en Galería de PowerShell contiene uno o más archivos de función de funcionalidad de rol (.psrc) que utilice JEA. Consulte la documentación de JEA para más información sobre [las funcionalidades de rol](https://docs.microsoft.com/en-us/powershell/jea/role-capabilities). | Sí | No |
-| **Ediciones de PowerShell** | Esto se especifica en el manifiesto del script o del módulo. Para los módulos diseñados para usarse con PowerShell 5.0 y versiones anteriores, esto se controlaba mediante etiquetas. Para equipos de escritorio, utilice la etiqueta PSEdition_Desktop y para núcleos, utilice la etiqueta PSEdition_Core. En el caso de los módulos que se van a usar solo en PowerShell 5.1 y versiones posteriores, hay una clave CompatiblePSEditions en el manifiesto principal. Para más detalles, consulte la característica de PS Edition en [la documentación de PowerShell Get](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport). | Sí | Sí |
+| **Ediciones de PowerShell** | Esto se especifica en el manifiesto del script o del módulo. Para los módulos diseñados para usarse con PowerShell 5.0 y versiones anteriores, esto se controlaba mediante etiquetas. Para equipos de escritorio, utilice la etiqueta PSEdition_Desktop y para núcleos, utilice la etiqueta PSEdition_Core. En el caso de los módulos que se van a usar solo en PowerShell 5.1 y versiones posteriores, hay una clave CompatiblePSEditions en el manifiesto principal. Para más detalles, consulte la característica de PS Edition en [la documentación de PowerShell Get](/powershell/gallery/concepts/module-psedition-support). | Sí | Sí |
 | **Dependencias** | Las dependencias son los módulos de Galería de PowerShell que se declaran bien en el módulo como RequiredModules o en el manifiesto del script como #Requires -Module (nombre). | Sí | Sí |
 | **Versión mínima de PowerShell** | Se puede especificar en un manifiesto de módulo como PowerShellVersion | Sí | No |
 | **Historial de versiones** | El historial de versiones refleja las actualizaciones realizadas en un módulo en Galería de PowerShell. Si una versión de un elemento está oculta por la característica de eliminación, no se mostrará en el historial de versiones, excepto a los propietarios del elemento. | No | No |
@@ -83,7 +83,6 @@ Idealmente, habrá muchos elementos devueltos, y las descripciones de los mismos
 Como referencia, estas son algunas etiquetas más utilizadas desde el 14/12/2017.
 En algunos casos, hay opciones similares pero quizá menos adecuadas que se muestran al lado de la etiqueta.
 Es un procedimiento recomendado usar la etiqueta preferida, ya que producirá menos ruido y mejorará los resultados de búsqueda para los consumidores.
-
 
 | **Etiqueta preferida** | **Alternativas y notas** |
 | --- | --- |

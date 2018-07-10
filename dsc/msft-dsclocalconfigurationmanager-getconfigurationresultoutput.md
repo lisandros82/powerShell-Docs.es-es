@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Método GetConfigurationResultOutput de la clase MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 73d10a8b44e5056e3fce1598518630a84aff6ceb
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ea572a4a66befd4e4b8d83e2957632b1b5ed7d93
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186813"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893950"
 ---
 # <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método GetConfigurationResultOutput de la clase MSFT_DSCLocalConfigurationManager
 
 Obtiene la salida del agente de configuración asociada con un trabajo específico.
 
-<a name="syntax"></a>Sintaxis
-------
+## <a name="syntax"></a>Sintaxis
 
 ```mof
 uint32 GetConfigurationResultOutput(
@@ -24,8 +23,7 @@ uint32 GetConfigurationResultOutput(
 );
 ```
 
-<a name="parameters"></a>Parámetros
-----------
+## <a name="parameters"></a>Parámetros
 
 *jobId* \[in\] Identificador del trabajo del que quiere obtener datos de salida.
 
@@ -34,7 +32,6 @@ uint32 GetConfigurationResultOutput(
 *output* \[out\] Salida del trabajo especificado.
 
 ## <a name="return-value"></a>Valor devuelto
-------------
 
 Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código de error.
 
@@ -43,13 +40,11 @@ Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código 
 Se trata de un método estático.
 
 ## <a name="requirements"></a>Requisitos
-------------
->**MOF:** DscCore.mof
 
->**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Vea también
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

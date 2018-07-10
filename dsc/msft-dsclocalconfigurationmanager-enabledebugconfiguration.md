@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Método EnableDebugConfiguration de la clase MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 9e2a978f9d16abaed959be022229db4da5fd65bd
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b2eaebfa901cb5d93fd0183287073e6b31f975d1
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218202"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892406"
 ---
 # <a name="enabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método EnableDebugConfiguration de la clase MSFT_DSCLocalConfigurationManager
 
 Habilita la depuración de recursos de DSC.
 
-<a name="syntax"></a>Sintaxis
-------
+## <a name="syntax"></a>Sintaxis
 
 ```mof
 uint32 EnableDebugConfiguration(
@@ -22,13 +21,11 @@ uint32 EnableDebugConfiguration(
 );
 ```
 
-<a name="parameters"></a>Parámetros
-----------
+## <a name="parameters"></a>Parámetros
 
 *BreakAll* \[in\] Establece un punto de interrupción en cada línea del script de recursos.
 
 ## <a name="return-value"></a>Valor devuelto
-------------
 
 Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código de error.
 
@@ -37,13 +34,11 @@ Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código 
 Se trata de un método estático.
 
 ## <a name="requirements"></a>Requisitos
-------------
->**MOF:** DscCore.mof
 
->**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Vea también
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

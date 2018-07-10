@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Método GetMetaConfiguration de la clase MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: ebf2b65f152c622ccf42e12545b0048a0b96d963
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e14237ef68b95d68e2f14071aa1fa6ba0717f39f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219783"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892848"
 ---
 # <a name="getmetaconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método GetMetaConfiguration de la clase MSFT_DSCLocalConfigurationManager
 
 Obtiene la configuración del Administrador de configuración local que se usa para controlar el agente de configuración.
 
-<a name="syntax"></a>Sintaxis
-------
+## <a name="syntax"></a>Sintaxis
 
 ```mof
 uint32 GetMetaConfiguration(
@@ -22,13 +21,11 @@ uint32 GetMetaConfiguration(
 );
 ```
 
-<a name="parameters"></a>Parámetros
-----------
+## <a name="parameters"></a>Parámetros
 
 *MetaConfiguration* \[out\] En la devolución, contiene una instancia insertada de la clase **MSFT_DSCMetaConfiguration** que define la configuración.
 
 ## <a name="return-value"></a>Valor devuelto
-------------
 
 Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código de error.
 
@@ -37,13 +34,11 @@ Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código 
 Se trata de un método estático.
 
 ## <a name="requirements"></a>Requisitos
-------------
->**MOF:** DscCore.mof
 
->**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Vea también
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

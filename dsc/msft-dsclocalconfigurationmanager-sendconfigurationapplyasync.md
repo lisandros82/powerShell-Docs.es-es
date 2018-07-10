@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Método SendConfigurationApplyAsync de la clase MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: acd8f380f1c49eb008563398c2c3de3fce5477f9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b028079cf826719967858f50e357b441ba8f9d79
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186684"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893905"
 ---
 # <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método SendConfigurationApplyAsync de la clase MSFT_DSCLocalConfigurationManager
 
 Envía el documento de configuración de forma asincrónica al nodo administrado y usa el agente de configuración para aplicar la configuración.
 
-<a name="syntax"></a>Sintaxis
-------
+## <a name="syntax"></a>Sintaxis
 
 ```mof
 uint32 SendConfigurationApplyAsync(
@@ -24,8 +23,7 @@ uint32 SendConfigurationApplyAsync(
 );
 ```
 
-<a name="parameters"></a>Parámetros
-----------
+## <a name="parameters"></a>Parámetros
 
 *ConfigurationData* \[in\] Datos del entorno para la configuración.
 
@@ -34,7 +32,6 @@ uint32 SendConfigurationApplyAsync(
 *jobId* \[in\] Identificador del trabajo al que se va a enviar la configuración.
 
 ## <a name="return-value"></a>Valor devuelto
-------------
 
 Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código de error.
 
@@ -43,13 +40,11 @@ Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código 
 Se trata de un método estático.
 
 ## <a name="requirements"></a>Requisitos
-------------
->**MOF:** DscCore.mof
 
->**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Vea también
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

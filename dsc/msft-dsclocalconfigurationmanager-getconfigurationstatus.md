@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Método GetConfigurationStatus de la clase MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 725b1a2a62510a4e9b59aabdec8a7e502c737bfc
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c66ccc4eefaef2d0c3a68fa8a96c5abb9bda6e4c
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221772"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893066"
 ---
 # <a name="getconfigurationstatus-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método GetConfigurationStatus de la clase MSFT_DSCLocalConfigurationManager
 
 Obtiene el historial de estado de la configuración.
 
-<a name="syntax"></a>Sintaxis
-------
+## <a name="syntax"></a>Sintaxis
 
 ```mof
 uint32 GetConfigurationStatus(
@@ -23,15 +22,13 @@ uint32 GetConfigurationStatus(
 );
 ```
 
-<a name="parameters"></a>Parámetros
-----------
+## <a name="parameters"></a>Parámetros
 
 *All* \[in\] **true** si este método debe devolver información sobre toda la configuración que se ejecuta en la máquina, incluidas la aplicación de configuración y la comprobación de coherencia.
 
 *configurationStatus* \[out\] En la devolución, contiene una instancia insertada de la clase **MSFT_DSCConfigurationStatus** que define la configuración.
 
 ## <a name="return-value"></a>Valor devuelto
-------------
 
 Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código de error.
 
@@ -40,13 +37,11 @@ Devuelve cero si se ejecuta correctamente; de lo contrario, devuelve un código 
 Se trata de un método estático.
 
 ## <a name="requirements"></a>Requisitos
-------------
->**MOF:** DscCore.mof
 
->**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Vea también
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

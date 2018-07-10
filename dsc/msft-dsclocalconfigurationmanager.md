@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Clase MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 615f2998b11a0a927d3868d852e0d408f500c86d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7f6aaf209601e99b0120407eb301d32fcfda9eb8
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188842"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892280"
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>Clase MSFT_DSCLocalConfigurationManager
 
@@ -16,9 +16,8 @@ Administrador de configuración Local (LCM) que controla los estados de los arch
 La siguiente sintaxis se simplifica desde el código de Managed Object Format (MOF) e incluye todas las propiedades heredadas.
 
 ## <a name="syntax"></a>Sintaxis
-------
 
-``` syntax
+```
 [ClassVersion("1.0.0"), dynamic, provider("dsccore"), AMENDMENT]
 class MSFT_DSCLocalConfigurationManager
 {
@@ -26,11 +25,10 @@ class MSFT_DSCLocalConfigurationManager
 ```
 
 ## <a name="members"></a>Miembros
--------
 
 La clase **MSFT_DSCLocalConfigurationManager** tiene los miembros siguientes:
 
--   [Métodos][]
+- [Métodos][]
 
 ### <a name="methods"></a>Métodos
 
@@ -58,12 +56,8 @@ La clase **MSFT_DSCLocalConfigurationManager** tiene estos métodos.
 | [StopConfiguration](msft-dsclocalconfigurationmanager-stopconfiguration.md)| Detiene la configuración que está en curso.|
 | [TestConfiguration](msft-dsclocalconfigurationmanager-testconfiguration.md)| Envía el documento de configuración al nodo administrado y prueba la configuración actual frente al documento.|
 
-
-
-
-
 ## <a name="requirements"></a>Requisitos
-------------
->**MOF:** DscCore.mof
 
->**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
+
+**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
