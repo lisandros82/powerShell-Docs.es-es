@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Eliminar elementos
-ms.openlocfilehash: 3f67f78d63e5cf797d00ce43f95fb3b4f62d6f7c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 454cd404437bf1c31b9a1b81cd9dd0ac81e6b0f6
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218236"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893100"
 ---
 # <a name="deleting-items"></a>Eliminar elementos
 
@@ -20,4 +20,4 @@ A pesar de eso, es posible descargarlo si se especifica su versión exacta, que 
 
 Si surge una situación excepcional y cree que es necesario eliminar uno de los elementos, el equipo de la Galería de PowerShell puede encargarse de ello manualmente.
 Por ejemplo, un motivo válido para eliminarlo puede ser un problema relacionado con la infracción de los derechos de autor o con contenido potencialmente dañino.
-En ese caso, debe enviar una solicitud de soporte técnico a través de [Galería de PowerShell] (http://www.PowerShellGallery.com)).
+En ese caso, debe enviar una solicitud de soporte técnico a través de la [Galería de PowerShell](http://www.PowerShellGallery.com).

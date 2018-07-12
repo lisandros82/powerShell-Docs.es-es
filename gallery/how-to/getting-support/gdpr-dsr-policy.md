@@ -3,12 +3,12 @@ ms.date: 03/27/2018
 contributor: JKeithB
 keywords: gallery,powershell,psgallery,GDPR
 title: Cumplimiento del RGPD en la Galería de PowerShell
-ms.openlocfilehash: dca1a82952c284980a84caafa13b2807e47e25a0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 14b82fa07df52f02f0d7577cb0eef70faa4285a2
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189761"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893253"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>Cumplimiento del RGPD en la Galería de PowerShell
 
@@ -25,9 +25,9 @@ El RGPD se aplica con independencia de la ubicación.
 
 La Galería de PowerShell almacena la información siguiente que pueden proporcionar los usuarios y que podría contener información personal:
 
-* Cuenta de la Galería de PowerShell
-* Elementos publicados en la Galería de PowerShell
-* Comunicaciones por correo electrónico con el equipo de la Galería de PowerShell
+- Cuenta de la Galería de PowerShell
+- Elementos publicados en la Galería de PowerShell
+- Comunicaciones por correo electrónico con el equipo de la Galería de PowerShell
 
 La mayoría de los usuarios no crea una cuenta de la Galería de PowerShell.
 Dicha cuenta no es necesaria a menos que tenga intención de publicar un elemento o usar la característica "Ponerse en contacto con el propietario" de la Galería de PowerShell.
@@ -45,15 +45,15 @@ En las secciones siguientes se describe de qué forma la Galería de PowerShell 
 
 Entre las comunicaciones por correo electrónico se incluye todo lo siguiente:
 
-* Correos electrónicos enviados a los propietarios de elementos de la Galería de PowerShell, si en los exámenes de análisis de código se ha detectado un problema con algún elemento que estos han publicado en la Galería de PowerShell.
-* Correos electrónicos enviados por cualquier persona al equipo de la Galería de PowerShell mediante la dirección de correo electrónico de la página "Póngase en contacto con nosotros" (cgadmin@microsoft.com).
-* Los usuarios registrados que usen la característica "Ponerse en contacto con el propietario" de la Galería de PowerShell para enviar correos electrónicos al propietario de un elemento de la Galería de PowerShell.
+- Correos electrónicos enviados a los propietarios de elementos de la Galería de PowerShell, si en los exámenes de análisis de código se ha detectado un problema con algún elemento que estos han publicado en la Galería de PowerShell.
+- Correos electrónicos enviados por cualquier persona al equipo de la Galería de PowerShell mediante la dirección de correo electrónico de la página "Póngase en contacto con nosotros" [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com).
+- Los usuarios registrados que usen la característica "Ponerse en contacto con el propietario" de la Galería de PowerShell para enviar correos electrónicos al propietario de un elemento de la Galería de PowerShell.
 
 Para los correos electrónicos enviados a la Galería de PowerShell o mediante esta se establece una directiva de retención de 90 días para llevar a cabo las posibles investigaciones de seguridad en caso de que se detecte código malicioso en la Galería de PowerShell.
 Los correos electrónicos se eliminan de acuerdo con la directiva mencionada al cabo de 90 días.
 
 Dispone de un término de 90 días para solicitar copias de los correos electrónicos enviados a su dirección de correo electrónico o desde esta y a la Galería de PowerShell o desde esta.
-Para solicitar estas comunicaciones, envíe un correo electrónico a cgadmin@microsoft.com con el asunto "DSR Request for emails relating to this account" (Solicitud de DSR para los correos electrónicos relativos a esta cuenta).
+Para solicitar estas comunicaciones, envíe un correo electrónico a [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) con el asunto "DSR Request for emails relating to this account" (Solicitud de DSR para los correos electrónicos relativos a esta cuenta).
 En el cuerpo del mensaje, indique qué información solicita (por ejemplo, recibir todos los correos electrónicos enviados o recibidos en esta dirección de correo electrónico). Todos los correos electrónicos relacionados con su dirección de correo electrónico en los 90 días posteriores a la solicitud se enviarán en un término de 7 días laborables.
 
 ### <a name="powershell-gallery-account-information"></a>Información sobre la cuenta de la Galería de PowerShell
@@ -78,13 +78,13 @@ Este script exporta una copia de la versión de cada elemento colocado en la Gal
 Puede descargar el script usando este comando de PowerShell:
 
 ```powershell
-Save-Script GetPSGalleryItemsForAuthor -path <local folder location> -repository psgallery
+Save-Script Get-repository psgallery
 ```
 
 A continuación podrá ejecutar el script directamente mediante los siguientes comandos de PowerShell:
 
 ```powershell
-cd <local folder location >
+# cd <local folder location>
 .\GetPSGalleryItemsForAuthor.ps1
 ```
 
@@ -95,9 +95,9 @@ Se le pedirá que proporcione el autor y una carpeta en su sistema donde se debe
 Para eliminar la cuenta de la Galería de PowerShell o cualquier elemento suyo de la Galería de PowerShell, envíe un correo electrónico a cgadmin@microsoft.com con el asunto "GDPR Request for items relating to this account" (Solicitud relativa al RGPD para elementos relacionados con esta cuenta).
 En el cuerpo del mensaje, indique qué información quiere que se elimine. Por ejemplo:
 
-* Eliminar la versión x.y.z del elemento "X".
-* Eliminar todas las versiones del elemento "X".
-* Eliminar mi cuenta de la Galería de PowerShell
+- Eliminar la versión x.y.z del elemento "X".
+- Eliminar todas las versiones del elemento "X".
+- Eliminar mi cuenta de la Galería de PowerShell
 
 Los administradores de la Galería de PowerShell responderán en un término de 7 días laborables.
 Los elementos especificados se eliminarán durante los 30 días posteriores al envío de la solicitud.

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: DSC de ejecución con las credenciales de usuario
-ms.openlocfilehash: b2992ad562dea375aba980611312c7b96a23189c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4a6c3d8b561cd0a27be07a68f1b577f7bf764254
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189710"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893916"
 ---
 # <a name="running-dsc-with-user-credentials"></a>DSC de ejecución con las credenciales de usuario
 
@@ -17,15 +17,15 @@ Puede ejecutar un recurso de DSC en un conjunto de credenciales especificado med
 De forma predeterminada, DSC ejecuta cada recurso como la cuenta del sistema.
 A veces, es necesaria la ejecución como usuario, por ejemplo, al instalar paquetes MSI en un contexto de usuario específico, al configurar claves de registro de un usuario, al acceder a un directorio local específico de usuario o al acceder a un recurso compartido de red.
 
-Cada recurso de DSC tiene una propiedad **PsDscRunAsCredential** que se puede establecer en cualquier credencial de usuario (un objeto [PSCredential](https://msdn.microsoft.com/library/ms572524(v=VS.85).aspx)).
-La credencial puede codificarse de forma rígida como el valor de la propiedad de la configuración, o bien puede establecer el valor en [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx), que solicitará al usuario una credencial cuando se compile la configuración (para más información sobre la compilación de configuraciones, vea [Configuraciones](configurations.md)).
+Cada recurso de DSC tiene una propiedad **PsDscRunAsCredential** que se puede establecer en cualquier credencial de usuario (un objeto [PSCredential](/dotnet/api/system.management.automation.pscredential)).
+La credencial puede codificarse de forma rígida como el valor de la propiedad de la configuración, o bien puede establecer el valor en [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential), que solicitará al usuario una credencial cuando se compile la configuración (para más información sobre la compilación de configuraciones, vea [Configuraciones](configurations.md)).
 
->**Nota:** En PowerShell 5.0, no se admite el uso de la propiedad **PsDscRunAsCredential** en configuraciones que llaman a recursos compuestos.
->En PowerShell 5.1, la propiedad **PsDscRunAsCredential** es compatible con configuraciones que llaman a recursos compuestos.
+> [!NOTE] 
+> En PowerShell 5.0, no se admite el uso de la propiedad **PsDscRunAsCredential** en configuraciones que llaman a recursos compuestos.
+> En PowerShell 5.1, la propiedad **PsDscRunAsCredential** es compatible con configuraciones que llaman a recursos compuestos.
+> La propiedad **PsDscRunAsCredential** no está disponible en PowerShell 4.0.
 
->**Nota:** La propiedad **PsDscRunAsCredential** no está disponible en PowerShell 4.0.
-
-En el ejemplo siguiente, **Get-Credential** se usa para solicitar credenciales al usuario.
+En el ejemplo siguiente, `Get-Credential` se usa para solicitar credenciales al usuario.
 El recurso [Registry](registryResource.md) se usa para cambiar la clave del Registro que especifica el color de fondo de la ventana del símbolo del sistema de Windows.
 
 ```powershell
@@ -62,5 +62,7 @@ $configData = @{
 
 ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
->**Nota:** En este ejemplo se supone que tiene un certificado válido en `C:\publicKeys\targetNode.cer` y que la huella digital del certificado es el valor mostrado.
->Para obtener más información sobre el cifrado de credenciales en archivos MOF de configuración de DSC, vea [Proteger el archivo MOF](secureMOF.md).
+
+> [!NOTE]
+> En este ejemplo se supone que tiene un certificado válido en `C:\publicKeys\targetNode.cer` y que la huella digital del certificado es el valor mostrado.
+> Para obtener más información sobre el cifrado de credenciales en archivos MOF de configuración de DSC, vea [Proteger el archivo MOF](secureMOF.md).

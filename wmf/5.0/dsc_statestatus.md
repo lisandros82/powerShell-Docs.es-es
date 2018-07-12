@@ -1,59 +1,61 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 7b4e4dbeaf9c3c48e7b2dfc74435dfa2cd9c7ea7
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.openlocfilehash: 0e8d0cb1e4afa7bc791d45bfb0b981654cb09ed5
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "34482920"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892576"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Estado coherente unificado y representación de estado
 
-En este versión se incluye una serie de mejoras para el estado de LCM y el estado de DSC creados por las automatizaciones. Incluyen representaciones de estado y de estado unificado coherente, la propiedad datatime administrable de los objetos de estado devueltos por el cmdlet Get-DscConfigurationStatus y la propiedad state details de LCM mejorada devuelta por el cmdlet Get-DscLocalConfigurationManager.
+En este versión se incluye una serie de mejoras para el estado de LCM y el estado de DSC creados por las automatizaciones. Incluyen representaciones de estado y de estado unificado coherente, la propiedad datatime administrable de los objetos de estado devueltos por el cmdlet `Get-DscConfigurationStatus` y la propiedad state details de LCM mejorada devuelta por el cmdlet `Get-DscLocalConfigurationManager`.
 
 La representación del estado de las operaciones de DSC y LCM se revisa y unifica de acuerdo con las reglas siguientes:
-1.  El recurso Notprocessed no afecta al estado de DSC y LCM.
-2.  LCM deja de procesar más recursos cuando encuentra un recurso que solicita un reinicio.
-3.  Un recurso que solicita un reinicio no está en el estado deseado hasta el reinicio se produce realmente.
-4.  Después de encontrar un recurso que genera un error, LCM sigue procesando más recursos, siempre que estos no dependan del que produjo el error.
-5.  El estado general devuelto por el cmdlet Get-DscConfigurationStatus es el superconjunto de estado de todos los recursos.
-6.  El estado PendingReboot es un superconjunto del estado PendingConfiguration.
 
-En la siguiente tabla se muestran el estado resultante y las propiedades relacionadas con el estado en algunos escenarios típicos.
+1. El recurso Notprocessed no afecta al estado de DSC y LCM.
+2. LCM deja de procesar más recursos cuando encuentra un recurso que solicita un reinicio.
+3. Un recurso que solicita un reinicio no está en el estado deseado hasta el reinicio se produce realmente.
+4. Después de encontrar un recurso que genera un error, LCM sigue procesando más recursos, siempre que estos no dependan del que produjo el error.
+5. El estado general devuelto por el cmdlet `Get-DscConfigurationStatus` es el superconjunto de estado de todos los recursos.
+6. El estado PendingReboot es un superconjunto del estado PendingConfiguration.
 
-| Escenario                    | LCMState       | Estado | Reinicio solicitado  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
-|---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
-| S**^**                          | Inactivo                 | Correcto    | $false        | S                            | $null                          |
-| F**^**                          | PendingConfiguration | Error    | $false        | $null                        | F                              |
-| S, F                             | PendingConfiguration | Error    | $false        | S                            | F                              |
-| F, S                             | PendingConfiguration | Error    | $false        | S                            | F                              |
-| S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Error    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
-| F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Error    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
-| S, r                            | PendingReboot        | Correcto    | $true         | S                            | r                              |
-| F, r                            | PendingReboot        | Error    | $true         | $null                        | F, r                           |
-| r, S                            | PendingReboot        | Correcto    | $true         | $null                        | r                              |
-| r, F                            | PendingReboot        | Correcto    | $true         | $null                        | r                              |
+   En la siguiente tabla se muestran el estado resultante y las propiedades relacionadas con el estado en algunos escenarios típicos.
 
-^ S<sub>i</sub>: serie de recursos que se aplicaron correctamente F<sub>i</sub>: serie de recursos que no se aplicaron correctamente r: recurso que requiere un reinicio \*
+   | Escenario                    | LCMState       | Estado | Reinicio solicitado  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
+   |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
+   | S**^**                          | Inactivo                 | Correcto    | $false        | S                            | $null                          |
+   | F**^**                          | PendingConfiguration | Error    | $false        | $null                        | F                              |
+   | S, F                             | PendingConfiguration | Error    | $false        | S                            | F                              |
+   | F, S                             | PendingConfiguration | Error    | $false        | S                            | F                              |
+   | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Error    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
+   | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Error    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
+   | S, r                            | PendingReboot        | Correcto    | $true         | S                            | r                              |
+   | F, r                            | PendingReboot        | Error    | $true         | $null                        | F, r                           |
+   | r, S                            | PendingReboot        | Correcto    | $true         | $null                        | r                              |
+   | r, F                            | PendingReboot        | Correcto    | $true         | $null                        | r                              |
 
-```powershell
-$LCMState = (Get-DscLocalConfigurationManager).LCMState
-$Status = (Get-DscConfigurationStatus).Status
+   ^
+   S<sub>i</sub>: serie de recursos que se aplicaron correctamente F<sub>i</sub>: serie de recursos que no se aplicaron correctamente r: recurso que requiere un reinicio \*
 
-$RebootRequested = (Get-DscConfigurationStatus).RebootRequested
+   ```powershell
+   $LCMState = (Get-DscLocalConfigurationManager).LCMState
+   $Status = (Get-DscConfigurationStatus).Status
 
-$ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
+   $RebootRequested = (Get-DscConfigurationStatus).RebootRequested
 
-$ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
-```
+   $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
+
+   $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
+   ```
 
 ## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Mejora en el cmdlet Get-DscConfigurationStatus
 
-En esta versión, se incluyen algunas mejoras en el cmdlet Get-DscConfigurationStatus. Anteriormente, la propiedad StartDate de los objetos devueltos por el cmdlet era de tipo String. Ahora, es de tipo Datetime, que facilita la selección y el filtrado complejos según las propiedades intrínsecas de un objeto Datetime.
+En esta versión, se incluyen algunas mejoras en el cmdlet `Get-DscConfigurationStatus`. Anteriormente, la propiedad StartDate de los objetos devueltos por el cmdlet era de tipo String. Ahora, es de tipo Datetime, que facilita la selección y el filtrado complejos según las propiedades intrínsecas de un objeto Datetime.
 
 ```powershell
-(Get-DscConfigurationStatus).StartDate | fl *
+(Get-DscConfigurationStatus).StartDate | Format-List *
 DateTime : Friday, November 13, 2015 1:39:44 PM
 Date : 11/13/2015 12:00:00 AM
 Day : 13
@@ -73,15 +75,15 @@ Year : 2015
 A continuación se ofrece un ejemplo que devuelve todos los registros de operaciones de DSC que se produjeron el mismo día de la semana que hoy.
 
 ```powershell
-(Get-DscConfigurationStatus –All) | where { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
+(Get-DscConfigurationStatus –All) | Where-Object { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
-Se eliminaron los registros de las operaciones que no realizan cambios en la configuración del nodo (es decir, las operaciones de solo lectura). Por lo tanto, las operaciones Test-DscConfiguration, Get-DscConfiguration ya no están adulteradas en los objetos devueltos del cmdlet Get-DscConfigurationStatus.
-Los registros de la operación de metaconfiguración se agregaron a la devolución del cmdlet Get-DscConfigurationStatus.
+Se eliminaron los registros de las operaciones que no realizan cambios en la configuración del nodo (es decir, las operaciones de solo lectura). Por lo tanto, las operaciones `Test-DscConfiguration` y `Get-DscConfiguration` ya no están adulteradas en los objetos devueltos desde el cmdlet `Get-DscConfigurationStatus`.
+Los registros de la operación de metaconfiguración se agregaron a la devolución del cmdlet `Get-DscConfigurationStatus`.
 
-A continuación se ofrece un ejemplo de resultado devuelto del cmdlet Get-DscConfigurationStatus –All.
+A continuación se ofrece un ejemplo de resultado devuelto del cmdlet `Get-DscConfigurationStatus` –All.
 
-```powershell
+```output
 All configuration operations:
 
 Status StartDate Type RebootRequested
@@ -95,7 +97,7 @@ Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 
 ## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Mejora en el cmdlet Get-DSCLocalConfigurationManager
 
-Se agregó un nuevo campo de LCMStateDetail al objeto devuelto del cmdlet Get-DscLocalConfigurationManager. Este campo se rellena cuando el valor de LCMState es "Ocupado". Se puede recuperar mediante el siguiente cmdlet:
+Se agregó un nuevo campo de LCMStateDetail al objeto devuelto del cmdlet `Get-DscLocalConfigurationManager`. Este campo se rellena cuando el valor de LCMState es "Ocupado". Se puede recuperar mediante el siguiente cmdlet:
 
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail
@@ -103,7 +105,7 @@ Se agregó un nuevo campo de LCMStateDetail al objeto devuelto del cmdlet Get-Ds
 
 A continuación se ofrece un ejemplo de salidas de una supervisión continua en una configuración que requiere dos reinicios en un nodo remoto.
 
-```powershell
+```output
 Start a configuration that requires two reboots
 
 Monitor LCM State:

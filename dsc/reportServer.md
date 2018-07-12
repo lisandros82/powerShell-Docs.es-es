@@ -2,21 +2,21 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Uso de un servidor de informes de DSC
-ms.openlocfilehash: 143e0bdd9b637cee87a676ed327fe6ff3a7fd719
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bcd414e9cc6d3b321676aaab6bbc3ca1b02e80aa
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188554"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893144"
 ---
 # <a name="using-a-dsc-report-server"></a>Uso de un servidor de informes de DSC
 
-> Se aplica a: Windows PowerShell 5.0
+Se aplica a: Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > El servidor de extracción (característica de Windows *DSC-Service*) es un componente de Windows Server admitido, si bien no está previsto ofrecer nuevas características o funcionalidades. Se recomienda empezar a realizar la transición de los clientes administrados a [DSC de Azure Automation](/azure/automation/automation-dsc-getting-started) (incluye características más allá del servidor de extracción de Windows Server) o a una de las soluciones de la comunidad que figuran [aquí](pullserver.md#community-solutions-for-pull-service).
-
->**Nota:** El servidor de informes que se describe en este tema no está disponible en PowerShell 4.0.
+>
+> **Nota:** El servidor de informes que se describe en este tema no está disponible en PowerShell 4.0.
 
 El administrador de configuración local (LCM) de un nodo se puede configurar para enviar informes sobre su estado de configuración a un servidor de extracción, que puede consultarse posteriormente para recuperar los datos. Cada vez que el nodo comprueba y aplica una configuración, envía un informe al servidor de informes. Estos informes se almacenan en una base de datos en el servidor y se pueden recuperar mediante una llamada al servicio web de informes. Cada informe contiene información como qué configuraciones se han aplicado y si lo han hecho correctamente, los recursos usados, los errores que se han producido y las horas de inicio y finalización.
 
@@ -56,6 +56,7 @@ configuration ReportClientConfig
         }
     }
 }
+
 ReportClientConfig
 ```
 
@@ -91,11 +92,12 @@ configuration PullClientConfig
 PullClientConfig
 ```
 
->**Nota:** Puede asignar el nombre que quiera al servicio web al configurar un servidor de incorporación de cambios, pero la propiedad **ServerURL** debe coincidir con el nombre del servicio.
+> [!NOTE]
+> Puede asignar el nombre que quiera al servicio web al configurar un servidor de incorporación de cambios, pero la propiedad **ServerURL** debe coincidir con el nombre del servicio.
 
 ## <a name="getting-report-data"></a>Obtener datos de informes
 
-Los informes enviados al servidor de extracción se introducen en una base de datos del servidor. Los informes están disponibles a través de llamadas al servicio web. Para recuperar los informes para un nodo específico, envíe una solicitud HTTP al servicio web de informes de la forma siguiente: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports` donde `MyNodeAgentId` es el valor AgentId del nodo para el que desea obtener informes. Puede obtener el valor de AgentId de un nodo mediante una llamada a [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) en ese nodo.
+Los informes enviados al servidor de extracción se introducen en una base de datos del servidor. Los informes están disponibles a través de llamadas al servicio web. Para recuperar los informes para un nodo específico, envíe una solicitud HTTP al servicio web de informes de la forma siguiente: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports` donde `MyNodeAgentId` es el valor AgentId del nodo para el que desea obtener informes. Puede obtener el valor de AgentId de un nodo mediante una llamada a [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) en ese nodo.
 
 Los informes se devuelven como una matriz de objetos JSON.
 
@@ -104,7 +106,12 @@ El script siguiente devuelve los informes para el nodo en el que se ejecuta:
 ```powershell
 function GetReport
 {
-    param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc")
+    param
+    (
+        $AgentId = "$((glcm).AgentId)", 
+        $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc"
+    )
+
     $requestUri = "$serviceURL/Nodes(AgentId= '$AgentId')/Reports"
     $request = Invoke-WebRequest -Uri $requestUri  -ContentType "application/json;odata=minimalmetadata;streaming=true;charset=utf-8" `
                -UseBasicParsing -Headers @{Accept = "application/json";ProtocolVersion = "2.0"} `
@@ -121,8 +128,9 @@ Si establece una variable como el resultado de la función **GetReport**, puede 
 ```powershell
 $reports = GetReport
 $reports[1]
+```
 
-
+```output
 JobId                : 019dfbe5-f99f-11e5-80c6-001dd8b8065c
 OperationType        : Consistency
 RefreshMode          : Pull
@@ -168,7 +176,9 @@ Observe que la propiedad **StatusData** es un objeto con varias propiedades. En 
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
 $statusData
+```
 
+```output
 StartDate                  : 2016-04-04T11:21:41.2990000-07:00
 IPV6Addresses              : {2001:4898:d8:f2f2:852b:b255:b071:283b, fe80::852b:b255:b071:283b%12, ::2000:0:0:0, ::1...}
 DurationInSeconds          : 25
@@ -205,7 +215,9 @@ Entre otras cosas, muestra que la configuración más reciente llamó a dos recu
 
 ```powershell
 $statusData.ResourcesInDesiredState
+```
 
+```output
 SourceInfo        : C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::16::9::Archive
 ModuleName        : PSDesiredStateConfiguration
 DurationInSeconds : 2.672
@@ -222,6 +234,9 @@ InDesiredState    : True
 Tenga en cuenta que estos ejemplos están diseñados para ofrecerle una idea de lo que puede hacer con los datos del informe. Para obtener una introducción sobre cómo trabajar con JSON en PowerShell, vea [Playing with JSON and PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/) (Experimentos con JSON y PowerShell).
 
 ## <a name="see-also"></a>Véase también
-- [Configuración del administrador de configuración local](metaConfig.md)
-- [Configuración de un servidor de extracción web de DSC](pullServer.md)
-- [Configuración de un cliente de extracción mediante nombres de configuración](pullClientConfigNames.md)
+
+[Configuración del administrador de configuración local](metaConfig.md)
+
+[Configuración de un servidor de extracción web de DSC](pullServer.md)
+
+[Configuración de un cliente de extracción mediante nombres de configuración](pullClientConfigNames.md)

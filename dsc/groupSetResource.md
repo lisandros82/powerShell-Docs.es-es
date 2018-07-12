@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 description: Proporciona un mecanismo para administrar grupos locales en el nodo de destino.
 title: Recurso GroupSet de DSC
-ms.openlocfilehash: 3d6fdcaef6053964d3fb3b709a5263d291a7c840
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 487a76ca7703b2c57b940b4c5bd176eada6c8019
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222360"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892433"
 ---
 # <a name="dsc-groupset-resource"></a>Recurso GroupSet de DSC
 
@@ -18,7 +18,8 @@ El recurso **GroupSet** de la configuración de estado deseado (DSC) de Windows 
 
 Utilice este recurso cuando desee agregar o quitar la misma lista de miembros de más de un grupo, quitar más de un grupo o agregar más de un grupo con la misma lista de miembros.
 
-##<a name="syntax"></a>Sintaxis##
+## <a name="syntax"></a>Sintaxis
+
 ```
 Group [string] #ResourceName
 {
@@ -43,7 +44,7 @@ Group [string] #ResourceName
 | MembersToInclude| Use esta propiedad para agregar miembros a la pertenencia existente al grupo. El valor de esta propiedad es una matriz de cadenas del formulario *Domain*\\*UserName*. Si establece esta propiedad en una configuración, no use la propiedad **Members**. Si lo hace, se generará un error.|
 | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"``.|
 
-## <a name="example-1"></a>Ejemplo 1
+## <a name="example-1-ensuring-groups-are-present"></a>Ejemplo 1: Cómo asegurarse de que existen grupos
 
 En el ejemplo siguiente se muestra cómo asegurarse de que existen dos grupos denominados "myGroup" y "myOtherGroup".
 
@@ -73,8 +74,8 @@ $cd = @{
     )
 }
 
-
 GroupSetTest -ConfigurationData $cd
 ```
 
->**Nota:** este ejemplo usa las credenciales de texto sin formato por su sencillez. Para más información sobre el cifrado de credenciales en el archivo MOF de configuración, consulte [Proteger el archivo MOF](secureMOF.md).
+> [!NOTE] 
+> En este ejemplo se usan las credenciales de texto sin formato por su sencillez. Para más información sobre el cifrado de credenciales en el archivo MOF de configuración, consulte [Proteger el archivo MOF](secureMOF.md).

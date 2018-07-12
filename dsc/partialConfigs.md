@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Configuraciones parciales de la configuración de estado deseado de PowerShell
-ms.openlocfilehash: e6d80b065ad9e68517d2952b7643e4c611d82a0f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1f5ec5bd5055ccc3d83a60712aebe635f2548828
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189982"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893008"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Configuraciones parciales de la configuración de estado deseado de PowerShell
 
->Se aplica a: Windows PowerShell 5.0 y posterior.
+> Se aplica a: Windows PowerShell 5.0 y posterior.
 
 En PowerShell 5.0, la configuración de estado deseado (DSC) permite que las configuraciones se entreguen en fragmentos y desde varios orígenes. El administrador de configuración local (LCM) en el nodo de destino reúne los fragmentos antes de aplicarlos como una configuración única. Esta capacidad permite compartir el control de la configuración entre equipos o usuarios.
 Por ejemplo, si dos o más equipos de desarrolladores colaboran en un servicio, es posible que cada uno de ellos prefiera crear configuraciones para administrar su parte del servicio. Cada una de estas configuraciones se podría extraer de servidores de extracción diferentes y se podría agregar en diferentes fases del desarrollo. Las configuraciones parciales también permiten que distintas personas o equipos controlen aspectos diferentes de los nodos de configuración, sin tener que coordinar la edición de un documento de configuración único. Por ejemplo, un equipo podría ser responsable de la implementación de una máquina virtual y un sistema operativo, mientras que otro equipo podría implementar otras aplicaciones y servicios en esa máquina virtual. Con las configuraciones parciales, cada equipo puede crear su propia configuración, sin que ninguna de ellas sea innecesariamente complicada.
@@ -19,10 +19,12 @@ Por ejemplo, si dos o más equipos de desarrolladores colaboran en un servicio, 
 Puede utilizar las configuraciones parciales en el modo de inserción, el modo de extracción o una combinación de ambos.
 
 ## <a name="partial-configurations-in-push-mode"></a>Configuraciones parciales en el modo de inserción
-Para utilizar configuraciones parciales en modo de inserción, debe configurar el LCM en el nodo de destino para que reciba las configuraciones parciales. Cada configuración parcial se debe insertar en el destino mediante el cmdlet Publish-DSCConfiguration. El nodo de destino combina entonces la configuración parcial en una configuración única, que puede aplicar mediante una llamada al cmdlet [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).
+
+Para utilizar configuraciones parciales en modo de inserción, debe configurar el LCM en el nodo de destino para que reciba las configuraciones parciales. Cada configuración parcial se debe insertar en el destino mediante el cmdlet `Publish-DSCConfiguration`. El nodo de destino combina entonces la configuración parcial en una configuración única, que puede aplicar mediante una llamada al cmdlet [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Start-DscConfiguration).
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Configurar el LCM para configuraciones parcial del modo de inserción
-Para configurar el LCM para configuraciones parciales en el modo de inserción, debe crear una configuración **DSCLocalConfigurationManager** con un bloque **PartialConfiguration** para cada configuración parcial. Para más información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local de Windows](https://technet.microsoft.com/library/mt421188.aspx).
+
+Para configurar el LCM para configuraciones parciales en el modo de inserción, debe crear una configuración **DSCLocalConfigurationManager** con un bloque **PartialConfiguration** para cada configuración parcial. Para más información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local de Windows](/powershell/dsc/metaConfig).
 En el ejemplo siguiente se muestra una configuración de LCM que espera dos configuraciones parciales: una que implemente el sistema operativo y otra que implemente y configure SharePoint.
 
 ```powershell
@@ -32,7 +34,7 @@ configuration PartialConfigDemo
     Node localhost
     {
 
-           PartialConfiguration ServiceAccountConfig
+        PartialConfiguration ServiceAccountConfig
         {
             Description = 'Configuration to add the SharePoint service account to the Administrators group.'
             RefreshMode = 'Push'
@@ -44,42 +46,40 @@ configuration PartialConfigDemo
         }
     }
 }
+
 PartialConfigDemo
 ```
 
 El valor **RefreshMode** de cada configuración parcial se establece en "Push". Los nombres de los bloques **PartialConfiguration** (en este caso, "ServiceAccountConfig" y "SharePointConfig") deben coincidir exactamente con los nombres de las configuraciones que se inserten en el nodo de destino.
 
->**Nota:** El nombre de cada bloque **PartialConfiguration** debe coincidir con el nombre real de la configuración tal como esté especificado en el script de configuración y no con el nombre del archivo MOF, que debe ser el nombre del nodo de destino o `localhost`.
+> [!Note]
+> El nombre de cada bloque **PartialConfiguration** debe coincidir con el nombre real de la configuración tal como esté especificado en el script de configuración y no con el nombre del archivo MOF, que debe ser el nombre del nodo de destino o `localhost`.
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>Publicación e inicialización de las configuraciones parciales del modo de inserción
 
-Después llame a [Publish-DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) para cada configuración, pasando las carpetas que contengan los documentos de configuración como los parámetros **Path**. `Publish-DSCConfiguration` coloca los archivos MOF de configuración en los nodos de destino. Después de publicar las dos configuraciones, puede llamar a `Start-DSCConfiguration –UseExisting` en el nodo de destino.
+Después llame a [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) para cada configuración, pasando las carpetas que contengan los documentos de configuración como los parámetros **Path**. `Publish-DSCConfiguration` coloca los archivos MOF de configuración en los nodos de destino. Después de publicar las dos configuraciones, puede llamar a `Start-DSCConfiguration –UseExisting` en el nodo de destino.
 
 Por ejemplo, si ha compilado los siguientes documentos MOF de configuración en el nodo de creación:
 
 ```powershell
-PS C:\PartialConfigTest> Get-ChildItem -Recurse
+Get-ChildItem -Recurse
+```
 
-
+```output
     Directory: C:\PartialConfigTest
-
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
 d-----        8/11/2016   1:55 PM                ServiceAccountConfig
 d-----       11/17/2016   4:14 PM                SharePointConfig
 
-
     Directory: C:\PartialConfigTest\ServiceAccountConfig
-
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
 -a----        8/11/2016   2:02 PM           2034 TestVM.mof
 
-
     Directory: C:\DscTests\SharePointConfig
-
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
@@ -89,16 +89,19 @@ Mode                LastWriteTime         Length Name
 Publicaría y ejecutaría las configuraciones de la forma siguiente:
 
 ```powershell
-PS C:\PartialConfigTest> Publish-DscConfiguration .\ServiceAccountConfig -ComputerName 'TestVM'
-PS C:\PartialConfigTest> Publish-DscConfiguration .\SharePointConfig -ComputerName 'TestVM'
-PS C:\PartialConfigTest> Start-DscConfiguration -UseExisting -ComputerName 'TestVM'
+Publish-DscConfiguration .\ServiceAccountConfig -ComputerName 'TestVM'
+Publish-DscConfiguration .\SharePointConfig -ComputerName 'TestVM'
+Start-DscConfiguration -UseExisting -ComputerName 'TestVM'
+```
 
+```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**Nota:** el usuario que ejecuta el cmdlet [Publish-DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) debe tener privilegios de administrador en el nodo de destino.
+> [!Note]
+> El usuario que ejecuta el cmdlet [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) debe tener privilegios de administrador en el nodo de destino.
 
 ## <a name="partial-configurations-in-pull-mode"></a>Configuraciones parciales en el modo de extracción
 
@@ -145,7 +148,6 @@ Configuration PartialConfigDemoConfigNames
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
             DependsOn                       = '[PartialConfiguration]ServiceAccountConfig'
         }
-
 }
 ```
 
@@ -190,7 +192,7 @@ PartialConfigDemo
 
 Puede extraer configuraciones parciales de más de un servidor de extracción; solo sería necesario definir cada servidor de extracción y, después, hacer referencia al servidor de extracción adecuado en cada bloque **PartialConfiguration**.
 
-Después de crear la metaconfiguración, debe ejecutar para crear un documento de configuración (archivo MOF) y, a continuación, llame a [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621(v=wps.630).aspx) para configurar el LCM.
+Después de crear la metaconfiguración, debe ejecutar para crear un documento de configuración (archivo MOF) y, a continuación, llame a [Set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) para configurar el LCM.
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>Nomenclatura y ubicación de los documentos de configuración en el servidor de extracción (ConfigurationNames)
 
@@ -199,13 +201,12 @@ Los documentos de configuración parcial deben ubicarse en la carpeta especifica
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>Nomenclatura de los documentos de configuración en el servidor de extracción en PowerShell 5.1
 
 Si extrae una sola configuración parcial de un servidor de extracción individual, el documento de configuración puede tener cualquier nombre.
-Si está extrayendo los más de una configuración parcial de un servidor de extracción, el documento de configuración podría denominarse `<ConfigurationName>.mof`, donde _ConfigurationName_ es el nombre de la configuración parcial, o `<ConfigurationName>.<NodeName>.mof`, donde _ConfigurationName_ es el nombre de la configuración parcial y _NodeName_ es el nombre del nodo de destino.
+Si está extrayendo los más de una configuración parcial de un servidor de extracción, el documento de configuración podría denominarse `<ConfigurationName>.mof`, donde *ConfigurationName* es el nombre de la configuración parcial, o `<ConfigurationName>.<NodeName>.mof`, donde *ConfigurationName* es el nombre de la configuración parcial y *NodeName* es el nombre del nodo de destino.
 Esto le permite extraer las configuraciones del servidor de extracción de DSC de Azure Automation.
-
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>Nomenclatura de los documentos de configuración en el servidor de extracción en PowerShell 5.0
 
-Los documentos de configuración deben nombrarse del modo siguiente: `ConfigurationName.mof`, donde _ConfigurationName_ es el nombre de la configuración parcial. En el ejemplo, los documentos de configuración deben nombrarse del modo siguiente:
+Los documentos de configuración deben nombrarse del modo siguiente: `ConfigurationName.mof`, donde *ConfigurationName* es el nombre de la configuración parcial. En el ejemplo, los documentos de configuración deben nombrarse del modo siguiente:
 
 ```
 ServiceAccountConfig.mof
@@ -216,7 +217,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Nomenclatura y ubicación de los documentos de configuración en el servidor de extracción (ConfigurationID)
 
-Los documentos de configuración parcial deben ubicarse en la carpeta especificada en el valor **ConfigurationPath** del archivo `web.config` del servidor de extracción (normalmente `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Los documentos de configuración deben tener el siguiente nombre: _ConfigurationName_. _ConfigurationID_`.mof`, donde _ConfigurationName_ es el nombre de la configuración parcial y _ConfigurationID_ es el identificador de configuración definido en el LCM del nodo de destino. En el ejemplo, los documentos de configuración deben nombrarse del modo siguiente:
+Los documentos de configuración parcial deben ubicarse en la carpeta especificada en el valor **ConfigurationPath** del archivo `web.config` del servidor de extracción (normalmente `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Los documentos de configuración deben tener el siguiente nombre: *ConfigurationName*. *ConfigurationID8`.mof`, donde *ConfigurationName* es el nombre de la configuración parcial y *ConfigurationID* es el identificador de configuración definido en el LCM del nodo de destino. En el ejemplo, los documentos de configuración deben nombrarse del modo siguiente:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -225,11 +226,9 @@ SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
 SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
 ```
 
-
 ### <a name="running-partial-configurations-from-a-pull-server"></a>Ejecución de configuraciones parciales de un servidor de extracción
 
-Cuando se haya configurado el LCM en el nodo de destino y se hayan creado los documentos de configuración con los nombres correctos en el servidor de extracción, el nodo de destino extraerá las configuraciones parciales, las combinará y aplicará la configuración resultante a intervalos regulares, según especifique la propiedad **RefreshFrequencyMins** del LCM. Si quiere forzar una actualización, puede llamar al cmdlet [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx) para extraer las configuraciones y luego a `Start-DSCConfiguration –UseExisting` para aplicarlas.
-
+Cuando se haya configurado el LCM en el nodo de destino y se hayan creado los documentos de configuración con los nombres correctos en el servidor de extracción, el nodo de destino extraerá las configuraciones parciales, las combinará y aplicará la configuración resultante a intervalos regulares, según especifique la propiedad **RefreshFrequencyMins** del LCM. Si quiere forzar una actualización, puede llamar al cmdlet [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration) para extraer las configuraciones y luego a `Start-DSCConfiguration –UseExisting` para aplicarlas.
 
 ## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>Configuraciones parciales en los modos de inserción y extracción mixtos
 
@@ -315,7 +314,7 @@ PartialConfigDemo
 
 Tenga en cuenta que el valor de **RefreshMode** especificado en el bloque Settings es "Pull", pero el valor de **RefreshMode** para configuración parcial de `SharePointConfig` es "Push".
 
-Asigne un nombre y localice los archivos MOF de configuración tal y como se ha descrito anteriormente para sus modos de actualización correspondientes. Llame a **Publish-DSCConfiguration** para publicar la configuración parcial de `SharePointConfig` y, o bien espere a que se extraiga la configuración `ServiceAccountConfig` del servidor de extracción, o bien fuerce una actualización mediante una llamada a [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx).
+Asigne un nombre y localice los archivos MOF de configuración tal y como se ha descrito anteriormente para sus modos de actualización correspondientes. Llame a `Publish-DSCConfiguration` para publicar la configuración parcial de `SharePointConfig` y, o bien espere a que se extraiga la configuración `ServiceAccountConfig` del servidor de incorporación de cambios, o bien fuerce una actualización mediante una llamada a [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration).
 
 ## <a name="example-serviceaccountconfig-partial-configuration"></a>Configuración parcial de ServiceAccountConfig de ejemplo
 
@@ -354,7 +353,9 @@ Configuration ServiceAccountConfig
 ServiceAccountConfig
 
 ```
+
 ## <a name="example-sharepointconfig-partial-configuration"></a>Configuración parcial de SharePointConfig de ejemplo
+
 ```powershell
 Configuration SharePointConfig
 {
@@ -378,9 +379,9 @@ Configuration SharePointConfig
 }
 SharePointConfig
 ```
-##<a name="see-also"></a>Véase también
 
-**Conceptos**
-[Servidores de extracción de la configuración de estado deseado de Windows PowerShell](pullServer.md)
+## <a name="see-also"></a>Véase también
 
-[Configuración del administrador de configuración local de Windows](https://technet.microsoft.com/library/mt421188.aspx)
+[Servidores de extracción de la configuración de estado deseado de Windows PowerShell](pullServer.md)
+
+[Configuración del administrador de configuración local de Windows](/powershell/dsc/metaConfig)
