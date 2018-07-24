@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell, cmdlet
 title: Reglas de autorización y características de seguridad de Windows PowerShell Web Access
-ms.openlocfilehash: a3a743d83ae3e387ee51056042c98753104e925e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 14bb18cfc5d9826523a239aede42307a7688eaf5
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893729"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094252"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reglas de autorización y características de seguridad de Windows PowerShell Web Access
 
@@ -163,9 +163,8 @@ A continuación, se proporcionan algunos ejemplos de este escenario.
 
 - Un administrador ha configurado un entorno de prueba privado y desea conceder a todos los usuarios de red autorizados acceso a todos los equipos de la red a los que tienen acceso normalmente, con acceso a todas las configuraciones de sesión a las que tienen acceso normalmente. Como se trata de un entorno de prueba privado, el administrador crea una regla de autorización que no es segura. - Ejecuta el cmdlet `Add-PswaAuthorizationRule * * *`, que usa el carácter comodín **\*** para representar todos los usuarios, todos los equipos y todas las configuraciones. - Esta regla equivale a lo siguiente: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
-  >[!NOTE]
-  >
-  >Esta regla no se recomienda en un entorno seguro, ya que omite el nivel de seguridad de reglas de autorización proporcionado por Windows PowerShell Web Access.
+  > [!NOTE]
+  > Esta regla no se recomienda en un entorno seguro, ya que omite el nivel de seguridad de reglas de autorización proporcionado por Windows PowerShell Web Access.
 
 - Un administrador debe permitir a los usuarios conectarse a los equipos de destino en un entorno que incluye tanto grupos de trabajo como dominios, en el que los equipos de los grupos de trabajo ocasionalmente se usan para conectar con equipos de destino de los dominios, y los equipos de los dominios ocasionalmente se usan para conectar con equipos de destino de los grupos de trabajo. El administrador tiene un servidor de puerta de enlace, llamado *PswaServer*, en un grupo de trabajo, y el equipo de destino *srv1.contoso.com* se encuentra en un dominio. El usuario *Chris* es un usuario local autorizado tanto en el servidor de puerta de enlace del grupo de trabajo como en el equipo de destino. Su nombre de usuario en el servidor del grupo de trabajo es *chrisLocal* y su nombre de usuario en el equipo de destino es *contoso\\chris*. Para autorizar el acceso de Chris a srv1.contoso.com, el administrador agrega la regla siguiente.
 
@@ -180,10 +179,9 @@ En el escenario anterior, Windows PowerShell Web Access solo establecerá una co
 
 1. Autenticación en el servidor de puerta de enlace del grupo de trabajo mediante la adición de un nombre de usuario, con el formato *nombre_servidor*\\*nombre_usuario* a la regla de autorización.
 
-2. Autenticación en el equipo cliente mediante credenciales alternativas proporcionadas en la página de inicio de sesión, en el área **Configuración de conexión opcional**
+1. Autenticación en el equipo cliente mediante credenciales alternativas proporcionadas en la página de inicio de sesión, en el área **Configuración de conexión opcional**
 
    > [!NOTE]
-   >
    > Si los equipos de destino y de la puerta de enlace se encuentran en grupos de trabajo o dominios diferentes, se debe establecer una relación de confianza entre los dos equipos del grupo de trabajo, entre los dos dominios o entre el grupo de trabajo y el dominio. Esta relación no se puede configurar mediante los cmdlets de reglas de autorización de Windows PowerShell Web Access. Las reglas de autorización no definen una relación de confianza entre equipos; solo pueden autorizar a los usuarios para que se conecten a equipos de destino y configuraciones de sesión específicos. Para más información sobre el modo de configurar una relación de confianza entre dominios diferentes, consulte [Creating Domain and Forest Trusts](https://technet.microsoft.com/library/cc794775.aspx") (Creación de confianzas entre dominios y bosques).
    > Para más información sobre el modo de agregar equipos del grupo de trabajo a una lista de hosts de confianza, vea [Administración remota con el Administrador del servidor](https://technet.microsoft.com/library/dd759202.aspx).
 

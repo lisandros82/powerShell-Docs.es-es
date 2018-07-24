@@ -46,8 +46,8 @@ Además deberá habilitar la autenticación de contraseña y, opcionalmente, la 
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Instale la compilación más reciente de [Win32 OpenSSH] de GitHub según las instrucciones de [instalación].
-3. Edite el archivo sshd_config en la ubicación en la que ha instalado Win32 OpenSSH.
+1. Instale la compilación más reciente de [Win32 OpenSSH] de GitHub según las instrucciones de [instalación].
+1. Edite el archivo sshd_config en la ubicación en la que ha instalado Win32 OpenSSH.
    - Asegúrese de que la autenticación de contraseña esté habilitada.
 
    ```
@@ -59,8 +59,8 @@ Además deberá habilitar la autenticación de contraseña y, opcionalmente, la 
     ```
 
     > [!NOTE]
-    Hay un error en OpenSSH para Windows que impide que los espacios funcionen en rutas de acceso ejecutables del subsistema.
-    Para obtener más información, vea [este problema en GitHub](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    > Hay un error en OpenSSH para Windows que impide que los espacios funcionen en rutas de acceso ejecutables del subsistema.
+    > Para obtener más información, vea [este problema en GitHub](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
     Una solución consiste en crear un vínculo simbólico al directorio de instalación de Powershell que no contenga espacios:
 
@@ -84,27 +84,27 @@ Además deberá habilitar la autenticación de contraseña y, opcionalmente, la 
    PubkeyAuthentication yes
    ```
 
-4. Reinicie el servicio sshd.
+1. Reinicie el servicio sshd.
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. Agregue la ruta de acceso donde está instalado OpenSSH a la variable Path Env.
+1. Agregue la ruta de acceso donde está instalado OpenSSH a la variable Path Env.
    - Debe ser algo similar a `C:\Program Files\OpenSSH\`.
    - Esto permite encontrar el archivo ssh.exe.
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Configuración en un equipo Linux (Ubuntu 14.04)
 
 1. Instale la compilación más reciente de [PowerShell Core para Linux] de GitHub.
-2. Instale [SSH de Ubuntu] según sea necesario.
+1. Instale [SSH de Ubuntu] según sea necesario.
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. Edite el archivo sshd_config en la ubicación /etc/ssh.
+1. Edite el archivo sshd_config en la ubicación /etc/ssh.
    - Asegúrese de que la autenticación de contraseña esté habilitada.
 
    ```
@@ -123,7 +123,7 @@ Además deberá habilitar la autenticación de contraseña y, opcionalmente, la 
    PubkeyAuthentication yes
    ```
 
-4. Reinicie el servicio sshd.
+1. Reinicie el servicio sshd.
 
    ```bash
    sudo service sshd restart
@@ -137,7 +137,7 @@ Además deberá habilitar la autenticación de contraseña y, opcionalmente, la 
      - Haga clic en `Sharing`.
      - Compruebe que `Remote Login` indique `Remote Login: On`.
      - Permita el acceso a los usuarios adecuados.
-2. Edite el archivo `sshd_config` en ubicación `/private/etc/ssh/sshd_config`.
+1. Edite el archivo `sshd_config` en ubicación `/private/etc/ssh/sshd_config`.
    - Use su editor favorito.
 
      ```bash
@@ -162,7 +162,7 @@ Además deberá habilitar la autenticación de contraseña y, opcionalmente, la 
      PubkeyAuthentication yes
      ```
 
-3. Reinicie el servicio sshd.
+1. Reinicie el servicio sshd.
 
    ```bash
    sudo launchctl stop com.openssh.sshd
