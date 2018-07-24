@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 0e8d0cb1e4afa7bc791d45bfb0b981654cb09ed5
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: b279d388754c5ee42215f21317f7b3d8089b7608
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892576"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093888"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Estado coherente unificado y representación de estado
 
@@ -15,11 +15,11 @@ En este versión se incluye una serie de mejoras para el estado de LCM y el esta
 La representación del estado de las operaciones de DSC y LCM se revisa y unifica de acuerdo con las reglas siguientes:
 
 1. El recurso Notprocessed no afecta al estado de DSC y LCM.
-2. LCM deja de procesar más recursos cuando encuentra un recurso que solicita un reinicio.
-3. Un recurso que solicita un reinicio no está en el estado deseado hasta el reinicio se produce realmente.
-4. Después de encontrar un recurso que genera un error, LCM sigue procesando más recursos, siempre que estos no dependan del que produjo el error.
-5. El estado general devuelto por el cmdlet `Get-DscConfigurationStatus` es el superconjunto de estado de todos los recursos.
-6. El estado PendingReboot es un superconjunto del estado PendingConfiguration.
+1. LCM deja de procesar más recursos cuando encuentra un recurso que solicita un reinicio.
+1. Un recurso que solicita un reinicio no está en el estado deseado hasta el reinicio se produce realmente.
+1. Después de encontrar un recurso que genera un error, LCM sigue procesando más recursos, siempre que estos no dependan del que produjo el error.
+1. El estado general devuelto por el cmdlet `Get-DscConfigurationStatus` es el superconjunto de estado de todos los recursos.
+1. El estado PendingReboot es un superconjunto del estado PendingConfiguration.
 
    En la siguiente tabla se muestran el estado resultante y las propiedades relacionadas con el estado en algunos escenarios típicos.
 

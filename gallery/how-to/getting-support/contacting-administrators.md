@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Ponerse en contacto con los administradores de la Galería
-ms.openlocfilehash: 6673b1a8e92312f343d6f809b4a708c400ef20f2
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c919848e93a1f061ac0bf7dec8ef568e41212ef7
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218899"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093829"
 ---
 # <a name="contact-gallery-administrators"></a>Ponerse en contacto con los administradores de la Galería
 
@@ -24,6 +24,6 @@ Debe ponerse en contacto con los administradores de la Galería en los siguiente
 
 ## <a name="how-to-contact-gallery-administrators"></a>Cómo ponerse en contacto con los administradores de la Galería
 
-1. Envíenos un correo electrónico: cgadmin@microsoft.com.
+1. Envíenos un correo electrónico: <cgadmin@microsoft.com>.
 2. Si quiere notificar un abuso relacionado con un elemento, encontrará un vínculo Notificar abuso debajo de la información del elemento en el panel izquierdo.
 3. En el caso de que tenga consultas generales sobre la Galería, envíe sus preguntas a [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).

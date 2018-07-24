@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 66db78cfb136f22cad9078d7113dad085ee667a5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e4910e95a417da61661aaddd98b2dc7da9f98a3d
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188435"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093725"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>Crear un punto de conexión de JEA y conectarse a este
 Para crear un punto de conexión de JEA, debe crear y registrar un archivo de configuración de sesión de PowerShell especialmente configurado, que se puede generar con el cmdlet **New-PSSessionConfigurationFile**.
@@ -128,8 +128,8 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 }
-
 ```
+
 Para poder usarse en una configuración de sesión de JEA, las funcionalidades de rol deben guardarse como un módulo de PowerShell válido en un directorio denominado "RoleCapabilities". Un módulo puede tener varios archivos de funcionalidad de rol, si lo desea.
 
 Para empezar a configurar los cmdlets, las funciones, los alias y los scripts a los un usuario puede acceder cuando se conecta a una sesión de JEA, agregue sus propias reglas al archivo de funcionalidad de rol siguiendo las plantillas comentadas. Para obtener una visión más profunda de la configuración de las funcionalidades de rol, consulte la [guía de experiencias](http://aka.ms/JEA) completa.
@@ -141,9 +141,11 @@ Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfi
 ```
 
 ## <a name="connect-to-a-jea-endpoint"></a>Conectarse a un punto de conexión de JEA
+
 La conexión a un punto de conexión de JEA funciona igual que la conexión a otros puntos de conexión de PowerShell.  Solo tiene que indicar el nombre del punto de conexión de JEA como el parámetro "ConfigurationName" de **New-PSSession**, **Invoke-Command** o **Enter-PSSession**.
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
+
 Después de conectarse a la sesión de JEA, estará limitado a ejecutar la comandos de la lista de permitidos en las funcionalidades de rol a las que tenga acceso. Si intenta ejecutar cualquier comando no permitido para su rol, se producirá un error.

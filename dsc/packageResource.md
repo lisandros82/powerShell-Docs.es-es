@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Recursos de DSC Package
-ms.openlocfilehash: 16f7f1b8fa7b84bcfdeb09fdc46db9c93113e70c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3046ba7d57776a996a0b917348a0e863db6cd0c8
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188537"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093810"
 ---
 # <a name="dsc-package-resource"></a>Recursos de DSC Package
 
@@ -33,6 +33,7 @@ Package [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Propiedades
+
 |  Propiedad  |  Descripción   |
 |---|---|
 | Nombre| Indica el nombre del paquete para el que quiere garantizar un estado específico.|

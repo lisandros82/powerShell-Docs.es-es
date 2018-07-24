@@ -3,12 +3,12 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: gallery,powershell,cmdlet,psget
 title: Versiones preliminares de módulos
-ms.openlocfilehash: 2a4fcd40353450e5ba03910984c5a05772a93d0d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 371aae7eed4afe341755133c5ee2d356cd5876e0
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189846"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093786"
 ---
 # <a name="prerelease-module-versions"></a>Versiones preliminares de módulos
 
@@ -108,7 +108,6 @@ C:\windows\system32> Get-InstalledModule TestPackage
 Version         Name                                Repository           Description
 -------         ----                                ----------           -----------
 1.9.0-alpha     TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-
 ```
 
 No se admite la instalación en paralelo de versiones de un módulo que difieran solo debido a la versión preliminar especificada. Al instalar un módulo mediante PowerShellGet, se instalan distintas versiones del mismo módulo en paralelo mediante la creación de un nombre de carpeta con el sufijo ModuleVersion. El sufijo ModuleVersion, sin la cadena de versión preliminar, se usa para el nombre de carpeta. Si un usuario instala MyModule versión 2.5.0-alpha, se instala en la carpeta MyModule\2.5.0. Si el usuario luego instala 2.5.0-beta, la versión 2.5.0-beta __sobrescribe__ el contenido de la carpeta MyModule\2.5.0. Una ventaja de este método es que no es necesario desinstalar la versión preliminar después de instalar la versión lista para producción. En el ejemplo siguiente se muestra lo que se puede esperar:

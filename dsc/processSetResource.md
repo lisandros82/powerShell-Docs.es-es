@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Recurso ProcessSet de DSC
-ms.openlocfilehash: 412cf1076996126f0d9b7a9a8ebbc9bdb7ecf377
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d18d2c96239abd83cea735e0fbce198d0456cea6
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189931"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093997"
 ---
 # <a name="dsc-windowsprocess-resource"></a>Recurso de DSC WindowsProcess
 
@@ -33,6 +33,7 @@ WindowsProcess [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Propiedades
+
 |  Propiedad  |  Descripción   |
 |---|---|
 | Argumentos| Una cadena que tiene argumentos que se pasa al proceso tal cual. Si necesita pasar varios argumentos, colóquelos en esta cadena.|
