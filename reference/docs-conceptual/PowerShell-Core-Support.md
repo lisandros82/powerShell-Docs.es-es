@@ -31,24 +31,47 @@ Esperamos que, a la larga, PowerShell Core adopte un enfoque de mantenimiento a 
 
 ## <a name="supported-platforms"></a>Plataformas admitidas
 
-PowerShell Core se admite oficialmente en las plataformas siguientes:
+Consulte la tabla siguiente para ver la plataforma en la que la versión de PowerShell Core que está utilizando es compatible oficialmente.
 
-* Windows 7, 8.1 y 10
-* Windows Server 2008 R2, 2012 R2 y 2016
-* [Canal semianual de Windows Server][semi-annual]
-* Ubuntu 14.04, 16.04 y 17.04
-* Debian 8.7+ y 9
-* CentOS 7
-* Red Hat Enterprise Linux 7
-* OpenSUSE 42.2
-* Fedora 27, 28
-* macOS 10.12+
+Nuestra comunidad también ha aportado paquetes para algunas plataformas, pero no se admiten oficialmente.
+Estos paquetes se marcan como `Community` en la tabla.
 
-Nuestra comunidad también ha aportado paquetes para las plataformas siguientes, pero no se admiten oficialmente:
+Las plataformas mencionadas como `Experimental` no se admiten oficialmente, pero están disponibles para experimentación y comentarios.
 
-* Arch Linux
-* Kali Linux
-* AppImage (funciona en varias plataformas Linux)
+|                                                   | 6.0         | 6.1         |
+|---------------------------------------------------|:-----------:|:-----------:|
+| Windows 7, 8.1 y 10                            | Compatible   | Compatible   |
+| Windows Server 2008 R2, 2012 R2 y 2016             | Compatible   | Compatible   |
+| [Canal semianual de Windows Server][semi-annual] | Compatible   | Compatible   |
+| Ubuntu 14.04 y 16.04                           | Compatible   | Compatible   |
+| Ubuntu 17.10 y 18.04                           |             | Compatible   |
+| Debian 8.7+ y 9                                | Compatible   | Compatible   |
+| CentOS 7                                          | Compatible   | Compatible   |
+| Red Hat Enterprise Linux 7                        | Compatible   | Compatible   |
+| OpenSUSE 42.2                                     | Compatible   | Compatible   |
+| Fedora 27                                         | Compatible   | Compatible   |
+| Fedora 28                                         |             | Compatible   |
+| macOS 10.12+                                      | Compatible   | Compatible   |
+| Arch                                              | Comunidad   | Comunidad   |
+| Raspbian                                          | Experimental| Comunidad   |
+| Kali                                              | Comunidad   | Comunidad   |
+| AppImage (funciona en varias plataformas Linux)     | Comunidad   | Comunidad   |
+
+## <a name="platform-which-are-out-of-support"></a>Plataforma que está fuera de soporte técnico
+
+Cuando una versión de la plataforma llega al final de su vida útil definida por el propietario de la plataforma, PowerShell Core también dejará de ofrecer soporte técnico para esa versión de la plataforma. Los paquetes previamente publicados seguirán estando disponibles para los clientes que necesiten acceso, pero ya no se proporcionará soporte técnico formal ni actualizaciones de ningún tipo.
+
+Por lo tanto, los propietarios de distribución han finalizado la compatibilidad para las versiones siguientes y ya no se admiten.
+
+| Sistema operativo       | Version | Fin de la vida útil                                                                                 |
+|----------|---------|---------------------------------------------------------------------------------------------|
+| Fedora   | 26      | [Mayo de 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
+| Fedora   | 25      | [Diciembre de 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 24      | [Agosto de 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
+| openSUSE | 42.2    | [Enero de 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| openSUSE | 42.1    | [Mayo de 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
+| Ubuntu   | 17.04   | [Enero de 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 16.10   | [Julio de 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
 
 ## <a name="notes-on-licensing"></a>Notas sobre las licencias
 

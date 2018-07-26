@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Valores de los archivos de manifiesto de los elementos que afectan a la interfaz de usuario de Galería de PowerShell
-ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 00350d3558e2bfa487fb116304956ffa7291ee05
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893484"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093980"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valores de los archivos de manifiesto de los elementos que afectan a la interfaz de usuario de Galería de PowerShell
 
@@ -84,65 +84,67 @@ Como referencia, estas son algunas etiquetas más utilizadas desde el 14/12/2017
 En algunos casos, hay opciones similares pero quizá menos adecuadas que se muestran al lado de la etiqueta.
 Es un procedimiento recomendado usar la etiqueta preferida, ya que producirá menos ruido y mejorará los resultados de búsqueda para los consumidores.
 
-| **Etiqueta preferida** | **Alternativas y notas** |
+| Etiqueta preferida | Alternativas y notas |
 | --- | --- |
-| **Azure** |  |
-| **DSC** | DesiredStateConfiguration es menos deseable, es demasiado largo |
-| **ResourceManager** | ARM se utiliza para describir el grupo de procesadores y no debe usarse para Azure Resource Manager | **DSCResourceKit** |  |
-| **SQL** |  |
-| **AWS** |  |
-| **DSCResource** |  |
-| **Automation** |  |
-| **REST** |  |
-| **ActiveDirectory** | AD no se utiliza por sí solo  |
-| **SQLServer** |  |
-| **DBA** |  |
-| **Seguridad** | Defense es menos preciso |
-| **Database** | Databases (en plural) es menos deseable |
-| **DevOps** |  |
-| **Windows** |  |
-| **Build** |  |
-| **Deployment** | Deploy se utiliza con menos frecuencia |
-| **Cloud** |  |
-| **GIT** |  |
-| **Test** | Testing es menos deseable |
-| **VersionControl** | Version es menos preciso, aunque se utiliza con más frecuencia  |
-| **Logging** | Uso preferido de logging como acción |
-| **Log** | Uso preferido de log como hecho |
-| **Backup** |  |
-| **IaaS** |  |
-| **Linux** |  |
-| **IIS** |  |
-| **AzureAutomation** |  |
-| **Storage** |  |
-| **GitHub** |  |
-| **Json** |  |
-| **Exchange** |  |
-| **Network** | Networking es similar, menos frecuente |
-| **SharePoint** |  |
-| **Reporting** | Reporting es una acción, report es un objeto |
-| **Report** | Report es un objeto |
-| **WinRM** |  |
-| **Monitoring** |  |
-| **VSTS** |  |
-| **Excel** |  |
-| **Google** |  |
-| **Color** |  |
-| **DNS** |  |
-| **Office365** | Es preferible escribir Office completo. O365 es menos frecuente, aunque es más corto | **Gitlab** |  |
-| **Pester** |  |
-| **AzureAD** |  |
-| **HTML** |  |
-| **Hyper-V** | HyperV es menos común como etiqueta |
-| **Configuration** |  |
-| **ChatOps** |  |
-| **PackageManagement** |  |
-| **WMI** |  |
-| **Firewall** |  |
-| **Docker** |  |
-| **Appveyor** |  |
-| **AzureRm** | Se utiliza principalmente para los módulos de AzureRM |
-| **Zip** |  |
-| **MSI** |  |
-| **Mac** |  |
-| **PoshBot** |  |
+| Azure |  |
+| DSC | DesiredStateConfiguration es menos deseable, es demasiado largo |
+| ResourceManager | ARM se utiliza para describir el grupo de procesadores y no debe usarse para Azure Resource Manager |
+| DSCResourceKit |  |
+| SQL |  |
+| AWS |  |
+| DSCResource |  |
+| Automatización |  |
+| REST |  |
+| ActiveDirectory | AD no se utiliza por sí solo  |
+| SQLServer |  |
+| DBA |  |
+| Seguridad | Defense es menos preciso |
+| Base de datos | Databases (en plural) es menos deseable |
+| DevOps |  |
+| Windows |  |
+| Build |  |
+| Implementación | Deploy se utiliza con menos frecuencia |
+| Nube |  |
+| GIT |  |
+| Test | Testing es menos deseable |
+| VersionControl | Version es menos preciso, aunque se utiliza con más frecuencia  |
+| Registro | Uso preferido de logging como acción |
+| Registro | Uso preferido de log como hecho |
+| Copias de seguridad |  |
+| IaaS |  |
+| Linux |  |
+| IIS |  |
+| AzureAutomation |  |
+| Almacenamiento |  |
+| Github |  |
+| Json |  |
+| Exchange |  |
+| Red | Networking es similar, menos frecuente |
+| SharePoint |  |
+| Informes | Reporting es una acción, report es un objeto |
+| Informe | Report es un objeto |
+| WinRM |  |
+| Supervisión |  |
+| VSTS |  |
+| Excel |  |
+| Google |  |
+| Color |  |
+| DNS |  |
+| Office365 | Es preferible escribir Office completo. O365 es menos frecuente, aunque es más corto |
+| Gitlab |  |
+| Pester |  |
+| AzureAD |  |
+| HTML |  |
+| Hyper-V | HyperV es menos común como etiqueta |
+| Configuración |  |
+| ChatOps |  |
+| PackageManagement |  |
+| WMI |  |
+| Firewall |  |
+| Docker |  |
+| Appveyor |  |
+| AzureRm | Se utiliza principalmente para los módulos de AzureRM |
+| Zip |  |
+| MSI |  |
+| Mac |  |
+| PoshBot |  |

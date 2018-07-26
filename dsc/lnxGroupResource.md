@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Recurso nxGroup de DSC para Linux
-ms.openlocfilehash: 9651f3affc9b040a7ef8e7bf8d5ab4cebcca8128
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c61b6ab4a8c56d085b5297dcfc7582187d54f946
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221993"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093609"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>Recurso nxGroup de DSC para Linux
 
@@ -15,17 +15,16 @@ El recurso **nxGroup** de la configuración de estado deseado (DSC) de PowerShel
 
 ## <a name="syntax"></a>Sintaxis
 
-```powershell
+```
 nxGroup <string> #ResourceName
 {
     GroupName = <string>
-    [ Ensure = <string> { Absent | Present }  ]
+    [ Ensure = <string> { Absent | Present } ]
     [ Members = <string[]> ]
-    [ MebersToInclude = <string[]>]
+    [ MembersToInclude = <string[]> ]
     [ MembersToExclude = <string[]> ]
     [ DependsOn = <string[]> ]
 }
-
 ```
 
 ## <a name="properties"></a>Propiedades
@@ -38,30 +37,29 @@ nxGroup <string> #ResourceName
 | MembersToInclude| Especifica los usuarios que quiera garantizar que sean miembros del grupo.|
 | MembersToExclude| Especifica los usuarios que quiera garantizar que no sean miembros del grupo.|
 | PreferredGroupID| Establece el identificador de grupo en el valor proporcionado, si es posible. Si el identificador de grupo está actualmente en uso, se utiliza el siguiente identificador de grupo disponible.|
-| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.|
+| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento **ID** del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = '[ResourceType]ResourceName'`.|
 
 ## <a name="example"></a>Ejemplo
 
 El ejemplo siguiente se asegura de que el usuario "monuser" exista y de que sea un miembro del grupo "DBusers".
 
-```
+```powershell
 Import-DSCResource -Module nx
 
 Node $node {
+    nxUser UserExample {
+       UserName = 'monuser'
+       Description = 'Monitoring user'
+       Password = '$6$fZAne/Qc$MZejMrOxDK0ogv9SLiBP5J5qZFBvXLnDu8HY1Oy7ycX.Y3C7mGPUfeQy3A82ev3zIabhDQnj2ayeuGn02CqE/0'
+       Ensure = 'Present'
+       HomeDirectory = '/home/monuser'
+    }
 
-nxUser UserExample{
-   UserName = "monuser"
-   Description = "Monitoring user"
-   Password  =    '$6$fZAne/Qc$MZejMrOxDK0ogv9SLiBP5J5qZFBvXLnDu8HY1Oy7ycX.Y3C7mGPUfeQy3A82ev3zIabhDQnj2ayeuGn02CqE/0'
-   Ensure = "Present"
-   HomeDirectory = "/home/monuser"
-}
-
-nxGroup GroupExample{
-   GroupName = "DBusers"
-   Ensure = "Present"
-   MembersToInclude = "monuser"
-   DependsOn = "[nxUser]UserExample"
-}
+    nxGroup GroupExample {
+       GroupName = 'DBusers'
+       Ensure = 'Present'
+       MembersToInclude = 'monuser'
+       DependsOn = '[nxUser]UserExample'
+    }
 }
 ```
