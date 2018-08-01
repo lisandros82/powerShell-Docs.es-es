@@ -3,18 +3,18 @@ ms.topic: reference
 keywords: powershell, cmdlet
 ms.date: 12/12/2016
 title: Install-PswaWebApplication
-ms.openlocfilehash: 68455d9490f7d5c33c1a928ac262a76a78ad7128
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29e074b75eeb387640831229c63142e6dd5e991a
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189608"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268306"
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
 ## <a name="synopsis"></a>SINOPSIS
 
-Configura en IIS la aplicación web de Windows PowerShell® Web Access.
+Configura en IIS la aplicación web de Windows PowerShell Web Access.
 
 ## <a name="syntax"></a>SINTAXIS
 
@@ -25,7 +25,8 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 ## <a name="description"></a>DESCRIPCIÓN
 
-El cmdlet **Install-PswaWebApplication** configura la aplicación web de Windows PowerShell Web Access. Este cmdlet instala la aplicación web, la asocia a un sitio web y, de forma opcional, crea un certificado SSL de prueba mediante el parámetro **useTestCertificate**. Por motivos de seguridad, los administradores web no deben usar ningún certificado de prueba para los entornos de producción.
+El cmdlet **Install-PswaWebApplication** configura la aplicación web de Windows PowerShell Web Access.
+Este cmdlet instala la aplicación web, la asocia a un sitio web y, de forma opcional, crea un certificado SSL de prueba mediante el parámetro **useTestCertificate**. Por motivos de seguridad, los administradores web no deben usar ningún certificado de prueba para los entornos de producción.
 
 ## <a name="parameters"></a>PARÁMETROS
 
@@ -42,7 +43,7 @@ Especifica que se crea un certificado de prueba. Si este parámetro se establece
 | ¿Aceptar canalización?               | falso                                |
 | ¿Aceptar caracteres comodín?          | falso                                |
 
-### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;String&gt;
+### <a name="-webapplicationname"></a>-WebApplicationName
 
 Especifica el nombre de la aplicación web. Aparece como la última parte de la dirección URL de Windows PowerShell Web Access.
 
@@ -55,7 +56,7 @@ Especifica el nombre de la aplicación web. Aparece como la última parte de la 
 | ¿Aceptar canalización?               | falso                                |
 | ¿Aceptar caracteres comodín?          | falso                                |
 
-### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;String&gt;
+### <a name="-websitename"></a>-WebSiteName
 
 Especifica el nombre del sitio web del Servidor web (IIS) en el que se va a instalar esta aplicación web de Windows PowerShell Web Access.
 
@@ -95,8 +96,7 @@ El cmdlet no se ejecuta.
 
 ### <a name="ltcommonparametersgt"></a>&lt;CommonParameters&gt;
 
-Este cmdlet admite los parámetros comunes: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer y -OutVariable.
-Para más información, vea [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).
+Este cmdlet admite los parámetros comunes: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer y -OutVariable. Para más información, vea [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).
 
 ## <a name="inputs"></a>ENTRADAS
 

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Otros objetos de scripting útiles
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
-ms.openlocfilehash: 58acfd05ff1ae1d9aa5f3a3576b8fb320ba4abbd
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 04e94f858b568928b3910dd0ee85a912a6afc264
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093912"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268507"
 ---
 # <a name="other-useful-scripting-objects"></a>Otros objetos de scripting útiles
 
