@@ -4,19 +4,28 @@ PowerShell Core admite macOS 10.12 y superior.
 Todos los paquetes están disponibles en nuestra página de [versiones][] de GitHub.
 Una vez que se haya instalado el paquete, ejecute `pwsh` desde un terminal.
 
-### <a name="installation-via-homebrew-on-macos-1012"></a>Instalación mediante Homebrew en macOS 10.12
+### <a name="installation-via-homebrew-on-macos-1012"></a>Instalación mediante Homebrew en macOS 10.12+
 
 [Homebrew][brew] es el administrador de paquetes preferido de macOS.
-Si no se encuentra el comando `brew`, debe instalar Homebrew según [sus instrucciones][brew].
+En una ventana de terminal, escriba `brew` para ejecutar Homebrew.  Si no se encuentra el comando `brew`, debe instalar Homebrew según [sus instrucciones][brew].
 
-Una vez que haya instalado Homebrew, le resultará muy fácil instalar PowerShell.
-En primer lugar, instale [Homebrew-Cask][cask] para poder instalar más paquetes:
-
+> [!NOTE]
+> Si instaló Homebrew anteriormente, se recomienda ejecutar "brew update-reset" y "brew update".
 ```sh
-brew tap caskroom/cask
+brew update-reset
+brew update
 ```
 
-Ahora puede instalar PowerShell:
+> Las versiones anteriores de Homebrew usaban la derivación "caskroom/cask", que está en desuso, y se migró a "homebrew/cask".  Puede encontrar más información en [Homebrew-cask][cask]. Use el comando "brew tap" para mostrar las derivaciones actuales.  Si ve "caskroom/cask", puede usar "brew update" para que Homebrew migre las derivaciones.
+
+```sh
+brew tap
+brew update
+```
+
+Una vez que instale o actualice Homebrew, la instalación de PowerShell le resultará muy fácil.
+
+Para instalar PowerShell:
 
 ```sh
 brew cask install powershell
@@ -26,6 +35,11 @@ Por último, compruebe que la instalación funciona correctamente:
 
 ```sh
 pwsh
+```
+
+Para salir de PowerShell y volver a Bash, use el comando "exit". 
+```sh
+exit
 ```
 
 Cuando se publiquen nuevas versiones de PowerShell, bastará con actualizar las fórmulas de Homebrew y PowerShell:
@@ -38,8 +52,45 @@ brew cask upgrade powershell
 > [!NOTE]
 > Los comandos anteriores pueden llamarse desde un host de PowerShell (pwsh), pero, acto seguido, el shell de PowerShell se debe cerrar y volver a iniciar para finalizar la actualización y actualizar los valores que aparecen en $PSVersionTable.
 
-[brew]: http://brew.sh/
-[cask]: https://caskroom.github.io/
+### <a name="installing-preview-via-homebrew-on-macos-1012"></a>Instalación de la versión preliminar mediante Homebrew en macOS 10.12+
+
+[Homebrew][brew] es el administrador de paquetes preferido de macOS.
+En una ventana de terminal, escriba `brew` para ejecutar Homebrew.  Si no se encuentra el comando `brew`, debe instalar Homebrew según [sus instrucciones][brew].
+
+> [!NOTE]
+> Si instaló Homebrew anteriormente, se recomienda ejecutar "brew update-reset" y "brew update".
+```sh
+brew update-reset
+brew update
+```
+
+Luego, debe derivar el repositorio `versions` de Cask para obtener el paquete de versión preliminar:
+
+```sh
+brew tap homebrew/cask-versions
+```
+
+Para instalar la versión preliminar de PowerShell:
+
+```sh
+brew cask install powershell-preview
+```
+
+Por último, compruebe que la instalación funciona correctamente:
+
+```sh
+pwsh-preview
+```
+
+Cuando se publiquen nuevas versiones de PowerShell, bastará con actualizar las fórmulas de Homebrew y actualizar la versión preliminar de PowerShell:
+
+```sh
+brew update
+brew cask upgrade powershell-preview
+```
+
+> [!NOTE]
+> Los comandos anteriores pueden llamarse desde un host de PowerShell (pwsh), pero, acto seguido, el shell de PowerShell se debe cerrar y volver a iniciar para finalizar la actualización y actualizar los valores que aparecen en $PSVersionTable.
 
 ### <a name="installation-via-direct-download"></a>Instalación mediante descarga directa
 
@@ -113,5 +164,15 @@ PowerShell respeta la [especificación de directorio base de XDG][xdg-bds] en ma
 Dado que macOS es una derivación de BSD, se usa el prefijo `/usr/local` en lugar de `/opt`.
 Por lo tanto, `$PSHOME` es `/usr/local/microsoft/powershell/6.0.2/`, y el vínculo simbólico se coloca en `/usr/local/bin/pwsh`.
 
-[versiones]: https://github.com/PowerShell/PowerShell/releases/latest
+## <a name="additional-resources"></a>Recursos adicionales
+
+* [Homebrew Web][brew]
+* [Repositorio GitHub de Homebrew][GitHub]
+* [Homebrew-Cask][cask]
+
+
+[brew]: http://brew.sh/
+[GitHub]: https://github.com/Homebrew
+[Cask]: https://github.com/Homebrew/homebrew-cask
+[Versiones]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

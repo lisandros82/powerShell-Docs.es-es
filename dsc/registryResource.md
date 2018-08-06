@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Recursos de DSC Registry
-ms.openlocfilehash: b77710d7a6fc599949e78c17af309ad88a1a0872
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 8d74473d167b70182c3a16c1d39d2a9e797afb1b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093592"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267728"
 ---
 # <a name="dsc-registry-resource"></a>Recursos de DSC Registry
 
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 El recurso **Registry** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para administrar valores y claves del Registro en un nodo de destino.
 
@@ -33,8 +33,8 @@ Registry [string] #ResourceName
 
 ## <a name="properties"></a>Propiedades
 
-|  Propiedad  |  Descripción   |
-|---|---|
+| Propiedad | Descripción |
+| --- | --- |
 | Clave| Indica la ruta de acceso de la clave del Registro para la que quiere garantizar un estado específico. Esta ruta de acceso debe incluir el subárbol.|
 | ValueName| Indica el nombre del valor del Registro. Para agregar o quitar una clave del Registro, especifique esta propiedad como una cadena vacía sin especificar ValueType ni ValueData. Para modificar o quitar el valor predeterminado de una clave del Registro, especifique esta propiedad como una cadena vacía y especifique también ValueType o ValueData.|
 | Ensure| Indica si existen la clave y valor. Para asegurarse de que existan, establezca esta propiedad en "Present". Para asegurarse de que no existan, establezca esta propiedad en "Absent". El valor predeterminado es "Present".|
@@ -62,4 +62,4 @@ Configuration RegistryTest
 ```
 
 > [!NOTE]
-> Cambiar una configuración de registro en el subárbol **HKEY\_CURRENT\_USER** requiere que la configuración se ejecute con las credenciales de usuario y no como el sistema. Puede usar la propiedad **PsDscRunAsCredential** para especificar las credenciales de usuario para la configuración. Para obtener un ejemplo, consulte [DSC de ejecución con las credenciales de usuario](runAsUser.md).
+> Cambiar una configuración de registro en el subárbol `HKEY\CURRENT\USER` requiere que la configuración se ejecute con las credenciales de usuario y no como el sistema. Puede usar la propiedad **PsDscRunAsCredential** para especificar las credenciales de usuario para la configuración. Para obtener un ejemplo, consulte [DSC de ejecución con las credenciales de usuario](runAsUser.md).

@@ -3,12 +3,12 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: gallery,powershell,cmdlet,psget
 title: Versiones preliminares de scripts
-ms.openlocfilehash: 7d4cec9d2b4ee5ad0b19ad5d9c68bb68747abd57
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093855"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268473"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Versiones preliminares de scripts
 
@@ -45,12 +45,12 @@ Para usar un sufijo de versión preliminar, la cadena de versión debe cumplir l
 - Solo se puede especificar un sufijo de versión preliminar si la versión tiene tres segmentos para Major.Minor.Build.
   Esto se alinea con SemVer v1.0.0.
 - El sufijo de versión preliminar es una cadena que comienza con un guión y puede contener caracteres alfanuméricos ASCII [0-9A-Za-z-].
-- De momento solo se admiten las cadenas de versión preliminar de SemVer v1.0.0, por lo que el sufijo de versión preliminar __no debe__ contener ni punto ni + [.+], que sí se permiten en SemVer 2.0.
+- De momento solo se admiten las cadenas de versión preliminar de SemVer v1.0.0, por lo que el sufijo de versión preliminar **no debe** contener ni punto ni + [.+], que sí se permiten en SemVer 2.0.
 - Ejemplos de cadenas admitidas con sufijo PrereleaseString son: -alpha, -alpha1, -BETA, -update20171020.
 
-__Impacto del control de versiones preliminares en las carpetas de instalación y en el criterio de ordenación__
+### <a name="prerelease-versioning-impact-on-sort-order-and-installation-folders"></a>Impacto del control de versiones preliminares en las carpetas de instalación y en el criterio de ordenación
 
-El criterio de ordenación cambia cuando se usa una versión preliminar, lo que es importante si se publica en la Galería de PowerShell y si se instalan scripts con comandos de PowerShellGet. Si hay dos versiones de script con el mismo número de versión, el criterio de ordenación se basa en la parte de la cadena que sigue al guión. Por lo tanto, la versión 2.5.0-alpha es menor que 2.5.0-beta, que es menor que 2.5.0-gamma. Si hay dos scripts con el mismo número de versión y solo uno tiene un sufijo PrereleaseString, se da por hecho que el script __sin__ el sufijo de versión preliminar es la versión lista para producción y se ordena como una versión mayor que la versión preliminar. Por ejemplo, al comparar las versiones 2.5.0 y 2.5.0-beta, la versión 2.5.0 se considera la mayor.
+El criterio de ordenación cambia cuando se usa una versión preliminar, lo que es importante si se publica en la Galería de PowerShell y si se instalan scripts con comandos de PowerShellGet. Si hay dos versiones de script con el mismo número de versión, el criterio de ordenación se basa en la parte de la cadena que sigue al guión. Por lo tanto, la versión 2.5.0-alpha es menor que 2.5.0-beta, que es menor que 2.5.0-gamma. Si hay dos scripts con el mismo número de versión y solo uno tiene un sufijo PrereleaseString, se da por hecho que el script **sin** el sufijo de versión preliminar es la versión lista para producción y se ordena como una versión mayor que la versión preliminar. Por ejemplo, al comparar las versiones 2.5.0 y 2.5.0-beta, la versión 2.5.0 se considera la mayor.
 
 Al publicar en la Galería de PowerShell, de forma predeterminada, la versión del script que se va a publicar debe ser mayor que cualquier versión publicada previamente que se encuentre en la Galería de PowerShell. Un publicador puede actualizar la versión 2.5.0-alpha con 2.5.0-beta o con 2.5.0 (sin sufijo de versión preliminar).
 
@@ -61,7 +61,7 @@ Para trabajar con elementos de versión preliminar mediante los comandos de Powe
 Las únicas excepciones a esto en los comandos de script de PowerShellGet son Get-InstalledScript y algunos casos con Uninstall-Script.
 
 - Get-InstalledScript siempre muestra automáticamente la información de versión preliminar en la cadena de versión, si está presente.
-- Uninstall-Script desinstala de forma predeterminada la versión más reciente de un script, si __no hay ninguna versión__ especificada. Ese comportamiento no ha cambiado. Pero si se especifica una versión preliminar con -RequiredVersion, se necesita -AllowPrerelease.
+- Uninstall-Script desinstala de forma predeterminada la versión más reciente de un script, si **no hay ninguna versión** especificada. Ese comportamiento no ha cambiado. Pero, si se especifica una versión preliminar con `-RequiredVersion`, se necesitará `-AllowPrerelease`.
 
 ## <a name="examples"></a>Ejemplos
 
@@ -83,13 +83,13 @@ Version        Name                                Repository           Descript
 # To install a prerelease, you must specify -AllowPrerelease. Specifying a prerelease version string is not sufficient.
 
 C:\windows\system32> Install-Script TestPackage -RequiredVersion 1.9.0-alpha
+
 PackageManagement\Find-Package : No match was found for the specified search criteria and script name 'TestPackage'.
 Try Get-PSRepository to see all available registered script repositories.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PSModule.psm1:1455 char:3
 +         PackageManagement\Find-Package @PSBoundParameters | Microsoft ...
 +         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage) [Find-Package], Exceptio
-   n
+    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage)[Find-Package], Exception
     + FullyQualifiedErrorId : NoMatchFoundForCriteria,Microsoft.PowerShell.PackageManagement.Cmdlets.FindPackage
 
 # The previous command failed because -AllowPrerelease was not specified.

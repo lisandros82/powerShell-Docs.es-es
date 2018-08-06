@@ -48,7 +48,7 @@ Las plataformas mencionadas como `Experimental` no se admiten oficialmente, pero
 | Debian 8.7+ y 9                                | Compatible   | Compatible   |
 | CentOS 7                                          | Compatible   | Compatible   |
 | Red Hat Enterprise Linux 7                        | Compatible   | Compatible   |
-| OpenSUSE 42.2                                     | Compatible   | Compatible   |
+| OpenSUSE 42.3                                     | Compatible   | Compatible   |
 | Fedora 27                                         | Compatible   | Compatible   |
 | Fedora 28                                         |             | Compatible   |
 | macOS 10.12+                                      | Compatible   | Compatible   |

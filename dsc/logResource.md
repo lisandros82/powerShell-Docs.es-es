@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Recurso de DSC Log
-ms.openlocfilehash: fade94efd8133ae0172737e4bb1aed89fc0f97d9
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 50fd6cd31ba426108830fcf124a767318060a95d
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093483"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268439"
 ---
 # <a name="dsc-log-resource"></a>Recurso de DSC Log
 
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 El recurso __Log__ de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para escribir mensajes en el registro de eventos de análisis o de la configuración de estado deseado de Microsoft Windows.
 
@@ -26,14 +26,14 @@ Log [string] #ResourceName
 ```
 
 > [!NOTE]
-> De forma predeterminada, solo están habilitados los registros operativos para DSC. Para que el registro analítico esté disponible o visible, es necesario habilitarlo. Para más información, consulte [¿Dónde se encuentran los registros de eventos de DSC?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
+> De forma predeterminada, solo están habilitados los registros operativos para DSC. Para que el registro analítico esté disponible o visible, es necesario habilitarlo. Para más información, consulte [¿Dónde se encuentran los registros de eventos de DSC?](troubleshooting.md#where-are-dsc-event-logs)
 
 ## <a name="properties"></a>Propiedades
 
-|  Propiedad  |  Descripción   |
-|---|---|
+| Propiedad | Descripción |
+| --- | --- |
 | Mensaje| Indica el mensaje que quiere escribir en el registro de eventos de análisis o de la configuración de estado deseado de Microsoft Windows.|
-| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se escriba este mensaje de registro. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es __ResourceName__ y su tipo es __ResourceType__, la sintaxis para usar esta propiedad es `DependsOn = '[ResourceType]ResourceName'`.|
+| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se escriba este mensaje de registro. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = '[ResourceType]ResourceName'`.|
 
 ## <a name="example"></a>Ejemplo
 

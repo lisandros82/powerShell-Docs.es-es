@@ -2,12 +2,12 @@
 ms.date: 06/20/2018
 keywords: dsc,powershell,configuration,setup
 title: Recurso PackageManagement de DSC
-ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892508"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268099"
 ---
 # <a name="dsc-packagemanagement-resource"></a>Recurso PackageManagement de DSC
 
@@ -39,8 +39,8 @@ PackageManagement [string] #ResourceName
 
 ## <a name="properties"></a>Propiedades
 
-|  Propiedad  |  Descripción   |
-|---|---|
+| Propiedad | Descripción |
+| --- | --- |
 | Nombre| Especifica el nombre del paquete que se va a instalar o desinstalar.|
 | AdditionalParameters| La tabla hash de parámetros específica del proveedor que se pasará a `Get-Package -AdditionalArguments`. Por ejemplo, para el proveedor NuGet puede pasar parámetros adicionales, como DestinationPath.|
 | Ensure| Determina si el paquete se puede instalar o desinstalar.|
@@ -54,10 +54,11 @@ PackageManagement [string] #ResourceName
 ## <a name="additional-parameters"></a>Parámetros adicionales
 
 En la tabla siguiente se enumeran las opciones de la propiedad AdditionalParameters.
-|  Parámetro  | Descripción   |
-|---|---|
+
+| Parámetro | Descripción |
+| --- | --- |
 | DestinationPath| Usada por proveedores como el proveedor integrado de Nuget. Especifica una ubicación del archivo donde desea que se instale el paquete.|
-| InstallationPolicy| Usada por proveedores como el proveedor integrado de Nuget. Determina si puede confiar en el origen del paquete. Uno de los valores siguientes: "No es de confianza", "De confianza".|
+| InstallationPolicy| Usada por proveedores como el proveedor integrado de Nuget. Determina si puede confiar en el origen del paquete. Uno de: `Untrusted`, `Trusted`.|
 
 ## <a name="example"></a>Ejemplo
 

@@ -3,22 +3,22 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Administración de servicios
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: e2388f5d73a320a69faae0772c8403a7d77f8b52
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 81fd8802215da80ce22fa3fd4750b1df6efe8206
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094177"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268082"
 ---
 # <a name="managing-services"></a>Administración de servicios
 
-Existen ocho cmdlets Service principales, diseñados para una amplia gama de tareas de servicio. Solo veremos la enumeración y el cambio del estado de ejecución de los servicios, pero puede obtener una lista de cmdlets Service mediante **Get-Help \*-Service**. También puede encontrar información sobre cada cmdlet Service mediante **Get-Help \<Cmdlet-Name\>**, como **Get-Help New-Service**.
+Existen ocho cmdlets Service principales, diseñados para una amplia gama de tareas de servicio. Solo veremos la enumeración y el cambio del estado de ejecución de los servicios, pero puede obtener una lista de cmdlets Service mediante `Get-Help \*-Service`. También puede encontrar información sobre cada cmdlet Service mediante `Get-Help <Cmdlet-Name>`, como `Get-Help New-Service`.
 
 ## <a name="getting-services"></a>Obtener servicios
 
-Puede obtener los servicios en un equipo local o remoto mediante el cmdlet **Get-Service**. Al igual que con **Get-Process**, el uso del comando **Get-Service** sin parámetros devuelve todos los servicios. Puede filtrar por nombre, incluso con un asterisco como carácter comodín:
+Puede obtener los servicios en un equipo local o remoto mediante el cmdlet `Get-Service`. Del mismo modo que ocurre con `Get-Process`, si usa el comando `Get-Service` sin parámetros, se devolverán todos los servicios. Puede filtrar por nombre, incluso con un asterisco como carácter comodín:
 
-```
+```powershell
 PS> Get-Service -Name se*
 
 Status   Name               DisplayName
@@ -30,7 +30,7 @@ Stopped  ServiceLayer       ServiceLayer
 
 Dado que no siempre es evidente cuál es el nombre real del servicio, es posible que necesite buscar servicios por el nombre para mostrar. Puede hacerlo por el nombre específico, mediante caracteres comodín o con una lista de nombres para mostrar:
 
-```
+```powershell
 PS> Get-Service -DisplayName se*
 
 Status   Name               DisplayName
@@ -63,7 +63,7 @@ Estos parámetros solo muestran los valores de las propiedades DependentServices
 
 El comando siguiente obtiene los servicios que el servicio LanmanWorkstation requiere.
 
-```
+```powershell
 PS> Get-Service -Name LanmanWorkstation -RequiredServices
 
 Status   Name               DisplayName
@@ -76,7 +76,7 @@ Running  NSI                Network Store Interface Service
 
 El comando siguiente obtiene los servicios que requieren el servicio LanmanWorkstation.
 
-```
+```powershell
 PS> Get-Service -Name LanmanWorkstation -DependentServices
 
 Status   Name               DisplayName
@@ -94,6 +94,7 @@ Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices
 ```
 
 ## <a name="stopping-starting-suspending-and-restarting-services"></a>Detener, iniciar, suspender y reiniciar los servicios
+
 Todos los cmdlets Service tienen el mismo formato general. Los servicios pueden especificarse por el nombre común o el nombre para mostrar, y toman listas y caracteres comodín como valores. Para detener el administrador de trabajos de impresión, use:
 
 ```powershell
@@ -112,9 +113,9 @@ Para suspender el administrador de trabajos de impresión, use:
 Suspend-Service -Name spooler
 ```
 
-El cmdlet **Restart-Service** funciona de la misma manera que los otros cmdlets Service, pero mostraremos algunos ejemplos más complejos. En el uso más simple, debe especificar el nombre del servicio:
+El cmdlet `Restart-Service` funciona de la misma manera que los otros cmdlets Service, pero mostraremos algunos ejemplos más complejos. En el uso más simple, debe especificar el nombre del servicio:
 
-```
+```powershell
 PS> Restart-Service -Name spooler
 
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
@@ -126,7 +127,7 @@ Observará que obtiene un mensaje de advertencia repetido sobre el inicio del ad
 
 Si desea reiniciar varios servicios, puede obtener una lista de estos, filtrarlos y, después, ejecutar el reinicio:
 
-```
+```powershell
 PS> Get-Service | Where-Object -FilterScript {$_.CanStop} | Restart-Service
 
 WARNING: Waiting for service 'Computer Browser (Browser)' to finish stopping...
@@ -147,9 +148,10 @@ Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 
 ## <a name="setting-service-properties"></a>Establecer las propiedades del servicio
 
-El cmdlet Set-Service cambia las propiedades de un servicio en un equipo local o remoto. Dado que el estado del servicio es una propiedad, puede usar este cmdlet para iniciar, detener y suspender un servicio. El cmdlet Set-Service también tiene un parámetro StartupType que permite cambiar el tipo de inicio del servicio.
+El cmdlet `Set-Service` cambia las propiedades de un servicio en un equipo local o remoto. Dado que el estado del servicio es una propiedad, puede usar este cmdlet para iniciar, detener y suspender un servicio.
+El cmdlet Set-Service también tiene un parámetro StartupType que permite cambiar el tipo de inicio del servicio.
 
-Para usar Set-Service en Windows Vista y en versiones posteriores de Windows, abra Windows PowerShell con la opción "Ejecutar como administrador".
+Para usar `Set-Service` en Windows Vista y en versiones posteriores de Windows, abra Windows PowerShell con la opción "Ejecutar como administrador".
 
 Para obtener más información, consulte [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 
