@@ -1,3 +1,14 @@
+---
+ms.date: 08/09/2017
+keywords: powershell,cmdlet,descargar,instalar,configurar,linux
+title: Instalación de PowerShell Core en Linux
+ms.openlocfilehash: 
+ms.sourcegitcommit: 
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 07/06/2018
+ms.locfileid: ""
+---
 # <a name="installing-powershell-core-on-linux"></a><span data-ttu-id="b8048-101">Instalación de PowerShell Core en Linux</span><span class="sxs-lookup"><span data-stu-id="b8048-101">Installing PowerShell Core on Linux</span></span>
 
 <span data-ttu-id="b8048-102">Admite [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10][u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.3][opensuse], [Fedora 27][fedora], [Fedora 28][fedora] y [Arch Linux][arch].</span><span class="sxs-lookup"><span data-stu-id="b8048-102">Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10][u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.3][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], and [Arch Linux][arch].</span></span>
