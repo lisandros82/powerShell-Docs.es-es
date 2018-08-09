@@ -1,3 +1,14 @@
+---
+title: Ciclo de vida de soporte técnico de PowerShell Core
+description: Directivas que rigen la compatibilidad para PowerShell Core
+ms.date: 08/06/2018
+ms.openlocfilehash: 2e0ca1b9c133e6f316a40aff13365d0489059165
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587166"
+---
 # <a name="powershell-core-support-lifecycle"></a>Ciclo de vida de soporte técnico de PowerShell Core
 
 PowerShell Core es un conjunto independiente de herramientas y componentes que se entrega, se instala y se configura por separado de Windows PowerShell.
@@ -44,7 +55,8 @@ Las plataformas mencionadas como `Experimental` no se admiten oficialmente, pero
 | Windows Server 2008 R2, 2012 R2 y 2016             | Compatible   | Compatible   |
 | [Canal semianual de Windows Server][semi-annual] | Compatible   | Compatible   |
 | Ubuntu 14.04 y 16.04                           | Compatible   | Compatible   |
-| Ubuntu 17.10 y 18.04                           |             | Compatible   |
+| Ubuntu 18.04                                      |             | Compatible   |
+| Ubuntu 18.10 (mediante un paquete Snap)                   |             | Comunidad   |
 | Debian 8.7+ y 9                                | Compatible   | Compatible   |
 | CentOS 7                                          | Compatible   | Compatible   |
 | Red Hat Enterprise Linux 7                        | Compatible   | Compatible   |
@@ -56,6 +68,10 @@ Las plataformas mencionadas como `Experimental` no se admiten oficialmente, pero
 | Raspbian                                          | Experimental| Comunidad   |
 | Kali                                              | Comunidad   | Comunidad   |
 | AppImage (funciona en varias plataformas Linux)     | Comunidad   | Comunidad   |
+| [Paquete Snap](https://snapcraft.io/powershell)   | Ver nota    | Ver nota    |
+
+> [!NOTE]
+> Los paquetes Snap estarán en fase experimental durante un tiempo.  En cuanto estemos seguros de que Snap no supongan nuevos problemas de compatibilidad, se incluirá compatibilidad con la distribución en la que ejecuta el paquete.
 
 ## <a name="platform-which-are-out-of-support"></a>Plataforma que está fuera de soporte técnico
 
@@ -65,13 +81,14 @@ Por lo tanto, los propietarios de distribución han finalizado la compatibilidad
 
 | Sistema operativo       | Version | Fin de la vida útil                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 26      | [Mayo de 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| Fedora   | 25      | [Diciembre de 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
 | Fedora   | 24      | [Agosto de 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| openSUSE | 42.2    | [Enero de 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Fedora   | 25      | [Diciembre de 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 26      | [Mayo de 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
 | openSUSE | 42.1    | [Mayo de 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| Ubuntu   | 17.04   | [Enero de 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| openSUSE | 42.2    | [Enero de 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16.10   | [Julio de 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17.04   | [Enero de 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17.10   | [Julio de 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 
 ## <a name="notes-on-licensing"></a>Notas sobre las licencias
 

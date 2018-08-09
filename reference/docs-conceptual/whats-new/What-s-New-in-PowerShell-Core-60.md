@@ -1,3 +1,14 @@
+---
+title: Novedades de PowerShell Core 6.0
+description: Nuevas características y cambios publicados en PowerShell Core 6.0
+ms.date: 08/06/2018
+ms.openlocfilehash: f0cddad223528cd0f2b4f392faeb6e08e1050c51
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587251"
+---
 # <a name="whats-new-in-powershell-core-60"></a>Novedades de PowerShell Core 6.0
 
 [PowerShell Core 6.0][github] es una nueva edición de PowerShell multiplataforma (Windows, macOS y Linux), de código abierto y diseñada para entornos heterogéneos y la nube híbrida.
@@ -118,7 +129,7 @@ PowerShell Core usa [.NET Standard][] 2.0 para proporcionar compatibilidad binar
 Muchos de los módulos de PowerShell dependen de estos ensamblados (con frecuencia, DLL), y .NET Standard permite que sigan funcionando con .NET Core.
 PowerShell Core también incluye una heurística para buscar en carpetas conocidas, como en la que suele residir en disco la caché global de ensamblados, para localizar dependencias de DLL de .NET Framework.
 
-Puede obtener más información sobre .NET Standard en el [Blog de .NET][], en este vídeo de [YouTube][] y en estas [Preguntas más frecuentes][] de GitHub.
+Puede obtener más información sobre .NET Standard en el [blog de .NET][], en este vídeo de [YouTube][] y en estas [preguntas más frecuentes][] de GitHub.
 
 Se han realizado esfuerzos para asegurarse de que los módulos "integrados" y de lenguaje de PowerShell (como `Microsoft.PowerShell.Management`, `Microsoft.PowerShell.Utility`, etc.) funcionen igual que en Windows PowerShell.
 En muchos casos, con la ayuda de la comunidad, hemos agregado nuevas características y correcciones de errores para estos cmdlets.
@@ -374,7 +385,7 @@ Encontrará más información sobre la forma en que usamos estos datos en esta [
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
 [breaking-changes]: breaking-changes-ps6.md
-[registro de cambios]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
+[Registro de cambios]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
 [.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
