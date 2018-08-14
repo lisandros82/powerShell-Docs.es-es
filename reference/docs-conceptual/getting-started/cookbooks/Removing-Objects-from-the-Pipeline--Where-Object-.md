@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Quitar objetos de la canalización Where Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 46f210e1418098f4809174cd975ab8d783580285
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34753845"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587149"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Quitar objetos de la canalización (Where-Object)
 
@@ -38,7 +38,7 @@ Debido a consideraciones de análisis, los símbolos como <, > y = no se usan co
 |-contains|Contiene|1,2,3 -contains 1|
 |-notcontains|No contiene|1,2,3 -notcontains 4|
 
-Los bloques de script Where-Object usan la variable especial '$_' para hacer referencia al objeto actual en la canalización. A continuación se incluye un ejemplo de cómo funciona: Si tiene una lista de números y solo quiere que se devuelvan los que sean inferiores a 3, puede usar Where-Object para filtrar los números. Para ellos, escriba:
+Los bloques de script Where-Object usan la variable especial `$_` para hacer referencia al objeto actual en la canalización. A continuación se incluye un ejemplo de cómo funciona: Si tiene una lista de números y solo quiere que se devuelvan los que sean inferiores a 3, puede usar Where-Object para filtrar los números. Para ellos, escriba:
 
 ```
 PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
@@ -48,7 +48,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 
 ### <a name="filtering-based-on-object-properties"></a>Filtrar por las propiedades de objeto
 
-Dado que $_ hace referencia al objeto de canalización actual, podemos acceder a sus propiedades para nuestras pruebas.
+Dado que `$_` hace referencia al objeto de canalización actual, podemos acceder a sus propiedades para nuestras pruebas.
 
 Por ejemplo, podemos observar la clase Win32_SystemDriver en WMI. Puede haber cientos de controladores del sistema en un determinado sistema, pero puede que solo esté interesado en un conjunto concreto de estos controladores, como, por ejemplo, aquellos que se están ejecutando actualmente. Si usa Get-Member para ver los miembros de Win32_SystemDriver (**Get-WmiObject -Class Win32_SystemDriver | Get-Member -MemberType Property**), verá que la propiedad correspondiente es State y que tiene un valor "Running" cuando se ejecuta el controlador. Para filtrar los controladores del sistema seleccione solo los que se estén ejecutando. Para ello, escriba:
 
