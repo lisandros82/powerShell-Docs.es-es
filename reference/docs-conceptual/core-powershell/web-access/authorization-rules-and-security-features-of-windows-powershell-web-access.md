@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell, cmdlet
 title: Reglas de autorización y características de seguridad de Windows PowerShell Web Access
-ms.openlocfilehash: 07b85a3c7bced58b9ee8db401f0339ba6011bc96
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
+ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268354"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43133096"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reglas de autorización y características de seguridad de Windows PowerShell Web Access
 
@@ -144,7 +144,7 @@ Los cmdlets de Windows PowerShell Web Access admiten un carácter comodín: un a
    ```
    Get-PswaAuthorizationRule `
       -RuleName <rule-name> | Remove-PswaAuthorizationRule
-  ```
+   ```
 
 > [!NOTE]
 > No se le pedirá confirmación para eliminar la regla de autorización especificada; esta se eliminará al presionar **Entrar**. Asegúrese de que realmente desea quitar la regla antes de ejecutar el cmdlet `Remove-PswaAuthorizationRule`.
