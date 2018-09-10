@@ -1,175 +1,182 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: powershell, cmdlet
 title: Obtener información de ayuda detallada
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483039"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134041"
 ---
 # <a name="getting-detailed-help-information"></a>Obtener información de ayuda detallada
-Windows PowerShell incluye temas de ayuda detallados que explican conceptos de Windows PowerShell y el lenguaje de Windows PowerShell. También hay temas de Ayuda para cada cmdlet y proveedor y temas de Ayuda para muchas funciones y scripts.
 
-Puede ver estos temas de Ayuda en el símbolo del sistema o ver las versiones actualizadas más recientemente de estos temas en la biblioteca de Microsoft Technet. Muchos programas que hospedan Windows PowerShell, como el Entorno de scripting integrado de Windows PowerShell, proporcionan características adicionales de ayuda, como la ayuda contextual y el archivo de ayuda compilado (.chm).
+PowerShell incluye temas de ayuda detallados que explican conceptos de PowerShell y el lenguaje de PowerShell. También hay artículos de Ayuda para cada cmdlet y proveedor, así como para muchas funciones y scripts.
 
-## <a name="getting-help-for-cmdlets"></a>Obtener ayuda para cmdlets
-Para obtener ayuda acerca de los cmdlets de Windows PowerShell, use el cmdlet [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2). Por ejemplo, para obtener ayuda para el cmdlet [Get-ChildItem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc), escriba:
+Puede ver estos artículos de Ayuda en el símbolo del sistema o ver las versiones actualizadas más recientemente de estos artículos en la documentación en línea de [PowerShell](/powershell/scripting/powershell-scripting).
 
-```
-get-help get-childitem
+## <a name="getting-help-for-cmdlets"></a>Obtención de ayuda para cmdlets
+
+Para obtener ayuda acerca de los cmdlets de PowerShell, use el cmdlet [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help). Por ejemplo, para obtener ayuda para el cmdlet `Get-ChildItem`, escriba:
+
+```powershell
+Get-Help Get-ChildItem
 ```
 
 o
 
-```
-get-childitem -?
+```powershell
+Get-ChildItem -?
 ```
 
 También puede obtener ayuda sobre el cmdlet Get-Help. Por ejemplo:
 
-```
-get-help get-help
-```
-
-Para obtener una lista de todos los temas de Ayuda de cmdlets de la sesión, escriba:
-
-```
-get-help -category cmdlet
+```powershell
+Get-Help Get-Help
 ```
 
-Para mostrar una página de cada tema de Ayuda cada vez, use la función **help** o su alias **man**. Por ejemplo, para mostrar la Ayuda del cmdlet Get-ChildItem, escriba:
+Para obtener una lista de todos los artículos de Ayuda de cmdlets de la sesión, escriba:
 
+```powershell
+Get-Help -Category Cmdlet
 ```
-man get-childitem
+
+Para mostrar una página de cada artículo de Ayuda cada vez, use la función `help` o su alias `man`.
+Por ejemplo, para mostrar la Ayuda acerca del cmdlet `Get-ChildItem`, escriba
+
+```powershell
+man Get-ChildItem
 ```
 
 o
 
-```
-help get-childitem
-```
-
-Para mostrar información detallada sobre un cmdlet, una función o un script, incluidas las descripciones de sus parámetros y ejemplos de su uso, emplee el parámetro *Detailed* del cmdlet Get-Help. Por ejemplo, para obtener información detallada sobre el cmdlet Get-ChildItem, escriba:
-
-```
-get-help get-childitem -detailed
+```powershell
+help Get-ChildItem
 ```
 
-Para mostrar todo el contenido del tema de Ayuda, use el parámetro *Full* del cmdlet Get-Help. Por ejemplo, para mostrar todo el contenido del tema de Ayuda para el cmdlet Get-ChildItem, escriba:
+Para mostrar información detallada, use el parámetro **Detailed** del cmdlet `Get-Help`. Por ejemplo, para obtener información detallada acerca del cmdlet `Get-ChildItem`, escriba:
 
-```
-get-help get-childitem -full
-```
-
-Para obtener Ayuda detallada sobre los parámetros de un cmdlet, use el parámetro *Parameter* del cmdlet Get-Help. Por ejemplo, para obtener Ayuda detallada de todos los parámetros del cmdlet Get-ChildItem, escriba:
-
-```
-get-help get-childitem -parameter *
+```powershell
+Get-Help Get-ChildItem -Detailed
 ```
 
-Para mostrar solo los ejemplos de un tema de Ayuda, use el parámetro *Example* de Get-Help. Por ejemplo, para mostrar solo los ejemplos del tema de Ayuda para el cmdlet Get-ChildItem, escriba:
+Para mostrar todo el contenido del artículo de Ayuda, use el parámetro **Full** del cmdlet `Get-Help`. Por ejemplo, para mostrar todo el contenido del artículo de Ayuda para el cmdlet `Get-ChildItem`, escriba:
 
-```
-get-help get-childitem -examples
-```
-
-Para obtener información sobre cómo escribir temas de ayuda para los cmdlets que escribe, vea [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (Cómo escribir ayuda para cmdlet) en la biblioteca de MSDN.
-
-## <a name="getting-conceptual-help"></a>Obtener ayuda conceptual
-El cmdlet Get-Help también muestra información sobre temas conceptuales en Windows PowerShell, incluidos los temas sobre el lenguaje de Windows PowerShell. Los temas de Ayuda conceptual comienzan por el prefijo "about_", como about_line_editing. (Los nombres de temas conceptuales deben especificarse en inglés, incluso en versiones no inglesas de Windows PowerShell).
-
-Para mostrar una lista de temas conceptuales, escriba:
-
-```
-get-help about_*
+```powershell
+Get-Help Get-ChildItem -Full
 ```
 
-Para mostrar un tema de Ayuda determinado, escriba el nombre del tema, por ejemplo:
+Para obtener ayuda detallada acerca de los parámetros de un cmdlet, use el parámetro **Parameter** del cmdlet `Get-Help`. Por ejemplo, para obtener ayuda detallada acerca de todos los parámetros del cmdlet `Get-ChildItem`, escriba:
 
-```
-get-help about_command_syntax
-```
-
-Los parámetros de Get-Help, como *Detailed*, *Parameter* y *Examples*, no tienen ningún efecto en la presentación de temas de Ayuda conceptuales.
-
-## <a name="getting-help-about-providers"></a>Obtener ayuda acerca de los proveedores
-El cmdlet Get-Help muestra información sobre los proveedores de Windows PowerShell. Para obtener ayuda sobre un proveedor, escriba "Get-Help" seguido del nombre del proveedor. Por ejemplo, para obtener ayuda sobre el proveedor del Registro, escriba:
-
-```
-get-help registry
+```powershell
+Get-Help Get-ChildItem -Parameter *
 ```
 
-Para obtener una lista de todos los temas de Ayuda de la sesión, escriba:
+Para mostrar solo los ejemplos de un artículo de Ayuda, use el parámetro **Examples** de `Get-Help`.
+Por ejemplo, para mostrar solo los ejemplos del artículo de Ayuda para el cmdlet `Get-ChildItem `, escriba:
 
-```
-get-help -category provider
-```
-
-Los parámetros de Get\-Help, como *Detailed*, *Parameter* y *Examples*, no tienen ningún efecto en la presentación de temas de Ayuda de proveedor.
-
-## <a name="getting-help-about-scripts-and-functions"></a>Obtener ayuda acerca de scripts y funciones
-Muchos scripts y funciones de Windows PowerShell tienen temas de Ayuda. Use el cmdlet Get-Help para visualizar los temas de Ayuda de scripts y funciones.
-
-Para visualizar la Ayuda de una función, escriba "get-help" seguido del nombre de función. Por ejemplo, para obtener Ayuda para la función Disable-PSRemoting, escriba:
-
-```
-get-help disable-psremoting
+```powershell
+Get-Help Get-ChildItem -Examples
 ```
 
-Para visualizar la Ayuda de un script, escriba la ruta de acceso completa al archivo de script. Si el script está en una ruta de acceso que aparece en la variable de entorno Path, puede omitir la ruta de acceso del comando.
+Para obtener información sobre cómo escribir artículos de Ayuda para los cmdlets que escribe, consulte [How to Write Cmdlet Help](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets) (Cómo escribir ayuda para cmdlet).
 
-Por ejemplo, si tiene un script denominado "TestScript.ps1" en el directorio C:\\PS-Test, para visualizar el tema de Ayuda del script, escriba:
+## <a name="getting-conceptual-help"></a>Obtención de ayuda conceptual
 
-```
-get-help c:\ps-test\TestScript.ps1
-```
+El cmdlet `Get-Help` también muestra información acerca de artículos conceptuales en PowerShell, incluidos los artículos sobre el lenguaje de PowerShell. Los artículos de Ayuda conceptual comienzan por el prefijo "about_", como about_line_editing. (Los nombres de artículos conceptuales deben especificarse en inglés, incluso en versiones no inglesas de PowerShell).
 
-Los parámetros diseñados para mostrar la Ayuda de cmdlets, como *Detailed*, *Full*, *Examples* y *Parameter*, también funcionan para la Ayuda de scripts y funciones. Sin embargo, al escribir "get-help \*" para que se muestre toda la Ayuda, la Ayuda de funciones y scripts no aparece.
+Para mostrar una lista de artículos conceptuales, escriba:
 
-Para obtener información sobre cómo escribir la Ayuda de scripts y funciones, vea [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af) y [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
-
-## <a name="getting-help-online"></a>Obtener ayuda en línea
-Si está conectado a Internet, una de las mejores formas de obtener Ayuda es ver los temas de Ayuda en línea. Dado que los temas en línea son fáciles de actualizar, es probable que proporcionen el contenido más actualizado.
-
-Para obtener Ayuda en línea, pruebe el parámetro *Online* del cmdlet Get-Help. El parámetro *Online* del cmdlet Get-Help funciona solo para la Ayuda de cmdlets, funciones y scripts. No se puede usar el parámetro *Online* con temas conceptuales (Acerca de) ni temas de Ayuda de proveedor. Además, dado que esta característica es opcional, no funciona con todos los temas de Ayuda de cmdlets, funciones o scripts.
-
-Sin embargo, todos los temas de Ayuda que se suministran con Windows PowerShell, incluidos los temas de Ayuda de proveedor y los temas de Ayuda conceptuales (Acerca de), están disponibles en línea en la sección [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116) de la biblioteca de Microsoft TechNet.
-
-Para usar el parámetro *Online* del cmdlet Get-Help, emplee el siguiente formato de comando.
-
-```
-get-help <command-name> -online
+```powershell
+Get-Help about_*
 ```
 
-Por ejemplo, para obtener la versión en línea del tema de Ayuda sobre el cmdlet Get-ChildItem, escriba:
+Para mostrar un artículo de Ayuda determinado, escriba el nombre del artículo, por ejemplo:
 
+```powershell
+Get-Help about_command_syntax
 ```
-get-help get-childitem -online
+
+Los parámetros de `Get-Help`, como **Detailed**, **Parameter** y **Examples**, no tienen ningún efecto en la presentación de artículos de Ayuda conceptuales.
+
+## <a name="getting-help-about-providers"></a>Obtención de ayuda acerca de los proveedores
+
+El cmdlet `Get-Help` muestra información sobre los proveedores de PowerShell. Para obtener ayuda sobre un proveedor, escriba `Get-Help` seguido del nombre del proveedor. Por ejemplo, para obtener ayuda sobre el proveedor del Registro, escriba:
+
+```powershell
+Get-Help registry
 ```
 
-Si está disponible una versión en línea del tema de Ayuda, se abrirá en el explorador predeterminado.
+Para obtener una lista de todos los artículos de Ayuda de proveedor de la sesión, escriba
 
-Si se admite la Ayuda en línea para un tema de Ayuda, también puede ver la dirección de Internet (URL) del tema de Ayuda. La dirección de Internet aparece en la sección Vínculos relacionados de un tema de Ayuda.
+```powershell
+Get-Help -Category provider
+```
+
+Los parámetros de `Get-Help`, como **Detailed**, **Parameter** y **Examples**, no tienen ningún efecto en la presentación de artículos de Ayuda de proveedor.
+
+## <a name="getting-help-about-scripts-and-functions"></a>Obtención de ayuda acerca de scripts y funciones
+
+Muchos scripts y funciones de PowerShell tienen artículos de Ayuda. Use el cmdlet `Get-Help` para mostrar los artículos de Ayuda de scripts y funciones.
+
+Para mostrar la Ayuda de una función, escriba `Get-Help` seguido del nombre de función. Por ejemplo, para obtener ayuda para la función `Disable-PSRemoting`, escriba:
+
+```powershell
+Get-Help Disable-PSRemoting
+```
+
+Para mostrar la Ayuda de un script, escriba la ruta de acceso al archivo de script. Si el script no está en una ruta de acceso mencionada en la variable de entorno Path, debe utilizar la ruta de acceso completa.
+
+Por ejemplo, si tiene un script denominado "TestScript.ps1" en el directorio C:\\PS-Test, para mostrar el artículo de Ayuda del script, escriba:
+
+```powershell
+Get-Help c:\ps-test\TestScript.ps1
+```
+
+Los parámetros que están diseñados para mostrar la ayuda del cmdlet también funcionan para la ayuda del script y de la función. Sin embargo, la ayuda para las funciones y los scripts no se muestra cuando se ejecuta `Get-Help *`.
+
+Para obtener información sobre cómo escribir artículos de ayuda para sus funciones y scripts, consulte los siguientes artículos:
+
+- [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+
+## <a name="getting-help-online"></a>Obtención de ayuda en línea
+
+La visualización de los artículos de la Ayuda en línea es una de las mejores maneras de obtener ayuda. Los artículos en línea son más fáciles de actualizar y proporcionan el contenido más actual.
+
+Para obtener ayuda en línea, pruebe el parámetro **Online** del cmdlet `Get-Help`. Todos los artículos de Ayuda que vienen con PowerShell, como la Ayuda de proveedores y los artículos de Ayuda conceptual (Acerca de), están disponibles en línea en la documentación de [PowerShell](/powershell/scripting/powershell-scripting).
+
+> [!NOTE]
+> No se puede usar el parámetro **Online** con temas conceptuales (about_*) ni artículos de Ayuda de proveedor.
+> La ayuda en línea es opcional, por tanto no funciona para todos los cmdlets, funciones o scripts.
+
+Por ejemplo, para obtener la versión en línea del tema de Ayuda sobre el cmdlet `Get-ChildItem`, escriba:
+
+```powershell
+Get-Help Get-ChildItem -Online
+```
+
+PowerShell abre el artículo en el explorador predeterminado. Si se admite la Ayuda en línea para un artículo de Ayuda, también puede ver la dirección URL del artículo de Ayuda. La dirección URL aparece en la sección Vínculos relacionados de un artículo de Ayuda.
 
 Por ejemplo, para ver la dirección URL de la versión en línea del cmdlet Add-Computer, escriba:
 
-```
-get-help add-computer
-```
-
-A continuación, se muestra la primera línea de la sección Vínculos relacionados del tema.
-
-```
-Online version: http://go.microsoft.com/fwlink/?LinkID=135194
+```powershell
+Get-Help Add-Computer
 ```
 
-Para obtener información sobre cómo proporcionar soporte técnico en línea para sus temas de ayuda, vea [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) y [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (Cómo escribir ayuda para cmdlet) en la biblioteca de MSDN.
+A continuación, se muestra la primera línea de la sección Vínculos relacionados del artículo.
 
-## <a name="see-also"></a>Véase también
-- [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)
-- [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-- [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
+```Output
+Online version: http://go.microsoft.com/fwlink/?LinkId=821564
+```
+
+Para más información sobre cómo proporcionar soporte técnico en línea para los artículos de Ayuda, consulte [about_Comment_Based_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+
+## <a name="see-also"></a>Vea también
+
+- [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+- [Get-Help](/powershell/module/microsoft.powershell.core/get-help)

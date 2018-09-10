@@ -1,32 +1,30 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/14/2018
 keywords: powershell, cmdlet
 title: Introducción a Windows PowerShell ISE
-ms.openlocfilehash: b09e64d0258d11f1f16f96b319ef232ebdfa0c49
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d27a0eb594d7271121cee59f38d096995cc98648
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952909"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133106"
 ---
 # <a name="introducing-the-windows-powershell-ise"></a>Introducción a Windows PowerShell ISE
 
-Windows PowerShell Integrated Scripting Environment (ISE) es una aplicación host de Windows PowerShell. En Windows PowerShell ISE, puede ejecutar comandos y escribir, comprobar y depurar scripts en una sola interfaz gráfica de usuario basada en Windows mediante la edición de varias líneas, la finalización con tabulación, el color de sintaxis, la ejecución selectiva, la ayuda contextual y la compatibilidad con idiomas que se leen de derecha a izquierda. Puede usar elementos de menú y métodos abreviados de teclado para realizar muchas de las mismas tareas que realizaría en la consola de Windows PowerShell. Por ejemplo, si depura un script en Windows PowerShell ISE, para establecer un punto de interrupción de la línea en un script puede hacer clic con el botón derecho en la línea de código y luego hacer clic en **Alternar punto de interrupción**.
+Windows PowerShell Integrated Scripting Environment (ISE) es una aplicación host de Windows PowerShell. En Windows PowerShell ISE, puede ejecutar comandos y escribir, probar y depurar scripts en una única interfaz gráfica de usuario basada en Windows. La interfaz proporciona edición de varias líneas, finalización con tabulación, color de sintaxis, ejecución selectiva, ayuda contextual y compatibilidad con idiomas de derecha a izquierda. Los elementos de menú y métodos abreviados de teclado se asignan a muchas de las mismas tareas que realizaría en la consola de Windows PowerShell. Por ejemplo, al depurar un script en Windows PowerShell ISE, puede hacer clic con el botón derecho en una línea de código para establecer un punto de interrupción.
 
 Pruebe estas características de Windows PowerShell ISE.
 
 - Edición de varias líneas: para insertar una línea en blanco debajo de la línea actual en el panel Comando, presione MAYÚS+ENTRAR.
 - Ejecución selectiva: para ejecutar parte de un script, seleccione el texto que desea ejecutar y, a continuación, haga clic en el botón **Ejecutar script**. También puede presionar F5.
-- Ayuda contextual: escriba **Invoke-Item** y después presione F1. El archivo de ayuda se abre en el tema de Ayuda correspondiente al cmdlet **Invoke-Item**.
+- Ayuda contextual: escriba **Invoke-Item** y después presione F1. El archivo de ayuda se abre en el artículo correspondiente al cmdlet **Invoke-Item**.
 
-Windows PowerShell ISE permite personalizar algunos aspectos de su apariencia. También tiene su propio perfil de Windows PowerShell, donde puede almacenar las funciones, los alias, las variables y los comandos que usa en Windows PowerShell ISE.
+Windows PowerShell ISE permite personalizar algunos aspectos de su apariencia. También tiene su propio script de perfil de Windows PowerShell.
 
 ## <a name="to-start-the-windows-powershell-ise"></a>Para iniciar Windows PowerShell ISE
 
-Realice una de las siguientes acciones:
-
-- Haga clic en **Inicio**, elija **Todos los programas** y **Windows Powershell V2** y, después, haga clic en **Windows Powershell ISE**.
-- En Cmd.exe en la consola de Windows PowerShell, o en el cuadro Ejecutar, escriba **powershell_ise.exe**.
+Haga clic en **Inicio**, seleccione **Windows PowerShell** y, después, haga clic en **Windows PowerShell ISE**.
+Como alternativa, puede escribir `powershell_ise.exe` en cualquier shell de comandos o en el cuadro Ejecutar.
 
 ## <a name="to-get-help-in-the-windows-powershell-ise"></a>Para obtener ayuda de Windows PowerShell ISE
 

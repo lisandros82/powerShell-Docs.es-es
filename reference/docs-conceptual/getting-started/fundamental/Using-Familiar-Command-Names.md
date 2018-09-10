@@ -1,23 +1,24 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: powershell, cmdlet
 title: Usar nombres de comando conocidos
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 37fc6dfad5a2f1363254744141dcab1e13aa5066
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c5665f64fd832eb9c807f413a8e879f63db7f8c6
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952688"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353256"
 ---
 # <a name="using-familiar-command-names"></a>Usar nombres de comando conocidos
-Mediante un mecanismo denominado *alias*, Windows PowerShell permite a los usuarios hacer referencia a los comandos con nombres alternativos. El aliasing permite a los usuarios con experiencia en otros shells reutilizar los nombres de comandos comunes que ya conocen para realizar operaciones similares en Windows PowerShell. Aunque no trataremos en detalle los alias de Windows PowerShell, puede usarlos para empezar a trabajar con Windows PowerShell.
 
-El aliasing asocia un nombre de comando que escribe a otro comando. Por ejemplo, Windows PowerShell tiene una función interna denominada **Clear-Host** que borra la ventana de salida. Si escribe el comando **cls** o **clear** en un símbolo del sistema, Windows PowerShell interpreta que se trata de un alias de la función **Clear-Host** y ejecuta la función **Clear-Host**.
+PowerShell admite alias para referirse a comandos con nombres alternativos. La creación de alias permite a los usuarios con experiencia en otros shells utilizar los nombres de comandos comunes que ya conocen en operaciones similares en PowerShell.
 
-Esta característica ayuda a los usuarios a aprender a usar Windows PowerShell. En primer lugar, la mayoría de los usuarios de Cmd.exe y UNIX tienen una gran repertorio de comandos que los usuarios que ya conocen por su nombre y, aunque los equivalentes de Windows PowerShell podrían no producir resultados idénticos, son lo suficientemente parecidos para que los usuarios pueden usarlos en su trabajo sin tener que memorizar primero los nombres de Windows PowerShell. En segundo lugar, la principal fuente de frustración a la hora de aprender un nuevo shell cuando el usuario ya está familiarizado con otro, son los errores provocados por la "memoria digital". Si hace años que usa Cmd.exe y tiene una pantalla repleta de salida que quiere limpiar, escribiría de manera reflexiva el comando **cls** y presionaría la tecla ENTRAR. Sin el alias de la función **Clear-Host** de Windows PowerShell, obtendría un mensaje de error similar a "**'cls' no se reconoce como cmdlet, función, programa ejecutable o archivo de script**" y se quedaría sin saber qué debe hacer para borrar la salida.
+La creación de alias asocia un nombre nuevo con otro comando. Por ejemplo, PowerShell tiene una función interna denominada `Clear-Host` que borra la ventana de salida. Puede escribir el alias `cls` o `clear` en un símbolo del sistema. PowerShell interpreta estos alias y ejecuta la función `Clear-Host`.
 
-La siguiente es una lista breve de comandos de Cmd.exe y UNIX comunes que puede usar en Windows PowerShell:
+Esta característica ayuda a los usuarios a aprender PowerShell. Primero, la mayoría de los usuarios de **cmd.exe** y Unix tienen un amplio repertorio de comandos que los usuarios ya conocen por su nombre. Los equivalentes de PowerShell pueden no producir resultados idénticos. Sin embargo, los resultados son lo suficientemente cercanos como para que los usuarios puedan trabajar sin conocer el nombre del comando PowerShell. El automatismo es otra fuente importante de frustración cuando se aprende un nuevo shell de comandos. Si ha usado **cmd.exe** durante años, puede escribir de forma refleja el comando `cls` para borrar la pantalla. Sin el alias de `Clear-Host`, recibirá un mensaje de error y no sabrá qué hacer para borrar la salida.
+
+La siguiente lista muestra algunos de los comandos de **cmd.exe** y Unix comunes que puede usar en PowerShell:
 
 |||||
 |-|-|-|-|
@@ -30,29 +31,54 @@ La siguiente es una lista breve de comandos de Cmd.exe y UNIX comunes que puede 
 |del|lp|r|write|
 |diff|ls|ren||
 
-Si usa uno de estos comandos de forma reflexiva y desea obtener el nombre real del comando nativo de Windows PowerShell, puede usar el comando **Get-Alias**:
+El cmdlet `Get-Alias` muestra el nombre real del comando PowerShell nativo asociado a un alias.
 
-```
+```powershell
 PS> Get-Alias cls
-
-CommandType     Name                            Definition
------------     ----                            ----------
-Alias           cls                             Clear-Host
 ```
 
-Para que los ejemplos sean más legibles, la Guía de usuario de Windows PowerShell suele evitar el uso de alias. Sin embargo, saber más sobre los alias con antelación puede resultarle útil si trabaja con fragmentos de código arbitrarios de código de Windows PowerShell de otro origen o desea definir sus propios alias. En el resto de esta sección se tratarán los alias estándar y cómo definir sus propios alias.
-
-### <a name="interpreting-standard-aliases"></a>Interpretar los alias estándar
-A diferencia de los alias descritos anteriormente, que se diseñaron para ofrecer compatibilidad con los nombres de otras interfaces, los alias integrados en Windows PowerShell están diseñados generalmente para ofrecer brevedad. Estos nombres más cortos pueden escribirse rápidamente, pero son imposibles de leer si no sabe a qué hacen referencia.
-
-Windows PowerShell intenta compensar la claridad y la brevedad proporcionando un conjunto de alias estándar que se basan en nombres abreviados para nombres y verbos comunes. Esto permite un conjunto principal de alias para cmdlets comunes que son legibles si se conocen los nombres abreviados. Por ejemplo, en los alias estándar, el verbo **Get** se abrevia a **g**, el verbo **et** se abrevia a **s**, el nombre **Item** se abrevia a **i**, el nombre **Location** se abrevia a **l** y el nombre Command se abrevia a **cm**.
-
-Este es un breve ejemplo para ilustrar cómo funciona. El alias estándar de Get-Item procede de la combinación de **g** de Get e **i** de Item: **gi**. El alias estándar de Set-Item procede de la combinación de **s** de Set e **i** de Item: **si**. El alias estándar de Get-Location procede de la combinación de **g** de Get y **l** de Location: **gl**. El alias estándar de Set-Location procede de la combinación de **s** de Set y **l** de Location: **sl**. El alias estándar de Get-Command procede de la combinación de **g** de Get y **cm** de Command: **gcm**. No existe un cmdlet Set-Command, pero si lo hubiera, podríamos adivinar que el alias estándar proviene de **s** de Set y **cm** de Command: **scm**. Además, las personas que conozcan los alias de Windows PowerShell que se encuentren **scm** podrán adivinar que el alias hace referencia a Set-Command.
-
-### <a name="creating-new-aliases"></a>Crear nuevos alias
-Puede crear sus propios alias mediante el cmdlet Set-Alias. Por ejemplo, las siguientes instrucciones crean los alias de cmdlet estándar que se describen en Interpretar los alias estándar:
-
+```Output
+CommandType     Name                               Version    Source
+-----------     ----                               -------    ------
+Alias           cls -> Clear-Host
 ```
+
+## <a name="interpreting-standard-aliases"></a>Interpretación de los alias estándar
+
+Los alias que describimos anteriormente fueron diseñados para ser compatibles con los nombres de otros shells de comandos.
+La mayoría de los alias integrados en PowerShell están diseñados para ser breves. Los nombres más cortos son más fáciles de escribir, pero son difíciles de leer si no sabe a qué se refieren.
+
+Los alias de PowerShell intentan comprometer la claridad y la brevedad. PowerShell utiliza un conjunto estándar de alias para sustantivos y verbos comunes.
+
+Abreviaturas de ejemplo:
+
+| Sustantivo o verbo | Abreviatura |
+|--------------|--------------|
+| Get          | g            |
+| Establecer          | s            |
+| Elemento         | i            |
+| Ubicación     | l            |
+| Comando      | cm           |
+| Alias        | al           |
+
+Estos alias son comprensibles cuando se conocen los nombres abreviados.
+
+| Nombre del cmdlet    | Alias |
+|----------------|-------|
+| `Get-Item `    | gi    |
+| `Set-Item`     | si    |
+| `Get-Location` | gl    |
+| `Set-Location` | sl    |
+| `Get-Command`  | gcm   |
+| `Get-Alias`    | gal   |
+
+Cuando ya esté familiarizado con la creación de alias de PowerShell, es fácil adivinar que el alias **sal** se refiere a `Set-Alias`.
+
+## <a name="creating-new-aliases"></a>Creación de nuevos alias
+
+Con el cmdlet `Set-Alias` puede crear sus propios alias. Por ejemplo, las siguientes instrucciones crean los alias de cmdlet estándar que se describen anteriormente:
+
+```powershell
 Set-Alias -Name gi -Value Get-Item
 Set-Alias -Name si -Value Set-Item
 Set-Alias -Name gl -Value Get-Location
@@ -60,7 +86,8 @@ Set-Alias -Name sl -Value Set-Location
 Set-Alias -Name gcm -Value Get-Command
 ```
 
-Internamente, Windows PowerShell usa estos comandos durante el inicio, pero estos alias no se pueden cambiar. Si intenta ejecutar realmente uno de estos comandos, obtendrá un error que indicará que no se puede modificar el alias. Por ejemplo:
+Internamente, PowerShell usa comandos similares durante el inicio, pero estos alias no se pueden cambiar.
+Si intenta ejecutar realmente uno de estos comandos, obtiene un error que indica que no se puede modificar el alias. Por ejemplo:
 
 ```
 PS> Set-Alias -Name gi -Value Get-Item
