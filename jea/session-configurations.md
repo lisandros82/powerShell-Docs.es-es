@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Configuraciones de sesión de JEA
-ms.openlocfilehash: 3e5a663be8e7aba09a2592c278224cd892c89a20
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190101"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522969"
 ---
 # <a name="jea-session-configurations"></a>Configuraciones de sesión de JEA
 
@@ -221,7 +221,7 @@ Para obtener una lista completa de las propiedades que se admiten en el archivo 
 
 ## <a name="testing-a-session-configuration-file"></a>Probar un archivo de configuración de sesión
 
-Puede probar una configuración de sesión con el cmdlet [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile).
+Puede probar una configuración de sesión con el cmdlet [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile).
 Se recomienda encarecidamente que pruebe el archivo de configuración de sesión si se ha editado el archivo pssc de forma manual mediante un editor de texto para asegurarse de que la sintaxis sea correcta.
 Si un archivo de configuración de sesión no supera esta prueba, no podrá registrarse correctamente en el sistema.
 

@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Cmdlets del catálogo
-ms.openlocfilehash: 7eaca09667af0eb5d719f23e987bb112e8514978
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ec5fc866fe27a894b23b93d3ea46ad9c0cba288e
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189074"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522895"
 ---
 # <a name="catalog-cmdlets"></a>Cmdlets del catálogo
 
-Hemos agregado dos nuevos cmdlets en el módulo [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) para generar y validar los archivos de catálogo de Windows.
+Hemos agregado dos nuevos cmdlets en el módulo [Microsoft.Powershell.Secuity](https://technet.microsoft.com/library/hh847877.aspx) para generar y validar los archivos de catálogo de Windows.
 
 ## <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
@@ -49,5 +49,5 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 ![](../images/TestFileCatalog.jpg)
 
 Este cmdlet compara los valores hash de todos los archivos y de sus rutas de acceso relativas que se encuentran en el archivo de catálogo con los guardados en el disco. Si se detecta cualquier error de coincidencia entre los hashes y las rutas de acceso de los archivos devuelve el estado `ValidationFailed`.
-Los usuarios pueden recuperar toda esta información mediante el modificador `Detailed`. Se muestra el estado de firma del catálogo en el campo `Signature`, lo que es igual que llamar al cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) en el archivo de catálogo.
+Los usuarios pueden recuperar toda esta información mediante el modificador `Detailed`. Se muestra el estado de firma del catálogo en el campo `Signature`, lo que es igual que llamar al cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) en el archivo de catálogo.
 El usuario también puede omitir cualquier archivo durante la validación mediante el parámetro `FilesToSkip`.

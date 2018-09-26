@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Registro de configuraciones de JEA
-ms.openlocfilehash: cda899b20378b0183a3d88ecfd593aaf7356e967
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2c4a8f64c966903a6eb8fcabe4cd25ae7f98b2c4
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188520"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522861"
 ---
 # <a name="registering-jea-configurations"></a>Registro de configuraciones de JEA
 
@@ -57,7 +57,7 @@ Puede eliminar el archivo de configuración de sesión en cualquier momento; no 
 
 ## <a name="multi-machine-configuration-with-dsc"></a>Configuración de varios equipos con DSC
 
-Si va a implementar JEA en varios equipos, el modelo de implementación más sencillo es usar el recurso de [configuración de estado deseado](https://msdn.microsoft.com/en-us/powershell/dsc/overview) de JEA para implementar JEA en todos los equipos de forma rápida y coherente.
+Si va a implementar JEA en varios equipos, el modelo de implementación más sencillo es usar el recurso de [configuración de estado deseado](https://msdn.microsoft.com/powershell/dsc/overview) de JEA para implementar JEA en todos los equipos de forma rápida y coherente.
 
 Para implementar JEA con DSC, debe asegurarse de que se cumplen los requisitos previos siguientes:
 - Se han creado una o varias funcionalidades de rol y se han agregado a un módulo de PowerShell válido.
@@ -110,7 +110,7 @@ Configuration JEAMaintenance
 }
 ```
 
-Después, se puede aplicar esta configuración en un sistema al [invocar directamente el administrador de configuración local](https://msdn.microsoft.com/en-us/powershell/dsc/metaconfig) o actualizar la [configuración del servidor de incorporación de cambios](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver).
+Después, se puede aplicar esta configuración en un sistema al [invocar directamente el administrador de configuración local](https://msdn.microsoft.com/powershell/dsc/metaconfig) o actualizar la [configuración del servidor de incorporación de cambios](https://msdn.microsoft.com/powershell/dsc/pullserver).
 
 El recurso de DSC también permite reemplazar el punto de conexión de comunicación remota Microsoft.PowerShell predeterminado.
 Si lo hace, el recurso registrará de forma automática un punto de conexión sin restricciones de copia de seguridad denominado "Microsoft.PowerShell.Restricted", que tiene la ACL de WinRM predeterminada (que permite que los miembros del grupo de administradores locales y Usuarios de administración remota obtengan acceso a él).

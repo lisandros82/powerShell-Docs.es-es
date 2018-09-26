@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Creación y publicación de un elemento
-ms.openlocfilehash: 7c2a2be6986bf65c168d7c3960366fac4ee31301
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c5027c5fb357bb187611880ba75610a8f33074e0
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189540"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522980"
 ---
 # <a name="creating-and-publishing-an-item"></a>Creación y publicación de un elemento
 
 La Galería de PowerShell es el lugar para publicar módulos, scripts y recursos de DSC estables de PowerShell y compartirlos con la comunidad de usuarios más amplia de PowerShell.
 
 En este artículo se describe la mecánica y los pasos importantes para preparar un script o un módulo y publicarlo en la Galería de PowerShell.
-Se recomienda que revise el artículo de [instrucciones de publicación](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines) para entender cómo garantizar que los usuarios de la Galería de PowerShell acepten ampliamente los elementos que publique.
+Se recomienda que revise el artículo de [instrucciones de publicación](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery-PublishingGuidelines) para entender cómo garantizar que los usuarios de la Galería de PowerShell acepten ampliamente los elementos que publique.
 
 Los requisitos mínimos para publicar un elemento en la Galería de PowerShell son los siguientes:
 
@@ -30,7 +30,7 @@ Cuando hablamos de scripts, nos referimos a un script de PowerShell que es un ar
 
 ## <a name="powershell-gallery-account-and-api-key"></a>Cuenta de la Galería de PowerShell y clave de API
 
-Consulte [Creating a PowerShell Gallery Account](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account) (Creación de una cuenta de la Galería de PowerShell) para saber cómo configurar una cuenta de la Galería de PowerShell.
+Consulte [Creating a PowerShell Gallery Account](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery_creating_an_account) (Creación de una cuenta de la Galería de PowerShell) para saber cómo configurar una cuenta de la Galería de PowerShell.
 
 Una vez que cree una cuenta, puede obtener la clave de API que se necesita para publicar un elemento.
 Después de iniciar sesión con la cuenta, su nombre de usuario aparecerá en la parte superior de las páginas de la Galería de PowerShell en lugar de Registrarse.
@@ -44,9 +44,9 @@ Se recomienda que actualice la clave con regularidad, lo que puede hacer con la 
 
 La Galería de PowerShell proporciona a los usuarios de la galería información obtenida de los campos de metadatos que se incluyen en el manifiesto del script o del módulo.
 Crear o modificar elementos para su publicación en la Galería de PowerShell tiene un pequeño conjunto de requisitos de información que se entrega en el manifiesto del elemento.
-Se recomienda revisar la sección sobre los metadatos de los elementos del artículo sobre [instrucciones de publicación](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines) para saber cómo entregar a los usuarios la mejor información junto con sus elementos.
+Se recomienda revisar la sección sobre los metadatos de los elementos del artículo sobre [instrucciones de publicación](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery-PublishingGuidelines) para saber cómo entregar a los usuarios la mejor información junto con sus elementos.
 
-Los cmdlets [New-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/ModuleManifest-Reference) y [New-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo) crearán la plantilla de manifiesto para usted, con marcadores de posición para todos los elementos del manifiesto.
+Los cmdlets [New-ModuleManifest](https://msdn.microsoft.com/powershell/gallery/psget/module/ModuleManifest-Reference) y [New-ScriptFileInfo](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo) crearán la plantilla de manifiesto para usted, con marcadores de posición para todos los elementos del manifiesto.
 
 Ambos manifiestos tienen dos secciones importantes para la publicación, el área Primary Key Data (Datos de clave principal) y el área PSData de PrivateData. Los datos de clave principal del manifiesto de un módulo de PowerShell son todos los elementos fuera de la sección PrivateData.
 El conjunto de claves principales está vinculado a la versión de PowerShell en uso y no se admiten los valores no definidos.
@@ -86,14 +86,14 @@ PowerShell Script Analyzer se ejecuta cada vez que un elemento se publica o actu
 El equipo de operaciones de la galería se pondrá en contacto con los propietarios del elemento para solucionar los errores que se encuentren.
 
 Si la infraestructura de la Galería de PowerShell no puede leer la información del manifiesto del elemento, no se podrá publicar.
-[Test-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) detectará los problemas comunes que podrían hacer que no se pueda usar el módulo una vez instalado. Se debe ejecutar para cada módulo antes de publicarlo en la Galería de PowerShell.
+[Test-ModuleManifest](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) detectará los problemas comunes que podrían hacer que no se pueda usar el módulo una vez instalado. Se debe ejecutar para cada módulo antes de publicarlo en la Galería de PowerShell.
 
-Del mismo modo, [Test-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_test-scriptfileinfo) valida los metadatos de un script y se debe ejecutar en cada script (publicado por separado de un módulo) antes de publicarlo en la Galería de PowerShell.
+Del mismo modo, [Test-ScriptFileInfo](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_test-scriptfileinfo) valida los metadatos de un script y se debe ejecutar en cada script (publicado por separado de un módulo) antes de publicarlo en la Galería de PowerShell.
 
 
 ## <a name="publishing-items"></a>Publicación de elementos
 
-Debe usar [Publish-Script](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_publish-script) o [Publish-Module](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) para publicar elementos en la Galería de PowerShell.
+Debe usar [Publish-Script](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_publish-script) o [Publish-Module](https://msdn.microsoft.com/powershell/gallery/psget/module/psget_publish-module) para publicar elementos en la Galería de PowerShell.
 Ambos comandos requieren lo siguiente
 
 - La ruta de acceso al elemento que se publicará. Si es un módulo, use la carpeta con el nombre del módulo. Si especifica una carpeta con varias versiones del mismo módulo, debe especificar el valor RequiredVersion.
