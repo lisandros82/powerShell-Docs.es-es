@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Valores de los archivos de manifiesto de los elementos que afectan a la interfaz de usuario de Galería de PowerShell
-ms.openlocfilehash: 60415193129fe040b53d35b1f8701408cfc4989d
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: e7e9910504a665e464add0a83454cec64c1a0937
+ms.sourcegitcommit: 601609575a3214ea7086a3bcb586ae0d1df3d418
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268184"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46532977"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valores de los archivos de manifiesto de los elementos que afectan a la interfaz de usuario de Galería de PowerShell
 
@@ -44,6 +44,8 @@ En la tabla siguiente se muestran los elementos de la interfaz de usuario de Gal
 | **Historial de versiones** | El historial de versiones refleja las actualizaciones realizadas en un módulo en Galería de PowerShell. Si una versión de un elemento está oculta por la característica de eliminación, no se mostrará en el historial de versiones, excepto a los propietarios del elemento. | No | No |
 | **Sitio del proyecto** | El sitio del proyecto se proporciona para los módulos en la sección Privatedata\PSData del manifiesto del módulo al especificar un valor de ProjectURI. En el manifiesto del script, se controla al especificar .PROJECTURI. | Sí | Sí |
 | **Licencia** | Se proporciona un vínculo de licencia para los módulos en la sección Privatedata\PSData del manifiesto del módulo al especificar un valor de LicenseURI. En el manifiesto del script, se controla al especificar .LICENSEURI. Es importante tener en cuenta que si no se proporciona una licencia a través del LicenseURI o dentro de un módulo, los términos de uso de Galería de PowerShell especifican los términos de uso del elemento. Consulte los términos de uso para obtener más información. | Sí | Sí |
+| **Icono** | Puede especificarse un icono para cualquier elemento de la Galería de PowerShell proporcionando la marca IconURI en el manifiesto del script o en la sección PSData de Privatedata del manifiesto del módulo. La IconURI debe apuntar a una imagen de 32 x 32 con fondo transparente. El URI **debe** ser una dirección URL de imagen directa y **no debe** ir a una página web que contenga la imagen o un archivo en el paquete de Galería de PowerShell. | Sí | Sí |
+
 
 ## <a name="editing-item-details"></a>Edición de detalles del elemento
 
