@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: powershell, cmdlet
 title: Obtener información de ayuda detallada
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: d2578604ec7c01c0b2734bd180e1babaca58b153
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134041"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851279"
 ---
 # <a name="getting-detailed-help-information"></a>Obtener información de ayuda detallada
 
@@ -149,7 +149,7 @@ La visualización de los artículos de la Ayuda en línea es una de las mejores 
 Para obtener ayuda en línea, pruebe el parámetro **Online** del cmdlet `Get-Help`. Todos los artículos de Ayuda que vienen con PowerShell, como la Ayuda de proveedores y los artículos de Ayuda conceptual (Acerca de), están disponibles en línea en la documentación de [PowerShell](/powershell/scripting/powershell-scripting).
 
 > [!NOTE]
-> No se puede usar el parámetro **Online** con temas conceptuales (about_*) ni artículos de Ayuda de proveedor.
+> No se puede usar el parámetro **Online** con temas conceptuales (about_\*) ni artículos de Ayuda de proveedor.
 > La ayuda en línea es opcional, por tanto no funciona para todos los cmdlets, funciones o scripts.
 
 Por ejemplo, para obtener la versión en línea del tema de Ayuda sobre el cmdlet `Get-ChildItem`, escriba:
