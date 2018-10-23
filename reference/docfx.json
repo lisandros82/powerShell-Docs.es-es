@@ -245,5 +245,6 @@
     "fileMetadata": {},
     "template": [],
     "dest": "pscore-reference"
-  }
+    "markdownEngineName": "markdig"
+    }
 }
