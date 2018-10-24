@@ -6,7 +6,7 @@ ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
 ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/08/2018
+ms.lasthandoff: 10/09/2018
 ms.locfileid: "48851331"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Instalación y uso de Windows PowerShell Web Access
