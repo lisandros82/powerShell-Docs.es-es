@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: Instrucciones para publicadores
 title: Instrucciones y procedimientos recomendados para publicar en la Galería de PowerShell
-ms.openlocfilehash: 11207a312f916506f855c0e6e292752f72fc04c1
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 2ddeae9fdb33a58f97bfeb66079541bb7c5791b1
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523051"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851176"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Instrucciones y procedimientos recomendados para publicar en PowerShellGallery
 
@@ -39,6 +39,7 @@ Es mucho más probable que otros usuarios descarguen y adopten los elementos que
 - Seguir las instrucciones de [SemVer](http://semver.org/) para el control de versiones
 - Usar etiquetas comunes, tal como se documenta en Etiquetas comunes de la Galería de PowerShell
 - Publicación de prueba mediante un repositorio local
+- Usar PowerShellGet para publicar
 
 Cada uno de estos puntos se analiza brevemente en las secciones siguientes.
 
@@ -215,6 +216,12 @@ Con cualquiera de estas soluciones, hay que usar Register-PSRepository para defi
 Un aspecto adicional sobre la publicación de prueba: para eliminar cualquier elemento publicado en la Galería de PowerShell, es necesario contar con la ayuda del equipo de operaciones, que confirmará la ausencia de dependencias en el elemento que se quiere publicar.
 Por esa razón, no somos partidarios de usar la Galería de PowerShell como destino de prueba, y nos pondremos en contacto con los publicadores que así lo hagan.
 
+## <a name="use-powershellget-to-publish"></a>Usar PowerShellGet para publicar
+
+Se recomienda encarecidamente a los publicadores usar los cmdlets Publish-Module y Publish-Script al trabajar con la Galería de PowerShell. PowerShellGet se ha creado para ayudar a no tener que recordar detalles importantes sobre la instalación desde una publicación en la Galería de PowerShell. A veces, los publicadores optan por omitir PowerShellGet y usan el cliente NuGet, o los cmdlets de PackageManagement, en lugar de Publish-Module. Hay una serie de detalles que se olvidan fácilmente, lo que da lugar a diferentes solicitudes de soporte técnico.
+
+Si hay algún motivo que le impida usar Publish-Module o Publish-Script, háganoslo saber. Registre un problema en el repositorio de GitHub de PowerShellGet y proporcione los detalles que le llevan a elegir PackageManagement o NuGet. 
+
 ## <a name="recommended-workflow"></a>Flujo de trabajo recomendado
 
 El enfoque que se considera más adecuado para los elementos que se publican en la Galería de PowerShell es el siguiente:
@@ -229,3 +236,4 @@ El enfoque que se considera más adecuado para los elementos que se publican en 
 - Decida si desea firmar su elemento
 - Cuando considere que el proyecto está listo para usarlo en un entorno de producción, publique una versión 1.0.0 en la Galería de PowerShell
 - Siga recopilando comentarios y estableciendo iteraciones en el código según las contribuciones de los usuarios
+
