@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Escribir un recurso de DSC personalizado con clases de PowerShell
-ms.openlocfilehash: f2500bfb41302cbeaf3cb9d23b843f26f01c1d5b
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a8f08323f2cced8a17de4224bea94a54ba5ef0cd
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189472"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226090"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Escribir un recurso de DSC personalizado con clases de PowerShell
 
@@ -83,7 +83,7 @@ enum Ensure
 
 Los métodos **Get()**, **Set()** y **Test()** son análogos a las funciones **Get-TargetResource**, **Set-TargetResource** y **Test-TargetResource** de un recurso de script.
 
-Este código también incluye la función CopyFile(), una función auxiliar que copia el archivo de **$SourcePath** a **$Path**.
+Este código también incluye la función CopyFile(), una función del asistente que copia el archivo de **$SourcePath** a **$Path**.
 
 ```powershell
 
