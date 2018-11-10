@@ -3,27 +3,27 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Ponerse en contacto con los administradores de la Galería
-ms.openlocfilehash: 71c8aa15ac0c6ec57e7e1bfe3cb20cac7e2c6b29
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f9197dfbf0cedb642259f554b42ec6f63eae30a4
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268660"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002179"
 ---
-# <a name="contact-gallery-administrators"></a><span data-ttu-id="f66a5-103">Ponerse en contacto con los administradores de la Galería</span><span class="sxs-lookup"><span data-stu-id="f66a5-103">Contact Gallery administrators</span></span>
+# <a name="contact-gallery-administrators"></a><span data-ttu-id="efca3-103">Ponerse en contacto con los administradores de la Galería</span><span class="sxs-lookup"><span data-stu-id="efca3-103">Contact Gallery administrators</span></span>
 
-## <a name="when-to-contact-gallery-administrators"></a><span data-ttu-id="f66a5-104">Cuándo ponerse en contacto con los administradores de la Galería</span><span class="sxs-lookup"><span data-stu-id="f66a5-104">When to Contact Gallery Administrators</span></span>
+## <a name="when-to-contact-gallery-administrators"></a><span data-ttu-id="efca3-104">Cuándo ponerse en contacto con los administradores de la Galería</span><span class="sxs-lookup"><span data-stu-id="efca3-104">When to Contact Gallery Administrators</span></span>
 
-<span data-ttu-id="f66a5-105">Debe ponerse en contacto con los administradores de la Galería en los siguientes casos:</span><span class="sxs-lookup"><span data-stu-id="f66a5-105">You should contact gallery administrators when:</span></span>
+<span data-ttu-id="efca3-105">Debe ponerse en contacto con los administradores de la Galería en los siguientes casos:</span><span class="sxs-lookup"><span data-stu-id="efca3-105">You should contact gallery administrators when:</span></span>
 
-1. <span data-ttu-id="f66a5-106">Necesita eliminar un artículo publicado.</span><span class="sxs-lookup"><span data-stu-id="f66a5-106">You need to delete an item that you published.</span></span>
-2. <span data-ttu-id="f66a5-107">Necesita ayuda con su cuenta.</span><span class="sxs-lookup"><span data-stu-id="f66a5-107">You need help with your account.</span></span>
-3. <span data-ttu-id="f66a5-108">Quiere notificar un problema relacionado con los elementos de la Galería.</span><span class="sxs-lookup"><span data-stu-id="f66a5-108">You want to report an issue in the items in the gallery.</span></span>
-4. <span data-ttu-id="f66a5-109">Existe un conflicto de nombre de elemento con otros usuarios y no puede resolverlo poniéndose en contacto con los usuarios.</span><span class="sxs-lookup"><span data-stu-id="f66a5-109">You have item name dispute with other users and you are not able to resolve it by contacting the users.</span></span>
-5. <span data-ttu-id="f66a5-110">Los administradores de la Galería se pusieron en contacto con usted en relación con sus elementos de la Galería y quiere responderles.</span><span class="sxs-lookup"><span data-stu-id="f66a5-110">You were contacted by Gallery Administrators, regarding your items in the gallery and you want to respond.</span></span>
+1. <span data-ttu-id="efca3-106">Necesita eliminar un paquete publicado.</span><span class="sxs-lookup"><span data-stu-id="efca3-106">You need to delete a package that you published.</span></span>
+2. <span data-ttu-id="efca3-107">Necesita ayuda con su cuenta.</span><span class="sxs-lookup"><span data-stu-id="efca3-107">You need help with your account.</span></span>
+3. <span data-ttu-id="efca3-108">Quiere notificar un problema relacionado con los paquetes de la Galería.</span><span class="sxs-lookup"><span data-stu-id="efca3-108">You want to report an issue in the packages in the gallery.</span></span>
+4. <span data-ttu-id="efca3-109">Existe un conflicto de nombre de paquete con otros usuarios y no puede resolverlo poniéndose en contacto con los usuarios.</span><span class="sxs-lookup"><span data-stu-id="efca3-109">You have package name dispute with other users and you are not able to resolve it by contacting the users.</span></span>
+5. <span data-ttu-id="efca3-110">Los administradores de la Galería se pusieron en contacto con usted en relación con sus paquetes de la Galería y quiere responderles.</span><span class="sxs-lookup"><span data-stu-id="efca3-110">You were contacted by Gallery Administrators, regarding your packages in the gallery and you want to respond.</span></span>
 
-## <a name="how-to-contact-gallery-administrators"></a><span data-ttu-id="f66a5-111">Cómo ponerse en contacto con los administradores de la Galería</span><span class="sxs-lookup"><span data-stu-id="f66a5-111">How to Contact Gallery Administrators</span></span>
+## <a name="how-to-contact-gallery-administrators"></a><span data-ttu-id="efca3-111">Cómo ponerse en contacto con los administradores de la Galería</span><span class="sxs-lookup"><span data-stu-id="efca3-111">How to Contact Gallery Administrators</span></span>
 
-1. <span data-ttu-id="f66a5-112">Envíenos un correo electrónico: cgadmin@microsoft.com.</span><span class="sxs-lookup"><span data-stu-id="f66a5-112">Send us an email: cgadmin@microsoft.com.</span></span>
-2. <span data-ttu-id="f66a5-113">Si quiere notificar un abuso relacionado con un elemento, encontrará un vínculo Notificar abuso debajo de la información del elemento en el panel izquierdo.</span><span class="sxs-lookup"><span data-stu-id="f66a5-113">If you are reporting abuse of an item, you can find Report Abuse link below the item information on the left panel.</span></span>
-3. <span data-ttu-id="f66a5-114">En el caso de que tenga consultas generales sobre la Galería, envíe sus preguntas a [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).</span><span class="sxs-lookup"><span data-stu-id="f66a5-114">For any other general questions regarding the Gallery, please submit your question to [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)</span></span>
+1. <span data-ttu-id="efca3-112">Envíenos un correo electrónico: cgadmin@microsoft.com.</span><span class="sxs-lookup"><span data-stu-id="efca3-112">Send us an email: cgadmin@microsoft.com.</span></span>
+2. <span data-ttu-id="efca3-113">Si quiere notificar un abuso relacionado con un paquete, encontrará un vínculo Notificar abuso debajo de la información del paquete en el panel izquierdo.</span><span class="sxs-lookup"><span data-stu-id="efca3-113">If you are reporting abuse of a package, you can find Report Abuse link below the package information on the left panel.</span></span>
+3. <span data-ttu-id="efca3-114">En el caso de que tenga consultas generales sobre la Galería, envíe sus preguntas a [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).</span><span class="sxs-lookup"><span data-stu-id="efca3-114">For any other general questions regarding the Gallery, please submit your question to [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)</span></span>
