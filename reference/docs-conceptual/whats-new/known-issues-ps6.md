@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Problemas conocidos de PowerShell 6.0
-ms.openlocfilehash: e3e718be903ff2223064d5790d3d0fe554ef04cd
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268013"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451003"
 ---
 # <a name="known-issues-for-powershell-60"></a>Problemas conocidos de PowerShell 6.0
 
@@ -90,9 +90,9 @@ La capacidad para crear puntos de conexión de comunicación remota de administr
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec` y PowerShell
 
-Dado que PowerShell ejecuta la mayoría de los comandos en la memoria (como Python o Ruby), no puede usar sudo directamente con elementos integrados de PowerShell (puede, por supuesto, ejecutar `powershell` desde sudo). Si es necesario ejecutar un cmdlet de PowerShell desde dentro de PowerShell con sudo, por ejemplo, `sudo `Set-Date` 8/18/2016`, haría `sudo powershell `Set-Date` 8/18/2016`. Del mismo modo, no puede ejecutar un elemento integrado de PowerShell directamente. En su lugar, tendría que hacer `exec powershell item_to_exec`.
+Dado que PowerShell ejecuta la mayoría de los comandos en la memoria (como Python o Ruby), no puede usar sudo directamente con elementos integrados de PowerShell (puede, por supuesto, ejecutar `pwsh` desde sudo). Si es necesario ejecutar un cmdlet de PowerShell desde dentro de PowerShell con sudo, por ejemplo, `sudo Set-Date 8/18/2016`, haría `sudo pwsh Set-Date 8/18/2016`. Del mismo modo, no puede ejecutar un elemento integrado de PowerShell directamente. En su lugar, tendría que hacer `exec pwsh item_to_exec`.
 
-Actualmente se realiza un seguimiento de este problema como parte de #3232.
+Actualmente se realiza un seguimiento de este problema como parte de [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
 ### <a name="missing-cmdlets"></a>Cmdlets que faltan
 

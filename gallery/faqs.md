@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Preguntas más frecuentes de la Galería de PowerShell
-ms.openlocfilehash: e377e71cf5eeb1f8b73430cc0b97527eac970cff
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3fa52892ce50491c040251baae8b4ae4ee3dcba0
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190441"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002879"
 ---
 # <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
@@ -29,30 +29,30 @@ Los módulos suelen ser mejores para compartir, pero hemos habilitado el uso com
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>¿Cómo puedo publicar en la Galería de PowerShell?
 
-Debe registrar una cuenta en la Galería de PowerShell para poder publicar elementos en la Galería. Esto se debe a que la publicación de elementos requiere una clave NuGetApiKey, que se proporciona tras el registro. Para registrarse, inicie sesión con su cuenta personal, profesional o educativa en la Galería de PowerShell. Al iniciar sesión por primera vez, es necesario un proceso de registro único. Después, tendrá la clave NuGetApiKey disponible en su página de perfil.
+Debe registrar una cuenta en la Galería de PowerShell para poder publicar paquetes en la Galería. Esto se debe a que la publicación de paquetes requiere una clave NuGetApiKey, que se proporciona tras el registro. Para registrarse, inicie sesión con su cuenta personal, profesional o educativa en la Galería de PowerShell. Al iniciar sesión por primera vez, es necesario un proceso de registro único. Después, tendrá la clave NuGetApiKey disponible en su página de perfil.
 
-Una vez que se haya registrado en la Galería, use los cmdlets [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) o [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) para publicar el elemento en la Galería. Para obtener más detalles sobre cómo ejecutar estos cmdlets, visite la pestaña Publicar o lea la documentación sobre [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) y [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).
+Una vez que se haya registrado en la Galería, use los cmdlets [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) o [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) para publicar el paquete en la Galería. Para obtener más detalles sobre cómo ejecutar estos cmdlets, visite la pestaña Publicar o lea la documentación sobre [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) y [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).
 
-**No es necesario registrarse o iniciar sesión en la Galería para instalar o guardar elementos.**
+**No es necesario registrarse o iniciar sesión en la Galería para instalar o guardar paquetes.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-an-item-to-the-powershell-gallery-what-does-that-mean"></a>He recibido el error "Failed to process request. 'The specified API key is invalid or does not have permission to access the specified package.'. The remote server returned an error: (403) Forbidden" (Error al procesar la solicitud. 'La clave de API especificada no es válida o no tiene permiso para acceder al paquete especificado'. Error en el servidor remoto: (403) Prohibido") al intentar publicar un elemento en la Galería de PowerShell. ¿Qué significa?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>He recibido el error "Failed to process request. 'The specified API key is invalid or does not have permission to access the specified package.'. The remote server returned an error: (403) Forbidden" (Error al procesar la solicitud. 'La clave de API especificada no es válida o no tiene permiso para acceder al paquete especificado'. Error en el servidor remoto: (403) Prohibido") al intentar publicar un paquete en la Galería de PowerShell. ¿Qué significa?
 
 Este error puede producirse por los motivos siguientes:
 
 - **La clave de API especificada no es válida.**
      Asegúrese de que ha especificado la clave de API válida de su cuenta. Para obtener la clave API, consulte su página de perfil.
-- **Usted no es el propietario del nombre de elemento especificado.**
-     Si ha confirmado que la clave de API es correcta, puede que ya exista un elemento con el mismo nombre que el que está intentando usar. Es posible que el propietario haya quitado el elemento de la lista, en cuyo caso no aparecerá en los resultados de la búsqueda. Para determinar si ya existe un elemento con el mismo nombre, abra un explorador y vaya a la página de detalles del elemento: `https://www.powershellgallery.com/packages/<itemName>`. Por ejemplo, si va directamente a `https://www.powershellgallery.com/packages/pester`, se le dirigirá a la página de detalles del módulo Pester, tanto si lo han quitado de la lista como si no. Si existe un elemento con un nombre en conflicto y se ha quitado de la lista, puede hacer lo siguiente:
-    - Seleccionar otro nombre para el elemento.
-    - Ponerse en contacto con los propietarios del elemento existente.
+- **Usted no es el propietario del nombre de paquete especificado.**
+     Si ha confirmado que la clave de API es correcta, puede que ya exista un paquete con el mismo nombre que el que está intentando usar. Es posible que el propietario haya quitado el paquete de la lista, en cuyo caso no aparecerá en los resultados de la búsqueda. Para determinar si ya existe un paquete con el mismo nombre, abra un explorador y vaya a la página de detalles del paquete: `https://www.powershellgallery.com/packages/<packageName>`. Por ejemplo, si va directamente a `https://www.powershellgallery.com/packages/pester`, se le dirigirá a la página de detalles del módulo Pester, tanto si lo han quitado de la lista como si no. Si existe un paquete con un nombre en conflicto y se ha quitado de la lista, puede hacer lo siguiente:
+    - Seleccionar otro nombre para el paquete.
+    - Ponerse en contacto con los propietarios del paquete existente.
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>¿Por qué no puedo iniciar sesión con mi cuenta personal, si ayer podía hacerlo?
 
 Tenga en cuenta que la cuenta de la Galería no se adapta a los cambios que se produzcan en el alias de su correo electrónico principal. Para obtener más información, consulte el tema sobre los [alias de correo electrónico de Microsoft](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
-## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>¿Por qué no veo todos los elementos de la Galería al activar todas las casillas de categoría en la pestaña Elementos?
+## <a name="why-dont-i-see-all-the-gallery-packages-when-i-select-all-the-category-checkboxes-on-the-packages-tab"></a>¿Por qué no veo todos los paquetes de la Galería al activar todas las casillas de categoría en la pestaña Paquetes?
 
-Al seleccionar una casilla de categoría, lo que indica es que quiere ver todos los elementos de esa categoría. Solo se mostrarán los elementos de las categorías seleccionadas. Del mismo modo, al seleccionar todas las casillas de categoría, lo que indica es que quiere ver todos los elementos de cualquier categoría. Pero algunos elementos de la Galería no pertenecen a ninguna de las categorías de la lista, por lo que no aparecerán en los resultados. Para ver todos los elementos de la galería, desactive todas las categorías o vuelva a seleccionar la pestaña Elementos.
+Al seleccionar una casilla de categoría, lo que indica es que quiere ver todos los paquetes de esa categoría. Solo se mostrarán los paquetes de las categorías seleccionadas. Del mismo modo, al seleccionar todas las casillas de categoría, lo que indica es que quiere ver todos los paquetes de cualquier categoría. Pero algunos paquetes de la Galería no pertenecen a ninguna de las categorías de la lista, por lo que no aparecerán en los resultados. Para ver todos los paquetes de la galería, desactive todas las categorías o vuelva a seleccionar la pestaña Paquetes.
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>¿Cuáles son los requisitos para publicar un módulo en la Galería de PowerShell?
 
@@ -82,7 +82,7 @@ Se puede publicar cualquier tipo de script de PowerShell (scripts o flujos de tr
 
 ## <a name="how-do-i-search"></a>¿Cómo se realiza una búsqueda?
 
-Escriba lo que quiere buscar en el cuadro de texto. Por ejemplo, si quiere encontrar módulos relacionados con SQL de Azure, escriba "sql de azure". Nuestro motor de búsqueda buscará esas palabras clave en todos los artículos publicados, incluidos los títulos, las descripciones y los metadatos. Después, en función de una puntuación de calidad ponderada, mostrará las coincidencias más cercanas. También puede buscar por campo específico usando la sintaxis field:"value" en la consulta de búsqueda para los campos siguientes:
+Escriba lo que quiere buscar en el cuadro de texto. Por ejemplo, si quiere encontrar módulos relacionados con SQL de Azure, escriba "sql de azure". Nuestro motor de búsqueda buscará esas palabras clave en todos los paquetes publicados, incluidos los títulos, las descripciones y los metadatos. Después, en función de una puntuación de calidad ponderada, mostrará las coincidencias más cercanas. También puede buscar por campo específico usando la sintaxis field:"value" en la consulta de búsqueda para los campos siguientes:
 
 - Etiquetas
 - Funciones
@@ -112,7 +112,7 @@ Todos los módulos de la Galería contienen manifiestos de módulo y la mayoría
 
 PackageManagement es una interfaz común para trabajar con cualquier administrador de paquetes. Con el tiempo, tanto si trabaja con módulos de PowerShell como con MSI, RubyGems, paquetes de NuGet o módulos Perl, debería poder usar comandos de PackageManagement (Find-Package e Install-Package) para buscarlos e instalarlos. Para ello, PackageManagement dispone de un proveedor de paquete para cada administrador de paquetes que se conecta a PackageManagement. Los proveedores llevan a cabo el trabajo real, ya que capturan contenido de los repositorios y lo instalan localmente. A menudo, los proveedores de paquetes simplemente se ajustan en torno a las herramientas del administrador de paquetes existente de un tipo de paquete determinado.
 
-PowerShellGet es el administrador de paquetes de los elementos de PowerShell. Hay un proveedor de paquete de PSModule que expone la funcionalidad de PowerShellGet a través de PackageManagement. Por esta razón, puede ejecutar [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) o Install-Package -Provider PSModule para instalar un módulo desde la Galería de PowerShell. No se puede acceder a ciertas funciones de PowerShellGet, como [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) y [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), a través de comandos de PackageManagement.
+PowerShellGet es el administrador de paquetes de los paquetes de PowerShell. Hay un proveedor de paquete de PSModule que expone la funcionalidad de PowerShellGet a través de PackageManagement. Por esta razón, puede ejecutar [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) o Install-Package -Provider PSModule para instalar un módulo desde la Galería de PowerShell. No se puede acceder a ciertas funciones de PowerShellGet, como [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) y [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), a través de comandos de PackageManagement.
 
 En resumen, PowerShellGet se centra únicamente en ofrecer una experiencia premium de administración de paquetes para el contenido de PowerShell, mientras que PackageManagement se centra en exponer todas las experiencias de administración de paquetes a través de un conjunto general de herramientas. Si esta respuesta no le satisface, encontrará una respuesta larga en la parte inferior de este documento, en la sección **¿Cómo se relaciona realmente PackageManagement con PowerShellGet?**
 
@@ -158,14 +158,14 @@ Por lo tanto, **PowerShellGet** requiere uno de los siguientes sistemas operativ
 
 **PowerShellGet** también requiere .NET Framework 4.5 o posterior. Puede instalar .NET Framework 4.5 o posterior desde [aquí](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
-## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>¿Es posible reservar nombres para los elementos que se publicarán en el futuro?
+## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>¿Es posible reservar nombres para los paquetes que se publicarán en el futuro?
 
-No es posible apropiarse de nombres de elemento. Si cree que un elemento existente ha tomado un nombre que se adapta mejor a su elemento, intente [ponerse en contacto con el propietario del elemento](./how-to/working-with-items/contacting-item-owners.md). Si no recibe respuesta en un par de semanas, póngase en contacto con el soporte técnico y el equipo de la Galería de PowerShell le echará un vistazo al asunto.
+No es posible apropiarse de nombres de paquete. Si cree que un paquete existente ha tomado un nombre que se adapta mejor a su paquete, intente [ponerse en contacto con el propietario del paquete](./how-to/working-with-packages/contacting-package-owners.md). Si no recibe respuesta en un par de semanas, póngase en contacto con el soporte técnico y el equipo de la Galería de PowerShell le echará un vistazo al asunto.
 
-## <a name="how-do-i-claim-ownership-for-items-"></a>¿Cómo reclamo la propiedad de un elemento?
+## <a name="how-do-i-claim-ownership-for-packages"></a>¿Cómo reclamo la propiedad de un paquete?
 
-Consulte [Administrar propietarios de elementos en PowerShellGallery.com](./how-to/publishing-items/managing-item-owners.md) para obtener más información.
+Consulte [Administrar propietarios de paquetes en PowerShellGallery.com](./how-to/publishing-packages/managing-package-owners.md) para obtener más información.
 
-## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>¿Cómo actúo en caso de que el propietario de un elemento infrinja la licencia de mi elemento?
+## <a name="how-do-i-deal-with-a-package-owner-who-is-violating-my-package-license"></a>¿Cómo actúo en caso de que el propietario de un paquete infrinja la licencia de mi paquete?
 
-Recomendamos que la comunidad de PowerShell colabore para resolver los conflictos que puedan surgir entre los propietarios de elementos.  Hemos diseñado un [proceso de resolución de conflictos](./how-to/getting-support/dispute-resolution.md) que le pedimos que siga antes de que tengan que intervenir los administradores de PowerShellGallery.com.
+Recomendamos que la comunidad de PowerShell colabore para resolver los conflictos que puedan surgir entre los propietarios de paquetes.  Hemos diseñado un [proceso de resolución de conflictos](./how-to/getting-support/dispute-resolution.md) que le pedimos que siga antes de que tengan que intervenir los administradores de PowerShellGallery.com.

@@ -2,12 +2,12 @@
 title: Uso de Visual Studio Code para el desarrollo de PowerShell
 description: Uso de Visual Studio Code para el desarrollo de PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 8fbaba826624199d06fe4fdc785998e0135d7fe7
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 9c06ce72c39d08e75fcb7e5cf9d5f92ae5dd8ed9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134107"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225801"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Uso de Visual Studio Code para el desarrollo de PowerShell
 
@@ -124,12 +124,11 @@ Por ejemplo, puede agregar configuraciones para:
 - Iniciar una sesión interactiva en el depurador
 - Asociar el depurador a un proceso de host de PowerShell
 
-  Siga los pasos siguientes para crear el archivo de configuración de depuración:
+Siga los pasos siguientes para crear el archivo de configuración de depuración:
 
   1. Abra la vista **Depurar**. Para ello, presione **Ctrl+Mayús+D** (**Cmd+Mayús+ D** en Mac).
   2. Presione el icono de engranaje **Configurar** en la barra de herramientas.
-  3. Visual Studio Code le solicita que **seleccione un entorno**.
-  Elija **PowerShell**.
+  3. Visual Studio Code le solicita que **seleccione un entorno**. Elija **PowerShell**.
 
   Cuando lo haga, Visual Studio Code creará un directorio y un archivo ".vscode\launch.json" en la raíz de la carpeta del área de trabajo.
   Aquí es donde se almacenará la configuración de depuración. Si los archivos están en un repositorio de Git, normalmente le interesa confirmar el archivo launch.json.
@@ -171,9 +170,7 @@ Por ejemplo, puede agregar configuraciones para:
 
   Una vez establecida la configuración de depuración, puede seleccionar la configuración que quiere usar durante una sesión de depuración. Para ello, selecciónela en el menú desplegable de la barra de herramientas de la vista **Depurar**.
 
-  Algunos blogs pueden serle de ayuda para empezar a usar la extensión de PowerShell para Visual Studio Code.
-
-Visual Studio Code:
+Algunos blogs pueden servirle de ayuda para empezar a usar la extensión de PowerShell para Visual Studio Code:
 
 - [Extensión de PowerShell][ps-extension]
 - [Escritura y depuración de scripts de PowerShell en Visual Studio Code][debug]

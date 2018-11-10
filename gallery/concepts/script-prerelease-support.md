@@ -3,21 +3,21 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: gallery,powershell,cmdlet,psget
 title: Versiones preliminares de scripts
-ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 4e7eab682008ed57163c51fe3a61a744b347bef2
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268473"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002742"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Versiones preliminares de scripts
 
-A partir de la versión 1.6.0, PowerShellGet y la Galería de PowerShell admiten el etiquetado de versiones posteriores a 1.0.0 como versión preliminar. Antes de esta característica, los elementos de versión preliminar se limitaban a tener una versión que comenzaba por 0. El objetivo de estas características es proporcionar mayor compatibilidad con la convención de control de versiones [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) sin interrumpir la compatibilidad con versiones anteriores de PowerShell (versión 3 y superiores) o con versiones existentes de PowerShellGet. Este tema se centra en las características específicas de los scripts. Las características equivalentes de los módulos se encuentran en el tema [Versiones preliminares de módulos](module-prerelease-support.md). Con estas características, los publicadores pueden identificar un script como versión 2.5.0-alpha y, posteriormente, publicar una versión 2.5.0 lista para producción que sustituya a la versión preliminar.
+A partir de la versión 1.6.0, PowerShellGet y la Galería de PowerShell admiten el etiquetado de versiones posteriores a 1.0.0 como versión preliminar. Antes de esta característica, los paquetes de versión preliminar se limitaban a tener una versión que comenzaba por 0. El objetivo de estas características es proporcionar mayor compatibilidad con la convención de control de versiones [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) sin interrumpir la compatibilidad con versiones anteriores de PowerShell (versión 3 y superiores) o con versiones existentes de PowerShellGet. Este tema se centra en las características específicas de los scripts. Las características equivalentes de los módulos se encuentran en el tema [Versiones preliminares de módulos](module-prerelease-support.md). Con estas características, los publicadores pueden identificar un script como versión 2.5.0-alpha y, posteriormente, publicar una versión 2.5.0 lista para producción que sustituya a la versión preliminar.
 
 En general, las características de los scripts de versión preliminar incluyen:
 
-- Se agrega un sufijo PrereleaseString a la cadena de versión en el manifiesto del script. Cuando los scripts se publican en la Galería de PowerShell, estos datos se extraen del manifiesto y se usan para identificar elementos de versión preliminar.
-- La adquisición de elementos de versión preliminar exige agregar la marca -AllowPrerelease a los comandos de PowerShellGet Find-Script, Install-Script, Update-Script y Save-Script. Si no se especifica la marca, no se muestran los elementos de versión preliminar.
+- Se agrega un sufijo PrereleaseString a la cadena de versión en el manifiesto del script. Cuando los scripts se publican en la Galería de PowerShell, estos datos se extraen del manifiesto y se usan para identificar paquetes de versión preliminar.
+- La adquisición de paquetes de versión preliminar exige agregar la marca -AllowPrerelease a los comandos de PowerShellGet Find-Script, Install-Script, Update-Script y Save-Script. Si no se especifica la marca, no se muestran los paquetes de versión preliminar.
 - Las versiones de script mostradas por Find-Script, Get-InstalledScript y en la Galería de PowerShell se muestran con el sufijo PrereleaseString, como en 2.5.0-alpha.
 
 A continuación se incluyen detalles de las características.
@@ -54,9 +54,9 @@ El criterio de ordenación cambia cuando se usa una versión preliminar, lo que 
 
 Al publicar en la Galería de PowerShell, de forma predeterminada, la versión del script que se va a publicar debe ser mayor que cualquier versión publicada previamente que se encuentre en la Galería de PowerShell. Un publicador puede actualizar la versión 2.5.0-alpha con 2.5.0-beta o con 2.5.0 (sin sufijo de versión preliminar).
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Búsqueda y adquisición de elementos de versión preliminar mediante comandos de PowerShellGet
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Búsqueda y adquisición de paquetes de versión preliminar mediante comandos de PowerShellGet
 
-Para trabajar con elementos de versión preliminar mediante los comandos de PowerShellGet Find-Script, Install-Script, Update-Script y Save-Script es necesario agregar la marca -AllowPrerelease. Si se especifica -AllowPrerelease, se incluyen los elementos de versión preliminar, siempre que estén presentes. Si no se especifica la marca -AllowPrerelease, no se muestran los elementos de versión preliminar.
+Para trabajar con paquetes de versión preliminar mediante los comandos de PowerShellGet Find-Script, Install-Script, Update-Script y Save-Script es necesario agregar la marca -AllowPrerelease. Si se especifica -AllowPrerelease, se incluyen los paquetes de versión preliminar, siempre que estén presentes. Si no se especifica la marca -AllowPrerelease, no se muestran los paquetes de versión preliminar.
 
 Las únicas excepciones a esto en los comandos de script de PowerShellGet son Get-InstalledScript y algunos casos con Uninstall-Script.
 

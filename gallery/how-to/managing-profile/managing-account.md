@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Configuración de la cuenta de la Galería de PowerShell
-ms.openlocfilehash: dd7b8b3a99b5b7fbfec5d7f82b81dd6d5cfb906c
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523155"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002793"
 ---
 # <a name="powershell-gallery-account-settings"></a>Configuración de la cuenta de la Galería de PowerShell
 
@@ -34,7 +34,7 @@ Cuando indica una nueva dirección de correo electrónico, la Galería de PowerS
 La Galería de PowerShell ofrece estas opciones de notificación:
 
 - Users can contact me through the PowerShell Gallery (Los usuarios pueden ponerse en contacto conmigo a través de la Galería de PowerShell)
-- Notify me when an item is pushed to the PowerShell Gallery using my account (Notificarme cuando se inserte un elemento en la Galería de PowerShell mediante mi cuenta)
+- Notify me when an item is pushed to the PowerShell Gallery using my account (Notificarme cuando se inserte un paquete en la Galería de PowerShell mediante mi cuenta)
 
 ![Cambiar dirección de correo electrónico](../../Images/PSGallery_AccountEmailOptions.png)
 

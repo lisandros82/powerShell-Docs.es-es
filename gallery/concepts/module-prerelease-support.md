@@ -3,21 +3,21 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: gallery,powershell,cmdlet,psget
 title: Versiones preliminares de módulos
-ms.openlocfilehash: 9c3ddb623fbcb7f4b3453dd70cdc56a8dc2e9f6a
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f58b5adfeba7ed06d231c76accbd52508c7d67d6
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268626"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002776"
 ---
 # <a name="prerelease-module-versions"></a>Versiones preliminares de módulos
 
-A partir de la versión 1.6.0, PowerShellGet y la Galería de PowerShell admiten el etiquetado de versiones posteriores a 1.0.0 como versión preliminar. Antes de esta característica, los elementos de versión preliminar se limitaban a tener una versión que comenzaba por 0. El objetivo de estas características es proporcionar mayor compatibilidad con la convención de control de versiones [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) sin interrumpir la compatibilidad con versiones anteriores de PowerShell (versión 3 y superiores) o con versiones existentes de PowerShellGet. Este tema se centra en las características específicas de los módulos. Las características equivalentes de los scripts se encuentran en el tema [Versiones preliminares de scripts](script-prerelease-support.md). Con estas características, los publicadores pueden identificar un módulo o script como versión 2.5.0-alpha y, posteriormente, publicar una versión 2.5.0 lista para producción que sustituya a la versión preliminar.
+A partir de la versión 1.6.0, PowerShellGet y la Galería de PowerShell admiten el etiquetado de versiones posteriores a 1.0.0 como versión preliminar. Antes de esta característica, los paquetes de versión preliminar se limitaban a tener una versión que comenzaba por 0. El objetivo de estas características es proporcionar mayor compatibilidad con la convención de control de versiones [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) sin interrumpir la compatibilidad con versiones anteriores de PowerShell (versión 3 y superiores) o con versiones existentes de PowerShellGet. Este tema se centra en las características específicas de los módulos. Las características equivalentes de los scripts se encuentran en el tema [Versiones preliminares de scripts](script-prerelease-support.md). Con estas características, los publicadores pueden identificar un módulo o script como versión 2.5.0-alpha y, posteriormente, publicar una versión 2.5.0 lista para producción que sustituya a la versión preliminar.
 
 En general, las características de los módulos de versión preliminar incluyen:
 
-- La adición de una cadena de versión preliminar a la sección PSData del manifiesto del módulo identifica a ese módulo como una versión preliminar. Cuando el módulo se publica en la Galería de PowerShell, estos datos se extraen del manifiesto y se usan para identificar elementos de versión preliminar.
-- La adquisición de elementos de versión preliminar requiere agregar la marca `-AllowPrerelease` a los comandos `Find-Module`, `Install-Module`, `Update-Module` y `Save-Module` de PowerShellGet. Si no se especifica la marca, no se muestran los elementos de versión preliminar.
+- La adición de una cadena de versión preliminar a la sección PSData del manifiesto del módulo identifica a ese módulo como una versión preliminar. Cuando el módulo se publica en la Galería de PowerShell, estos datos se extraen del manifiesto y se usan para identificar paquetes de versión preliminar.
+- La adquisición de paquetes de versión preliminar requiere agregar la marca `-AllowPrerelease` a los comandos `Find-Module`, `Install-Module`, `Update-Module` y `Save-Module` de PowerShellGet. Si no se especifica la marca, no se muestran los paquetes de versión preliminar.
 - Las versiones de módulo mostradas mediante `Find-Module`,`Get-InstalledModule` y en la Galería de PowerShell se muestran como una sola cadena con la cadena de versión preliminar anexa, como en 2.5.0-alpha.
 
 A continuación se incluyen detalles de las características.
@@ -51,7 +51,7 @@ Los requisitos detallados de la cadena de versión preliminar son:
 
 - Solo se puede especificar la cadena de versión preliminar cuando el elemento ModuleVersion tiene tres segmentos para Major.Minor.Build. Esto se alinea con SemVer v1.0.0.
 - Un guión es el delimitador entre el número de compilación y la cadena de versión preliminar. Se puede incluir un guión en la cadena de versión preliminar únicamente como primer carácter.
-- La cadena de versión preliminar solo puede contener caracteres alfanuméricos ASCII [0-9A-Za-z-]. Comenzar la cadena de versión preliminar con un carácter alfanumérico es un procedimiento recomendado, ya que facilita su identificación como una versión preliminar al examinar una lista de elementos.
+- La cadena de versión preliminar solo puede contener caracteres alfanuméricos ASCII [0-9A-Za-z-]. Comenzar la cadena de versión preliminar con un carácter alfanumérico es un procedimiento recomendado, ya que facilita su identificación como una versión preliminar al examinar una lista de paquetes.
 - De momento solo se admiten las cadenas de versión preliminar de SemVer v1.0.0. La cadena de versión preliminar **no debe** contener ni punto ni + [.+], que sí se permiten en SemVer 2.0.
 - Ejemplos de cadenas de versión preliminar admitidas son: -alpha, -alpha1, -BETA, -update20171020.
 
@@ -61,9 +61,9 @@ El criterio de ordenación cambia cuando se usa una versión preliminar, lo que 
 
 Al publicar en la Galería de PowerShell, de forma predeterminada, la versión del módulo que se va a publicar debe ser mayor que cualquier versión publicada previamente que se encuentre en la Galería de PowerShell.
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Búsqueda y adquisición de elementos de versión preliminar mediante comandos de PowerShellGet
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Búsqueda y adquisición de paquetes de versión preliminar mediante comandos de PowerShellGet
 
-Para trabajar con elementos de versión preliminar mediante los comandos de PowerShellGet Find-Module, Install-Module, Update-Module y Save-Module es necesario agregar la marca -AllowPrerelease. Si se especifica -AllowPrerelease, se incluyen los elementos de versión preliminar, siempre que estén presentes. Si no se especifica la marca -AllowPrerelease, no se muestran los elementos de versión preliminar.
+Para trabajar con paquetes de versión preliminar mediante los comandos Find-Module, Install-Module, Update-Module y Save-Module de PowerShellGet es necesario agregar la marca -AllowPrerelease. Si se especifica -AllowPrerelease, se incluyen los paquetes de versión preliminar, siempre que estén presentes. Si no se especifica la marca -AllowPrerelease, no se muestran los paquetes de versión preliminar.
 
 Las únicas excepciones a esto en los comandos de módulo de PowerShellGet son Get-InstalledModule y algunos casos con Uninstall-Module.
 

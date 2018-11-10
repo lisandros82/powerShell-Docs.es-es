@@ -3,18 +3,18 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Módulos que requieren la aceptación de la licencia
-ms.openlocfilehash: 93f92f6e83bcf18a40c3d89eb39a154e16ca5063
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893117"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002674"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Módulos que requieren la aceptación de la licencia
 
 ## <a name="synopsis"></a>SINOPSIS
 
-Los departamentos jurídicos de los publicadores de algunos módulos requieren que los clientes acepten la licencia de manera explícita antes de instalar el módulo desde la Galería de PowerShell. Si un usuario instala, actualiza o guarda un módulo con PowerShellGet, ya sea directamente o como una dependencia de otro elemento, y ese módulo requiere que el usuario acepte una licencia, el usuario debe indicar que acepta la licencia o la operación generará un error.
+Los departamentos jurídicos de los publicadores de algunos módulos requieren que los clientes acepten la licencia de manera explícita antes de instalar el módulo desde la Galería de PowerShell. Si un usuario instala, actualiza o guarda un módulo con PowerShellGet, ya sea directamente o como una dependencia de otro paquete, y ese módulo requiere que el usuario acepte una licencia, el usuario debe indicar que acepta la licencia o la operación generará un error.
 
 ## <a name="publish-requirements-for-modules"></a>Requisitos de publicación de los módulos
 
@@ -43,7 +43,7 @@ Los módulos que requieran que los usuarios acepten la licencia deberán cumplir
 
 - Durante la operación Install/Save/Update, si un módulo dependiente (si algo más depende del módulo) requiere aceptar la licencia, se requerirá el comportamiento de aceptación de la licencia (ya mencionado).
 - Si la versión del módulo ya aparece en el catálogo local como instalada en el sistema, se omitirá la comprobación de la licencia.
-- Durante la operación Install/Save/Update, si un módulo dependiente requiere una licencia y no se produce la aceptación de esta, la operación presentará un error y seguirá los procesos normales del elemento que no se instaló, guardó o actualizó.
+- Durante la operación Install/Save/Update, si un módulo dependiente requiere una licencia y no se produce la aceptación de esta, la operación presentará un error y seguirá los procesos normales del paquete que no se instaló, guardó o actualizó.
 
 ## <a name="impact-on--force"></a>Impacto en -Force
 
@@ -219,6 +219,6 @@ El módulo se actualiza sin que aparezca ningún mensaje que pida aceptar la lic
 
 [Requerir la aceptación de la licencia para Scripts](./script-license-acceptance.md)
 
-[Compatibilidad de Requerir la aceptación de la licencia en PowerShellGallery](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[Compatibilidad de Requerir la aceptación de la licencia en PowerShellGallery](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
 
-[Requerir la aceptación de licencia de Implementar en Azure Automation](../how-to/working-with-items/deploy-to-azure-automation.md)
+[Requerir la aceptación de licencia de Implementar en Azure Automation](../how-to/working-with-packages/deploy-to-azure-automation.md)
