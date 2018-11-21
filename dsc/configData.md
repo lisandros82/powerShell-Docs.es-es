@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Uso de datos de configuración
-ms.openlocfilehash: 9b0b213e2d71bfdb473fd98f8080de5c874c70e2
-ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
-ms.translationtype: HT
+ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
+ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36940385"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51619184"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Uso de datos de configuración en DSC
 
@@ -185,12 +185,13 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 ## <a name="using-configurationdata-variables-in-a-configuration"></a>Uso de variables ConfigurationData en una configuración
 
-DSC proporciona tres variables especiales que se pueden usar en un script de configuración:**$AllNodes**, **$Node** y **$ConfigurationData**.
+DSC proporciona las siguientes variables especiales que se pueden usar en un script de configuración:
 
 - **$AllNodes** hace referencia a toda la colección de nodos que se define en **ConfigurationData**. Puede filtrar la colección **AllNodes** mediante **.Where()** y **.ForEach()**.
+- **ConfigurationData** hace referencia a toda la tabla hash que se pasa como parámetro al compilar una configuración.
+- **MyTypeName** contiene el [configuración](configurations.md) la variable se usa en el nombre. Por ejemplo, en la configuración `MyDscConfiguration`, `$MyTypeName` tendrá un valor de `MyDscConfiguration`.
 - **Node** hace referencia a un valor determinado en la colección **AllNodes** después de que se filtre mediante **.Where()** o **.ForEach()**.
   - Puede obtener más información sobre estos métodos en [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md).
-- **ConfigurationData** hace referencia a toda la tabla hash que se pasa como parámetro al compilar una configuración.
 
 ## <a name="using-non-node-data"></a>Uso de datos que no son de nodo
 
