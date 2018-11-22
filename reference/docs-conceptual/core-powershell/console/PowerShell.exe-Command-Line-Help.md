@@ -3,12 +3,12 @@ ms.date: 08/14/2018
 keywords: powershell, cmdlet
 title: Ayuda para la línea de comandos de PowerShell.exe
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: c7f35511e876e8e5189d8a2b949555603d43f731
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
-ms.translationtype: HT
+ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
+ms.sourcegitcommit: 03c7672ee72698fe88a73e99702ceaadf87e702f
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133122"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51691837"
 ---
 # <a name="powershellexe-command-line-help"></a>Ayuda de línea de comandos de PowerShell.exe
 
@@ -51,7 +51,10 @@ Establece la directiva de ejecución predeterminada para la sesión actual y la 
 
 Ejecuta el script especificado en el ámbito local ("origen de puntos"), para que las funciones y variables que crea el script estén disponibles en la sesión actual. Escriba la ruta de acceso del archivo de script y los parámetros. **File** debe ser el último parámetro del comando. Todos los valores que se han escrito después del parámetro **-File** se interpretan como la ruta de acceso del archivo de script y los parámetros que se pasan a ese script.
 
-Los parámetros que se pasan al script lo hacen como cadenas literales (una vez interpretados por el shell actual). Por ejemplo, si se está en cmd.exe y se quiere pasar un valor de la variable de entorno, se usará la sintaxis de cmd.exe: `powershell -File .\test.ps1 -Sample %windir%`. En este ejemplo, el script recibe la cadena literal `$env:windir` en lugar del valor de esa variable de entorno: `powershell -File .\test.ps1 -Sample $env:windir`.
+Los parámetros que se pasan al script lo hacen como cadenas literales (una vez interpretados por el shell actual). Por ejemplo, si encuentra en cmd.exe y va a pasar un valor de la variable de entorno, usaría la sintaxis de cmd.exe: `powershell.exe -File .\test.ps1 -TestParam %windir%`
+
+En cambio, ejecuta `powershell.exe -File .\test.ps1 -TestParam $env:windir` en los resultados de cmd.exe en el script de recibir la cadena literal `$env:windir` porque no tiene ningún significado especial en el shell de cmd.exe actual.
+El `$env:windir` estilo de referencia de variable de entorno _puede_ utilizarse dentro de un `-Command` parámetro, ya que no existe se interpretará como código de PowerShell.
 
 ### <a name="-inputformat-text--xml"></a>\-InputFormat {Text | XML}
 
@@ -103,22 +106,31 @@ Establece el estilo de ventana de la sesión. Los valores válidos son Normal, M
 
 ### <a name="-command"></a>-Command
 
-Ejecuta los comandos especificados (con todos los parámetros) como si se hubiesen escrito en el símbolo del sistema de PowerShell. Después de la ejecución, PowerShell se cierra a menos que se especifique el parámetro `-NoExit`.
-Cualquier texto después de `-Command` se envía como una sola línea de comandos a PowerShell. Esto es diferente de cómo `-File` controla los parámetros enviados a un script.
+Ejecuta los comandos especificados (con todos los parámetros) como si se hubiesen escrito en el símbolo del sistema de PowerShell.
+Después de la ejecución, PowerShell se cierra, a menos que el **NoExit** se especifica el parámetro.
+Cualquier texto después de `-Command` se envía como una sola línea de comandos a PowerShell.
+Esto es diferente de cómo `-File` controla los parámetros enviados a un script.
 
-El valor del comando puede ser "-", una cadena. o un bloque de scripts. Si el valor de Command es "-", el texto del comando se lee de la entrada estándar.
+El valor de `-Command` puede ser "-", una cadena o un bloque de script.
+Los resultados del comando se devuelven al shell principal como objetos XML deserializados, los objetos no activos.
 
-Los bloques de scripts deben incluirse entre llaves ({}). Puede especificar un bloque de scripts solo cuando ejecute PowerShell.exe en PowerShell. Los resultados del script se devuelven al shell principal como objetos XML deserializados, no como objetos activos.
+Si el valor de `-Command` es "-", el texto de comando se lee de la entrada estándar.
 
-Si el valor de Command es una cadena, **Command** debe ser el último parámetro del comando, porque los caracteres escritos después del comando se interpretan como argumentos del comando.
+Cuando el valor de `-Command` es una cadena, **comando** _debe_ ser el último parámetro especificado porque los caracteres escritos después del comando se interpretan como argumentos del comando.
 
-Para escribir una cadena que ejecute un comando de PowerShell, use el siguiente formato:
+El **comando** parámetro solo acepta un bloque de script para la ejecución puede reconocer el valor pasado a `-Command` como un tipo de bloque de script.
+Se trata de _sólo_ posible cuando ejecute PowerShell.exe desde otro host de PowerShell.
+Hospedar el bloque de script tipo puede estar incluido en una variable, devuelto por una expresión o analizada por PowerShell existentes como un bloque de script literal entre llaves `{}`, antes de que se pasan a PowerShell.exe.
 
-```powershell
+En cmd.exe, no hay nada como un bloque de script (o el tipo de bloque de script), por lo que el valor pasado a **comando** le _siempre_ sea una cadena.
+Puede escribir un bloque de script dentro de una cadena, pero en lugar de que se está ejecutando, se comporta exactamente como si lo hubiera escrito en un símbolo del sistema de PowerShell típico, imprimir el contenido de la secuencia de comandos Bloquear nuevo para usted.
+
+Una cadena pasada a `-Command` todavía se ejecutará como PowerShell, por lo que las llaves de cierre del bloque de script a menudo no son necesarias en primer lugar cuando se ejecuta desde cmd.exe.
+Para ejecutar un bloque de scripts alineado definido dentro de una cadena, el [operador de llamada](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-) `&` se puede usar:
+
+```console
 "& {<command>}"
 ```
-
-Las comillas indican una cadena y el operador de invocación (&) hace que se ejecute el comando.
 
 ### <a name="-help---"></a>-Help, -?, /?
 
