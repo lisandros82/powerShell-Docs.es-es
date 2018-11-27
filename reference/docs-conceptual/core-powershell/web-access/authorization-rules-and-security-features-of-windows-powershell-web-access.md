@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell, cmdlet
 title: Reglas de autorización y características de seguridad de Windows PowerShell Web Access
-ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
-ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
-ms.translationtype: HT
+ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43133096"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321091"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reglas de autorización y características de seguridad de Windows PowerShell Web Access
 
@@ -20,19 +20,19 @@ Windows PowerShell Web Access en Windows Server 2012 R2 y Windows Server 2012 ti
 ## <a name="configuring-authorization-rules-and-site-security"></a>Configurar las reglas de autorización y la seguridad del sitio
 
 Una vez instalado Windows PowerShell Web Access y configurada la puerta de enlace, los usuarios podrán abrir la página de inicio de sesión en un explorador, pero no podrán iniciar sesión hasta que el administrador de Windows PowerShell Web Access les conceda acceso de manera explícita. El control de acceso de Windows PowerShell Web Access se administra mediante el conjunto de cmdlets de Windows PowerShell descrito en la siguiente tabla. No existe una GUI comparable para agregar o administrar reglas de autorización.
-Vea [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md) (Cmdlets de Windows PowerShell Web Access).
+Vea [Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps) (Cmdlets de Windows PowerShell Web Access).
 
 Los administradores pueden definir entre `{0-n}` reglas de autenticación para Windows PowerShell Web Access. La seguridad predeterminada es restrictiva más que permisiva; si no se define ninguna regla de autenticación, ningún usuario tendrá acceso a ningún sitio.
 
-[Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) y [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) de Windows Server 2012 R2 incluyen un parámetro de credenciales que le permite agregar y probar reglas de autorización de Windows PowerShell Web Access desde un equipo remoto o desde una sesión activa de Windows PowerShell Web Access. Como ocurre con otros cmdlets de Windows PowerShell que tienen un parámetro de credenciales, puede especificar un objeto PSCredential como valor del parámetro. Para crear un objeto PSCredential que contenga las credenciales que quiere pasar a un equipo remoto, ejecute el cmdlet [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential).
+[Add-PswaAuthorizationRule](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) y [Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) de Windows Server 2012 R2 incluyen un parámetro de credenciales que le permite agregar y probar reglas de autorización de Windows PowerShell Web Access desde un equipo remoto o desde una sesión activa de Windows PowerShell Web Access. Como ocurre con otros cmdlets de Windows PowerShell que tienen un parámetro de credenciales, puede especificar un objeto PSCredential como valor del parámetro. Para crear un objeto PSCredential que contenga las credenciales que quiere pasar a un equipo remoto, ejecute el cmdlet [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential).
 
-Las reglas de autenticación de Windows PowerShell Web Access son reglas de la lista blanca. Cada regla es una definición de una conexión permitida entre usuarios, equipos de destino y [configuraciones de sesión](/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) de Windows PowerShell determinadas (también denominadas puntos de conexión o _espacios de ejecución_) en equipos de destino especificados.
-Para ver una explicación sobre los **espacios de ejecución**, vea [Beginning Use of PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/) (Uso inicial de los espacios de ejecución de PowerShell).
+Las reglas de autenticación de Windows PowerShell Web Access son reglas de la lista blanca. Cada regla es una definición de una conexión permitida entre usuarios, equipos de destino y [configuraciones de sesión](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1) de Windows PowerShell determinadas (también denominadas puntos de conexión o _espacios de ejecución_) en equipos de destino especificados.
+Para ver una explicación sobre los **espacios de ejecución**, vea [Uso inicial de los espacios de ejecución de PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > [!IMPORTANT]
 > Un usuario solo necesita que una regla sea verdadera para obtener el acceso. Si a un usuario se le concede acceso a un equipo con acceso de lenguaje completo o acceso únicamente a los cmdlets de administración remota de Windows PowerShell, desde la consola basada en web, el usuario puede saltar a otros equipos conectados al primer equipo de destino e iniciar sesión en ellos. El modo más seguro de configurar Windows PowerShell Web Access consiste en permitir a los usuarios acceder únicamente a configuraciones de sesión restringidas que les permitan llevar a cabo tareas específicas que, por lo general, deben realizar de forma remota.
 
-Los cmdlets a los que se hace referencia en [Cmdlets de Windows PowerShell Web Access](cmdlets/web-access-cmdlets.md) permiten crear un conjunto de reglas de acceso que se usan para autorizar a un usuario en la puerta de enlace de Windows PowerShell Web Access. Las reglas difieren de las listas de control de acceso (ACL) en el equipo de destino y proporcionan un nivel de seguridad adicional para el acceso web. En la siguiente sección, se proporcionan más detalles sobre la seguridad.
+Los cmdlets a los que se hace referencia en [Cmdlets de Windows PowerShell Web Access](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps) permiten crear un conjunto de reglas de acceso que se usan para autorizar a un usuario en la puerta de enlace de Windows PowerShell Web Access. Las reglas difieren de las listas de control de acceso (ACL) en el equipo de destino y proporcionan un nivel de seguridad adicional para el acceso web. En la siguiente sección, se proporcionan más detalles sobre la seguridad.
 
 Si los usuarios no pueden pasar alguno de los niveles de seguridad anteriores, recibirán un mensaje de "acceso denegado" genérico en la ventana del explorador. Si bien los detalles de seguridad se registran en el servidor de puerta de enlace, los usuarios finales no verán ninguna información acerca de cuántos niveles de seguridad pasaron ni en qué nivel se produjo el error de autenticación o de inicio de sesión.
 
@@ -182,7 +182,7 @@ En el escenario anterior, Windows PowerShell Web Access solo establecerá una co
 
    > [!NOTE]
    > Si los equipos de destino y de la puerta de enlace se encuentran en grupos de trabajo o dominios diferentes, se debe establecer una relación de confianza entre los dos equipos del grupo de trabajo, entre los dos dominios o entre el grupo de trabajo y el dominio. Esta relación no se puede configurar mediante los cmdlets de reglas de autorización de Windows PowerShell Web Access. Las reglas de autorización no definen una relación de confianza entre equipos; solo pueden autorizar a los usuarios para que se conecten a equipos de destino y configuraciones de sesión específicos. Para más información sobre el modo de configurar una relación de confianza entre dominios diferentes, consulte [Creating Domain and Forest Trusts](https://technet.microsoft.com/library/cc794775.aspx) (Creación de confianzas entre dominios y bosques).
-   > Para más información sobre el modo de agregar equipos del grupo de trabajo a una lista de hosts de confianza, vea [Administración remota con el Administrador del servidor](https://technet.microsoft.com/library/dd759202.aspx).
+   > Para obtener más información sobre el modo de agregar equipos del grupo de trabajo a una lista de hosts de confianza, consulta el tema [Administración remota con el Administrador del servidor](https://technet.microsoft.com/library/dd759202.aspx).
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Uso de un solo conjunto de reglas de autorización para varios sitios
 
@@ -229,4 +229,4 @@ Si el servidor de puerta de enlace está ejecutando Windows Server 2012 R2, Wind
 
 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 
-[Cmdlets de Windows PowerShell Web Access](cmdlets/web-access-cmdlets.md)
+[Cmdlets de Windows PowerShell Web Access](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)

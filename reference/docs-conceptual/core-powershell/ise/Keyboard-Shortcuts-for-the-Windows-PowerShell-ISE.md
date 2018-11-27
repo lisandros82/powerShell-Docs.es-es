@@ -3,16 +3,16 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Métodos abreviados de teclado para Windows PowerShell ISE
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: e17fee4cf0cc8ac7aa0bb36acde3b452919312d0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953827"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320812"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Métodos abreviados de teclado para Windows PowerShell ISE
 
-Use los siguientes métodos abreviados de teclado para realizar acciones en el Entorno de scripting integrado (ISE) de Windows PowerShell®. Windows PowerShell ISE está disponible como parte de los sistemas operativos Windows Server y cliente de Windows, pero también se puede instalar en algunos sistemas operativos anteriores de Windows como parte del [paquete de descarga de Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881).
+Use los siguientes métodos abreviados de teclado para realizar acciones en el Entorno de scripting integrado (ISE) de Windows PowerShell®. Windows PowerShell ISE está disponible como parte de los sistemas operativos Windows Server y cliente de Windows, pero también se puede instalar en algunos sistemas operativos anteriores de Windows como parte del [paquete de descarga de Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881).
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Métodos abreviados de teclado para editar texto
 
@@ -120,4 +120,4 @@ Puede usar los siguientes métodos abreviados de teclado para iniciar la consola
 
 ## <a name="see-also"></a>Véase también
 
-- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/) (Lista completa de métodos abreviados de teclado de Windows PowerShell ISE)
+- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/) (Lista completa de métodos abreviados de teclado de Windows PowerShell ISE)
