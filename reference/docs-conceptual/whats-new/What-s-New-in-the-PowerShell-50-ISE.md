@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Novedades de PowerShell ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 35b825cfa6ea720d0af3537c5d1b16c5ececb701
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953589"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320591"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Novedades de Windows PowerShell ISE
 En este tema se explican las características nuevas y actualizadas que se introdujeron en las versiones de Entorno de scripting integrado (ISE) de Windows PowerShell.
@@ -63,7 +63,7 @@ Para usar fragmentos de código en Windows PowerShell 3.0 o posterior, en el men
 ### <a name="add-on-tools"></a>Herramientas de complemento
 **Agregado en PowerShell 3.0**
 
-Windows PowerShell ISE es ahora compatible con las herramientas de complemento, que son controles de Windows Presentation Foundation (WPF) que se agregan mediante el modelo de objetos. Las herramientas de complemento se pueden visualizar en la consola en un panel vertical u horizontal. Si hay varias herramientas de complemento en un panel, se mostrarán como un control de pestaña. También puede agregar o quitar herramientas de complemento no producidas por Microsoft. Para más información sobre cómo importar o quitar herramientas de complemento, consulte el tema sobre las [operaciones de Windows PowerShell ISE](http://technet.microsoft.com/library/cc732148.aspx).
+Windows PowerShell ISE es ahora compatible con las herramientas de complemento, que son controles de Windows Presentation Foundation (WPF) que se agregan mediante el modelo de objetos. Las herramientas de complemento se pueden visualizar en la consola en un panel vertical u horizontal. Si hay varias herramientas de complemento en un panel, se mostrarán como un control de pestaña. También puede agregar o quitar herramientas de complemento no producidas por Microsoft. Para más información sobre cómo importar o quitar herramientas de complemento, consulte el tema sobre las [operaciones de Windows PowerShell ISE](https://technet.microsoft.com/library/cc732148.aspx).
 
 **¿Qué valor aporta este cambio?**
 
@@ -224,5 +224,5 @@ Show-Command es una novedad de Windows PowerShell ISE 3.0.
 Para más información sobre cómo usar Windows PowerShell ISE en Windows PowerShell, consulte los siguientes vínculos.
 
 - [Exploración del Entorno de scripting integrado de Windows PowerShell](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
-- [ISE en el Wiki de TechNet](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
-- [Centro de scripts](http://technet.microsoft.com/scriptcenter/default)
+- [ISE en el Wiki de TechNet](https://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
+- [Centro de scripts](https://technet.microsoft.com/scriptcenter/default)

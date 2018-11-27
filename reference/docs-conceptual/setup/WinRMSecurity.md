@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: 43e77067e301cdf1b792cb0d24b72ee0abb3349a
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482954"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320557"
 ---
 # <a name="powershell-remoting-security-considerations"></a>Consideraciones de seguridad de comunicación remota de PowerShell
 
@@ -15,7 +15,7 @@ La comunicación remota de PowerShell es la forma recomendada para administrar l
 
 ## <a name="what-is-powershell-remoting"></a>¿Qué es la comunicación remota de PowerShell?
 
-La comunicación remota de PowerShell usa [Administración remota de Windows (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), que es la implementación de Microsoft del protocolo [Servicios web para administración (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf), que permite a los usuarios ejecutar comandos de PowerShell en equipos remotos. Puede encontrar más información acerca del uso de la comunicación remota de PowerShell en [Ejecutar comandos remotos](https://technet.microsoft.com/library/dd819505.aspx).
+La comunicación remota de PowerShell usa [Administración remota de Windows (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), que es la implementación de Microsoft del protocolo [Servicios web para administración (WS-Management)](https://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf), que permite a los usuarios ejecutar comandos de PowerShell en equipos remotos. Puede encontrar más información acerca del uso de la comunicación remota de PowerShell en [Ejecutar comandos remotos](https://technet.microsoft.com/library/dd819505.aspx).
 
 La comunicación remota de PowerShell no es lo mismo que usar el parámetro **ComputerName** de un cmdlet para ejecutarlo en un equipo remoto, que usa la llamada a procedimiento remoto (RPC) como protocolo subyacente.
 

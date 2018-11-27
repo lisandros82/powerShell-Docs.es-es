@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Entorno de scripting integrado (ISE) de Windows PowerShell
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: d116ec107c2d07e9fd55ee974008b3636b4ab049
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952076"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320523"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Entorno de scripting integrado (ISE) de Windows PowerShell
 
@@ -62,7 +62,7 @@ El ISE se introdujo con PowerShell 2.0.
 
 ## <a name="requirements-for-running-the-windows-powershell-ise"></a>Requisitos para ejecutar Windows PowerShell ISE
 
-El ISE está disponible en cualquier equipo Windows que puede ejecutar Windows PowerShell 2.0 o una versión posterior. Cada versión de Windows y Windows Server incluye una versión de Windows PowerShell y el ISE, pero se puede actualizar a la versión más reciente disponible mediante la instalación de Windows Management Framework (WMF). Consulte la documentación del [WMF](/powershell/wmf/readme) para obtener más información.
+El ISE está disponible en cualquier equipo Windows que puede ejecutar Windows PowerShell 2.0 o una versión posterior. Cada versión de Windows y Windows Server incluye una versión de Windows PowerShell y el ISE, pero se puede actualizar a la versión más reciente disponible mediante la instalación de Windows Management Framework (WMF). Consulte la documentación del [WMF](/powershell/wmf) para obtener más información.
 
 > [!NOTE]
 > Dado que Windows PowerShell ISE requiere una interfaz gráfica de usuario, no puede ejecutar la opción Server Core de Windows Server.
