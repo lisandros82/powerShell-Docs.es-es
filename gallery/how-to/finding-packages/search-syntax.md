@@ -3,22 +3,23 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Sintaxis de búsqueda de la Galería
-ms.openlocfilehash: 9aadb6771c85845cc3fa05cb56f0194b060d1c1b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003894"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742863"
 ---
 # <a name="gallery-search-syntax"></a>Sintaxis de búsqueda de la Galería
 
-La Galería de PowerShell ofrece un cuadro de búsqueda de texto en el que puede usar palabras, frases y expresiones de palabra clave para restringir los resultados de la búsqueda.
+Puede buscar la Galería de PowerShell mediante el [sitio web de la Galería de PowerShell](https://www.powershellgallery.com/).
+Sitio web Galería de PowerShell ofrece un control searchbox de texto donde puede usar palabras, frases y expresiones de palabra clave para restringir los resultados de búsqueda.
 
 ## <a name="search-by-keywords"></a>Buscar por palabras clave
 
     dsc azure sql
 
-La búsqueda hará todo lo posible por encontrar documentos relevantes que contengan las tres palabras clave y devolver documentos coincidentes.
+Búsqueda intenta encontrar documentos relevantes que contiene todos los 3 palabras clave y devolver documentos coincidentes.
 
 ## <a name="search-using-phrases-and-keywords"></a>Buscar mediante palabras clave y frases
 
@@ -37,10 +38,9 @@ Actualmente, los campos que se pueden buscar son "Id", "Version", "Tags", "Autho
 
 ## <a name="examples"></a>Ejemplos
 
-    ID:"PSReadline"
-    id:"AzureRM.Profile"
-
-Busca paquetes con "PSReadline" o "AzureRM.Profile" en el campo ID, respectivamente.
+    ID:PSReadline
+    
+busca paquetes con un identificador que contiene "PSReadline".
 
     Id:"AzureRM.Profile"
 
@@ -50,40 +50,35 @@ El filtro "Id" es una coincidencia de subcadena, por lo que si busca lo siguient
 
     Id:"azure"
 
-obtendrá resultados como "AzureRM.Profile" y "Azure.Storage".
+Esto proporciona resultados que incluyan AzureRM.Profile "y"Azure.Storage".
 
-También puede buscar varias palabras clave en un único campo, o mezclar y combinar campos.
+También puede buscar varias palabras clave en un único campo, 
 
     id:azure tags:intellisense
-    id:azure id:storage
 
-También puede buscar frases:
+Además, puede realizar búsquedas de frases con comillas dobles:
 
     id:"azure.storage"
 
-
 Para buscar todos los paquetes con la etiqueta DSC.
 
-    Tags:"DSC"
+    Tags:DSC
 
 Para buscar todos los paquetes con la función especificada.
 
-    Functions:"Update-AzureRM"
+    Functions:Get-TreeSize
 
 Para buscar todos los paquetes con el cmdlet especificado.
 
-    Cmdlets:"Get-AzureRmEnvironment"
+    Cmdlets:Get-AzureRmEnvironment
 
 Para buscar todos los paquetes con el nombre del recurso de DSC especificado.
 
-    DscResources:"xArchive"
+    DscResources:xArchive
 
 Para buscar todos los paquetes con el valor de PowerShellVersion especificado.
 
-    PowerShellVersion:"5.0"
-    PowerShellVersion:"3.0"
-    PowerShellVersion:"2.0"
-
+    PowerShellVersion:2.0
 
 Por último, si usa un campo que no se admite (como "commands"), se omitirá y se buscará en todos los campos. Así pues, la consulta siguiente:
 
