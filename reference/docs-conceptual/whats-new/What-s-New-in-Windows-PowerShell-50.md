@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Novedades de Windows PowerShell 5.0
-ms.openlocfilehash: 78304b0eac6e58e43bffc3abb7059a1e4b02de23
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
+ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
 ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320727"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52978902"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Novedades de Windows PowerShell 5.0
 Windows PowerShell 5.0 incluye nuevas características importantes que amplían y mejoran su uso, y permiten controlar y administrar entornos basados en Windows de forma más sencilla y completa.
@@ -38,9 +38,9 @@ Muchas actualizaciones y mejoras en la configuración de estado deseado (DSC) de
   - [New-DscChecksum](https://technet.microsoft.com/library/dn521622.aspx) admite ahora rutas UNC.
 
 - Nuevos cmdlets en el módulo [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx)
-  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx): realiza una comprobación del servidor de extracción a petición.
-  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx): detiene una configuración que ya se está ejecutando.
-  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx): permite quitar los documentos de configuración en diversas etapas (pendientes, anteriores o actuales).
+  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx)  Realiza una comprobación del servidor de incorporación de cambios y a petición.
+  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx)  Detiene una configuración que ya se está ejecutando.
+  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx)  Permite quitar documentos de configuración en diversas etapas (pendientes, anteriores o actuales).
 
 - Mejoras en el lenguaje
   - DependsOn admite ahora recursos compuestos.
@@ -64,10 +64,10 @@ Muchas actualizaciones y mejoras en la configuración de estado deseado (DSC) de
 
 - Mejoras de escalabilidad
   - El recurso LocalConfigurationManager tiene una propiedad nueva, **ActionAfterReboot**.
-    - ContinueConfiguration (valor predeterminado): reanuda automáticamente una configuración cuando se reinicia un nodo de destino.
-    - StopConfiguration (valor predeterminado): no reanuda automáticamente una configuración cuando se reinicia un nodo de destino.
+    - ContinueConfiguration (valor predeterminado): Reanuda automáticamente una configuración después de reinicia un nodo de destino.
+    - StopConfiguration Una configuración no se reanudará automáticamente cuando se reinicia un nodo.
   - Una ejecución de coherencia puede llevarse a cabo con mayor frecuencia que una operación de extracción o viceversa.
-  - Compatibilidad de versiones: DSC puede ahora reconocer un documento generado en un cliente más reciente (incluido con [WMF 5.0](https://aka.ms/wmf5download)).
+  - Compatibilidad de versiones:  DSC puede ahora reconocer un documento que se generó en un cliente más reciente (incluido con [WMF 5.0](https://aka.ms/wmf5download)).
 
 - Mejoras en la prevención de errores
   - La versión del módulo se aplica ahora antes de aplicar una configuración.
@@ -134,7 +134,7 @@ Muchas actualizaciones y mejoras en la configuración de estado deseado (DSC) de
 - Ahora puede realizar la validación de la versión de módulo ejecutando el cmdlet Test-ModuleManifest.
 - Los resultados del cmdlet Get-Command muestran ahora una columna Version; se ha agregado una nueva propiedad Version a la clase CommandInfo. Get-Command muestra comandos de varias versiones del mismo módulo. La propiedad Version también forma parte de las clases derivadas de CmdletInfo: CmdletInfo y ApplicationInfo.
 - Get-Command tiene un nuevo parámetro, -ShowCommandInfo, que devuelve información de ShowCommand como PSObjects. Esta funcionalidad es especialmente útil cuando se ejecuta Show-Command en Windows PowerShell ISE mediante la comunicación remota de Windows PowerShell. El parámetro -ShowCommandInfo reemplaza la función Get-SerializedCommand existente en el módulo Microsoft.PowerShell.Utility, pero el script Get-SerializedCommand sigue estando disponible para admitir el scripting de nivel inferior.
-- Un nuevo cmdlet Get-ItemPropertyValue permite obtener el valor de una propiedad sin usar la notación de puntos. Por ejemplo, en las versiones anteriores de Windows PowerShell, puede ejecutar el comando siguiente para obtener el valor de la propiedad de base de la aplicación de la clave del registro de PowerShellEngine: **(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase**. A partir de Windows PowerShell 5.0, puede ejecutar **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**.
+- Un nuevo cmdlet Get-ItemPropertyValue permite obtener el valor de una propiedad sin usar la notación de puntos. Por ejemplo, en las versiones anteriores de Windows PowerShell, puede ejecutar el comando siguiente para obtener el valor de la propiedad ApplicationBase de la clave del registro de PowerShellEngine: **(Get-ItemProperty-Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine-nombre ApplicationBase). ApplicationBase**. A partir de Windows PowerShell 5.0, puede ejecutar **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**.
 - La consola de Windows PowerShell usa ahora el color de sintaxis, como en Windows PowerShell ISE.
 - Un nuevo módulo NetworkSwitch contiene cmdlets que permiten aplicar la configuración de modificador, LAN virtual (VLAN) y básica del puerto del modificador de red de capa 2 a los modificadores de red certificados con el logotipo de Windows Server 2012 R2.
 - El parámetro FullyQualifiedName se agregó a los cmdlets Import-Module y Remove-Module para permitir el almacenamiento de varias versiones de un mismo módulo.
@@ -221,7 +221,7 @@ Windows PowerShell 4.0 incluye las siguientes características nuevas.
 - Se ha agregado un parámetro **Passthru** a los cmdlets **Enable-JobTrigger** y **Disable-JobTrigger**. El parámetro Passthru muestra los objetos que el comando crea o modifica.
 - Ahora, los nombres de parámetro para especificar un grupo de trabajo en los cmdlets **Add-Computer** y **Remove-Computer** son coherentes, ya que ambos cmdlets usan el parámetro **WorkgroupName**.
 - Se ha agregado un nuevo parámetro común, **PipelineVariable**. PipelineVariable permite guardar los resultados de un comando canalizado (o de parte de un comando canalizado) como una variable que se puede pasar a través del resto de la canalización.
-- Ahora se puede usar una sintaxis de método para filtrar colecciones. Esto significa que una colección de objetos se puede filtrar usando una sintaxis simplificada, similar a la de Where() o Where-Object, con el formato de una llamada a método. Este es un ejemplo: (Get-Process).where({$_.Name -match 'powershell'})
+- Ahora se puede usar una sintaxis de método para filtrar colecciones. Esto significa que una colección de objetos se puede filtrar usando una sintaxis simplificada, similar a la de Where() o Where-Object, con el formato de una llamada a método. Observe el siguiente ejemplo: (Get-Process).where({$_.Name -match 'powershell'})
 - El cmdlet **Get-Process** tiene un nuevo parámetro de modificador, **IncludeUserName**.
 - Se ha agregado un nuevo cmdlet, **Get-FileHash**, que devuelve un hash de archivo en uno de los distintos formatos de un archivo concreto.
 - En Windows PowerShell 4.0, si un módulo usa la clave **DefaultCommandPrefix** en su manifiesto, o si el usuario importa un módulo con el parámetro **Prefix**, la propiedad **ExportedCommands** del módulo muestra los comandos en el módulo con el prefijo. Cuando se ejecutan comandos usando la sintaxis de módulo completo (nombreDelMódulo\\nombreDelComando), los nombres de comando deben incluir el prefijo.
@@ -410,7 +410,7 @@ A partir de Windows PowerShell 3.0, los autores de cmdlets de C# pueden rellenar
 
 También puede incluir un valor de **HelpUri** en el primer vínculo relacionado de un archivo de ayuda de cmdlet basado en XML o la directiva .Link de la ayuda basada en comentarios de una función.
 
-Para más información sobre cómo admitir la ayuda en línea, consulte [Supporting Online Help](https://go.microsoft.com/fwlink/?LinkId=242132) (Compatibilidad con la ayuda en línea) en MSDN.
+Para obtener más información sobre la compatibilidad con la Ayuda en línea, consulte [compatibilidad con la Ayuda en línea](/powershell/developer/module/supporting-online-help) en el Microsoft Docs.
 
 ### <a name="cim-integration"></a>Integración de CIM
 
@@ -481,7 +481,7 @@ Se han agregado nuevos cmdlets a la instalación principal de Windows PowerShell
 |New-CimSessionOption|Update-Help|
 |New-IseSnippet||
 
-### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Mejoras en los Cmdlets principales existentes y ProvidersWindows PowerShell 3.0 incluye nuevas características para los cmdlets existentes, incluida la sintaxis simplificada y nuevos parámetros para los siguientes cmdlets: cmdlets de equipo, cmdlets CSV, Get-ChildItem, Get-Command, Get-Content, Get-History, Measure-Object, cmdlets de seguridad, Select-Object, Select-String, Split-Path, Start-Process, Tee-Object, Test-Connection, Add-Member y cmdlets de WMI.
+### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Mejoras en los Cmdlets principales existentes y ProvidersWindows PowerShell 3.0 incluye nuevas características para los cmdlets existentes, incluida la sintaxis simplificada y nuevos parámetros para los siguientes cmdlets: cmdlets de equipo, cmdlets de CSV, Get-ChildItem, Get-Command, Get-Content, Get-History, Measure-Object, cmdlets de seguridad, Select-Object, Select-String, Split-Path, Start-Process, Tee-Object, Test-Connection, Add-Member y cmdlets de WMI.
 
 Los proveedores de Windows PowerShell también se han mejorado considerablemente, incluida la posibilidad del proveedor de certificados de administrar certificados de Capa de sockets seguros (SSL) para el hospedaje web, la compatibilidad con credenciales, unidades de red persistentes y flujos de datos alternativos en las unidades del sistema de archivos.
 
