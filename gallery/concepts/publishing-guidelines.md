@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: Instrucciones para publicadores
 title: Instrucciones y procedimientos recomendados para publicar en la Galería de PowerShell
-ms.openlocfilehash: 7e9eca8d3372ddf0b94ab42e125991b857456551
-ms.sourcegitcommit: aa1129cc2b0ae6e18918b2b0ea70c74915ed019b
-ms.translationtype: HT
+ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235412"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655402"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Instrucciones y procedimientos recomendados para publicar en PowerShellGallery
 
@@ -33,6 +33,7 @@ Es mucho más probable que otros usuarios descarguen y adopten los paquetes que 
 - Responder a los comentarios
 - Proporcionar módulos, no scripts
 - Proporcionar vínculos a un sitio de proyecto
+- Etiquetar el paquete con las plataformas y PSEdition(s) compatible 
 - Incluir pruebas en los módulos
 - Incluir los términos de licencia o un vínculo a ellos
 - Firmar el código
@@ -92,8 +93,8 @@ Es importante responder a los usuarios que proporcionan comentarios constructivo
 
 Existen dos métodos de comentarios disponibles en la Galería de PowerShell:
 
-- Ponerse en contacto con el propietario: esta opción permite que un usuario envíe un correo electrónico al propietario de un paquete. Como propietario de un paquete, es importante supervisar la dirección de correo electrónico que se usa con los paquetes de la Galería de PowerShell y responder a los problemas que surgen. La desventaja de este método es que solo el usuario y el propietario verán la comunicación, por lo que el propietario podría tener que responder la misma pregunta varias veces.
-- Comentarios: en la parte inferior de la página de un paquete aparece el campo Comentario.
+- Póngase en contacto con el propietario: Esto permite que un usuario enviar un correo electrónico a los propietarios del paquete. Como propietario de un paquete, es importante supervisar la dirección de correo electrónico que se usa con los paquetes de la Galería de PowerShell y responder a los problemas que surgen. La desventaja de este método es que solo el usuario y el propietario verán la comunicación, por lo que el propietario podría tener que responder la misma pregunta varias veces.
+- Comentarios En la parte inferior del paquete de la página es un campo de comentario.
   La ventaja de este sistema es que los demás usuarios podrán ver los comentarios y las respuestas, lo que disminuye la cantidad de veces que se debe responder una misma pregunta.
   Como propietario de un paquete, se recomienda que siga los comentarios que se han hecho para cada paquete.
 Consulte [Envío de comentarios a través de medios sociales o comentarios](../how-to/working-with-packages/social-media-feedback.md) para conocer detalles sobre cómo hacerlo.
@@ -134,6 +135,16 @@ Para agregar un vínculo, se incluye un elemento ProjectURI en la sección PSDat
         ProjectUri = 'https://github.com/powershell/powershell'
 
 Si se proporciona ProjectURI, la Galería de PowerShell incluirá un vínculo al sitio de proyecto en el lado izquierdo de la página del paquete.
+
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Etiquetar el paquete con las plataformas y PSEdition(s) compatible 
+
+Use las etiquetas siguientes para mostrar a los usuarios que los paquetes funcionarán bien con su entorno:
+
+- PSEdition_Desktop: Paquetes que son compatibles con Windows PowerShell 
+- PSEdition_Core: Paquetes que son compatibles con Powershell Core 
+- Windows Paquetes que son compatibles con el sistema operativo de Windows
+- Linux Paquetes que son compatibles con sistemas operativos de Linux 
+- macOS 10.12+ Paquetes que son compatibles con el sistema operativo de Mac
 
 ## <a name="include-tests"></a>Incluir pruebas
 
