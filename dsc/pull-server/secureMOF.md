@@ -56,7 +56,7 @@ Este certificado de clave pública tiene requisitos específicos que debe usar p
 2. **Uso mejorado de clave**:
    - Debe contener: Cifrado del documento (1.3.6.1.4.1.311.80.1).
    - Debe _no_ contienen: Autenticación de cliente (1.3.6.1.5.5.7.3.2) y autenticación de servidor (1.3.6.1.5.5.7.3.1).
-3. La clave privada del certificado está disponible en el nodo de destino.
+3. La clave privada del certificado está disponible en \*el nodo de destino.
 4. El **proveedor** del certificado debe ser "Proveedor de servicios criptográficos de Microsoft RSA SChannel".
 
 > [!IMPORTANT]

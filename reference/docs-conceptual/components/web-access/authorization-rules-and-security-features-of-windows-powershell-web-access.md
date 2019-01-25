@@ -4,7 +4,7 @@ keywords: powershell, cmdlet
 title: Reglas de autorización y características de seguridad de Windows PowerShell Web Access
 ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
 ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 12/14/2018
 ms.locfileid: "53402769"
@@ -156,7 +156,7 @@ Cada sesión de Windows PowerShell usa una configuración de sesión. Si esta no
 - Un administrador crea un punto de conexión, llamado **PswaEndpoint**, con un espacio de ejecución restringido. Después, crea una regla, `*,*,PswaEndpoint`, y distribuye el punto de conexión a otros equipos. La regla permite a todos los usuarios obtener acceso a todos los equipos con el punto de conexión **PswaEndpoint**.
   Si esta es la única regla de autorización definida en el conjunto de reglas, no se podrá obtener acceso a los equipos que no tengan ese extremo.
 
-- Un administrador ha creado un punto de conexión con un espacio de ejecución restringido, llamado **PswaEndpoint**, y desea restringir el acceso a usuarios específicos. El administrador crea un grupo de usuarios llamado Level1Support** y define la regla siguiente: **Level1Support,\*, PswaEndpoint**. La regla concede a cualquier usuario del grupo **Level1Support** acceso a todos los equipos con la configuración **PswaEndpoint**. De modo semejante, se puede restringir el acceso a un conjunto específico de equipos.
+- Un administrador ha creado un punto de conexión con un espacio de ejecución restringido, llamado **PswaEndpoint**, y desea restringir el acceso a usuarios específicos. El administrador crea un grupo de usuarios llamado **Level1Support** y define la siguiente regla: **Level1Support,\*,PswaEndpoint**. La regla concede a cualquier usuario del grupo **Level1Support** acceso a todos los equipos con la configuración **PswaEndpoint**. De modo semejante, se puede restringir el acceso a un conjunto específico de equipos.
 
 - Algunos administradores proporcionan a determinados usuarios más acceso que a otros. Por ejemplo, un administrador crea dos grupos de usuarios, **Admins** y **BasicSupport**. El administrador también crea un punto de conexión con un espacio de ejecución restringido llamado **PswaEndpoint** y define las dos reglas siguientes: **Admins,\*,\*** y **BasicSupport,\*,PswaEndpoint**. La primera regla proporciona a todos los usuarios del grupo **Admin** acceso a todos los equipos y la segunda regla proporciona a todos los usuarios del grupo **BasicSupport** acceso únicamente a los equipos con **PswaEndpoint**.
 
