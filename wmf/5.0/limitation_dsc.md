@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 76aa4a372602d78e013b2138eb6409304a4dfb76
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: HT
+ms.openlocfilehash: ac17333145fd8bd05aea7d32b13d95fdd0421504
+ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190067"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55887572"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Problemas y limitaciones conocidos de la configuración de estado deseado (DSC)
 
-<a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>Cambio de última hora: los certificados usados para cifrar o descifrar contraseñas en configuraciones de DSC no funcionen después de instalar WMF 5.0 RTM
+<a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>Cambio importante: Los certificados usados para cifrar o descifrar contraseñas en configuraciones de DSC no funcionen después de instalar WMF 5.0 RTM
 --------------------------------------------------------------------------------------------------------------------------------
 
 En las versiones WMF 4.0 y WMF 5.0 Preview, DSC no permitía que las contraseñas de la configuración tuvieran más de 121 caracteres de longitud. DSC obligaba a usar contraseñas cortas, aunque se deseasen contraseñas largas y seguras. Este cambio de última hora permite que las contraseñas tengan una longitud arbitraria en la configuración de DSC.
 
-**Resolución:** vuelva a crear el certificado mediante el cifrado de datos o el cifrado de clave, así como con el uso mejorado de claves de cifrado de documentos (1.3.6.1.4.1.311.80.1). En el artículo de TechNet <https://technet.microsoft.com/library/dn807171.aspx> encontrará más información.
+**Resolución:** Volver a crear el certificado con el uso de cifrado de datos o cifrado de clave y el uso del documento cifrado mejorado de claves (1.3.6.1.4.1.311.80.1). En el artículo de TechNet <https://technet.microsoft.com/library/dn807171.aspx> encontrará más información.
 
 
 <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>Los cmdlets de DSC puede producir un error después de instalar WMF 5.0 RTM
@@ -28,7 +28,7 @@ Start-DscConfiguration y otros cmdlets de DSC pueden generar el siguiente error 
     + PSComputerName : localhost
 ```
 
-**Resolución:** elimine DSCEngineCache.mof. Para ello, ejecute el siguiente comando en una sesión de PowerShell con privilegios elevados (Ejecutar como administrador).
+**Resolución:** Elimine dscenginecache.MOF. para ello ejecutando el siguiente comando en una sesión de PowerShell con privilegios elevados (ejecutar como administrador):
 
 ```powershell
 Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
@@ -37,7 +37,7 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 
 <a name="dsc-cmdlets-may-not-work-if-wmf-50-rtm-is-installed-on-top-of-wmf-50-production-preview"></a>Es posible que los Cmdlets de DSC no funcionen si WMF 5.0 RTM se instala encima de WMF 5.0 Production Preview
 ------------------------------------------------------
-**Resolución:** elimine DSCEngineCache.mof. Para ello, ejecute el siguiente comando en una sesión de PowerShell con privilegios elevados (Ejecutar como administrador).
+**Resolución:** Ejecute el siguiente comando en una sesión de PowerShell con privilegios elevados (ejecutar como administrador):
 ```powershell
     mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof
 ```
@@ -48,47 +48,47 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 
 Si LCM está en DebugMode, al presionar CTRL+C para detener el procesamiento de Get-DscConfiguration puede causar que LCM entre en un estado inestable que impida funcionar a la mayoría de los cmdlets de DSC.
 
-**Resolución:** no presione CTRL+C mientras se depura el cmdlet Get-DscConfiguration.
+**Resolución:** No presione CTRL+C mientras se depura el cmdlet Get-DscConfiguration.
 
 
-<a name="stop-dscconfiguration-may-hang-in-debugmode"></a>Stop-DscConfiguration puede colgarse en DebugMode
+<a name="stop-dscconfiguration-may-not-respond-in-debugmode"></a>No puede responder Stop-DscConfiguration en DebugMode
 ------------------------------------------------------------------------------------------------------------------------
-Si LCM está en DebugMode, Stop-DscConfiguration puede colgarse cuando intenta detener una operación iniciada por Get-DscConfiguration
+Si LCM está en DebugMode, Stop-DscConfiguration puede no responder mientras intenta detener una operación iniciada por Get-DscConfiguration
 
-**Resolución:** finalice la depuración de la operación iniciada por Get-DscConfiguration, como se describe en la sección '[Depuración de recursos de DSC](https://msdn.microsoft.com/powershell/dsc/debugresource)'.
+**Resolución:** Finalice la depuración de la operación iniciada por Get-DscConfiguration, como se describe en la sección '[recursos de DSC depuración](https://msdn.microsoft.com/powershell/dsc/debugresource)'.
 
 
 <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>No se muestran mensajes de error detallados en DebugMode
 -----------------------------------------------------------------------------------
 Si LCM está en DebugMode, no se muestra ningún mensaje de error detallado de recursos de DSC.
 
-**Resolución:** deshabilite *DebugMode* para ver mensajes detallados del recurso
+**Resolución:** Deshabilitar *DebugMode* para ver los mensajes detallados del recurso
 
 
 <a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Las operaciones Invoke-DscResource no se pueden recuperar mediante el cmdlet Get-DscConfigurationStatus
 --------------------------------------------------------------------------------------
 Después de usar el cmdlet Invoke-DscResource para invocar directamente los métodos de cualquier recurso, los registros de esta operación no se pueden recuperar a través de Get-DscConfigurationStatus posteriormente.
 
-**Resolución:** ninguna.
+**Resolución:** Ninguna.
 
 
 <a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus devuelve operaciones de ciclo de extracción como de tipo *Consistency*
 ---------------------------------------------------------------------------------
 Cuando un nodo se establece en modo de actualización de extracción, para cada operación de extracción realizada, el cmdlet Get-DscConfigurationStatus indica el tipo de operación como *Consistency* en lugar de *Initial*
 
-**Resolución:** ninguna.
+**Resolución:** Ninguna.
 
 <a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>El cmdlet Invoke-DscResource no devuelve los mensajes en el orden en que se producen
 ---------------------------------------------------------------------------------
 El cmdlet Invoke-DscResource no devuelve los mensajes detallados, de advertencia ni de error en el orden en que los producen LCM o el recurso de DSC.
 
-**Resolución:** ninguna.
+**Resolución:** Ninguna.
 
 
 <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Los recursos de DSC no se pueden depurar fácilmente cuando se usan con Invoke-DscResource
 -----------------------------------------------------------------------
 Cuando se ejecuta LCM en modo de depuración (consulte [Depuración de recursos de DSC](https://msdn.microsoft.com/powershell/dsc/debugresource) para obtener más detalles), el cmdlet Invoke-DscResource no ofrece información sobre el espacio de ejecución al que debe conectarse para la depuración.
-**Resolución:** detecte el espacio de ejecución y conéctese a este mediante los cmdlets **Get-PSHostProcessInfo**, **Enter-PSHostProcess** , **Get-Runspace** y **Debug-Runspace** para depurar el recurso de DSC.
+**Resolución:** Descubrir y conectar al espacio de ejecución mediante cmdlets **Get-PSHostProcessInfo**, **Enter-PSHostProcess** , **Get-Runspace** y **Debug-Runspace** para depurar el recurso de DSC.
 
 ```powershell
 # Find all the processes hosting PowerShell
@@ -121,7 +121,7 @@ Debug-Runspace -Id 2
 
 Para varias configuraciones parciales implementadas en un mismo nodo, los nombres idénticos de recursos causan un error en tiempo de ejecución.
 
-**Resolución:** use nombres diferentes para la mismos recursos en distintas configuraciones parciales.
+**Resolución:** Use nombres diferentes para los mismos recursos en distintas configuraciones parciales.
 
 
 <a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Start-DscConfiguration –UseExisting no funciona con -Credential
@@ -129,7 +129,7 @@ Para varias configuraciones parciales implementadas en un mismo nodo, los nombre
 
 Si se usa Start-DscConfiguration con el parámetro –UseExisting, el parámetro –Credential se ignora. DSC usa la identidad de proceso predeterminada para continuar la operación. Esto provoca un error cuando se necesita una credencial distinta para continuar en el nodo remoto.
 
-**Resolución:** use una sesión CIM para las operaciones remotas de DSC:
+**Resolución:** Usar sesión CIM para operaciones remotas de DSC:
 ```powershell
 $session = New-CimSession -ComputerName $node -Credential $credential
 Start-DscConfiguration -UseExisting -CimSession $session
@@ -140,14 +140,14 @@ Start-DscConfiguration -UseExisting -CimSession $session
 --------------------------------------------------
 No se admiten direcciones IPv6 como nombres de nodo en los scripts de configuración de DSC en esta versión.
 
-**Resolución:** ninguna.
+**Resolución:** Ninguna.
 
 
 <a name="debugging-of-class-based-dsc-resources"></a>Depuración de los recursos de DSC basados en clases
 --------------------------------------
 En esta versión no se admite la depuración de los recursos de DSC basado en clases.
 
-**Resolución:** ninguna.
+**Resolución:** Ninguna.
 
 
 <a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Las variables y las funciones que se definen en el ámbito de $script en el recurso basado en clases de DSC no se conservan en varias llamadas a un recurso de DSC
@@ -155,27 +155,27 @@ En esta versión no se admite la depuración de los recursos de DSC basado en cl
 
 Varias llamadas consecutivas a Start-DSCConfiguration producirán un error si la configuración usa cualquier recurso basado en clases que tenga variables o funciones definidas en el ámbito de $script.
 
-**Resolución:** defina todas las variables y funciones de la propia clase de recurso de DSC. No usar funciones o variables de ámbito $script.
+**Resolución:** Definir todas las variables y funciones en la propia clase de recurso de DSC. No usar funciones o variables de ámbito $script.
 
 
 <a name="dsc-resource-debugging-when-a-resource-is-using-psdscrunascredential"></a>Depuración de recursos de DSC cuando un recurso usa PSDscRunAsCredential
 ----------------------------------------------------------------------
 La depuración de recursos de DSC cuando un recurso usa la propiedad *PSDscRunAsCredential* en la configuración no se admite en esta versión.
 
-**Resolución:** ninguna.
+**Resolución:** Ninguna.
 
 
 <a name="psdscrunascredential-is-not-supported-for-dsc-composite-resources"></a>PsDscRunAsCredential no se admite para los recursos compuestos de DSC
 ----------------------------------------------------------------
 
-**Resolución:** usar la propiedad Credential si está disponible. ServiceSet y WindowsFeatureSet de ejemplo
+**Resolución:** Utilice la propiedad Credential si está disponible. ServiceSet y WindowsFeatureSet de ejemplo
 
 
 <a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource -Syntax* no refleja PsDscRunAsCredential correctamente
 -------------------------------------------------------------------------
 Get-DscResource -Syntax no refleja correctamente la propiedad PsDscRunAsCredential cuando el recurso la marca como obligatoria o no la admite.
 
-**Resolución:** ninguna. Sin embargo, la configuración de creación en ISE refleja los metadatos correctos acerca de la propiedad PsDscRunAsCredential al usar IntelliSense.
+**Resolución:** Ninguna. Sin embargo, la configuración de creación en ISE refleja los metadatos correctos acerca de la propiedad PsDscRunAsCredential al usar IntelliSense.
 
 
 <a name="windowsoptionalfeature-is-not-available-in-windows-7"></a>WindowsOptionalFeature no está disponible en Windows 7
@@ -196,7 +196,7 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + FullyQualifiedErrorId : PSInvalidOperationException,ImportClassResourcesFromModule
 ```
 
-**Resolución:** importe la versión necesaria mediante la definición del objeto *ModuleSpecification* en `-ModuleName` con la clave `RequiredVersion` especificada como sigue:
+**Resolución:** Importe la versión necesaria mediante la definición de la *ModuleSpecification* de objeto para el `-ModuleName` con `RequiredVersion` clave especificada como sigue:
 ``` PowerShell
 Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
 ```
@@ -204,12 +204,12 @@ Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'
 <a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Algunos recursos de DSC, como el recurso de registro, pueden comenzar a tardar mucho tiempo en procesar la solicitud.
 --------------------------------------------------------------------------------------------------------------------------------
 
-**Resolución1:** cree una tarea de programación que limpie periódicamente la siguiente carpeta.
+**Resolución1:** Crear una tarea de programación que limpie periódicamente la siguiente carpeta.
 ``` PowerShell
 $env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis
 ```
 
-**Resolución2:** cambie la configuración de DSC para limpiar la carpeta *CommandAnalysis* al final de la configuración.
+**Resolución2:** Cambiar la configuración de DSC para limpiar el *CommandAnalysis* carpeta al final de la configuración.
 ``` PowerShell
 Configuration $configName
 {

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Consideraciones de seguridad de JEA
-ms.openlocfilehash: 46ea5cc3e9bc7b6759524aa466e900950a6dee26
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: HT
+ms.openlocfilehash: 9526e141517601ae3b6d6932cd3536fdf49aa9a6
+ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190186"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55887606"
 ---
 # <a name="jea-security-considerations"></a>Consideraciones de seguridad de JEA
 
@@ -127,7 +127,7 @@ Por ejemplo, observe la siguiente entrada de funcionalidad de rol:
 ```
 
 Esta funcionalidad de rol permite a los usuarios ejecutar cualquier cmdlet de PowerShell con el nombre "Process" desde el módulo Microsoft.PowerShell.Management.
-Es posible que los usuarios necesiten tener acceso a cmdlets como `Get-Process` para comprender las aplicaciones que se ejecutan en el sistema y `Stop-Process` para eliminar cualquier aplicación bloqueada.
+Los usuarios pueden necesitar acceso a los cmdlets como `Get-Process` para comprender qué aplicaciones se ejecutan en el sistema y `Stop-Process` para eliminar todas las aplicaciones que no responden.
 En cambio, esta entrada también permite `Start-Process`, que se puede usar para iniciar un programa arbitrario con permisos de administrador total.
 El programa no tiene que estar instalado de forma local en el sistema, por lo que alguien ajeno podría simplemente iniciar un programa en un recurso compartido de archivos que proporcione al usuario que se conecta privilegios de administrador local, ejecute malware, etc.
 
