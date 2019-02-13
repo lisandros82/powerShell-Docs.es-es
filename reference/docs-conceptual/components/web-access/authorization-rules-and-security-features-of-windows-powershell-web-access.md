@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell, cmdlet
 title: Reglas de autorización y características de seguridad de Windows PowerShell Web Access
-ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: HT
+ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402769"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681265"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reglas de autorización y características de seguridad de Windows PowerShell Web Access
 
@@ -158,7 +158,7 @@ Cada sesión de Windows PowerShell usa una configuración de sesión. Si esta no
 
 - Un administrador ha creado un punto de conexión con un espacio de ejecución restringido, llamado **PswaEndpoint**, y desea restringir el acceso a usuarios específicos. El administrador crea un grupo de usuarios llamado **Level1Support** y define la siguiente regla: **Level1Support,\*,PswaEndpoint**. La regla concede a cualquier usuario del grupo **Level1Support** acceso a todos los equipos con la configuración **PswaEndpoint**. De modo semejante, se puede restringir el acceso a un conjunto específico de equipos.
 
-- Algunos administradores proporcionan a determinados usuarios más acceso que a otros. Por ejemplo, un administrador crea dos grupos de usuarios, **Admins** y **BasicSupport**. El administrador también crea un punto de conexión con un espacio de ejecución restringido llamado **PswaEndpoint** y define las dos reglas siguientes: **Admins,\*,\*** y **BasicSupport,\*,PswaEndpoint**. La primera regla proporciona a todos los usuarios del grupo **Admin** acceso a todos los equipos y la segunda regla proporciona a todos los usuarios del grupo **BasicSupport** acceso únicamente a los equipos con **PswaEndpoint**.
+- Algunos administradores proporcionan a determinados usuarios más acceso que a otros. Por ejemplo, un administrador crea dos grupos de usuarios, **Admins** y **BasicSupport**. También crea un punto de conexión con un espacio de ejecución restringido llamado **PswaEndpoint** y define las dos reglas siguientes: **Admins,\*,\*** y **BasicSupport,\*,PswaEndpoint**. La primera regla proporciona a todos los usuarios del grupo **Admin** acceso a todos los equipos y la segunda regla proporciona a todos los usuarios del grupo **BasicSupport** acceso únicamente a los equipos con **PswaEndpoint**.
 
 - Un administrador ha configurado un entorno de prueba privado y desea conceder a todos los usuarios de red autorizados acceso a todos los equipos de la red a los que tienen acceso normalmente, con acceso a todas las configuraciones de sesión a las que tienen acceso normalmente. Como se trata de un entorno de prueba privado, el administrador crea una regla de autorización que no es segura. - Ejecuta el cmdlet `Add-PswaAuthorizationRule * * *`, que usa el carácter comodín **\*** para representar todos los usuarios, todos los equipos y todas las configuraciones. - Esta regla equivale a lo siguiente: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
@@ -186,13 +186,13 @@ En el escenario anterior, Windows PowerShell Web Access solo establecerá una co
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Uso de un solo conjunto de reglas de autorización para varios sitios
 
-Las reglas de autorización se almacenan en un archivo XML. De forma predeterminada, el nombre de la ruta de acceso del archivo XML es `%windir%\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
+Las reglas de autorización se almacenan en un archivo XML. De forma predeterminada, el nombre de la ruta de acceso del archivo XML es `$env:windir\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
 
-La ruta de acceso al archivo XML de reglas de autorización se almacena en el archivo **powwa.config**, que se encuentra en `%windir%\Web\PowershellWebAccess\data`. El administrador tiene flexibilidad para cambiar la referencia a la ruta de acceso predeterminada en **powwa.config** para satisfacer preferencias o cumplir requisitos. Al permitir al administrador cambiar la ubicación del archivo, se permite que varias puertas de enlace de Windows PowerShell Web Access usen las mismas reglas de autorización, en el caso de que se desee este tipo de configuración.
+La ruta de acceso al archivo XML de reglas de autorización se almacena en el archivo **powwa.config**, que se encuentra en `$env:windir\Web\PowershellWebAccess\data`. El administrador tiene flexibilidad para cambiar la referencia a la ruta de acceso predeterminada en **powwa.config** para satisfacer preferencias o cumplir requisitos. Al permitir al administrador cambiar la ubicación del archivo, se permite que varias puertas de enlace de Windows PowerShell Web Access usen las mismas reglas de autorización, en el caso de que se desee este tipo de configuración.
 
 ## <a name="session-management"></a>Administración de sesiones
 
-De forma predeterminada, Windows PowerShell Web Access limita a los usuarios a tres sesiones al mismo tiempo. Puede editar el archivo **web.config** de la aplicación web en el Administrador de IIS para permitir un número diferente de sesiones por usuario. El archivo **web.config** es `$Env:Windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
+De forma predeterminada, Windows PowerShell Web Access limita a los usuarios a tres sesiones al mismo tiempo. Puede editar el archivo **web.config** de la aplicación web en el Administrador de IIS para permitir un número diferente de sesiones por usuario. El archivo **web.config** es `$env:windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
 
 De forma predeterminada, el Servidor web de IIS está configurado para reiniciar el grupo de aplicaciones si se edita alguna configuración. Por ejemplo, el grupo de aplicaciones se reinicia si se realizan cambios en el archivo **web.config**. >Como **Windows PowerShell Web Access** usa estados de sesión en memoria, los usuarios que han iniciado sesiones en **Windows PowerShell Web Access** las pierden cuando el grupo de aplicaciones se reinicia.
 
