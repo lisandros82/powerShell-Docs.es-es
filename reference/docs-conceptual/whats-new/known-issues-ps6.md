@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: powershell,core
 title: Problemas conocidos de PowerShell 6.0
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49451003"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681506"
 ---
 # <a name="known-issues-for-powershell-60"></a>Problemas conocidos de PowerShell 6.0
 
@@ -107,7 +107,7 @@ En la siguiente tabla se incluyen comandos conocidos por no funcionar en PowerSh
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|No disponible.|Estos comandos no se reconocerán. Esto debe corregirse en una versión futura.|
 |`Get-Acl`, `Set-Acl`|No está disponible.|Estos comandos no se reconocerán. Esto debe corregirse en una versión futura.|
 |`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|No está disponible.|Estos comandos no se reconocerán. Esto debe corregirse en una versión futura.|
-|`Wait-Process`|Disponible, no funciona correctamente. |Por ejemplo "Start-Process gvim -PassThru | Wait-Process" no funciona; no se puede esperar el proceso.|
+|`Wait-Process`|Disponible, no funciona correctamente. |Por ejemplo `Start-Process gvim -PassThru | Wait-Process` no funciona; no se puede esperar el proceso.|
 |`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Disponible pero no funciona.|Escribe un mensaje de error que indica que los comandos no funcionan. Esto debe corregirse en una versión futura.|
 |`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Disponible pero no hay ningún origen del evento disponible.|Los comandos de eventos de PowerShell están presentes, pero la mayoría de los orígenes del evento usados con los comandos (como System.Timers.Timer) no están disponibles en Linux, lo que hace que los comandos no sirvan para nada en la versión alfa.|
 |`Set-ExecutionPolicy`|Disponible pero no funciona.|Devuelve un mensaje informando que no se admite en esta plataforma. La directiva de ejecución es un "cinturón de seguridad" centrado en el usuario que ayuda a impedir que el usuario cometa errores caros. No es un límite de seguridad.|

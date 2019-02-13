@@ -2,12 +2,12 @@
 title: Novedades de PowerShell Core 6.1
 description: Nuevas características y cambios publicados en PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851314"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55682316"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Novedades de PowerShell Core 6.1
 
@@ -37,7 +37,7 @@ El paquete de compatibilidad de Windows permite que PowerShell Core use **más d
 
 ## <a name="support-for-application-whitelisting"></a>Compatibilidad con la lista blanca de aplicaciones
 
-PowerShell Core 6.1 incluye paridad con Windows PowerShell 5.1 al ser compatible con la lista blanca de aplicaciones [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) y [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control).
+PowerShell Core 6.1 incluye paridad con Windows PowerShell 5.1 al ser compatible con la lista blanca de aplicaciones [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) y [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control).
 La creación de listas blancas de aplicaciones permite un control granular de qué archivos binarios se pueden ejecutar mediante el [modo de lenguaje restringido](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/) de PowerShell.
 
 ## <a name="performance-improvements"></a>Mejoras en el rendimiento
@@ -209,7 +209,7 @@ Si `pwsh.exe` no está disponible, PowerShell Direct recurre a usar `powershell.
 
 `Enable-PSRemoting` ahora crea dos configuraciones de sesión de comunicación remota:
 
-- Una para la versión principal de PowerShell. Por ejemplo: `PowerShell.6`. Este punto de conexión en el que se puede confiar en todas las actualizaciones de versiones secundarias como la configuración de sesión de PowerShell 6 "para todo el sistema".
+- Una para la versión principal de PowerShell. Por ejemplo, `PowerShell.6`. Este punto de conexión en el que se puede confiar en todas las actualizaciones de versiones secundarias como la configuración de sesión de PowerShell 6 "para todo el sistema".
 - Una configuración de sesión específica de la versión, por ejemplo: `PowerShell.6.1.0`
 
 Este comportamiento es útil si quiere tener varias versiones de PowerShell 6 instaladas y accesibles en la misma máquina.

@@ -3,11 +3,11 @@ ms.date: 12/14/2018
 keywords: powershell, cmdlet
 title: Escritura de módulos portables
 ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747728"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55682555"
 ---
 # <a name="portable-modules"></a>Módulos portables
 
@@ -29,7 +29,7 @@ Para los módulos de puerto escritos para que Windows PowerShell trabajar con Po
 
 ## <a name="creating-a-new-module"></a>Crear un nuevo módulo
 
-Si crea un nuevo módulo, la recomendación es usar el [CLI DE .NET][].
+Si crea un nuevo módulo, la recomendación es usar el [.NET CLI][].
 
 ### <a name="installing-the-powershell-standard-module-template"></a>Instalar la plantilla de módulo de PowerShell estándar
 
@@ -259,7 +259,7 @@ Ejemplo:
 [PSSnapIn]: /dotnet/api/system.management.automation.pssnapin
 [New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
 [comprobaciones en tiempo de ejecución]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
-[CLI DE .NET]: /dotnet/core/tools/?tabs=netcore2x
+[.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
 [.NET Standard]: /dotnet/standard/net-standard
 [Estándar de PowerShell]: https://github.com/PowerShell/PowerShellStandard
 [Estándar de PowerShell 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0

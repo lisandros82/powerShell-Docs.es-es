@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Mejoras de la configuración del estado deseado en WMF 5.1
 ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523062"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679632"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Mejoras en la configuración de estado deseado (DSC) en WMF 5.1
 
@@ -206,12 +206,12 @@ Esta característica evita que los nodos ejecuten archivos de módulos o de conf
 ### <a name="how-to-sign-configuration-and-module"></a>Cómo firmar un módulo y una configuración
 
 ***
-* Archivos de configuración (.MOF): el cmdlet de PowerShell existente [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) se amplía para admitir la firma de archivos MOF.
-* Módulos: la firma de módulos se realiza mediante la firma del catálogo de módulos correspondiente mediante los siguientes pasos:
-    1. Creación de un archivo de catálogo: un archivo de catálogo contiene una colección de algoritmos hash criptográficos o huellas digitales.
+* Los archivos de configuración (. MOF): El cmdlet de PowerShell existente [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) se amplía para admitir la firma de los archivos MOF.
+* Módulos Firma de módulos se realiza mediante la firma del catálogo de módulos correspondiente mediante los siguientes pasos:
+    1. Cree un archivo de catálogo: Un archivo de catálogo contiene una colección de algoritmos hash criptográficos o huellas digitales.
        Cada huella digital corresponde a un archivo que se incluye en el módulo.
        Se ha agregado un nuevo cmdlet, [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx), para que los usuarios puedan crear un archivo de catálogo para su módulo.
-    2. Firma del archivo de catálogo: use el cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) para firmar el archivo de catálogo.
+    2. Inicie sesión en el archivo de catálogo: Use [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) para firmar el archivo de catálogo.
     3. Coloque el archivo de catálogo dentro de la carpeta del módulo.
 Por convención, el archivo de catálogo del módulo debe colocarse en la carpeta del módulo y debe tener el mismo nombre que este.
 

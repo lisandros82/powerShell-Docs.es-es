@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell, cmdlet
 title: Instalación y uso de Windows PowerShell Web Access
-ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5517347560b25f032baa77ecc2d769fb1e74ba4f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402826"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679648"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Instalación y uso de Windows PowerShell Web Access
 
@@ -136,7 +136,7 @@ De manera predeterminada, el cmdlet instala la aplicación web, **pswa** (y un g
    - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
    **Ejemplo**: `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
@@ -161,7 +161,7 @@ De manera predeterminada, el cmdlet instala la aplicación web, **pswa** (y un g
    - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
 3. Abra la consola del Administrador de IIS mediante uno de los siguientes procedimientos.
 
@@ -200,7 +200,7 @@ Para obtener más información sobre la seguridad y las reglas de autorización 
    - En el escritorio de Windows, haga clic con el botón derecho en **Windows PowerShell**, en la barra de tareas y, luego,en **Ejecutar como administrador**.
    - En la pantalla **Inicio** de Windows, haga clic con el botón derecho en **Windows PowerShell** y, luego, en **Ejecutar como administrador**.
 
-2. Paso opcional para restringir el acceso de usuario con el uso de configuraciones de sesión: Compruebe que las configuraciones de sesión que quiere usar en las reglas ya existen. Si aún no se han creado, use las instrucciones para crear configuraciones de sesión proporcionadas en [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+2. Paso opcional para restringir el acceso del usuario mediante configuraciones de sesión: Compruebe que las configuraciones de sesión que quiere usar en las reglas ya existen. Si aún no se han creado, use las instrucciones para crear configuraciones de sesión proporcionadas en [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Escriba lo siguiente y, después, presione **Entrar**.
 
@@ -271,7 +271,7 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
 7. En el campo **Grupo de aplicaciones**, seleccione el grupo de aplicaciones creado en el paso 3.
 
-8. En el campo **Ruta de acceso física**, busque la ubicación de la aplicación. Puede usar la ubicación predeterminada, `%windir%/Web/PowerShellWebAccess/wwwroot`. Haga clic en **Aceptar**.
+8. En el campo **Ruta de acceso física**, busque la ubicación de la aplicación. Puede usar la ubicación predeterminada, `$env:windir/Web/PowerShellWebAccess/wwwroot`. Haga clic en **Aceptar**.
 
 9. Siga los pasos del procedimiento [Para configurar un certificado SSL en el Administrador de IIS](#to-configure-an-ssl-certificate-in-iis-Manager) en este tema.
 
@@ -318,7 +318,7 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
 1. Se creará automáticamente un grupo de aplicaciones para el nuevo sitio web. Para usar un grupo de aplicaciones diferente, haga clic en **Seleccionar** para seleccionar un grupo de aplicaciones a fin de asociarlo con el nuevo sitio web. Seleccione el grupo de aplicaciones alternativo en el cuadro de diálogo **Seleccionar grupo de aplicaciones** y, después, haga clic en **Aceptar**.
 
-1. En el cuadro de texto **Ruta de acceso física**, vaya a %*windir*%/Web/PowerShellWebAccess/wwwroot.
+1. En el **ruta de acceso física** texto, navegue hasta % windir%/Web/PowerShellWebAccess/wwwroot.
 
 1. En el campo **Tipo** del área **Enlace**, seleccione **https**.
 

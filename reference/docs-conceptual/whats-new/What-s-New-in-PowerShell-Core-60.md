@@ -3,11 +3,11 @@ title: Novedades de PowerShell Core 6.0
 description: Nuevas características y cambios publicados en PowerShell Core 6.0
 ms.date: 08/06/2018
 ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289249"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55680816"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Novedades de PowerShell Core 6.0
 
@@ -274,7 +274,7 @@ Para más información sobre los trabajos de PowerShell, vea [about_Jobs](https:
 - Agregue el modificador `-SkipHeaderValidation` a los cmdlets web para admitir la adición de encabezados sin validar el valor del encabezado. (#4085)
 - Permita que los cmdlets web no validen el certificado HTTPS del servidor si es necesario.
 - Agregue parámetros de autenticación a los cmdlets web. (#5052) (Gracias, [@markekraus](https://github.com/markekraus)).
-  - Agregue `-Authentication`, que proporciona tres opciones: Basic, OAuth y Bearer.
+  - Agregar `-Authentication` que proporciona tres opciones: Básico, OAuth y Bearer.
   - Agregue `-Token` para obtener el token de portador para las opciones OAuth y Bearer.
   - Agregue `-AllowUnencryptedAuthentication` para omitir la autenticación que se proporciona para todos los esquemas de transporte que no sean HTTPS.
 - Agregue `-ResponseHeadersVariable` a `Invoke-RestMethod` para habilitar la captura de encabezados de respuesta. (#4888) (Gracias, [@markekraus](https://github.com/markekraus)).

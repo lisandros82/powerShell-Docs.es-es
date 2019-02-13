@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Método GetConfiguration de la clase MSFT_DSCLocalConfigurationManager
 ms.openlocfilehash: ae31ac30c152c96707b764ddaf00c924806afcfc
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048081"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681826"
 ---
 # <a name="getconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método GetConfiguration de la clase MSFT_DSCLocalConfigurationManager
 
@@ -38,9 +38,9 @@ Se trata de un método estático.
 
 ## <a name="requirements"></a>Requisitos
 
-MOF** DscCore.mof
+**MOF:** DscCore.mof
 
-Espacio de nombres {0} Root\Microsoft\Windows\DesiredStateConfiguration
+**Espacio de nombres**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Vea también
 
