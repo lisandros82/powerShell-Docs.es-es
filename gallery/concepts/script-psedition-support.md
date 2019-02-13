@@ -4,19 +4,19 @@ contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Script con las ediciones compatibles de PowerShell
 ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655283"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681416"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Script con las ediciones compatibles de PowerShell
 
 A partir de la versión 5.1, PowerShell está disponible en diferentes ediciones que denotan distintos conjuntos de características y compatibilidad con varias plataformas.
 
-- Desktop Edition Basado en .NET Framework y proporciona compatibilidad con scripts y módulos destinados a versiones de PowerShell que se ejecutan en las ediciones de superficie completa de Windows como Server Core y el escritorio de Windows.
+- **Desktop Edition:** basado en .NET Framework y proporciona compatibilidad con scripts y módulos destinados a las versiones de PowerShell que se ejecutan en las ediciones de superficie completa de Windows como Server Core y Windows Desktop.
 
-- **Core Edition:** Basado en .NET Core y proporciona compatibilidad con scripts y módulos destinados a versiones de PowerShell que se ejecutan en las ediciones de superficie reducida de Windows como Nano Server y Windows IoT.
+- **Core Edition:** basado en .NET Core y proporciona compatibilidad con scripts y módulos destinados a las versiones de PowerShell que se ejecutan en las ediciones de superficie completa de Windows como Nano Server y Windows IoT.
 
 La edición de PowerShell que se está ejecutando se muestra en la propiedad PSEdition de $PSVersionTable.
 

@@ -4,11 +4,11 @@ keywords: powershell, cmdlet
 title: Seleccionar elementos de un cuadro de lista
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
 ms.openlocfilehash: e3d52839409a2fd58fbdc924a2b92d96fbecee53
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402905"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55682746"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Seleccionar elementos de un cuadro de lista
 
@@ -75,7 +75,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-El script comienza cargando dos clases de .NET Framework: **System.Drawing** y **System.Windows.Forms**. A continuación, se inicia una nueva instancia de la clase de .NET Framework **System.Windows.Forms.Form**, que proporciona un formulario o ventana en blanco en la que puede empezar a agregar controles.
+El script comienza con la carga de dos clases de .NET Framework: **System.Drawing** y **System.Windows.Forms**. A continuación, se inicia una nueva instancia de la clase de .NET Framework **System.Windows.Forms.Form**, que proporciona un formulario o ventana en blanco en la que puede empezar a agregar controles.
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms

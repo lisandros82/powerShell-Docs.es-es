@@ -3,30 +3,30 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Uso de la herramienta Diseñador de recursos
 ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402545"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681435"
 ---
 # <a name="using-the-resource-designer-tool"></a>Uso de la herramienta Diseñador de recursos
 
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 La herramienta Diseñador de recursos es un conjunto de cmdlets que expone el módulo **xDscResourceDesigner** y facilitan la creación de recursos de configuración de estado deseado (DSC) de Windows PowerShell. Los cmdlets de este recurso ayudan a crear el esquema MOF, el módulo de scripts y la estructura de directorios del nuevo recurso. Para más información sobre los recursos DSC, consulte [Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md).
 En este tema, se creará un recurso de DSC que administre los usuarios de Active Directory.
 Use el cmdlet [Install-Module](/powershell/module/PowershellGet/Install-Module) para instalar el módulo **xDscResourceDesigner**.
 
->**Nota**: **Install-Module** se incluye en el **PowerShellGet** módulo, que se incluye en PowerShell 5.0. Puede descargar el módulo **PowerShellGet** para PowerShell 3.0 y 4.0 en [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186) (Vista previa de los módulos de PowerShell PackageManagement).
+>**Nota**: **Install-Module** está incluido en el módulo **PowerShellGet**, que se incluye en PowerShell 5.0. Puede descargar el módulo **PowerShellGet** para PowerShell 3.0 y 4.0 en [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186) (Vista previa de los módulos de PowerShell PackageManagement).
 
 ## <a name="creating-resource-properties"></a>Crear propiedades de recursos
 Lo primero que es necesario hacer es decidir qué propiedades expondrá el recurso. En este ejemplo, definimos un usuario de Active Directory con las siguientes propiedades.
 
 Nombre del parámetro: descripción
-* .**nombre**usuario Propiedad de clave que identifica un usuario.
-* Ensure Especifica si la cuenta de usuario debe estar presentes o ausentes. Este parámetro solo tendrá dos valores posibles.
-* **DomainCredential**: La contraseña de dominio para el usuario.
-* Contraseña La contraseña deseada para el usuario permitir una configuración cambiar la contraseña del usuario si es necesario.
+* **Nombre de UserName**: propiedad clave que identifica de forma única un usuario.
+* **Ensure**: especifica si la cuenta de usuario debe tener el valor Present o Absent. Este parámetro solo tendrá dos valores posibles.
+* **DomainCredential**: la contraseña del dominio del usuario.
+* **Password**: la contraseña deseada para el usuario a fin de permitir una configuración para cambiar la contraseña del usuario si es necesario.
 
 Para crear las propiedades, use el cmdlet **New-xDscResourceProperty**. Los siguientes comandos de PowerShell crean las propiedades descritas anteriormente.
 

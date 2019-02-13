@@ -4,11 +4,11 @@ keywords: powershell, cmdlet
 title: Crear un selector de fecha gráfico
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
 ms.openlocfilehash: 6dd43a3b1f4c67633ad1755de3db88eb8c6772c8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402178"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681325"
 ---
 # <a name="creating-a-graphical-date-picker"></a>Crear un selector de fecha gráfico
 
@@ -60,7 +60,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-El script comienza cargando dos clases de .NET Framework: **System.Drawing** y **System.Windows.Forms**. A continuación, inicie una nueva instancia de la clase de .NET Framework **Windows.Forms.Form**, que proporciona un formulario o una ventana en blanco en la que puede empezar a agregar controles.
+El script comienza con la carga de dos clases de .NET Framework: **System.Drawing** y **System.Windows.Forms**. A continuación, inicie una nueva instancia de la clase de .NET Framework **Windows.Forms.Form**, que proporciona un formulario o una ventana en blanco en la que puede empezar a agregar controles.
 
 ```powershell
 $form = New-Object Windows.Forms.Form

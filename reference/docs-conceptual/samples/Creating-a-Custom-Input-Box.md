@@ -4,11 +4,11 @@ keywords: powershell, cmdlet
 title: Crear un cuadro de entrada personalizado
 ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
 ms.openlocfilehash: 2d04ad6df65cdb4ff13d136dea47bbba6a01f3a2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402226"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681906"
 ---
 # <a name="creating-a-custom-input-box"></a>Crear un cuadro de entrada personalizado
 
@@ -66,7 +66,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-El script comienza cargando dos clases de .NET Framework: **System.Drawing** y **System.Windows.Forms**. A continuación, se inicia una nueva instancia de la clase de .NET Framework **System.Windows.Forms.Form**, que proporciona un formulario o ventana en blanco en la que puede empezar a agregar controles.
+El script comienza con la carga de dos clases de .NET Framework: **System.Drawing** y **System.Windows.Forms**. A continuación, se inicia una nueva instancia de la clase de .NET Framework **System.Windows.Forms.Form**, que proporciona un formulario o ventana en blanco en la que puede empezar a agregar controles.
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
