@@ -2,32 +2,30 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Uso de Import-DSCResource
-ms.openlocfilehash: 6bc3c1aa1d34a05e3188666da825322235c0672e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: f22c741969b1429074e7307a00a5c014cf563089
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402770"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265508"
 ---
 # <a name="using-import-dscresource"></a>Uso de Import-DSCResource
 
 `Import-DScResource` es una palabra clave dinámica, que solo se puede usar dentro de un bloque de script de configuración. El `Import-DSCResource` palabra clave para importar todos los recursos necesarios en la configuración. Recursos en `$phsome` se importan automáticamente, pero todavía se considera una práctica recomendada para importar de forma explícita todos los recursos utilizados en su [configuración](Configurations.md).
 
-La sintaxis de `Import-DSCResource` se muestra a continuación.
+La sintaxis de `Import-DSCResource` se muestra a continuación.  Al especificar módulos por nombre, es un requisito para enumerar cada una en una nueva línea.
 
 ```syntax
-Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>]
+Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
 ```
 
 |Parámetro  |Descripción  |
 |---------|---------|
 |`-Name`|Los nombres de recursos de DSC que se deben importar. Si se especifica el nombre del módulo, el comando busca estos recursos de DSC en este módulo; en caso contrario, el comando busca los recursos de DSC en todas las rutas de acceso de recursos de DSC. Se admiten los caracteres comodín.|
-|`-ModuleName`|Los nombres de módulo contenedor o especificaciones del módulo.  Si especifica los recursos para importar desde un módulo, el comando intentará importar sólo esos recursos. Si especifica solo el módulo, el comando importa todos los recursos de DSC en el módulo.|
-
-Puede usar caracteres comodín con el `-Name` al usar `Import-DSCResource`.
+|`-ModuleName`|El nombre del módulo o especificación de módulo.  Si especifica los recursos para importar desde un módulo, el comando intentará importar sólo esos recursos. Si especifica solo el módulo, el comando importa todos los recursos de DSC en el módulo.|
 
 ```powershell
-Import-DscResource -Name * -ModuleName xActiveDirectory;
+Import-DscResource -ModuleName xActiveDirectory;
 ```
 
 ## <a name="example-use-import-dscresource-within-a-configuration"></a>Ejemplo: Usar Import-DSCResource dentro de una configuración
@@ -36,15 +34,20 @@ Import-DscResource -Name * -ModuleName xActiveDirectory;
 Configuration MSDSCConfiguration
 {
     # Search for and imports Service, File, and Registry from the module PSDesiredStateConfiguration.
-    Import-DSCResource -ModuleName MS_DSC1 -name Service, File, Registry
-
+    Import-DSCResource -ModuleName PSDesiredStateConfiguration -Name Service, File, Registry
+    
     # Search for and import Resource1 from the module that defines it.
     # If only –Name parameter is used then resources can belong to different PowerShell modules as well.
     # TimeZone resource is from the ComputerManagementDSC module which is not installed by default.
-    Import-DSCResource -Name File, TimeZone
+    # As a best practice, list each requirement on a different line if possible.  This makes reviewing
+    # multiple changes in source control a bit easier.
+    Import-DSCResource -Name File
+    Import-DSCResource -Name TimeZone
 
     # Search for and import all DSC resources inside the module PSDesiredStateConfiguration.
+    # When specifying the modulename parameter, it is a requirement to list each on a new line.
     Import-DSCResource -ModuleName PSDesiredStateConfiguration
+    Import-DSCResource -ModuleName ComputerManagementDsc
 ...
 ```
 

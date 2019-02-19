@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Realizar el segundo salto en la comunicación remota de PowerShell
-ms.openlocfilehash: 06ca43e3e0524d89ec6f66f6553c4c75072beaf3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1b6e5ad53346324adc7be2d013e154c8600afa4f
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55680176"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265593"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Realizar el segundo salto en la comunicación remota de PowerShell
 
@@ -56,9 +56,10 @@ También puede usar la delegación Kerberos sin restricciones para realizar el s
 
 ## <a name="kerberos-constrained-delegation"></a>Delegación limitada de Kerberos
 
-Puede usar la delegación limitada heredada (no basada en recursos) para realizar el segundo salto.
+Puede usar la delegación limitada heredada (no basada en recursos) para realizar el segundo salto. Configurar la delegación restringida de Kerberos con la opción "Usar cualquier protocolo de autenticación" para permitir la transición del protocolo.
 
->**Nota:** No se pueden delegar las cuentas de Active Directory que tienen la propiedad **La cuenta es importante y no se puede delegar** establecida. Para obtener más información, consulte [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) (Enfoque de seguridad: analizar "La cuenta es importante y no se puede delegar" para cuentas con privilegios) y [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) (Configuración y herramientas de la autenticación Kerberos).
+> [!NOTE]
+> No se pueden delegar las cuentas de Active Directory que tengan la propiedad **La cuenta es importante y no se puede delegar** establecida. Para obtener más información, consulte [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) (Enfoque de seguridad: analizar "La cuenta es importante y no se puede delegar" para cuentas con privilegios) y [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) (Configuración y herramientas de la autenticación Kerberos).
 
 ### <a name="pros"></a>Pros
 
