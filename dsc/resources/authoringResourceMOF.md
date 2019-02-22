@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Escribir un recurso de DSC personalizado con MOF
-ms.openlocfilehash: 2dcdeb49b50e23bc8b9d87293ebb8d8ec5e7b57d
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402241"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55682085"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Escribir un recurso de DSC personalizado con MOF
 
@@ -290,3 +290,16 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
+
+## <a name="rebooting-the-node"></a>Reiniciar el nodo
+
+Si las acciones realizadas su `Set-TargetResource` función requieren un reinicio, puede usar una marca global para indicar el LCM para reiniciar el nodo. Este reinicio se produce inmediatamente después del `Set-TargetResource` se completa la función.
+
+Dentro de su `Set-TargetResource` de función, agregue la siguiente línea de código.
+
+```powershell
+# Include this line if the resource requires a system reboot.
+$global:DSCMachineStatus = 1
+```
+
+En orden para el LCM reiniciar el nodo, el **RebootNodeIfNeeded** marca debe establecerse en `$true`. El **ActionAfterReboot** configuración debe establecerse en **ContinueConfiguration**, que es el valor predeterminado. Para obtener más información sobre cómo configurar el LCM, consulte [configuración del Administrador de configuración Local](../managing-nodes/metaConfig.md), o [configuración del Administrador de configuración Local (v4)](../managing-nodes/metaConfig4.md).
