@@ -1,0 +1,40 @@
+---
+title: Escribir una aplicación de Host de PowerShell de Windows | Microsoft Docs
+ms.custom: ''
+ms.date: 09/13/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: article
+ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
+caps.latest.revision: 15
+ms.openlocfilehash: 2039e181becd1b39fc3d6cf0cdbcf0c20e9fc206
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MT
+ms.contentlocale: es-ES
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "56863181"
+---
+# <a name="writing-a-windows-powershell-host-application"></a>Escritura de una aplicación de Host de Windows PowerShell
+
+Windows PowerShell se puede hospedar en la aplicación. La aplicación host puede definir el espacio de ejecución donde los comandos son ejecutar, abra las sesiones en un equipo local o remoto e invocar los comandos de forma sincrónica o asincrónica se basa en las necesidades de la aplicación.
+
+Los siguientes temas explican cómo crear una aplicación que hospeda
+
+## <a name="in-this-section"></a>En esta sección
+
+[Inicio rápido de Host de Windows PowerShell](./windows-powershell-host-quickstart.md) proporciona instrucciones y ejemplos de código para ayudarle a crear aplicaciones de host.
+
+[Creación de espacios de ejecución](./creating-runspaces.md) un conjunto de temas que explican cómo crear espacios de ejecución para ejecutar el comando de Windows PowerShell en una aplicación host.
+
+[Agregar e invocar comandos](./adding-and-invoking-commands.md) se explica cómo crear y ejecutar una canalización de comandos en la aplicación host...
+
+[Creación de espacios de ejecución remoto](./creating-remote-runspaces.md) Expains cómo conectarse a un espacio de ejecución a un equipo remoto.
+
+[Creación de una interfaz de usuario personalizada](./creating-a-custom-user-interface.md) proporciona vínculos a ejemplos e interfaces de usuario personalizado presenta.
+
+[Ejemplos de aplicación de host](./host-application-samples.md) esta sección incluyen ejemplos de aplicaciones de host completo.
+
+## <a name="see-also"></a>Véase también
+
+[Windows PowerShell](http://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
