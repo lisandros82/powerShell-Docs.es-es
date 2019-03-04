@@ -1,0 +1,64 @@
+---
+title: Elemento de bloque de script para GroupBy (formato) | Microsoft Docs
+ms.custom: ''
+ms.date: 09/13/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: article
+ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
+caps.latest.revision: 6
+ms.openlocfilehash: 41a6aaa24e5850bd390c8e3b6505cc88fc80b7b5
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MT
+ms.contentlocale: es-ES
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "56856211"
+---
+# <a name="scriptblock-element-for-groupby-format"></a>Elemento ScriptBlock para GroupBy (formato)
+
+Especifica la secuencia de comandos que se inicia un nuevo grupo cada vez que cambia su valor.
+
+Elemento (formato) elemento ViewDefinitions (formato) vista elemento (formato) GroupBy elemento de configuración (formato) de la vista de elemento de bloque de script para GroupBy (formato)
+
+## <a name="syntax"></a>Sintaxis
+
+```xml
+<ScriptBolck>ScriptToEvaluate</ScriptBlock>
+```
+
+## <a name="attributes-and-elements"></a>Atributos y elementos
+
+Las secciones siguientes describen los atributos, elementos secundarios y el elemento primario de la `ScriptBlock` elemento.
+
+### <a name="attributes"></a>Atributos
+
+Ninguna.
+
+### <a name="child-elements"></a>Elementos secundarios
+
+Ninguna.
+
+### <a name="parent-elements"></a>Elementos primarios
+
+|Elemento|Descripción|
+|-------------|-----------------|
+|[Elemento GroupBy para vista (formato)](./groupby-element-for-view-format.md)|Define cómo se muestra un grupo de objetos. NET.|
+
+## <a name="text-value"></a>Valor de texto
+
+Especifique el script que se evalúa.
+
+## <a name="remarks"></a>Observaciones
+
+Windows PowerShell se inicia un nuevo grupo cada vez que cambia el valor de esta secuencia de comandos.
+
+Cuando se especifica este elemento, no puede especificar el [PropertyName](http://msdn.microsoft.com/en-us/396dede0-039a-4a87-a5ef-3ecabb729676) elemento para iniciar un nuevo grupo.
+
+## <a name="see-also"></a>Véase también
+
+[Elemento PropertyName para GroupBy (formato)](./propertyname-element-for-groupby-format.md)
+
+[Elemento GroupBy para vista (formato)](./groupby-element-for-view-format.md)
+
+[Escribir un archivo de formato de PowerShell](./writing-a-powershell-formatting-file.md)
