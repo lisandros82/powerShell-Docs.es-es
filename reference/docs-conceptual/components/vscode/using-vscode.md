@@ -2,12 +2,12 @@
 title: Uso de Visual Studio Code para el desarrollo de PowerShell
 description: Uso de Visual Studio Code para el desarrollo de PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 3101fa57896996a696385801303333e4a6406d20
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402250"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251394"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Uso de Visual Studio Code para el desarrollo de PowerShell
 
@@ -64,6 +64,24 @@ Para guardarlo, haga clic en **Archivo -> Guardar** y proporcione un nombre de a
 Para cerrar el archivo, haga clic en "x" junto al nombre de archivo.
 Para salir de Visual Studio Code, haga clic en **Archivo -> Salir**.
 
+### <a name="installing-the-powershell-extension-on-restricted-systems"></a>Instalando la extensión de PowerShell en sistemas restringidos
+
+Algunos sistemas se configuran de forma que requiere que todas las firmas de código se va a comprobar y, por tanto, requiere que los servicios de Editor de PowerShell que se apruebe manualmente para ejecutarse en el sistema.
+Una actualización de directiva de grupo que cambia la directiva de ejecución es una causa probable si ha instalado la extensión de PowerShell, pero están llegando a un error como:
+
+```
+Language server startup failed.
+```
+
+Para aprobar manualmente los servicios del Editor de PowerShell y, por tanto, la extensión de PowerShell para VSCode abren un símbolo del sistema y ejecución de PowerShell:
+
+```powershell
+Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
+```
+
+Se le solicite "¿desea ejecutar software de este publicador que no se confía?"
+Tipo `R` para ejecutar el archivo. A continuación, abra Visual Studio Code y compruebe que la extensión de PowerShell funcione correctamente. Si sigue teniendo problemas de introducción, háganoslo saber en [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
+
 #### <a name="using-a-specific-installed-version-of-powershell"></a>Uso de una versión instalada específica de PowerShell
 
 Si quiere usar una instalación específica de PowerShell con Visual Studio Code, debe agregar una nueva variable al archivo de configuración de usuario.
@@ -98,17 +116,28 @@ Recomendamos los valores de configuración siguientes para Visual Studio Code:
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "omnisharp.projectLoadTimeout": 120,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
 }
 ```
+
+Si no desea que esta configuración afecta a todos los tipos de archivos, VSCode también permite que las configuraciones por idioma. Crear una configuración específica del lenguaje colocando la configuración un `[<language-name>]` campo. Por ejemplo:
+
+```json
+"[powershell]": {
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
+}
+```
+
+Para obtener más información sobre el archivo de codificación en VS Code, consulte [descripción de codificación del archivo](understanding-file-encoding.md).
 
 ## <a name="debugging-with-visual-studio-code"></a>Depuración con Visual Studio Code
 
 ### <a name="no-workspace-debugging"></a>Depuración fuera del área de trabajo
 
-A partir de Visual Studio Code versión 1.9 puede depurar scripts de PowerShell sin tener que abrir la carpeta que contiene el script de PowerShell.
-Solo tiene que abrir el archivo de script de PowerShell con **Archivo -> Abrir archivo…**, establecer un punto de interrupción en una línea (presione F9) y, después, presionar F5 para iniciar la depuración.
-Aparece el panel de acciones de depuración, que le permite obtener acceso al depurador, realizar la depuración paso a paso, reanudarla y detenerla.
+A partir de Visual Studio Code versión 1.9 puede depurar scripts de PowerShell sin tener que abrir la carpeta que contiene el script de PowerShell. Abra el archivo de script de PowerShell con **archivo -> Abrir archivo...** , establezca un punto de interrupción en una línea (presione F9) y, a continuación, presione F5 para iniciar la depuración. Aparece el panel de acciones de depuración, que le permite obtener acceso al depurador, realizar la depuración paso a paso, reanudarla y detenerla.
 
 ### <a name="workspace-debugging"></a>Depuración del área de trabajo
 
@@ -165,7 +194,7 @@ Siga los pasos siguientes para crear el archivo de configuración de depuración
 
   Esto representa los escenarios de depuración comunes.
   Aun así, cuando se abre este archivo en el editor, se ve el botón **Agregar configuración…**.
-  Puede presionar este botón para agregar más configuraciones de depuración de PowerShell. Es una configuración útil para agregar **PowerShell: Iniciar Script**.
+  Puede presionar este botón para agregar más configuraciones de depuración de PowerShell. Una configuración muy útil que conviene agregar es **PowerShell: Iniciar script**.
   Con esta configuración, puede especificar un archivo concreto con argumentos opcionales que se debe iniciar cada vez que se presione F5, independientemente del archivo que esté activo en el momento en el editor.
 
   Una vez establecida la configuración de depuración, puede seleccionar la configuración que quiere usar durante una sesión de depuración. Para ello, selecciónela en el menú desplegable de la barra de herramientas de la vista **Depurar**.
