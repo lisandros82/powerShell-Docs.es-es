@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide, providers
 ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
 caps.latest.revision: 5
-ms.openlocfilehash: a114a4b0d5a5bfcc0d072f83f0e59ca6d329a172
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 286df63e75d6372cb41c974e60e79b02bd13686e
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862411"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429676"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Cómo crear un proveedor de Windows PowerShell
 
@@ -33,7 +33,6 @@ Windows PowerShell proporciona varios proveedores (por ejemplo, el proveedor Fil
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>Obtener acceso a los datos almacenados mediante rutas de acceso de Windows PowerShell
 
-Proveedores de Windows PowerShell son accesibles para el tiempo de ejecución de Windows PowerShell y comandos mediante programación mediante el uso de rutas de acceso de Windows PowerShell. La mayoría de los casos, estas rutas de acceso se utilizan para tener acceso directamente a los datos a través del proveedor. Sin embargo, algunas rutas de acceso se pueden resolver en rutas de acceso interna del proveedor que permiten un cmdlet para usar interfaces de programación de aplicaciones (API) de que no sean de Windows PowerShell para acceder a los datos. Para obtener más información sobre el funcionan de los proveedores de Windows PowerShell en Windows PowerShell, consulte [cómo Windows PowerShell funciona](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 Proveedores de Windows PowerShell son accesibles para el tiempo de ejecución de Windows PowerShell y comandos mediante programación mediante el uso de rutas de acceso de Windows PowerShell. La mayoría de los casos, estas rutas de acceso se utilizan para tener acceso directamente a los datos a través del proveedor. Sin embargo, algunas rutas de acceso se pueden resolver en rutas de acceso interna del proveedor que permiten un cmdlet para usar interfaces de programación de aplicaciones (API) de que no sean de Windows PowerShell para acceder a los datos. Para obtener más información sobre el funcionan de los proveedores de Windows PowerShell en Windows PowerShell, consulte [cómo Windows PowerShell funciona](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 
 ## <a name="exposing-provider-cmdlets-using-windows-powershell-drives"></a>Las unidades de exposición de los Cmdlets de proveedor mediante Windows PowerShell
@@ -64,8 +63,6 @@ En la tabla siguiente se enumera los temas que incluyen ejemplos de código que 
 |[Creación de un proveedor de propiedades de PowerShell de Windows](./creating-a-windows-powershell-property-provider.md)|En este tema se muestra cómo crear un proveedor de Windows PowerShell que permite al usuario manipular las propiedades de elementos en un almacén de datos.|
 
 ## <a name="see-also"></a>Véase también
-
-[Cómo funciona Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Cómo funciona Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 

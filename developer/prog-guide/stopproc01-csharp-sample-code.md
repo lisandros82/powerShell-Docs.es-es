@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 89796687-ae20-447a-a6b1-2f51b559d4e9
 caps.latest.revision: 5
-ms.openlocfilehash: a5836c0ca6812bd050959670d5b69eecb4b956c0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5a7acbfa2a283c6bda4bf159ff310f9d3e20461f
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860201"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429557"
 ---
 # <a name="stopproc01-c-sample-code"></a>Código de ejemplo StopProc01 (C#)
 
 Aquí es el conjunto completo C# código para el cmdlet de ejemplo StopProc01.
 
 > [!NOTE]
-> Puede descargar el C# (stopproc01.cs) el archivo de código fuente para el cmdlet Stop-Proc usando el Microsoft Windows Software Development Kit para Windows Vista y .NET Framework 3.0 Runtime Components. Para obtener instrucciones de descarga, vea [cómo instalar Windows PowerShell y descarga el SDK de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 > Puede descargar el C# (stopproc01.cs) el archivo de código fuente para el cmdlet Stop-Proc usando el Microsoft Windows Software Development Kit para Windows Vista y .NET Framework 3.0 Runtime Components. Para obtener instrucciones de descarga, vea [cómo instalar Windows PowerShell y descarga el SDK de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Están disponibles en los archivos de origen descargado el  **\<ejemplos de PowerShell >** directory.

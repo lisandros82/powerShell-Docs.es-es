@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: ade8fbd38e4f4a675e825b0d8850af0379c9d211
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4ed15dabffa933dee9becf2f839887eb9108775d
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858901"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430016"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Creación de un proveedor de propiedades de Windows PowerShell
 
 Este tema describe cómo crear un proveedor que permite al usuario manipular las propiedades de elementos en un almacén de datos. Como consecuencia, este tipo de proveedor se conoce como un proveedor de propiedades de Windows PowerShell. Por ejemplo, el proveedor del registro proporcionado por los valores clave del registro controladores de Windows PowerShell como propiedades del elemento clave del registro. Debe agregar este tipo de proveedor de la [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interfaz a la implementación de la clase. NET.
 
 > [!NOTE]
-> Windows PowerShell proporciona un archivo de plantilla que puede usar para desarrollar un proveedor de Windows PowerShell. El archivo TemplateProvider.cs está disponible en el Microsoft Windows Software Development Kit para Windows Vista y .NET Framework 3.0 Runtime Components. Para obtener instrucciones de descarga, vea [cómo instalar Windows PowerShell y descarga el SDK de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 > Windows PowerShell proporciona un archivo de plantilla que puede usar para desarrollar un proveedor de Windows PowerShell. El archivo TemplateProvider.cs está disponible en el Microsoft Windows Software Development Kit para Windows Vista y .NET Framework 3.0 Runtime Components. Para obtener instrucciones de descarga, vea [cómo instalar Windows PowerShell y descarga el SDK de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > La plantilla descargada está disponible en el  **\<ejemplos de PowerShell >** directory. Debe realizar una copia de este archivo y usar la copia para crear un nuevo proveedor de Windows PowerShell, quitar cualquier funcionalidad que no es necesario.
@@ -150,7 +149,6 @@ Esta es la implementación predeterminada de [System.Management.Automation.Provi
 ## <a name="building-the-windows-powershell-provider"></a>Creación del proveedor de Windows PowerShell
 
 Consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
-Consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="see-also"></a>Véase también
 
@@ -159,9 +157,5 @@ Consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](http://msdn.
 [Proveedor de PowerShell de Windows de su diseño](./designing-your-windows-powershell-provider.md)
 
 [Extensión de tipos de objeto y el formato](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Extensión de tipos de objeto y el formato](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Cómo registrar Cmdlets, proveedores y aplicaciones Host](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Cómo registrar Cmdlets, proveedores y aplicaciones Host](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 6e5d79487539d4f58922e2686f1fdba08797f305
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5e35d2fdfa4c6bd70c1b69ca1f357ee8d8ebcdc4
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855311"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429982"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Creación de un proveedor de contenido de Windows PowerShell
 
 Este tema describe cómo crear un proveedor de Windows PowerShell que permite al usuario manipular el contenido de los elementos de un almacén de datos. Como consecuencia, un proveedor que puede manipular el contenido de los elementos se conoce como un proveedor de contenido de Windows PowerShell.
 
 > [!NOTE]
-> Puede descargar el C# (AccessDBSampleProvider06.cs) de archivo de código fuente para este proveedor mediante el Microsoft Windows Software Development Kit para Windows Vista y .NET Framework 3.0 Runtime Components. Para obtener instrucciones de descarga, vea [cómo instalar Windows PowerShell y descarga el SDK de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 > Puede descargar el C# (AccessDBSampleProvider06.cs) de archivo de código fuente para este proveedor mediante el Microsoft Windows Software Development Kit para Windows Vista y .NET Framework 3.0 Runtime Components. Para obtener instrucciones de descarga, vea [cómo instalar Windows PowerShell y descarga el SDK de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Están disponibles en los archivos de origen descargado el  **\<ejemplos de PowerShell >** directory.
@@ -233,11 +232,9 @@ Para el código de ejemplo completo, vea [AccessDbProviderSample06 código de ej
 ## <a name="defining-object-types-and-formatting"></a>Definir los tipos de objeto y el formato
 
 Al escribir un proveedor, puede ser necesario agregar a miembros a los objetos existentes o defina nuevos objetos. Al hacerlo, debe crear un archivo de tipos que puede usar Windows PowerShell para identificar a los miembros del objeto y un archivo de formato que define cómo se muestra el objeto. Para obtener más información, consulte [extender los tipos de objeto y formato](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-Al escribir un proveedor, puede ser necesario agregar a miembros a los objetos existentes o defina nuevos objetos. Al hacerlo, debe crear un archivo de tipos que puede usar Windows PowerShell para identificar a los miembros del objeto y un archivo de formato que define cómo se muestra el objeto. Para obtener más información, consulte [extender los tipos de objeto y formato](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>Creación del proveedor de Windows PowerShell
 
-Consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Probar el proveedor de Windows PowerShell
@@ -285,11 +282,7 @@ Country   : USA
 
 [Extensión de tipos de objeto y el formato](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Extensión de tipos de objeto y el formato](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
 [Implementar un proveedor de navegación Windows PowerShell](./creating-a-windows-powershell-navigation-provider.md)
-
-[Cómo registrar Cmdlets, proveedores y aplicaciones Host](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Cómo registrar Cmdlets, proveedores y aplicaciones Host](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

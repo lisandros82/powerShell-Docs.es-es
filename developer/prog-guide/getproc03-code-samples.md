@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8ad39c7d-2f64-49d1-9be0-d2295e4302b3
 caps.latest.revision: 5
-ms.openlocfilehash: 8cb02b9f2510b90f405651deaf551e9622f5a298
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 833ff1c37ee025e9cd9d2760bc63695534dd69ff
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857311"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429455"
 ---
 # <a name="getproc03-code-samples"></a>Ejemplos de código GetProc03
 
 Estos son los ejemplos de código para el cmdlet de ejemplo GetProc03. Se trata de la `Get-Process` ejemplo de cmdlet que se describen en [agregar parámetros de entrada de la canalización de ese proceso](../cmdlet/adding-parameters-that-process-pipeline-input.md). Esto `Get-Process` cmdlet usa un `Name` parámetro que acepta la entrada desde un objeto de canalización, recupera información de proceso del equipo local en función de los nombres proporcionados y, a continuación, muestra información acerca de los procesos en la línea de comandos.
 
 > [!NOTE]
-> Puede descargar el C# (getprov03.cs) de archivo de código fuente para este cmdlet Get-Proc usando el Microsoft Windows Software Development Kit para Windows Vista y .NET Framework 3.0 Runtime Components. Para obtener instrucciones de descarga, vea [cómo instalar Windows PowerShell y descarga el SDK de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 > Puede descargar el C# (getprov03.cs) de archivo de código fuente para este cmdlet Get-Proc usando el Microsoft Windows Software Development Kit para Windows Vista y .NET Framework 3.0 Runtime Components. Para obtener instrucciones de descarga, vea [cómo instalar Windows PowerShell y descarga el SDK de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Están disponibles en los archivos de origen descargado el  **\<ejemplos de PowerShell >** directory.
