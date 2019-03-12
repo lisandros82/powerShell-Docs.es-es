@@ -2,12 +2,12 @@
 ms.date: 08/09/2017
 keywords: powershell,cmdlet,descargar,instalar,configurar,windows 10,windows 8.1,windows 8.0,windows 7
 title: Instalación de Windows PowerShell
-ms.openlocfilehash: 37f28c2af5a11af26d9110cc6c5f7612124be557
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55887623"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429880"
 ---
 # <a name="installing-windows-powershell"></a>Instalación de Windows PowerShell
 
@@ -17,7 +17,7 @@ Si está interesado en PowerShell 6 y versiones posteriores, debe instalar Power
 
 ## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>Búsqueda de PowerShell en Windows 10, 8.1, 8.0 y 7
 
-Encontrar la consola o el ISE (Entorno de scripting integrado por sus siglas en inglés) de PowerShell en Windows puede ser difícil, ya que su ubicación cambia en función de la versión del sistema.
+Encontrar la consola o el ISE (entorno de scripting integrado) de PowerShell en Windows puede ser difícil, ya que su ubicación cambia en función de la versión del sistema.
 
 En las tablas siguientes se proporciona información para poder encontrar PowerShell según la versión de Windows que se esté usando.
 Todas las versiones que se muestran aquí son las originales, tal y como se publican y sin actualizaciones.
@@ -85,7 +85,7 @@ Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.c
 
 Si está buscando **Azure PowerShell**, puede empezar por el artículo [Overview of Azure PowerShell](/powershell/azure/overview) (Información general sobre Azure PowerShell).
 
-De lo contrario, consulte [Install and configure Azure PowerShell](/powershell/azure/install-azurerm-ps) (Instalación y configuración de Azure PowerShell).
+De lo contrario, consulte [Install and configure Azure PowerShell](/powershell/azure/install-az-ps) (Instalación y configuración de Azure PowerShell).
 
 ## <a name="see-also"></a>Véase también
 
