@@ -2,12 +2,12 @@
 title: Descripción de la codificación de archivo en VSCode y PowerShell
 description: Configurar la codificación del archivo en VSCode y PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: f3b133b4bee7688821a5960429e2f26b69b01e12
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
-ms.translationtype: HT
+ms.openlocfilehash: 9cf445ebd0c2bb2dbdf4438f02dafe3df3a5d1e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.translationtype: MTE95
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251481"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429812"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Descripción de la codificación de archivo en VSCode y PowerShell
 
@@ -68,7 +68,7 @@ Este práctico [referencia](https://www.i18nqa.com/debug/utf8-debug.html) se enu
 La extensión de PowerShell interactúa con las secuencias de comandos de varias maneras:
 
 1. Cuando se editan scripts en VSCode, el contenido se envía con VSCode para la extensión. El [Protocolo de servidor de lenguaje][] obliga a que este contenido se transfiere en UTF-8. Por lo tanto, no es posible que la extensión obtener una codificación incorrecta.
-2. Cuando las secuencias de comandos se ejecutan directamente en la consola integrada, se leen desde el archivo de PowerShell directamente. Codificación de Tf PowerShell difiere de VSCode, algo puede salir mal aquí.
+2. Cuando las secuencias de comandos se ejecutan directamente en la consola integrada, se leen desde el archivo de PowerShell directamente. Si la codificación de PowerShell difiere de VSCode, algo puede salir mal aquí.
 3. Cuando una secuencia de comandos que se abre en VSCode hace referencia a otra secuencia de comandos que no está abierto en VSCode, la extensión se vuelve a cargar el contenido del script desde el sistema de archivos. La extensión de PowerShell tiene como valor predeterminado para la codificación UTF-8, pero usa [marca de orden de bytes][], o l. MAT, la detección para seleccionar la codificación correcta.
 
 El problema se produce cuando suponiendo que la codificación de formatos sin una marca BOM (como [UTF-8][] sin BOM y [Windows-1252][]).
@@ -136,7 +136,7 @@ Si no desea que esta configuración afecta a todos los tipos de archivos, VSCode
 De PowerShell codificación predeterminada varía en función de la versión:
 
 - En PowerShell 6 +, la codificación predeterminada es UTF-8 sin marca BOM en todas las plataformas.
-- En Windows PowerShell, la codificación predeterminada es normalmente una extensión de Windows 1252 [Latín-1][], también conocido como ISO 8859-1.
+- En Windows PowerShell, la codificación predeterminada es normalmente una extensión de Windows 1252 [latin-1][], también conocido como ISO 8859-1.
 
 En PowerShell 5 + puede encontrar la codificación predeterminada con esto:
 
@@ -267,7 +267,7 @@ Hay algunas otras publicaciones interesantes sobre la codificación y la configu
 [@mklement0]: https://github.com/mklement0
 [@rkeithhill]: https://github.com/rkeithhill
 [Windows-1252]: https://wikipedia.org/wiki/Windows-1252
-[Latín-1]: https://wikipedia.org/wiki/ISO/IEC_8859-1
+[latin-1]: https://wikipedia.org/wiki/ISO/IEC_8859-1
 [UTF-8]: https://wikipedia.org/wiki/UTF-8
 [marca de orden de bytes]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
