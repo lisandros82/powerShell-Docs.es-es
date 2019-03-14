@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: 2bf2447eba07b74f8cc14c9820fc1c1774370b2f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854011"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794984"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Directrices de desarrollo recomendadas encarecidamente
 
@@ -107,7 +107,6 @@ Si el parámetro debe diferenciar entre los 3 valores: $true, $false y "unspecif
 
 #### <a name="support-arrays-for-parameters"></a>Admite matrices de parámetros
 
-Con frecuencia, los usuarios deben realizar la misma operación frente a varios argumentos. Para estos usuarios, un cmdlet debe aceptar una matriz como parámetro de entrada para que un usuario pueda pasar los argumentos en el parámetro como una variable de Windows PowerShell. Por ejemplo, el [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet usa una matriz para las cadenas que identifican los nombres de los procesos que se va a recuperar.
 Con frecuencia, los usuarios deben realizar la misma operación frente a varios argumentos. Para estos usuarios, un cmdlet debe aceptar una matriz como parámetro de entrada para que un usuario pueda pasar los argumentos en el parámetro como una variable de Windows PowerShell. Por ejemplo, el [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet usa una matriz para las cadenas que identifican los nombres de los procesos que se va a recuperar.
 
 #### <a name="support-the-passthru-parameter"></a>Admite el parámetro PassThru

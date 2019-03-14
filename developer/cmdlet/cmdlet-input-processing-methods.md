@@ -10,12 +10,12 @@ helpviewer_keywords:
 - virtual methods (PowerShell SDK]
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
-ms.openlocfilehash: dfaaa19fd3d4eb65a3fd335fb984a69874688f27
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7f8d25e03707052b1d5b62e245caae360da11d0b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861491"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794950"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Métodos de procesamiento de entrada del cmdlet
 
@@ -43,7 +43,6 @@ protected override void BeginProcessing()
 ## <a name="input-processing-tasks"></a>Las tareas de procesamiento de entrada
 
 ¿Cmdlets puede invalidar el [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) método para procesar la entrada que se envía al cmdlet. Cuando Windows PowerShell procesa una canalización de comandos, Windows PowerShell llama a este método para cada registro de entrada que se procesa mediante el cmdlet. Para obtener más información acerca de cómo Windows PowerShell invoca la canalización de comandos, consulte [ciclo de vida de procesamiento de Cmdlet](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
-¿Cmdlets puede invalidar el [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) método para procesar la entrada que se envía al cmdlet. Cuando Windows PowerShell procesa una canalización de comandos, Windows PowerShell llama a este método para cada registro de entrada que se procesa mediante el cmdlet. Para obtener más información acerca de cómo Windows PowerShell invoca la canalización de comandos, consulte [ciclo de vida de procesamiento de Cmdlet](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
 
 ¿El código siguiente muestra una implementación de la [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) método.
 
@@ -64,7 +63,6 @@ protected override void ProcessRecord()
 
 ¿Los cmdlets deben reemplazar el [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) método para agregar las operaciones posteriores al procesamiento que son válidas para todos los registros que se han procesado por el cmdlet. Por ejemplo, podría tener su cmdlet limpiar las variables de objeto cuando finalice de procesamiento.
 
-Cuando Windows PowerShell procesa una canalización de comandos, Windows PowerShell llama a este método una vez para cada instancia del cmdlet en la canalización. ¿Sin embargo, es importante recordar que el tiempo de ejecución de Windows PowerShell no llame a la [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) método si el cmdlet se cancela a medio camino a través de su procesamiento de entrada o si un carácter de terminación se produce error en cualquier parte del cmdlet. Por este motivo, un cmdlet que requiere la limpieza de objetos debe implementar toda [System.Idisposable](/dotnet/api/System.IDisposable) patrón, incluyendo un finalizador, de modo que el tiempo de ejecución puede llamar a ambos el [ ¿System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) y [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) métodos al final del procesamiento. Para obtener más información acerca de cómo Windows PowerShell invoca la canalización de comandos, consulte [ciclo de vida de procesamiento de Cmdlet](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
 Cuando Windows PowerShell procesa una canalización de comandos, Windows PowerShell llama a este método una vez para cada instancia del cmdlet en la canalización. ¿Sin embargo, es importante recordar que el tiempo de ejecución de Windows PowerShell no llame a la [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) método si el cmdlet se cancela a medio camino a través de su procesamiento de entrada o si un carácter de terminación se produce error en cualquier parte del cmdlet. Por este motivo, un cmdlet que requiere la limpieza de objetos debe implementar toda [System.Idisposable](/dotnet/api/System.IDisposable) patrón, incluyendo un finalizador, de modo que el tiempo de ejecución puede llamar a ambos el [ ¿System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) y [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) métodos al final del procesamiento. Para obtener más información acerca de cómo Windows PowerShell invoca la canalización de comandos, consulte [ciclo de vida de procesamiento de Cmdlet](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
 
 ¿El código siguiente muestra una implementación de la [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) método.

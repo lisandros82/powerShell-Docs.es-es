@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bf54eac7-88c6-4108-a5f6-2f0906d1662b
 caps.latest.revision: 5
-ms.openlocfilehash: 06281a1260dbdc120867fce89e6d5c8dd0754b87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f65a90023df88fceafae1d1875ddf46b9088e2b8
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856671"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795358"
 ---
 # <a name="naming-help-files"></a>Asignación de un nombre a los archivos de ayuda
 
-En este tema se explica cómo asignar un nombre de un archivo de ayuda basado en XML para que la [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet puede encontrarlo. Los requisitos de nombre varían para cada tipo de comando.
 En este tema se explica cómo asignar un nombre de un archivo de ayuda basado en XML para que la [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet puede encontrarlo. Los requisitos de nombre varían para cada tipo de comando.
 
 ## <a name="cmdlet-help-files"></a>Archivos de Ayuda de cmdlet
@@ -30,7 +29,6 @@ El archivo de ayuda para un C# cmdlet debe tener el nombre del ensamblado donde 
 
 El formato de nombre de ensamblado es necesario incluso si el ensamblado es un módulo anidado.
 
-Por ejemplo, el [Get-WinEvent; PSITPro5_Diagnostic; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) cmdlet se define en el ensamblado Microsoft.PowerShell.Diagnostics.dll. El `Get-Help` cmdlet busca un tema de ayuda para el `Get-WinEvent` cmdlet solo en el archivo Microsoft.PowerShell.Diagnostics.dll help.xml en el directorio del módulo.
 Por ejemplo, el [Get-WinEvent; PSITPro5_Diagnostic; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) cmdlet se define en el ensamblado Microsoft.PowerShell.Diagnostics.dll. El `Get-Help` cmdlet busca un tema de ayuda para el `Get-WinEvent` cmdlet solo en el archivo Microsoft.PowerShell.Diagnostics.dll help.xml en el directorio del módulo.
 
 ## <a name="provider-help-files"></a>Archivos de Ayuda de proveedor
@@ -47,7 +45,6 @@ Por ejemplo, el proveedor de certificados se define en el ensamblado Microsoft.P
 
 ## <a name="function-help-files"></a>Archivos de Ayuda de función
 
-Se pueden documentar las funciones mediante el uso de [Ayuda basada en comentarios](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) o documentados en un archivo de ayuda XML. Cuando la función está documentada en un archivo XML, la función debe tener un `.ExternalHelp` comentar la palabra clave que asocia la función con el archivo XML. En caso contrario, el `Get-Help` cmdlet no encuentra el archivo de ayuda.
 Se pueden documentar las funciones mediante el uso de [Ayuda basada en comentarios](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) o documentados en un archivo de ayuda XML. Cuando la función está documentada en un archivo XML, la función debe tener un `.ExternalHelp` comentar la palabra clave que asocia la función con el archivo XML. En caso contrario, el `Get-Help` cmdlet no encuentra el archivo de ayuda.
 
 No hay ningún requisito técnico para el nombre de un archivo de Ayuda de la función. Sin embargo, una práctica recomendada es un nombre al archivo de ayuda para el módulo de script en el que se define la función. Por ejemplo, la siguiente función se define en el archivo MyModule.psm1.

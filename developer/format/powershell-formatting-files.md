@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5d4c8f84-ebd2-4405-bb10-cfc5400d4ad6
 caps.latest.revision: 6
-ms.openlocfilehash: 35efd36fd70c209e3cbeb9eff0ddf978615fffd6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 49344d32dfcef36a904772b4a7237646a63cb12a
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854271"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794644"
 ---
 # <a name="windows-powershell-formatting-files"></a>Archivos de formato de Windows PowerShell
 
@@ -26,13 +26,10 @@ DotNetTypes.Format.ps1xml define la presentación de varios objetos. NET, como l
 FileSystem.Format.ps1xml define la presentación de los objetos de sistema de archivos como archivos y directorios de los objetos.
 
 Define Help.Format.ps1xml las distintas vistas utilizadas por el [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet, como las vistas detalladas, ejemplo, parámetros y completo.
-Define las distintas vistas que usa el [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet, como las vistas detalladas, ejemplo, parámetros y completo.
 
 PowerShellCore.Format.ps1xml define la presentación de los objetos generados por los cmdlets principales de Windows PowerShell, como los objetos devueltos por la [Get-Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member) y [Get-History](/powershell/module/Microsoft.PowerShell.Core/Get-History) cmdlets.
-Define la presentación de los objetos generados por los cmdlets principales de Windows PowerShell, como los objetos devueltos por la [Get-Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member) y [Get-History](/powershell/module/Microsoft.PowerShell.Core/Get-History) cmdlets.
 
 PowerShellTrace.Format.ps1xml define la visualización de objetos de seguimiento, como las generadas por el [Trace-Command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) cmdlet.
-Define la visualización de objetos de seguimiento, como las generadas por el [Trace-Command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) cmdlet.
 
 Registry.Format.ps1xml define la presentación de los objetos del registro como entradas y claves.
 

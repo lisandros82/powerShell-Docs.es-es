@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 31ee7222c35e82ee58d6d56f710792dbc5cb24d7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858631"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795630"
 ---
 # <a name="windows-powershell-provider-overview"></a>Información general sobre Proveedor de Windows PowerShell
 
-Un proveedor de Windows PowerShell permite a cualquier almacén de datos se exponga como un sistema de archivos como si fuese una unidad montada. Por ejemplo, el proveedor de registro integrado permite navegar por el registro como deberá desplazarse el `c` unidad del equipo. También puede invalidar un proveedor de la `Item` cmdlets (por ejemplo, `Get-Item`, `Set-Item`, etc.) que se pueden tratar los datos en el almacén de datos, como archivos y directorios se tratan al navegar por un sistema de archivos. Para obtener más información acerca de los proveedores y las unidades y los proveedores integrados en Windows PowerShell, consulte [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
 Un proveedor de Windows PowerShell permite a cualquier almacén de datos se exponga como un sistema de archivos como si fuese una unidad montada. Por ejemplo, el proveedor de registro integrado permite navegar por el registro como deberá desplazarse el `c` unidad del equipo. También puede invalidar un proveedor de la `Item` cmdlets (por ejemplo, `Get-Item`, `Set-Item`, etc.) que se pueden tratar los datos en el almacén de datos, como archivos y directorios se tratan al navegar por un sistema de archivos. Para obtener más información acerca de los proveedores y las unidades y los proveedores integrados en Windows PowerShell, consulte [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
 
 ## <a name="providers-and-drives"></a>Los proveedores y unidades

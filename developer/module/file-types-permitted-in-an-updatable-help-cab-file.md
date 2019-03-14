@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: acabdb93-c41a-4b8d-acbe-45cdab91e198
 caps.latest.revision: 10
-ms.openlocfilehash: 931383858c0b83f0a9a66026c215e16481b89e9e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3562804157ebdfca561445a8671d726b55cc4efd
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862841"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794253"
 ---
 # <a name="file-types-permitted-in-an-updatable-help-cab-file"></a>Tipos de archivo permitidos en un archivo CAB de Ayuda actualizable
 
@@ -24,9 +24,7 @@ En este tema se enumeran y describen los requisitos de contenido para archivos C
 ## <a name="updatable-help-cab-file-requirements"></a>Requisitos del archivo CAB de ayuda actualizable
 
 Contenido del archivo CAB sin comprimir se limita a 1 GB de forma predeterminada. Para omitir este límite, los usuarios tienen que usar el **Force** parámetro de la [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) y [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) cmdlets.
-Contenido del archivo CAB sin comprimir se limita a 1 GB de forma predeterminada. Para omitir este límite, los usuarios tienen que usar el **Force** parámetro de la [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) y [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) cmdlets.
 
-Para garantizar la seguridad de los archivos de ayuda que se descargan de Internet, un archivo .cab de ayuda actualizable puede incluir solo los tipos de archivo que se enumeran a continuación. El [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet valida todos los archivos con los esquemas del tema de ayuda. Si el `Update-Help` cmdlet encuentra un archivo que no es válido o no es un tipo permitido, no se instala el archivo no válido y se detiene la instalación de archivos desde el archivo CAB en el equipo del usuario.
 Para garantizar la seguridad de los archivos de ayuda que se descargan de Internet, un archivo .cab de ayuda actualizable puede incluir solo los tipos de archivo que se enumeran a continuación. El [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet valida todos los archivos con los esquemas del tema de ayuda. Si el `Update-Help` cmdlet encuentra un archivo que no es válido o no es un tipo permitido, no se instala el archivo no válido y se detiene la instalación de archivos desde el archivo CAB en el equipo del usuario.
 
 - Temas de Ayuda basados en XML para los cmdlets.
@@ -37,5 +35,4 @@ Para garantizar la seguridad de los archivos de ayuda que se descargan de Intern
 
 - Basado en texto temas de ayuda, como temas de ayuda.
 
-El [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) comprueba el contenido del archivo CAB Cuando desempaquete el archivo CAB. Si `Update-Help` busca los tipos de archivo no compatible en un archivo .cab de ayuda actualizable, se genera un error de terminación y detiene la operación. No instala los archivos de Ayuda desde el archivo CAB, incluso los tipos de archivo compatibles.
 El [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) comprueba el contenido del archivo CAB Cuando desempaquete el archivo CAB. Si `Update-Help` busca los tipos de archivo no compatible en un archivo .cab de ayuda actualizable, se genera un error de terminación y detiene la operación. No instala los archivos de Ayuda desde el archivo CAB, incluso los tipos de archivo compatibles.

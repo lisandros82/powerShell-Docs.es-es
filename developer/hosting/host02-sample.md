@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9ab83bcb-2d31-4744-a8bc-2ee22e48fc1b
 caps.latest.revision: 17
-ms.openlocfilehash: b74d3443e644bde9ec909a2cb8e0d94a6f3c2385
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.openlocfilehash: 8ce6cf1fcabf306b412b6f97915f34ab15436202
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56863761"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795188"
 ---
 # <a name="host02-sample"></a>Ejemplo Host02
 
-Este ejemplo muestra cómo escribir una aplicación host que usa el tiempo de ejecución de Windows PowerShell junto con una implementación de host personalizado. La aplicación host establece la referencia cultural del host en alemán, ejecuta el cmdlet [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process), muestra los resultados tal como los vería con pwrsh.exe e imprime los datos y la hora actuales en alemán.
 Este ejemplo muestra cómo escribir una aplicación host que usa el tiempo de ejecución de Windows PowerShell junto con una implementación de host personalizado. La aplicación host establece la referencia cultural del host en alemán, ejecuta el cmdlet [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process), muestra los resultados tal como los vería con pwrsh.exe e imprime los datos y la hora actuales en alemán.
 
 ## <a name="requirements"></a>Requisitos

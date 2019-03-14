@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: dcab755f565cd176c85ef6b9c719bceae10301b4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be31d03b02394cb1694909cf7b65bbc2a29f6976
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854531"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795443"
 ---
 # <a name="extending-properties-for-objects"></a>Extensión de las propiedades de los objetos
 
@@ -101,7 +101,6 @@ Una propiedad de secuencia de comandos define una propiedad cuyo valor es el res
 
 ## <a name="property-sets"></a>Conjuntos de propiedades
 
-Un conjunto de propiedades define un grupo de propiedades extendidas que se puede hacer referencia por el nombre del conjunto. Por ejemplo, el `Property` parámetro de la [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) cmdlet puede especificar una propiedad específica establecida en mostrarse. Cuando se especifica un conjunto de propiedades, se muestran solo las propiedades que pertenecen al conjunto.
 Un conjunto de propiedades define un grupo de propiedades extendidas que se puede hacer referencia por el nombre del conjunto. Por ejemplo, el `Property` parámetro de la [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) cmdlet puede especificar una propiedad específica establecida en mostrarse. Cuando se especifica un conjunto de propiedades, se muestran solo las propiedades que pertenecen al conjunto.
 
 No hay ninguna restricción en el número de conjuntos de propiedades que se pueden definir para un objeto. Sin embargo, se deben especificar los conjuntos de propiedades que se usan para definir las propiedades de presentación predeterminada de un objeto en el conjunto de miembros PSStandardMembers. En el archivo Types.ps1xml tipos, los nombres de conjunto de propiedades predeterminada incluyen DefaultDisplayProperty, DefaultDisplayPropertySet y DefaultKeyPropertySet. Se omiten los conjuntos de propiedades adicionales que agregue al conjunto de miembros PSStandardMembers.

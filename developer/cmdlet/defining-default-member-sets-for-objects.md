@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 77f94326-8ffe-4d40-bd2a-b79fb0b4a4e5
 caps.latest.revision: 8
-ms.openlocfilehash: e8185eb7221a3be0445eddc537dbca89478c74f2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2d634e7638ec0e0117d65ca0b2d08e68f0068a03
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859801"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794916"
 ---
 # <a name="defining-default-member-sets-for-objects"></a>Definición de conjuntos de miembros predeterminados para los objetos
 
@@ -21,7 +21,6 @@ El conjunto de miembros PSStandardMembers usando Windows PowerShell para definir
 
 ## <a name="member-set-for-systemdiagnosticsprocess"></a>Conjunto de miembros para System.Diagnostics.Process
 
-En el ejemplo siguiente, el conjunto de miembros PSStandardMembers define la propiedad DefaultDisplayPropertySet establecida para [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objetos. Establecer esta propiedad se usa por la [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet.
 En el ejemplo siguiente, el conjunto de miembros PSStandardMembers define la propiedad DefaultDisplayPropertySet establecida para [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objetos. Establecer esta propiedad se usa por la [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet.
 
 ```xml
@@ -44,7 +43,6 @@ En el ejemplo siguiente, el conjunto de miembros PSStandardMembers define la pro
   </MemberSet>
 ```
 
-La salida siguiente muestra las propiedades predeterminadas devueltas por la [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet. Solo el `Id`, `Handles`, `CPU`, y `Name` se devuelven las propiedades para cada objeto de proceso.
 La salida siguiente muestra las propiedades predeterminadas devueltas por la [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet. Solo el `Id`, `Handles`, `CPU`, y `Name` se devuelven las propiedades para cada objeto de proceso.
 
 ```powershell

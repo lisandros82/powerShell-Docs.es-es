@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
-ms.openlocfilehash: 9aff23647e55e8c9c41c54e5b62cedc15fb28a2d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857171"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794712"
 ---
 # <a name="background-jobs"></a>Trabajos en segundo plano
 
@@ -21,7 +21,6 @@ Cmdlets puede llevar a cabo su acción internamente o como un en Windows PowerSh
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>Trabajos en segundo plano, los trabajos secundarios y el repositorio de trabajos
 
-El objeto de trabajo que se devuelve mediante los cmdlets que admiten los trabajos en segundo plano define el trabajo. (El [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) cmdlet también devuelve un objeto de trabajo.) El nombre del trabajo, un identificador que se usa para especificar el trabajo, la información de estado y los trabajos secundarios se incluyen en esta definición. El trabajo no realiza ninguna parte del trabajo. Cada trabajo en segundo plano tiene al menos un trabajo secundario porque el trabajo secundario realiza el trabajo real. Al ejecutar un cmdlet para que el trabajo se realiza como un trabajo en segundo plano, el cmdlet debe agregar el trabajo y los trabajos secundarios a un repositorio común, que se conoce como el *repositorio de trabajos*.
 El objeto de trabajo que se devuelve mediante los cmdlets que admiten los trabajos en segundo plano define el trabajo. (El [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) cmdlet también devuelve un objeto de trabajo.) El nombre del trabajo, un identificador que se usa para especificar el trabajo, la información de estado y los trabajos secundarios se incluyen en esta definición. El trabajo no realiza ninguna parte del trabajo. Cada trabajo en segundo plano tiene al menos un trabajo secundario porque el trabajo secundario realiza el trabajo real. Al ejecutar un cmdlet para que el trabajo se realiza como un trabajo en segundo plano, el cmdlet debe agregar el trabajo y los trabajos secundarios a un repositorio común, que se conoce como el *repositorio de trabajos*.
 
 Para obtener más información acerca de cómo se controlan los trabajos en segundo plano en la línea de comandos, vea lo siguiente:
