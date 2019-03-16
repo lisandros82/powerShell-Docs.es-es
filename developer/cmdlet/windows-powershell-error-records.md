@@ -13,22 +13,22 @@ helpviewer_keywords:
 - error category string [PowerShell SDK]
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
-ms.openlocfilehash: bbe04a8fb556f0f6807bc0eae6634e3cf505759e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f6f5e50c55b477cbbeeaaf4f3ea665d5dc07758c
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861981"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059769"
 ---
 # <a name="windows-powershell-error-records"></a>Registros de errores de Windows PowerShell
 
-Los cmdlets debe pasar un [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objeto que identifica la condición de error para errores de terminación y de no terminación.
+Los cmdlets debe pasar un [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objeto que identifica la condición de error para errores de terminación y de no terminación.
 
-El [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objeto contiene la información siguiente:
+El [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objeto contiene la información siguiente:
 
 - La excepción que describe el error. A menudo, esto es una excepción que el cmdlet detecta y se convierte en un registro de errores. Cada registro de error debe contener una excepción.
 
-Si el cmdlet no detecta una excepción, debe crear una nueva excepción y elegir la clase de excepción que mejor describe la condición de error. Sin embargo, no es necesario iniciar la excepción porque puede acceder a ella a través de la [System.Management.Automation.Errorrecord.Exception*](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) propiedad de la [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objeto.
+Si el cmdlet no detecta una excepción, debe crear una nueva excepción y elegir la clase de excepción que mejor describe la condición de error. Sin embargo, no es necesario iniciar la excepción porque puede acceder a ella a través de la [System.Management.Automation.ErrorRecord.Exception](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) propiedad de la [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)objeto.
 
 - Identificador de error que proporciona un designador de destino que puede utilizarse para fines de diagnóstico y los scripts de Windows PowerShell para controlar las condiciones de error específico con los controladores de error específico. Cada registro de error debe contener un identificador de error (consulte el identificador de Error).
 
@@ -42,13 +42,13 @@ Si el cmdlet no detecta una excepción, debe crear una nueva excepción y elegir
 
 ## <a name="error-identifier"></a>Identificador de error
 
-Cuando se crea un registro de errores, especifique un identificador que designa la condición de error dentro de su cmdlet. Windows PowerShell se combina el identificador de destino con el nombre de su cmdlet para crear un identificador de error completo. El identificador de error completo puede obtenerse a través del [System.Management.Automation.Errorrecord.Fullyqualifiederrorid*](/dotnet/api/System.Management.Automation.ErrorRecord.FullyQualifiedErrorId) propiedad de la [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)objeto. El identificador de error no está disponible por sí mismo. Está disponible únicamente como parte del identificador de error completo.
+Cuando se crea un registro de errores, especifique un identificador que designa la condición de error dentro de su cmdlet. Windows PowerShell se combina el identificador de destino con el nombre de su cmdlet para crear un identificador de error completo. El identificador de error completo puede obtenerse a través del [System.Management.Automation.ErrorRecord.FullyQualifiedErrorId](/dotnet/api/System.Management.Automation.ErrorRecord.FullyQualifiedErrorId) propiedad de la [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)objeto. El identificador de error no está disponible por sí mismo. Está disponible únicamente como parte del identificador de error completo.
 
 Use las directrices siguientes para generar identificadores de errores al crear registros de error:
 
 - Asignar identificadores de errores específico a una condición de error. Tener como destino los identificadores de errores para fines de diagnóstico y los scripts que controlar las condiciones de error específico con los controladores de error específico. Un usuario debe ser capaz de utilizar el identificador de error para identificar el error y su origen. Identificadores de errores también habilitar los informes de condiciones de error específico de excepciones existentes para que las subclases de excepción nueva no son necesarias.
 
-- En general, asignar identificadores de error diferentes a diferentes rutas de código. El usuario final se beneficia de identificadores específicos. A menudo, cada ruta de acceso de código que llama a [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) o [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) tiene su propio identificador. Como norma, definir un nuevo identificador cuando se define una nueva cadena de plantilla para el mensaje de error y viceversa. No utilice el mensaje de error como un identificador.
+- En general, asignar identificadores de error diferentes a diferentes rutas de código. El usuario final se beneficia de identificadores específicos. A menudo, cada ruta de acceso de código que llama a [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) o [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) tiene su propio identificador. Como norma, definir un nuevo identificador cuando se define una nueva cadena de plantilla para el mensaje de error y viceversa. No utilice el mensaje de error como un identificador.
 
 - Cuando se publica el código mediante un identificador de error concreto, Establece que la semántica de errores con ese identificador para el producto completo de vida de soporte. No volver a usarla en un contexto que es semánticamente diferente desde el contexto original. Si cambia la semántica de este error, cree y, a continuación, use un nuevo identificador.
 
@@ -64,7 +64,7 @@ Cuando se crea un registro de errores, especifique la categoría del error utili
 
 Evite el uso de la [System.Management.Automation.Errorcategory.Notspecified](/dotnet/api/System.Management.Automation.ErrorCategory.NotSpecified) constante. Si tiene cualquier información sobre el error o la operación que produjo el error, elija la categoría que mejor describe el error o la operación, incluso si la categoría no es perfecta.
 
-La información mostrada por Windows PowerShell se conoce como la cadena de la vista de categoría y se crea a partir de las propiedades de la [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) clase. (Esta clase se tiene acceso mediante el error [System.Management.Automation.Errorrecord.Categoryinfo*](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) propiedad.)
+La información mostrada por Windows PowerShell se conoce como la cadena de la vista de categoría y se crea a partir de las propiedades de la [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) clase. (Esta clase se tiene acceso mediante el error [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) propiedad.)
 
 ```
 {Category}: ({TargetName}:{TargetType}):[{Activity}], {Reason}
@@ -86,27 +86,27 @@ La lista siguiente describe la información que aparece:
 
 Al desarrollar un registro de errores para un cmdlet, el mensaje de error predeterminada para el error procede el texto del mensaje predeterminado en el [System.Exception.Message](/dotnet/api/System.Exception.Message) propiedad. Se trata de una propiedad de solo lectura cuyo texto del mensaje está pensado únicamente para propósitos de depuración (de acuerdo con las directrices de .NET Framework). Le recomendamos que cree un mensaje de error que reemplace o aumenta el texto del mensaje predeterminado. Que el mensaje más fácil de usar y más específico al cmdlet.
 
-El mensaje de reemplazo se proporciona mediante un [System.Management.Automation.Errordetails](/dotnet/api/System.Management.Automation.ErrorDetails) objeto. Utilice uno de los constructores siguientes de este objeto, ya que proporcionan información adicional de localización que se puede usar Windows PowerShell.
+El mensaje de reemplazo se proporciona mediante un [System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) objeto. Utilice uno de los constructores siguientes de este objeto, ya que proporcionan información adicional de localización que se puede usar Windows PowerShell.
 
-- [¿ErrorDetails.ErrorDetails (Cmdlet, cadena, cadena, objeto\[System.Management.Automation.Errordetails.%23Ctor%28System.Management.Automation.Cmdlet%2Csystem.String%2Csystem.String%2Csystem.Object%5B%5D%29? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Utilice este constructor si la cadena de plantilla es una cadena de recurso en el mismo ensamblado en el que se implementa el cmdlet o si desea cargar la cadena de plantilla a través de un reemplazo del [System.Management.Automation.Cmdlet.Getresourcestring* ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) método.
+- [¿ErrorDetails.ErrorDetails (Cmdlet, cadena, cadena, objeto\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Utilice este constructor si la cadena de plantilla es una cadena de recurso en el mismo ensamblado en el que se implementa el cmdlet o si desea cargar la cadena de plantilla a través de un reemplazo del [System.Management.Automation.Cmdlet.GetResourceString ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) método.
 
-- [¿ErrorDetails.ErrorDetails (ensamblado, cadena, cadena, objeto\[System.Management.Automation.Errordetails.%23Ctor%28System.Reflection.Assembly%2Csystem.String%2Csystem.String%2Csystem.Object%5B%5D%29? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Utilice este constructor si la cadena de plantilla está en otro ensamblado y no se cargan a través de una invalidación de [System.Management.Automation.Cmdlet.Getresourcestring*](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
+- [¿ErrorDetails.ErrorDetails (ensamblado, cadena, cadena, objeto\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Utilice este constructor si la cadena de plantilla está en otro ensamblado y no se cargan a través de una invalidación de [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
 
 El mensaje de reemplazo debe cumplir las directrices de diseño de .NET Framework para escribir mensajes de excepción con una pequeña diferencia. El estado de las directrices que deben escribirse los mensajes de excepción para los desarrolladores. Estos mensajes de reemplazo deben escribirse para que el usuario de cmdlet.
 
-El mensaje de error de reemplazo debe agregarse antes de la [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) o [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) se llama a métodos . Para agregar un mensaje de reemplazo, establezca el [System.Management.Automation.Errorrecord.Errordetails*](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails) propiedad del registro de error. Cuando se establece esta propiedad, Windows PowerShell muestra el [System.Management.Automation.Errordetails.Message*](/dotnet/api/System.Management.Automation.ErrorDetails.Message) propiedad en lugar del texto del mensaje predeterminado.
+El mensaje de error de reemplazo debe agregarse antes de la [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) o [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) se llama a métodos. Para agregar un mensaje de reemplazo, establezca el [System.Management.Automation.ErrorRecord.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails) propiedad del registro de error. Cuando se establece esta propiedad, Windows PowerShell muestra el [System.Management.Automation.ErrorDetails.Message*](/dotnet/api/System.Management.Automation.ErrorDetails.Message) propiedad en lugar del texto del mensaje predeterminado.
 
 ## <a name="recommended-action-information"></a>Recomienda la información de la acción
 
-El [System.Management.Automation.Errordetails](/dotnet/api/System.Management.Automation.ErrorDetails) objeto también puede proporcionar información acerca de las acciones que se recomiendan cuando se produce el error.
+El [System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) objeto también puede proporcionar información acerca de las acciones que se recomiendan cuando se produce el error.
 
 ## <a name="invocation-information"></a>Información de la invocación
 
-Cuando se usa un cmdlet [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) o [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) para informar de un registro de errores, Windows PowerShell agrega automáticamente la información que describe el comando que se invoca cuando se produjo el error. Esta información se proporciona mediante un [System.Management.Automation.Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo) objeto que contiene el nombre del cmdlet que se invocó el comando, el comando en sí e información acerca de la canalización o la secuencia de comandos. Esta propiedad es de solo lectura.
+Cuando se usa un cmdlet [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) o [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) para informar de un registro de errores, Windows PowerShell agrega automáticamente la información que describe el comando que se invoca cuando se produjo el error. Esta información se proporciona mediante un [System.Management.Automation.Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo) objeto que contiene el nombre del cmdlet que se invocó el comando, el comando en sí e información acerca de la canalización o la secuencia de comandos. Esta propiedad es de solo lectura.
 
 ## <a name="see-also"></a>Véase también
 
-[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
+[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
@@ -114,9 +114,9 @@ Cuando se usa un cmdlet [System.Management.Automation.Cmdlet.Writeerror*](/dotne
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
 
-[System.Management.Automation.Errordetails](/dotnet/api/System.Management.Automation.ErrorDetails)
+[System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails)
 
 [System.Management.Automation.Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo)
 

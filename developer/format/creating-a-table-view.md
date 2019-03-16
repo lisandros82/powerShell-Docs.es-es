@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
-ms.openlocfilehash: 832527ea4b042812c39934cd7e124201c6dc2ea4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861501"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057372"
 ---
 # <a name="creating-a-table-view"></a>Creación de una vista de tabla
 
@@ -95,7 +95,7 @@ Los siguientes elementos XML se usan para definir una vista de lista:
 
 2. El [TableColumnHeader](./tablecolumnheader-element-format.md) elemento define lo que se muestra en la parte superior de una columna de la tabla. Estos elementos se especifican en el orden en que desea que los encabezados se muestran.
 
-   No hay ningún límite en el número de estos elementos que puede usar, pero el número de [TableColumnHeader](./tablecolumnheader-element-format.md) elementos en la vista de tabla deben ser igual al número de [TableRowEntry](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) elementos que se usan.
+   No hay ningún límite en el número de estos elementos que puede usar, pero el número de [TableColumnHeader](./tablecolumnheader-element-format.md) elementos en la vista de tabla deben ser igual al número de [TableRowEntry](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) elementos que se usan.
 
 3. El [etiqueta](./label-element-for-tablecolumnheader-for-tablecontrol-format.md) elemento especifica el texto que se muestra. Este elemento es opcional.
 
@@ -136,7 +136,7 @@ Los siguientes elementos XML pueden usarse para proporcionar las definiciones pa
 
 - El [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) elemento especifica los objetos que se muestran en una definición específica. Este elemento es opcional y solo es necesario cuando definir varios [TableRowEntry](./listentry-element-for-listcontrol-format.md) elementos que muestran los distintos objetos.
 
-- El [ajustar](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) elemento especifica que el texto que supera el ancho de columna se muestra en la línea siguiente. De forma predeterminada, el texto que supera el ancho de columna se trunca.
+- El [ajustar](./wrap-element-for-tablerowentry-for-tablecontrol-format.md) elemento especifica que el texto que supera el ancho de columna se muestra en la línea siguiente. De forma predeterminada, el texto que supera el ancho de columna se trunca.
 
 - El [TableColumnItems](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md) elemento define las propiedades o scripts cuyos valores se muestran en la fila.
 

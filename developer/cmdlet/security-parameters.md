@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e199bba3-90d3-41ca-9d78-cb502e58508d
 caps.latest.revision: 6
-ms.openlocfilehash: c8b3f907a80d1f6125a5ac04236245503db76ed0
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9b4d83aeaf45eab1365dec5fbf48c3c796ed5bde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251309"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057136"
 ---
 # <a name="security-parameters"></a>Parámetros de seguridad
 
@@ -29,7 +29,7 @@ En la tabla siguiente se enumera los nombres recomendados y la funcionalidad par
 |**CertStoreLocation**<br>Tipo de datos: Cadena|Implemente este parámetro para que el usuario puede especificar la ubicación del almacén de certificados. Normalmente, la ubicación es una ruta de acceso de archivo.|
 |**CertSubjectName**<br>Tipo de datos: Cadena|Implemente este parámetro para que el usuario puede especificar al emisor de un certificado o para que el usuario puede especificar una subcadena.|
 |**CertUsage**<br>Tipo de datos: Cadena|Implemente este parámetro para especificar el uso de claves o el uso mejorado de clave. La clave se puede representar como un poco de máscara, un poco, un identificador de objeto (OID), o una cadena.|
-|**Credencial**<br>Tipo de datos: [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|Implemente este parámetro para que el cmdlet le pedirá automáticamente al usuario un nombre de usuario o contraseña. Si no se proporciona directamente una credencial completa, se muestra un símbolo del sistema para ambos.|
+|**Credencial**<br>Tipo de datos: [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Implemente este parámetro para que el cmdlet le pedirá automáticamente al usuario un nombre de usuario o contraseña. Si no se proporciona directamente una credencial completa, se muestra un símbolo del sistema para ambos.|
 |**CSPName**<br>Tipo de datos: Cadena|Implemente este parámetro para que el usuario puede especificar el nombre del proveedor de servicios de certificado (CSP).|
 |**CSPType**<br>Tipo de datos: Entero|Implemente este parámetro para que el usuario puede especificar el tipo de CSP.|
 |**Grupo**<br>Tipo de datos: Cadena|Implemente este parámetro para que el usuario puede especificar una colección de entidades de seguridad para el acceso. Para obtener más información, vea la descripción de la **Principal** parámetro.|

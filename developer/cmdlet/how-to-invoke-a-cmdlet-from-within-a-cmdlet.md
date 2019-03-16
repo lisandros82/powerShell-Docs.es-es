@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
 caps.latest.revision: 12
-ms.openlocfilehash: d4564b51b74422cdaec3878b227ffc6be7c97949
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855891"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055910"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Cómo invocar un cmdlet desde dentro de un cmdlet
 
@@ -24,7 +24,7 @@ Get-Process -name [a-t]
 ```
 
 > [!IMPORTANT]
-> Puede invocar solo esos cmdlets que se derivan directamente de la [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) clase. No se puede invocar un cmdlet que se deriva el [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) clase.
+> Puede invocar solo esos cmdlets que se derivan directamente de la [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) clase. No se puede invocar un cmdlet que se deriva el [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) clase.
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Para invocar un cmdlet desde dentro de un cmdlet
 
@@ -36,7 +36,7 @@ Get-Process -name [a-t]
     using Microsoft.PowerShell.Commands;  // Windows PowerShell assembly.
     ```
 
-2. En el método del cmdlet de procesamiento de entrada, cree una nueva instancia del cmdlet que se debe invocar. En este ejemplo, un objeto de tipo [Microsoft.Powershell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) se crea junto con la cadena que contiene los argumentos que se usan cuando se invoca el cmdlet.
+2. En el método del cmdlet de procesamiento de entrada, cree una nueva instancia del cmdlet que se debe invocar. En este ejemplo, un objeto de tipo [Microsoft.PowerShell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) se crea junto con la cadena que contiene los argumentos que se usan cuando se invoca el cmdlet.
 
     ```csharp
     GetProcessCommand gp = new GetProcessCommand();
@@ -55,7 +55,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>Ejemplo
 
-En este ejemplo, el `Get-Process` cmdlet se invoca desde el [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) método de un cmdlet.
+En este ejemplo, el `Get-Process` cmdlet se invoca desde el [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) método de un cmdlet.
 
 ```csharp
 using System;

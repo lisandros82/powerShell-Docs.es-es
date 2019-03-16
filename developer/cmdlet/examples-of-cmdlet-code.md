@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6fed2f68-ce6d-4a8f-bf21-f94f27a155c2
 caps.latest.revision: 9
-ms.openlocfilehash: 39c0814faf72cdb4b24730acb2ae429a2f465b32
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 936728d64f30a08fb9e2fa9ccef103683594aa3e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863131"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056267"
 ---
 # <a name="examples-of-cmdlet-code"></a>Ejemplos de código del cmdlet
 
@@ -38,7 +38,7 @@ Esta sección contiene ejemplos de código del cmdlet que puede usar para empeza
 
 [Cómo invalidar los métodos de procesamiento de entrada](./how-to-override-input-processing-methods.md) estos ejemplos muestra la estructura básica que se usa para invalidar los métodos de BeginProcessing, ProcessRecord y EndProcessing.
 
-[Cómo la compatibilidad con las llamadas a ShouldProcess](./how-to-request-confirmations.md) este ejemplo se muestra cómo el [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)métodos deben llamarse desde dentro de un cmdlet.
+[Cómo la compatibilidad con las llamadas a ShouldProcess](./how-to-request-confirmations.md) este ejemplo se muestra cómo el [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) los métodos deben llamarse desde dentro de un cmdlet.
 
 [Cómo admiten transacciones](./how-to-support-transactions.md) este ejemplo muestra indicar que el cmdlet admite las transacciones y cómo implementar la acción que se realiza cuando se usa el cmdlet dentro de una transacción.
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], creating
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
-ms.openlocfilehash: e010e28ec705932063bb418b260a1087fc3eef9e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fb113086ce89e4becff9bcaf3232905fde2bf610
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856011"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055927"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>Adición de parámetros que procesan la entrada de la línea de comandos
 
@@ -147,7 +147,7 @@ public string[] Name
 
 Si es su cmdlet controlar la entrada de línea de comandos, debe invalidar los métodos de procesamiento de entrada adecuada. Los métodos de procesamiento de entrada básico se introducen en [crear su primer Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-El **Get-Proc** cmdlet reemplaza el [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método para controlar el `Name` proporcionado por el usuario o un script de entrada de parámetros. Este método obtiene los procesos para cada nombre de proceso solicitado, o todos los procesos si no se proporciona ningún nombre. Tenga en cuenta que en [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), la llamada a [System.Management.Automation.Cmdlet.Writeobject%28System.Object%2Csystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) es el resultado mecanismo para enviar el resultado de los objetos a la canalización. El segundo parámetro de esta llamada, `enumerateCollection`, se establece en `true` informar al runtime de Windows PowerShell para enumerar la matriz de salida de objetos de proceso y escribir un proceso a la vez en la línea de comandos.
+El **Get-Proc** cmdlet reemplaza el [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método para controlar el `Name` proporcionado por el usuario o un script de entrada de parámetros. Este método obtiene los procesos para cada nombre de proceso solicitado, o todos los procesos si no se proporciona ningún nombre. Tenga en cuenta que en [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), la llamada a [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) es el resultado mecanismo para enviar el resultado de los objetos a la canalización. El segundo parámetro de esta llamada, `enumerateCollection`, se establece en `true` informar al runtime de Windows PowerShell para enumerar la matriz de salida de objetos de proceso y escribir un proceso a la vez en la línea de comandos.
 
 ```csharp
 protected override void ProcessRecord()

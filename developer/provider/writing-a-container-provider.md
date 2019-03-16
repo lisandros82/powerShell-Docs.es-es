@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
-ms.openlocfilehash: 2d2d6a32ac910ecc0fc3b6f1e78cdde54c21b427
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bf0a73267b3cad1f50d983ebed53318ec98180e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858311"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056471"
 ---
 # <a name="writing-a-container-provider"></a>Escritura de un proveedor de contenedores
 
@@ -44,7 +44,7 @@ Declare el proveedor que derive de la [System.Management.Automation.Provider.Con
 
 ### <a name="implementing-getchilditems"></a>Implementar GetChildItems
 
-El motor de PowerShell llama a la [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) método cuando un usuario llama a la [Microsoft.Powershell.Commands.Get Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) cmdlet. Este método obtiene los elementos que son elementos secundarios del elemento en la ruta de acceso especificada.
+El motor de PowerShell llama a la [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) método cuando un usuario llama a la [Microsoft.PowerShell.Commands.Get Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) cmdlet. Este método obtiene los elementos que son elementos secundarios del elemento en la ruta de acceso especificada.
 
 En el ejemplo de la base de datos de Access, el comportamiento de la [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) método depende del tipo del elemento especificado. Si el elemento es la unidad, a continuación, los elementos secundarios son tablas, y el método devuelve el conjunto de tablas de la base de datos. Si el elemento especificado es una tabla, los elementos secundarios son las filas de esa tabla. Si el elemento es una fila, a continuación, no tiene elementos secundarios, y el método devuelve solo esa fila. Todos los elementos secundarios se envían al motor de PowerShell mediante el [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) método.
 
@@ -155,7 +155,7 @@ protected override void GetChildNames(string path,
 
 ### <a name="implementing-newitem"></a>Implementar el nuevo elemento
 
-El [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) método crea un nuevo elemento del tipo especificado en la ruta especificada. El motor de PowerShell llama a este método cuando un usuario llama a la [Microsoft.Powershell.Commands.New elemento](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) cmdlet.
+El [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) método crea un nuevo elemento del tipo especificado en la ruta especificada. El motor de PowerShell llama a este método cuando un usuario llama a la [Microsoft.PowerShell.Commands.New elemento](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) cmdlet.
 
 En este ejemplo, el método implementa la lógica para determinar que coincide con la ruta de acceso y el tipo. Es decir, solo una tabla puede crearse directamente en la unidad (la base de datos) y se puede crear solo una fila en una tabla. Si no coinciden la ruta de acceso especificada y el tipo de elemento de esta manera, el método produce una excepción.
 
@@ -333,7 +333,7 @@ protected override void NewItem(string path, string type,
 
 ### <a name="implementing-copyitem"></a>Implementación de CopyItem
 
-El [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) copia el elemento especificado en la ruta de acceso especificada. El motor de PowerShell llama a este método cuando un usuario llama a la [Microsoft.Powershell.Commands.Copy elemento](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) cmdlet. Este método también puede ser recursivas, copiar todos los elementos secundarios de elementos además del propio elemento.
+El [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) copia el elemento especificado en la ruta de acceso especificada. El motor de PowerShell llama a este método cuando un usuario llama a la [Microsoft.PowerShell.Commands.Copy elemento](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) cmdlet. Este método también puede ser recursivas, copiar todos los elementos secundarios de elementos además del propio elemento.
 
 Del mismo modo que el [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) método, este método realiza la lógica para asegurarse de que el elemento especificado es del tipo correcto para la ruta de acceso a la que se está copiando. Por ejemplo, si la ruta de acceso de destino es una tabla, el elemento que se va a copiar debe ser una fila.
 
@@ -466,7 +466,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
 
 ### <a name="implementing-removeitem"></a>Implementar RemoveItem
 
-El [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) método quita el elemento situado en la ruta de acceso especificada. El motor de PowerShell llama a este método cuando un usuario llama a la [Microsoft.Powershell.Commands.Remove elemento](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) cmdlet.
+El [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) método quita el elemento situado en la ruta de acceso especificada. El motor de PowerShell llama a este método cuando un usuario llama a la [Microsoft.PowerShell.Commands.Remove elemento](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) cmdlet.
 
 ```csharp
 protected override void RemoveItem(string path, bool recurse)

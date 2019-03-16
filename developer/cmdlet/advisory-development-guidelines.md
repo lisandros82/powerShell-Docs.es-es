@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 97a2d3587f8f69edc92150474e94a620ff9a2f71
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854551"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056573"
 ---
 # <a name="advisory-development-guidelines"></a>Directrices de desarrollo de consulta
 
@@ -61,7 +61,7 @@ Por ejemplo, el [Remove-Item](/powershell/module/microsoft.powershell.management
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>Controlar las credenciales a través de Windows PowerShell (AD03)
 
-Debe definir un cmdlet un `Credential` parámetro para representar las credenciales. Este parámetro debe ser de tipo [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) y debe definirse mediante una declaración de atributo de la credencial. Esta compatibilidad automáticamente solicita al usuario para el nombre de usuario, la contraseña o para ambos cuando no se proporciona directamente una credencial completa. Para obtener más información sobre el atributo de credencial, vea [declaración de atributo de credencial](./credential-attribute-declaration.md).
+Debe definir un cmdlet un `Credential` parámetro para representar las credenciales. Este parámetro debe ser de tipo [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) y debe definirse mediante una declaración de atributo de la credencial. Esta compatibilidad automáticamente solicita al usuario para el nombre de usuario, la contraseña o para ambos cuando no se proporciona directamente una credencial completa. Para obtener más información sobre el atributo de credencial, vea [declaración de atributo de credencial](./credential-attribute-declaration.md).
 
 ### <a name="support-encoding-parameters-ad04"></a>Admite los parámetros de codificación (AD04)
 
@@ -89,17 +89,17 @@ Cuando asigne nombre a la clase de .NET Framework que implementa un cmdlet, la c
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>Si ninguna entrada de la canalización invalida el método BeginProcessing (AC02)
 
-Si el cmdlet no acepta entradas de la canalización, se debería implementar el procesamiento en el [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) método. Uso de este método permite que Windows PowerShell mantener el orden entre los cmdlets. El primer cmdlet en la canalización siempre devuelve sus objetos antes de que los cmdlets restantes en la canalización Obtenga una oportunidad para iniciar su procesamiento.
+Si el cmdlet no acepta entradas de la canalización, se debería implementar el procesamiento en el [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) método. Uso de este método permite que Windows PowerShell mantener el orden entre los cmdlets. El primer cmdlet en la canalización siempre devuelve sus objetos antes de que los cmdlets restantes en la canalización Obtenga una oportunidad para iniciar su procesamiento.
 
 ### <a name="to-handle-stop-requests-override-the-stopprocessing-method-ac03"></a>Para controlar las solicitudes de detención invalidación el método StopProcessing (AC03)
 
-Invalidar el [System.Management.Automation.Cmdlet.Stopprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) método para que el cmdlet puede controlar la señal de detención. Algunos cmdlets tardar mucho tiempo para completar su funcionamiento, y permiten pasar entre llamadas en el tiempo de ejecución de Windows PowerShell, por ejemplo, cuando el cmdlet bloquea el subproceso en las llamadas RPC de larga ejecución mucho tiempo. Esto incluye los cmdlets que realizan llamadas a la [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) método, a la [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) método y a otros comentarios mecanismos que pueden tardar mucho tiempo en completarse. En estos casos el usuario deba enviar una señal de detención a estos cmdlets.
+Invalidar el [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) método para que el cmdlet puede controlar la señal de detención. Algunos cmdlets tardar mucho tiempo para completar su funcionamiento, y permiten pasar entre llamadas en el tiempo de ejecución de Windows PowerShell, por ejemplo, cuando el cmdlet bloquea el subproceso en las llamadas RPC de larga ejecución mucho tiempo. Esto incluye los cmdlets que realizan llamadas a la [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) método, a la [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) método y a otros comentarios mecanismos que pueden tardar mucho tiempo en completarse. En estos casos el usuario deba enviar una señal de detención a estos cmdlets.
 
 ### <a name="implement-the-idisposable-interface-ac04"></a>Implementar la interfaz IDisposable (AC04)
 
-Si su cmdlet tiene objetos que no se eliminan de (escrito en la canalización) por el [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método, el cmdlet puede requerir la eliminación de objetos adicionales. Por ejemplo, si su cmdlet abre un identificador de archivo en su [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) método y conserva el identificador se abra para su uso por el [System.Management.Automation.Cmdlet.Processrecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método, este identificador debe cerrarse al final del procesamiento.
+Si su cmdlet tiene objetos que no se eliminan de (escrito en la canalización) por el [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método, el cmdlet puede requerir la eliminación de objetos adicionales. Por ejemplo, si su cmdlet abre un identificador de archivo en su [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) método y conserva el identificador se abra para su uso por el [System.Management.Automation.Cmdlet.ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método, este identificador debe cerrarse al final del procesamiento.
 
-El tiempo de ejecución de Windows PowerShell siempre no llama a la [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) método. Por ejemplo, el [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) no es posible que se llama el método si el cmdlet se ha cancelado a medio camino a través de su operación o si un carácter de terminación se produce error en cualquier parte del cmdlet. Por lo tanto, la clase de .NET Framework para un cmdlet que requiere la limpieza de objetos debe implementar toda [System.Idisposable](/dotnet/api/System.IDisposable) patrón de interfaz, incluidos el finalizador, para que el tiempo de ejecución de Windows PowerShell puede llamar a la [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) y [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) métodos al final del procesamiento.
+El tiempo de ejecución de Windows PowerShell siempre no llama a la [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) método. Por ejemplo, el [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) no es posible que se llama el método si el cmdlet se ha cancelado a medio camino a través de su operación o si un carácter de terminación se produce error en cualquier parte del cmdlet. Por lo tanto, la clase de .NET Framework para un cmdlet que requiere la limpieza de objetos debe implementar toda [System.IDisposable](/dotnet/api/System.IDisposable) patrón de interfaz, incluidos el finalizador, para que el tiempo de ejecución de Windows PowerShell puede llamar a la [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) y [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) métodos al final del procesamiento.
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>Usar tipos de parámetros de serialización sencillo (AC05)
 
@@ -117,7 +117,7 @@ Tipos integrados de rehydratable:
 
 - PSPrimitiveDictionary
 
-- SwitchParmeter
+- SwitchParameter
 
 - PSListModifier
 

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 3edbcabeff0c8d84831823df11749d152b347566
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863341"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057168"
 ---
 # <a name="events01-sample"></a>Ejemplo Events01
 
-En este ejemplo se muestra cómo crear un cmdlet que permite al usuario al registrarse para eventos generados por [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Con este cmdlet, los usuarios pueden registrar una acción que se ejecutará cuando se crea un archivo en un directorio específico. En este ejemplo se deriva de la [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) clase base.
+En este ejemplo se muestra cómo crear un cmdlet que permite al usuario al registrarse para eventos generados por [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Con este cmdlet, los usuarios pueden registrar una acción que se ejecutará cuando se crea un archivo en un directorio específico. En este ejemplo se deriva de la [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) clase base.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Cómo generar el ejemplo mediante Visual Studio.
 
@@ -78,7 +78,7 @@ Este ejemplo requiere Windows PowerShell 2.0.
 
 Este ejemplo muestra lo siguiente.
 
-- Cómo escribir un cmdlet para el registro de eventos. El cmdlet se deriva de la [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) (clase), que proporciona compatibilidad para los parámetros comunes a Register-* cmdlets del evento. Los cmdlets que se derivan de [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) sólo tiene que definir sus parámetros concretos e invalidar la `GetSourceObject` y `GetSourceObjectEventName` métodos abstractos.
+- Cómo escribir un cmdlet para el registro de eventos. El cmdlet se deriva de la [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) (clase), que proporciona compatibilidad para los parámetros comunes a Register-* cmdlets del evento. Los cmdlets que se derivan de [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) sólo tiene que definir sus parámetros concretos e invalidar la `GetSourceObject` y `GetSourceObjectEventName` métodos abstractos.
 
 ## <a name="example"></a>Ejemplo
 

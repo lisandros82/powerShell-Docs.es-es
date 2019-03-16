@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794984"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057729"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Directrices de desarrollo recomendadas encarecidamente
 
@@ -101,7 +101,7 @@ Cuando se usa el mismo parámetro de varios cmdlets, use siempre el mismo tipo d
 
 #### <a name="parameters-that-take-true-and-false"></a>Parámetros que toman True y False
 
-Si el parámetro toma solo `true` y `false`, defina el parámetro como tipo [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter). Se considera un parámetro de modificador `true` cuando se especifica en un comando. Si el parámetro no se incluye en un comando, Windows PowerShell se considera que el valor del parámetro sea `false`. No defina parámetros booleanos.
+Si el parámetro toma solo `true` y `false`, defina el parámetro como tipo [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter). Se considera un parámetro de modificador `true` cuando se especifica en un comando. Si el parámetro no se incluye en un comando, Windows PowerShell se considera que el valor del parámetro sea `false`. No defina parámetros booleanos.
 
 Si el parámetro debe diferenciar entre los 3 valores: $true, $false y "unspecified", a continuación, defina un parámetro de tipo Nullable\<bool >.  La necesidad de un 3, "no especificado" valor normalmente se produce cuando el cmdlet puede modificar una propiedad booleana de un objeto. En este caso "sin especificar" significa que no cambie el valor actual de la propiedad.
 
@@ -111,7 +111,7 @@ Con frecuencia, los usuarios deben realizar la misma operación frente a varios 
 
 #### <a name="support-the-passthru-parameter"></a>Admite el parámetro PassThru
 
-De forma predeterminada, muchos de los cmdlets que modifique el sistema, tales como la [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) actúan como "receptores" para los objetos de cmdlet y no devuelven un resultado. Debe implementar estos cmdlet la `PassThru` parámetro para forzar el cmdlet para devolver un objeto. Cuando el `PassThru` parámetro se especifica, el cmdlet devuelve un objeto mediante el uso de una llamada a la [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) método. Por ejemplo, el siguiente comando detiene el proceso Calc y pasa el proceso resultante a la canalización.
+De forma predeterminada, muchos de los cmdlets que modifique el sistema, tales como la [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) actúan como "receptores" para los objetos de cmdlet y no devuelven un resultado. Debe implementar estos cmdlet la `PassThru` parámetro para forzar el cmdlet para devolver un objeto. Cuando el `PassThru` parámetro se especifica, el cmdlet devuelve un objeto mediante el uso de una llamada a la [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) método. Por ejemplo, el siguiente comando detiene el proceso Calc y pasa el proceso resultante a la canalización.
 
 ```powershell
 Stop-Process calc -passthru
@@ -135,21 +135,21 @@ El tiempo de ejecución de Windows PowerShell permite al usuario especificar có
 
 #### <a name="support-the-writewarning-writeverbose-and-writedebug-methods"></a>Admitir la WriteWarning, WriteVerbose y métodos WriteDebug
 
-Debe llamar un cmdlet el [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) método cuando el cmdlet que se va a realizar una operación que podría tener un resultado no deseado. Por ejemplo, un cmdlet debe llamar a este método si el cmdlet está a punto de sobrescribir un archivo de solo lectura.
+Debe llamar un cmdlet el [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) método cuando el cmdlet que se va a realizar una operación que podría tener un resultado no deseado. Por ejemplo, un cmdlet debe llamar a este método si el cmdlet está a punto de sobrescribir un archivo de solo lectura.
 
-Debe llamar un cmdlet el [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) método cuando el usuario necesita algunos detalles sobre lo que hace el cmdlet. Por ejemplo, un cmdlet debe llamar a esta información si el autor del cmdlet se siente que hay escenarios que podrían requerir obtener más información sobre lo que hace el cmdlet.
+Debe llamar un cmdlet el [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) método cuando el usuario necesita algunos detalles sobre lo que hace el cmdlet. Por ejemplo, un cmdlet debe llamar a esta información si el autor del cmdlet se siente que hay escenarios que podrían requerir obtener más información sobre lo que hace el cmdlet.
 
-El cmdlet debe llamar a la [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) método cuando un ingeniero de soporte técnico de producto o el desarrollador debe entender lo que ha dañado la operación de cmdlet. No es necesario para el cmdlet para llamar a la [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) método en el mismo código que llama a la [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) método porque el `Debug` parámetro presenta ambos conjuntos de información.
+El cmdlet debe llamar a la [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) método cuando un ingeniero de soporte técnico de producto o el desarrollador debe entender lo que ha dañado la operación de cmdlet. No es necesario para el cmdlet para llamar a la [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) método en el mismo código que llama a la [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) (método) Dado que el `Debug` parámetro presenta ambos conjuntos de información.
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>WriteProgress de soporte técnico para las operaciones que llevan mucho tiempo
 
-Las operaciones de cmdlet que toman mucho tiempo en completarse y que no se puede ejecutar en segundo plano debe admitir el progreso de la generación de informes mediante llamadas periódicas a la [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) método.
+Las operaciones de cmdlet que toman mucho tiempo en completarse y que no se puede ejecutar en segundo plano debe admitir el progreso de la generación de informes mediante llamadas periódicas a la [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) método.
 
 #### <a name="use-the-host-interfaces"></a>Usar las Interfaces de Host
 
-En ocasiones, un cmdlet debe comunicarse directamente con el usuario en lugar de mediante el uso de los distintos escribir o deben métodos admitidos por el [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) clase. En este caso, el cmdlet debe derivar de la [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) clase y usar el [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) propiedad. Esta propiedad admite distintos niveles de tipo de comunicación, incluidos los tipos PromptForChoice, símbolo del sistema y WriteLine/ReadLine. Nivel más específico, también proporciona maneras para leer y escribir las claves individuales y para tratar con los búferes.
+En ocasiones, un cmdlet debe comunicarse directamente con el usuario en lugar de mediante el uso de los distintos escribir o deben métodos admitidos por el [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) clase. En este caso, el cmdlet debe derivar de la [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) clase y usar el [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) propiedad. Esta propiedad admite distintos niveles de tipo de comunicación, incluidos los tipos PromptForChoice, símbolo del sistema y WriteLine/ReadLine. Nivel más específico, también proporciona maneras para leer y escribir las claves individuales y para tratar con los búferes.
 
-A menos que un cmdlet está diseñado específicamente para generar una interfaz gráfica de usuario (GUI), no debe omitir el host utilizando la [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) propiedad. Un ejemplo de un cmdlet que está diseñado para generar una interfaz gráfica de usuario es el [Out-GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) cmdlet.
+A menos que un cmdlet está diseñado específicamente para generar una interfaz gráfica de usuario (GUI), no debe omitir el host utilizando la [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) propiedad. Un ejemplo de un cmdlet que está diseñado para generar una interfaz gráfica de usuario es el [Out-GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) cmdlet.
 
 > [!NOTE]
 > No debe usar los cmdlets del [System.Console](/dotnet/api/System.Console) API.
@@ -174,15 +174,15 @@ Si el cmdlet permite al usuario especificar un archivo o un origen de datos, deb
 
 Si los datos que el cmdlet lee o escribe debe ser un archivo, el cmdlet debe aceptar la entrada de ruta de acceso de Windows PowerShell y debe usar el cmdlet la [System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path) propiedad para traducir el Windows Rutas de acceso de PowerShell en rutas de acceso que reconozca el sistema de archivos. Los mecanismos específicos incluyen los siguientes métodos:
 
-- [System.Management.Automation.Pscmdlet.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pscmdlet.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-Si los datos que el cmdlet lee o escribe sólo están un conjunto de cadenas en lugar de un archivo, el cmdlet debe usar la información del proveedor de contenido (`Content` miembro) para leer y escribir. Esta información se obtiene desde el [System.Management.Automation.Provider.Cmdletprovider.Invokeprovider*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) propiedad. Estos mecanismos permiten participar en la lectura y escritura de datos de otros almacenes de datos.
+Si los datos que el cmdlet lee o escribe sólo están un conjunto de cadenas en lugar de un archivo, el cmdlet debe usar la información del proveedor de contenido (`Content` miembro) para leer y escribir. Esta información se obtiene desde el [System.Management.Automation.Provider.CmdletProvider.InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) propiedad. Estos mecanismos permiten participar en la lectura y escritura de datos de otros almacenes de datos.
 
 #### <a name="support-wildcard-characters"></a>Admite caracteres comodín
 
@@ -206,11 +206,11 @@ Si está diseñando un objeto de un cmdlet, asegúrese de que sus miembros se as
 
 Con frecuencia, objetos ya existentes de .NET Framework que se devuelven los cmdlets de faltan a algunos miembros importantes o convenientes que son necesarios para el desarrollador de script o el usuario. Estos miembros que faltan pueden ser especialmente importantes para su presentación y para crear nombres de miembro correcto para que el objeto se puede pasar correctamente a la canalización. Cree un archivo Types.ps1xml personalizado para documentar estos miembros requeridos. Cuando se crea este archivo, se recomienda la siguiente convención de nomenclatura: *< Your_Product_Name >*. Types.ps1xml.
 
-Por ejemplo, podría agregar un `Mode` script propiedad a la [System.IO.Fileinfo](/dotnet/api/System.IO.FileInfo) tipo para mostrar los atributos de un archivo con mayor claridad. Además, puede agregar un `Count` propiedad de alias para el [System.Array](/dotnet/api/System.Array) tipo para permitir el uso coherente de ese nombre de propiedad (en lugar de `Length`).
+Por ejemplo, podría agregar un `Mode` script propiedad a la [System.IO.FileInfo](/dotnet/api/System.IO.FileInfo) tipo para mostrar los atributos de un archivo con mayor claridad. Además, puede agregar un `Count` propiedad de alias para el [System.Array](/dotnet/api/System.Array) tipo para permitir el uso coherente de ese nombre de propiedad (en lugar de `Length`).
 
 ##### <a name="implement-the-icomparable-interface"></a>Implemente la interfaz IComparable
 
-Implemente un [System.Icomparable](/dotnet/api/System.IComparable) interfaz en todos los objetos de salida. Esto permite que los objetos de salida canalizar fácilmente varios cmdlets de ordenación y el análisis.
+Implemente un [System.IComparable](/dotnet/api/System.IComparable) interfaz en todos los objetos de salida. Esto permite que los objetos de salida canalizar fácilmente varios cmdlets de ordenación y el análisis.
 
 ##### <a name="update-display-information"></a>Mostrar información de actualización
 
@@ -230,11 +230,11 @@ Un parámetro acepta la entrada de la canalización si la **parámetro** atribut
 
 #### <a name="support-the-processrecord-method"></a>Admite el método ProcessRecord
 
-Para aceptar todos los registros desde el cmdlet anterior en la canalización, el cmdlet debe implementar la [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método. Windows PowerShell llama a este método varias veces, una vez para cada registro que se envía al cmdlet.
+Para aceptar todos los registros desde el cmdlet anterior en la canalización, el cmdlet debe implementar la [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método. Windows PowerShell llama a este método varias veces, una vez para cada registro que se envía al cmdlet.
 
 ### <a name="write-single-records-to-the-pipeline-sc03"></a>Escribir registros solo en la canalización (SC03)
 
-Cuando un cmdlet devuelve objetos, el cmdlet debe escribir los objetos inmediatamente a medida que se generan. El cmdlet no debe almacenar ellos con el fin de almacenar en búfer en una matriz combinada. Los cmdlets que recibe los objetos como entrada, a continuación, podrá procesar, mostrar, o procesar y mostrar los objetos de salida sin retraso. Objetos de un cmdlet que genera la salida una vez debe llamar a la [System.Management.Automation.Cmdlet.Writeobject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) método. Debe llamar un cmdlet que genera objetos de salida por lotes (por ejemplo, dado que una API subyacente devuelve una matriz de objetos de salida) la [System.Managemet.Automation.Cmdlet.Writeobject](/dotnet/api/System.Managemet.Automation.Cmdlet.WriteObject) método con su segundo parámetro establecido para `true`.
+Cuando un cmdlet devuelve objetos, el cmdlet debe escribir los objetos inmediatamente a medida que se generan. El cmdlet no debe almacenar ellos con el fin de almacenar en búfer en una matriz combinada. Los cmdlets que recibe los objetos como entrada, a continuación, podrá procesar, mostrar, o procesar y mostrar los objetos de salida sin retraso. Objetos de un cmdlet que genera la salida una vez debe llamar a la [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) método. Debe llamar un cmdlet que genera objetos de salida por lotes (por ejemplo, dado que una API subyacente devuelve una matriz de objetos de salida) la [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) método con su segundo parámetro establecido para `true`.
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Asegúrese de Cmdlets de mayúsculas y minúsculas y conservar el modelo (SC04)
 

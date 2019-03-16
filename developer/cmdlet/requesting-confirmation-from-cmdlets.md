@@ -14,18 +14,18 @@ helpviewer_keywords:
 - ConfirmPreference [PowerShell Programmer's Guide], described
 ms.assetid: 37d6e87f-57b7-40bd-b645-392cf0b6e88e
 caps.latest.revision: 13
-ms.openlocfilehash: ec441831f5e3231a44c9875d1b6d2bf6280a6965
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0c0517ef7fbd5ae6434773a2dfe276f3a8c35f39
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853401"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057412"
 ---
 # <a name="requesting-confirmation-from-cmdlets"></a>Solicitud de confirmación de los cmdlets
 
 Los cmdlets deben solicitar confirmación cuando se va a realizar un cambio en el sistema que está fuera del entorno de Windows PowerShell. Por ejemplo, si un cmdlet está a punto de agregar una cuenta de usuario o detener un proceso, el cmdlet debe requerir confirmación del usuario antes de que continúe. En cambio, si un cmdlet se va a cambiar una variable de Windows PowerShell, el cmdlet no debe requerir confirmación.
 
-Con el fin de realizar una solicitud de confirmación, el cmdlet debe indicar que admite solicitudes de confirmación y debe llamar a la [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y [ System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) métodos (opcionales) para mostrar un mensaje de solicitud de confirmación.
+Con el fin de realizar una solicitud de confirmación, el cmdlet debe indicar que admite solicitudes de confirmación y debe llamar a la [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) métodos (opcionales) para mostrar un mensaje de solicitud de confirmación.
 
 ## <a name="supporting-confirmation-requests"></a>Compatibilidad con las solicitudes de confirmación
 
@@ -40,17 +40,17 @@ En el ejemplo siguiente se muestra una declaración de atributo de Cmdlet que ad
 
 ## <a name="calling-the-confirmation-request-methods"></a>Llamar a los métodos de solicitud de confirmación
 
-En el código del cmdlet, llame a la [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) método antes de realizar la operación que cambia el sistema. El cmdlet de diseño, por lo que si la llamada devuelve un valor de `false`, no se realiza la operación y el cmdlet procesa la siguiente operación.
+En el código del cmdlet, llame a la [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) método antes de realizar la operación que cambia el sistema. El cmdlet de diseño, por lo que si la llamada devuelve un valor de `false`, no se realiza la operación y el cmdlet procesa la siguiente operación.
 
 ## <a name="calling-the-shouldcontinue-method"></a>Una llamada al método ShouldContinue
 
-Mayoría de los cmdlets solicitar confirmación solo mediante la [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) método. Sin embargo, algunos casos podrían requerir confirmación adicional. En estos casos, complementar el [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) por una llamada a la [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) método. Esto permite al cmdlet o proveedor para controlar con mayor precisión el ámbito de la **sí a todo** respuesta a la pregunta de confirmación.
+Mayoría de los cmdlets solicitar confirmación solo mediante la [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) método. Sin embargo, algunos casos podrían requerir confirmación adicional. En estos casos, complementar el [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) por una llamada a la [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) método. Esto permite al cmdlet o proveedor para controlar con mayor precisión el ámbito de la **sí a todo** respuesta a la pregunta de confirmación.
 
-Si llama un cmdlet el [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) método, el cmdlet también debe proporcionar un `Force` parámetro de modificador. Si el usuario especifica `Force` cuando el usuario invoca el cmdlet, el cmdlet debe seguir llamando a [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess), pero debe omitir la llamada a [ System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue).
+Si llama un cmdlet el [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) método, el cmdlet también debe proporcionar un `Force` parámetro de modificador. Si el usuario especifica `Force` cuando el usuario invoca el cmdlet, el cmdlet debe seguir llamando a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess), pero debe omitir la llamada a [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue).
 
-[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) producirá una excepción cuando se llama desde un entorno no interactivo donde no se puede pedir al usuario. Agregar un `Force` parámetro garantiza que el comando todavía se puede realizar cuando se invoca en un entorno que no es interactivo.
+[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) producirá una excepción cuando se llama desde un entorno no interactivo donde no se puede pedir al usuario. Agregar un `Force` parámetro garantiza que el comando todavía se puede realizar cuando se invoca en un entorno que no es interactivo.
 
-El ejemplo siguiente muestra cómo llamar a [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue).
+El ejemplo siguiente muestra cómo llamar a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue).
 
 ```csharp
 if (ShouldProcess (...) )
@@ -62,9 +62,9 @@ if (ShouldProcess (...) )
 }
 ```
 
-El comportamiento de un [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) llamada puede variar según el entorno en el que se invoca el cmdlet. Las instrucciones anteriores le ayudarán a garantizar que el cmdlet se comporta de forma coherente con otros cmdlets, independientemente del entorno de host.
+El comportamiento de un [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) llamada puede variar según el entorno en el que se invoca el cmdlet. Las instrucciones anteriores le ayudarán a garantizar que el cmdlet se comporta de forma coherente con otros cmdlets, independientemente del entorno de host.
 
-Para obtener un ejemplo de la llamada a la [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) método, consulte [cómo solicitar confirmaciones](./how-to-request-confirmations.md).
+Para obtener un ejemplo de la llamada a la [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) método, consulte [cómo solicitar confirmaciones](./how-to-request-confirmations.md).
 
 ## <a name="specify-the-impact-level"></a>Especifique el nivel de impacto
 
@@ -74,13 +74,13 @@ Para la mayoría de los cmdlets, no tiene que especificar explícitamente `Confi
 
 ## <a name="calling-non-confirmation-methods"></a>Llamar a métodos de no confirmación
 
-Si el proveedor o el cmdlet debe enviar un mensaje, pero no pedir confirmación, pueden llamar a los tres métodos siguientes. Evite el uso de la [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) método para enviar mensajes de estos tipos porque [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) es entremezclar salida con la salida normal del cmdlet o del proveedor, lo que dificulta la escritura de scripts.
+Si el proveedor o el cmdlet debe enviar un mensaje, pero no pedir confirmación, pueden llamar a los tres métodos siguientes. Evite el uso de la [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) método para enviar mensajes de estos tipos porque [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) es entremezclar salida con la salida normal del cmdlet o del proveedor, lo que dificulta la escritura de scripts.
 
-- Para el usuario de precaución y continuar con la operación, el cmdlet o el proveedor puede llamar el [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) método.
+- Para el usuario de precaución y continuar con la operación, el cmdlet o el proveedor puede llamar el [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) método.
 
-- Para proporcionar información adicional que el usuario puede recuperar mediante el `Verbose` parámetro, el cmdlet o el proveedor puede llamar a la [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) método.
+- Para proporcionar información adicional que el usuario puede recuperar mediante el `Verbose` parámetro, el cmdlet o el proveedor puede llamar a la [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) método.
 
-- Para proporcionar detalles de nivel de depuración para otros desarrolladores o para servicios de soporte técnico, el cmdlet o el proveedor puede llamar el [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) método. El usuario puede recuperar esta información mediante el `Debug` parámetro.
+- Para proporcionar detalles de nivel de depuración para otros desarrolladores o para servicios de soporte técnico, el cmdlet o el proveedor puede llamar el [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) método. El usuario puede recuperar esta información mediante el `Debug` parámetro.
 
 Los cmdlets y proveedores de llamar primero a los métodos siguientes para pedir confirmación antes de intentar realizar una operación que cambia un sistema de Windows PowerShell:
 

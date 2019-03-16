@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: be31d03b02394cb1694909cf7b65bbc2a29f6976
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 496e363b041194563d46c09eee67a12055bb54b0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795443"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057304"
 ---
 # <a name="extending-properties-for-objects"></a>Extensión de las propiedades de los objetos
 
@@ -83,7 +83,7 @@ Una propiedad de nota define una propiedad que tiene un valor estático.
 
 Una propiedad de secuencia de comandos define una propiedad cuyo valor es el resultado de una secuencia de comandos.
 
-¿En el ejemplo siguiente, la `VersionInfo` propiedad se agrega a la [System.IO.Fileinfo? Displayproperty = Fullname](/dotnet/api/System.IO.FileInfo) tipo. El [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) elemento define la propiedad extendida como una propiedad de secuencia de comandos. El [nombre](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) elemento especifica el nombre de la propiedad extendida. Y, el [GetScriptBlock](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c) elemento especifica el script que genera el valor de propiedad. (También puede agregar el [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) elemento a los miembros de la [conjuntos de miembros](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) elemento.)
+¿En el ejemplo siguiente, la `VersionInfo` propiedad se agrega a la [System.IO.FileInfo? Displayproperty = Fullname](/dotnet/api/System.IO.FileInfo) tipo. El [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) elemento define la propiedad extendida como una propiedad de secuencia de comandos. El [nombre](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) elemento especifica el nombre de la propiedad extendida. Y, el [GetScriptBlock](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c) elemento especifica el script que genera el valor de propiedad. (También puede agregar el [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) elemento a los miembros de la [conjuntos de miembros](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) elemento.)
 
 ```xml
 <Type>

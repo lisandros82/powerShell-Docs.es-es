@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: a789b392bddd344ad583c93a1a55302329df9917
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863541"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056603"
 ---
 # <a name="writing-a-navigation-provider"></a>Escritura de un proveedor de navegación
 
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>Implementar MakePath
 
-El [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) método combina una ruta de acceso del elemento primario especificado y una ruta de acceso secundaria especificada para crear una ruta de acceso interna del proveedor (para tipos de información acerca de la ruta de acceso que los proveedores pueden admitir, vea [Introducción al proveedor de Windows PowerShell](./windows-powershell-provider-overview.md). El motor de PowerShell llama a este método cuando un usuario llama a la [Microsoft.Powershell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) cmdlet.
+El [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) método combina una ruta de acceso del elemento primario especificado y una ruta de acceso secundaria especificada para crear una ruta de acceso interna del proveedor (para tipos de información acerca de la ruta de acceso que los proveedores pueden admitir, vea [Introducción al proveedor de Windows PowerShell](./windows-powershell-provider-overview.md). El motor de PowerShell llama a este método cuando un usuario llama a la [Microsoft.PowerShell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) cmdlet.
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>Implementar MoveItem
 
-El [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) método mueve un elemento de la ruta de acceso especificada para la ruta de acceso de destino especificado. El motor de PowerShell llama a este método cuando un usuario llama a la [Microsoft.Powershell.Commands.Move elemento](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) cmdlet.
+El [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) método mueve un elemento de la ruta de acceso especificada para la ruta de acceso de destino especificado. El motor de PowerShell llama a este método cuando un usuario llama a la [Microsoft.PowerShell.Commands.Move elemento](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) cmdlet.
 
 ```csharp
 protected override void MoveItem(string path, string destination)

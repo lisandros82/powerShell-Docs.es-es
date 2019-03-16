@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d43684ce-7c3d-4d14-8dbd-061c111ee805
 caps.latest.revision: 12
-ms.openlocfilehash: faa9ba78397e713400f6072df9915f20d966bb37
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d05437aaa9652e7f81d0854d1a746acffe145699
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859451"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056913"
 ---
 # <a name="tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format"></a>Elemento TableColumnItems para TableRowEntry for TableControl (formato)
 
@@ -47,7 +47,7 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento TableRowEntry para TableRowEntries para TableControl (formato)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Define los datos que se muestran en una fila de la tabla.|
+|[Elemento TableRowEntry para TableRowEntries para TableControl (formato)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Define los datos que se muestran en una fila de la tabla.|
 
 ## <a name="remarks"></a>Observaciones
 
@@ -80,6 +80,6 @@ El ejemplo siguiente se muestra un `TableColumnItems` elemento que define tres p
 
 [Elemento TableColumnItem (formato)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
 
-[Elemento TableRowEntry (formato)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[Elemento TableRowEntry (formato)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [Escribir un archivo de formato de PowerShell](./writing-a-powershell-formatting-file.md)

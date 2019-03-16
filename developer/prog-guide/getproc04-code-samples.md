@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c00afd46-758a-4aec-b865-2c9d8f6a17ad
 caps.latest.revision: 5
-ms.openlocfilehash: b9b42c818981090496f7b14a1cb8bdec14a5d5bb
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 67081528ebe14fbb082091c1b9500de82069b48f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429727"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054652"
 ---
 # <a name="getproc04-code-samples"></a>Ejemplos de código GetProc04
 
-Estos son los ejemplos de código para el cmdlet de ejemplo GetProc04. Se trata de la `Get-Process` ejemplo de cmdlet que se describen en [adición de no terminación informe de errores para el Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md). Esto `Get-Process` cmdlet llamadas la [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) método cada vez que se produce una excepción de operación no válida al recuperar la información de proceso.
+Estos son los ejemplos de código para el cmdlet de ejemplo GetProc04. Se trata de la `Get-Process` ejemplo de cmdlet que se describen en [adición de no terminación informe de errores para el Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md). Esto `Get-Process` cmdlet llamadas la [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) método cada vez que se produce una excepción de operación no válida al recuperar la información de proceso.
 
 > [!NOTE]
 > Puede descargar el C# (getprov04.cs) de archivo de código fuente para este cmdlet Get-Proc usando el Microsoft Windows Software Development Kit para Windows Vista y .NET Framework 3.0 Runtime Components. Para obtener instrucciones de descarga, vea [cómo instalar Windows PowerShell y descarga el SDK de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).

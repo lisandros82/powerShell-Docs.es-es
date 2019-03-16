@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 94eb0535-8002-4f17-9a2b-4be75ec20e5c
 caps.latest.revision: 18
-ms.openlocfilehash: a38fcbef457e69e3ea08d25ba3a9843621036f1e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4a25c9d81df670dc10955065bfb66766cdb1bd33
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853111"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055196"
 ---
 # <a name="width-element-for-tablecolumnheader-for-tablecontrol-format"></a>Elemento Width para TableColumnHeader for TableControl (formato)
 
@@ -43,7 +43,7 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento TableColumnHeader para TableHeaders para TbleControl (formato)](./tablecolumnheader-element-format.md)|Define una etiqueta, el ancho y la alineación de los datos de una columna de la tabla.|
+|[Elemento TableColumnHeader para TableHeaders para TableControl (formato)](./tablecolumnheader-element-format.md)|Define una etiqueta, el ancho y la alineación de los datos de una columna de la tabla.|
 
 ## <a name="text-value"></a>Valor de texto
 

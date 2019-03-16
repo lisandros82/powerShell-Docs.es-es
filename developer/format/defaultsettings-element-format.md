@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41c56499-ee20-4821-830a-478fdcc33f83
 caps.latest.revision: 11
-ms.openlocfilehash: 59cc0514087cc52438e0d1271b8b77a7799eb32c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bc95c62222eb2806f92499257a397c2e4ec5dbab
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855671"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059072"
 ---
 # <a name="defaultsettings-element-format"></a>Elemento DefaultSettings (formato)
 
@@ -45,7 +45,7 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento DisplayError (Frmat)](./displayerror-element-format.md)|Elemento opcional.<br /><br /> Especifica que la cadena #ERR se muestra cuando se produce un error mientras se muestra un fragmento de datos.|
+|[Elemento DisplayError (formato)](./displayerror-element-format.md)|Elemento opcional.<br /><br /> Especifica que la cadena #ERR se muestra cuando se produce un error mientras se muestra un fragmento de datos.|
 |[Elemento EnumerableExpansions (formato)](./enumerableexpansions-element-format.md)|Elemento opcional.<br /><br /> Define las distintas formas en que los objetos de .NET se expanden cuando se muestran en una vista.|
 |[PropertyCountForTable (Format)](./propertycountfortable-element-format.md)|Elemento opcional.<br /><br /> Especifica el número mínimo de propiedades que debe tener un objeto para mostrar el objeto en una vista de tabla.|
 |[Elemento ShowError (formato)](./showerror-element-format.md)|Elemento opcional.<br /><br /> Especifica que el registro de error completo se muestra cuando se produce un error mientras se muestra un fragmento de datos.|
@@ -63,7 +63,7 @@ Ninguna.
 
 [Elemento de configuración](./configuration-element-format.md)
 
-[Elemento DisplayError (Frmat)](./displayerror-element-format.md)
+[Elemento DisplayError (formato)](./displayerror-element-format.md)
 
 [Elemento EnumerableExpansions (formato)](./enumerableexpansions-element-format.md)
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
-ms.openlocfilehash: a9204ca7b28fc5792ef9bd18f6b0b24964de7386
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859551"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057253"
 ---
 # <a name="public-resource-schema"></a>Esquema de recursos públicos
 
@@ -21,7 +21,7 @@ IIS Management OData utiliza MOF para definir los recursos y sus propiedades. La
 
 ## <a name="defining-a-resource"></a>Definir un recurso
 
-Cada recurso corresponde a un objeto devuelto por un cmdlet de Windows PowerShell. En el archivo MOF del recurso de publc, definir un recurso mediante la declaración de una clase. La clase tiene propiedades que corresponden a las propiedades del objeto. Por ejemplo, en el ejemplo siguiente, la [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) clase está representada por el siguiente MOF.
+Cada recurso corresponde a un objeto devuelto por un cmdlet de Windows PowerShell. En el archivo MOF de recurso público, definir un recurso mediante la declaración de una clase. La clase tiene propiedades que corresponden a las propiedades del objeto. Por ejemplo, en el ejemplo siguiente, la [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) clase está representada por el siguiente MOF.
 
 ```csharp
 class PswsTest_Process
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-Para declarar una propiedad de entidad como un tipo complejo, se declara como un `string` tipo con el `EmbeddedInstance` calificador, incluido el nombre del tipo complejo. El siguiente hshows ejemplo la declaración de una propiedad de la `PswsTest_ProcessModule` tipo declarado en el ejemplo anterior.
+Para declarar una propiedad de entidad como un tipo complejo, se declara como un `string` tipo con el `EmbeddedInstance` calificador, incluido el nombre del tipo complejo. El ejemplo siguiente muestra la declaración de una propiedad de la `PswsTest_ProcessModule` tipo declarado en el ejemplo anterior.
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];
@@ -63,7 +63,7 @@ Para declarar una propiedad de entidad como un tipo complejo, se declara como un
 
 ### <a name="associating-entities"></a>Asociación de entidades
 
-Puede asociar dos entidades mediante los calificadores de asociación y AssocationClass. Para obtener más información, consulte [asociar entidades de OData Management](./associating-management-odata-entities.md).
+Puede asociar dos entidades mediante los calificadores de asociación y AssociationClass. Para obtener más información, consulte [asociar entidades de OData Management](./associating-management-odata-entities.md).
 
 ### <a name="derived-types"></a>Tipos derivados
 
@@ -72,17 +72,16 @@ Puede derivar un tipo de otro tipo. El tipo derivado hereda todas las propiedade
 ```csharp
 Class Product {
 
-[Key] String ProductName;
+    [Key] String ProductName;
 
 };
 
 Class DairyProduct : Product {
 
-Uint16 PercentFat;
+    Uint16 PercentFat;
 };
 Class POPProduct : Product {
 
-Boolean IsCarbonated;
+    Boolean IsCarbonated;
 };
-
 ```

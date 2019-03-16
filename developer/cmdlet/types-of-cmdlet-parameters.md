@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
 caps.latest.revision: 14
-ms.openlocfilehash: 59921a92661482b8d518b82f490c9879643543bb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859871"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059582"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Tipos de parámetros del cmdlet
 
@@ -91,13 +91,13 @@ private string userName;
 
 ## <a name="switch-parameters"></a>Parámetros de modificador
 
-Windows PowerShell ofrece un [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) tipo que le permite definir un parámetro cuyo valor se establece automáticamente en `false` si no se especifica el parámetro cuando el cmdlet se llama. Siempre que sea posible, use los parámetros de modificador en lugar de los parámetros Boolean.
+Windows PowerShell ofrece un [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) tipo que le permite definir un parámetro cuyo valor se establece automáticamente en `false` si no se especifica el parámetro cuando el cmdlet se llama. Siempre que sea posible, use los parámetros de modificador en lugar de los parámetros Boolean.
 
 Considere el ejemplo siguiente. De forma predeterminada, varios cmdlets de Windows PowerShell no pase un objeto de salida por la canalización. Sin embargo, estos cmdlets tienen un `PassThru` modificador de parámetro que reemplaza el comportamiento predeterminado. Si el `PassThru` parámetro se especifica cuando se llama a estos cmdlets, el cmdlet devuelve un objeto de salida a la canalización.
 
-Si necesita el parámetro tenga un valor predeterminado de `true` cuando el parámetro no se especifica en la llamada, considere la posibilidad de invertir el sentido del parámetro. Para obtener el ejemplo, en lugar de establecer el atributo de parámetro en un valor booleano de `true`, declare la propiedad como el [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) escriba y, a continuación, establezca el valor predeterminado del parámetro para `false`.
+Si necesita el parámetro tenga un valor predeterminado de `true` cuando el parámetro no se especifica en la llamada, considere la posibilidad de invertir el sentido del parámetro. Para obtener el ejemplo, en lugar de establecer el atributo de parámetro en un valor booleano de `true`, declare la propiedad como el [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) escriba y, a continuación, establezca el valor predeterminado del parámetro para `false`.
 
-Para definir un parámetro de modificador, declare la propiedad como el [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) type, tal como se muestra en el ejemplo siguiente.
+Para definir un parámetro de modificador, declare la propiedad como el [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) type, tal como se muestra en el ejemplo siguiente.
 
 ```csharp
 [Parameter(Position = 1)]

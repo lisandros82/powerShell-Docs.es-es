@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 439ba3f3-91b1-46a4-8d07-9af6edb71bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 1fc1ab58ae651239937e36c8bb08fda3d3272b2a
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 936fb355be40b98136719ea929cf50b06705b687
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429693"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058290"
 ---
 # <a name="getproc04-c-sample-code"></a>Código de ejemplo GetProc04 (C#)
 
-El código siguiente muestra la implementación de un `Get-Process` cmdlet que informa de errores de no terminación. Esta implementación llama a la [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) método para notificar errores de no terminación.
+El código siguiente muestra la implementación de un `Get-Process` cmdlet que informa de errores de no terminación. Esta implementación llama a la [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) método para notificar errores de no terminación.
 
 > [!NOTE]
 > Puede descargar el C# (getprov04.cs) de archivo de código fuente para este cmdlet Get-Proc usando el Microsoft Windows Software Development Kit para Windows Vista y .NET Framework 3.0 Runtime Components. Para obtener instrucciones de descarga, vea [cómo instalar Windows PowerShell y descarga el SDK de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).

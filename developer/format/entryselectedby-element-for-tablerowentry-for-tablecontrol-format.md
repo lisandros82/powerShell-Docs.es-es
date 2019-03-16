@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49623fcf-1238-4d20-a7ce-238d47d9d565
 caps.latest.revision: 15
-ms.openlocfilehash: e18564c10898c73128e0a4bc7d077e7c7ffb1c22
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9302bfed0324773cb98d698acdcf608f34ee19c1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862331"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058766"
 ---
 # <a name="entryselectedby-element-for-tablerowentry--for-tablecontrol-format"></a>Elemento EntrySelectedBy para TableRowEntry for TableControl (formato)
 
@@ -51,7 +51,7 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento TableRowEntry para TableControl (formato)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Define los datos que se muestran en una fila de la tabla.|
+|[Elemento TableRowEntry para TableControl (formato)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Define los datos que se muestran en una fila de la tabla.|
 
 ## <a name="remarks"></a>Observaciones
 
@@ -89,7 +89,7 @@ El ejemplo siguiente se muestra un `TableRowEntry` elemento que se utiliza para 
 
 [Elemento SelectionSetName para EntrySelectedBy para TableControl (formato)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
 
-[Elemento TableRowEntry para TableControl (formato)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[Elemento TableRowEntry para TableControl (formato)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [Elemento TypeName para EntrySelectedBy para TableControl (formato)](./typename-element-for-entryselectedby-for-tablecontrol-format.md)
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: f7899713dd273b793017adfa0a20b3ff3352b62a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862171"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059786"
 ---
 # <a name="installing-a-powershell-module"></a>Instalación de un módulo de PowerShell
 
@@ -160,7 +160,7 @@ Para habilitar las características de detección del módulo de Windows PowerSh
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technolgies\Fabrikam Manager\Modules\"
+$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -228,7 +228,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-Cuando termine estos pasos, el **ListAvailable** parámetro de la [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) obtiene ambos de los módulos de Fabrikam. Para importar un módulo determinado, utilice el `MiminumVersion` o `RequiredVersion` parámetros de la [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
+Cuando termine estos pasos, el **ListAvailable** parámetro de la [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) obtiene ambos de los módulos de Fabrikam. Para importar un módulo determinado, utilice el `MinimumVersion` o `RequiredVersion` parámetros de la [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
 
 Si ambos módulos se importan en la misma sesión y los módulos contienen cmdlets con los mismos nombres, los cmdlets que se importa en último lugar son eficaces en la sesión.
 

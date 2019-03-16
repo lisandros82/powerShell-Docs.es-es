@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
-ms.openlocfilehash: e3289e9336b863b5e0998a2beb29353c82a31f79
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9285a2f0e673de8b86084157423512bdeeda109d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856711"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058203"
 ---
 # <a name="writing-an-item-provider"></a>Escritura de un proveedor de elementos
 
@@ -46,7 +46,7 @@ Declare el proveedor que derive de la [System.Management.Automation.Provider.Ite
 
 ### <a name="implementing-getitem"></a>Implementar GetItem
 
-El [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) llama el motor de PowerShell cuando un usuario llama a la [Microsoft.Powershell.Commands.Get elemento](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item) cmdlet en el proveedor. El método devuelve el elemento situado en la ruta de acceso especificada. En el ejemplo de base de datos de Access, el método comprueba si el elemento es la unidad, una tabla en la base de datos o una fila en la base de datos. El método envía el elemento para el motor de PowerShell mediante una llamada a la [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) método.
+El [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) llama el motor de PowerShell cuando un usuario llama a la [Microsoft.PowerShell.Commands.Get elemento](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item) cmdlet en el proveedor. El método devuelve el elemento situado en la ruta de acceso especificada. En el ejemplo de base de datos de Access, el método comprueba si el elemento es la unidad, una tabla en la base de datos o una fila en la base de datos. El método envía el elemento para el motor de PowerShell mediante una llamada a la [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) método.
 
 ```csharp
 protected override void GetItem(string path)
@@ -85,7 +85,7 @@ protected override void GetItem(string path)
 
 ### <a name="implementing-setitem"></a>Implementar SetItem
 
-El [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) método se llama por el motor de PowerShell llama cuando un usuario llama a la [Microsoft.Powershell.Commands.Set elemento](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item) cmdlet . Establece el valor del elemento en la ruta especificada.
+El [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) método se llama por el motor de PowerShell llama cuando un usuario llama a la [Microsoft.PowerShell.Commands.Set elemento](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item) cmdlet . Establece el valor del elemento en la ruta especificada.
 
 En el ejemplo de base de datos de acceso, tiene sentido para establecer el valor de un elemento únicamente si dicho elemento es una fila, por lo que produce el método [NotSupportedException](http://msdn.microsoft.com/library/system.notsupportedexception\(v=vs.110\).aspx) cuando el elemento no es una fila.
 
@@ -145,7 +145,7 @@ protected override void SetItem(string path, object values)
 
 ### <a name="implementing-itemexists"></a>Implementar ItemExists
 
-El [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) método se llama el motor de PowerShell cuando un usuario llama a la [Microsoft.Powershell.Commands.Test-Path](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path) cmdlet. El método determina si hay un elemento en la ruta de acceso especificada. Si el elemento existe, el método lo pasa al motor de PowerShell mediante una llamada a [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
+El [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) método se llama el motor de PowerShell cuando un usuario llama a la [Microsoft.PowerShell.Commands.Test-Path](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path) cmdlet. El método determina si hay un elemento en la ruta de acceso especificada. Si el elemento existe, el método lo pasa al motor de PowerShell mediante una llamada a [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
 
 ```csharp
 protected override bool ItemExists(string path)

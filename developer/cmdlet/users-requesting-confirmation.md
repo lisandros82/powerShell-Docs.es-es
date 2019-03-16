@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6f337498-c534-40ed-968a-09d4d9ca3849
 caps.latest.revision: 8
-ms.openlocfilehash: e4abbb14b31406b845d9b6af6b6372338fb0d926
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ed9ff9fc1668a89e1ac0ceac8f0800a15b349226
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856241"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059565"
 ---
 # <a name="users-requesting-confirmation"></a>Usuarios que solicitan confirmación
 
 Cuando se especifica un valor de `true` para el `SupportsShouldProcess` parámetro de la declaración de atributo de Cmdlet, los usuarios pueden especificar el `Confirm` parámetro en el símbolo del sistema.
 
-En el entorno de forma predeterminada, los usuarios pueden especificar el `Confirm` parámetro o `"-Confirm:$true` para que se solicita confirmación cuando el [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) se llama al método. Esto omite [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) las solicitudes de confirmación, incluso para las operaciones de gran impacto.
+En el entorno de forma predeterminada, los usuarios pueden especificar el `Confirm` parámetro o `"-Confirm:$true` para que se solicita confirmación cuando el [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) se llama al método. Esto omite [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) las solicitudes de confirmación, incluso para las operaciones de gran impacto.
 
-Si `Confirm` no se especifica, el [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) llamada solicite confirmación si la `$ConfirmPreference` variable de preferencia es igual o mayor que el `ConfirmImpact` configuración de la cmdlet o proveedor. El valor predeterminado de `$ConfirmPreference` es alta. Por lo tanto, en el entorno de forma predeterminada, solo cmdlets y proveedores que especifican una acción de alto impacto solicitan confirmación.
+Si `Confirm` no se especifica, el [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) llamada solicite confirmación si la `$ConfirmPreference` variable de preferencia es igual o mayor que el `ConfirmImpact` configuración de la cmdlet o proveedor. El valor predeterminado de `$ConfirmPreference` es alta. Por lo tanto, en el entorno de forma predeterminada, solo cmdlets y proveedores que especifican una acción de alto impacto solicitan confirmación.
 
-Si `Confirm` es false o si `"-Confirm:$false` se especifica, el [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) llamada solicita la confirmación del usuario y el `$ConfirmPreference` se omite la variable del shell.
+Si `Confirm` es false o si `"-Confirm:$false` se especifica, el [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) llamada solicita la confirmación del usuario y el `$ConfirmPreference` se omite la variable del shell.
 
 ## <a name="remarks"></a>Observaciones
 

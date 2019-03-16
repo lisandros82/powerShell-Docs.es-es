@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
-ms.openlocfilehash: a421d151ac3fdbb763668dd6fbf775f5b91a833f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56863651"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059667"
 ---
 # <a name="common-parameter-names"></a>Nombres de parámetros comunes
 
@@ -30,7 +30,7 @@ Los parámetros siguientes se agregan a todos los cmdlets y se pueden tener acce
 
 Tipo de datos: SwitchParameter
 
-Este parámetro especifica si la depuración de nivel de programador de los mensajes que se pueden mostrar en la línea de comandos. Estos mensajes están pensados para el funcionamiento del cmdlet de solución de problemas y se generan mediante llamadas a la [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) método. No es necesario localizar los mensajes de depuración.
+Este parámetro especifica si la depuración de nivel de programador de los mensajes que se pueden mostrar en la línea de comandos. Estos mensajes están pensados para el funcionamiento del cmdlet de solución de problemas y se generan mediante llamadas a la [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) método. No es necesario localizar los mensajes de depuración.
 
 ### <a name="erroraction-alias-ea"></a>ErrorAction (alias: ea)
 
@@ -60,7 +60,7 @@ Este parámetro define el número de objetos que se almacenan en el búfer de sa
 
 Tipo de datos: SwitchParameter
 
-Este parámetro especifica si el cmdlet escribe mensajes explicativos que se pueden mostrar en la línea de comandos. Estos mensajes están pensados para proporcionar ayuda adicional para el usuario y se generan mediante llamadas a la [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) método.
+Este parámetro especifica si el cmdlet escribe mensajes explicativos que se pueden mostrar en la línea de comandos. Estos mensajes están pensados para proporcionar ayuda adicional para el usuario y se generan mediante llamadas a la [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) método.
 
 ### <a name="warningaction-alias-wa"></a>WarningAction (alias: wa)
 

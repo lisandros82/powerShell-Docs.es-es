@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7196f039-2f6a-41fd-b252-5b1623ebb9f9
 caps.latest.revision: 11
-ms.openlocfilehash: 59dfd40b95d5088a711eb89cf101eb31a4b159f5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 09183a538c179f19347c3f1ed45b4ad38c2ca451
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856091"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054516"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>Elemento Label para TableColumnHeader for TableControl (formato)
 
 Define la etiqueta que se muestra en la parte superior de una columna. Este elemento se usa al definir una vista de tabla.
 
-Elemento (formato) elemento ViewDefinitions (formato) vista elemento (formato) elemento TableControl (formato) TableHeaders elemento de configuración (elemento) TableColumnHeader TableControl (formato) para TableHeaders para el elemento de etiqueta TableControl (formato) para TableColumnHeader para TablControl (formato)
+Elemento (formato) elemento ViewDefinitions (formato) vista elemento (formato) elemento TableControl (formato) TableHeaders elemento de configuración (elemento) TableColumnHeader TableControl (formato) para TableHeaders para el elemento de etiqueta TableControl (formato) para TableColumnHeader para TableControl (formato)
 
 ## <a name="syntax"></a>Sintaxis
 

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
 caps.latest.revision: 9
-ms.openlocfilehash: 8cfbcacf93733667ffba63a252c86518c0919b57
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863411"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058834"
 ---
 # <a name="how-to-request-confirmations"></a>Cómo solicitar confirmaciones
 
-En este ejemplo se muestra cómo llamar a la [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) métodos para solicitar confirmaciones desde el usuario antes de que se realiza una acción.
+En este ejemplo se muestra cómo llamar a la [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) métodos para solicitar confirmaciones desde el usuario antes de que se realiza una acción.
 
 > [!IMPORTANT]
 > Para obtener más información acerca de cómo Windows PowerShell trata estas solicitudes, consulte [solicitar confirmación](./requesting-confirmation-from-cmdlets.md).
@@ -43,13 +43,13 @@ En este ejemplo se muestra cómo llamar a la [System.Management.Automation.Cmdle
     private bool force;
     ```
 
-3. Agregar un `if` instrucción que usa el valor devuelto de la [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) método para determinar si el [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) se llama al método.
+3. Agregar un `if` instrucción que usa el valor devuelto de la [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) método para determinar si el [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) se llama al método.
 
-4. Agregue un segundo `if` instrucción que usa el valor devuelto de la [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) método y el valor de la `Force` parámetro para determinar si la operación debe ser puede realizar.
+4. Agregue un segundo `if` instrucción que usa el valor devuelto de la [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) método y el valor de la `Force` parámetro para determinar si la operación debe ser puede realizar.
 
 ## <a name="example"></a>Ejemplo
 
-En el ejemplo de código siguiente, la [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) métodos se invocan desde el la invalidación de la [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método. Sin embargo, también puede llamar a estos métodos de la entrada de otra métodos de procesamiento.
+En el ejemplo de código siguiente, la [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) métodos se llaman desde dentro de la invalidación de la [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método. Sin embargo, también puede llamar a estos métodos de la entrada de otra métodos de procesamiento.
 
 ```csharp
 protected override void ProcessRecord()

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
-ms.openlocfilehash: 15f47c97ac5d55cb76e153af86672b3ffaf176c9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858601"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057882"
 ---
 # <a name="tablecolumnheader-element-format"></a>Elemento TableColumnHeader (formato)
 
@@ -45,7 +45,7 @@ Ninguna.
 |-------------|-----------------|
 |[Elemento de etiqueta para TableColumnHeader para TableControl (formato)](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|Elemento opcional.<br /><br /> Define la etiqueta que se muestra en la parte superior de la columna. Si no se especifica ninguna etiqueta, se usa el nombre de la propiedad cuyo valor se muestra en las filas.|
 |[Elemento de ancho para TableColumnHeader para TableControl (formato)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|Elemento necesario.<br /><br /> Especifica el ancho (en caracteres) de la columna.|
-|[Elemento Alignment para TableColumbnHeader para TableControl (formato)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Elemento opcional.<br /><br /> Especifica cómo se muestra la etiqueta de la columna. Si no se especifica ninguna alineación, la etiqueta se alinea a la izquierda.|
+|[Elemento Alignment para TableColumnHeader para TableControl (formato)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Elemento opcional.<br /><br /> Especifica cómo se muestra la etiqueta de la columna. Si no se especifica ninguna alineación, la etiqueta se alinea a la izquierda.|
 
 ### <a name="parent-elements"></a>Elementos primarios
 
@@ -82,7 +82,7 @@ El ejemplo siguiente muestra dos `TableColumnHeader` elementos. El primer elemen
 
 ## <a name="see-also"></a>Véase también
 
-[Elemento Alignment para TableColumnHeader para TableContrl (formato)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[Elemento Alignment para TableColumnHeader para TableControl (formato)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
 [Creación de una vista de tabla](./creating-a-table-view.md)
 

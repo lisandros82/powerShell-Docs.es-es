@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4f7bf81e-4f95-4150-afc3-c0872b24d026
 caps.latest.revision: 7
-ms.openlocfilehash: c156b2d6a7e7d3fcbd1679d2d61c94f31be0f76a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3205286fbbc823d21e29a328b3ba9c4c1459d9ff
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854731"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056964"
 ---
 # <a name="runspace07-sample"></a>Ejemplo Runspace07
 
@@ -35,11 +35,11 @@ Este ejemplo muestra lo siguiente.
 
 - Ejecutar los cmdlets de forma sincrónica.
 
-- Extraer propiedades de la [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) los objetos devueltos por el comando.
+- Extraer propiedades de la [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) los objetos devueltos por el comando.
 
 ## <a name="example"></a>Ejemplo
 
-Este ejemplo crea un espacio de ejecución que usa un [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objeto que se va a ejecutar el [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) y [Measure-Object](/powershell/module/microsoft.powershell.utility/measure-object) cmdlets.
+Este ejemplo crea un espacio de ejecución que usa un [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objeto que se va a ejecutar el [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) y [Measure-Object](/powershell/module/microsoft.powershell.utility/measure-object) cmdlets.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

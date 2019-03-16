@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d5891467-8e13-484d-b7af-32e6bffab35d
 caps.latest.revision: 4
-ms.openlocfilehash: 2aca4483e500432ef9f52804e85678d2268aa4cd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b2e8f272a82ee03de306fd8eac45e109142f6284
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856141"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054805"
 ---
 # <a name="common-workflow-parameters"></a>Parámetros de flujo de trabajo comunes
 
@@ -26,7 +26,7 @@ Los parámetros comunes de flujo de trabajo se agrupan en varias categorías, co
 |Nombre|Tipo|Descripción|¿Se pueden especificar por el usuario final en tiempo de ejecución?|¿Se pueden especificar por el autor del flujo de trabajo durante la creación?|¿Se pueden especificar por el autor del flujo de trabajo en la creación de instancias?|
 |----------|----------|-----------------|-----------------------------------------------------|------------------------------------------------------------|-----------------------------------------------------------|
 |PSComputerName|String[]|Una lista de nombres de equipo para que se va a iniciar trabajos.|Sí|Sí|Sí|
-|PSCredential|[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|Credencial de autenticación que se utilizará para iniciar sesión en los equipos especificados por el parámetro PSComputerName. Este parámetro es válido solo si se especifica PSComputerName.|Sí|Sí|Sí|
+|PSCredential|[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Credencial de autenticación que se utilizará para iniciar sesión en los equipos especificados por el parámetro PSComputerName. Este parámetro es válido solo si se especifica PSComputerName.|Sí|Sí|Sí|
 |PSPort|UInt32|El puerto que se usará para ejecutar el flujo de trabajo.|Sí|Sí|Sí|
 |PSUseSSL|Booleano|Utilice el protocolo de capa de Sockets seguros (SSL) para establecer una conexión segura con el equipo remoto para ejecutar el flujo de trabajo.|Sí|Sí|Sí|
 |PSConfigurationName|Cadena|La configuración de sesión utilizada para ejecutar el flujo de trabajo.|Sí|Sí|Sí|

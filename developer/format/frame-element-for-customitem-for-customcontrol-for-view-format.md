@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e1a13100-41a4-4847-9f07-458c85783505
 caps.latest.revision: 6
-ms.openlocfilehash: a7ee550527ec1cb00b4ed83478992c7ab54dbdb6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 925ef86e61801f5a66f89dd25e0756f00dd35155
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861711"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054788"
 ---
 # <a name="frame-element-for-customitem-for-customcontrol-for-view-format"></a>Elemento Frame para CustomItem for CustomControl for View (formato)
 
 Define cómo se muestran los datos, por ejemplo, cuando se desplaza los datos a la izquierda o derecha. Este elemento se usa al definir una vista de control personalizado.
 
-Elemento (formato) elemento ViewDefinitions (formato) vista elemento (formato) el elemento de control personalizado (formato) CustomEntries elemento de configuración control personalizado de vista (formato) del elemento CustomEntry para CustomEntries de vista (formato) del elemento CustomItem para CustomEntry para elemento de marco de CutomControlView (formato) de CustomItem para el control personalizado para la vista (formato)
+Elemento (formato) elemento ViewDefinitions (formato) vista elemento (formato) el elemento de control personalizado (formato) CustomEntries elemento de configuración control personalizado de vista (formato) del elemento CustomEntry para CustomEntries de vista (formato) del elemento CustomItem para CustomEntry para elemento de marco de CustomControlView (formato) de CustomItem para el control personalizado para la vista (formato)
 
 ## <a name="syntax"></a>Sintaxis
 

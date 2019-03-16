@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
 caps.latest.revision: 21
-ms.openlocfilehash: 4dfe27a5105d82fa18e35f965f92fad16d390a2a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857791"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056658"
 ---
 # <a name="format-schema-xml-reference"></a>Referencia XML del esquema de formato
 
@@ -81,7 +81,7 @@ Los temas de esta sección describen los elementos XML utilizados por el formato
 
 [Elemento DefaultSettings (formato)](./defaultsettings-element-format.md) define la configuración común que se aplica a todas las vistas del archivo de formato. Configuración común incluye presentación de errores, ajuste de texto en las tablas, definir cómo se expanden las colecciones y mucho más.
 
-[Elemento DisplayError (Frmat)](./displayerror-element-format.md) especifica que se muestre la cadena #ERR cuando se produce un error al mostrar un elemento de datos.
+[Elemento DisplayError (formato)](./displayerror-element-format.md) especifica que se muestre la cadena #ERR cuando se produce un error al mostrar un elemento de datos.
 
 [Elemento EntrySelectedBy para CustomEntry para los controles de configuración (formato)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md) define los tipos de .NET que usan la definición del control común o la condición que debe existir para que este control que se usará. Este elemento se usa al definir un control común que puede usarse en todas las vistas en el archivo de formato.
 
@@ -235,7 +235,7 @@ Los temas de esta sección describen los elementos XML utilizados por el formato
 
 [Elemento PropertyName para SelectionCondition para GroupBy (formato)](./propertyname-element-for-selectioncondition-for-groupby-format.md) especifica la propiedad de .NET que desencadena la condición. Cuando esta propiedad está presente o cuando se evalúa como `true`, se cumple la condición y se usa la definición. Este elemento se usa al definir cómo se muestra un nuevo grupo de objetos.
 
-[Elemento PropertyName para SelectionCondition para EmtrySelectedBy para ListEntry (formato)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) especifica la propiedad de .NET que desencadena la condición. Cuando esta propiedad está presente o cuando se evalúa como `true`, se cumple la condición y se usa la entrada de la lista.
+[Elemento PropertyName para SelectionCondition para EntrySelectedBy para ListEntry (formato)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) especifica la propiedad de .NET que desencadena la condición. Cuando esta propiedad está presente o cuando se evalúa como `true`, se cumple la condición y se usa la entrada de la lista.
 
 [Elemento PropertyName para SelectionCondition para EntrySelectedBy para TableRowEntry (formato)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md) especifica la propiedad de .NET que desencadena la condición. Cuando esta propiedad está presente o cuando se evalúa como `true`, se cumple la condición y se usa la entrada de tabla.
 
@@ -363,7 +363,7 @@ Los temas de esta sección describen los elementos XML utilizados por el formato
 
 [Elemento TableRowEntries (formato)](./tablerowentries-element-for-tablecontrol-format.md) define las filas de la tabla.
 
-[Elemento TableRowEntry (formato)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) define los datos que se muestran en una fila de la tabla.
+[Elemento TableRowEntry (formato)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) define los datos que se muestran en una fila de la tabla.
 
 [Elemento de texto para CustomItem para los controles de configuración (formato)](./text-element-for-customitem-for-controls-for-configuration-format.md) especifica texto que se agrega a los datos que se muestran el control, como una etiqueta, corchetes para encerrar los datos y los espacios para aplicar sangría a los datos. Este elemento se usa al definir un control común que puede usarse en todas las vistas en el archivo de formato.
 
@@ -427,7 +427,7 @@ Los temas de esta sección describen los elementos XML utilizados por el formato
 
 [Elemento ancho (formato)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md) define el ancho (en caracteres) de una columna.
 
-[Ajustar elemento (formato)](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) especifica que el texto que supera el ancho de columna se muestra en la línea siguiente.
+[Ajustar elemento (formato)](./wrap-element-for-tablerowentry-for-tablecontrol-format.md) especifica que el texto que supera el ancho de columna se muestra en la línea siguiente.
 
 [Elemento WrapTables (formato)](./wraptables-element-format.md) especifica que los datos de una celda de tabla se mueven a la línea siguiente si los datos están mayor que el ancho de la columna.
 

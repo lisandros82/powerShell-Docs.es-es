@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: d1546ab0b0e6b5502f35c92c01ce148211c53db2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855801"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055657"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Creación de un proveedor de unidad de Windows PowerShell
 
@@ -61,7 +61,7 @@ Como se describe en [proveedor de diseño de Windows PowerShell](./designing-you
 
 Todos los proveedores de Windows PowerShell se consideran sin estado, lo que significa que el proveedor de la unidad debe crear cualquier información de estado que se necesita el tiempo de ejecución de Windows PowerShell cuando llama a su proveedor.
 
-Para este proveedor de la unidad, la información de estado incluye la conexión a la base de datos que se mantiene como parte de la información de la unidad. Este es el código que muestra cómo esta información se almacena en el [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objeto que describe la unidad:
+Para este proveedor de la unidad, la información de estado incluye la conexión a la base de datos que se mantiene como parte de la información de la unidad. Este es el código que muestra cómo esta información se almacena en el [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objeto que describe la unidad:
 
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
 
@@ -73,15 +73,15 @@ Para permitir que el tiempo de ejecución de Windows PowerShell crear una unidad
 
 La invalidación de este método debe hacer lo siguiente:
 
-- Compruebe que la [System.Management.Automation.Psdriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) miembro existe y que puede establecer una conexión al almacén de datos.
+- Compruebe que la [System.Management.Automation.PSDriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) miembro existe y que puede establecer una conexión al almacén de datos.
 
 - Crear una unidad y rellenar el miembro de la conexión, como soporte del `New-PSDrive` cmdlet.
 
-- Validar la [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objeto para la unidad propuesta.
+- Validar la [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objeto para la unidad propuesta.
 
-- Modificar el [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objeto que describe la unidad con información de confiabilidad o rendimiento necesarios, o proporcionar datos adicionales para los llamadores usando la unidad.
+- Modificar el [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objeto que describe la unidad con información de confiabilidad o rendimiento necesarios, o proporcionar datos adicionales para los llamadores usando la unidad.
 
-- Controlar los errores mediante la [System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) método y, luego, devolverla `null`.
+- Controlar los errores mediante la [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) método y, luego, devolverla `null`.
 
   Este método devuelve la información de unidad que se pasó al método o una versión específica del proveedor del mismo.
 

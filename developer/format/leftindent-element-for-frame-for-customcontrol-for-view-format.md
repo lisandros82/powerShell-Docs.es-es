@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b0ef4483-74b2-409c-9d00-014d1ed64cb8
 caps.latest.revision: 6
-ms.openlocfilehash: b5696c3ca1988c9a6cd9179229697b6233d8d993
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ec6154c69c3c2de9675780922d907fbf3edb6a95
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857451"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058749"
 ---
 # <a name="leftindent-element-for-frame-for-customcontrol-for-view-format"></a>Elemento LeftIndent para Frame for CustomControl for View (formato)
 
 Especifica cuántos caracteres de los datos se desplacen el margen izquierdo. Este elemento se usa al definir una vista de control personalizado.
 
-Elemento (formato) elemento ViewDefinitions (formato) vista elemento (formato) el elemento de control personalizado (formato) CustomEntries elemento de configuración control personalizado de vista (formato) del elemento CustomEntry para CustomEntries de vista (formato) del elemento CustomItem para CustomEntry para elemento de marco de CutomControlView (formato) de CustomItem para el control personalizado de vista (formato) del elemento LeftIndent
+Elemento (formato) elemento ViewDefinitions (formato) vista elemento (formato) el elemento de control personalizado (formato) CustomEntries elemento de configuración control personalizado de vista (formato) del elemento CustomEntry para CustomEntries de vista (formato) del elemento CustomItem para CustomEntry para elemento de marco de CustomControlView (formato) de CustomItem para el control personalizado de vista (formato) del elemento LeftIndent
 
 ## <a name="syntax"></a>Sintaxis
 

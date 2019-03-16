@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 31df99d7-6954-4fdc-b6f5-06ecba094f43
 caps.latest.revision: 8
-ms.openlocfilehash: fe513a47908fc3020895fcb26f1840faad76210a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 39495f7813aecf5d0210866fc11f94557fdb0cd9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857301"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059004"
 ---
 # <a name="runspace03-sample"></a>Ejemplo Runspace03
 
@@ -35,7 +35,7 @@ Este ejemplo muestra lo siguiente.
 
 - Ejecutar el script de forma sincrónica.
 
-- Uso de [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objetos para extraer y mostrar las propiedades de los objetos devueltos por la secuencia de comandos.
+- Uso de [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objetos para extraer y mostrar las propiedades de los objetos devueltos por la secuencia de comandos.
 
 - Recuperar y mostrar los registros de error que se generaron cuando se ejecutó la secuencia de comandos.
 

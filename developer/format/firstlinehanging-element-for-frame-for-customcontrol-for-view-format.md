@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c6ac3d86-0529-4b93-9bc7-ee94fcef9618
 caps.latest.revision: 8
-ms.openlocfilehash: ae4ad8ae3e6cb5d1174dc001b30aa84dd182a606
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ea43e025f5f653ff000e1d7591b535e73da5c9e5
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860241"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054227"
 ---
 # <a name="firstlinehanging-element-for-frame-for-customcontrol-for-view-format"></a>Elemento FirstLineHanging para Frame for CustomControl for View (formato)
 
 Especifica cuántos caracteres de la primera línea de datos se desplaza a la izquierda. Este elemento se usa al definir una vista de control personalizado.
 
-Elemento (formato) elemento ViewDefinitions (formato) vista elemento (formato) el elemento de control personalizado (formato) CustomEntries elemento de configuración control personalizado de vista (formato) del elemento CustomEntry para CustomEntries de vista (formato) del elemento CustomItem para CustomEntry para elemento de marco de CutomControlView (formato) de CustomItem para el control personalizado de vista (formato) FirstLineHanging del elemento de marco para el control personalizado para la vista (formato)
+Elemento (formato) elemento ViewDefinitions (formato) vista elemento (formato) el elemento de control personalizado (formato) CustomEntries elemento de configuración control personalizado de vista (formato) del elemento CustomEntry para CustomEntries de vista (formato) del elemento CustomItem para CustomEntry para elemento de marco de CustomControlView (formato) de CustomItem para el control personalizado de vista (formato) FirstLineHanging del elemento de marco para el control personalizado para la vista (formato)
 
 ## <a name="syntax"></a>Sintaxis
 

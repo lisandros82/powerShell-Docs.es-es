@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 75a45e539b45b50714951f2b992d9ecf69de4664
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860651"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054703"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Creación de un cmdlet sin parámetros
 
@@ -70,7 +70,7 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-Tenga en cuenta que anteriores a la definición de clase, el [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) atributo con la sintaxis `[Cmdlet(verb, noun, ...)]`, se usa para identificar esta clase como un cmdlet. Este es el único atributo obligatorio para todos los cmdlets y permite el tiempo de ejecución de Windows PowerShell llamar correctamente a ellos. Puede establecer las palabras clave de atributo para declarar aún más la clase si es necesario. Tenga en cuenta que la declaración de atributos para la clase de ejemplo GetProcCommand declara sólo los nombres de sustantivo y el verbo del cmdlet Get-Proc.
+Tenga en cuenta que anteriores a la definición de clase, el [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) atributo con la sintaxis `[Cmdlet(verb, noun, ...)]`, se usa para identificar esta clase como un cmdlet. Este es el único atributo obligatorio para todos los cmdlets y permite el tiempo de ejecución de Windows PowerShell llamar correctamente a ellos. Puede establecer las palabras clave de atributo para declarar aún más la clase si es necesario. Tenga en cuenta que la declaración de atributos para la clase de ejemplo GetProcCommand declara sólo los nombres de sustantivo y el verbo del cmdlet Get-Proc.
 
 > [!NOTE]
 > Para todas las clases de atributo de Windows PowerShell, las palabras clave que se pueden establecer se corresponden con las propiedades de la clase de atributo.
@@ -78,27 +78,27 @@ Tenga en cuenta que anteriores a la definición de clase, el [System.Management.
 Cuando asigne nombre a la clase del cmdlet, es una buena práctica para reflejar el nombre de cmdlet en el nombre de clase. Para ello, use el formato "VerbNounCommand" y reemplace "Verbo" y "Sustantivo" con el verbo y sustantivo que se usa en el nombre del cmdlet. Como se muestra en la definición de clase anteriores, el cmdlet Get-Proc de ejemplo define una clase denominada GetProcCommand, que se deriva de la [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) clase base.
 
 > [!IMPORTANT]
-> Si desea definir un cmdlet que tiene acceso directo al tiempo de ejecución de Windows PowerShell, debe derivar la clase de .NET de la [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) clase base. Para obtener más información acerca de esta clase, vea [creación de un Cmdlet que conjuntos de parámetros define](./adding-parameter-sets-to-a-cmdlet.md).
+> Si desea definir un cmdlet que tiene acceso directo al tiempo de ejecución de Windows PowerShell, debe derivar la clase de .NET de la [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) clase base. Para obtener más información acerca de esta clase, vea [creación de un Cmdlet que conjuntos de parámetros define](./adding-parameter-sets-to-a-cmdlet.md).
 
 > [!NOTE]
 > La clase para un cmdlet debe marcarse explícitamente como pública. Las clases que no están marcadas como público predeterminado será interno y no se encontrará el tiempo de ejecución de Windows PowerShell.
 
-Windows PowerShell usa el [Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) espacio de nombres para sus clases de cmdlet. Se recomienda colocar las clases de cmdlet en un espacio de nombres de comandos de su espacio de nombres de API, por ejemplo, xxx.PS.Commands.
+Windows PowerShell usa el [Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) espacio de nombres para sus clases de cmdlet. Se recomienda colocar las clases de cmdlet en un espacio de nombres de comandos de su espacio de nombres de API, por ejemplo, xxx.PS.Commands.
 
 ## <a name="overriding-an-input-processing-method"></a>Reemplazar una método de procesamiento de entrada
 
 El [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) clase proporciona tres métodos de procesamiento de entrada principal, al menos uno de los cuales debe invalidar el cmdlet. Para obtener más información acerca de cómo Windows PowerShell procesa los registros, vea [cómo Windows PowerShell funciona](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 
-Para todos los tipos de entrada, el tiempo de ejecución de Windows PowerShell llama [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) para habilitar el procesamiento. Si el cmdlet debe realizar algún preprocesamiento o programa de instalación, puede hacerlo mediante la invalidación de este método.
+Para todos los tipos de entrada, el tiempo de ejecución de Windows PowerShell llama [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) para habilitar el procesamiento. Si el cmdlet debe realizar algún preprocesamiento o programa de instalación, puede hacerlo mediante la invalidación de este método.
 
 > [!NOTE]
 > Windows PowerShell usa el término "registro" para describir el conjunto de valores de parámetro proporcionado cuando se llama a un cmdlet.
 
-Si el cmdlet acepta entrada de la canalización, debe reemplazar el [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método y opcionalmente el [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)método. Por ejemplo, un cmdlet podría reemplazar ambos métodos si lo recopila todos los datos de entrada mediante [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) y, a continuación, opera en la entrada como un todo en lugar de un elemento a la vez, como el `Sort-Object` hace el cmdlet.
+Si el cmdlet acepta entrada de la canalización, debe reemplazar el [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método y opcionalmente el [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)método. Por ejemplo, un cmdlet podría reemplazar ambos métodos si lo recopila todos los datos de entrada mediante [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) y, a continuación, opera en la entrada como un todo en lugar de un elemento a la vez, como el `Sort-Object` hace el cmdlet.
 
-Si el cmdlet no toma ninguna entrada de la canalización, debe invalidar el [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) método. Tenga en cuenta que este método se utiliza con frecuencia en lugar de [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) cuando el cmdlet no puede funcionar en un elemento a la vez, como es el caso de un cmdlet de ordenación.
+Si el cmdlet no toma ninguna entrada de la canalización, debe invalidar el [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) método. Tenga en cuenta que este método se utiliza con frecuencia en lugar de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) cuando el cmdlet no puede funcionar en un elemento a la vez, como es el caso de un cmdlet de ordenación.
 
-Dado que este cmdlet Get-Proc de ejemplo debe recibir la entrada de la canalización, invalida la [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método y utiliza las implementaciones predeterminadas para [ System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) y [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). El [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) invalidación recupera los procesos y los escribe en la línea de comandos mediante la [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) método.
+Dado que este cmdlet Get-Proc de ejemplo debe recibir la entrada de la canalización, invalida la [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método y utiliza las implementaciones predeterminadas para [ System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) y [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). El [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) invalidación recupera los procesos y los escribe en la línea de comandos mediante la [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) método.
 
 ```csharp
 protected override void ProcessRecord()
@@ -136,14 +136,14 @@ End Sub 'ProcessRecord
 
 - Una método de procesamiento de entrada también puede recibir entradas desde el objeto de salida de un cmdlet de nivel superior en la canalización. Para obtener más información, consulte [creación de un Cmdlet para entrada de la canalización de proceso](./adding-parameters-that-process-pipeline-input.md). Tenga en cuenta que el cmdlet puede recibir entradas de una combinación de línea de comandos y una canalización de orígenes.
 
-- El cmdlet de nivel inferior no puede devolver durante mucho tiempo o no en absoluto. Por ese motivo, el método en el cmdlet de procesamiento de entrada no debe contener los bloqueos durante las llamadas a [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), especialmente los bloqueos para el que el ámbito se extiende más allá de la instancia del cmdlet.
+- El cmdlet de nivel inferior no puede devolver durante mucho tiempo o no en absoluto. Por ese motivo, el método en el cmdlet de procesamiento de entrada no debe contener los bloqueos durante las llamadas a [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), especialmente los bloqueos para el que el ámbito se extiende más allá de la instancia del cmdlet.
 
 > [!IMPORTANT]
 > Nunca debe llamar los cmdlets [System.Console.Writeline*](/dotnet/api/System.Console.WriteLine) o su equivalente.
 
-- El cmdlet podría tener las variables de objeto para limpiar cuando haya finalizado de procesamiento (por ejemplo, si se abre un identificador de archivo en el [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) método y conserva el identificador se abra para su uso por [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). Es importante recordar que el tiempo de ejecución de Windows PowerShell no llame siempre a la [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) método, que debe realizar la limpieza de objetos.
+- El cmdlet podría tener las variables de objeto para limpiar cuando haya finalizado de procesamiento (por ejemplo, si se abre un identificador de archivo en el [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) método y conserva el identificador se abra para su uso por [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). Es importante recordar que el tiempo de ejecución de Windows PowerShell no llame siempre a la [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) método, que debe realizar la limpieza de objetos.
 
-Por ejemplo, [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) no es posible que se llama si el cmdlet se cancela a medio camino o si un carácter de terminación se produce error en cualquier parte del cmdlet. Por lo tanto, un cmdlet que requiere la limpieza de objetos debe implementar toda [System.Idisposable](/dotnet/api/System.IDisposable) patrón, incluidos el finalizador, para que el tiempo de ejecución puede llamar a ambos [ System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) y [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) al final del procesamiento.
+Por ejemplo, [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) no es posible que se llama si el cmdlet se cancela a medio camino o si un carácter de terminación se produce error en cualquier parte del cmdlet. Por lo tanto, un cmdlet que requiere la limpieza de objetos debe implementar toda [System.IDisposable](/dotnet/api/System.IDisposable) patrón, incluidos el finalizador, para que el tiempo de ejecución puede llamar a ambos [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) y [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) al final del procesamiento.
 
 ## <a name="code-sample"></a>Ejemplo de código
 
