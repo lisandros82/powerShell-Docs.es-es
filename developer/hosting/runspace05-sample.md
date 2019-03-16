@@ -8,42 +8,42 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1685cfc4-b32c-4bed-b221-e0c4482db955
 caps.latest.revision: 9
-ms.openlocfilehash: f74ff24f114ecd872ffb443c27a57b1fbe42fa23
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eb227b5fa5e91f59b6fc99981ff5affca1cf63fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860751"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056454"
 ---
-# <a name="runspace05-sample"></a><span data-ttu-id="556e6-102">Ejemplo Runspace05</span><span class="sxs-lookup"><span data-stu-id="556e6-102">Runspace05 Sample</span></span>
+# <a name="runspace05-sample"></a><span data-ttu-id="00f05-102">Ejemplo Runspace05</span><span class="sxs-lookup"><span data-stu-id="00f05-102">Runspace05 Sample</span></span>
 
-<span data-ttu-id="556e6-103">En este ejemplo se muestra cómo agregar un complemento a un [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto para que el cmdlet del complemento está disponible cuando se abre el espacio de ejecución.</span><span class="sxs-lookup"><span data-stu-id="556e6-103">This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened.</span></span> <span data-ttu-id="556e6-104">El complemento proporciona un cmdlet Get-Proc (definido por el [ejemplo GetProcessSample01](../cmdlet/getprocesssample01-sample.md)) que se ejecuta de forma sincrónica mediante un [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objeto.</span><span class="sxs-lookup"><span data-stu-id="556e6-104">The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="00f05-103">En este ejemplo se muestra cómo agregar un complemento a un [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto para que el cmdlet del complemento está disponible cuando se abre el espacio de ejecución.</span><span class="sxs-lookup"><span data-stu-id="00f05-103">This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened.</span></span> <span data-ttu-id="00f05-104">El complemento proporciona un cmdlet Get-Proc (definido por el [ejemplo GetProcessSample01](../cmdlet/getprocesssample01-sample.md)) que se ejecuta de forma sincrónica mediante un [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objeto.</span><span class="sxs-lookup"><span data-stu-id="00f05-104">The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="556e6-105">Requisitos</span><span class="sxs-lookup"><span data-stu-id="556e6-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="00f05-105">Requisitos</span><span class="sxs-lookup"><span data-stu-id="00f05-105">Requirements</span></span>
 
-<span data-ttu-id="556e6-106">Este ejemplo requiere Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="556e6-106">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="00f05-106">Este ejemplo requiere Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="00f05-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="556e6-107">Demostraciones</span><span class="sxs-lookup"><span data-stu-id="556e6-107">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="00f05-107">Demostraciones</span><span class="sxs-lookup"><span data-stu-id="00f05-107">Demonstrates</span></span>
 
-<span data-ttu-id="556e6-108">Este ejemplo muestra lo siguiente.</span><span class="sxs-lookup"><span data-stu-id="556e6-108">This sample demonstrates the following.</span></span>
+<span data-ttu-id="00f05-108">Este ejemplo muestra lo siguiente.</span><span class="sxs-lookup"><span data-stu-id="00f05-108">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="556e6-109">Creación de un [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto.</span><span class="sxs-lookup"><span data-stu-id="556e6-109">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="00f05-109">Creación de un [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto.</span><span class="sxs-lookup"><span data-stu-id="00f05-109">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="556e6-110">Agregar el complemento a la [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto.</span><span class="sxs-lookup"><span data-stu-id="556e6-110">Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="00f05-110">Agregar el complemento a la [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto.</span><span class="sxs-lookup"><span data-stu-id="00f05-110">Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="556e6-111">Creación de un [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objeto que usa el [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto.</span><span class="sxs-lookup"><span data-stu-id="556e6-111">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="00f05-111">Creación de un [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objeto que usa el [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto.</span><span class="sxs-lookup"><span data-stu-id="00f05-111">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="556e6-112">Creación de un [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objeto que utiliza el espacio de ejecución.</span><span class="sxs-lookup"><span data-stu-id="556e6-112">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="00f05-112">Creación de un [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objeto que utiliza el espacio de ejecución.</span><span class="sxs-lookup"><span data-stu-id="00f05-112">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="556e6-113">Agregar cmdlet de get-proc del complemento a la canalización de la [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objeto.</span><span class="sxs-lookup"><span data-stu-id="556e6-113">Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="00f05-113">Agregar cmdlet de get-proc del complemento a la canalización de la [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objeto.</span><span class="sxs-lookup"><span data-stu-id="00f05-113">Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="556e6-114">Ejecute el comando de forma sincrónica.</span><span class="sxs-lookup"><span data-stu-id="556e6-114">Running the command synchronously.</span></span>
+- <span data-ttu-id="00f05-114">Ejecute el comando de forma sincrónica.</span><span class="sxs-lookup"><span data-stu-id="00f05-114">Running the command synchronously.</span></span>
 
-- <span data-ttu-id="556e6-115">Extraer propiedades de la [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) los objetos devueltos por el comando.</span><span class="sxs-lookup"><span data-stu-id="556e6-115">Extracting properties from the [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="00f05-115">Extraer propiedades de la [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) los objetos devueltos por el comando.</span><span class="sxs-lookup"><span data-stu-id="00f05-115">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="556e6-116">Ejemplo</span><span class="sxs-lookup"><span data-stu-id="556e6-116">Example</span></span>
+## <a name="example"></a><span data-ttu-id="00f05-116">Ejemplo</span><span class="sxs-lookup"><span data-stu-id="00f05-116">Example</span></span>
 
-<span data-ttu-id="556e6-117">Este ejemplo crea un espacio de ejecución que usa un [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto para definir los elementos que están disponibles cuando se abre el espacio de ejecución.</span><span class="sxs-lookup"><span data-stu-id="556e6-117">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="556e6-118">En este ejemplo, un complemento que define un cmdlet Get-Proc se agrega al estado de sesión inicial.</span><span class="sxs-lookup"><span data-stu-id="556e6-118">In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.</span></span>
+<span data-ttu-id="00f05-117">Este ejemplo crea un espacio de ejecución que usa un [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto para definir los elementos que están disponibles cuando se abre el espacio de ejecución.</span><span class="sxs-lookup"><span data-stu-id="00f05-117">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="00f05-118">En este ejemplo, un complemento que define un cmdlet Get-Proc se agrega al estado de sesión inicial.</span><span class="sxs-lookup"><span data-stu-id="00f05-118">In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -127,6 +127,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="556e6-119">Véase también</span><span class="sxs-lookup"><span data-stu-id="556e6-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="00f05-119">Véase también</span><span class="sxs-lookup"><span data-stu-id="00f05-119">See Also</span></span>
 
-[<span data-ttu-id="556e6-120">Escribir una aplicación de Host de PowerShell de Windows</span><span class="sxs-lookup"><span data-stu-id="556e6-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="00f05-120">Escribir una aplicación de Host de PowerShell de Windows</span><span class="sxs-lookup"><span data-stu-id="00f05-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
