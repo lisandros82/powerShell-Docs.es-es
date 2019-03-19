@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 6e36e6599e36218ce2a925dceda7aa0ee6811057
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "58142230"
+---
 # <a name="microsoft-open-source-code-of-conduct"></a>Código de conducta del código abierto de Microsoft
 
 Este proyecto se adoptado el [código de conducta del código abierto de Microsoft](https://opensource.microsoft.com/codeofconduct/).
