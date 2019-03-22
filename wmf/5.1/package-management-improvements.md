@@ -4,16 +4,17 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 contributor: jianyunt, quoctruong
 title: Mejoras en la administración de paquetes en WMF 5.1
-ms.openlocfilehash: adcddcc94022f4961f3dd23c2cd56f2a8720049b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 30ef59ed9dc0d56636d85cc6e53523a9a73963a4
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55682565"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794287"
 ---
-# <a name="improvements-to-package-management-in-wmf-51"></a>Mejoras en la administración de paquetes en WMF 5.1#
+# <a name="improvements-to-package-management-in-wmf-51"></a>Mejoras en la administración de paquetes en WMF 5.1
 
-## <a name="improvements-in-packagemanagement"></a>Mejoras en la administración de paquetes ##
+## <a name="improvements-in-packagemanagement"></a>Mejoras en la administración de paquetes
+
 Estas son las correcciones realizadas en WMF 5.1:
 
 ### <a name="version-alias"></a>Alias de versión
@@ -26,11 +27,11 @@ Esto se debe a que el parámetro `-Version` es un alias del parámetro `-Minimum
 
 ### <a name="multiple-prompts-for-bootstrapping-the-nuget-provider"></a>Varios mensajes para arrancar el proveedor de NuGet
 
-**Escenario**: cuando ejecuta `Find-Module` o `Install-Module` u otros cmdlets de PackageManagement en un equipo por primera vez, PackageManagement intenta arrancar el proveedor de NuGet, ya que el proveedor de PowerShellGet también usa el proveedor de NuGet para descargar los módulos de PowerShell. Luego, PackageManagement pide permiso al usuario para instalar el proveedor de NuGet. Una vez que el usuario selecciona "yes" en el arranque, se instalará la versión más reciente del proveedor de NuGet.
+**Escenario**: cuando ejecuta `Find-Module` o `Install-Module` u otros cmdlets de PackageManagement en un equipo por primera vez, PackageManagement intenta arrancar el proveedor de NuGet. ya que el proveedor de PowerShellGet también usa el proveedor de NuGet para descargar los módulos de PowerShell. Luego, PackageManagement pide permiso al usuario para instalar el proveedor de NuGet. Una vez que el usuario selecciona "yes" en el arranque, se instalará la versión más reciente del proveedor de NuGet.
 
 En cambio, en algunos casos, si tiene una versión anterior del proveedor de NuGet instalada en el equipo, a veces se carga primero la versión anterior de NuGet en la sesión de PowerShell (esa es la condición de carrera en PackageManagement). En cambio, PowerShellGet requiere la versión posterior del proveedor de NuGet para funcionar, por lo que PowerShellGet solicita a PackageManagement que vuelva a arrancar el proveedor de NuGet. Esto genera varios mensajes para arrancar el proveedor de NuGet.
 
-**Solución**: En WMF 5.1, PackageManagement carga la versión más reciente del proveedor de NuGet para evitar varios mensajes para arrancar el proveedor de NuGet.
+**Solución**: en WMF 5.1, PackageManagement carga la versión más reciente del proveedor de NuGet para evitar varios mensajes de arranque del proveedor de NuGet.
 
 Otra posible solución es la eliminación manual de la versión anterior del proveedor de NuGet (NuGet-Anycpu.exe) desde $env:ProgramFiles\PackageManagement\ProviderAssemblies $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies
 
@@ -41,7 +42,7 @@ Otra posible solución es la eliminación manual de la versión anterior del pro
 
 **Escenario**: en WMF 5.0, PackageManagement no era compatible con equipos que solo tuvieran acceso a la intranet (pero no a Internet).
 
-**Solución**: En WMF 5.1, puede seguir estos pasos para permitir que los equipos de la Intranet usen PackageManagement:
+**Solución**: en WMF 5.1, puede seguir estos pasos para que los equipos de la intranet usen PackageManagement:
 
 1. Descargue el proveedor de NuGet desde otro equipo con conexión a Internet mediante `Install-PackageProvider -Name NuGet`.
 
@@ -61,6 +62,7 @@ En WMF 5.1, PackageManagement admite la búsqueda e instalación de paquetes de 
 ``` PowerShell
 Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 ```
+
 ### <a name="support-for-using-packagemanagement-behind-a-proxy"></a>Compatibilidad para usar PackageManagement detrás de un proxy
 
 En WMF 5.1, ahora PackageManagement toma nuevos parámetros de proxy `-ProxyCredential` y `-Proxy`. Mediante estos parámetros, es posible especificar la dirección URL y las credenciales del proxy en los cmdlets de PackageManagement. De forma predeterminada, se utiliza la configuración del proxy del sistema. Por ejemplo:

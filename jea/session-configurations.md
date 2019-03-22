@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Configuraciones de sesión de JEA
-ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: b98726ea7ed3aabdfd05034c3b70118e327160cd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655470"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056606"
 ---
 # <a name="jea-session-configurations"></a>Configuraciones de sesión de JEA
 
@@ -80,8 +80,9 @@ Cuando se especifiquen uno o varios grupos de seguridad, la cuenta virtual ya no
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+
 > [!NOTE]
-> Las cuentas virtuales se conceden temporalmente el inicio de sesión como servicio en la directiva de seguridad del servidor local.  Si uno de los VirtualAccountGroups especificado ya se ha concedido este derecho en la directiva, la cuenta virtual individual ya no se agregará y se quitará de la directiva.  Esto puede ser útil en escenarios como los controladores de dominio donde estrechamente se auditan las revisiones de la directiva de seguridad del controlador de dominio.  Esto solo está disponible en Windows Server 2016 con la de noviembre de 2018 o paquete acumulativo de actualizaciones posteriores y Windows Server 2019 con la de enero de 2019 o paquete acumulativo de actualizaciones posteriores.
+> Las cuentas virtuales se conceden temporalmente en el inicio de sesión como derecho de servicio en la directiva de seguridad del servidor local.  Si a uno de los VirtualAccountGroups especificados ya se le ha concedido este derecho en la directiva, la cuenta virtual individual ya no se agregará y se quitará de la directiva.  Esto puede ser útil en escenarios como los controladores de dominio, donde se auditan estrechamente las revisiones de la directiva de seguridad del controlador de dominio.  Esto solo está disponible en Windows Server 2016 con el paquete acumulativo de revisiones de noviembre de 2018 o un paquete posterior y en Windows Server 2019 con el paquete acumulativo de revisiones de enero de 2019 o un paquete posterior.
 
 #### <a name="group-managed-service-account"></a>Cuenta de servicio administrada de grupo
 
@@ -104,7 +105,6 @@ Las cuentas gMSA solo deben usarse cuando se necesite acceso a recursos de red p
 
 > [!NOTE]
 > Las cuentas de servicio administradas de grupo solo están disponibles en Windows PowerShell 5.1 o una versión posterior y en equipos unidos a un dominio.
-
 
 #### <a name="more-information-about-run-as-users"></a>Más información sobre los usuarios de ejecución
 
@@ -179,6 +179,7 @@ RoleDefinitions = @{
 ```
 
 ### <a name="role-capability-search-order"></a>Orden de búsqueda de funcionalidad de rol
+
 Tal como se muestra en el ejemplo anterior, el nombre sin formato (nombre de archivo sin la extensión) del archivo de funcionalidad de rol hace referencia a las funcionalidades de rol.
 Si hay varias funcionalidades de rol disponibles en el sistema con el mismo nombre sin formato, PowerShell usará su orden de búsqueda implícito para seleccionar el archivo de funcionalidad de rol adecuado.
 **No** proporcionará acceso a todos los archivos de funcionalidad de rol con el mismo nombre.
@@ -217,6 +218,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > Las reglas de acceso condicional solo están disponibles en Windows PowerShell 5.1 o una versión posterior.
 
 ### <a name="other-properties"></a>Otras propiedades
+
 Los archivos de configuración de sesión también pueden hacer lo mismo que un archivo de funcionalidad de rol, pero sin la capacidad de proporcionar acceso a los usuarios que se conectan a distintos comandos.
 Si quiere permitir que todos los usuarios obtengan acceso a cmdlets, funciones o proveedores específicos, puede hacerlo directamente en el archivo de configuración de sesión.
 Para obtener una lista completa de las propiedades que se admiten en el archivo de configuración de sesión, ejecute `Get-Help New-PSSessionConfigurationFile -Full`.

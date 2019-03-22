@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Uso de DSC on Nano Server
-ms.openlocfilehash: fd81fe56d16100f45d9ee2dfd8fdc303c2a6c17a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402562"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054669"
 ---
 # <a name="using-dsc-on-nano-server"></a>Uso de DSC on Nano Server
 
@@ -50,7 +50,7 @@ Modos de inserción y extracción
 
 - Compilación de configuraciones (vea [Configuraciones DSC](../configurations/configurations.md))
 
-  **Issue #1629** Cifrado de contraseña (consulte [proteger el archivo MOF](../pull-server/secureMOF.md)) durante la configuración de compilación no funciona.
+  **Problema:** no funciona el cifrado de contraseña (vea [Proteger el archivo MOF](../pull-server/secureMOF.md)) durante la compilación de la configuración.
 
 - Compilación de metaconfiguraciones (vea [Configuración del administrador de configuración local](../managing-nodes/metaConfig.md))
 
@@ -60,7 +60,7 @@ Modos de inserción y extracción
 
 - Depuración de recursos de DSC (vea [Depuración de recursos de DSC](../troubleshooting/debugResource.md))
 
-  **Issue #1629** No funciona si un recurso usa PsDscRunAsCredential (vea [DSC ejecutando con credenciales de usuario](../configurations/runAsUser.md))
+  **Problema:** no funciona si un recurso usa PsDscRunAsCredential (vea [DSC de ejecución con las credenciales de usuario](../configurations/runAsUser.md))
 
 - [Especificación de las dependencias entre nodos](../configurations/crossNodeDependencies.md)
 
@@ -97,12 +97,12 @@ Modos de inserción y extracción
 - **Grupo**
 - **GroupSet**
 
-  **Issue #1629** Los recursos anteriores producirá un error si se llama dos veces a una instancia específica (que se ejecuta dos veces la misma configuración)
+  **Problema:** los recursos anteriores producirán un error si se llama dos veces a una instancia específica (ejecutando dos veces la misma configuración)
 
 - **Service**
 - **ServiceSet**
 
-  **Issue #1629** Solo funciona para iniciar y detener el servicio (estado). Produce un error si intenta cambiar otros atributos del servicio, como startuptype, credenciales, descripción, etc. El error que se produce es similar a:
+  **Problema:** solo funciona para iniciar y detener el servicio (estado). Produce un error si intenta cambiar otros atributos del servicio, como startuptype, credenciales, descripción, etc. El error que se produce es similar a:
 
   *No se puede encontrar el tipo [management.managementobject]. Compruebe que está cargado el ensamblado que lo contiene.*
 

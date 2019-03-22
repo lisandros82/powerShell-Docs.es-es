@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: powershell, cmdlet
 title: Obtener información de ayuda detallada
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 8b56f003fdef38b0f126cfe82eefcc145cc54783
-ms.sourcegitcommit: 3402a478cf118c11a5642038eb117bc76553e3ab
-ms.translationtype: MTE95
+ms.openlocfilehash: e58814f512aa2c5914f92f942cf2a4a76956ee20
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411606"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794576"
 ---
 # <a name="getting-detailed-help-information"></a>Obtener información de ayuda detallada
 
@@ -74,7 +74,7 @@ Get-Help Get-ChildItem -Parameter *
 ```
 
 Para mostrar solo los ejemplos de un artículo de Ayuda, use el parámetro **Examples** de `Get-Help`.
-Por ejemplo, para mostrar solo los ejemplos del artículo de Ayuda para el cmdlet `Get-ChildItem `, escriba:
+Por ejemplo, para mostrar solo los ejemplos del artículo de Ayuda para el cmdlet `Get-ChildItem`, escriba:
 
 ```powershell
 Get-Help Get-ChildItem -Examples

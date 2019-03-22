@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Uso de JEA
-ms.openlocfilehash: 539d280aff0b2656a5e9c710acfa468057753027
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: fa3d3a3c8bc0090ec9ad788585ec5df933134173
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522997"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054686"
 ---
 # <a name="using-jea"></a>Uso de JEA
 
@@ -108,7 +108,7 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 También puede conservar los cmdlets de proxy de comunicación remota implícita mediante [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).
 Para obtener más información sobre la comunicación remota implícita, consulte la documentación de ayuda de [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) e [Import-Module](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/import-module).
 
-## <a name="using-jea-programatically"></a>Usar JEA mediante programación
+## <a name="using-jea-programmatically"></a>Usar JEA mediante programación
 
 JEA también se puede usar en sistemas de automatización y en aplicaciones de usuario, como sitios web y aplicaciones de soporte técnico internos.
 El enfoque es el mismo que el del desarrollo de aplicaciones para comunicarse con puntos de conexión de PowerShell sin restricciones, con la salvedad de que el programa debe tener en cuenta que JEA limita los comandos que se pueden ejecutar en la sesión remota.
@@ -129,7 +129,6 @@ $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Fo
 Si está creando una aplicación de C#, puede crear un espacio de ejecución de PowerShell que se conecte a una sesión de JEA al especificar el nombre de la configuración de un objeto [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx).
 
 ```csharp
-
 // using System.Management.Automation;
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";

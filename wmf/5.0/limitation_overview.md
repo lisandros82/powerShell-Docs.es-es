@@ -1,18 +1,18 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 4eb2f0bac4f2169a9a06d80cb4fa214a09cdfa86
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 3d74217621d00dfd68cad1c45d187a9c2ffb9980
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892991"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054381"
 ---
 # <a name="known-issues-and-limitations"></a>Problemas y limitaciones conocidos
 
 ## <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>Los accesos directos de PowerShell se interrumpen cuando se usan por primera vez
 
-**Resolución:** realice una de las acciones siguientes.
+**Resolución:** Realice una de las acciones siguientes:
 
 1. Haga clic con el botón derecho en el acceso directo de PowerShell. Seleccione "Windows PowerShell" para iniciar en modo sin privilegios elevados.
 2. Haga clic con el botón derecho en el acceso directo de PowerShell. Haga clic en "Windows PowerShell" y seleccione "Ejecutar como administrador" para iniciar en modo con privilegios elevados.
@@ -54,7 +54,7 @@ Hay dos soluciones alternativas para este problema según la versión de Windows
 **Resolución:**
 
 - Para sistemas que ejecutan **Windows Server 2008 R2**
-  1. Abra Powershell como administrador.
+  1. Abra PowerShell como administrador.
   2. Ejecute el siguiente comando.
 
      ```powershell

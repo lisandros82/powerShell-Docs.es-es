@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: gallery,powershell,psgallery
 title: Descarga del paquete manual
-ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
-ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
-ms.translationtype: MTE95
+ms.openlocfilehash: af628f99befe50c16c2c0c60f1a352647af34ff4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52742829"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054889"
 ---
 # <a name="manual-package-download"></a>Descarga del paquete manual
 
-La Galería de Powershell admite descargar un paquete directamente desde el sitio web, sin usar los cmdlets de PowerShellGet. Puede descargar cualquier paquete como un archivo de paquete (archivo .nupkg) de NuGet, que, a continuación, puede copiar en un repositorio interno.
+La Galería de PowerShell admite descargar un paquete directamente desde el sitio web, sin usar los cmdlets de PowerShellGet. Puede descargar cualquier paquete como un archivo de paquete NuGet (archivo .nupkg), que posteriormente puede copiar a un repositorio interno.
 
 > [!NOTE]
 > La descarga del paquete manual **no** está pensada como un sustituto del cmdlet Install-Module.
@@ -45,7 +45,7 @@ El enfoque más sencillo consiste en quitar los elementos específicos de NuGet 
 1. Extraiga el contenido del paquete de NuGet en una carpeta local.
 2. Elimine los elementos específicos de NuGet de la carpeta.
 3. Cambie el nombre de la carpeta. El nombre de carpeta predeterminado suele ser `<name>.<version>`. La versión puede incluir "-versión preliminar" si el módulo se etiqueta como una versión preliminar. Cambie el nombre de la carpeta para que sea solo el nombre del módulo. Por ejemplo, "azurerm.storage.5.0.4-preview" pasa a ser "azurerm.storage".
-4. Copie la carpeta en una de las carpetas en el `$env:PSModulePath value`. `$env:PSModulePath` es un conjunto de delimitada por puntos y de las rutas de acceso debe ser los módulos de PowerShell.
+4. Copie la carpeta en una de las carpetas de `$env:PSModulePath value`. `$env:PSModulePath` es un conjunto delimitado por punto y coma de las rutas de acceso en las cuales PowerShell debe buscar módulos.
 
 > [!IMPORTANT]
 > La descarga manual no incluye todas las dependencias que necesita el módulo. Si el paquete tiene dependencias, deben instalarse en el sistema para que este módulo funcione correctamente. La Galería de PowerShell muestra todas las dependencias que necesita el paquete.

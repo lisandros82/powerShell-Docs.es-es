@@ -2,12 +2,12 @@
 ms.date: 08/24/2018
 keywords: dsc,powershell,configuration,setup
 title: Recurso de DSC Script
-ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.openlocfilehash: 86dfb74bf52d8907686bb955fd722f4fb8b9131b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048057"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054763"
 ---
 # <a name="dsc-script-resource"></a>Recurso de DSC Script
 
@@ -61,7 +61,7 @@ El `SetScript` modifica el nodo para aplicar el estado deseado. Se invoca median
 
 ## <a name="examples"></a>Ejemplos
 
-### <a name="example-1-write-sample-text-using-a-script-resource"></a>Ejemplo 1: Escribir el texto de ejemplo con un recurso de Script
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>Ejemplo 1: Escribir texto de ejemplo con un recurso de Script
 
 En este ejemplo se comprueba la existencia de `C:\TempFolder\TestFile.txt` en cada nodo. Si no existe, se crea mediante el `SetScript`. El `GetScript` devuelve el contenido del archivo y su valor devuelto no se utiliza.
 

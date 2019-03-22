@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Envío de comentarios a través de medios sociales o comentarios
-ms.openlocfilehash: a7cdcc2ff2c18fb606d077adf0bdecf57c90703f
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003886"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055009"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Envío de comentarios a través de medios sociales o comentarios
 
@@ -27,7 +27,6 @@ Los usuarios deben iniciar sesión en el sitio que elijan para poder compartir e
 Se aconseja a los usuarios que hagan esto si consideran que recomendarían un paquete a otros usuarios.
 La Galería de PowerShell comprobará las veces que se compartió el paquete en cada sitio de red social e indicará esa información.
 Como esta acción solo muestra la cantidad de veces que se compartió algún contenido, se interpretará como que a los otros usuarios les gustó el paquete en cuestión.
-
 
 ## <a name="comments"></a>Comentarios
 

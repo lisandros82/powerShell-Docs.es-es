@@ -1,33 +1,33 @@
 ---
 ms.date: 1/17/2019
 keywords: dsc,powershell,configuration,setup
-title: Reiniciar un nodo
-ms.openlocfilehash: 33ecd98aa62c3dc94a8ff2213fd3e68bf0c05cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+title: Reinicio de un nodo
+ms.openlocfilehash: 015b82a32caefc420973651c72e272fd85baf880
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55680745"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054737"
 ---
-# <a name="reboot-a-node"></a>Reiniciar un nodo
+# <a name="reboot-a-node"></a>Reinicio de un nodo
 
 > [!NOTE]
-> En este tema trata sobre cómo reiniciar un nodo. En orden para el reinicio se realice correctamente la **ActionAfterReboot** y **RebootNodeIfNeeded** configuración del LCM debe configurarse correctamente.
-> Para obtener información acerca de la configuración del Administrador de configuración Local, consulte [configurar el Administrador de configuración Local](../managing-nodes/metaConfig.md), o [configurar el Administrador de configuración Local (v4)](../managing-nodes/metaConfig4.md).
+> En este tema se trata sobre cómo reiniciar un nodo. Para que el reinicio se realice correctamente, las opciones de LCM **ActionAfterReboot** y **RebootNodeIfNeeded** deben configurarse correctamente.
+> Para obtener información acerca de las opciones del administrador de configuración local, consulte [Configuración del administrador de configuración local](../managing-nodes/metaConfig.md) o [Configuración del administrador de configuración local (v4)](../managing-nodes/metaConfig4.md).
 
-Se pueden reiniciar los nodos desde dentro de un recurso, mediante el uso de la `$global:DSCMachineStatus` marca. Al establecer esta marca en `1` en el `Set-TargetResource` función fuerza el LCM para reiniciar el nodo directamente después de la **establecer** método del recurso actual. Usar esta marca, el **xPendingReboot** recursos detecta si está pendiente un reinicio fuera de DSC.
+Se pueden reiniciar los nodos desde dentro de un recurso, mediante el uso de la marca `$global:DSCMachineStatus`. Al establecer esta marca como `1` en la función `Set-TargetResource`, se obliga al LCM a reiniciar el nodo directamente después del método **Set** del recurso actual. Mediante el uso de esta marca, el recurso **xPendingReboot** detecta si está pendiente un reinicio fuera de DSC.
 
-Su [configuraciones](configurations.md) es posible que lleve a cabo los pasos que requieren el nodo se reinicie. Esto puede incluir cosas como:
+Sus [configuraciones](configurations.md) pueden realizar pasos que requieren que el nodo se reinicie. Esto puede incluir, por ejemplo:
 
-- Windows: Actualizaciones
-- Instalación del software
-- Cambia el nombre de archivo
-- Cambio de nombre de equipo
+- Actualizaciones de Windows
+- Instalación de software
+- Cambios de nombre de archivo
+- Cambios de nombre de equipo
 
-El **xPendingReboot** recursos comprueba las ubicaciones de equipo específico para determinar si está pendiente un reinicio. Si el nodo requiere un reinicio fuera de DSC, el **xPendingReboot** conjuntos de recursos el `$global:DSCMachineStatus` marca `1` forzar un reinicio y resolver la condición pendiente.
+El recurso **xPendingReboot** comprueba las ubicaciones de equipos específicos para determinar si está pendiente un reinicio. Si el nodo requiere un reinicio fuera de DSC, el recurso **xPendingReboot** establece la marca `$global:DSCMachineStatus` en `1` y obliga a realizar un reinicio y a resolver la condición pendiente.
 
 > [!NOTE]
-> Cualquier recurso de DSC puede indicar que el LCM para reiniciar el nodo al establecer esta marca el `Set-TargetResource` función. Para obtener más información, consulte [escribir un recurso de DSC personalizado con MOF](../resources/authoringResourceMOF.md).
+> Cualquier recurso de DSC puede indicar al LCM que reinicie el nodo estableciendo esta marca en la función `Set-TargetResource`. Para obtener más información, consulte [Escribir un recurso de DSC personalizado con MOF](../resources/authoringResourceMOF.md).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -50,21 +50,21 @@ xPendingReboot [String] #ResourceName
 | Propiedad | Descripción |
 | --- | --- |
 | Nombre| Parámetro obligatorio que debe ser único para cada instancia del recurso dentro de una configuración.|
-| SkipComponentBasedServicing | Reinicios de Skip desencadenados por el componente de servicio basado en componentes. |
-| SkipWindowsUpdate | Reinicios de Skip desencadenados por Windows Update.|
-| SkipPendingFileRename | Omitir los reinicios de cambio de nombre de archivo pendiente. |
-| SkipCcmClientSDK | Reinicios de Skip desencadenados por el cliente de Configuration Manager. |
-| SkipComputerRename | Omitir reinicia desencadenada por cambios de nombre de equipo. |
-| PSDSCRunAsCredential | Se admiten en v5. El recurso se ejecuta como el usuario especificado. |
-| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`. Para obtener más información, consulte [utilizando DependsOn](resource-depends-on.md)|
+| SkipComponentBasedServicing | Omite los reinicios desencadenados por el componente de servicio basado en componentes. |
+| SkipWindowsUpdate | Omite los reinicios desencadenados por Windows Update.|
+| SkipPendingFileRename | Omite los reinicios de cambio de nombre de archivo pendientes. |
+| SkipCcmClientSDK | Omite los reinicios desencadenados por el cliente de Configuration Manager. |
+| SkipComputerRename | Omite los reinicios desencadenados por cambios de nombre de equipo. |
+| PSDSCRunAsCredential | Admitido en la versión 5. Ejecuta el recurso como el usuario especificado. |
+| DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`. Para obtener más información, vea [Uso de DependsOn](resource-depends-on.md)|
 
 ## <a name="example"></a>Ejemplo
 
-El ejemplo siguiente, instala con Microsoft Exchange el [xExchange](https://github.com/PowerShell/xExchange) recursos.
-A lo largo de la instalación, el **xPendingReboot** recurso se usa para reiniciar el nodo.
+El ejemplo siguiente instala Microsoft Exchange con el recurso [xExchange](https://github.com/PowerShell/xExchange).
+A lo largo de la instalación, el recurso **xPendingReboot** se usa para reiniciar el nodo.
 
 > [!NOTE]
-> Este ejemplo requiere la credencial de una cuenta que tenga derechos para agregar un servidor de Exchange en el bosque. Para obtener más información sobre el uso de credenciales en DSC, consulte [control de credenciales en DSC](../configurations/configDataCredentials.md)
+> Este ejemplo requiere la credencial de una cuenta que tenga derechos para agregar un servidor de Exchange al bosque. Para obtener más información sobre el uso de credenciales en DSC, vea [Control de credenciales en DSC](../configurations/configDataCredentials.md)
 
 ```powershell
 $ConfigurationData = @{
@@ -130,9 +130,9 @@ Configuration Example
 ```
 
 > [!NOTE]
-> En este ejemplo se da por supuesto que ha configurado el Administrador de configuración Local para permitir los reinicios y continuar con la configuración tras un reinicio.
+> En este ejemplo se asume que se ha configurado el administrador de configuración local para permitir reinicios y continuar la configuración tras un reinicio.
 
-## <a name="where-to-download"></a>Ubicación donde debe descargarse
+## <a name="where-to-download"></a>Dónde puede realizarse la descarga
 
 Puede descargar los recursos usados en este tema en las siguientes ubicaciones, o mediante el uso de la Galería de PowerShell.
 

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Entorno de scripting integrado (ISE) de Windows PowerShell
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 3002c2cb7213b1c2d7201dddf5ff3c0651fad767
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402186"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054720"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Entorno de scripting integrado (ISE) de Windows PowerShell
 
@@ -34,7 +34,7 @@ Estas herramientas pueden mostrar controles en un panel con fichas o funcionar d
 
 Ahora, la **lista Usados más recientemente** forma parte del menú Abrir archivo para que sea más fácil obtener acceso a los archivos que se usan con mayor frecuencia.
 
-**Panel de consola combinado**. En versiones anteriores del ISE, los paneles de comandos y salida eran independientes. Ahora se combinan en un solo panel que representa más directamente lo que se ve en la consola de Windows Powershell.
+**Panel de consola combinado**. En versiones anteriores del ISE, los paneles de comandos y salida eran independientes. Ahora se combinan en un solo panel que representa más directamente lo que se ve en la consola de Windows PowerShell.
 
 **Modificadores de la línea de comandos**. Varios modificadores de la línea de comandos nuevos ofrecen un mayor control sobre el funcionamiento del ISE. -NoProfile inicia el ISE sin ejecutar un script de perfil. -Help abre una ventana de ayuda con el ISE. -mta inicia el ISE en "modo de contenedor multiproceso". El modo predeterminado es el de uniproceso.
 

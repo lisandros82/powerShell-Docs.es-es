@@ -2,16 +2,16 @@
 ms.date: 08/23/2017
 keywords: powershell, cmdlet
 title: Instalación y uso de Windows PowerShell Web Access
-ms.openlocfilehash: 5517347560b25f032baa77ecc2d769fb1e74ba4f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679648"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056726"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Instalación y uso de Windows PowerShell Web Access
 
-Actualizado: 5 de noviembre de 2013 (editado: Agosto de 23, 2017
+Actualizado: 5 de noviembre de 2013 (editado: 23 de agosto de 2017)
 
 Se aplica a: Windows Server 2012 R2, Windows Server 2012
 
@@ -97,7 +97,7 @@ Puede instalar la puerta de enlace de Windows PowerShell Web Access en un servid
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
    > [!NOTE]
-   > Al instalarse Windows PowerShell Web Access mediante el uso de los cmdlets de Windows PowerShell, no se agregan herramientas de administración de Servidor web (IIS) de forma predeterminada. Si quiere instalar las herramientas de administración en el mismo servidor que el de la puerta de enlace de Windows PowerShell Web Access, agregue el parámetro `-IncludeManagementTools` al comando de instalación (como se indica en este paso). Si administra el sitio web de Windows PowerShell Web Access desde un equipo remoto, instale el complemento Administrador de IIS mediante la instalación de las [Herramientas de administración remota del servidor para Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) o [Herramientas de administración remota del servidor para Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972) en el equipo desde el que quiere administrar la puerta de enlace.
+   > Al instalarse Windows PowerShell Web Access mediante el uso de los cmdlets de Windows PowerShell, no se agregan herramientas de administración de Servidor web (IIS) de forma predeterminada. Si quiere instalar las herramientas de administración en el mismo servidor que el de la puerta de enlace de Windows PowerShell Web Access, agregue el parámetro `-IncludeManagementTools` al comando de instalación (como se indica en este paso). Si administra el sitio web de Windows PowerShell Web Access desde un equipo remoto, instale el complemento Administrador de IIS mediante la instalación de las [Herramientas de administración remota del servidor para Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) o [Herramientas de administración remota del servidor para Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972) en el equipo desde el cual desea administrar la puerta de enlace.
 
    Para instalar roles y características en un VHD sin conexión, debe agregar los parámetros `-ComputerName` y `-VHD` . El parámetro `-ComputerName` contiene el nombre del servidor en el que se montará el VHD y el parámetro `-VHD` contiene la ruta de acceso al archivo VHD en el servidor especificado.
 
@@ -178,7 +178,7 @@ De manera predeterminada, el cmdlet instala la aplicación web, **pswa** (y un g
 7. En el cuadro de diálogo **Agregar enlace de sitio**, en el campo **Tipo**, seleccione **https**.
 
 8. En el campo **Certificado SSL**, seleccione su certificado firmado en el menú desplegable.
-   Haga clic en **Aceptar**. Consulte [Para configurar un certificado SSL en el Administrador de IIS](#to-configure-an-ssl-certificate-in-iis-Manager) en este tema para obtener más información sobre cómo obtener un certificado.
+   Haga clic en **Aceptar**. Consulte [Para configurar un certificado SSL en el Administrador de IIS](#to-configure-an-ssl-certificate-in-iis-manager) en este tema para obtener más información sobre cómo obtener un certificado.
 
    La aplicación web Windows PowerShell Web Access ya está configurada para usar su certificado SSL firmado.
 
@@ -200,7 +200,7 @@ Para obtener más información sobre la seguridad y las reglas de autorización 
    - En el escritorio de Windows, haga clic con el botón derecho en **Windows PowerShell**, en la barra de tareas y, luego,en **Ejecutar como administrador**.
    - En la pantalla **Inicio** de Windows, haga clic con el botón derecho en **Windows PowerShell** y, luego, en **Ejecutar como administrador**.
 
-2. Paso opcional para restringir el acceso del usuario mediante configuraciones de sesión: Compruebe que las configuraciones de sesión que quiere usar en las reglas ya existen. Si aún no se han creado, use las instrucciones para crear configuraciones de sesión proporcionadas en [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+2. Paso opcional para restringir el acceso de usuario con el uso de configuraciones de sesión: Compruebe que las configuraciones de sesión que quiere usar en las reglas ya existen. Si aún no se han creado, use las instrucciones para crear configuraciones de sesión proporcionadas en [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Escriba lo siguiente y, después, presione **Entrar**.
 
@@ -273,7 +273,7 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
 8. En el campo **Ruta de acceso física**, busque la ubicación de la aplicación. Puede usar la ubicación predeterminada, `$env:windir/Web/PowerShellWebAccess/wwwroot`. Haga clic en **Aceptar**.
 
-9. Siga los pasos del procedimiento [Para configurar un certificado SSL en el Administrador de IIS](#to-configure-an-ssl-certificate-in-iis-Manager) en este tema.
+9. Siga los pasos del procedimiento [Para configurar un certificado SSL en el Administrador de IIS](#to-configure-an-ssl-certificate-in-iis-manager) en este tema.
 
 10. ![](images/SecurityNote.jpeg) Paso de seguridad opcional:
 
@@ -318,7 +318,7 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
 1. Se creará automáticamente un grupo de aplicaciones para el nuevo sitio web. Para usar un grupo de aplicaciones diferente, haga clic en **Seleccionar** para seleccionar un grupo de aplicaciones a fin de asociarlo con el nuevo sitio web. Seleccione el grupo de aplicaciones alternativo en el cuadro de diálogo **Seleccionar grupo de aplicaciones** y, después, haga clic en **Aceptar**.
 
-1. En el **ruta de acceso física** texto, navegue hasta % windir%/Web/PowerShellWebAccess/wwwroot.
+1. En el cuadro de texto **Ruta de acceso física**, vaya a %windir%/Web/PowerShellWebAccess/wwwroot.
 
 1. En el campo **Tipo** del área **Enlace**, seleccione **https**.
 
@@ -329,7 +329,7 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
 1. De forma opcional, si es necesario en su organización, especifique un nombre de host que tenga sentido para la organización y los usuarios, como **`www.contoso.com`**. Haga clic en **Aceptar**.
 
-1. En un entorno de producción más seguro, se recomienda encarecidamente proporcionar un certificado válido firmado por una CA. Debe proporcionar un certificado SSL, porque los usuarios solo se pueden conectar a Windows PowerShell Web Access a través de un sitio web HTTPS. Vea [Para configurar un certificado SSL en el Administrador de IIS](#to-configure-an-ssl-certificate-in-iis-Manager) en este tema para más información sobre cómo obtener un certificado.
+1. En un entorno de producción más seguro, se recomienda encarecidamente proporcionar un certificado válido firmado por una CA. Debe proporcionar un certificado SSL, porque los usuarios solo se pueden conectar a Windows PowerShell Web Access a través de un sitio web HTTPS. Consulte [Para configurar un certificado SSL en el Administrador de IIS](#to-configure-an-ssl-certificate-in-iis-manager) en este tema para obtener más información sobre cómo obtener un certificado.
 
 1. Haga clic en **Aceptar** para cerrar el cuadro de diálogo **Agregar sitio web**.
 

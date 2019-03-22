@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Configuración de un cliente de extracción de DSC
-ms.openlocfilehash: b7cd6dc0087eb8368c5467df4c3c7266ed704451
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 54c68ac26e5388260e252ce01418170e26ddecde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402210"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054261"
 ---
 # <a name="setting-up-a-dsc-pull-client"></a>Configuración de un cliente de extracción de DSC
 
@@ -23,4 +23,5 @@ En los temas siguientes se explica cómo configurar los clientes de extracción:
 * [Configuración de un cliente de extracción mediante nombres de configuración](pullClientConfigNames.md)
 * [Configuración de un cliente de extracción mediante id. de configuración](pullClientConfigID.md)
 
-> **Nota**: Estos temas se aplican a PowerShell 5.0. Para configurar un cliente de extracción en PowerShell 4.0, consulte [Configuración de un cliente de extracción con el id. de configuración de PowerShell 4.0](pullClientConfigID4.md).
+> [!NOTE]
+> Estos temas se aplican a PowerShell 5.0. Para configurar un cliente de extracción en PowerShell 4.0, consulte [Configuración de un cliente de extracción con el id. de configuración de PowerShell 4.0](pullClientConfigID4.md).

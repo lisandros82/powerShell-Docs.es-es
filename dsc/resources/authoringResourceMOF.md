@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Escribir un recurso de DSC personalizado con MOF
-ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55682085"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58059735"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Escribir un recurso de DSC personalizado con MOF
 
@@ -69,7 +69,8 @@ Tenga en cuenta lo siguiente sobre el código anterior:
 
 El script del recurso implementa la lógica del recurso. En este módulo, debe incluir tres funciones llamadas **Get-TargetResource**, **Set-TargetResource** y **Test-TargetResource**. Las tres funciones deben tomar un conjunto de parámetros que sea idéntico al conjunto de propiedades definidas en el esquema MOF que creó para el recurso. En este documento, este conjunto de propiedades se conoce como "propiedades del recurso". Almacene estas tres funciones en un archivo denominado <ResourceName>.psm1. En el ejemplo siguiente, las funciones se almacenan en un archivo denominado Demo_IISWebsite.psm1.
 
-> **Nota**: Al ejecutar el mismo script de configuración en el recurso más de una vez, no se deberían obtener errores. Asimismo, el recurso debería permanecer en el mismo estado que si se hubiera ejecutado el script una vez. Para lograrlo, asegúrese de que las funciones **Get-TargetResource** y **Test-TargetResource** no modifiquen el recurso y de que la invocación de la función **Set-TargetResource** más de una vez en una secuencia con los mismos valores de los parámetros sea siempre equivalente a invocarla una vez.
+> [!NOTE]
+> Al ejecutar el mismo script de configuración en el recurso más de una vez, no se deberían obtener errores. Asimismo, el recurso debería permanecer en el mismo estado que si se hubiera ejecutado el script una vez. Para lograrlo, asegúrese de que las funciones **Get-TargetResource** y **Test-TargetResource** no modifiquen el recurso y de que la invocación de la función **Set-TargetResource** más de una vez en una secuencia con los mismos valores de los parámetros sea siempre equivalente a invocarla una vez.
 
 En la implementación de la función **Get-TargetResource**, utilice los valores de propiedades clave del recurso que se proporcionan como parámetros para comprobar el estado de la instancia del recurso especificado. Esta función debe devolver una tabla hash que enumere todas las propiedades del recurso como claves y los valores reales de estas propiedades como los valores correspondientes. En el código siguiente se muestra un ejemplo.
 
@@ -276,7 +277,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 
 ## <a name="supporting-psdscrunascredential"></a>Compatibilidad con PsDscRunAsCredential
 
->**Nota:** **PsDscRunAsCredential** se admite en PowerShell 5.0 y versiones posteriores.
+>**Nota:** **PsDscRunAsCredential** es compatible con PowerShell 5.0 y versiones posteriores.
 
 La propiedad **PsDscRunAsCredential** se puede usar en el bloque de recursos de [configuraciones de DSC](../configurations/configurations.md) para especificar que el recurso se debe ejecutar bajo un conjunto especificado de credenciales.
 Para más información, consulte [DSC de ejecución con las credenciales de usuario](../configurations/runAsUser.md).
@@ -291,15 +292,15 @@ if (PsDscContext.RunAsUser) {
 }
 ```
 
-## <a name="rebooting-the-node"></a>Reiniciar el nodo
+## <a name="rebooting-the-node"></a>Reinicio del nodo
 
-Si las acciones realizadas su `Set-TargetResource` función requieren un reinicio, puede usar una marca global para indicar el LCM para reiniciar el nodo. Este reinicio se produce inmediatamente después del `Set-TargetResource` se completa la función.
+Si las acciones realizadas en la función `Set-TargetResource` requieren un reinicio, puede usar una marca global para indicar al LCM que reinicie el nodo. Este reinicio se produce inmediatamente después de completarse la función `Set-TargetResource`.
 
-Dentro de su `Set-TargetResource` de función, agregue la siguiente línea de código.
+Dentro de la función `Set-TargetResource`, agregue la siguiente línea de código.
 
 ```powershell
 # Include this line if the resource requires a system reboot.
 $global:DSCMachineStatus = 1
 ```
 
-En orden para el LCM reiniciar el nodo, el **RebootNodeIfNeeded** marca debe establecerse en `$true`. El **ActionAfterReboot** configuración debe establecerse en **ContinueConfiguration**, que es el valor predeterminado. Para obtener más información sobre cómo configurar el LCM, consulte [configuración del Administrador de configuración Local](../managing-nodes/metaConfig.md), o [configuración del Administrador de configuración Local (v4)](../managing-nodes/metaConfig4.md).
+Para que el LCM reinicie el nodo, la marca **RebootNodeIfNeeded** debe establecerse en `$true`. El ajuste **ActionAfterReboot** debe establecerse también en **ContinueConfiguration**, que es el valor predeterminado. Para obtener más información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local](../managing-nodes/metaConfig.md) o [Configuración del administrador de configuración local (v4)](../managing-nodes/metaConfig4.md).

@@ -2,12 +2,12 @@
 ms.date: 04/11/2018
 keywords: dsc,powershell,configuration,setup
 title: Configuración de un servidor de incorporación de cambios SMB de DSC
-ms.openlocfilehash: 722120369df9ff383a02c69111e0bacf2e2e76a5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 9d087a08861b2f4683e81efd1e25f857b8b75e07
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402258"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057763"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Configuración de un servidor de incorporación de cambios SMB de DSC
 
@@ -59,7 +59,7 @@ Configuration SmbShare
         {
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
-            FullAccess = 'admininstrator'
+            FullAccess = 'administrator'
             ReadAccess = 'myDomain\Contoso-Server$'
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
@@ -69,14 +69,14 @@ Configuration SmbShare
 }
 ```
 
-La configuración crea el directorio `C:\DscSmbShare`, si aún no existe y, a continuación, utiliza ese directorio como un recurso compartido de archivos SMB. **FullAccess** debería proporcionarse a cualquier cuenta que debe escribir o eliminar el recurso compartido de archivos. **ReadAccess** debe proporcionarse a cualquier nodo de cliente que obtenga las configuraciones o recursos de DSC desde el recurso compartido.
+La configuración crea el directorio `C:\DscSmbShare` si aún no existe y, a continuación, usa ese directorio como un recurso compartido de archivos SMB. **FullAccess** debe proporcionarse a cualquier cuenta que deba escribir o eliminar contenido del recurso compartido de archivo. **ReadAccess** debe proporcionarse a cualquier nodo de cliente que obtenga configuraciones o recursos de DSC del recurso compartido.
 
 > [!NOTE]
-> DSC se ejecuta como la cuenta del sistema de forma predeterminada, por lo que el propio equipo debe tener acceso al recurso compartido.
+> DSC se ejecuta como la cuenta del sistema de forma predeterminada, por lo que el mismo equipo debe tener acceso al recurso compartido.
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>Conceder al sistema de archivos acceso al cliente de incorporación de cambios
 
-Al conceder el acceso **ReadAccess** a un nodo de cliente, se permite que ese nodo acceda al recurso compartido SMB, pero no a los archivos o a las carpetas de dentro de ese recurso compartido. Tiene que conceder explícitamente cliente nodos tengan acceso a la carpeta de recurso compartido de SMB y subcarpetas. Se puede hacer esto con DSC si se agrega con el recurso **cNtfsPermissionEntry**, que se encuentra en el módulo [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0). La siguiente configuración agrega un bloque **cNtfsPermissionEntry** que concede acceso ReadAndExecute al cliente de incorporación de cambios:
+Al conceder el acceso **ReadAccess** a un nodo de cliente, se permite que ese nodo acceda al recurso compartido SMB, pero no a los archivos o a las carpetas de dentro de ese recurso compartido. Tiene que conceder explícitamente a los nodos de cliente acceso a las carpetas y subcarpetas del recurso compartido SMB. Se puede hacer esto con DSC si se agrega con el recurso **cNtfsPermissionEntry**, que se encuentra en el módulo [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0). La siguiente configuración agrega un bloque **cNtfsPermissionEntry** que concede acceso ReadAndExecute al cliente de incorporación de cambios:
 
 ```powershell
 Configuration DSCSMB
@@ -135,7 +135,7 @@ Todos los archivos MOF de configuración deben denominarse *ConfigurationID*.mof
 > [!NOTE]
 > Debe usar identificadores de configuración si está utilizando un servidor de incorporación de cambios SMB. Los nombres de configuración no son compatibles con SMB.
 
-Cada módulo de recursos se debe comprimir y se le debe asignar un nombre de acuerdo con el patrón `{Module Name}_{Module Version}.zip`. Por ejemplo, un módulo denominado xWebAdminstration con una versión de módulo de 3.1.2.0 se denominaría 'xWebAdministration_3.2.1.0.zip'. Cada versión de un módulo debe incluirse en un solo archivo ZIP. No se admiten versiones distintas de un módulo en un archivo zip. Antes de empaquetar los módulos de recursos de DSC para su uso con el servidor de extracción, deberá realizar un pequeño cambio en la estructura de directorios.
+Cada módulo de recursos se debe comprimir y se le debe asignar un nombre de acuerdo con el patrón `{Module Name}_{Module Version}.zip`. Por ejemplo, un módulo denominado xWebAdminstration con una versión de módulo de 3.1.2.0 se denominaría 'xWebAdministration_3.2.1.0.zip'. Cada versión de un módulo debe incluirse en un solo archivo ZIP. No se admiten versiones distintas de un módulo en un archivo zip. Antes de empaquetar los módulos de recursos de DSC para su uso con el servidor de extracción, debe realizar un pequeño cambio en la estructura de directorios.
 
 El formato predeterminado de los módulos que contienen recursos de DSC en WMF 5.0 es `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
 
@@ -207,7 +207,7 @@ $ConfigurationData = @{
 
 ## <a name="acknowledgements"></a>Agradecimientos
 
-Agradecimientos especiales a las siguientes personas:
+Agradecimientos especiales a las personas siguientes:
 
 - Mike F. Robbins, cuyas publicaciones sobre el uso de SMB para DSC permitieron informar del contenido de este tema. Su blog es [Mike F Robbins](http://mikefrobbins.com/).
 - Serge Nikalaichyk, que creó el módulo **cNtfsAccessControl**. El código de este módulo está en [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl).

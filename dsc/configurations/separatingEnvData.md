@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Separación de los datos de entorno y configuración
-ms.openlocfilehash: 24a92e5e4f15959498b57a1488a688d5548f3585
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402370"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794933"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Separación de los datos de entorno y configuración
 
@@ -88,7 +88,7 @@ Mode                LastWriteTime         Length Name
 
 Veamos un ejemplo completo que usa una única configuración para configurar los entornos de desarrollo y producción de un sitio web. En el entorno de desarrollo, IIS y SQL Server se instalan en un único nodo. En el entorno de producción, IIS y SQL Server se instalan en nodos independientes. Vamos a usar un archivo. psd1 de datos de configuración para especificar los datos de los dos entornos diferentes.
 
- ### <a name="configuration-data-file"></a>Archivo de datos de configuración
+### <a name="configuration-data-file"></a>Archivo de datos de configuración
 
 Definiremos los datos del entorno de desarrollo y producción en un archivo denominado `DevProdEnvData.psd1` de la siguiente forma:
 
@@ -135,7 +135,7 @@ El contenido del sitio también es diferente, según lo especificado por las pro
 
 Al final del script de configuración, llamamos a la configuración (compílela en un documento MOF) al pasar `DevProdEnvData.psd1` como el parámetro `$ConfigurationData`.
 
->**Nota:** Esta configuración requiere que los módulos `xSqlPs` y `xWebAdministration` esté instalado en el nodo de destino.
+>**Nota:** Esta configuración requiere que los módulos `xSqlPs` y `xWebAdministration` estén instalados en el nodo de destino.
 
 Vamos a definir la configuración en un archivo denominado `MyWebApp.ps1`:
 

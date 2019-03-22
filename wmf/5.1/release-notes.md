@@ -3,14 +3,14 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Notas de la versión de WMF 5.1
-ms.openlocfilehash: 5c3075eda5482cc6a43bd237fe4fca0064136753
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 61ca854cf8f26a9e96c6c5b5c06f6b54d08fb4ea
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219443"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795018"
 ---
-# <a name="windows-management-framework-wmf-51-release-notes"></a>Notas de la versión de Windows Management Framework (WMF) 5.1 #
+# <a name="windows-management-framework-wmf-51-release-notes"></a>Notas de la versión de Windows Management Framework (WMF) 5.1
 
 WMF 5.1 incluye los componentes de PowerShell, WMI, WinRM y Registro de inventario de software (SIL) que se lanzaron con Windows Server 2016.
 WMF 5.1 puede instalarse en Windows 7, Windows 8.1, Windows Server 2008 R2, 2012 y 2012 R2 y proporciona una serie de mejoras con respecto a WMF 5.0 RTM, incluidos:

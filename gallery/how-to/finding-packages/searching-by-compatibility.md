@@ -2,31 +2,32 @@
 ms.date: 12/11/2018
 contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,cmdlet,psgallery
-title: Paquetes con las ediciones de PowerShell o el sistema operativo compatible
-ms.openlocfilehash: 8230866561d3021379a48cc2c83fb4104a4058c1
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
-ms.translationtype: MTE95
+title: Paquetes con sistemas operativos o ediciones compatibles de PowerShell
+ms.openlocfilehash: 14038aa9b0453e1d06e6587e97da391b56297c75
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747711"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057185"
 ---
-# <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Paquetes con las ediciones de PowerShell o en sistemas operativos compatibles
+# <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Paquetes con sistemas operativos o ediciones compatibles de PowerShell
 
 A partir de la versión 5.1, PowerShell está disponible en diferentes ediciones que denotan distintos conjuntos de características y compatibilidad con varias plataformas.
 
-## <a name="searching-by-powershell-edition"></a>Buscar por edición de PowerShell 
-Las dos ediciones de Powershell son:
-- Desktop Edition Basado en .NET Framework y proporciona compatibilidad con scripts y módulos destinados a versiones de PowerShell que se ejecutan en las ediciones de superficie completa de Windows como Server Core y el escritorio de Windows.
-- **Core Edition:** Basado en .NET Core y proporciona compatibilidad con scripts y módulos destinados a versiones de PowerShell que se ejecutan en las ediciones de superficie reducida de Windows como Nano Server y Windows IoT.
+## <a name="searching-by-powershell-edition"></a>Búsqueda por edición de PowerShell
 
-### <a name="powershell-gallery-allows-you-to-filter-packages-compatible-for-specific-powershell-editions"></a>Galería de PowerShell le permite filtrar paquetes compatibles para determinadas ediciones de PowerShell
+Las dos ediciones de PowerShell son:
+- **Desktop Edition:** basado en .NET Framework y proporciona compatibilidad con scripts y módulos destinados a las versiones de PowerShell que se ejecutan en las ediciones de superficie completa de Windows como Server Core y Windows Desktop.
+- **Core Edition:** basado en .NET Core y proporciona compatibilidad con scripts y módulos destinados a las versiones de PowerShell que se ejecutan en las ediciones de superficie completa de Windows como Nano Server y Windows IoT.
 
-Si un paquete tiene compatible PSEditions especificado, que aparecen como parte de 'Ediciones de PowerShell' en la página de presentación de paquete y también en los resultados de los paquetes.
+### <a name="powershell-gallery-allows-you-to-filter-packages-compatible-for-specific-powershell-editions"></a>La Galería de PowerShell permite filtrar paquetes compatibles para determinadas ediciones de PowerShell
+
+Si en un paquete se han especificado PSEditions compatibles, se enumeran como parte de "Ediciones de PowerShell" en la página de visualización del paquete y en los resultados de los paquetes.
 También puede buscar paquetes compatibles con PowerShell.
 
 ![Página de visualización del elemento con PSEditions](../../Images/packagedisplaypagewithpseditions.PNG)
 
-### <a name="search-for-packages-in-the-gallery-ui-that-work-on-powershell-core"></a>Buscar paquetes en la Galería de la interfaz de usuario que funcionan en PowerShell Core
+### <a name="search-for-packages-in-the-gallery-ui-that-work-on-powershell-core"></a>Buscar paquetes en la interfaz de usuario de la Galería que funcionan en PowerShell Core
 
 Use Tags:"PSEdition_Desktop" y Tags:"PSEdition_Core" para filtrar los paquetes de la Galería de PowerShell.
 
@@ -39,8 +40,9 @@ Use Tags:"PSEdition_Desktop" y Tags:"PSEdition_Core" para filtrar los paquetes d
 ![Resultados de la búsqueda de elementos compatibles con Desktop PSEdition](../../Images/searchresultswithpseditionsdesktop.PNG)
 
 ### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>Buscar paquetes para encontrar las ediciones compatibles con PowerShell
-Puede especificar etiquetas para filtrar para las ediciones de PowerShell y el sistema operativo. Usa el `Find-Package` cmdlet especificando el `-Tag` parámetro para especificar la edición (y el sistema operativo) tiene como destino.
-Así:
+Puede especificar etiquetas para filtrar por las ediciones de PowerShell y el sistema operativo.
+Se usa el cmdlet `Find-Package` especificando el parámetro `-Tag` para especificar la edición (y el sistema operativo) objetivo.
+Por ejemplo:
 
 ```powershell
 # Find modules compatible with PowerShell Core:
@@ -50,34 +52,34 @@ Find-Module -Tag PSEdition_Core
 Find-Module -Tag PSEdition_Core, Linux
 ```
 
-## <a name="searching-by-operating-system"></a>Búsqueda por el sistema operativo 
+## <a name="searching-by-operating-system"></a>Buscar por sistema operativo
 
-Dado que PowerShell Core está disponible para Windows, Linux y MacOS, los paquetes en la Galería pueden estar diseñados para cualquier combinación de estos sistemas operativos. En la Galería de la interfaz de usuario use las siguientes etiquetas de búsquedas para encontrar los paquetes etiquetados por sistema operativo:
+Dado que PowerShell Core está disponible para Windows, Linux y MacOS, los paquetes en la Galería pueden estar diseñados para cualquier combinación de estos sistemas operativos. En la interfaz de usuario de la galería, use las siguientes etiquetas de búsqueda para buscar paquetes etiquetados por sistema operativo:
 
 - Etiquetas: "Windows"
 - Etiquetas: "Linux"
-- Etiquetas: "MacOS" 
+- Etiquetas: "MacOS"
 
-Puede especificar estas etiquetas en `Find-Module` (y otros cmdlets del módulo PowerShellGet), similar al siguiente:
+Puede especificar estas etiquetas en `Find-Module` (y otros cmdlets del módulo PowerShellGet), por ejemplo:
 
 ```powershell
 # Find Modules compatible with Windows
 Find-Module -Tag Linux
 ```
 
-## <a name="searching-for-multiple-compatibilities"></a>Búsqueda de varias compatibilidades
+## <a name="searching-for-multiple-compatibilities"></a>Buscar por varias compatibilidades
 
-Puede buscar un paquete que tenga varias compatibilidades con la sintaxis: 
+Puede buscar un paquete que tenga varias compatibilidades con la sintaxis siguiente:
 
-Etiquetas "Compatibility1" "2" 
+Etiquetas: "Compatibilidad1" "Compatibilidad2"
 
-Por ejemplo, si busca un paquete de compatibilidad de núcleo de PowerShell que se ejecuta en máquinas mi Windows y Linux, use las etiquetas de búsqueda:
+Por ejemplo, si busca un paquete con compatibilidad de PowerShell Core que se ejecuta en ambas máquinas Windows y Linux, use las etiquetas de búsqueda:
 
-Etiquetas "PSEdition_Core", "Windows", "Linux" 
+Etiquetas: "PSEdition_Core" "Windows" "Linux"
 
-Para buscar mediante PowerShell, puede usar el `Find-Module` (y los otros cmdlets del módulo PowerShellGet), similar al siguiente:
+Para buscar con PowerShell, puede usar `Find-Module` (y los otros cmdlets del módulo PowerShellGet), por ejemplo:
 
-```powewrshell
+```powershell
 # Find scripts compatible with PowerShell Core, Windows, and Linux
 Find-Script -Tag PSEdition_Core,Linux,Windows
 

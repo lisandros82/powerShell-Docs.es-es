@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Creación y publicación de un elemento
-ms.openlocfilehash: 70696535a3bf540ff75a2dc43bca80cb1adf8f45
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
-ms.translationtype: MTE95
+ms.openlocfilehash: 0e0f871b5d43508735e396224fdfd1a29b1e91c0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012541"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055485"
 ---
 # <a name="creating-and-publishing-an-item"></a>Creación y publicación de un elemento
 
@@ -32,7 +32,7 @@ Consulte [Creating a PowerShell Gallery Account](/powershell/gallery/how-to/publ
 
 Una vez que cree una cuenta, puede obtener la clave de API que se necesita para publicar un elemento. Después de iniciar sesión con la cuenta, su nombre de usuario aparecerá en la parte superior de las páginas de la Galería de PowerShell en lugar de Registrarse. Haga clic en su nombre de usuario para ir a la página Mi cuenta, donde encontrará la clave de API.
 
-Nota: La clave de API deben tratarse de manera más segura, como el inicio de sesión y la contraseña.
+Nota: la clave de API se debe tratar con la misma seguridad con que trata el inicio de sesión y la contraseña.
 Con esta clave usted mismo, o cualquier otra persona, puede actualizar el elemento de su propiedad en la Galería de PowerShell.
 Se recomienda que actualice la clave con regularidad, lo que puede hacer con la opción Restablecer clave en la página Mi cuenta.
 
@@ -43,18 +43,18 @@ Se recomienda revisar la sección sobre los metadatos de los elementos del artí
 
 Los cmdlets [New-ModuleManifest](/powershell/module/microsoft.powershell.core/new-modulemanifest) y [New-ScriptFileInfo](/powershell/module/PowerShellGet/New-ScriptFileInfo) crearán la plantilla de manifiesto para usted, con marcadores de posición para todos los elementos del manifiesto.
 
-Ambos manifiestos tienen dos secciones que son importantes para la publicación, el área de datos de clave principal y PSData de PrivateData. Los datos de clave principales en un manifiesto de módulo de PowerShell están todo el contenido fuera de la sección PrivateData. El conjunto de claves principales está vinculado a la versión de PowerShell en uso y no se admiten los valores no definidos. PrivateData admite agregar nuevas claves, por lo que los elementos específicos para la Galería de PowerShell están en la sección PrivateData.
+Ambos manifiestos tienen dos secciones que son importantes para la publicación, los datos de clave principal y el área PSData de PrivateData. Los datos de clave principal en un manifiesto de módulo de PowerShell es todo lo que queda fuera de la sección PrivateData. El conjunto de claves principales está vinculado a la versión de PowerShell en uso y no se admiten los valores no definidos. PrivateData admite agregar nuevas claves, por lo que los elementos específicos para la Galería de PowerShell están en la sección PrivateData.
 
 
 Los elementos de manifiesto más importantes de rellenar para el elemento que publica en la Galería de PowerShell son los siguientes:
 
 - Nombre del script o del módulo: se extraen de los nombres del archivo .PS1 en el caso de un script o de .PSD1, si se trata de un módulo.
-- Versión: se trata de una clave principal requerida, el formato debe seguir las instrucciones de SemVer. Para obtener más información, consulte los procedimientos recomendados.
-- Autor: Esto es una clave principal requerida y contiene el nombre que se va a asociar con el elemento.
-Consulte autores y propietarios a continuación.
+- Versión: clave principal requerida, el formato debe seguir las instrucciones de SemVer. Para obtener más información, consulte los procedimientos recomendados.
+- Autor: clave principal requerida que contiene el nombre que se asociará al elemento.
+Consulte la información sobre autores y propietarios, a continuación.
 - Descripción: clave principal requerida que se usa para explicar brevemente qué hace este elemento y los requisitos para usarlo
 - ProjectURI: campo de URI recomendado en PSData que proporciona un vínculo a un repositorio GitHub o una ubicación similar donde lleva a cabo el desarrollo del elemento
-- Etiquetas: es una recomendación para etiquetar el paquete en función de su compatibilidad con PSEditions y plataformas segura. Para obtener más información, consulte el [instrucciones de publicación](../../concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms).
+- Etiquetas: se recomienda encarecidamente etiquetar el paquete en función de su compatibilidad con PSEditions y otras plataformas. Para obtener más información, consulte las [Directrices de publicación](../../concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms).
 
 Los autores y propietarios de los elementos de la Galería de PowerShell son conceptos relacionados, pero que no siempre coinciden. Los propietarios de un elemento son usuarios con cuentas de la Galería de PowerShell que tienen permiso para mantener el elemento. Puede haber muchos propietarios que puedan actualizar un elemento. El propietario solo está disponible desde la Galería de PowerShell y se pierde si el elemento se copia de un sistema a otro. El autor es una cadena integrada en los datos del manifiesto, por lo que siempre forma parte del elemento. Las recomendaciones para los elementos que provienen de productos Microsoft son las siguientes:
 
@@ -87,14 +87,14 @@ Debe usar [Publish-Script](/powershell/module/PowerShellGet/publish-script) o [P
 
 La mayor parte de las otras opciones de la línea de comandos debe estar en los datos del manifiesto del elemento que se publica, para que no tenga que especificarlos en el comando.
 
-Para evitar errores, se recomienda que pruebe los comandos con -Whatif -Verbose antes de la publicación. Esto permitirá ahorrar bastante tiempo, porque cada vez que publique en la Galería de PowerShell, debe actualizar el número de versión en la sección de manifiesto del elemento.
+Para evitar errores, se recomienda que pruebe los comandos con -WhatIf -Verbose antes de la publicación. Esto permitirá ahorrar bastante tiempo, porque cada vez que publique en la Galería de PowerShell, debe actualizar el número de versión en la sección de manifiesto del elemento.
 
-Algunos ejemplos serían:
+Algunos posibles ejemplos:
 
-* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -Whatif -Verbose`
-* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose`
+* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -WhatIf -Verbose`
+* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -WhatIf -Verbose`
 
-Revise cuidadosamente los resultados y, si no ve errores ni advertencias, repita el comando sin -Whatif.
+Revise cuidadosamente los resultados y, si no ve errores ni advertencias, repita el comando sin -WhatIf.
 
 Todos los elementos que se publican en la Galería de PowerShell se examinarán para ver si tienen virus y se analizarán con PowerShell Script Analyzer. Todos los problemas que surjan en ese momento se enviarán al publicador para que los solucione.
 

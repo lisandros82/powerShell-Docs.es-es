@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Configuración de máquinas virtuales en el arranque inicial mediante DSC
-ms.openlocfilehash: 7b9ebc6c818aa39365759945667426c8976997e5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: f9634c330832e23fb2c6f08c5b299b55a5505ac9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402985"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58059429"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Configuración de máquinas virtuales en el arranque inicial mediante DSC
 
@@ -18,16 +18,17 @@ ms.locfileid: "53402985"
 
 > [!NOTE]
 > La clave del Registro **DSCAutomationHostEnabled** descrita en este tema no está disponible en PowerShell 4.0.
-> Para obtener información sobre cómo configurar nuevas máquinas virtuales en el arranque inicial de PowerShell 4.0, consulte [¿Desea configurar automáticamente su máquinas con DSC en el arranque inicial?]> (https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
+> Para obtener información sobre cómo configurar nuevas máquinas virtuales en el arranque inicial de PowerShell 4.0, consulte [¿Desea configurar automáticamente su máquinas con DSC en el arranque inicial?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
 
 Para ejecutar estos ejemplos, necesitará:
 
-- Un VHD de arranque con el que trabajar. Puede descargar una imagen ISO con una copia de evaluación de Windows Server 2016 en [Centro de evaluación de TechNet](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Puede encontrar instrucciones sobre cómo crear un VHD desde una imagen ISO en [Creación de discos duros virtuales de arranque](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
+- Un VHD de arranque con el que trabajar. Puede descargar una imagen ISO con una copia de evaluación de Windows Server 2016 en [Centro de evaluación de TechNet](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
+  Puede encontrar instrucciones sobre cómo crear un VHD desde una imagen ISO en [Creación de discos duros virtuales de arranque](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
 - Un equipo host con Hyper-V habilitado. Para obtener más información, consulte [Introducción a Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).
 
   Mediante el uso de DSC, puede automatizar la instalación de software y configuración de un equipo en el arranque inicial.
   Para ello, inserte cualquier documento MOF de configuración o una metaconfiguración en un medio de arranque (por ejemplo, VHD) para que se ejecuten durante el proceso de arranque inicial.
-  Este comportamiento se especifica mediante la [clave del Registro DSCAutomationHostEnabled](DSCAutomationHostEnabled.md) bajo `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies`.
+  Este comportamiento se especifica mediante la [clave del Registro DSCAutomationHostEnabled](DSCAutomationHostEnabled.md) bajo `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`.
   De forma predeterminada, el valor de esta clave es 2, lo que permite a DSC ejecutarse durante el tiempo de arranque.
 
   Si no desea que DSC se ejecute durante el tiempo de arranque, establezca el valor de la clave del Registro [DSCAutomationHostEnabled](DSCAutomationHostEnabled.md) en 0.
@@ -102,7 +103,7 @@ Puede comprobar esto mediante una llamada al cmdlet [Get-WindowsFeature](/powers
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>Inserción de una metaconfiguración DSC en un VHD
 
-También puede configurar un equipo para extraer una configuración en el arranque inicial insertando una metaconfiguración (consulte [Configuración del administrador de configuración local (LCM)](../managing-nodes/metaConfig.md)) en el VHD como su archivo `MetaConfig.mof`.
+También puede configurar un equipo para extraer una configuración en el arranque inicial insertando una metaconfiguración (vea [Configuración del administrador de configuración local (LCM)](../managing-nodes/metaConfig.md)) en el VHD como su archivo `MetaConfig.mof`.
 Si la clave del Registro **DSCAutomationHostEnabled** está establecida en 2 (el valor predeterminado), DSC aplicará la metaconfiguración definida por `MetaConfig.mof` en LCM cuando el equipo arranque por primera vez.
 Si la metaconfiguración especifica que LCM debe extraer las configuraciones de un servidor de extracción, el equipo intentará extraer una configuración de ese servidor de extracción en el arranque inicial.
 Para obtener información sobre la configuración de un servidor de extracción de DSC, consulte [Configuración de un servidor de extracción web de DSC](../pull-server/pullServer.md).
@@ -139,7 +140,7 @@ configuration PullClientBootstrap
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
    ```
 
-2. [Configure un servidor de extracción web de DSC](../pull-server/pullServer.md) y guarde la configuración **SampleIISInistall** en la carpeta apropiada.
+2. [Configure un servidor de extracción web de DSC](../pull-server/pullServer.md) y guarde la configuración **SampleIISInstall** en la carpeta apropiada.
 
 3. En un equipo que ejecute PowerShell 5.0 o posterior, guarde la metaconfiguración anterior (**PullClientBootstrap**) como un archivo de script de PowerShell (.ps1).
 
@@ -172,7 +173,7 @@ Puede comprobar esto mediante una llamada al cmdlet [Get-WindowsFeature](/powers
 
 ## <a name="disable-dsc-at-boot-time"></a>Deshabilitación de DSC en un tiempo de arranque
 
-De forma predeterminada, el valor de la clave `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled` se establece en 2, lo que permite a una configuración de DSC ejecutarse si el equipo está en estado pendiente o actual. Si no desea que una configuración se ejecute en el arranque inicial, necesita establecer el valor de esta clave en 0:
+De forma predeterminada, el valor de la clave `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\DSCAutomationHostEnabled` se establece en 2, lo que permite a una configuración de DSC ejecutarse si el equipo está en estado pendiente o actual. Si no desea que una configuración se ejecute en el arranque inicial, necesita establecer el valor de esta clave en 0:
 
 1. Monte el VHD llamando al cmdlet [Mount-VHD](/powershell/module/hyper-v/mount-vhd). Por ejemplo:
 
@@ -186,10 +187,10 @@ De forma predeterminada, el valor de la clave `HKEY_LOCAL_MACHINE\SOFTWARE\Micro
    reg load HKLM\Vhd E:\Windows\System32\Config\Software`
    ```
 
-3. Vaya a `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\*` con el proveedor del Registro de PowerShell.
+3. Vaya a `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` con el proveedor del Registro de PowerShell.
 
    ```powershell
-   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies`
+   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System`
    ```
 
 4. Cambie el valor de `DSCAutomationHostEnabled` a 0.

@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: dsc,powershell,configuration,setup
 title: Servicio de extracción de DSC
-ms.openlocfilehash: 64c22bc021666026ae58a4c4fb4e3d31b25bae5c
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
-ms.translationtype: MTE95
+ms.openlocfilehash: 00e01e6c71226e6bde48b221e4e4fcf5f346feb4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429965"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056777"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Servicio de extracción de Desired State Configuration
 
@@ -72,7 +72,8 @@ A continuación se muestra un script de ejemplo.
 
 A partir de la versión 17090 de [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), SQL Server es una opción admitida en el servicio de extracción (característica de Windows *DSC-Service*). Esto constituye una nueva opción para ajustar la escala de entornos de DSC de gran envergadura que no se han migrado a [DSC de Azure Automation](/azure/automation/automation-dsc-getting-started).
 
-> **Nota**: La compatibilidad con SQL Server no se incluirá en WMF 5.1 ni versiones anteriores y solo estará disponible en versiones de Windows Server a partir de 17090.
+> [!NOTE]
+> La compatibilidad con SQL Server no se incluirá en WMF 5.1 ni en versiones anteriores, y solo estará disponible en versiones de Windows Server posteriores a la 17090.
 
 Para configurar el servidor de extracción de forma que use SQL Server, establezca **SqlProvider** en `$true` y **SqlConnectionString** en una cadena de conexión de SQL Server válida. Para más información, vea [SqlClient Connection Strings](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings) (Cadenas de conexión de SqlClient).
 Para ver un ejemplo de configuración de SQL Server con **xDscWebService**, lea primero [Uso del recurso xDSCWebService](#using-the-xdscwebservice-resource) y, después, revise [Sample_xDscWebServiceRegistration_UseSQLProvider.ps1 en GitHub](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
@@ -84,12 +85,12 @@ En los siguientes pasos se explica cómo usar el recurso en una configuración q
 
 1. Llame al cmdlet [Install-Module](/powershell/module/PowershellGet/Install-Module) para instalar el módulo **xPSDesiredStateConfiguration**.
    > [!NOTE]
-   > **Install-Module** se incluye en el **PowerShellGet** módulo, que se incluye en PowerShell 5.0. Puede descargar el módulo **PowerShellGet** para PowerShell 3.0 y 4.0 en [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186) (Vista previa de los módulos de PowerShell PackageManagement).
+   > **Install-Module** está incluido en el módulo **PowerShellGet**, que se incluye en PowerShell 5.0. Puede descargar el módulo **PowerShellGet** para PowerShell 3.0 y 4.0 en [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186) (Vista previa de los módulos de PowerShell PackageManagement).
 2. Obtenga un certificado SSL para el servidor de extracción de DSC de una entidad de certificación de confianza, ya sea dentro de su organización o de una entidad pública. El certificado recibido de la entidad suele tener el formato PFX.
-3. Instale el certificado en el nodo que se convertirá en el servidor de extracción de DSC en la ubicación predeterminada, que debería ser `CERT:\LocalMachine\My`.
+3. Instale el certificado en el nodo que se convertirá en el servidor de extracción de DSC en la ubicación predeterminada que debe ser `CERT:\LocalMachine\My`.
    - Anote la huella digital del certificado.
-4. Seleccione un GUID para usarlo como clave de registro. Para generar uno con PowerShell, escriba lo siguiente en el aviso de PS y pulse la tecla ENTRAR: ` [guid]::newGuid()` o `New-Guid`. Esta clave la utilizarán los nodos de cliente como una clave compartida para la autenticación durante el registro. Para más información, vea la sección Clave de registro más adelante.
-5. En PowerShell ISE, inicie (F5) el siguiente script de configuración (incluido en la carpeta de ejemplos de la **xPSDesiredStateConfiguration** módulo como `Sample_xDscWebServiceRegistration.ps1`). Este script configura el servidor de incorporación de cambios.
+4. Seleccione un GUID para usarlo como clave de registro. Para generar uno con PowerShell, escriba lo siguiente en el aviso de PS y pulse la tecla ENTRAR: `[guid]::newGuid()` o `New-Guid`. Esta clave la utilizarán los nodos de cliente como una clave compartida para la autenticación durante el registro. Para más información, vea la sección Clave de registro más adelante.
+5. En PowerShell ISE, inicie (F5) el siguiente script de configuración (incluido en la carpeta Examples del módulo **xPSDesiredStateConfiguration** como `Sample_xDscWebServiceRegistration.ps1`). Este script configura el servidor de incorporación de cambios.
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -164,9 +165,9 @@ En los siguientes pasos se explica cómo usar el recurso en una configuración q
 Para permitir que los nodos de cliente se registren con el servidor de forma que puedan usar nombres de configuración en lugar de un identificador de configuración, se guarda una clave de registro creada por medio de la configuración anterior en un archivo denominado `RegistrationKeys.txt` en `C:\Program Files\WindowsPowerShell\DscService`. La clave de registro funciona como un secreto compartido que se usa durante el registro inicial del cliente con el servidor de incorporación de cambios. El cliente generará un certificado autofirmado que se usa para autenticar el servidor de incorporación de cambios inequívocamente una vez que el registro se complete correctamente. La huella digital del certificado se almacena localmente y se asocia con la dirección URL del servidor de extracción.
 
 > [!NOTE]
-> No se admiten las claves de registro en PowerShell 4.0.
+> No se admiten claves del registro en PowerShell 4.0.
 
-Para configurar un nodo para que se autentique con el servidor de extracción, la clave de registro debe estar en la metaconfiguration de cualquier nodo de destino que se registre con este servidor de extracción. Tenga en cuenta que el **RegistrationKey** en la siguiente metaconfiguration se quita una vez haya registrado correctamente el equipo de destino y que el valor debe coincidir con el valor almacenado en el `RegistrationKeys.txt` archivo en el servidor de extracción (' 140a952b-b9d6-406b-b416-e0f759c9c0e4' en este ejemplo). Trate siempre el valor de clave de registro de forma segura, porque conocer esta clave conlleva que cualquier máquina de destino se registre al servidor de incorporación de cambios.
+Para configurar un nodo para que se autentique con el servidor de extracción, la clave de registro debe estar en la metaconfiguration de cualquier nodo de destino que se registre con este servidor de extracción. Tenga en cuenta que el elemento **RegistrationKey** de la siguiente metaconfiguración se quita una vez que el equipo de destino se ha registrado correctamente y que el valor debe coincidir con el valor almacenado en el archivo `RegistrationKeys.txt` en el servidor de extracción ("140a952b-b9d6-406b-b416-e0f759c9c0e4" para este ejemplo). Trate siempre el valor de clave de registro de forma segura, porque conocer esta clave conlleva que cualquier máquina de destino se registre al servidor de incorporación de cambios.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -210,7 +211,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 ```
 
 > [!NOTE]
-> El **ReportServerWeb** sección permite informar de datos que se envían al servidor de extracción.
+> La sección **ReportServerWeb** permite informar de datos que deben enviarse al servidor de extracción.
 
 Si falta la propiedad **ConfigurationID** en el archivo de metaconfiguration, significa implícitamente que el servidor de incorporación de cambios es compatible con la versión V2 del protocolo del servidor de incorporación de cambios, lo que requiere un registro inicial.
 Por el contrario, si hay una propiedad **ConfigurationID**, significa que se usa la versión V1 del protocolo del servidor de incorporación de cambios y que no hay ningún procesamiento de registro.
@@ -227,12 +228,12 @@ Estos archivos deben estar en un formato concreto para que el servidor de incorp
 
 Cada módulo de recursos se debe comprimir y se le debe asignar un nombre de acuerdo con el patrón `{Module Name}_{Module Version}.zip`.
 
-Por ejemplo, un módulo denominado xWebAdminstration con una versión del módulo de 3.1.2.0 se denominaría `xWebAdministration_3.2.1.0.zip`.
+Por ejemplo, un módulo denominado xWebAdminstration con una versión de módulo de 3.1.2.0 se denominaría `xWebAdministration_3.2.1.0.zip`.
 Cada versión de un módulo debe incluirse en un solo archivo ZIP.
 Dado que solo hay una versión de un recurso en cada archivo ZIP, no se admite el formato de módulo que se agrega en WMF 5.0 con compatibilidad con varias versiones de módulo en un único directorio.
 Esto significa que antes de empaquetar los módulos de recursos de DSC para su uso con el servidor de incorporación de cambios, deberá realizar un pequeño cambio en la estructura de directorios.
 El formato predeterminado de los módulos que contienen recursos de DSC en WMF 5.0 es `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
-Antes de empaquetar el servidor de extracción, quite el **{Module version}** por lo que se convierte en la ruta de acceso de carpeta `{Module Folder}\DscResources\{DSC Resource Folder}\`.
+Antes de empaquetar para el servidor de extracción, quite la carpeta **{Versión del módulo}** para que la ruta se quede en `{Module Folder}\DscResources\{DSC Resource Folder}\`.
 Con este cambio, comprima la carpeta según lo descrito anteriormente y coloque estos archivos ZIP en la carpeta **ModulePath**.
 
 Use `New-DscChecksum {module zip file}` para crear un archivo de suma de comprobación para el módulo que acaba de agregar.
@@ -280,8 +281,8 @@ En entornos locales, estas ofrecen funcionalidades de servicios de extracción y
 
 En los temas siguientes se describe en detalle cómo configurar los clientes de extracción:
 
-- [Configurar un cliente de extracción de DSC mediante un identificador de configuración](pullClientConfigID.md)
-- [Configurar un cliente de extracción de DSC mediante nombres de configuración](pullClientConfigNames.md)
+- [Configuración de un cliente de extracción de DSC mediante un ID de configuración](pullClientConfigID.md)
+- [Configuración de un cliente de extracción de DSC mediante nombres de configuración](pullClientConfigNames.md)
 - [Configuraciones parciales](partialConfigs.md)
 
 ## <a name="see-also"></a>Vea también
@@ -290,4 +291,4 @@ En los temas siguientes se describe en detalle cómo configurar los clientes de 
 - [Establecer configuraciones](enactingConfigurations.md)
 - [Uso de un servidor de informes de DSC](reportServer.md)
 - [[MS-DSCPM]: Desired State Configuration Pull Model Protocol](https://msdn.microsoft.com/library/dn393548.aspx) (Protocolo del modelo de extracción de configuración de estado deseado)
-- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol Errata](https://msdn.microsoft.com/library/mt612824.aspx) (Errata del protocolo del modelo de extracción de configuración de estado deseado)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol Errata](https://msdn.microsoft.com/library/mt612824.aspx) (Error del protocolo del modelo de extracción de Desired State Configuration)

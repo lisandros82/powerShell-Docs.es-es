@@ -2,12 +2,12 @@
 title: Comunicación remota de PowerShell a través de SSH
 description: Comunicación remota en PowerShell Core con SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: b5c6bd70841e270c2c128601612c07af9d9aa6e4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655300"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056539"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Comunicación remota de PowerShell a través de SSH
 
@@ -30,7 +30,7 @@ Para crear una sesión remota, especifique la máquina de destino con el paráme
 
 ## <a name="general-setup-information"></a>Información de configuración general
 
-Es necesario instalar SSH en todas las máquinas. Instale tanto el cliente (`ssh.exe`) y el servidor (`sshd.exe`) SSH para que pueda comunicarse de forma remota hacia y desde las máquinas. OpenSSH para Windows ahora está disponible en las compilación 1809 de Windows 10 y Windows Server 2019. Para obtener más información, consulte [OpenSSH para Windows](/windows-server/administration/openssh/openssh_overview). Para Linux, instale SSH (incluido el servidor sshd) en función de la plataforma. También necesita instalar PowerShell Core de GitHub para obtener la característica de comunicación remota mediante SSH. El servidor SSH debe estar configurado para crear un subsistema SSH para hospedar un proceso PowerShell en la máquina remota. También debe configurar la habilitación de la contraseña o la autenticación basada en claves.
+Es necesario instalar SSH en todas las máquinas. Instale tanto el cliente (`ssh.exe`) y el servidor (`sshd.exe`) SSH para que pueda comunicarse de forma remota hacia y desde las máquinas. OpenSSH para Windows ahora está disponible en las compilación 1809 de Windows 10 y en Windows Server 2019. Para obtener más información, vea [OpenSSH para Windows](/windows-server/administration/openssh/openssh_overview). Para Linux, instale SSH (incluido el servidor sshd) en función de la plataforma. También necesita instalar PowerShell Core de GitHub para obtener la característica de comunicación remota mediante SSH. El servidor SSH debe estar configurado para crear un subsistema SSH para hospedar un proceso PowerShell en la máquina remota. También debe configurar la habilitación de la contraseña o la autenticación basada en claves.
 
 ## <a name="set-up-on-windows-machine"></a>Configuración en una máquina Windows
 
@@ -46,8 +46,8 @@ Es necesario instalar SSH en todas las máquinas. Instale tanto el cliente (`ssh
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Instale la última Win32 OpenSSH. Para obtener instrucciones de instalación, consulte [instalación de OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
-3. Editar el `sshd_config` ubicado en el archivo `%ProgramData%\ssh`.
+2. Instale la versión más reciente de OpenSSH para Win32. Para obtener instrucciones de instalación, vea [Instalación de OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
+3. Edite el archivo `sshd_config` ubicado en `$env:ProgramData\ssh`.
 
    - Asegúrese de que la autenticación de contraseña esté habilitada.
 
@@ -62,7 +62,7 @@ Es necesario instalar SSH en todas las máquinas. Instale tanto el cliente (`ssh
      > [!NOTE]
      > Hay un error en OpenSSH para Windows que impide que los espacios funcionen en rutas de acceso ejecutables del subsistema. Para más información, consulte [este problema de GitHub](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-     Una solución consiste en crear un vínculo simbólico al directorio de instalación de Powershell que no tenga espacios:
+     Una solución consiste en crear un vínculo simbólico al directorio de instalación de PowerShell que no tenga espacios:
 
      ```powershell
      mklink /D c:\pwsh "C:\Program Files\PowerShell\6"

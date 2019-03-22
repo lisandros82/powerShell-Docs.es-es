@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Funcionalidades de rol de JEA
-ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522953"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055060"
 ---
 # <a name="jea-role-capabilities"></a>Funcionalidades de rol de JEA
 
@@ -101,7 +101,6 @@ Ejemplo                                                                         
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | Permite al usuario ejecutar `My-Func` con el parámetro `Param1`. Para este parámetro, solo se pueden especificar "Value1" y "Value2".
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Permite al usuario ejecutar `My-Func` con el parámetro `Param1`. Para este parámetro, se puede especificar cualquier valor que comience por "contoso".
 
-
 > [!WARNING]
 > En los mejores procedimientos recomendados de seguridad, se recomienda no usar caracteres comodín al definir cmdlets o funciones visibles.
 > En su lugar, debe enumerar de forma explícita cada comando de confianza para asegurarse de que ningún otro comando que comparta el mismo esquema de nombre se autorice de forma involuntaria.
@@ -171,7 +170,6 @@ FunctionDefinitions = @{
 > [!IMPORTANT]
 > No olvide agregar el nombre de las funciones personalizadas en el campo **VisibleFunctions** para que las puedan ejecutar los usuarios de JEA.
 
-
 El cuerpo (bloque de script) de las funciones personalizadas se ejecuta en el modo de lenguaje predeterminado del sistema y no está sujeto a restricciones de lenguaje de JEA.
 Esto significa que las funciones pueden tener acceso al sistema de archivos y al Registro y ejecutar comandos que no se han hecho visibles en el archivo de funcionalidad de rol.
 Tenga cuidado para evitar que se ejecute código arbitrario al usar parámetros y para evitar canalizar la entrada del usuario directamente en cmdlets como `Invoke-Expression`.
@@ -211,14 +209,12 @@ Consulte [Understanding a PowerShell Module](https://msdn.microsoft.com/library/
 
 ## <a name="updating-role-capabilities"></a>Actualizar funcionalidades de rol
 
-
 Puede actualizar un archivo de funcionalidad de rol en cualquier momento; para ello, solo tiene que guardar los cambios realizados en el archivo de funcionalidad de rol.
 Cualquier sesión de JEA nueva iniciada después de que se haya actualizado la funcionalidad de rol reflejará las funcionalidades revisadas.
 
 Por esto es tan importante controlar el acceso a la carpeta de funcionalidades de rol.
 Solo los administradores de plena confianza deberían poder cambiar los archivos de funcionalidad de rol.
 Si un usuario que no sea de confianza puede cambiar los archivos de funcionalidad de rol, puede proporcionarse acceso fácilmente a cmdlets que le permitan elevar sus privilegios.
-
 
 Para administradores que quieran bloquear el acceso a las funcionalidades de rol, asegúrese de que el sistema local tenga acceso de lectura a los archivos de funcionalidad de rol y a los módulos contenedores.
 
@@ -256,16 +252,14 @@ $roleB = @{
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
 }
 
-# Resulting permisisons for a user who belongs to both role A and B
-# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# Resulting permissions for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored because of rule #4
 # - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
 $mergedAandB = @{
     VisibleCmdlets = 'Get-Service',
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
 }
 ```
-
-
 
 **VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
 

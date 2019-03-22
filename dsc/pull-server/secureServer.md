@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Procedimientos recomendados del servidor de extracción
-ms.openlocfilehash: da67f8fd793878b097ffb260afad0fcf5c69bb04
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402977"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057712"
 ---
 # <a name="pull-server-best-practices"></a>Procedimientos recomendados del servidor de extracción
 
@@ -16,7 +16,7 @@ Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 > [!IMPORTANT]
 > El servidor de extracción (característica de Windows *DSC-Service*) es un componente de Windows Server admitido, si bien no está previsto ofrecer nuevas características o funcionalidades. Se recomienda empezar a realizar la transición de los clientes administrados a [DSC de Azure Automation](/azure/automation/automation-dsc-getting-started) (incluye características más allá del servidor de extracción de Windows Server) o a una de las soluciones de la comunidad que figuran [aquí](pullserver.md#community-solutions-for-pull-service).
 
-Resumen: Este documento está pensado para incluir el proceso y extensibilidad para ayudar a los ingenieros que están preparando para la solución. En los detalles se deberían ofrecer procedimientos recomendados identificados por los clientes y después validados por el equipo del producto para garantizar que estén orientados al futuro y se consideren estables.
+Resumen: El objetivo de este documento es incluir el proceso y la extensibilidad para ayudar a los ingenieros que se estén preparando para la solución. En los detalles se deberían ofrecer procedimientos recomendados identificados por los clientes y después validados por el equipo del producto para garantizar que estén orientados al futuro y se consideren estables.
 
 | |Información del documento|
 |:---|:---|
@@ -64,7 +64,7 @@ La implementación de un servidor de extracción exige la característica Servic
 
 ### <a name="software-downloads"></a>Descargas de software
 
-Además de instalar el contenido más reciente de Windows Update, hay dos descargas recomendadas para implementar un servidor de extracción de DSC: La versión más reciente de Windows Management Framework y un módulo de DSC para automatizar el aprovisionamiento del servidor de extracción.
+Además de instalar el contenido más reciente desde Windows Update, hay dos descargas consideradas procedimientos recomendados para implementar un servidor de extracción de DSC: la versión más reciente de Windows Management Framework y un módulo de DSC para automatizar el aprovisionamiento del servidor de extracción.
 
 ### <a name="wmf"></a>WMF
 
@@ -104,7 +104,7 @@ Tarea de planeamiento|
 
 Las implementaciones de servidor de extracción se admiten tanto en servidores físicos como virtuales. Los requisitos de tamaño del servidor de extracción están en línea con los requisitos de Windows Server 2012 R2.
 
-CPU: 1,4 memoria de procesador de GHz y 64 bits: 512 MB de espacio en disco 32 GB de red: Adaptador de Gigabit Ethernet
+CPU: procesador de 64 bits a 1,4 GHz Memoria: 512 MB Espacio en disco: 32 GB Red: adaptador Gigabit Ethernet
 
 Tarea de planeamiento|
 ---|
@@ -260,7 +260,7 @@ El comando le pedirá su aprobación antes de descargar el módulo.
 
 El mejor método para implementar un servidor de extracción de DSC es usar un script de configuración de DSC. En este documento se presentan los scripts incluyendo tanto la configuración básica que configuraría solo el servicio web de DSC como la configuración avanzada que configuraría un servidor descentralizado de Windows Server, incluido un servicio web de DSC.
 
-Nota:  Actualmente la `xPSDesiredStateConfiguation` módulo DSC requiere que el servidor sea la configuración regional EN-US.
+Nota:  De momento, el módulo `xPSDesiredStateConfiguration` de DSC exige que la configuración regional del servidor sea EN-US.
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Configuración básica de Windows Server 2012
 

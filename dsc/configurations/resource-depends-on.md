@@ -2,21 +2,21 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Dependencias de los recursos con DependsOn
-ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402490"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055706"
 ---
 # <a name="resource-dependencies-using-dependson"></a>Dependencias de los recursos con DependsOn
 
-Al escribir [configuraciones](configurations.md), agregue [bloques de recursos](../resources/resources.md) para configurar aspectos de un nodo de destino. Mientras continúa agregar bloques de recursos, las configuraciones pueden crecer bastante grande y difícil de administrar. Un desafío de este tipo es el orden de los bloques de recursos aplicado. Normalmente, los recursos se aplican en el orden en que se definen dentro de la configuración. A medida que crece la configuración más grandes y complejas, puede usar el `DependsOn` clave para cambiar el orden de los recursos mediante la especificación de que un recurso depende de otro recurso aplicado.
+Al escribir [configuraciones](configurations.md), agregue [bloques de recursos](../resources/resources.md) para configurar aspectos de un nodo de destino. A medida que se agregan bloques de recursos, las configuraciones pueden crecer bastante y pasar a ser difíciles de administrar. Un desafío de este tipo es el orden aplicado de los bloques de recursos. Normalmente, los recursos se aplican en el orden en que se definen dentro de la configuración. A medida que la configuración crece y se hace más grande y compleja, puede usar la clave `DependsOn` para cambiar el orden aplicado de los recursos mediante la especificación de que un recurso depende de otro recurso.
 
-El `DependsOn` clave puede utilizarse en cualquier bloque de recursos. Se define con el mismo mecanismo de pares clave-valor que otras claves de recursos. El `DependsOn` clave espera una matriz de cadenas con la siguiente sintaxis.
+La clave `DependsOn` puede utilizarse en cualquier bloque de recursos. Se define con el mismo mecanismo de clave-valor que otras claves de recursos. La clave `DependsOn` espera una matriz de cadenas con la siguiente sintaxis.
 
 ```
-DependsOn = '[<Resource Type>]<Resoure Name>', '[<Resource Type>]<Resource Name'
+DependsOn = '[<Resource Type>]<Resource Name>', '[<Resource Type>]<Resource Name'
 ```
 
 El ejemplo siguiente configura una regla de firewall después de habilitar y configurar el perfil público.
@@ -60,7 +60,7 @@ Configuration ConfigureFirewall
 ConfigureFirewall -OutputPath C:\Temp\
 ```
 
-Al aplicar la configuración, el perfil del firewall siempre se configurarán en primer lugar independientemente del orden en que se definen los bloques de recursos. Si aplica la configuración, asegúrese de tener en cuenta los nodos de destino existentes de configuración para poder revertir si lo desea.
+Al aplicar la configuración, el perfil del firewall siempre se configurará en primer lugar, independientemente del orden en que están definidos los bloques de recursos. Si aplica la configuración, asegúrese de tomar nota de la configuración existente de los nodos de destino, para poder revertir la acción si lo desea.
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -Path C:\Temp\ -ComputerName localhost
@@ -118,13 +118,13 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Time taken for configuration job to complete is 15.385 seconds
 ```
 
-Esto también garantiza que si el **FirewallProfile** recursos falla por alguna razón, el **Firewall** bloque no se ejecutará incluso si se definió en primer lugar. El `DependsOn` clave permite más flexibilidad en la agrupación de bloques de recursos y garantizar que las dependencias se resuelven antes de que se ejecuta en un recurso.
+Esto también garantiza que si el recurso **FirewallProfile** falla por cualquier motivo, el bloque **Firewall** no se ejecutará, ni siquiera en el caso de que se haya definido en primer lugar. La clave `DependsOn` permite más flexibilidad en la agrupación de bloques de recursos y permite garantizar la resolución de las dependencias antes de que se ejecute un recurso.
 
-En configuraciones más avanzadas, también se puede usar [entre la dependencia de nodo](crossNodeDependencies.md) para permitir que un control más pormenorizado (por ejemplo, lo que garantiza un controlador de dominio se configura antes de unirse a un cliente al dominio).
+En configuraciones más avanzadas, también se puede usar la [dependencia entre nodos](crossNodeDependencies.md) para permitir incluso un control más pormenorizado (por ejemplo, garantizando que un controlador de dominio esté configurado antes de unir a un cliente al dominio).
 
 ## <a name="cleaning-up"></a>Limpieza
 
-Si ha aplicado la configuración anterior, puede invertir las claves para deshacer los cambios. En el ejemplo anterior, establecer el **habilitado** clave en false, deshabilitará la regla de firewall y el perfil. Debe modificar el ejemplo según sea necesario para que coincida con el estado configurado del nodo de destino anterior.
+Si ha aplicado la configuración anterior, puede invertir las claves para deshacer los cambios. En el ejemplo anterior, el establecimiento de la clave **Enabled** como "False" deshabilitará la regla de firewall y el perfil. Debe modificar el ejemplo según sea necesario para que coincida con el estado configurado anterior del nodo de destino.
 
 ```powershell
         Firewall Firewall
@@ -143,4 +143,4 @@ Si ha aplicado la configuración anterior, puede invertir las claves para deshac
 
 ## <a name="see-also"></a>Vea también
 
-- [Usar dependencias entre nodos](./crossNodeDependencies.md)
+- [Uso de dependencias entre nodos](./crossNodeDependencies.md)

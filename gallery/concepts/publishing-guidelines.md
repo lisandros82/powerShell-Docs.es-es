@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: Instrucciones para publicadores
 title: Instrucciones y procedimientos recomendados para publicar en la Galería de PowerShell
-ms.openlocfilehash: 64c3d607b13dce64f70f138fdee849e5baaf85df
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.openlocfilehash: 25c359c7acbe7430762a275d8cc4a28f527ec57a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265576"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056505"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Instrucciones y procedimientos recomendados para publicar en PowerShellGallery
 
@@ -33,7 +33,7 @@ Es mucho más probable que otros usuarios descarguen y adopten los paquetes que 
 - Responder a los comentarios
 - Proporcionar módulos, no scripts
 - Proporcionar vínculos a un sitio de proyecto
-- Etiquetar el paquete con las plataformas y PSEdition(s) compatible 
+- Etiquetar el paquete con las plataformas y PSEdition(s) compatibles
 - Incluir pruebas en los módulos
 - Incluir los términos de licencia o un vínculo a ellos
 - Firmar el código
@@ -136,15 +136,15 @@ Para agregar un vínculo, se incluye un elemento ProjectURI en la sección PSDat
 
 Si se proporciona ProjectURI, la Galería de PowerShell incluirá un vínculo al sitio de proyecto en el lado izquierdo de la página del paquete.
 
-## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Etiquetar el paquete con las plataformas y PSEdition(s) compatible 
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Etiquetar el paquete con las plataformas y PSEdition(s) compatibles
 
-Use las etiquetas siguientes para mostrar a los usuarios que los paquetes funcionarán bien con su entorno:
+Use las etiquetas siguientes para mostrar a los usuarios cuáles son los paquetes que funcionarán bien con su entorno:
 
-- PSEdition_Desktop: Los paquetes que son compatibles con Windows PowerShell 
-- PSEdition_Core: Los paquetes que son compatibles con Powershell Core 
-- Windows: Los paquetes que son compatibles con el sistema operativo de Windows
-- Linux: Los paquetes que son compatibles con sistemas operativos de Linux 
-- MacOS: Los paquetes que son compatibles con el sistema operativo de Mac
+- PSEdition_Desktop: Paquetes compatibles con Windows PowerShell
+- PSEdition_Core: Paquetes compatibles con PowerShell Core
+- Windows: Paquetes compatibles con el sistema operativo Windows
+- Linux: Paquetes compatibles con el sistema operativo Linux
+- MacOS: Paquetes compatibles con el sistema operativo Mac
 
 ## <a name="include-tests"></a>Incluir pruebas
 
@@ -251,4 +251,3 @@ El enfoque que se considera más adecuado para los paquetes que se publican en l
 - Decida si desea firmar su paquete
 - Cuando considere que el proyecto está listo para usarlo en un entorno de producción, publique una versión 1.0.0 en la Galería de PowerShell
 - Siga recopilando comentarios y estableciendo iteraciones en el código según las contribuciones de los usuarios
-
