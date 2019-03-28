@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Usar comandos de formato para cambiar la vista de salida
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-ms.openlocfilehash: 97d3a9e04abb61bb80a0b8c67d9fb9e885a0b91b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 35ccd2525d40ffd5e3f25a1abfa38904a109bde5
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403122"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320428"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Usar comandos de formato para cambiar la vista de salida
 
@@ -49,10 +49,20 @@ PS> Get-Process -Name powershell | Format-Wide -Property Id
 
 #### <a name="controlling-format-wide-display-with-column"></a>Controlar la presentación de Format-Wide con Column
 
-Con el cmdlet **Format-Wide**, solo puede mostrar una única propiedad a la vez. Resulta útil para mostrar listas simples que muestren solo un elemento por línea. Para obtener una lista simple, establezca el valor del parámetro **Column** en 1. Para ello, escriba:
+Con el cmdlet `Format-Wide`, no se pueden varias propiedades a la vez.
+Resulta útil para mostrar listas simples que muestren solo un elemento por línea.
+Para obtener una lista simple, establezca el valor del parámetro **Column** en 1. Para ello, escriba:
 
 ```powershell
-Get-Command Format-Wide -Property Name -Column 1
+Get-Command -Verb Format | Format-Wide -Property Noun -Column 1
+```
+
+```output
+Custom
+Hex
+List
+Table
+Wide
 ```
 
 ### <a name="using-format-list-for-a-list-view"></a>Usar Format-List para obtener una vista de lista
