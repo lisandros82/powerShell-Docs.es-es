@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Envío de comentarios a través de medios sociales o comentarios
-ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 95e5db22b94151c3974189c30f1d4e580b47eeb5
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58055009"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623898"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Envío de comentarios a través de medios sociales o comentarios
 
@@ -29,6 +29,10 @@ La Galería de PowerShell comprobará las veces que se compartió el paquete en 
 Como esta acción solo muestra la cantidad de veces que se compartió algún contenido, se interpretará como que a los otros usuarios les gustó el paquete en cuestión.
 
 ## <a name="comments"></a>Comentarios
+
+> [!IMPORTANT]
+> Los comentarios de Livefyre los proporciona un proveedor de terceros y ya no son compatibles.
+> Los comentarios de Livefyre dejarán de estar disponibles en la Galería de PowerShell a partir del 1 de mayo de 2019. 
 
 La Galería de PowerShell usa el servicio LiveFyre para permitir que los usuarios comenten en los paquetes.
 Los usuarios que desean dejar recomendaciones o comentarios pueden usar esta característica para proporcionar comentarios visibles para cualquier persona que visite la página del paquete.
