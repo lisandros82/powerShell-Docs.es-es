@@ -1,209 +1,218 @@
+items:
 - name: Información general de Windows Management Framework (WMF)
   href: overview.md
 - name: WMF 5.1
-  href: 5.1/release-notes.md
   items:
+  - name: Notas de la versión de WMF 5.1
+    href: 5.1/release-notes.md
+  - name: Características y escenarios nuevos
+    items:
     - name: Características y escenarios nuevos
       href: 5.1/scenarios-features.md
-      items:
-        - name: Mejoras en la configuración de estado deseado (DSC)
-          href: 5.1/DSC-improvements.md
-        - name: Mejoras en la consola de PowerShell
-          href: 5.1/console-improvements.md
-        - name: Mejoras en el motor de PowerShell
-          href: 5.1/engine-improvements.md
-        - name: Mejoras en la administración de paquetes
-          href: 5.1/package-management-improvements.md
-        - name: Mejoras en JEA
-          href: 5.1/jea-improvements.md
-        - name: Cmdlets del catálogo
-          href: 5.1/catalog-cmdlets.md
-        - name: Errores corregidos en WMF 5.1
-          href: 5.1/bugfixes.md
-    - name: Instalación y configuración
-      href: 5.1/install-configure.md
-    - name: Problemas conocidos
-      href: 5.1/known-issues.md
-    - name: Compatibilidad
-      href: 5.1/Compatibility.md
-    - name: Compatibilidad del producto
-      href: 5.1/productincompat.md
+    - name: Mejoras en la configuración de estado deseado (DSC)
+      href: 5.1/DSC-improvements.md
+    - name: Mejoras en la consola de PowerShell
+      href: 5.1/console-improvements.md
+    - name: Mejoras en el motor de PowerShell
+      href: 5.1/engine-improvements.md
+    - name: Mejoras en la administración de paquetes
+      href: 5.1/package-management-improvements.md
+    - name: Mejoras en JEA
+      href: 5.1/jea-improvements.md
+    - name: Cmdlets del catálogo
+      href: 5.1/catalog-cmdlets.md
+    - name: Errores corregidos en WMF 5.1
+      href: 5.1/bugfixes.md
+  - name: Instalación y configuración
+    href: 5.1/install-configure.md
+  - name: Problemas conocidos
+    href: 5.1/known-issues.md
+  - name: Compatibilidad
+    href: 5.1/Compatibility.md
+  - name: Compatibilidad del producto
+    href: 5.1/productincompat.md
 - name: WMF 5.0
-  href: 5.0/releasenotes.md
   items:
-    - name: Detalles de la instalación
-      href: 5.0/requirements.md
-    - name: Problemas y limitaciones conocidos
-      href: 5.0/limitation_overview.md
+  - name: Notas de la versión de WMF 5.0
+    href: 5.0/releasenotes.md
+  - name: Detalles de la instalación
+    href: 5.0/requirements.md
+  - name: Problemas y limitaciones conocidos
+    href: 5.0/limitation_overview.md
+  - name: Problemas conocidos de la configuración de estado deseado (DSC)
+    href: 5.0/limitation_dsc.md
+  - name: Estado de compatibilidad de producto
+    href: 5.0/productincompat.md
+  - name: Escenarios habilitados por WMF 5.0
+    items:
+    - name: Just Enough Administration (JEA)
       items:
-        - name: Problemas conocidos de la configuración de estado deseado (DSC)
-          href: 5.0/limitation_dsc.md
-    - name: Estado de compatibilidad de producto
-      href: 5.0/productincompat.md
-    - name: Escenarios habilitados por WMF 5.0
-      href: ''
+      - name: Información general sobre JEA
+        href: 5.0/jea_overview.md
+      - name: Crear un punto de conexión de JEA y conectarse a este
+        href: 5.0/jea_endpoint.md
+      - name: Generación de informes en JEA
+        href: 5.0/jea_report.md
+    - name: Creación de tipos personalizados mediante clases de PowerShell
       items:
-        - name: Just Enough Administration (JEA)
-          href: 5.0/jea_overview.md
-          items:
-            - name: Crear un punto de conexión de JEA y conectarse a este
-              href: 5.0/jea_endpoint.md
-            - name: Generación de informes en JEA
-              href: 5.0/jea_report.md
-        - name: Creación de tipos personalizados mediante clases de PowerShell
-          href: 5.0/class_overview.md
-          items:
-            - name: Definir tipos personalizados
-              href: 5.0/class_newtype.md
-            - name: Declarar una clase base
-              href: 5.0/class_base.md
-            - name: Declarar la interfaz implementada
-              href: 5.0/class_interface.md
-            - name: Llamar al constructor de clase base
-              href: 5.0/class_baseconstructor.md
-            - name: Llamar al método de clase base
-              href: 5.0/class_basemethod.md
-        - name: Mejoras en la depuración de scripts de PowerShell
-          href: 5.0/debug_overview.md
-        - name: Mejoras en la configuración de estado deseado (DSC)
-          href: 5.0/dsc_improvements.md
-          items:
-            - name: Configuraciones
-              href: ''
-              items:
-                - name: Especificar dependencias entre nodos
-                  href: 5.0/dsc_waitfor.md
-                - name: MOF cifrados
-                  href: 5.0/dsc_encryptedmof.md
-                - name: Ayuda y soporte técnico para la configuración de DSC
-                  href: 5.0/dsc_confighelp.md
-                - name: Mejoras de creación mediante PowerShell ISE
-                  href: 5.0/dsc_authoring.md
-                - name: Tolerancia de recursos duplicados idénticos en una configuración
-                  href: 5.0/dsc_identicalduplicate.md
-                - name: La palabra clave Import-DscResource admite el parámetro -ModuleVersion
-                  href: 5.0/dsc_importdscresource.md
-                - name: Compatibilidad de WOW64 con la palabra clave Configuration
-                  href: 5.0/dsc_wow64.md
-            - name: Recursos
-              href: ''
-              items:
-                - name: Recursos de DSC basados en clases
-                  href: 5.0/dsc_classbasedresource.md
-                - name: Depuración de scripts de recursos de DSC
-                  href: 5.0/dsc_resourcedebugging.md
-                - name: Compatibilidad automática con RunAs para recursos de DSC
-                  href: 5.0/dsc_runas.md
-                - name: Compatibilidad del control de versiones en paralelo para recursos de DSC
-                  href: 5.0/dsc_sxsresource.md
-                - name: Nuevos recursos predeterminados
-                  href: 5.0/dsc_newresources.md
-            - name: Administrador de configuración local
-              href: ''
-              items:
-                - name: Configurar el nodo con varios fragmentos de configuración
-                  href: 5.0/dsc_partialconfig.md
-                  items:
-                    - name: Soporte para los modos mixtos RefreshMode
-                      href: 5.0/dsc_partialconfig_mixedmode.md
-                - name: Configurar el motor de DSC con el nuevo atributo
-                  href: 5.0/dsc_metaconfiguration.md
-                - name: Información detallada sobre el estado de LCM
-                  href: 5.0/dsc_lcmstate.md
-                - name: Las frecuencias de RefreshMode y ConfigurationMode no tienen que ser múltiplos una de la otra
-                  href: 5.0/dsc_freqnomultiple.md
-                - name: Valor adicional de la propiedad RefreshMode
-                  href: 5.0/dsc_refreshmode.md
-            - name: Cmdlets
-              href: ''
-              items:
-                - name: Detalles sobre el estado de configuración
-                  href: 5.0/dsc_getconfigurationstatus.md
-                - name: El cmdlet Test-DscConfiguration admite configuraciones de referencia
-                  href: 5.0/dsc_testconfiguration.md
-                - name: Acceso directo a los métodos de recursos de DSC
-                  href: 5.0/dsc_directaccess.md
-                - name: Entregar un documento de configuración sin aplicar
-                  href: 5.0/dsc_publishconfig.md
-                - name: Quitar documentos de DSC
-                  href: 5.0/dsc_removeconfigdoc.md
-                - name: Estado coherente unificado y representación de estado
-                  href: 5.0/dsc_statestatus.md
-                - name: El cmdlet Set-DscLocalConfigurationManager admite el parámetro -Force
-                  href: 5.0/dsc_setdsclcm.md
-            - name: Modo de extracción
-              href: ''
-              items:
-                - name: Extracción a petición de configuraciones de DSC
-                  href: 5.0/dsc_updateconfig.md
-                - name: Separación de los identificadores de nodo y de configuración
-                  href: 5.0/dsc_nodeid.md
-                - name: 'Separación de los repositorios de configuración, recursos e informes'
-                  href: 5.0/dsc_repository.md
-                - name: Notificar el estado de configuración a una ubicación central
-                  href: 5.0/dsc_reporting.md
-        - name: Auditar el uso de PowerShell mediante la transcripción y el registro
-          href: 5.0/audit_overview.md
-          items:
-            - name: Opciones de transcripción mejoradas
-              href: 5.0/audit_transcript.md
-            - name: Seguimiento y registro de scripts
-              href: 5.0/audit_script.md
-            - name: Cmdlets de sintaxis de mensajes de cifrado (CMS)
-              href: 5.0/audit_cms.md
-        - name: 'Detección, instalación e inventario de software con PackageManagement'
-          href: 5.0/oneget_overview.md
-          items:
-            - name: Cmdlets PackageManagement
-              href: 5.0/oneget_cmdlets.md
-        - name: 'Detección, instalación e inventario del módulo de PowerShell con PowerShellGet'
-          href: 5.0/psget_module_overview.md
-          items:
-            - name: Registrar un repositorio de PowerShell
-              href: 5.0/psget_psrepository.md
-            - name: Compatibilidad de versiones en paralelo en PowerShell 5.0 o posterior
-              href: 5.0/psget_modulesxsinstall.md
-            - name: Instalación de dependencias de módulo
-              href: 5.0/psget_moduledependency.md
-            - name: Cmdlets de PowerShellGet para la administración de módulos
-              href: 5.0/psget_modulecmdlets.md
-        - name: 'Detección, instalación y administración de scripts de PowerShell con PowerShellGet'
-          href: 5.0/psget_script_overview.md
-          items:
-            - name: Cmdlets de PowerShellGet para la administración de scripts
-              href: 5.0/psget_scriptcmdlets.md
-        - name: Cmdlets nuevos y actualizados basados en los comentarios de la comunidad
-          href: 5.0/feedback_cmdlets.md
-          items:
-            - name: Vínculos simbólicos mediante cmdlets Item
-              href: 5.0/feedback_symbolic.md
-            - name: Cmdlets Archive
-              href: 5.0/feedback_archive.md
-            - name: Cmdlets Clipboard
-              href: 5.0/feedback_clipboard.md
-            - name: Convert-String
-              href: 5.0/feedback_convertstring.md
-            - name: Extraer y analizar objetos estructurados fuera de la cadena
-              href: 5.0/feedback_convertfromString.md
-            - name: Format-Hex
-              href: 5.0/feedback_formathex.md
-            - name: Parámetro NoNewLine
-              href: 5.0/feedback_nonewline.md
-            - name: New-TemporaryFile
-              href: 5.0/feedback_tempfile.md
-            - name: New-Guid
-              href: 5.0/feedback_newguid.md
-            - name: Get-ChildItem tiene el parámetro -Depth
-              href: 5.0/feedback_getchilditem.md
-            - name: Actualizaciones del objeto FileInfo
-              href: 5.0/feedback_fileinfo.md
-            - name: 'Compatibilidad de los módulos para la declaración de intervalos de versiones (1.*, etc.)'
-              href: 5.0/feedback_moduleversionranges.md
-        - name: Flujo de información
-          href: 5.0/informationstream_overview.md
-        - name: Generar cmdlets de PowerShell basados en el punto de conexión de OData
-          href: 5.0/odata_overview.md
-        - name: Administración de modificadores de red con PowerShell
-          href: 5.0/networkswitch_overview.md
-        - name: Registro de inventario de software (SIL)
-          href: 5.0/sil_overview.md
+      - name: Introducción
+        href: 5.0/class_overview.md
+      - name: Definir tipos personalizados
+        href: 5.0/class_newtype.md
+      - name: Declarar una clase base
+        href: 5.0/class_base.md
+      - name: Declarar la interfaz implementada
+        href: 5.0/class_interface.md
+      - name: Llamar al constructor de clase base
+        href: 5.0/class_baseconstructor.md
+      - name: Llamar al método de clase base
+        href: 5.0/class_basemethod.md
+    - name: Mejoras en la depuración de scripts de PowerShell
+      href: 5.0/debug_overview.md
+    - name: Mejoras en la configuración de estado deseado (DSC)
+      items:
+      - name: Información general sobre las mejoras de DSC
+        href: 5.0/dsc_improvements.md
+      - name: Configuraciones
+        items:
+        - name: Especificar dependencias entre nodos
+          href: 5.0/dsc_waitfor.md
+        - name: MOF cifrados
+          href: 5.0/dsc_encryptedmof.md
+        - name: Ayuda y soporte técnico para la configuración de DSC
+          href: 5.0/dsc_confighelp.md
+        - name: Mejoras de creación mediante PowerShell ISE
+          href: 5.0/dsc_authoring.md
+        - name: Tolerancia de recursos duplicados idénticos en una configuración
+          href: 5.0/dsc_identicalduplicate.md
+        - name: La palabra clave Import-DscResource admite el parámetro -ModuleVersion
+          href: 5.0/dsc_importdscresource.md
+        - name: Compatibilidad de WOW64 con la palabra clave Configuration
+          href: 5.0/dsc_wow64.md
+      - name: Recursos
+        items:
+        - name: Recursos de DSC basados en clases
+          href: 5.0/dsc_classbasedresource.md
+        - name: Depuración de scripts de recursos de DSC
+          href: 5.0/dsc_resourcedebugging.md
+        - name: Compatibilidad automática con RunAs para recursos de DSC
+          href: 5.0/dsc_runas.md
+        - name: Compatibilidad del control de versiones en paralelo para recursos de DSC
+          href: 5.0/dsc_sxsresource.md
+        - name: Nuevos recursos predeterminados
+          href: 5.0/dsc_newresources.md
+      - name: Administrador de configuración local
+        items:
+        - name: Configurar el nodo con varios fragmentos de configuración
+          href: 5.0/dsc_partialconfig.md
+        - name: Soporte para los modos mixtos RefreshMode
+          href: 5.0/dsc_partialconfig_mixedmode.md
+        - name: Configurar el motor de DSC con el nuevo atributo
+          href: 5.0/dsc_metaconfiguration.md
+        - name: Información detallada sobre el estado de LCM
+          href: 5.0/dsc_lcmstate.md
+        - name: Las frecuencias de RefreshMode y ConfigurationMode no tienen que ser múltiplos una de la otra
+          href: 5.0/dsc_freqnomultiple.md
+        - name: Valor adicional de la propiedad RefreshMode
+          href: 5.0/dsc_refreshmode.md
+      - name: Cmdlets
+        items:
+        - name: Detalles sobre el estado de configuración
+          href: 5.0/dsc_getconfigurationstatus.md
+        - name: El cmdlet Test-DscConfiguration admite configuraciones de referencia
+          href: 5.0/dsc_testconfiguration.md
+        - name: Acceso directo a los métodos de recursos de DSC
+          href: 5.0/dsc_directaccess.md
+        - name: Entregar un documento de configuración sin aplicar
+          href: 5.0/dsc_publishconfig.md
+        - name: Quitar documentos de DSC
+          href: 5.0/dsc_removeconfigdoc.md
+        - name: Estado coherente unificado y representación de estado
+          href: 5.0/dsc_statestatus.md
+        - name: El cmdlet Set-DscLocalConfigurationManager admite el parámetro -Force
+          href: 5.0/dsc_setdsclcm.md
+      - name: Modo de extracción
+        items:
+        - name: Extracción a petición de configuraciones de DSC
+          href: 5.0/dsc_updateconfig.md
+        - name: Separación de los identificadores de nodo y de configuración
+          href: 5.0/dsc_nodeid.md
+        - name: Separación de los repositorios de configuración, recursos e informes
+          href: 5.0/dsc_repository.md
+        - name: Notificar el estado de configuración a una ubicación central
+          href: 5.0/dsc_reporting.md
+    - name: Auditar el uso de PowerShell mediante la transcripción y el registro
+      items:
+      - name: Información general de la auditoría
+        href: 5.0/audit_overview.md
+      - name: Opciones de transcripción mejoradas
+        href: 5.0/audit_transcript.md
+      - name: Seguimiento y registro de scripts
+        href: 5.0/audit_script.md
+      - name: Cmdlets de sintaxis de mensajes de cifrado (CMS)
+        href: 5.0/audit_cms.md
+    - name: Detección, instalación e inventario de software con PackageManagement
+      items:
+      - name: Información general sobre PackageManagement
+        href: 5.0/oneget_overview.md
+      - name: Cmdlets PackageManagement
+        href: 5.0/oneget_cmdlets.md
+    - name: Detección, instalación e inventario del módulo de PowerShell con PowerShellGet
+      items:
+      - name: Información general sobre el módulo PowerShellGet
+        href: 5.0/psget_module_overview.md
+      - name: Registrar un repositorio de PowerShell
+        href: 5.0/psget_psrepository.md
+      - name: Compatibilidad de versiones en paralelo en PowerShell 5.0 o posterior
+        href: 5.0/psget_modulesxsinstall.md
+      - name: Instalación de dependencias de módulo
+        href: 5.0/psget_moduledependency.md
+      - name: Cmdlets de PowerShellGet para la administración de módulos
+        href: 5.0/psget_modulecmdlets.md
+    - name: Detección, instalación y administración de scripts de PowerShell con PowerShellGet
+      items:
+      - name: Información general sobre el script PowerShellGet
+        href: 5.0/psget_script_overview.md
+      - name: Cmdlets de PowerShellGet para la administración de scripts
+        href: 5.0/psget_scriptcmdlets.md
+    - name: Cmdlets nuevos y actualizados basados en los comentarios de la comunidad
+      items:
+      - name: Cmdlets nuevos y actualizados basados en los comentarios de la comunidad
+      - name: Vínculos simbólicos mediante cmdlets Item
+        href: 5.0/feedback_symbolic.md
+      - name: Cmdlets Archive
+        href: 5.0/feedback_archive.md
+      - name: Cmdlets Clipboard
+        href: 5.0/feedback_clipboard.md
+      - name: Convert-String
+        href: 5.0/feedback_convertstring.md
+      - name: Extraer y analizar objetos estructurados fuera de la cadena
+        href: 5.0/feedback_convertfromString.md
+      - name: Format-Hex
+        href: 5.0/feedback_formathex.md
+      - name: Parámetro NoNewLine
+        href: 5.0/feedback_nonewline.md
+      - name: New-TemporaryFile
+        href: 5.0/feedback_tempfile.md
+      - name: New-Guid
+        href: 5.0/feedback_newguid.md
+      - name: Get-ChildItem tiene el parámetro -Depth
+        href: 5.0/feedback_getchilditem.md
+      - name: Actualizaciones del objeto FileInfo
+        href: 5.0/feedback_fileinfo.md
+      - name: Compatibilidad de los módulos para la declaración de intervalos de versiones (1.*, etc.)
+        href: 5.0/feedback_moduleversionranges.md
+    - name: Flujo de información
+      href: 5.0/informationstream_overview.md
+    - name: Generar cmdlets de PowerShell basados en el punto de conexión de OData
+      href: 5.0/odata_overview.md
+    - name: Administración de modificadores de red con PowerShell
+      href: 5.0/networkswitch_overview.md
+    - name: Registro de inventario de software (SIL)
+      href: 5.0/sil_overview.md
+ms.openlocfilehash: dba0eb2986dc4e14c59c78e3273d08dd6b7f1779
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920431"
