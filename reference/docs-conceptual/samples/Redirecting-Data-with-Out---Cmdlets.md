@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Redirigir datos con cmdlets Out
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-ms.openlocfilehash: f08879f436ce751b176af020aba21e90f09aa61f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 7c601b09cc53524eb55014b8ea19a5d79cb98b0e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402386"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293306"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Redirigir datos con cmdlets Out-*
 
@@ -68,7 +68,7 @@ Esto se aplica a todos los cmdlets **Out**. Un cmdlet **Out** siempre debe apare
 > [!NOTE]
 > Todos los cmdlets **Out** representan la salida como texto, con el formato vigente para la ventana de consola, incluidos los límites de longitud de línea.
 
-#### <a name="paging-console-output-out-host"></a>Paginar la salida de la consola (Out-Host)
+## <a name="paging-console-output-out-host"></a>Paginar la salida de la consola (Out-Host)
 
 De forma predeterminada, Windows PowerShell envía datos a la ventana host, que es exactamente lo que hace el cmdlet Out-Host. El uso principal del cmdlet Out-Host es paginar datos como se explicó anteriormente. Por ejemplo, el siguiente comando usa Out-Host para paginar la salida del comando Get-Command:
 
@@ -93,7 +93,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### <a name="discarding-output-out-null"></a>Descartar la salida (Out-Null)
+## <a name="discarding-output-out-null"></a>Descartar la salida (Out-Null)
 
 El cmdlet **Out-Null** está diseñado para descartar inmediatamente cualquier entrada que reciba. Esto es útil para descartar los datos innecesarios que obtiene como efecto secundario de la ejecución de un comando. Si escribe el comando siguiente, no obtiene nada del comando:
 
@@ -111,7 +111,7 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-#### <a name="printing-data-out-printer"></a>Imprimir datos (Out-Printer)
+## <a name="printing-data-out-printer"></a>Imprimir datos (Out-Printer)
 
 Puede imprimir los datos mediante el cmdlet **Out-Printer**. El cmdlet **Out-Printer** usará la impresora predeterminada si no proporciona un nombre de impresora. Puede usar cualquier impresora basada en Windows especificando su nombre para mostrar. No se requiere ningún tipo de asignación de puerto de impresora ni una impresora física real. Por ejemplo, si tiene las herramientas de creación de imágenes de documentos de Microsoft Office instaladas, puede enviar los datos a un archivo de imagen. Para ello, escriba:
 
@@ -119,7 +119,7 @@ Puede imprimir los datos mediante el cmdlet **Out-Printer**. El cmdlet **Out-Pri
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-#### <a name="saving-data-out-file"></a>Guardar datos (Out-File)
+## <a name="saving-data-out-file"></a>Guardar datos (Out-File)
 
 Puede enviar la salida a un archivo en lugar de a la ventana de la consola mediante el cmdlet **Out-File**. La línea de comandos siguiente envía una lista de procesos al archivo **C:\\temp\\processlist.txt**:
 

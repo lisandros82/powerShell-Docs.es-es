@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Trabajar con archivos, carpetas y claves del Registro
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: a09b127d4ba37d33cb4c0f0ce0819e645fd4b137
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403282"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293102"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Trabajar con archivos, carpetas y claves del Registro
 
 En Windows PowerShell se usa el término **Item** para hacer referencia a los elementos contenidos en una unidad de Windows PowerShell. Cuando se trabaja con el proveedor FileSystem de Windows PowerShell, un **Item** puede ser un archivo, una carpeta o la unidad de Windows PowerShell. Enumerar estos elementos y trabajar con ellos son tareas críticas básicas en la mayoría de las configuraciones administrativas, de modo que conviene abordar estas tareas en profundidad.
 
-### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Enumerar archivos, carpetas y claves del Registro (Get-ChildItem)
+## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Enumerar archivos, carpetas y claves del Registro (Get-ChildItem)
 
 Hacerse con una colección de elementos de una ubicación determinada es una tarea extremadamente común, por lo que el cmdlet **Get-ChildItem** está diseñado específicamente para devolver todos los elementos dentro de un contenedor, como, por ejemplo, una carpeta.
 
@@ -42,7 +42,7 @@ Get-Command -Name Get-ChildItem -Syntax
 
 Estos parámetros se pueden mezclar y relacionar para obtener resultados muy personalizados.
 
-#### <a name="listing-all-contained-items--recurse"></a>Enumerar todos los elementos contenidos (-Recurse)
+### <a name="listing-all-contained-items--recurse"></a>Enumerar todos los elementos contenidos (-Recurse)
 
 Para ver tanto los elementos que hay dentro de una carpeta de Windows como cualquier elemento dentro de sus subcarpetas, use el parámetro **Recurse** de **Get-ChildItem**. La lista muestra todos los elementos dentro de la carpeta de Windows y los elementos de sus subcarpetas. Por ejemplo:
 
@@ -57,7 +57,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-#### <a name="filtering-items-by-name--name"></a>Filtrar elementos por su nombre (-Name)
+### <a name="filtering-items-by-name--name"></a>Filtrar elementos por su nombre (-Name)
 
 Para mostrar solo los nombres de los elementos, use el parámetro **Name** de **Get-Childitem**:
 
@@ -69,7 +69,7 @@ assembly
 ...
 ```
 
-#### <a name="forcibly-listing-hidden-items--force"></a>Enumerar forzosamente los elementos ocultos (-Force)
+### <a name="forcibly-listing-hidden-items--force"></a>Enumerar forzosamente los elementos ocultos (-Force)
 
 Los elementos que normalmente son invisibles en el Explorador de archivos o en Cmd.exe no aparecen en la salida de un comando **Get-ChildItem**. Para ver los elementos ocultos, use el parámetro **Force** de **Get-ChildItem**. Por ejemplo:
 
@@ -79,7 +79,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 Este parámetro se llama Force porque permite anular a la fuerza el comportamiento normal del comando **Get-ChildItem**. Force es un parámetro muy usado que fuerza una acción que un cmdlet normalmente no realizaría, si bien no llevará a cabo ninguna acción que ponga en peligro la seguridad del sistema.
 
-#### <a name="matching-item-names-with-wildcards"></a>Buscar nombres de elemento coincidentes con caracteres comodín
+### <a name="matching-item-names-with-wildcards"></a>Buscar nombres de elemento coincidentes con caracteres comodín
 
 **El comando Get-ChildItem** acepta caracteres comodín en la ruta de acceso de los elementos que se van a enumerar.
 
@@ -122,7 +122,7 @@ Escriba lo siguiente para encontrar todos los archivos cuyos nombres comiencen p
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-#### <a name="excluding-items--exclude"></a>Excluir elementos (-Exclude)
+### <a name="excluding-items--exclude"></a>Excluir elementos (-Exclude)
 
 Puede excluir elementos concretos con el parámetro **Exclude** de Get-ChildItem. Esto le permite realizar filtrados complejos en una sola instrucción.
 
@@ -147,7 +147,7 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
 ```
 
-#### <a name="mixing-get-childitem-parameters"></a>Mezclar parámetros de Get-ChildItem
+### <a name="mixing-get-childitem-parameters"></a>Mezclar parámetros de Get-ChildItem
 
 Se pueden usar varios de los parámetros del cmdlet **Get-ChildItem** en el mismo comando. Antes de mezclar parámetros, asegúrese de que comprende el concepto de búsqueda de coincidencias con caracteres comodín. Por ejemplo, el siguiente comando no devuelve ningún resultado:
 

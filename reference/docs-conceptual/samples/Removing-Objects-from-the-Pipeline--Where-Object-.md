@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Quitar objetos de la canalización Where Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 1f7d064c7bf2dd551ea96b29762fbccad8174084
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403258"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293153"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Quitar objetos de la canalización (Where-Object)
 
@@ -16,7 +16,7 @@ En Windows PowerShell, se suelen generar y pasar más objetos de los deseados a 
 
 Windows PowerShell incluye el cmdlet`Where-Object`, que permite probar cada objeto de la canalización y pasarlo solo a la canalización si cumple una condición de prueba determinada. Los objetos que no pasan la prueba se quitan de la canalización. Debe indicar la condición de prueba como el valor del parámetro `Where-Object` **FilterScript**.
 
-### <a name="performing-simple-tests-with-where-object"></a>Realizar pruebas simples con Where-Object
+## <a name="performing-simple-tests-with-where-object"></a>Realizar pruebas simples con Where-Object
 
 El valor de **FilterScript** es un *bloque de script*; es decir, uno o más comandos de Windows PowerShell entre llaves {}, que se evalúa como true o false. Estos bloques de script pueden ser muy simples, pero su creación requiere el conocimiento de otro concepto de Windows PowerShell: los operadores de comparación. Un operador de comparación compara los elementos que aparecen en cada uno de sus lados. Los operadores de comparación comienzan con un carácter '-' seguido de un nombre. Los operadores de comparación básicos funcionan en casi todos los tipos de objeto. Es posible que los operadores de comparación más avanzados solo funcionen en texto o matrices.
 
@@ -46,7 +46,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 2
 ```
 
-### <a name="filtering-based-on-object-properties"></a>Filtrar por las propiedades de objeto
+## <a name="filtering-based-on-object-properties"></a>Filtrar por las propiedades de objeto
 
 Dado que `$_` hace referencia al objeto de canalización actual, podemos acceder a sus propiedades para nuestras pruebas.
 
