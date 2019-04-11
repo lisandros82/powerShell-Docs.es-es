@@ -2,12 +2,12 @@
 title: Novedades de PowerShell Core 6.1
 description: Nuevas características y cambios publicados en PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55682316"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293323"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Novedades de PowerShell Core 6.1
 
@@ -516,3 +516,10 @@ Visual Basic se usó rara vez con `Add-Type`. Hemos quitado esta característica
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Se limpiaron los usos de `CommandTypes.Workflow` y `WorkflowInfoCleaned`
 
 Para más información sobre estos cambios, eche un vistazo a [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).
+
+### <a name="group-object-now-sorts-the-groups"></a>Ahora, Group-Object ordena los grupos
+
+Como parte de la mejora del rendimiento, `Group-Object` ahora devuelve una lista ordenada de los grupos.
+Aunque no debe confiar en el orden, podría verse interrumpida por este cambio si quisiera el primer grupo. Decidimos que esta mejora en el rendimiento valía la pena el cambio, ya que el impacto de depender del comportamiento previo es bajo.
+
+Para más información sobre este cambio, consulte el [problema #7409](https://github.com/PowerShell/PowerShell/issues/7409).

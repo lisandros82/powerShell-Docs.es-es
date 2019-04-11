@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Novedades de Windows PowerShell 5.0
-ms.openlocfilehash: a21e6af9f23ac8bb3ddf84dbfa67a67f3ff93b24
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
+ms.sourcegitcommit: 9194e603ac242ae733839eb773e4af7360fdd044
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58055111"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59363537"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Novedades de Windows PowerShell 5.0
 
@@ -127,7 +127,7 @@ Muchas actualizaciones y mejoras en la configuración de estado deseado (DSC) de
 - Un nuevo cmdlet, New-TemporaryFile, permite crear un archivo temporal como parte del scripting. De forma predeterminada, el nuevo archivo temporal se crea en ```C:\Users\<user name>\AppData\Local\Temp```.
 - Los cmdlets Out-File, Add-Content y Set-Content tienen ahora un nuevo parámetro -NoNewline, que omite una nueva línea después de la salida.
 - El cmdlet New-Guid aprovecha la clase Guid de .NET Framework para generar un GUID, que resulta útil al escribir scripts o recursos de DSC.
-- Dado que la información de la versión de archivo puede ser confusa, especialmente después de aplicar una revisión a un archivo, las nuevas propiedades de script FileVersionRaw y ProductVersionRaw están disponibles para los objetos FileInfo. Por ejemplo, puede ejecutar el siguiente comando para mostrar los valores de estas propiedades de powershell.exe, donde $pid contiene el identificador de proceso de una sesión en ejecución de Windows PowerShell: ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- Dado que la información de la versión de archivo puede ser confusa, especialmente después de aplicar una revisión a un archivo, las nuevas propiedades de script FileVersionRaw y ProductVersionRaw están disponibles para los objetos FileInfo. Por ejemplo, puede ejecutar el siguiente comando para mostrar los valores de estas propiedades de PowerShell.exe, donde $pid contiene el id. de proceso de una sesión en ejecución de Windows PowerShell:  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 - Los nuevos cmdlets Enter-PSHostProcess y Exit-PSHostProcess le permiten depurar scripts de Windows PowerShell en procesos independientes del proceso actual que se ejecuta en la consola de Windows PowerShell. Ejecute Enter-PSHostProcess para introducir, o establecer la asociación con, un identificador de proceso específico y luego ejecute Get-Runspace para devolver los espacios de ejecución activos dentro del proceso. Ejecute Exit-PSHostProcess para desasociarse del proceso cuando acabe de depurar el script dentro del proceso.
 - Un nuevo cmdlet Wait-Debugger se ha agregado al módulo [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx). Puede ejecutar Wait-Debugger para detener un script en el depurador antes de ejecutar la siguiente instrucción del script.
 - El depurador del flujo de trabajo de Windows PowerShell admite ahora la finalización con comando o tabulación y permite depurar funciones de flujo de trabajo anidadas. Ahora puede presionar **Ctrl+Interrumpir** para introducir el depurador en un script en ejecución, tanto en sesiones locales como remotas, así como en un script de flujo de trabajo.
@@ -210,7 +210,7 @@ Windows PowerShell 4.0 está instalado de manera predeterminada en Windows 8.1 y
 
 Windows PowerShell 4.0 incluye las siguientes características nuevas.
 
-### <a name="new-features-in-windows-powershell"></a>Nuevas características de Windows PowerShell
+### <a name="a-namenew-features-in-windows-powershell-1-new-features-in-windows-powershell"></a><a name="new-features-in-windows-powershell-1" />Nuevas características de Windows PowerShell
 
 - La **configuración de estado deseado (DSC) de Windows PowerShell** es un nuevo sistema de administración de Windows PowerShell 4.0 que permite implementar y administrar los datos de configuración de servicios de software y el entorno en el que se ejecutan estos servicios. Para más información sobre DSC, consulte [Introducción a la configuración de estado deseado de Windows PowerShell](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0).
 - **Save-Help** permite guardar ahora la ayuda relativa a los módulos instalados en equipos remotos. Puede usar Save-Help para descargar la Ayuda del módulo de un cliente conectado a Internet (en el que no tienen por qué estar instalados todos los módulos de los que desea obtener ayuda). Luego, puede copiar la Ayuda guardada en una carpeta compartida remota o en un equipo remoto sin acceso a Internet.
@@ -230,12 +230,12 @@ Windows PowerShell 4.0 incluye las siguientes características nuevas.
 - Se ha agregado un nuevo cmdlet, **Get-FileHash**, que devuelve un hash de archivo en uno de los distintos formatos de un archivo concreto.
 - En Windows PowerShell 4.0, si un módulo usa la clave **DefaultCommandPrefix** en su manifiesto, o si el usuario importa un módulo con el parámetro **Prefix**, la propiedad **ExportedCommands** del módulo muestra los comandos en el módulo con el prefijo. Cuando se ejecutan comandos usando la sintaxis de módulo completo (nombreDelMódulo\\nombreDelComando), los nombres de comando deben incluir el prefijo.
 - El valor de **$PSVersionTable.PSVersion** se ha actualizado a 4.0.
-- El comportamiento del operador **Where()** ha cambiado. Ya no se admite que `Collection.Where('property -match name')` acepte una expresión de cadena con el formato `"Property -CompareOperator Value"`. Sin embargo, el operador **Where()** sí sigue aceptando expresiones de cadena con formato de bloque de script.
+- El comportamiento del operador **Where()** ha cambiado. `Collection.Where('property -match name')` Ya no se admite que se acepte una expresión de cadena con el formato `"Property -CompareOperator Value"`. Sin embargo, el operador **Where()** sí sigue aceptando expresiones de cadena con formato de bloque de script.
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Nuevas características del Entorno de scripting integrado (ISE) de Windows PowerShell
 
 - Windows PowerShell ISE admite la depuración tanto del flujo de trabajo de Windows PowerShell como de scripts remotos.
-- Se agregó compatibilidad con IntelliSense para los proveedores y configuraciones de la configuración de estado deseado de Windows PowerShell.
+- Se ha agregado compatibilidad con IntelliSense para los proveedores y configuraciones de la configuración de estado deseado de Windows PowerShell.
 
 ### <a name="new-features-in-windows-powershell-workflow"></a>Nuevas características del flujo de trabajo de Windows PowerShell
 
@@ -333,7 +333,7 @@ La siguiente lista describe muchos de los beneficios del flujo de trabajo de Win
 - **Ejecución de procesos complejos con una tarea única.** En un solo flujo de trabajo se pueden combinar varios scripts relacionados que implementen un escenario completo.
 - **Persistencia**: un flujo de trabajo se guarda (o se marca) en puntos específicos definidos por su autor, de forma que ese flujo de trabajo se puede reanudar desde la última tarea (o punto de comprobación) que se ha guardado, en lugar de tener que reiniciarlo desde el principio.
 - **Solidez.** Recuperación de errores automatizada. Los flujos de trabajo son inmunes a los reinicios, tanto si son planeados como si no. Por lo tanto, se puede suspender la ejecución de un flujo de trabajo y después reanudar el flujo de trabajo desde el último punto de persistencia. Los autores de flujos de trabajo pueden designar actividades específicas para que se vuelvan a ejecutar en caso de error en uno o más nodos administrados.
-- **Capacidad para desconectarse, volver a conectarse y ejecutarse en sesiones desconectadas.** Los usuarios se pueden conectar y desconectar del servidor de flujo de trabajo, pero este sigue ejecutándose de manera continua. Puede cerrar la sesión en el equipo cliente o reiniciar el equipo cliente y supervisar la ejecución del flujo de trabajo desde otro equipo sin interrumpirlo.
+- **Capacidad para desconectarse, reconectarse y ejecutarse en sesiones desconectadas.** Los usuarios se pueden conectar y desconectar del servidor de flujo de trabajo, pero este sigue ejecutándose de manera continua. Puede cerrar la sesión en el equipo cliente o reiniciar el equipo cliente y supervisar la ejecución del flujo de trabajo desde otro equipo sin interrumpirlo.
 - **Programación.** Las tareas de flujo de trabajo se pueden programar como cualquier script o cmdlet de Windows PowerShell.
 - **Limitación del flujo de trabajo y la conexión.** La ejecución del flujo de trabajo y las conexiones a los nodos se pueden limitar, lo que permite escenarios de alta disponibilidad y escalabilidad.
 
@@ -418,7 +418,7 @@ Para más información sobre cómo admitir la ayuda en línea, vea el tema sobre
 
 ### <a name="cim-integration"></a>Integración de CIM
 
-Windows PowerShell 3.0 incluye compatibilidad con el Modelo de información común (CIM), el que proporciona definiciones comunes de información de administración de sistemas, redes, aplicaciones y servicios, lo que permite intercambiar información de administración entre sistemas heterogéneos. La compatibilidad con CIM de Windows PowerShell 3.0 incluye la posibilidad de crear cmdlets de Windows PowerShell basados en clases de CIM nuevas o existentes, comandos basados en archivos XML de definición de cmdlet, compatibilidad con la API de .NET de CIM. CIM, cmdlets de administración de CIM y proveedores de WMI 2.0.
+Windows PowerShell 3.0 incluye compatibilidad con el Modelo de información común (CIM), el que proporciona definiciones comunes de información de administración de sistemas, redes, aplicaciones y servicios, lo que permite intercambiar información de administración entre sistemas heterogéneos. La compatibilidad con CIM de Windows PowerShell 3.0 incluye la posibilidad de crear cmdlets de Windows PowerShell basados en clases de CIM nuevas o existentes, comandos basados en archivos XML de definición de cmdlet, compatibilidad con la API de .NET de CIM. CIM, cmdlets de administración de CIM y proveedores de WMI 2.0.
 
 ### <a name="session-configuration-files"></a>Archivos de configuración de sesión
 
