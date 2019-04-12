@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Trabajar con instalaciones de software
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: bb97ad37c4295351c0fc2e3c6e1209c8dd673f06
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 9369e3c5ac670895cd4fbd3ebc895c50efd02051
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403467"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293238"
 ---
 # <a name="working-with-software-installations"></a>Trabajar con instalaciones de software
 
@@ -17,7 +17,7 @@ Puede usar la clase **Win32_Product** de WMI para acceder a las aplicaciones dis
 > [!NOTE]
 > Las aplicaciones que se instalan copiando los archivos de la aplicación en el equipo normalmente no se suelen poder administrar con las técnicas aquí descritas. Puede administrar estas aplicaciones como archivos y carpetas recurriendo a las técnicas descritas en la sección "Trabajar con archivos y carpetas".
 
-### <a name="listing-windows-installer-applications"></a>Lista de aplicaciones de Windows Installer
+## <a name="listing-windows-installer-applications"></a>Lista de aplicaciones de Windows Installer
 
 Para confeccionar una lista de las aplicaciones instaladas con Windows Installer en un sistema local o remoto, use esta sencilla consulta WMI:
 
@@ -56,7 +56,7 @@ También podría usar el parámetro **Get-WmiObject Filter** para seleccionar ú
 Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='Microsoft .NET Framework 2.0'"| Format-List -Property *
 ```
 
-Tenga en cuenta que, a menudo, las consultas WQL usan caracteres (como espacios o signos igual) que en Windows PowerShell tienen un significado especial. Por esta razón, es recomendable incluir siempre el valor del parámetro Filter entre comillas. También puede usar el carácter de escape de Windows PowerShell, un acento grave (`), aunque puede que la legibilidad no mejore. El siguiente comando equivale al comando anterior y devuelve los mismos resultados, pero usa un acento grave para aplicar escape en los caracteres especiales, en lugar de entrecomillar la cadena de filtro completa.
+Tenga en cuenta que, a menudo, las consultas WQL usan caracteres (como espacios o signos igual) que en Windows PowerShell tienen un significado especial. Por esta razón, es recomendable incluir siempre el valor del parámetro Filter entre comillas. También puede usar el carácter de escape de Windows PowerShell, un acento grave (\`), aunque puede que la legibilidad no mejore. El siguiente comando equivale al comando anterior y devuelve los mismos resultados, pero usa un acento grave para aplicar escape en los caracteres especiales, en lugar de entrecomillar la cadena de filtro completa.
 
 ```powershell
 Get-WmiObject -Class Win32_Product -ComputerName . -Filter Name`=`'Microsoft` .NET` Framework` 2.0`' | Format-List -Property *
@@ -85,7 +85,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 
 Ya tenemos varias formas de ver las aplicaciones que usan Windows Installer para instalarse, pero no hemos tenido en cuenta otras aplicaciones. La mayoría de las aplicaciones estándar registran su desinstalador con Windows, por lo que podemos trabajar con ellas localmente buscándolas en el Registro de Windows.
 
-### <a name="listing-all-uninstallable-applications"></a>Enumerar todas las aplicaciones no instalables
+## <a name="listing-all-uninstallable-applications"></a>Enumerar todas las aplicaciones no instalables
 
 Aunque no hay ninguna manera en firme de encontrar todas las aplicaciones en un sistema, sí se pueden encontrar todos los programas en las listas que se muestran en el cuadro de diálogo Agregar o quitar programas. Agregar o quitar programas detecta estas aplicaciones en la siguiente clave del Registro:
 
@@ -104,7 +104,7 @@ Uninstall  Registry      HKEY_LOCAL_MACHINE\SOFTWARE\Micr...
 > [!NOTE]
 > La unidad **HKLM:** se asigna a la raíz de **HKEY_LOCAL_MACHINE**, por lo que usamos esa unidad en la ruta de acceso a la clave Uninstall. En vez de **HKLM:**, podríamos haber especificado la ruta del Registro mediante **HKLM** o **HKEY_LOCAL_MACHINE**. La ventaja de usar una unidad de Registro existente es que podemos usar la finalización con tabulación para rellenar los nombres de claves, con lo cual no es necesario escribirlas.
 
-Ya tenemos una unidad denominada "Uninstall" que se puede usar para buscar instalaciones de aplicaciones de forma cómoda y rápida. Podemos hallar el número de aplicaciones instaladas contando el número de claves del Registro en la unidad de Windows PowerShell Uninstall:
+Ya tenemos una unidad denominada "Uninstall" que se puede usar para buscar instalaciones de aplicaciones de forma cómoda y rápida. Podemos hallar el número de aplicaciones instaladas contando el número de claves del Registro en la desinstalación: Unidad de Windows PowerShell:
 
 ```
 PS> (Get-ChildItem -Path Uninstall:).Count
@@ -142,7 +142,7 @@ SKC  VC Name                           Property
   0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
 ```
 
-### <a name="installing-applications"></a>Instalación de aplicaciones
+## <a name="installing-applications"></a>Instalación de aplicaciones
 
 Puede usar la clase **Win32_Product** para instalar paquetes de Windows Installer, tanto de forma local como remota.
 
@@ -157,7 +157,7 @@ En las instalaciones remotas, use una ruta de red de convención de nomenclatura
 
 Las aplicaciones que no usan la tecnología de Windows Installer pueden tener métodos específicos de aplicación disponibles para la implementación automática. Para saber si hay un método de automatización de la implementación, consulte la documentación de la aplicación pertinente o el sistema de Ayuda del proveedor de la aplicación. En algunos casos, incluso en aquellos en los que el proveedor de la aplicación no la haya diseñado específicamente para la automatización de la instalación, es posible que el fabricante del software de instalador posea algunas técnicas para la automatización.
 
-### <a name="removing-applications"></a>Desinstalación de aplicaciones
+## <a name="removing-applications"></a>Desinstalación de aplicaciones
 
 El proceso de desinstalación de un paquete de Windows Installer mediante Windows PowerShell funciona aproximadamente del mismo modo que la instalación de un paquete. En este ejemplo, el paquete que se va a desinstalar se selecciona por su nombre; en algunos casos, probablemente sea más fácil filtrar con **IdentifyingNumber**:
 
@@ -179,7 +179,7 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('Displ
 
 Sin embargo, puede que estas cadenas no se puedan usar directamente desde el símbolo del sistema de Windows PowerShell sin realizar alguna modificación.
 
-### <a name="upgrading-windows-installer-applications"></a>Actualización de aplicaciones de Windows Installer
+## <a name="upgrading-windows-installer-applications"></a>Actualización de aplicaciones de Windows Installer
 
 Para actualizar una aplicación, es necesario conocer su nombre y la ruta de acceso al paquete de actualización de la aplicación. Con esa información, podrá actualizar una aplicación con un solo comando de Windows PowerShell:
 
