@@ -2,55 +2,69 @@
 title: Instalación de PowerShell Core en Windows
 description: Información sobre cómo instalar PowerShell Core en Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 450a38a1ef2e2890059094774fcc3f2ad4fcda6e
-ms.sourcegitcommit: 8dd4394cf867005a8b9ef0bb74b744c964fbc332
+ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58748949"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293017"
 ---
-# <a name="installing-powershell-core-on-windows"></a><span data-ttu-id="2afa6-103">Instalación de PowerShell Core en Windows</span><span class="sxs-lookup"><span data-stu-id="2afa6-103">Installing PowerShell Core on Windows</span></span>
+# <a name="installing-powershell-core-on-windows"></a><span data-ttu-id="837cc-103">Instalación de PowerShell Core en Windows</span><span class="sxs-lookup"><span data-stu-id="837cc-103">Installing PowerShell Core on Windows</span></span>
 
-## <a name="msi"></a><span data-ttu-id="2afa6-104">MSI</span><span class="sxs-lookup"><span data-stu-id="2afa6-104">MSI</span></span>
+<span data-ttu-id="837cc-104">Hay varias formas de instalar PowerShell Core en Windows.</span><span class="sxs-lookup"><span data-stu-id="837cc-104">There are multiple ways to install PowerShell Core in Windows.</span></span>
 
-<span data-ttu-id="2afa6-105">Para instalar PowerShell en un cliente de Windows o Windows Server (funciona en Windows 7 SP1, Server 2008 R2 y versiones posteriores), descargue el paquete MSI desde nuestra página de [versiones][] de GitHub.</span><span class="sxs-lookup"><span data-stu-id="2afa6-105">To install PowerShell on a Windows client or Windows Server (works on Windows 7 SP1, Server 2008 R2, and later), download the MSI package from our GitHub [releases][] page.</span></span>  <span data-ttu-id="2afa6-106">Desplácese hacia abajo hasta la sección **Recursos** de la versión que quiere instalar.</span><span class="sxs-lookup"><span data-stu-id="2afa6-106">Scroll down to the **Assets** section of the Release you want to install.</span></span>  <span data-ttu-id="2afa6-107">Es posible que la sección Recursos esté contraída, por lo que tendría que hacer clic para expandirla.</span><span class="sxs-lookup"><span data-stu-id="2afa6-107">The Assets section may be collapsed, so you may need to click to expand it.</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="837cc-105">Requisitos previos</span><span class="sxs-lookup"><span data-stu-id="837cc-105">Prerequisites</span></span>
 
-<span data-ttu-id="2afa6-108">El archivo MSI tiene este aspecto: `PowerShell-<version>-win-<os-arch>.msi`</span><span class="sxs-lookup"><span data-stu-id="2afa6-108">The MSI file looks like this - `PowerShell-<version>-win-<os-arch>.msi`</span></span>
+<span data-ttu-id="837cc-106">Para habilitar la comunicación remota de PowerShell a través de WSMan, deben cumplirse los siguientes requisitos previos:</span><span class="sxs-lookup"><span data-stu-id="837cc-106">To enable PowerShell remoting over WSMan, the following prerequisites need to be met:</span></span>
+
+- <span data-ttu-id="837cc-107">Instale el [entorno de ejecución de C universal](https://www.microsoft.com/download/details.aspx?id=50410) en las versiones de Windows anteriores a Windows 10.</span><span class="sxs-lookup"><span data-stu-id="837cc-107">Install the [Universal C Runtime](https://www.microsoft.com/download/details.aspx?id=50410) on Windows versions prior to Windows 10.</span></span> <span data-ttu-id="837cc-108">Está disponible mediante descarga directa o Windows Update.</span><span class="sxs-lookup"><span data-stu-id="837cc-108">It is available via direct download or Windows Update.</span></span> <span data-ttu-id="837cc-109">Los sistemas admitidos a los que se hayan aplicado todas las revisiones (incluidos los paquetes opcionales) ya lo tienen instalado.</span><span class="sxs-lookup"><span data-stu-id="837cc-109">Fully patched (including optional packages), supported systems will already have this installed.</span></span>
+- <span data-ttu-id="837cc-110">Instale Windows Management Framework (WMF) 4.0 o una versión más reciente en Windows 7 y Windows Server 2008 R2.</span><span class="sxs-lookup"><span data-stu-id="837cc-110">Install the Windows Management Framework (WMF) 4.0 or newer on Windows 7 and Windows Server 2008 R2.</span></span>
+
+## <a name="a-idmsi-installing-the-msi-package"></a><span data-ttu-id="837cc-111"><a id="msi" />Instalación del paquete MSI</span><span class="sxs-lookup"><span data-stu-id="837cc-111"><a id="msi" />Installing the MSI package</span></span>
+
+<span data-ttu-id="837cc-112">Para instalar PowerShell en un cliente de Windows o Windows Server (funciona en Windows 7 SP1, Server 2008 R2 y versiones posteriores), descargue el paquete MSI desde nuestra página de [versiones][] de GitHub.</span><span class="sxs-lookup"><span data-stu-id="837cc-112">To install PowerShell on a Windows client or Windows Server (works on Windows 7 SP1, Server 2008 R2, and later), download the MSI package from our GitHub [releases][] page.</span></span> <span data-ttu-id="837cc-113">Desplácese hacia abajo hasta la sección **Recursos** de la versión que quiere instalar.</span><span class="sxs-lookup"><span data-stu-id="837cc-113">Scroll down to the **Assets** section of the Release you want to install.</span></span> <span data-ttu-id="837cc-114">Es posible que la sección Recursos esté contraída, por lo que tendría que hacer clic para expandirla.</span><span class="sxs-lookup"><span data-stu-id="837cc-114">The Assets section may be collapsed, so you may need to click to expand it.</span></span>
+
+<span data-ttu-id="837cc-115">El archivo MSI tiene este aspecto:</span><span class="sxs-lookup"><span data-stu-id="837cc-115">The MSI file looks like this -</span></span> `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
-<span data-ttu-id="2afa6-109">Una vez descargado, haga doble clic en el instalador y siga las indicaciones.</span><span class="sxs-lookup"><span data-stu-id="2afa6-109">Once downloaded, double-click the installer and follow the prompts.</span></span>
+<span data-ttu-id="837cc-116">Una vez descargado, haga doble clic en el instalador y siga las indicaciones.</span><span class="sxs-lookup"><span data-stu-id="837cc-116">Once downloaded, double-click the installer and follow the prompts.</span></span>
 
-<span data-ttu-id="2afa6-110">Tras la instalación, se coloca un acceso directo en el menú Inicio.</span><span class="sxs-lookup"><span data-stu-id="2afa6-110">There is a shortcut placed in the Start Menu upon installation.</span></span>
+<span data-ttu-id="837cc-117">El instalador crea un acceso directo en el menú de inicio de Windows.</span><span class="sxs-lookup"><span data-stu-id="837cc-117">The installer creates a shortcut in the Windows Start Menu.</span></span>
 
-- <span data-ttu-id="2afa6-111">De forma predeterminada, el paquete se instala en `$env:ProgramFiles\PowerShell\<version>`</span><span class="sxs-lookup"><span data-stu-id="2afa6-111">By default the package is installed to `$env:ProgramFiles\PowerShell\<version>`</span></span>
-- <span data-ttu-id="2afa6-112">Puede iniciar PowerShell mediante el menú Inicio o `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`</span><span class="sxs-lookup"><span data-stu-id="2afa6-112">You can launch PowerShell via the Start Menu or `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`</span></span>
+- <span data-ttu-id="837cc-118">De forma predeterminada, el paquete se instala en</span><span class="sxs-lookup"><span data-stu-id="837cc-118">By default the package is installed to</span></span> `$env:ProgramFiles\PowerShell\<version>`
+- <span data-ttu-id="837cc-119">Puede iniciar PowerShell mediante el menú Inicio o</span><span class="sxs-lookup"><span data-stu-id="837cc-119">You can launch PowerShell via the Start Menu or</span></span> `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
-### <a name="prerequisites"></a><span data-ttu-id="2afa6-113">Requisitos previos</span><span class="sxs-lookup"><span data-stu-id="2afa6-113">Prerequisites</span></span>
+### <a name="administrative-install-from-the-command-line"></a><span data-ttu-id="837cc-120">Instalación administrativa desde la línea de comandos</span><span class="sxs-lookup"><span data-stu-id="837cc-120">Administrative install from the command line</span></span>
 
-<span data-ttu-id="2afa6-114">Para habilitar la comunicación remota de PowerShell a través de WSMan, deben cumplirse los siguientes requisitos previos:</span><span class="sxs-lookup"><span data-stu-id="2afa6-114">To enable PowerShell remoting over WSMan, the following prerequisites need to be met:</span></span>
+<span data-ttu-id="837cc-121">Los paquetes MSI se pueden instalar desde la línea de comandos.</span><span class="sxs-lookup"><span data-stu-id="837cc-121">MSI packages can be installed from the command line.</span></span> <span data-ttu-id="837cc-122">Esto permite a los administradores implementar los paquetes sin interacción del usuario.</span><span class="sxs-lookup"><span data-stu-id="837cc-122">This allows administrators to deploy packages without user interaction.</span></span> <span data-ttu-id="837cc-123">El paquete MSI para PowerShell incluye las siguientes propiedades para controlar las opciones de instalación:</span><span class="sxs-lookup"><span data-stu-id="837cc-123">The MSI package for PowerShell includes the following properties to control the installation options:</span></span>
 
-- <span data-ttu-id="2afa6-115">Instale el [entorno de ejecución de C universal](https://www.microsoft.com/download/details.aspx?id=50410) en las versiones de Windows anteriores a Windows 10.</span><span class="sxs-lookup"><span data-stu-id="2afa6-115">Install the [Universal C Runtime](https://www.microsoft.com/download/details.aspx?id=50410) on Windows versions prior to Windows 10.</span></span>
-  <span data-ttu-id="2afa6-116">Está disponible mediante descarga directa o Windows Update.</span><span class="sxs-lookup"><span data-stu-id="2afa6-116">It is available via direct download or Windows Update.</span></span>
-  <span data-ttu-id="2afa6-117">Los sistemas admitidos a los que se hayan aplicado todas las revisiones (incluidos los paquetes opcionales) ya lo tienen instalado.</span><span class="sxs-lookup"><span data-stu-id="2afa6-117">Fully patched (including optional packages), supported systems will already have this installed.</span></span>
-- <span data-ttu-id="2afa6-118">Instale Windows Management Framework (WMF) 4.0 o una versión más reciente en Windows 7 y Windows Server 2008 R2.</span><span class="sxs-lookup"><span data-stu-id="2afa6-118">Install the Windows Management Framework (WMF) 4.0 or newer on Windows 7 and Windows Server 2008 R2.</span></span>
+- <span data-ttu-id="837cc-124">**ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL**: esta propiedad controla la opción para agregar el elemento **Open PowerShell** al menú contextual en el Explorador de Windows.</span><span class="sxs-lookup"><span data-stu-id="837cc-124">**ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - This property controls the option for adding the **Open PowerShell** item to the context menu in Windows Explorer.</span></span>
+- <span data-ttu-id="837cc-125">**ENABLE_PSREMOTING**: esta propiedad controla la opción para habilitar la comunicación remota de PowerShell durante la instalación.</span><span class="sxs-lookup"><span data-stu-id="837cc-125">**ENABLE_PSREMOTING** - This property controls the option for enabling PowerShell remoting during installation.</span></span>
+- <span data-ttu-id="837cc-126">**REGISTER_MANIFEST**: esta propiedad controla la opción para registrar el manifiesto de registro de eventos de Windows.</span><span class="sxs-lookup"><span data-stu-id="837cc-126">**REGISTER_MANIFEST** - This property controls the option for registering the Windows Event Logging manifest.</span></span>
 
-## <a name="zip"></a><span data-ttu-id="2afa6-119">ZIP</span><span class="sxs-lookup"><span data-stu-id="2afa6-119">ZIP</span></span>
+<span data-ttu-id="837cc-127">En los ejemplos siguientes se muestra cómo instalar PowerShell Core con todas las opciones de instalación habilitadas de forma silenciosa.</span><span class="sxs-lookup"><span data-stu-id="837cc-127">The following examples shows how to silently install PowerShell Core with all the install options enabled.</span></span>
 
-<span data-ttu-id="2afa6-120">Se proporcionan archivos binarios ZIP de PowerShell para permitir escenarios de implementación avanzada.</span><span class="sxs-lookup"><span data-stu-id="2afa6-120">PowerShell binary ZIP archives are provided to enable advanced deployment scenarios.</span></span>
-<span data-ttu-id="2afa6-121">Tenga en cuenta que, cuando use el archivo ZIP, no aparecerá la comprobación de requisitos previos como en el caso del paquete MSI.</span><span class="sxs-lookup"><span data-stu-id="2afa6-121">Be noted that when using the ZIP archive, you won't get the prerequisites check as in the MSI package.</span></span>
-<span data-ttu-id="2afa6-122">Por ello, para que la comunicación remota mediante WSMan funcione correctamente en versiones de Windows anteriores a Windows 10, debe asegurarse de que se cumplan los [requisitos previos](#prerequisites).</span><span class="sxs-lookup"><span data-stu-id="2afa6-122">So in order for remoting over WSMan to work properly on Windows versions prior to Windows 10, you need to make sure the [prerequisites](#prerequisites) are met.</span></span>
+```powershell
+msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+```
 
-## <a name="deploying-on-windows-iot"></a><span data-ttu-id="2afa6-123">Implementación en Windows IoT</span><span class="sxs-lookup"><span data-stu-id="2afa6-123">Deploying on Windows IoT</span></span>
+<span data-ttu-id="837cc-128">Para obtener una lista completa de opciones de línea de comandos de Msiexec.exe, consulte [Opciones de línea de comandos](/windows/desktop/Msi/command-line-options).</span><span class="sxs-lookup"><span data-stu-id="837cc-128">For a full list of command line options for Msiexec.exe, see [Command line options](/windows/desktop/Msi/command-line-options).</span></span>
 
-<span data-ttu-id="2afa6-124">Windows IoT ya incluye Windows PowerShell, que se usará para implementar PowerShell Core 6.</span><span class="sxs-lookup"><span data-stu-id="2afa6-124">Windows IoT already comes with Windows PowerShell which we will use to deploy PowerShell Core 6.</span></span>
+## <a name="a-idzip-installing-the-zip-package"></a><span data-ttu-id="837cc-129"><a id="zip" />Instalación del paquete ZIP</span><span class="sxs-lookup"><span data-stu-id="837cc-129"><a id="zip" />Installing the ZIP package</span></span>
 
-1. <span data-ttu-id="2afa6-125">Cree `PSSession` en el dispositivo de destino.</span><span class="sxs-lookup"><span data-stu-id="2afa6-125">Create `PSSession` to target device</span></span>
+<span data-ttu-id="837cc-130">Se proporcionan archivos binarios ZIP de PowerShell para permitir escenarios de implementación avanzada.</span><span class="sxs-lookup"><span data-stu-id="837cc-130">PowerShell binary ZIP archives are provided to enable advanced deployment scenarios.</span></span> <span data-ttu-id="837cc-131">Tenga en cuenta que, cuando use el archivo ZIP, no aparecerá la comprobación de requisitos previos como en el caso del paquete MSI.</span><span class="sxs-lookup"><span data-stu-id="837cc-131">Be noted that when using the ZIP archive, you won't get the prerequisites check as in the MSI package.</span></span> <span data-ttu-id="837cc-132">Para que la comunicación remota en WSMan funcione correctamente, asegúrese de que se han cumplido los [requisitos previos](#prerequisites).</span><span class="sxs-lookup"><span data-stu-id="837cc-132">For remoting over WSMan to work properly,, ensure that you have met the [prerequisites](#prerequisites).</span></span>
+
+## <a name="deploying-on-windows-iot"></a><span data-ttu-id="837cc-133">Implementación en Windows IoT</span><span class="sxs-lookup"><span data-stu-id="837cc-133">Deploying on Windows IoT</span></span>
+
+<span data-ttu-id="837cc-134">Windows IoT ya incluye Windows PowerShell, que se usará para implementar PowerShell Core 6.</span><span class="sxs-lookup"><span data-stu-id="837cc-134">Windows IoT already comes with Windows PowerShell which we will use to deploy PowerShell Core 6.</span></span>
+
+1. <span data-ttu-id="837cc-135">Cree `PSSession` en el dispositivo de destino.</span><span class="sxs-lookup"><span data-stu-id="837cc-135">Create `PSSession` to target device</span></span>
 
    ```powershell
    $s = New-PSSession -ComputerName <deviceIp> -Credential Administrator
    ```
 
-2. <span data-ttu-id="2afa6-126">Copie el paquete ZIP en el dispositivo.</span><span class="sxs-lookup"><span data-stu-id="2afa6-126">Copy the ZIP package to the device</span></span>
+2. <span data-ttu-id="837cc-136">Copie el paquete ZIP en el dispositivo.</span><span class="sxs-lookup"><span data-stu-id="837cc-136">Copy the ZIP package to the device</span></span>
 
    ```powershell
    # change the destination to however you had partitioned it with sufficient
@@ -59,7 +73,7 @@ ms.locfileid: "58748949"
    Copy-Item .\PowerShell-<version>-win-<os-arch>.zip -Destination u:\users\administrator\Downloads -ToSession $s
    ```
 
-3. <span data-ttu-id="2afa6-127">Conéctese al dispositivo y expanda el archivo.</span><span class="sxs-lookup"><span data-stu-id="2afa6-127">Connect to the device and expand the archive</span></span>
+3. <span data-ttu-id="837cc-137">Conéctese al dispositivo y expanda el archivo.</span><span class="sxs-lookup"><span data-stu-id="837cc-137">Connect to the device and expand the archive</span></span>
 
    ```powershell
    Enter-PSSession $s
@@ -67,7 +81,7 @@ ms.locfileid: "58748949"
    Expand-Archive .\PowerShell-<version>-win-<os-arch>.zip
    ```
 
-4. <span data-ttu-id="2afa6-128">Configure el acceso remoto a PowerShell Core 6.</span><span class="sxs-lookup"><span data-stu-id="2afa6-128">Setup remoting to PowerShell Core 6</span></span>
+4. <span data-ttu-id="837cc-138">Configure el acceso remoto a PowerShell Core 6.</span><span class="sxs-lookup"><span data-stu-id="837cc-138">Setup remoting to PowerShell Core 6</span></span>
 
    ```powershell
    Set-Location .\PowerShell-<version>-win-<os-arch>
@@ -77,84 +91,67 @@ ms.locfileid: "58748949"
    # You'll get an error message and will be disconnected from the device because it has to restart WinRM
    ```
 
-5. <span data-ttu-id="2afa6-129">Conéctese al punto de conexión de PowerShell Core 6 en el dispositivo.</span><span class="sxs-lookup"><span data-stu-id="2afa6-129">Connect to PowerShell Core 6 endpoint on device</span></span>
+5. <span data-ttu-id="837cc-139">Conéctese al punto de conexión de PowerShell Core 6 en el dispositivo.</span><span class="sxs-lookup"><span data-stu-id="837cc-139">Connect to PowerShell Core 6 endpoint on device</span></span>
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
 
-## <a name="deploying-on-nano-server"></a><span data-ttu-id="2afa6-130">Desarrollo en Nano Server</span><span class="sxs-lookup"><span data-stu-id="2afa6-130">Deploying on Nano Server</span></span>
+## <a name="deploying-on-nano-server"></a><span data-ttu-id="837cc-140">Desarrollo en Nano Server</span><span class="sxs-lookup"><span data-stu-id="837cc-140">Deploying on Nano Server</span></span>
 
-<span data-ttu-id="2afa6-131">En estas instrucciones se da por supuesto que ya se ejecuta una versión de PowerShell en la imagen de Nano Server y que se ha generado mediante [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server).</span><span class="sxs-lookup"><span data-stu-id="2afa6-131">These instructions assume that a version of PowerShell is already running on the Nano Server image and that it has been generated by the [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server).</span></span>
-<span data-ttu-id="2afa6-132">Nano Server es un sistema operativo "sin periféricos".</span><span class="sxs-lookup"><span data-stu-id="2afa6-132">Nano Server is a "headless" OS.</span></span> <span data-ttu-id="2afa6-133">Los archivos binarios principales se pueden implementar mediante dos métodos diferentes.</span><span class="sxs-lookup"><span data-stu-id="2afa6-133">Core binaries can be deploy using two different methods.</span></span>
+<span data-ttu-id="837cc-141">En estas instrucciones se da por supuesto que ya se ejecuta una versión de PowerShell en la imagen de Nano Server y que se ha generado mediante [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server).</span><span class="sxs-lookup"><span data-stu-id="837cc-141">These instructions assume that a version of PowerShell is already running on the Nano Server image and that it has been generated by the [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server).</span></span>
+<span data-ttu-id="837cc-142">Nano Server es un sistema operativo "sin periféricos".</span><span class="sxs-lookup"><span data-stu-id="837cc-142">Nano Server is a "headless" OS.</span></span> <span data-ttu-id="837cc-143">Los archivos binarios principales se pueden implementar mediante dos métodos diferentes.</span><span class="sxs-lookup"><span data-stu-id="837cc-143">Core binaries can be deploy using two different methods.</span></span>
 
-1. <span data-ttu-id="2afa6-134">Sin conexión: monte el VHD de Nano Server y descomprima el contenido del archivo ZIP en la ubicación seleccionada de la imagen montada.</span><span class="sxs-lookup"><span data-stu-id="2afa6-134">Offline - Mount the Nano Server VHD and unzip the contents of the zip file to your chosen location within the mounted image.</span></span>
-2. <span data-ttu-id="2afa6-135">En línea: transfiera el archivo ZIP a través de una sesión de PowerShell y descomprímalo en la ubicación seleccionada.</span><span class="sxs-lookup"><span data-stu-id="2afa6-135">Online - Transfer the zip file over a PowerShell Session and unzip it in your chosen location.</span></span>
+1. <span data-ttu-id="837cc-144">Sin conexión: monte el VHD de Nano Server y descomprima el contenido del archivo ZIP en la ubicación seleccionada de la imagen montada.</span><span class="sxs-lookup"><span data-stu-id="837cc-144">Offline - Mount the Nano Server VHD and unzip the contents of the zip file to your chosen location within the mounted image.</span></span>
+2. <span data-ttu-id="837cc-145">En línea: transfiera el archivo ZIP a través de una sesión de PowerShell y descomprímalo en la ubicación seleccionada.</span><span class="sxs-lookup"><span data-stu-id="837cc-145">Online - Transfer the zip file over a PowerShell Session and unzip it in your chosen location.</span></span>
 
-<span data-ttu-id="2afa6-136">En ambos casos, necesitará el paquete comercial ZIP de Windows 10 x64 y deberá ejecutar los comandos en una instancia de PowerShell de "Administrador".</span><span class="sxs-lookup"><span data-stu-id="2afa6-136">In both cases, you will need the Windows 10 x64 ZIP release package and will need to run the commands within an "Administrator" PowerShell instance.</span></span>
+<span data-ttu-id="837cc-146">En ambos casos, necesitará el paquete comercial ZIP de Windows 10 x64 y deberá ejecutar los comandos en una instancia de PowerShell de "Administrador".</span><span class="sxs-lookup"><span data-stu-id="837cc-146">In both cases, you will need the Windows 10 x64 ZIP release package and will need to run the commands within an "Administrator" PowerShell instance.</span></span>
 
-### <a name="offline-deployment-of-powershell-core"></a><span data-ttu-id="2afa6-137">Implementación sin conexión de PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="2afa6-137">Offline Deployment of PowerShell Core</span></span>
+### <a name="offline-deployment-of-powershell-core"></a><span data-ttu-id="837cc-147">Implementación sin conexión de PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="837cc-147">Offline Deployment of PowerShell Core</span></span>
 
-1. <span data-ttu-id="2afa6-138">Use su utilidad ZIP favorita para descomprimir el paquete en un directorio de la imagen montada de Nano Server.</span><span class="sxs-lookup"><span data-stu-id="2afa6-138">Use your favorite zip utility to unzip the package to a directory within the mounted Nano Server image.</span></span>
-2. <span data-ttu-id="2afa6-139">Desmonte la imagen e iníciela.</span><span class="sxs-lookup"><span data-stu-id="2afa6-139">Unmount the image and boot it.</span></span>
-3. <span data-ttu-id="2afa6-140">Conéctese a la instancia de Bandeja de entrada de Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="2afa6-140">Connect to the inbox instance of Windows PowerShell.</span></span>
-4. <span data-ttu-id="2afa6-141">Siga las instrucciones para crear un punto de conexión de comunicación remota mediante "[otra técnica de instancia"](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).</span><span class="sxs-lookup"><span data-stu-id="2afa6-141">Follow the instructions to create a remoting endpoint using the ["another instance technique"](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).</span></span>
+1. <span data-ttu-id="837cc-148">Use su utilidad ZIP favorita para descomprimir el paquete en un directorio de la imagen montada de Nano Server.</span><span class="sxs-lookup"><span data-stu-id="837cc-148">Use your favorite zip utility to unzip the package to a directory within the mounted Nano Server image.</span></span>
+2. <span data-ttu-id="837cc-149">Desmonte la imagen e iníciela.</span><span class="sxs-lookup"><span data-stu-id="837cc-149">Unmount the image and boot it.</span></span>
+3. <span data-ttu-id="837cc-150">Conéctese a la instancia de Bandeja de entrada de Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="837cc-150">Connect to the inbox instance of Windows PowerShell.</span></span>
+4. <span data-ttu-id="837cc-151">Siga las instrucciones para crear un punto de conexión de comunicación remota mediante "[otra técnica de instancia"](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).</span><span class="sxs-lookup"><span data-stu-id="837cc-151">Follow the instructions to create a remoting endpoint using the ["another instance technique"](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).</span></span>
 
-### <a name="online-deployment-of-powershell-core"></a><span data-ttu-id="2afa6-142">Implementación en línea de PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="2afa6-142">Online Deployment of PowerShell Core</span></span>
+### <a name="online-deployment-of-powershell-core"></a><span data-ttu-id="837cc-152">Implementación en línea de PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="837cc-152">Online Deployment of PowerShell Core</span></span>
 
-<span data-ttu-id="2afa6-143">Los pasos siguientes le guían por la implementación de PowerShell Core en una instancia en ejecución de Nano Server y la configuración de su punto de conexión remoto.</span><span class="sxs-lookup"><span data-stu-id="2afa6-143">The following steps guide you through the deployment of PowerShell Core to a running instance of Nano Server and the configuration of its remote endpoint.</span></span>
+<span data-ttu-id="837cc-153">Los pasos siguientes le guían por la implementación de PowerShell Core en una instancia en ejecución de Nano Server y la configuración de su punto de conexión remoto.</span><span class="sxs-lookup"><span data-stu-id="837cc-153">The following steps guide you through the deployment of PowerShell Core to a running instance of Nano Server and the configuration of its remote endpoint.</span></span>
 
-- <span data-ttu-id="2afa6-144">Conéctese a la instancia de Bandeja de entrada de Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="2afa6-144">Connect to the inbox instance of Windows PowerShell</span></span>
+- <span data-ttu-id="837cc-154">Conéctese a la instancia de Bandeja de entrada de Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="837cc-154">Connect to the inbox instance of Windows PowerShell</span></span>
 
   ```powershell
   $session = New-PSSession -ComputerName <Nano Server IP address> -Credential <An Administrator account on the system>
   ```
 
-- <span data-ttu-id="2afa6-145">Copie el archivo en la instancia de Nano Server.</span><span class="sxs-lookup"><span data-stu-id="2afa6-145">Copy the file to the Nano Server instance</span></span>
+- <span data-ttu-id="837cc-155">Copie el archivo en la instancia de Nano Server.</span><span class="sxs-lookup"><span data-stu-id="837cc-155">Copy the file to the Nano Server instance</span></span>
 
   ```powershell
   Copy-Item <local PS Core download location>\powershell-<version>-win-x64.zip c:\ -ToSession $session
   ```
 
-- <span data-ttu-id="2afa6-146">Especifique la sesión.</span><span class="sxs-lookup"><span data-stu-id="2afa6-146">Enter the session</span></span>
+- <span data-ttu-id="837cc-156">Especifique la sesión.</span><span class="sxs-lookup"><span data-stu-id="837cc-156">Enter the session</span></span>
 
   ```powershell
   Enter-PSSession $session
   ```
 
-- <span data-ttu-id="2afa6-147">Extraiga el archivo ZIP.</span><span class="sxs-lookup"><span data-stu-id="2afa6-147">Extract the ZIP file</span></span>
+- <span data-ttu-id="837cc-157">Extraiga el archivo ZIP.</span><span class="sxs-lookup"><span data-stu-id="837cc-157">Extract the ZIP file</span></span>
 
   ```powershell
   # Insert the appropriate version.
   Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShellCore_<version>"
   ```
 
-- <span data-ttu-id="2afa6-148">Si le interesa la comunicación remota basada en WSMan, siga las instrucciones para crear un punto de conexión de comunicación remota mediante ["otra técnica de instancia"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).</span><span class="sxs-lookup"><span data-stu-id="2afa6-148">If you want WSMan-based remoting, follow the instructions to create a remoting endpoint using the ["another instance technique"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).</span></span>
+- <span data-ttu-id="837cc-158">Si le interesa la comunicación remota basada en WSMan, siga las instrucciones para crear un punto de conexión de comunicación remota mediante ["otra técnica de instancia"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).</span><span class="sxs-lookup"><span data-stu-id="837cc-158">If you want WSMan-based remoting, follow the instructions to create a remoting endpoint using the ["another instance technique"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).</span></span>
 
-## <a name="instructions-to-create-a-remoting-endpoint"></a><span data-ttu-id="2afa6-149">Instrucciones para crear un punto de conexión de comunicación remota</span><span class="sxs-lookup"><span data-stu-id="2afa6-149">Instructions to Create a Remoting Endpoint</span></span>
+## <a name="how-to-create-a-remoting-endpoint"></a><span data-ttu-id="837cc-159">Procedimientos para crear un punto de conexión de comunicación remota</span><span class="sxs-lookup"><span data-stu-id="837cc-159">How to create a remoting endpoint</span></span>
 
-<span data-ttu-id="2afa6-150">PowerShell Core admite el Protocolo de comunicación remota de PowerShell (PSRP) a través de WSMan y SSH.</span><span class="sxs-lookup"><span data-stu-id="2afa6-150">PowerShell Core supports the PowerShell Remoting Protocol (PSRP) over both WSMan and SSH.</span></span>
-<span data-ttu-id="2afa6-151">Para obtener más información, consulte:</span><span class="sxs-lookup"><span data-stu-id="2afa6-151">For more information, see:</span></span>
+<span data-ttu-id="837cc-160">PowerShell Core admite el Protocolo de comunicación remota de PowerShell (PSRP) a través de WSMan y SSH.</span><span class="sxs-lookup"><span data-stu-id="837cc-160">PowerShell Core supports the PowerShell Remoting Protocol (PSRP) over both WSMan and SSH.</span></span> <span data-ttu-id="837cc-161">Para obtener más información, consulte:</span><span class="sxs-lookup"><span data-stu-id="837cc-161">For more information, see:</span></span>
 
-- <span data-ttu-id="2afa6-152">[Comunicación remota mediante SSH en PowerShell Core][ssh-remoting]</span><span class="sxs-lookup"><span data-stu-id="2afa6-152">[SSH Remoting in PowerShell Core][ssh-remoting]</span></span>
-- <span data-ttu-id="2afa6-153">[Comunicación remota mediante WSMan en PowerShell Core][wsman-remoting]</span><span class="sxs-lookup"><span data-stu-id="2afa6-153">[WSMan Remoting in PowerShell Core][wsman-remoting]</span></span>
-
-## <a name="artifact-installation-instructions"></a><span data-ttu-id="2afa6-154">Instrucciones de instalación de artefactos</span><span class="sxs-lookup"><span data-stu-id="2afa6-154">Artifact Installation Instructions</span></span>
-
-<span data-ttu-id="2afa6-155">Publicamos un archivo con bits de CoreCLR en todas las compilaciones de CI con [AppVeyor][].</span><span class="sxs-lookup"><span data-stu-id="2afa6-155">We publish an archive with CoreCLR bits on every CI build with [AppVeyor][].</span></span>
-
-<span data-ttu-id="2afa6-156">Para instalar PowerShell Core desde el artefacto de CoreCLR:</span><span class="sxs-lookup"><span data-stu-id="2afa6-156">To install PowerShell Core from the CoreCLR Artifact:</span></span>
-
-1. <span data-ttu-id="2afa6-157">Descargue el paquete ZIP desde la pestaña **artefactos** de la compilación determinada.</span><span class="sxs-lookup"><span data-stu-id="2afa6-157">Download ZIP package from **artifacts** tab of the particular build.</span></span>
-2. <span data-ttu-id="2afa6-158">Desbloquee el archivo ZIP. Para ello, haga clic con el botón derecho en el Explorador de archivos -> Propiedades -> active la casilla "Desbloquear" -> Aplicar.</span><span class="sxs-lookup"><span data-stu-id="2afa6-158">Unblock ZIP file: right-click in File Explorer -> Properties -> check 'Unblock' box -> apply</span></span>
-3. <span data-ttu-id="2afa6-159">Extraiga el archivo ZIP en el directorio `bin`.</span><span class="sxs-lookup"><span data-stu-id="2afa6-159">Extract zip file to `bin` directory</span></span>
-4. `./bin/pwsh.exe`
+- <span data-ttu-id="837cc-162">[Comunicación remota mediante SSH en PowerShell Core][ssh-remoting]</span><span class="sxs-lookup"><span data-stu-id="837cc-162">[SSH Remoting in PowerShell Core][ssh-remoting]</span></span>
+- <span data-ttu-id="837cc-163">[Comunicación remota mediante WSMan en PowerShell Core][wsman-remoting]</span><span class="sxs-lookup"><span data-stu-id="837cc-163">[WSMan Remoting in PowerShell Core][wsman-remoting]</span></span>
 
 <!-- [download-center]: TODO -->
-
-[Versiones]: https://github.com/PowerShell/PowerShell/releases
-[releases]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+[releases]: https://github.com/PowerShell/PowerShell/releases [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
