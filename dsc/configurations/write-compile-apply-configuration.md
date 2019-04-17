@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,service,setup
 title: Escritura, compilación y aplicación de una configuración
-ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795426"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506825"
 ---
 > Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -65,8 +65,8 @@ Para obtener más información, vea [about_Scripts](/powershell/module/microsoft
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
-. C:\Scripts\WebsiteTest.ps1
-HelloWolrd
+. C:\Scripts\HelloWorld.ps1
+HelloWorld
 ```
 
 Esto genera la siguiente salida:
@@ -90,7 +90,7 @@ El LCM se encarga de llamar a los recursos de DSC para aplicar la configuración
 Use el código siguiente para ejecutar el cmdlet `Start-DSCConfiguration`. Especifique la ruta de acceso del directorio donde se almacena "localhost.mof" en el parámetro `-Path`. El cmdlet `Start-DSCConfiguration` busca en el directorio especificado todos los archivos "\<nombrearchivo\>.mof". El cmdlet `Start-DSCConfiguration` intenta aplicar cada archivo ".mof" que encuentra con el nombre del equipo especificado por el nombre de archivo ("localhost", "servidor01", "dc-02", etc.).
 
 > [!NOTE]
-> Si no se especifica el parámetro `-Wait`, `Start-DSCConfiguration` crea un trabajo en segundo plano para llevar a cabo la operación. La especificación del parámetro `-Verbose` permite ver el resultado **detallado** de la operación. `-Wait` y `-Verbose` son parámetros opcionales, ambos.
+> Si no se especifica el parámetro `-Wait`, `Start-DSCConfiguration` crea un trabajo en segundo plano para llevar a cabo la operación. La especificación del parámetro `-Verbose` permite ver el resultado **detallado** de la operación. `-Wait`y `-Verbose` son parámetros opcionales, ambos.
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
