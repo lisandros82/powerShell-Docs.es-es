@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
 ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58920397"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Programador de Windows PowerShell&#39;guía
@@ -101,10 +101,10 @@ Para obtener más información acerca de cómo empezar a usar el shell de Window
 |-----------|----------------|
 |[Cómo crear un proveedor de Windows PowerShell](./how-to-create-a-windows-powershell-provider.md)|En esta sección se describe cómo crear un proveedor de Windows PowerShell para Windows PowerShell.|
 |[Cómo crear una aplicación de Host de PowerShell de Windows](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|En esta sección se describe cómo escribir una aplicación host que manipula un espacio de ejecución y cómo escribir una aplicación host que implementa su propio host personalizado.|
-|[Cómo crear un complemento de Windows PowerShell](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|En esta sección se describe cómo crear un complemento que se usa para registrar todos los cmdlets y proveedores en un ensamblado y cómo crear un complemento personalizado.|
-|[Cómo crear un shell de la consola](./how-to-create-a-console-shell.md)|En esta sección se describe cómo crear un shell de consola que no es extensible.|
+|[Cómo crear un complemento Windows PowerShell](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|En esta sección se describe cómo crear un complemento que se usa para registrar todos los cmdlets y proveedores en un ensamblado y cómo crear un complemento personalizado.|
+|[Cómo crear un Shell de la consola](./how-to-create-a-console-shell.md)|En esta sección se describe cómo crear un shell de consola que no es extensible.|
 |[Conceptos de Windows PowerShell](./windows-powershell-concepts.md)|Esta sección contiene información conceptual que le ayudará a entender Windows PowerShell desde el punto de vista de un desarrollador.|
 
 ## <a name="see-also"></a>Véase también
 
-[SDK de Windows PowerShell](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)
