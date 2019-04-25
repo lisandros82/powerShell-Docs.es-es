@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1100d91d-249d-4af7-9854-2d6a423ac2f4
 caps.latest.revision: 7
 ms.openlocfilehash: 70577a6a42ce26e9791360fa30baae9d7a492daf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082643"
 ---
 # <a name="runspace08-sample"></a>Ejemplo Runspace08
 
@@ -23,7 +23,7 @@ En este ejemplo se muestra cómo agregar comandos y argumentos a la canalizació
 
 Este ejemplo requiere Windows PowerShell 2.0.
 
-## <a name="demonstrates"></a>Demostraciones
+## <a name="demonstrates"></a>Muestra
 
 Este ejemplo muestra lo siguiente.
 

@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
 ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082199"
 ---
 # <a name="installing-a-powershell-module"></a>Instalación de un módulo de PowerShell
 
 Después de haber creado el módulo de PowerShell, probablemente deseará instalar el módulo en un sistema, para que usted u otros usuarios pueden usar. Por lo general, esto simplemente consiste en copiar los archivos de módulo (es decir, el. psm1, o el ensamblado binario, el manifiesto del módulo y los otros archivos asociados) en un directorio en el equipo. Para un proyecto muy pequeño, esto puede ser tan sencillo como copiar y pegar los archivos con el Explorador de Windows en un único equipo remoto. Sin embargo, para las soluciones más grandes se puede usar un proceso de instalación más sofisticado. Independientemente de cómo obtener el módulo en el sistema, PowerShell puede usar varias técnicas que permitirá a los usuarios a encontrar y usar los módulos. (Para obtener más información, consulte [importar un módulo de PowerShell](./importing-a-powershell-module.md).) Por lo tanto, el principal problema para la instalación es asegurarse de que PowerShell pueda encontrar el módulo.
 
-Este tema contiene las siguientes secciones:
+En este tema contiene las siguientes secciones:
 
 - Reglas para la instalación de módulos
 

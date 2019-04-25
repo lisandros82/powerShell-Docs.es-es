@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 31298f1b-8b76-4637-8406-863f5ad27e53
 caps.latest.revision: 8
 ms.openlocfilehash: 91b56a78f878e0d9c0fc11e4b882399bdfb108ac
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058902"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067295"
 ---
 # <a name="stopprocesssample03-sample"></a>Ejemplo StopProcessSample03
 
@@ -51,7 +51,7 @@ Este ejemplo muestra cómo escribir un cmdlet cuyos parámetros tienen alias y c
 
 Este ejemplo requiere Windows PowerShell 2.0.
 
-## <a name="demonstrates"></a>Demostraciones
+## <a name="demonstrates"></a>Muestra
 
 Este ejemplo muestra lo siguiente.
 

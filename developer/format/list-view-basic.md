@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 918f381c-43e6-4594-a468-a40bfa8a16d6
 caps.latest.revision: 7
 ms.openlocfilehash: 3c94d8e98f179286112a417230fce659dc0b614c
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065315"
 ---
 # <a name="list-view-basic"></a>Vista de lista (Basic)
 
@@ -30,7 +30,7 @@ ms.locfileid: "57794168"
    > [!WARNING]
    > Este archivo de formato define la presentación de un objeto que ya está definido por un archivo de formato de Windows PowerShell. Debe usar el `prependPath` parámetro cuando se ejecuta el cmdlet, y no se puede cargar este formato de archivo como un módulo.
 
-## <a name="demonstrates"></a>Demostraciones
+## <a name="demonstrates"></a>Muestra
 
 Este archivo de formato muestra los elementos XML siguientes:
 

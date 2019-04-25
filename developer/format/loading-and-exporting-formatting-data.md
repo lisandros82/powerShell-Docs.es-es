@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
 caps.latest.revision: 6
 ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054193"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065213"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Carga y exportación de datos de formato
 
@@ -59,4 +59,4 @@ No hay ningún requisito para los archivos de formato que se almacenan en el dis
 
 ## <a name="exporting-format-data"></a>Exportación de datos de formato
 
-Insertar el cuerpo de la sección aquí.
+Inserte aquí el cuerpo de sección.

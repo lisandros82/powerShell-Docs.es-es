@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
 ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068446"
 ---
 # <a name="common-parameter-names"></a>Nombres de parámetros comunes
 
@@ -34,7 +34,7 @@ Este parámetro especifica si la depuración de nivel de programador de los mens
 
 ### <a name="erroraction-alias-ea"></a>ErrorAction (alias: ea)
 
-Tipo de datos: Enumeration
+Tipo de datos: Enumeración
 
 Este parámetro especifica qué acción debe tener lugar cuando se produce un error. Los valores posibles para este parámetro se definen mediante la [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) enumeración.
 
@@ -64,7 +64,7 @@ Este parámetro especifica si el cmdlet escribe mensajes explicativos que se pue
 
 ### <a name="warningaction-alias-wa"></a>WarningAction (alias: wa)
 
-Tipo de datos: Enumeration
+Tipo de datos: Enumeración
 
 Este parámetro especifica qué acción debe tener lugar cuando el cmdlet escribe un mensaje de advertencia. Los valores posibles para este parámetro se definen mediante la [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) enumeración.
 
