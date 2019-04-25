@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Recurso WaitForAll Resource de DSC
 ms.openlocfilehash: 1e891f1aecbdbe641973669f71f22664ad8ea16c
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076929"
 ---
 # <a name="dsc-waitforall-resource"></a>Recurso WaitForAll Resource de DSC
 
-> Se aplica a: Windows PowerShell 5.0 y versiones posterior
+> Se aplica a: Windows PowerShell 5.0 y versiones posteriores
 
 El recurso **WaitForAll** de Desired State Configuration (DSC) se puede usar dentro de un bloque de nodos en una [configuración de DSC](../../../configurations/configurations.md) para especificar las dependencias de las configuraciones de otros nodos.
 

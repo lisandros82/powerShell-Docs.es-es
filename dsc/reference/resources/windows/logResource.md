@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Recurso de DSC Log
 ms.openlocfilehash: 1f94a2d847a4ef63f81e2fb83d1a0f76f5677b09
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077235"
 ---
 # <a name="dsc-log-resource"></a>Recurso de DSC Log
 
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0_
+> _Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 El recurso __Log__ de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para escribir mensajes en el registro de eventos de análisis o de la configuración de estado deseado de Microsoft Windows.
 

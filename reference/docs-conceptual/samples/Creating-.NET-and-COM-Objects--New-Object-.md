@@ -4,11 +4,11 @@ keywords: powershell, cmdlet
 title: Crear objetos de .NET y COM New Object
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
 ms.openlocfilehash: ef8215303aacd90536d3c2ae57bc3629e202f318
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086381"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>Crear objetos .NET y COM (New-Object)
 

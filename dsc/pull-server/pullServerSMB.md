@@ -3,11 +3,11 @@ ms.date: 04/11/2018
 keywords: dsc,powershell,configuration,setup
 title: Configuración de un servidor de incorporación de cambios SMB de DSC
 ms.openlocfilehash: 9d087a08861b2f4683e81efd1e25f857b8b75e07
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58057763"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079292"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Configuración de un servidor de incorporación de cambios SMB de DSC
 

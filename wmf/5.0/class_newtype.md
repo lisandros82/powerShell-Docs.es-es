@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: a96a4a58dafa01fb43f5bdffb52ef833816148e7
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587302"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058376"
 ---
 # <a name="new-language-features-in-powershell-50"></a>Nuevas características de lenguaje de PowerShell 5.0
 
@@ -211,7 +211,7 @@ $v -eq $d # true
 ## <a name="end-to-end-example"></a>Acceso de un extremo a otro
 
 En el ejemplo siguiente se crean varias clases nuevas y personalizadas para implementar un lenguaje de hojas de estilo dinámico (DSL) HTML.
-A continuación, el ejemplo agrega funciones auxiliares para crear tipos de elementos específicos como parte de la clase de elemento, tales como tablas y estilos de encabezado, porque los tipos no pueden usarse fuera del ámbito de un módulo.
+A continuación, el ejemplo agrega funciones del asistente para crear tipos de elementos específicos como parte de la clase de elemento, tales como tablas y estilos de encabezado, porque los tipos no pueden usarse fuera del ámbito de un módulo.
 
 ```powershell
 # Classes that define the structure of the document

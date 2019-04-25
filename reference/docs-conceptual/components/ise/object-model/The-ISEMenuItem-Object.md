@@ -4,11 +4,11 @@ keywords: powershell, cmdlet
 title: El objeto ISEMenuItem
 ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
 ms.openlocfilehash: 556f88117c07100b1734c8ffd8956dce6efe6fb1
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403360"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059056"
 ---
 # <a name="the-isemenuitem-object"></a>El objeto ISEMenuItem
 

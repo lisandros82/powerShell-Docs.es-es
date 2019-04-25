@@ -3,11 +3,11 @@ title: Instalación de PowerShell Core en macOS
 description: Información sobre cómo instalar PowerShell Core en macOS
 ms.date: 12/12/2018
 ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086466"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Instalación de PowerShell Core en macOS
 
@@ -84,8 +84,7 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Instalación mediante descarga directa
 
-Descargue el paquete PKG
-`powershell-6.2.0-osx-x64.pkg`
+Descargue el paquete PKG `powershell-6.2.0-osx-x64.pkg`
 desde la página de [versiones][] en la máquina macOS.
 
 Puede hacer doble clic en el archivo y seguir las indicaciones, o bien instalarlo desde el terminal:
@@ -175,13 +174,13 @@ Para quitar las rutas de acceso de PowerShell adicionales, consulte la sección 
 
 ## <a name="paths"></a>Paths
 
-* `$PSHOME` estará `/usr/local/microsoft/powershell/6.2.0/`
-* Los perfiles de usuario se leerán de `~/.config/powershell/profile.ps1`
-* Los perfiles predeterminados se leerán de `$PSHOME/profile.ps1`
-* Los módulos de usuario se leerán de `~/.local/share/powershell/Modules`
-* Los módulos compartidos se leerán de `/usr/local/share/powershell/Modules`
-* Los módulos predeterminados se leerán de `$PSHOME/Modules`
-* El historial de PSReadline se grabará en `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+* `$PSHOME` es `/usr/local/microsoft/powershell/6.2.0/`.
+* Los perfiles de usuario se leerán de `~/.config/powershell/profile.ps1`.
+* Los perfiles predeterminados se leerán de `$PSHOME/profile.ps1`.
+* Los módulos de usuario se leerán de `~/.local/share/powershell/Modules`.
+* Los módulos compartidos se leerán de `/usr/local/share/powershell/Modules`.
+* Los módulos predeterminados se leerán de `$PSHOME/Modules`.
+* El historial de PSReadline se grabará en `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`.
 
 Los perfiles respetan la configuración por host de PowerShell.
 Así que el perfil predeterminado específico del host está en `Microsoft.PowerShell_profile.ps1` en las mismas ubicaciones.
@@ -201,5 +200,5 @@ Por lo tanto, `$PSHOME` es `/usr/local/microsoft/powershell/6.2.0/`, y el víncu
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[versiones]: https://github.com/PowerShell/PowerShell/releases/latest
+[Versiones]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
