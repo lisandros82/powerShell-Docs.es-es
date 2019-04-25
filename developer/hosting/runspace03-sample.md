@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 31df99d7-6954-4fdc-b6f5-06ecba094f43
 caps.latest.revision: 8
 ms.openlocfilehash: 39495f7813aecf5d0210866fc11f94557fdb0cd9
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082624"
 ---
 # <a name="runspace03-sample"></a>Ejemplo Runspace03
 
@@ -23,7 +23,7 @@ En este ejemplo se muestra cómo usar el [System.Management.Automation.Powershel
 
 Este ejemplo requiere Windows PowerShell 2.0.
 
-## <a name="demonstrates"></a>Demostraciones
+## <a name="demonstrates"></a>Muestra
 
 Este ejemplo muestra lo siguiente.
 

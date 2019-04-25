@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 5d4c8f84-ebd2-4405-bb10-cfc5400d4ad6
 caps.latest.revision: 6
 ms.openlocfilehash: 49344d32dfcef36a904772b4a7237646a63cb12a
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065389"
 ---
 # <a name="windows-powershell-formatting-files"></a>Archivos de formato de Windows PowerShell
 

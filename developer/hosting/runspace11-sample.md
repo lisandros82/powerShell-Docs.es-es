@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 9c90d268-730b-4e73-9dfd-5f288c27aed0
 caps.latest.revision: 8
 ms.openlocfilehash: 74d7c9e9cb0d7ce829635e6aff994473e09e7479
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082573"
 ---
 # <a name="runspace11-sample"></a>Ejemplo Runspace11
 
@@ -23,7 +23,7 @@ En este ejemplo se muestra cómo usar el [System.Management.Automation.Proxycomm
 
 Este ejemplo requiere Windows PowerShell 2.0.
 
-## <a name="demonstrates"></a>Demostraciones
+## <a name="demonstrates"></a>Muestra
 
 Este ejemplo muestra lo siguiente.
 
