@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: 0d3a87f3a9c3409656ea7f7263723436e1f9d48f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057387"
 ---
-# <a name="installation-of-module-dependencies"></a><span data-ttu-id="e2723-102">Instalación de dependencias de módulo</span><span class="sxs-lookup"><span data-stu-id="e2723-102">Installation of Module Dependencies</span></span>
+# <a name="installation-of-module-dependencies"></a><span data-ttu-id="c3c23-102">Instalación de dependencias de módulo</span><span class="sxs-lookup"><span data-stu-id="c3c23-102">Installation of Module Dependencies</span></span>
 
-<span data-ttu-id="e2723-103">Ahora se incluye compatibilidad de versiones de módulos en paralelo (SxS) en los cmdlets Install-Module, Update-Module y Publish-Module que se ejecutan en Windows PowerShell 5.0 o versiones más recientes.</span><span class="sxs-lookup"><span data-stu-id="e2723-103">There is now side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
-<span data-ttu-id="e2723-104">Además, agregamos un parámetro -RequiredVersion al cmdlet Publish-Module para especificar la versión que se va a publicar.</span><span class="sxs-lookup"><span data-stu-id="e2723-104">Also, we have added a -RequiredVersion parameter to the Publish-Module cmdlet to specify the version to be published.</span></span> <span data-ttu-id="e2723-105">El parámetro Path admite ahora la ruta de acceso base del módulo con la carpeta de la versión.</span><span class="sxs-lookup"><span data-stu-id="e2723-105">The Path parameter now supports the module base path with the version folder.</span></span>
+<span data-ttu-id="c3c23-103">Ahora se incluye compatibilidad de versiones de módulos en paralelo (SxS) en los cmdlets Install-Module, Update-Module y Publish-Module que se ejecutan en Windows PowerShell 5.0 o versiones más recientes.</span><span class="sxs-lookup"><span data-stu-id="c3c23-103">There is now side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
+<span data-ttu-id="c3c23-104">Además, agregamos un parámetro -RequiredVersion al cmdlet Publish-Module para especificar la versión que se va a publicar.</span><span class="sxs-lookup"><span data-stu-id="c3c23-104">Also, we have added a -RequiredVersion parameter to the Publish-Module cmdlet to specify the version to be published.</span></span> <span data-ttu-id="c3c23-105">El parámetro Path admite ahora la ruta de acceso base del módulo con la carpeta de la versión.</span><span class="sxs-lookup"><span data-stu-id="c3c23-105">The Path parameter now supports the module base path with the version folder.</span></span>
 
-<span data-ttu-id="e2723-106">**Ejemplos de Install-Module:**</span><span class="sxs-lookup"><span data-stu-id="e2723-106">**Install-Module examples:**</span></span>
+<span data-ttu-id="c3c23-106">**Ejemplos de Install-Module:**</span><span class="sxs-lookup"><span data-stu-id="c3c23-106">**Install-Module examples:**</span></span>
 ```powershell
 PS C:\windows\system32> Install-Module -Name ContosoServer -RequiredVersion 1.0 -Repository MSPSGallery
 
@@ -37,7 +37,7 @@ Version Name          Repository  Description
 2.0     ContosoServer MSPSGallery ContosoServer
 ```
 
-<span data-ttu-id="e2723-107">**Instalar un módulo con dependencias:**</span><span class="sxs-lookup"><span data-stu-id="e2723-107">**Install a module with dependencies:**</span></span>
+<span data-ttu-id="c3c23-107">**Instalar un módulo con dependencias:**</span><span class="sxs-lookup"><span data-stu-id="c3c23-107">**Install a module with dependencies:**</span></span>
 ```powershell
 PS C:\windows\system32> Get-InstalledModule
 PS C:\windows\system32> Find-Module -Repository GalleryINT -Name ModuleWithDependencies2 -IncludeDependencies
@@ -79,7 +79,7 @@ ModuleType Version Name                    ExportedCommands
 Manifest   2.0     ModuleWithDependencies2 {Get-NestedRequiredModule1, Get-NestedRequiredModule2, Get-NestedRequiredModule3, Get-NestedRequiredModule4...}
 ```
 
-<span data-ttu-id="e2723-108">**Contenido del archivo de manifiesto del módulo ModuleWithDependencies2:**</span><span class="sxs-lookup"><span data-stu-id="e2723-108">**Contents of ModuleWithDependencies2 module manifest file:**</span></span>
+<span data-ttu-id="c3c23-108">**Contenido del archivo de manifiesto del módulo ModuleWithDependencies2:**</span><span class="sxs-lookup"><span data-stu-id="c3c23-108">**Contents of ModuleWithDependencies2 module manifest file:**</span></span>
 ```powershell
 @{
 # Version number of this module.
@@ -149,7 +149,7 @@ PrivateData = @{
 }
 ```
 
-<span data-ttu-id="e2723-109">**Ejemplos de Update-Module:**</span><span class="sxs-lookup"><span data-stu-id="e2723-109">**Update-Module examples:**</span></span>
+<span data-ttu-id="c3c23-109">**Ejemplos de Update-Module:**</span><span class="sxs-lookup"><span data-stu-id="c3c23-109">**Update-Module examples:**</span></span>
 ```powershell
 PS C:\windows\system32> Update-Module -Name ContosoServer -RequiredVersion 1.5
 PS C:\windows\system32> Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
@@ -191,7 +191,7 @@ Version Name          Repository  Description
 2.8.1   ContosoServer MSPSGallery ContosoServer
 ```
 
-<span data-ttu-id="e2723-110">**Ejemplos de Publish-Module:**</span><span class="sxs-lookup"><span data-stu-id="e2723-110">**Publish-Module examples:**</span></span>
+<span data-ttu-id="c3c23-110">**Ejemplos de Publish-Module:**</span><span class="sxs-lookup"><span data-stu-id="c3c23-110">**Publish-Module examples:**</span></span>
 ```powershell
 ContosoServer module with different versions to be published.
 PS C:\windows\system32> Get-Module -Name ContosoServer -ListAvailable
