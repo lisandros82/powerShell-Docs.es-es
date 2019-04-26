@@ -2,12 +2,12 @@
 title: Descripción de la codificación de archivo en VSCode y PowerShell
 description: Configuración de la codificación de archivo en VSCode y PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058444"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Descripción de la codificación de archivo en VSCode y PowerShell
 
@@ -102,7 +102,7 @@ Las BOM son opcionales y su adopción no es tan popular en los entornos Linux, p
 
 La codificación predeterminada de VSCode es UTF-8 sin BOM.
 
-Para establecer la [Codificación de VSCode][], vaya a la configuración de VSCode (<kbd>Ctrl<kbd>+</kbd>,</kbd>) y establezca el ajuste `"files.encoding"`:
+Para establecer la [codificación de VSCode][], vaya a la configuración de VSCode (<kbd>Ctrl</kbd>+<kbd>,</kbd>) y establezca el ajuste `"files.encoding"`:
 
 ```json
 "files.encoding": "utf8bom"
@@ -138,7 +138,7 @@ Si no desea que estos ajustes afecten a todos los tipos de archivos, VSCode tamb
 La codificación predeterminada de PowerShell varía en función de la versión:
 
 - En PowerShell 6 +, la codificación predeterminada es UTF-8 sin BOM en todas las plataformas.
-- En Windows PowerShell, la codificación predeterminada es normalmente Windows 1252, una extensión de [Latín-1][], también conocida como ISO 8859-1.
+- En Windows PowerShell, la codificación predeterminada es normalmente Windows 1252, una extensión de [latin-1][], también conocida como ISO 8859-1.
 
 En PowerShell 5+ puede encontrar la codificación predeterminada con esto:
 
@@ -269,9 +269,9 @@ Hay algunas otras publicaciones interesantes sobre la codificación y la configu
 [@mklement0]: https://github.com/mklement0
 [@rkeithhill]: https://github.com/rkeithhill
 [Windows-1252]: https://wikipedia.org/wiki/Windows-1252
-[Latín-1]: https://wikipedia.org/wiki/ISO/IEC_8859-1
+[latin-1]: https://wikipedia.org/wiki/ISO/IEC_8859-1
 [UTF-8]: https://wikipedia.org/wiki/UTF-8
 [marca BOM]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
 [Protocolo de servidor de lenguaje]: https://microsoft.github.io/language-server-protocol/
-[Codificación de VSCode]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
+[codificación de VSCode]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
