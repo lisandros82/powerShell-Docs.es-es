@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
 ms.openlocfilehash: 98a3f61ff4fa2367f69357173d4e8e14288ff429
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083117"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>Escribir la Ayuda de funciones y Scripts de PowerShell
 
@@ -39,7 +39,7 @@ Para asociar el script o función con el archivo XML, utilice el `ExternalHelp` 
 
 Cuando el `ExternalHelp` comentar la palabra clave está presente, tiene prioridad sobre ayuda basada en comentarios, incluso cuando `Get-Help` no se encuentra un archivo de ayuda que coincida con el valor de la `ExternalHelp` palabra clave.
 
-### <a name="online-help"></a>Ayuda en pantalla
+### <a name="online-help"></a>Ayuda en línea
 Puede publicar sus temas de ayuda en Internet y, a continuación, dirigir `Get-Help` para abrir los temas.
 Para obtener más información sobre cómo escribir temas de Ayuda basada en comentarios, vea [compatibilidad con la Ayuda en línea](../module/supporting-online-help.md).
 

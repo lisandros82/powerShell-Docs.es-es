@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 7b48bf80-cbf0-4cb1-8d5b-3b8d06196598
 caps.latest.revision: 10
 ms.openlocfilehash: 00190c7350cb0f1cfc5c389b56e48e9397480446
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068069"
 ---
 # <a name="getprocesssample01-sample"></a>Ejemplo GetProcessSample01
 
@@ -68,7 +68,7 @@ En este ejemplo se muestra cómo implementar un cmdlet que recupera los procesos
 
 Este ejemplo requiere Windows PowerShell 1.0 o posterior.
 
-## <a name="demonstrates"></a>Demostraciones
+## <a name="demonstrates"></a>Muestra
 
 Este ejemplo muestra lo siguiente.
 

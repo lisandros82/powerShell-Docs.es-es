@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
 ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067644"
 ---
 # <a name="interpreting-errorrecord-objects"></a>Interpretación de los objetos ErrorRecord
 
@@ -68,7 +68,7 @@ El FQID está diseñado para ser inspeccionado como una sola cadena. Sin embargo
 
 En el ejemplo anterior, el primer token es el identificador de error, seguido por el nombre de la clase del cmdlet. El identificador de error puede ser un token único o puede ser un identificador separados por puntos que permite la inspección del identificador de la bifurcación. No use signos de puntuación o espacios en blanco en el identificador de error. Es especialmente importante para que no use una coma; una coma se usa Windows PowerShell para separar el identificador y el nombre de clase del cmdlet.
 
-### <a name="other-information"></a>Otros datos
+### <a name="other-information"></a>Otra información
 
 El [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objeto también puede proporcionar información que describe el entorno en el que se produjo el error. Esta información incluye elementos como el objeto de destino que se estaba procesando cuando se produjo el error, información de la invocación y detalles del error. Aunque esta información puede ser útil a la aplicación host, no se utiliza normalmente para identificar el error. Esta información está disponible a través de las siguientes propiedades:
 

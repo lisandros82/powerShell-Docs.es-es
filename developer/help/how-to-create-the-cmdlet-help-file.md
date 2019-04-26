@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
 ms.openlocfilehash: 08e05939f8aee42f2cd502a3da7a528d8460dec1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083253"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>Cómo crear el archivo de Ayuda del cmdlet
 
@@ -36,7 +36,7 @@ En esta sección se describe cómo crear un archivo XML válido que contiene el 
 
    La tabla siguiente muestra el elemento XML para cada nodo, seguido de una descripción de cada nodo.
 
-   |Nodo|Descripción|
+   |nodo|Descripción|
    |----------|-----------------|
    |`<details>`|Agrega el contenido de las secciones de nombre y una sinopsis del tema de ayuda. Para obtener más información, consulte [cómo agregar el nombre del Cmdlet y Sinopsis](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md).|
    |`<maml:description>`|Agrega el contenido de la sección de descripción del tema de Ayuda de cmdlet. Para obtener más información, consulte [cómo agregar la descripción detallada para un tema de Ayuda de Cmdlet](./how-to-add-a-cmdlet-description.md).|
