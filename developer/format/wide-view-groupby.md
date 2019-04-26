@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 39388197-4ff9-4889-aa32-526011afa1f6
 caps.latest.revision: 6
 ms.openlocfilehash: e95ec550a7815a76a8bd7f9526dfa405a9644360
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083661"
 ---
 # <a name="wide-view-groupby"></a>Vista amplia (GroupBy)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56861631"
    > [!WARNING]
    > Este archivo de formato define la presentación de un objeto que ya está definido por un archivos de formato de Windows PowerShell. Debe usar el `prependPath` parámetro cuando se ejecuta el cmdlet, y no se puede cargar este formato de archivo como un módulo.
 
-## <a name="demonstrates"></a>Demostraciones
+## <a name="demonstrates"></a>Muestra
 
 Este archivo de formato muestra los elementos XML siguientes:
 

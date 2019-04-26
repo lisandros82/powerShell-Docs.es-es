@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: e97d56fb-4e35-447a-9282-26f10d0a4609
 caps.latest.revision: 11
 ms.openlocfilehash: fe65ac95cead7df0069ffdae666fb34b7309fbb6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856501"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083848"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format"></a>Elemento TypeName para SelectionCondition for EntrySelectedBy for TableControl (formato)
 

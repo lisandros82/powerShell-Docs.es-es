@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
 ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067474"
 ---
 # <a name="required-development-guidelines"></a>Directrices de desarrollo necesarias
 
 Las siguientes directrices se deben seguir al escribir sus cmdlets. Se dividen en las directrices para diseñar los cmdlets y las instrucciones para escribir el código del cmdlet. Si no sigue estas instrucciones, podría producirse un error en los cmdlets y los usuarios podrían tener una experiencia deficiente al usar los cmdlets.
 
-## <a name="in-this-topic"></a>En este tema
+## <a name="in-this-topic"></a>En este tema.
 
 ### <a name="design-guidelines"></a>Instrucciones de diseño
 
