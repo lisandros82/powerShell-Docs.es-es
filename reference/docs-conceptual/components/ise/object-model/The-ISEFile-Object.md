@@ -4,29 +4,29 @@ keywords: powershell, cmdlet
 title: El objeto ISEFile
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55680393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057560"
 ---
-# <a name="the-isefile-object"></a><span data-ttu-id="617b3-103">El objeto ISEFile</span><span class="sxs-lookup"><span data-stu-id="617b3-103">The ISEFile Object</span></span>
+# <a name="the-isefile-object"></a><span data-ttu-id="5894d-103">El objeto ISEFile</span><span class="sxs-lookup"><span data-stu-id="5894d-103">The ISEFile Object</span></span>
 
-<span data-ttu-id="617b3-104">Un objeto **ISEFile** representa un archivo en el Entorno de scripting integrado (ISE) de Windows PowerShell®.</span><span class="sxs-lookup"><span data-stu-id="617b3-104">An **ISEFile** object represents a file in Windows PowerShell® Integrated Scripting Environment (ISE).</span></span> <span data-ttu-id="617b3-105">Es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEFile.</span><span class="sxs-lookup"><span data-stu-id="617b3-105">It is an instance of the Microsoft.PowerShell.Host.ISE.ISEFile class.</span></span> <span data-ttu-id="617b3-106">Este tema enumera sus métodos de miembro y propiedades de miembro.</span><span class="sxs-lookup"><span data-stu-id="617b3-106">This topic lists its member methods and member properties.</span></span> <span data-ttu-id="617b3-107">**$psISE.CurrentFile** y los archivos de la colección de archivos en una pestaña de PowerShell son todas las instancias de la clase Microsoft.PowerShell.Host.ISE.ISEFile.</span><span class="sxs-lookup"><span data-stu-id="617b3-107">The **$psISE.CurrentFile** and the files in the Files collection in a PowerShell tab are all instances of the Microsoft.PowerShell.Host.ISE.ISEFile class.</span></span>
+<span data-ttu-id="5894d-104">Un objeto **ISEFile** representa un archivo en el Entorno de scripting integrado (ISE) de Windows PowerShell®.</span><span class="sxs-lookup"><span data-stu-id="5894d-104">An **ISEFile** object represents a file in Windows PowerShell® Integrated Scripting Environment (ISE).</span></span> <span data-ttu-id="5894d-105">Es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEFile.</span><span class="sxs-lookup"><span data-stu-id="5894d-105">It is an instance of the Microsoft.PowerShell.Host.ISE.ISEFile class.</span></span> <span data-ttu-id="5894d-106">Este tema enumera sus métodos de miembro y propiedades de miembro.</span><span class="sxs-lookup"><span data-stu-id="5894d-106">This topic lists its member methods and member properties.</span></span> <span data-ttu-id="5894d-107">**$psISE.CurrentFile** y los archivos de la colección de archivos en una pestaña de PowerShell son todas las instancias de la clase Microsoft.PowerShell.Host.ISE.ISEFile.</span><span class="sxs-lookup"><span data-stu-id="5894d-107">The **$psISE.CurrentFile** and the files in the Files collection in a PowerShell tab are all instances of the Microsoft.PowerShell.Host.ISE.ISEFile class.</span></span>
 
-## <a name="methods"></a><span data-ttu-id="617b3-108">Métodos</span><span class="sxs-lookup"><span data-stu-id="617b3-108">Methods</span></span>
+## <a name="methods"></a><span data-ttu-id="5894d-108">Métodos</span><span class="sxs-lookup"><span data-stu-id="5894d-108">Methods</span></span>
 
-### <a name="save-saveencoding-"></a><span data-ttu-id="617b3-109">Save\( \[saveEncoding\] \)</span><span class="sxs-lookup"><span data-stu-id="617b3-109">Save\( \[saveEncoding\] \)</span></span>
+### <a name="save-saveencoding-"></a><span data-ttu-id="5894d-109">Save\( \[saveEncoding\] \)</span><span class="sxs-lookup"><span data-stu-id="5894d-109">Save\( \[saveEncoding\] \)</span></span>
 
-<span data-ttu-id="617b3-110">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="617b3-110">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="5894d-110">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="5894d-110">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="617b3-111">Guarda el archivo en disco.</span><span class="sxs-lookup"><span data-stu-id="617b3-111">Saves the file to disk.</span></span>
+<span data-ttu-id="5894d-111">Guarda el archivo en disco.</span><span class="sxs-lookup"><span data-stu-id="5894d-111">Saves the file to disk.</span></span>
 
-<span data-ttu-id="617b3-112">**\[saveEncoding\]**: [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) opcional. Un parámetro de codificación de carácter opcional que se usará para el archivo guardado.</span><span class="sxs-lookup"><span data-stu-id="617b3-112">**\[saveEncoding\]** - optional [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) An optional character encoding parameter to be used for the saved file.</span></span> <span data-ttu-id="617b3-113">El valor predeterminado es **UTF8**.</span><span class="sxs-lookup"><span data-stu-id="617b3-113">The default value is **UTF8**.</span></span>
+<span data-ttu-id="5894d-112">**\[saveEncoding\]**: [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) opcional. Un parámetro de codificación de carácter opcional que se usará para el archivo guardado.</span><span class="sxs-lookup"><span data-stu-id="5894d-112">**\[saveEncoding\]** - optional [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) An optional character encoding parameter to be used for the saved file.</span></span> <span data-ttu-id="5894d-113">El valor predeterminado es **UTF8**.</span><span class="sxs-lookup"><span data-stu-id="5894d-113">The default value is **UTF8**.</span></span>
 
-### <a name="exceptions"></a><span data-ttu-id="617b3-114">Excepciones</span><span class="sxs-lookup"><span data-stu-id="617b3-114">Exceptions</span></span>
+### <a name="exceptions"></a><span data-ttu-id="5894d-114">Excepciones</span><span class="sxs-lookup"><span data-stu-id="5894d-114">Exceptions</span></span>
 
-- <span data-ttu-id="617b3-115">**System.IO.IOException**: no se pudo guardar el archivo.</span><span class="sxs-lookup"><span data-stu-id="617b3-115">**System.IO.IOException**: The file could not be saved.</span></span>
+- <span data-ttu-id="5894d-115">**System.IO.IOException**: No se pudo guardar el archivo.</span><span class="sxs-lookup"><span data-stu-id="5894d-115">**System.IO.IOException**: The file could not be saved.</span></span>
 
 ```powershell
 # Save the file using the default encoding (UTF8)
@@ -40,21 +40,21 @@ $myfile = $psISE.CurrentFile
 $myfile.Encoding
 ```
 
-### <a name="saveasfilename-saveencoding"></a><span data-ttu-id="617b3-116">SaveAs\(nombre de archivo, \[saveEncoding\]\)</span><span class="sxs-lookup"><span data-stu-id="617b3-116">SaveAs\(filename, \[saveEncoding\]\)</span></span>
+### <a name="saveasfilename-saveencoding"></a><span data-ttu-id="5894d-116">SaveAs\(nombre de archivo, \[saveEncoding\]\)</span><span class="sxs-lookup"><span data-stu-id="5894d-116">SaveAs\(filename, \[saveEncoding\]\)</span></span>
 
-<span data-ttu-id="617b3-117">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="617b3-117">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="5894d-117">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="5894d-117">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="617b3-118">Guarda el archivo con el nombre de archivo y codificación especificados.</span><span class="sxs-lookup"><span data-stu-id="617b3-118">Saves the file with the specified file name and encoding.</span></span>
+<span data-ttu-id="5894d-118">Guarda el archivo con el nombre de archivo y codificación especificados.</span><span class="sxs-lookup"><span data-stu-id="5894d-118">Saves the file with the specified file name and encoding.</span></span>
 
-<span data-ttu-id="617b3-119">**filename**: cadena. El nombre que se utilizará para guardar el archivo.</span><span class="sxs-lookup"><span data-stu-id="617b3-119">**filename** - String The name to be used to save the file.</span></span>
+<span data-ttu-id="5894d-119">**filename**: cadena. El nombre que se utilizará para guardar el archivo.</span><span class="sxs-lookup"><span data-stu-id="5894d-119">**filename** - String The name to be used to save the file.</span></span>
 
-<span data-ttu-id="617b3-120">**\[saveEncoding\]**: [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) opcional. Un parámetro de codificación de carácter opcional que se usará para el archivo guardado.</span><span class="sxs-lookup"><span data-stu-id="617b3-120">**\[saveEncoding\]** - optional [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) An optional character encoding parameter to be used for the saved file.</span></span> <span data-ttu-id="617b3-121">El valor predeterminado es **UTF8**.</span><span class="sxs-lookup"><span data-stu-id="617b3-121">The default value is **UTF8**.</span></span>
+<span data-ttu-id="5894d-120">**\[saveEncoding\]**: [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) opcional. Un parámetro de codificación de carácter opcional que se usará para el archivo guardado.</span><span class="sxs-lookup"><span data-stu-id="5894d-120">**\[saveEncoding\]** - optional [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) An optional character encoding parameter to be used for the saved file.</span></span> <span data-ttu-id="5894d-121">El valor predeterminado es **UTF8**.</span><span class="sxs-lookup"><span data-stu-id="5894d-121">The default value is **UTF8**.</span></span>
 
-### <a name="exceptions"></a><span data-ttu-id="617b3-122">Excepciones</span><span class="sxs-lookup"><span data-stu-id="617b3-122">Exceptions</span></span>
+### <a name="exceptions"></a><span data-ttu-id="5894d-122">Excepciones</span><span class="sxs-lookup"><span data-stu-id="5894d-122">Exceptions</span></span>
 
-- <span data-ttu-id="617b3-123">**System.ArgumentNullException**: El **filename** parámetro es null.</span><span class="sxs-lookup"><span data-stu-id="617b3-123">**System.ArgumentNullException**: The **filename** parameter is null.</span></span>
-- <span data-ttu-id="617b3-124">**System.ArgumentException**: El **filename** parámetro está vacío.</span><span class="sxs-lookup"><span data-stu-id="617b3-124">**System.ArgumentException**: The **filename** parameter is empty.</span></span>
-- <span data-ttu-id="617b3-125">**System.IO.IOException**: no se pudo guardar el archivo.</span><span class="sxs-lookup"><span data-stu-id="617b3-125">**System.IO.IOException**: The file could not be saved.</span></span>
+- <span data-ttu-id="5894d-123">**System.ArgumentNullException**: El parámetro **filename** es nulo.</span><span class="sxs-lookup"><span data-stu-id="5894d-123">**System.ArgumentNullException**: The **filename** parameter is null.</span></span>
+- <span data-ttu-id="5894d-124">**System.ArgumentException**: El parámetro **filename** está vacío.</span><span class="sxs-lookup"><span data-stu-id="5894d-124">**System.ArgumentException**: The **filename** parameter is empty.</span></span>
+- <span data-ttu-id="5894d-125">**System.IO.IOException**: No se pudo guardar el archivo.</span><span class="sxs-lookup"><span data-stu-id="5894d-125">**System.IO.IOException**: The file could not be saved.</span></span>
 
 ```powershell
 # Save the file with a full path and name.
@@ -64,57 +64,57 @@ $psISE.CurrentFile.SaveAs($fullPath)
 $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 ```
 
-## <a name="properties"></a><span data-ttu-id="617b3-126">Propiedades</span><span class="sxs-lookup"><span data-stu-id="617b3-126">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="5894d-126">Propiedades</span><span class="sxs-lookup"><span data-stu-id="5894d-126">Properties</span></span>
 
-### <a name="displayname"></a><span data-ttu-id="617b3-127">DisplayName</span><span class="sxs-lookup"><span data-stu-id="617b3-127">DisplayName</span></span>
+### <a name="displayname"></a><span data-ttu-id="5894d-127">DisplayName</span><span class="sxs-lookup"><span data-stu-id="5894d-127">DisplayName</span></span>
 
-<span data-ttu-id="617b3-128">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="617b3-128">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="5894d-128">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="5894d-128">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="617b3-129">La propiedad de solo lectura que obtiene la cadena que contiene el nombre para mostrar de este archivo.</span><span class="sxs-lookup"><span data-stu-id="617b3-129">The read-only property that gets the string that contains the display name of this file.</span></span> <span data-ttu-id="617b3-130">El nombre se muestra en la pestaña **Archivo** en la parte superior del editor.</span><span class="sxs-lookup"><span data-stu-id="617b3-130">The name is shown on the **File** tab at the top of the editor.</span></span> <span data-ttu-id="617b3-131">La presencia de un asterisco \(\*\) al final del nombre indica que el archivo tiene cambios que no se han guardado.</span><span class="sxs-lookup"><span data-stu-id="617b3-131">The presence of an asterisk \(\*\) at the end of the name indicates that the file has changes that have not been saved.</span></span>
+<span data-ttu-id="5894d-129">La propiedad de solo lectura que obtiene la cadena que contiene el nombre para mostrar de este archivo.</span><span class="sxs-lookup"><span data-stu-id="5894d-129">The read-only property that gets the string that contains the display name of this file.</span></span> <span data-ttu-id="5894d-130">El nombre se muestra en la pestaña **Archivo** en la parte superior del editor.</span><span class="sxs-lookup"><span data-stu-id="5894d-130">The name is shown on the **File** tab at the top of the editor.</span></span> <span data-ttu-id="5894d-131">La presencia de un asterisco \(\*\) al final del nombre indica que el archivo tiene cambios que no se han guardado.</span><span class="sxs-lookup"><span data-stu-id="5894d-131">The presence of an asterisk \(\*\) at the end of the name indicates that the file has changes that have not been saved.</span></span>
 
 ```powershell
 # Shows the display name of the file.
 $psISE.CurrentFile.DisplayName
 ```
 
-### <a name="editor"></a><span data-ttu-id="617b3-132">Editor</span><span class="sxs-lookup"><span data-stu-id="617b3-132">Editor</span></span>
+### <a name="editor"></a><span data-ttu-id="5894d-132">Editor</span><span class="sxs-lookup"><span data-stu-id="5894d-132">Editor</span></span>
 
-<span data-ttu-id="617b3-133">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="617b3-133">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="5894d-133">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="5894d-133">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="617b3-134">La propiedad de solo lectura que obtiene el [objeto de editor](The-ISEEditor-Object.md) que se utiliza para el archivo especificado.</span><span class="sxs-lookup"><span data-stu-id="617b3-134">The read-only property that gets the [editor object](The-ISEEditor-Object.md) that is used for the specified file.</span></span>
+<span data-ttu-id="5894d-134">La propiedad de solo lectura que obtiene el [objeto de editor](The-ISEEditor-Object.md) que se utiliza para el archivo especificado.</span><span class="sxs-lookup"><span data-stu-id="5894d-134">The read-only property that gets the [editor object](The-ISEEditor-Object.md) that is used for the specified file.</span></span>
 
 ```powershell
 # Gets the editor and the text.
 $psISE.CurrentFile.Editor.Text
 ```
 
-### <a name="encoding"></a><span data-ttu-id="617b3-135">Codificación</span><span class="sxs-lookup"><span data-stu-id="617b3-135">Encoding</span></span>
+### <a name="encoding"></a><span data-ttu-id="5894d-135">Codificación</span><span class="sxs-lookup"><span data-stu-id="5894d-135">Encoding</span></span>
 
-<span data-ttu-id="617b3-136">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="617b3-136">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="5894d-136">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="5894d-136">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="617b3-137">La propiedad de solo lectura que obtiene la codificación del archivo original.</span><span class="sxs-lookup"><span data-stu-id="617b3-137">The read-only property that gets the original file encoding.</span></span> <span data-ttu-id="617b3-138">Se trata de un objeto **System.Text.Encoding**.</span><span class="sxs-lookup"><span data-stu-id="617b3-138">This is a **System.Text.Encoding** object.</span></span>
+<span data-ttu-id="5894d-137">La propiedad de solo lectura que obtiene la codificación del archivo original.</span><span class="sxs-lookup"><span data-stu-id="5894d-137">The read-only property that gets the original file encoding.</span></span> <span data-ttu-id="5894d-138">Se trata de un objeto **System.Text.Encoding**.</span><span class="sxs-lookup"><span data-stu-id="5894d-138">This is a **System.Text.Encoding** object.</span></span>
 
 ```powershell
 # Shows the encoding for the file.
 $psISE.CurrentFile.Encoding
 ```
 
-### <a name="fullpath"></a><span data-ttu-id="617b3-139">FullPath</span><span class="sxs-lookup"><span data-stu-id="617b3-139">FullPath</span></span>
+### <a name="fullpath"></a><span data-ttu-id="5894d-139">FullPath</span><span class="sxs-lookup"><span data-stu-id="5894d-139">FullPath</span></span>
 
-<span data-ttu-id="617b3-140">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="617b3-140">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="5894d-140">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="5894d-140">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="617b3-141">La propiedad de solo lectura que obtiene la cadena que especifica la ruta de acceso completa del archivo abierto.</span><span class="sxs-lookup"><span data-stu-id="617b3-141">The read-only property that gets the string that specifies the full path of the opened file.</span></span>
+<span data-ttu-id="5894d-141">La propiedad de solo lectura que obtiene la cadena que especifica la ruta de acceso completa del archivo abierto.</span><span class="sxs-lookup"><span data-stu-id="5894d-141">The read-only property that gets the string that specifies the full path of the opened file.</span></span>
 
 ```powershell
 # Shows the full path for the file.
 $psISE.CurrentFile.FullPath
 ```
 
-### <a name="issaved"></a><span data-ttu-id="617b3-142">IsSaved</span><span class="sxs-lookup"><span data-stu-id="617b3-142">IsSaved</span></span>
+### <a name="issaved"></a><span data-ttu-id="5894d-142">IsSaved</span><span class="sxs-lookup"><span data-stu-id="5894d-142">IsSaved</span></span>
 
-<span data-ttu-id="617b3-143">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="617b3-143">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="5894d-143">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="5894d-143">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="617b3-144">La propiedad booleana de solo lectura que devuelve **$true** si el archivo se ha guardado una vez que se modificó por última vez.</span><span class="sxs-lookup"><span data-stu-id="617b3-144">The read-only Boolean property that returns **$true** if the file has been saved after it was last modified.</span></span>
+<span data-ttu-id="5894d-144">La propiedad booleana de solo lectura que devuelve **$true** si el archivo se ha guardado una vez que se modificó por última vez.</span><span class="sxs-lookup"><span data-stu-id="5894d-144">The read-only Boolean property that returns **$true** if the file has been saved after it was last modified.</span></span>
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -122,11 +122,11 @@ $myfile = $psISE.CurrentFile
 $myfile.IsSaved
 ```
 
-### <a name="isuntitled"></a><span data-ttu-id="617b3-145">IsUntitled</span><span class="sxs-lookup"><span data-stu-id="617b3-145">IsUntitled</span></span>
+### <a name="isuntitled"></a><span data-ttu-id="5894d-145">IsUntitled</span><span class="sxs-lookup"><span data-stu-id="5894d-145">IsUntitled</span></span>
 
-<span data-ttu-id="617b3-146">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="617b3-146">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="5894d-146">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="5894d-146">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="617b3-147">La propiedad de solo lectura que devuelve **$true** si nunca se asignó un título al archivo.</span><span class="sxs-lookup"><span data-stu-id="617b3-147">The read-only property that returns **$true** if the file has never been given a title.</span></span>
+<span data-ttu-id="5894d-147">La propiedad de solo lectura que devuelve **$true** si nunca se asignó un título al archivo.</span><span class="sxs-lookup"><span data-stu-id="5894d-147">The read-only property that returns **$true** if the file has never been given a title.</span></span>
 
 ```powershell
 # Determines whether the file has never been given a title.
@@ -135,8 +135,8 @@ $psISE.CurrentFile.SaveAs("temp.txt")
 $psISE.CurrentFile.IsUntitled
 ```
 
-## <a name="see-also"></a><span data-ttu-id="617b3-148">Véase también</span><span class="sxs-lookup"><span data-stu-id="617b3-148">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5894d-148">Véase también</span><span class="sxs-lookup"><span data-stu-id="5894d-148">See Also</span></span>
 
-- [<span data-ttu-id="617b3-149">ISEFileCollectionObject</span><span class="sxs-lookup"><span data-stu-id="617b3-149">The ISEFileCollectionObject</span></span>](The-ISEFileCollection-Object.md)
-- [<span data-ttu-id="617b3-150">Finalidad del modelo de objetos de scripting de Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="617b3-150">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [<span data-ttu-id="617b3-151">La jerarquía del modelo de objetos de ISE</span><span class="sxs-lookup"><span data-stu-id="617b3-151">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
+- [<span data-ttu-id="5894d-149">ISEFileCollectionObject</span><span class="sxs-lookup"><span data-stu-id="5894d-149">The ISEFileCollectionObject</span></span>](The-ISEFileCollection-Object.md)
+- [<span data-ttu-id="5894d-150">Finalidad del modelo de objetos de scripting de Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="5894d-150">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [<span data-ttu-id="5894d-151">La jerarquía del modelo de objetos de ISE</span><span class="sxs-lookup"><span data-stu-id="5894d-151">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
