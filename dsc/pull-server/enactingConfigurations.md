@@ -2,12 +2,12 @@
 ms.date: 10/16/2017
 keywords: dsc,powershell,configuration,setup
 title: Establecer configuraciones
-ms.openlocfilehash: 4a6e7e511446ab27307683ad3d5676391e7c791c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079955"
 ---
 # <a name="enacting-configurations"></a>Establecer configuraciones
 
@@ -48,6 +48,6 @@ Sin embargo, debe tener en cuenta que esta implementación tiene característica
 
 En los temas siguientes se explican los clientes y el servicio de extracción:
 
-- [Información general de DSC de Azure Automation](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Información general de DSC de Azure Automation](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Configuración de un servidor de extracción SMB](pullServerSMB.md)
 - [Configuración de un cliente de extracción](pullClientConfigID.md)

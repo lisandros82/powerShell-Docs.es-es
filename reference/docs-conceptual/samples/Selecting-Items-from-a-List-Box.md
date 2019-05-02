@@ -4,11 +4,11 @@ keywords: powershell, cmdlet
 title: Seleccionar elementos de un cuadro de lista
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
 ms.openlocfilehash: e3d52839409a2fd58fbdc924a2b92d96fbecee53
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55682746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086075"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Seleccionar elementos de un cuadro de lista
 
@@ -75,7 +75,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-El script comienza con la carga de dos clases de .NET Framework: **System.Drawing** y **System.Windows.Forms**. A continuación, se inicia una nueva instancia de la clase de .NET Framework **System.Windows.Forms.Form**, que proporciona un formulario o ventana en blanco en la que puede empezar a agregar controles.
+El script comienza con la carga de dos clases de .NET Framework: **System.Drawing** y **System.Windows.Forms**. A continuación, se inicia una nueva instancia de la clase de .NET Framework **System.Windows.Forms.Form**, que proporciona un formulario o ventana en blanco en la que puede empezar a agregar controles.
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -179,6 +179,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Véase también
 
-- [Hey Scripting Guy: Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644) (Hey Scripting Guy: ¿Por qué estos ejemplos de GUI de PowerShell no funcionan?)
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) (GitHub: WinFormsExampleUpdates de Dave Wyatt)
-- [Windows PowerShell Tip of the Week: Selecting Items from a List Box](https://technet.microsoft.com/library/ff730949.aspx) (Sugerencia de la semana de Windows PowerShell: Seleccionar elementos de un cuadro de lista)
+- [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644) (Hey Scripting Guy: ¿Por qué estos ejemplos de GUI de PowerShell no funcionan?)
+- [GitHub: ](https://github.com/dlwyatt/WinFormsExampleUpdates)Dave Wyatt's WinFormsExampleUpdates (GitHub: WinFormsExampleUpdates de Dave Wyatt)
+- [Windows PowerShell Tip of the Week:  Selecting Items from a List Box](https://technet.microsoft.com/library/ff730949.aspx) (Sugerencia de la semana de Windows PowerShell: seleccionar elementos de un cuadro de lista)

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Crear recursos de configuración de estado deseado de Windows PowerShell personalizados
 ms.openlocfilehash: 882b6efed4564d2354183d7472b301e1e1758335
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55680081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076878"
 ---
 # <a name="build-custom-windows-powershell-desired-state-configuration-resources"></a>Crear recursos de configuración de estado deseado de Windows PowerShell personalizados
 
-> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 La configuración de estado deseado (DSC) de Windows PowerShell tiene recursos integrados que puede usar para configurar el entorno. En este tema se ofrece información general sobre el desarrollo de recursos y vínculos a temas con información específica y ejemplos.
 

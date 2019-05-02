@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 keywords: dsc,powershell,configuration,setup
 title: Proteger el archivo MOF
 ms.openlocfilehash: 6c2aadb75ac617d9b845ef387f292b8156bb8889
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079334"
 ---
 # <a name="securing-the-mof-file"></a>Proteger el archivo MOF
 
@@ -51,11 +51,11 @@ Para representar el cifrado de credenciales, se requiere que un certificado de c
 Este certificado de clave pública tiene requisitos específicos que debe usar para el cifrado de credenciales de DSC:
 
 1. **Uso de la clave**:
-   - Debe contener: 'KeyEncipherment' y 'DataEncipherment'.
-   - Debe _no_ contienen: Firma digital:
+   - Debe contener: "KeyEncipherment" y "DataEncipherment".
+   - _No_ debe contener: "Digital Signature".
 2. **Uso mejorado de clave**:
    - Debe contener: Cifrado del documento (1.3.6.1.4.1.311.80.1).
-   - Debe _no_ contienen: Autenticación de cliente (1.3.6.1.5.5.7.3.2) y autenticación de servidor (1.3.6.1.5.5.7.3.1).
+   - _No_ debe contener: Autenticación de cliente (1.3.6.1.5.5.7.3.2) y autenticación de servidor (1.3.6.1.5.5.7.3.1).
 3. La clave privada del certificado está disponible en \*el nodo de destino.
 4. El **proveedor** del certificado debe ser "Proveedor de servicios criptográficos de Microsoft RSA SChannel".
 
@@ -84,7 +84,7 @@ En el ejemplo siguiente:
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>En el nodo de destino: creación y exportación de certificados
 
-> Nodo de destino Windows Server 2016 y Windows 10
+> Nodo de destino: Windows Server 2016 y Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -95,7 +95,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 Una vez exportado, el `DscPublicKey.cer` tendría que copiarse en el **nodo de creación**.
 
-> Nodo de destino Windows Server 2012 R2 o Windows 8.1 y versiones anteriores
+> Nodo de destino: Windows Server 2012 R2/Windows 8.1 y anteriores
 > [!WARNING]
 > Dado que el cmdlet `New-SelfSignedCertificate` en sistemas operativos anteriores a Windows 10 y Windows Server 2016 no admite el parámetro **Type**, en estos sistemas operativos es necesario un método alternativo para crear este certificado.
 >
@@ -151,7 +151,7 @@ En el ejemplo siguiente:
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>En el nodo de creación: creación y exportación de certificados
 
-> Nodo de destino Windows Server 2016 y Windows 10
+> Nodo de destino: Windows Server 2016 y Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -167,7 +167,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 Una vez exportado, el `DscPrivateKey.pfx` tendría que copiarse en el **nodo de destino**.
 
-> Nodo de destino Windows Server 2012 R2 o Windows 8.1 y versiones anteriores
+> Nodo de destino: Windows Server 2012 R2/Windows 8.1 y anteriores
 > [!WARNING]
 > Dado que el cmdlet `New-SelfSignedCertificate` en sistemas operativos anteriores a Windows 10 y Windows Server 2016 no admite el parámetro **Type**, en estos sistemas operativos es necesario un método alternativo para crear este certificado.
 >

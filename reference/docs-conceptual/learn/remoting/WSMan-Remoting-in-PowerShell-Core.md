@@ -2,12 +2,12 @@
 title: Comunicación remota de WS-Management (WSMan) en PowerShell Core
 description: Comunicación remota en PowerShell Core con WSMan
 ms.date: 08/06/2018
-ms.openlocfilehash: ce58ed88f59f32b0f83951e55de36e829f7fa3f4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058886"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>Comunicación remota de WS-Management (WSMan) en PowerShell Core
 
@@ -28,7 +28,7 @@ Para más información, vea problema [#1193](https://github.com/PowerShell/Power
 
 El script
 
-1. Crea un directorio para el complemento en %windir%\System32\PowerShell.
+1. Crea un directorio para el complemento en `$env:windir\System32\PowerShell`
 1. Copia pwrshplugin.dll en esa ubicación.
 1. Genera un archivo de configuración.
 1. Registra el complemento con WinRM.

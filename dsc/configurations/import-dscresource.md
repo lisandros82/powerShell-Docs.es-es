@@ -3,17 +3,17 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Uso de Import-DSCResource
 ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56803419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080108"
 ---
 # <a name="using-import-dscresource"></a>Uso de Import-DSCResource
 
-`Import-DScResource` es una palabra clave dinámica, que solo se puede usar dentro de un bloque de script de configuración. El `Import-DSCResource` palabra clave para importar todos los recursos necesarios en la configuración. Recursos en `$pshome` se importan automáticamente, pero todavía se considera una práctica recomendada para importar de forma explícita todos los recursos utilizados en su [configuración](Configurations.md).
+`Import-DScResource` es una palabra clave dinámica, que solo se puede usar dentro de un bloque de script de configuración. La palabra clave `Import-DSCResource` para importar los recursos necesarios en la configuración. Los recursos en `$pshome` se importan automáticamente, pero se sigue considerando recomendable importar de forma explícita todos los recursos utilizados en su [configuración](Configurations.md).
 
-La sintaxis de `Import-DSCResource` se muestra a continuación.  Al especificar módulos por nombre, es un requisito para enumerar cada una en una nueva línea.
+La sintaxis de `Import-DSCResource` se muestra a continuación.  Al especificar módulos por nombre, es necesario enumerar cada uno en una nueva línea.
 
 ```syntax
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
@@ -21,14 +21,14 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
 
 |Parámetro  |Descripción  |
 |---------|---------|
-|`-Name`|Los nombres de recursos de DSC que se deben importar. Si se especifica el nombre del módulo, el comando busca estos recursos de DSC en este módulo; en caso contrario, el comando busca los recursos de DSC en todas las rutas de acceso de recursos de DSC. Se admiten los caracteres comodín.|
-|`-ModuleName`|El nombre del módulo o especificación de módulo.  Si especifica los recursos para importar desde un módulo, el comando intentará importar sólo esos recursos. Si especifica solo el módulo, el comando importa todos los recursos de DSC en el módulo.|
+|`-Name`|Los nombres de recursos de DSC que debe importar. Si se especifica el nombre del módulo, el comando busca estos recursos de DSC en este módulo; en caso contrario, el comando busca los recursos de DSC en todas las rutas de acceso de recursos de DSC. Se admiten los caracteres comodín.|
+|`-ModuleName`|El nombre del módulo, o especificación de módulo.  Si especifica los recursos para importar desde un módulo, el comando intentará importar solo esos recursos. Si especifica solo el módulo, el comando importa todos los recursos de DSC en el módulo.|
 
 ```powershell
 Import-DscResource -ModuleName xActiveDirectory;
 ```
 
-## <a name="example-use-import-dscresource-within-a-configuration"></a>Ejemplo: Usar Import-DSCResource dentro de una configuración
+## <a name="example-use-import-dscresource-within-a-configuration"></a>Ejemplo: Uso de Import-DSCResource dentro de una configuración
 
 ```powershell
 Configuration MSDSCConfiguration
@@ -52,23 +52,23 @@ Configuration MSDSCConfiguration
 ```
 
 > [!NOTE]
-> No se admite especificar varios valores para los nombres de recursos y los nombres de los módulos en el mismo comando. Puede tener un comportamiento no determinista sobre qué recursos se deben cargar desde qué módulo del mismo recurso si existe en varios módulos. A continuación el comando producirá error durante la compilación.
+> No se admite la especificación de varios valores para los nombres de recursos y los nombres de los módulos en el mismo comando. Puede tener un comportamiento no determinista sobre qué recurso se debe cargar desde qué módulo si existe el mismo recurso en varios módulos. El comando siguiente producirá error durante la compilación.
 >
 > ```powershell
 > Import-DscResource -Name UserConfigProvider*,TestLogger1 -ModuleName UserConfigProv,PsModuleForTestLogger
 > ```
 
-Cosas a tener en cuenta cuando se usa solo el parámetro de nombre:
+Aspectos para tener en cuenta cuando se usa solo el parámetro de nombre:
 
-- Es una operación que consume muchos recursos según el número de módulos instalados en el equipo.
-- Cargará el primer recurso que se encuentra con el nombre especificado. En el caso donde hay más de un recurso con el mismo nombre que se instala, se pudo cargar el recurso incorrecto.
+- Es una operación que consume muchos recursos, dependiendo del número de módulos instalados en el equipo.
+- Cargará el primer recurso que se encuentre con el nombre especificado. En caso de que haya instalado más de un recurso con el mismo nombre, podría cargarse el recurso incorrecto.
 
-El uso recomendado consiste en especificar `–ModuleName` con el `-Name` parámetro, tal como se describe a continuación.
+El uso recomendado consiste en especificar `–ModuleName` con el parámetro `-Name`, tal como se describe a continuación.
 
 Este uso tiene las siguientes ventajas:
 
 - Reduce el impacto del rendimiento al limitar el ámbito de búsqueda para el recurso especificado.
-- Define explícitamente el módulo de definición del recurso, asegurarse de que se carga el recurso correcto.
+- Define explícitamente el módulo que define del recurso, garantizando que se carga el recurso correcto.
 
 > [!NOTE]
 > En PowerShell 5.0, los recursos de DSC pueden tener varias versiones, y las versiones pueden instalarse en un equipo en paralelo. Esto se implementa mediante varias versiones de un módulo de recursos que están contenidas en la misma carpeta del módulo.
@@ -76,21 +76,21 @@ Este uso tiene las siguientes ventajas:
 
 ## <a name="intellisense-with-import-dscresource"></a>IntelliSense con Import-DSCResource
 
-Al crear la configuración de DSC en el ISE, PowerShell proporciona IntelliSence para los recursos y las propiedades de recursos. Las definiciones de recursos en el `$pshome` ruta de acceso del módulo se cargan automáticamente. Al importar los recursos mediante el `Import-DSCResource` palabra clave, se agregan las definiciones de recursos especificado y Intellisense se expande para incluir el esquema del recurso importado.
+Al crear la configuración de DSC en el ISE, PowerShell proporciona IntelliSence para los recursos y las propiedades de recursos. Las definiciones de recursos en la ruta de acceso del módulo `$pshome` se cargan automáticamente. Al importar los recursos mediante la palabra clave `Import-DSCResource`, se agregan las definiciones de recursos especificadas e Intellisense se expande para incluir el esquema del recurso importado.
 
-![Intellisense de recursos](/media/resource-intellisense.png)
+![Intellisense para recursos](/media/resource-intellisense.png)
 
 > [!NOTE]
-> A partir de PowerShell 5.0, finalización con tabulación se ha agregado al ISE para los recursos de DSC y sus propiedades. Para obtener más información, consulte [recursos](../resources/resources.md).
+> A partir de PowerShell 5.0, se agregó la finalización con tabulación al ISE para los recursos de DSC y sus propiedades. Para obtener más información, consulte [Recursos](../resources/resources.md).
 
 Al compilar la configuración, PowerShell usa las definiciones de recursos importados para validar todos los bloques de recursos en la configuración.
-Se valida cada bloque de recursos, mediante la definición de esquema del recurso, para las siguientes reglas.
+Cada bloque de recursos se valida mediante la definición de esquema de recursos, para las siguientes reglas.
 
 - Se utilizan solo las propiedades definidas en el esquema.
 - Los tipos de datos para cada propiedad son correctos.
-- Propiedades de las claves se especifican.
+- Se especifican las propiedades de las claves.
 - No se usa ninguna propiedad de solo lectura.
-- Asigna los tipos de validación en el valor.
+- La validación sobre el valor asigna tipos.
 
 Tenga en cuenta la siguiente configuración:
 
@@ -111,13 +111,13 @@ Configuration SchemaValidationInCorrectEnumValue
 }
 ```
 
-Compilar esta configuración da como resultado un error.
+La compilación de esta configuración da como resultado un error.
 
 ```output
 PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invalid’ is not supported or valid for property ‘Ensure’ on class ‘WindowsFeature’. Please specify only supported values: Present, Absent.
 ```
 
-IntelliSense y validación de esquema permiten detectar más errores durante el tiempo de análisis y compilación, evitar las complicaciones en tiempo de ejecución.
+IntelliSense y la validación de esquema permiten detectar más errores durante el tiempo de análisis y compilación, evitando las complicaciones en tiempo de ejecución.
 
 > [!NOTE]
 > Cada recurso de DSC puede tener un nombre y un **FriendlyName** definido por el esquema del recurso. A continuación se muestran las dos primeras líneas de "MSFT_ServiceResource.shema.mof".
@@ -125,27 +125,27 @@ IntelliSense y validación de esquema permiten detectar más errores durante el 
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
-> Cuando se usa este recurso en una configuración, puede especificar **MSFT_ServiceResource** o **servicio**.
+> Cuando se usa este recurso en una configuración, puede especificar **MSFT_ServiceResource** o **Service**.
 
 ## <a name="powershell-v4-and-v5-differences"></a>Diferencias de PowerShell v4 y v5
 
-Hay varias diferencias que verá cuando se crean configuraciones en PowerShell 4.0 vs. PowerShell 5.0 y versiones posterior. En esta sección se resaltan las diferencias que ve correspondientes a este artículo.
+Hay varias diferencias que verá al crear configuraciones en PowerShell 4.0 en comparación con Windows PowerShell 5.0 y posteriores. En esta sección se destacan las diferencias que verá y que son pertinentes para este artículo.
 
 ### <a name="multiple-resource-versions"></a>Varias versiones de recursos
 
-Instalación y uso de varias versiones de los recursos en paralelo no se admiten en PowerShell 4.0. Si observa problemas al importar recursos en la configuración, asegúrese de que solo tiene una versión del recurso instalado.
+La instalación y el uso de varias versiones de recursos en paralelo no se admite en PowerShell 4.0. Si observa problemas al importar recursos en la configuración, asegúrese de que solo tiene una versión del recurso instalada.
 
-En la imagen siguiente, dos versiones de la **xPSDesiredStateConfiguration** módulo se instalan.
+En la imagen siguiente, se instalan dos versiones del módulo **xPSDesiredStateConfiguration**.
 
-![Se ha corregido varias versiones de recursos](/media/multiple-resource-versions-broken.md)
+![Corrección de varias versiones de recursos](/media/multiple-resource-versions-broken.md)
 
-Copie el contenido de la versión del módulo deseado en el nivel superior del directorio de módulo.
+Copie el contenido de la versión del módulo deseada en el nivel superior del directorio de módulo.
 
-![Se ha corregido varias versiones de recursos](/media/multiple-resource-versions-fixed.md)
+![Corrección de varias versiones de recursos](/media/multiple-resource-versions-fixed.md)
 
 ### <a name="resource-location"></a>Ubicación de los recursos
 
-Hora de crear y compilar configuraciones, los recursos se pueden almacenar en cualquier directorio especificado por su [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). El LCM en PowerShell 4.0, requiere que todos los módulos de recursos de DSC que se almacenará en "Programa Files\WindowsPowerShell\Modules" o `$pshome\Modules`. A partir de PowerShell 5.0, se ha quitado este requisito, y los módulos de recursos se pueden almacenar en cualquier directorio especificado por `PSModulePath`.
+Al crear y compilar configuraciones, los recursos se pueden almacenar en cualquier directorio especificado por su [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). En PowerShell 4.0, LCM requiere que todos los módulos de recursos de DSC se almacenen en "Archivos de programa\WindowsPowerShell\Modules" o `$pshome\Modules`. A partir de PowerShell 5.0, esto ya no es necesario, y los módulos de recursos se pueden almacenar en cualquier directorio especificado por `PSModulePath`.
 
 ## <a name="see-also"></a>Vea también
 

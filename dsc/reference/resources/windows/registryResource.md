@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Recursos de DSC Registry
 ms.openlocfilehash: e0ae1a4a27edc08c4e6ccd47786426917eb1ccb4
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076963"
 ---
 # <a name="dsc-registry-resource"></a>Recursos de DSC Registry
 
-Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0_
+_Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 El recurso **Registry** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para administrar valores y claves del Registro en un nodo de destino.
 
@@ -42,7 +42,7 @@ Registry [string] #ResourceName
 | Hex| Indica si los datos se expresarán en formato hexadecimal. Si se especifica, los datos de valores DWORD o QWORD se muestran en formato hexadecimal. No es válido para otros tipos. El valor predeterminado es **$false**.|
 | DependsOn| Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Por ejemplo, si el elemento ID del bloque del script de configuración del recurso que quiere ejecutar primero es **ResourceName** y su tipo es **ResourceType**, la sintaxis para usar esta propiedad es `DependsOn = "[ResourceType]ResourceName"`.|
 | ValueData| Los datos para el valor del Registro.|
-| ValueType| Indica el tipo del valor. Los tipos admitidos son: Cadena (REG_SZ), binario (REG-BINARY), Dword 32 bits (REG_DWORD), Qword 64 bits (REG_QWORD), cadena múltiple (REG_MULTI_SZ), cadena expandible (REG_EXPAND_SZ) |
+| ValueType| Indica el tipo del valor. Los tipos admitidos son: cadena (REG_SZ), binario (REG-BINARY), Dword de 32 bits (REG_DWORD), Qword de 64 bits (REG_QWORD), cadena múltiple (REG_MULTI_SZ), cadena expandible (REG_EXPAND_SZ) |
 
 ## <a name="example"></a>Ejemplo
 

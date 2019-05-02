@@ -2,12 +2,12 @@
 title: Novedades de PowerShell Core 6.1
 description: Nuevas características y cambios publicados en PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086133"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Novedades de PowerShell Core 6.1
 
@@ -179,8 +179,9 @@ Para más información sobre cómo funcionan estos cmdlets, vea [este RFC](https
 
 ## <a name="experimental-feature-flags"></a>Marcas de características experimentales
 
-Las marcas de características experimentales permiten a los usuarios activar características que aún no se han finalizado.
-Estas características experimentales no son compatibles y podrían tener errores.
+Ya habíamos habilitado la compatibilidad con las [características experimentales][]. Esto permite a los desarrolladores de PowerShell ofrecer nuevas características y obtener comentarios antes de completar el diseño. De este modo, evitamos realizar cambios importantes a medida que evoluciona el diseño.
+
+Use `Get-ExperimentalFeature` para obtener una lista de las características experimentales disponibles. Puede habilitar o deshabilitar estas características con `Enable-ExperimentalFeature` y `Disable-ExperimentalFeature`.
 
 Puede saber más sobre esta característica en [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
 
@@ -523,3 +524,6 @@ Como parte de la mejora del rendimiento, `Group-Object` ahora devuelve una lista
 Aunque no debe confiar en el orden, podría verse interrumpida por este cambio si quisiera el primer grupo. Decidimos que esta mejora en el rendimiento valía la pena el cambio, ya que el impacto de depender del comportamiento previo es bajo.
 
 Para más información sobre este cambio, consulte el [problema #7409](https://github.com/PowerShell/PowerShell/issues/7409).
+
+<!-- URL references -->
+[Características experimentales]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features

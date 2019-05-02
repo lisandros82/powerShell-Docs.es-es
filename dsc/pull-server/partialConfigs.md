@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Configuraciones parciales de la configuración de estado deseado de PowerShell
 ms.openlocfilehash: b2b17e35597707eb97ecdcea9dda4466deeab0cb
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079530"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Configuraciones parciales de la configuración de estado deseado de PowerShell
 
-Se aplica a: Windows PowerShell 5.0 y versiones posterior._
+_Se aplica a: Windows PowerShell 5.0 y posterior._
 
 En PowerShell 5.0, la configuración de estado deseado (DSC) permite que las configuraciones se entreguen en fragmentos y desde varios orígenes. El administrador de configuración local (LCM) en el nodo de destino reúne los fragmentos antes de aplicarlos como una configuración única. Esta capacidad permite compartir el control de la configuración entre equipos o usuarios. Por ejemplo, si dos o más equipos de desarrolladores colaboran en un servicio, es posible que cada uno de ellos prefiera crear configuraciones para administrar su parte del servicio. Cada una de estas configuraciones se podría extraer de servidores de extracción diferentes y se podría agregar en diferentes fases del desarrollo. Las configuraciones parciales también permiten que distintas personas o equipos controlen aspectos diferentes de los nodos de configuración, sin tener que coordinar la edición de un documento de configuración único. Por ejemplo, un equipo podría ser responsable de la implementación de una máquina virtual y un sistema operativo, mientras que otro equipo podría implementar otras aplicaciones y servicios en esa máquina virtual. Con las configuraciones parciales, cada equipo puede crear su propia configuración, sin que ninguna de ellas sea innecesariamente complicada.
 
@@ -375,6 +375,6 @@ SharePointConfig
 
 ## <a name="see-also"></a>Véase también
 
-[Servidores de extracción de la configuración de estado deseado de Windows PowerShell](pullServer.md)
+[Servicio de extracción de Desired State Configuration](pullServer.md)
 
 [Configuración del administrador de configuración local de Windows](../managing-nodes/metaConfig.md)

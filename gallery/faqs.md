@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Preguntas más frecuentes de la Galería de PowerShell
 ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58057695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084621"
 ---
 # <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 

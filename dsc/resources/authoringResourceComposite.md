@@ -3,13 +3,13 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: 'Recursos compuestos: uso de una configuración DSC como un recurso'
 ms.openlocfilehash: 2823d05e0c8feb2933ca691f9ab5149ace2f7ee3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076691"
 ---
-# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Recursos compuestos Uso de una configuración DSC como un recurso
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Recursos compuestos: uso de una configuración DSC como un recurso
 
 > Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -190,7 +190,7 @@ configuration RenameVM
 
 ## <a name="supporting-psdscrunascredential"></a>Compatibilidad con PsDscRunAsCredential
 
->**Nota:** **PsDscRunAsCredential** se admite en PowerShell 5.0 y versiones posteriores.
+>**Nota:** **PsDscRunAsCredential** es compatible con PowerShell 5.0 y versiones posteriores.
 
 La propiedad **PsDscRunAsCredential** se puede usar en el bloque de recursos de [configuraciones de DSC](../configurations/configurations.md) para especificar que el recurso se debe ejecutar bajo un conjunto especificado de credenciales.
 Para más información, consulte [DSC de ejecución con las credenciales de usuario](../configurations/runAsUser.md).

@@ -2,25 +2,25 @@
 ms.date: 08/14/2018
 keywords: powershell, cmdlet
 title: Introducción a Windows PowerShell ISE
-ms.openlocfilehash: 09a28b295855fd2a3c62bba8a681399dae3454f8
-ms.sourcegitcommit: 3402a478cf118c11a5642038eb117bc76553e3ab
-ms.translationtype: MTE95
+ms.openlocfilehash: 729c8535dbcfcd2c51070b8beac5d328375f36ae
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057431"
 ---
-# <a name="the-windows-powershell-ise"></a>Windows PowerShell ISE
+# <a name="the-windows-powershell-ise"></a>Windows PowerShell ISE
 
-Windows PowerShell Integrated Scripting Environment (ISE) es una aplicación host de Windows PowerShell. En el ISE, puede ejecutar comandos y escribir, comprobar y depurar scripts en una interfaz gráfica de usuario único basado en Windows. El ISE proporciona edición de varias líneas, finalización con tabulación, colores de sintaxis, ejecución selectiva, ayuda contextual y compatibilidad para idiomas de derecha a izquierda. Los elementos de menú y métodos abreviados de teclado se asignan a muchas de las mismas tareas que realizaría en la consola de Windows PowerShell. Por ejemplo, cuando se depura un script en el ISE, haga en una línea de código en el panel de edición para establecer un punto de interrupción.
+Windows PowerShell Integrated Scripting Environment (ISE) es una aplicación host de Windows PowerShell. En el ISE, puede ejecutar comandos y escribir, probar y depurar scripts en una única interfaz gráfica de usuario basada en Windows. El ISE proporciona edición de varias líneas, finalización con tabulación, color de sintaxis, ejecución selectiva, ayuda contextual y compatibilidad con idiomas de derecha a izquierda. Los elementos de menú y métodos abreviados de teclado se asignan a muchas de las mismas tareas que realizaría en la consola de Windows PowerShell. Por ejemplo, al depurar un script en el ISE, puede hacer clic con el botón derecho en una línea de código del panel de edición para establecer un punto de interrupción.
 
 ## <a name="support"></a>Soporte técnico
 
-El ISE se introdujo por primera vez con Windows PowerShell V2 y rediseñado con PowerShell V3. El ISE se admite en todas las versiones compatibles de Windows PowerShell hasta y V5.1 incluido Windows PowerShell. El ISE, sin embargo, está en modo de maintennce y ninguna característica nueva es probable que va a agregar.
-Además, no hay ninguna compatibilidad con el ISE con motor v6 de PowerShell y más allá. Deben tener en cuenta los usuarios que desean una herramienta gráfica que permite administrar los scrips de PowerShell, etcetera, [Visual Studio Code](https://code.visualstudio.com/).
+El ISE se introdujo por primera vez con Windows PowerShell V2 y se rediseñó con PowerShell V3. El ISE se admite en todas las versiones compatibles de Windows PowerShell hasta Windows PowerShell V5.1 (inclusive). El ISE, sin embargo, está en modo de mantenimiento y no es probable que se le agreguen características nuevas.
+Además, no hay ninguna compatibilidad para el ISE a partir de PowerShell v6. Los usuarios que deseen una herramienta gráfica con la que administrar los scripts de PowerShell, etc., deben considerar la opción de [Visual Studio Code](https://code.visualstudio.com/).
 
 ## <a name="key-features"></a>Principales características
 
-Las características clave en Windows PowerShell ISE se incluyen:
+Entre las principales características de Windows PowerShell ISE están las siguientes:
 
 - Edición de varias líneas: para insertar una línea en blanco debajo de la línea actual en el panel de comandos, presione MAYÚS+ENTRAR.
 - Ejecución selectiva: para ejecutar parte de un script, seleccione el texto que quiera ejecutar y, a continuación, haga clic en el botón **Ejecutar script**. También puede presionar F5.

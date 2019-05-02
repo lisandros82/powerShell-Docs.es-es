@@ -3,25 +3,25 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Escribir ayuda para configuraciones de DSC
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080193"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Escribir ayuda para configuraciones de DSC
 
 >Se aplica a: Windows PowerShell 5.0
 
-Puede usar la ayuda basada en comentarios en configuraciones de DSC. Los usuarios pueden acceder a la Ayuda mediante una llamada a la **configuración** con `-?`, o mediante el [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet. Coloque la Ayuda basada en comentarios directamente encima el `Configuration` palabra clave.
-Puede colocar la Ayuda de parámetro en línea con el bloque de comentario, justo encima de la declaración de parámetros o ambos, como se muestra en el ejemplo siguiente.
+Puede usar la ayuda basada en comentarios en configuraciones de DSC. Los usuarios pueden acceder a la ayuda mediante una llamada a la **configuración** con `-?`, o mediante el cmdlet [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help). Coloque la ayuda basada en comentarios directamente encima de la palabra clave `Configuration`.
+Puede colocar la ayuda de parámetro en línea con el bloque de comentario, justo encima de la declaración de parámetros o en ambos lugares, como se muestra en el ejemplo siguiente.
 
 Para obtener más información sobre la ayuda basada en comentarios de PowerShell, vea [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
 > [!NOTE]
-> Entornos de desarrollo de PowerShell, como VSCode y el ISE, también tienen fragmentos de código para que pueda insertar automáticamente las plantillas de bloque de comentario.
+> Los entornos de desarrollo de PowerShell, como VSCode y el ISE, también tienen fragmentos de código para que pueda insertar automáticamente las plantillas de bloque de comentario.
 
-En el ejemplo siguiente se muestran un script que contiene una configuración y ayuda basada en comentarios para dicha configuración. En este ejemplo se muestra una configuración con parámetros. Para más información sobre cómo usar parámetros en las configuraciones, consulte [agregar parámetros a las configuraciones de](add-parameters-to-a-configuration.md).
+En el ejemplo siguiente se muestran un script que contiene una configuración y ayuda basada en comentarios para dicha configuración. En este ejemplo se muestra una configuración con parámetros. Para obtener más información sobre cómo usar parámetros en las configuraciones, consulte [Agregar parámetros a una configuración](add-parameters-to-a-configuration.md).
 
 ```powershell
 <#
@@ -77,7 +77,7 @@ configuration HelpSample1
 
 ## <a name="viewing-configuration-help"></a>Ver la ayuda de configuración
 
-Para ver la Ayuda de una configuración, use el `Get-Help` cmdlet con el nombre de la función o escriba el nombre de la función seguido por `-?`. El siguiente es el resultado de la configuración anterior pasa a `Get-Help`.
+Para ver la ayuda de una configuración, use el cmdlet `Get-Help` con el nombre de la función o escriba el nombre de la función seguido de `-?`. A continuación, se muestra el resultado de la configuración anterior cuando se pasa a `Get-Help`.
 
 ```powershell
 Get-Help HelpSample1 -Detailed
@@ -157,7 +157,7 @@ REMARKS
 ```
 
 > [!NOTE]
-> Los campos de la sintaxis y los atributos de parámetro se generan automáticamente para usted mediante PowerShell.
+> Los campos de la sintaxis y los atributos de parámetro se generan automáticamente mediante PowerShell.
 
 ## <a name="see-also"></a>Véase también
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Uso de datos de configuración
 ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080227"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Uso de datos de configuración en DSC
 
@@ -189,7 +189,7 @@ DSC proporciona las siguientes variables especiales que se pueden usar en un scr
 
 - **$AllNodes** hace referencia a toda la colección de nodos que se define en **ConfigurationData**. Puede filtrar la colección **AllNodes** mediante **.Where()** y **.ForEach()**.
 - **ConfigurationData** hace referencia a toda la tabla hash que se pasa como parámetro al compilar una configuración.
-- **MyTypeName** contiene el [configuración](configurations.md) la variable se usa en el nombre. Por ejemplo, en la configuración `MyDscConfiguration`, `$MyTypeName` tendrá un valor de `MyDscConfiguration`.
+- **MyTypeName** contiene el nombre de [configuración](configurations.md) en que se usa la variable. Por ejemplo, en la configuración `MyDscConfiguration`, `$MyTypeName` tendrá un valor de `MyDscConfiguration`.
 - **Node** hace referencia a un valor determinado en la colección **AllNodes** después de que se filtre mediante **.Where()** o **.ForEach()**.
   - Puede obtener más información sobre estos métodos en [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md).
 

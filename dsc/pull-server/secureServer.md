@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Procedimientos recomendados del servidor de extracción
 ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58057712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079207"
 ---
 # <a name="pull-server-best-practices"></a>Procedimientos recomendados del servidor de extracción
 

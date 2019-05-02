@@ -4,11 +4,11 @@ keywords: powershell, cmdlet
 title: Crear un cuadro de entrada personalizado
 ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
 ms.openlocfilehash: 2d04ad6df65cdb4ff13d136dea47bbba6a01f3a2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55681906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086296"
 ---
 # <a name="creating-a-custom-input-box"></a>Crear un cuadro de entrada personalizado
 
@@ -66,7 +66,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-El script comienza con la carga de dos clases de .NET Framework: **System.Drawing** y **System.Windows.Forms**. A continuación, se inicia una nueva instancia de la clase de .NET Framework **System.Windows.Forms.Form**, que proporciona un formulario o ventana en blanco en la que puede empezar a agregar controles.
+El script comienza con la carga de dos clases de .NET Framework: **System.Drawing** y **System.Windows.Forms**. A continuación, se inicia una nueva instancia de la clase de .NET Framework **System.Windows.Forms.Form**, que proporciona un formulario o ventana en blanco en la que puede empezar a agregar controles.
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
@@ -159,6 +159,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Véase también
 
-- [Hey Scripting Guy: Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644) (Hey Scripting Guy: ¿Por qué estos ejemplos de GUI de PowerShell no funcionan?)
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) (GitHub: WinFormsExampleUpdates de Dave Wyatt)
-- [Windows PowerShell Tip of the Week: Creating a Custom Input Box](https://technet.microsoft.com/library/ff730941.aspx) (Sugerencia de la semana de Windows PowerShell: Crear un cuadro de entrada personalizado)
+- [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644) (Hey Scripting Guy: ¿Por qué estos ejemplos de GUI de PowerShell no funcionan?)
+- [GitHub: ](https://github.com/dlwyatt/WinFormsExampleUpdates)Dave Wyatt's WinFormsExampleUpdates (GitHub: WinFormsExampleUpdates de Dave Wyatt)
+- [Windows PowerShell Tip of the Week:  Creating a Custom Input Box](https://technet.microsoft.com/library/ff730941.aspx) (Consejo de la semana de Windows PowerShell: crear un cuadro de entrada personalizado)

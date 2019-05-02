@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Recursos de DSC
 ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54046698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076631"
 ---
 # <a name="dsc-resources"></a>Recursos de DSC
 
@@ -17,22 +17,22 @@ Los recursos de la configuración de estado deseado (DSC) ofrecen los bloques de
 
 Un recurso puede modelar algo tan genérico como un archivo o tan específico como una configuración de servidor IIS.  Grupos de recursos similares se combinan en un módulo de DSC, que organiza todos los archivos necesarios en una estructura portátil que incluye los metadatos para identificar cómo están diseñados para usarse los recursos.
 
-Cada recurso tiene un * esquema que determina la sintaxis necesaria para usar el recurso en un [configuración](../configurations/configurations.md). Esquema de un recurso puede definirse de las maneras siguientes:
+Cada recurso tiene un *esquema que determina la sintaxis necesaria para usar el recurso en una [configuración](../configurations/configurations.md). El esquema de un recurso se puede definir de las siguientes maneras:
 
-- **'Schema.Mof'** archivo: Define la mayoría de los recursos sus *esquema* en un 'schema.mof' de archivos, mediante [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
-- **'\<Nombre de recurso\>. schema.psm1'** archivo: [Recursos compuestos](../configurations/compositeConfigs.md) definir sus *esquema* en un '<ResourceName>. schema.psm1' archivo empleando un [bloque de parámetros](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
-- **'\<Nombre de recurso\>. psm1 '** archivo: Definen recursos de DSC en función de clase sus *esquema* en la definición de clase. Los elementos de sintaxis se denotan como propiedades de la clase. Para obtener más información, consulte [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
+- Archivo **"Schema.Mof"**: La mayoría de los recursos definen su *esquema* en un archivo "schema.mof", utilizando [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
+- Archivo **"\<Nombre de recurso\>.schema.psm1"**: Los [recursos compuestos](../configurations/compositeConfigs.md) definen su *esquema* en un archivo "<ResourceName>.schema.psm1" usando un [bloque de parámetros](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+- Archivo **"\<Nombre de recurso\>.psm1"**: Los recursos DSC basados en clase definen su *esquema* en la definición de clase. Los elementos de sintaxis se denotan como propiedades de la clase. Para más información, consulte [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc) (Acerca de las clases).
 
-Para recuperar la sintaxis para un recurso de DSC, use el [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) cmdlet con el `-Syntax` parámetro. Este uso es similar a usar [Get-Command](/powershell/module/microsoft.powershell.core/get-command) con el `-Syntax` para obtener la sintaxis del cmdlet. La salida, vea mostrará la plantilla usada para un bloque de recursos para el recurso que especifique.
+Para recuperar la sintaxis de un recurso DSC, use el cmdlet [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) con el parámetro `-Syntax`. Este uso es similar al uso de [Get-Command](/powershell/module/microsoft.powershell.core/get-command) con el parámetro `-Syntax` para obtener la sintaxis del cmdlet. La salida que ve mostrará la plantilla utilizada para un bloque de recursos para el recurso que especifique.
 
 ```powershell
 Get-DscResource -Syntax Service
 ```
 
-La salida, vea debe ser similar a la salida siguiente, aunque la sintaxis de este recurso podrían cambiar en el futuro. Al igual que la sintaxis de cmdlet, el *claves* visto incluido entre corchetes, son opcionales. Los tipos de especifican el tipo de datos que se espera que cada clave.
+La salida que ve debe ser similar a la salida siguiente, aunque la sintaxis de este recurso podría cambiar en el futuro. Al igual que la sintaxis del cmdlet, las *claves* que aparecen entre corchetes son opcionales. Los tipos especifican el tipo de datos que espera cada clave.
 
 > [!NOTE]
-> El **Asegúrese** clave es opcional porque el valor predeterminado es "Present".
+> La clave **Ensure** es opcional porque el valor predeterminado es "Present".
 
 ```output
 Service [String] #ResourceName
@@ -52,7 +52,7 @@ Service [String] #ResourceName
 }
 ```
 
-Dentro de una configuración, un **servicio** bloque de recursos podría parecerse a esto a **Asegúrese** que se está ejecutando el servicio de cola.
+Dentro de una configuración, un bloque de recursos **Service** podría parecerse a esto para aplicar **Ensure** en relación con la ejecución del servicio Spooler.
 
 > [!NOTE]
 > Antes de usar un recurso en una configuración, debe importarlo mediante [Import-DSCResource](../configurations/import-dscresource.md).
@@ -74,7 +74,7 @@ Configuration TestConfig
 }
 ```
 
-Las configuraciones pueden contener varias instancias del mismo tipo de recurso. Cada instancia debe llamarse de forma exclusiva. En el ejemplo siguiente, un segundo **servicio** se agrega el bloque de recursos para configurar el servicio "DHCP".
+Las configuraciones pueden contener varias instancias del mismo tipo de recurso. Cada instancia debe tener un nombre exclusivo. En el siguiente ejemplo, se agrega un segundo bloque de recursos **Service** para configurar el servicio "DHCP".
 
 ```powershell
 Configuration TestConfig
@@ -101,13 +101,13 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> A partir de PowerShell 5.0, intellisense se agregó para DSC. Esta nueva característica permite usar \<ficha\> y \<Ctrl+barra espaciadora\> para Autocompletar los nombres de clave.
+> A partir de PowerShell 5.0, se agregó Intellisense para DSC. Esta nueva característica permite usar \<TAB\> y \<Ctrl+barra espaciadora\> para completar automáticamente los nombres de clave.
 
-![Finalización con tabulación recursos](../media/resource-tabcompletion.png)
+![Finalización con tabulación de recursos](../media/resource-tabcompletion.png)
 
 ## <a name="built-in-resources"></a>Recursos integrados
 
-Además de recursos de la Comunidad, hay recursos integrados para Windows, los recursos para Linux y recursos para la dependencia entre nodos. Puede usar los pasos anteriores para determinar la sintaxis de estos recursos y cómo usarlas. Las páginas que sirven a estos recursos se han almacenado en **referencia**.
+Además de los recursos de la comunidad, hay recursos incorporados para Windows, para Linux y para la dependencia entre nodos. Puede usar los pasos anteriores para determinar la sintaxis de estos recursos y cómo usarlos. Las páginas relativas a estos recursos se han almacenado en **Referencia**.
 
 Recursos integrados de Windows
 
@@ -128,29 +128,29 @@ Recursos integrados de Windows
 * [Recurso WindowsFeatureSet](../reference/resources/windows/windowsFeatureSetResource.md)
 * [Recurso WindowsOptionalFeature](../reference/resources/windows/windowsOptionalFeatureResource.md)
 * [Recurso WindowsOptionalFeatureSet](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
-* [Recursos WindowsPackageCabResource](../reference/resources/windows/windowsPackageCabResource.md)
+* [Recurso WindowsPackageCabResource](../reference/resources/windows/windowsPackageCabResource.md)
 * [Recurso WindowsProcess](../reference/resources/windows/windowsProcessResource.md)
 
-[Dependencias entre nodos](../configurations/crossNodeDependencies.md) recursos
+Recursos de [dependencias entre nodos](../configurations/crossNodeDependencies.md)
 
 * [Recurso WaitForAll](../reference/resources/windows/waitForAllResource.md)
 * [Recurso WaitForSome](../reference/resources/windows/waitForSomeResource.md)
 * [Recurso WaitForAny](../reference/resources/windows/waitForAnyResource.md)
 
-Recursos del paquete de administración
+Recursos de Administración de paquetes
 
 * [Recurso PackageManagement](../reference/resources/packagemanagement/PackageManagementDscResource.md)
 * [Recurso PackageManagementSource](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
 
 Recursos de Linux
 
-* [Recurso Linux Archive](../reference/resources/linux/lnxArchiveResource.md)
-* [Recursos del entorno de Linux](../reference/resources/linux/lnxEnvironmentResource.md)
-* [Linux FileLine recursos](../reference/resources/linux/lnxFileLineResource.md)
-* [Recurso de archivos de Linux](../reference/resources/linux/lnxFileResource.md)
-* [Recurso de grupo de Linux](../reference/resources/linux/lnxGroupResource.md)
-* [Recursos del paquete Linux](../reference/resources/linux/lnxPackageResource.md)
-* [Recurso de Script de Linux](../reference/resources/linux/lnxScriptResource.md)
-* [Recurso del servicio de Linux](../reference/resources/linux/lnxServiceResource.md)
-* [Linux SshAuthorizedKeys recursos](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
-* [Recursos de usuario de Linux](../reference/resources/linux/lnxUserResource.md)
+* [Recurso Archive para Linux](../reference/resources/linux/lnxArchiveResource.md)
+* [Recurso Environment para Linux](../reference/resources/linux/lnxEnvironmentResource.md)
+* [Recurso FileLine para Linux](../reference/resources/linux/lnxFileLineResource.md)
+* [Recurso File para Linux](../reference/resources/linux/lnxFileResource.md)
+* [Recurso Group para Linux](../reference/resources/linux/lnxGroupResource.md)
+* [Recurso Package para Linux](../reference/resources/linux/lnxPackageResource.md)
+* [Recurso Script para Linux](../reference/resources/linux/lnxScriptResource.md)
+* [Recurso Service para Linux](../reference/resources/linux/lnxServiceResource.md)
+* [Recurso SshAuthorizedKeys para Linux](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
+* [Recurso User para Linux](../reference/resources/linux/lnxUserResource.md)

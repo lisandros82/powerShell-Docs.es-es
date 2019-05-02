@@ -4,11 +4,11 @@ keywords: powershell, cmdlet
 title: Crear un selector de fecha gráfico
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
 ms.openlocfilehash: d3b24af935e781a8a36fc346a6108baaed37b6db
-ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59506808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058614"
 ---
 # <a name="creating-a-graphical-date-picker"></a>Crear un selector de fecha gráfico
 
@@ -146,6 +146,6 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 
 ## <a name="see-also"></a>Véase también
 
-- [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work? (Hey Scripting Guy: ¿Por qué estos ejemplos de GUI de PowerShell no funcionan?)](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates (GitHub: WinFormsExampleUpdates de Dave Wyatt)](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week (Sugerencia de la semana de Windows PowerShell):  Crear un selector de fecha gráfico](https://technet.microsoft.com/library/ff730942.aspx)
+- [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644) (Hey Scripting Guy: ¿Por qué estos ejemplos de GUI de PowerShell no funcionan?)
+- [GitHub: ](https://github.com/dlwyatt/WinFormsExampleUpdates)Dave Wyatt's WinFormsExampleUpdates (GitHub: WinFormsExampleUpdates de Dave Wyatt)
+- [Windows PowerShell Tip of the Week:  Creating a Graphical Date Picker](https://technet.microsoft.com/library/ff730942.aspx) (Consejo de la semana de Windows PowerShell: crear un selector de fecha gráfico)

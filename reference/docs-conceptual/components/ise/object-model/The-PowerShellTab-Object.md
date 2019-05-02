@@ -4,11 +4,11 @@ keywords: powershell, cmdlet
 title: El objeto PowerShellTab
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 ms.openlocfilehash: 577e2aaaddf3071801816d9ae91dbf0006dd5072
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057679"
 ---
 # <a name="the-powershelltab-object"></a>El objeto PowerShellTab
 
@@ -40,7 +40,7 @@ Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está prese
 Ejecuta el script especificado en la pestaña de PowerShell.
 
 > [!NOTE]
-> Este método solo funciona en otras pestañas de PowerShell, no en la pestaña de PowerShell desde la que se ejecuta. El bloque de script se ejecuta y cualquier valor que se devuelve desde el script se devuelve al entorno de ejecución desde el que se invocó el comando. Si el comando tarda más tiempo en ejecutarse que el **Tiempoesperamilisegundos** especifica el valor y, después, el comando produce un error con una excepción: Se excedió el tiempo de espera de la operación.
+> Este método solo funciona en otras pestañas de PowerShell, no en la pestaña de PowerShell desde la que se ejecuta. El bloque de script se ejecuta y cualquier valor que se devuelve desde el script se devuelve al entorno de ejecución desde el que se invocó el comando. Si el comando tarda más tiempo en ejecutarse que lo que especifica el valor de **millesecondsTimeout**, el comando no se ejecuta correctamente e inicia una excepción: "La operación ha agotado el tiempo de espera".
 
 **Script**: System.Management.Automation.ScriptBlock o cadena. El bloque de script para ejecutar.
 

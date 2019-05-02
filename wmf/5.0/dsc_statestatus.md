@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: ff2c2bd7369893d72db001ecabf63991ded0bfd5
-ms.sourcegitcommit: ac20e0faaa37142e9c6e4507a21df2f4a3fdbece
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44339878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058988"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Estado coherente unificado y representación de estado
 
@@ -37,7 +37,7 @@ En la siguiente tabla se muestran el estado resultante y las propiedades relacio
 | r, F                            | PendingReboot        | Correcto    | $true         | $null                        | r                              |
 
 - S<sub>i</sub>: serie de recursos que se aplicaron correctamente
-- S<sub>i</sub>: serie de recursos que no se aplicaron correctamente
+- F<sub>i</sub>: serie de recursos que no se aplicaron correctamente
 - r: recurso que requiere un reinicio
 
 ```powershell

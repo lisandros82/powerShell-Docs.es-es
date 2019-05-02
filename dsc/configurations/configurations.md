@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Configuraciones DSC
 ms.openlocfilehash: 6af27f442de3080facd65892c713c989d0e388c5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080185"
 ---
 # <a name="dsc-configurations"></a>Configuraciones DSC
 
@@ -32,14 +32,14 @@ Configuration MyDscConfiguration {
 MyDscConfiguration
 ```
 
-Guarde el script como un `.ps1` archivo.
+Guarde el script como un archivo `.ps1`.
 
 ## <a name="configuration-syntax"></a>Sintaxis de la configuración
 
 Un script de configuración consta de las partes siguientes:
 
 - El bloque **Configuration**. Este es el bloque del script más externo. Para definirlo, se usa la palabra clave **Configuration** y se facilita un nombre. En este caso, el nombre de la configuración es "MyDscConfiguration".
-- Uno o varios bloques **Node**. Estos definen los nodos (equipos o máquinas virtuales) que se están configurando. En la configuración anterior, hay un bloque **Node** cuyo destino es un equipo denominado "TEST-PC1". El bloque de nodo puede aceptar varios nombres de equipo.
+- Uno o varios bloques **Node**. Estos definen los nodos (equipos o máquinas virtuales) que se están configurando. En la configuración anterior, hay un bloque **Node** cuyo destino es un equipo denominado "TEST-PC1". El bloque Node puede aceptar varios nombres de equipo.
 - Uno o varios bloques de recursos. Es aquí donde la configuración establece las propiedades de los recursos que se están configurando. En este caso, hay dos bloques de recursos, cada uno de los cuales llama al recurso "WindowsFeature".
 
 Dentro de un bloque **Configuration**, puede hacer todo lo que se puede realizar normalmente en una función de PowerShell. Por ejemplo, en el ejemplo anterior, si no quisiera codificar de forma rígida el nombre del equipo de destino en la configuración, podría agregar un parámetro para el nombre del nodo:
@@ -73,13 +73,13 @@ Configuration MyDscConfiguration
 MyDscConfiguration
 ```
 
-El **nodo** bloque también puede aceptar varios nombres de equipo. En el ejemplo anterior, puede usar el `-ComputerName` parámetro o pase separados por comas de lista de equipos directamente a la **nodo** bloque.
+El bloque **Node** también puede aceptar varios nombres de equipo. En el ejemplo anterior, puede usar el parámetro `-ComputerName` o pasar una lista de equipos separados por comas directamente al bloque **Node**.
 
 ```powershell
 MyDscConfiguration -ComputerName "localhost", "Server01"
 ```
 
-Al especificar una lista de equipos para el **nodo** bloque, desde dentro de una configuración, debe utilizar la notación de matriz.
+Al especificar una lista de equipos para el bloque **Node** desde una configuración, debe utilizar la notación de matriz.
 
 ```powershell
 Configuration MyDscConfiguration
@@ -161,17 +161,17 @@ En la actualidad, DSC incluye 12 recursos como parte del módulo PSDesiredStateC
 El cmdlet ([Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)) puede utilizarse para determinar qué recursos están instalados en el sistema y disponibles para que el LCM los use.
 Cuando estos módulos se hayan colocado en `$env:PSModulePath` y [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) los reconozca correctamente, es necesario que se carguen en la configuración.
 
-**Import-DscResource** es una palabra clave dinámica que solo puede reconocerse dentro de un **configuración** bloque, no es un cmdlet.
+**Import-DscResource** es una palabra clave dinámica que solo puede reconocerse dentro de un bloque **Configuration**, no es un cmdlet.
 **Import-DscResource** admite dos parámetros:
 
 - **ModuleName** es la manera recomendada de usar **Import-DscResource**. Acepta el nombre del módulo que contiene los recursos que se importarán (así como una matriz de cadenas de nombres de módulo).
 - **Name** es el nombre del recurso que se importará. Este no es el nombre descriptivo que [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) devuelve como "Name", sino el nombre de clase que se usa al definir el esquema del recurso (que [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) devuelve como **ResourceType**).
 
-Para obtener más información sobre el uso de `Import-DSCResource`, consulte [usar Import-DSCResource](import-dscresource.md)
+Para obtener más información sobre el uso de `Import-DSCResource`, consulte [Uso de Import-DSCResource](import-dscresource.md)
 
 ## <a name="powershell-v4-and-v5-differences"></a>Diferencias de PowerShell v4 y v5
 
-Hay diferencias en donde los recursos de DSC deben almacenarse en PowerShell 4.0. Para obtener más información, consulte [ubicación del recurso](import-dscresource.md#resource-location).
+Hay diferencias en cuanto a dónde se deben almacenar los recursos de DSC en PowerShell 4.0. Para obtener más información, consulte [Ubicación de los recursos](import-dscresource.md#resource-location).
 
 ## <a name="see-also"></a>Véase también
 

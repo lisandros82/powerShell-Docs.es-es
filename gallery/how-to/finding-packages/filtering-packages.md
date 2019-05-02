@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Filtración de los resultados de la búsqueda
 ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003938"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084409"
 ---
 # <a name="filtering-search-results"></a>Filtración de los resultados de la búsqueda
 
@@ -41,7 +41,7 @@ De igual manera, para ver solo scripts en la Galería de PowerShell, active Scri
 
 > [!NOTE]
 > Los filtros son inclusivos.
-> Por ejemplo, un paquete que contenga cmdlets y funciones aparecerá si se activa Cmdlet o Función, o ambos.
+> Ejemplo: Un paquete que contenga cmdlets y funciones aparecerá si se activa Cmdlet o Función, o ambos.
 > Si no se selecciona ninguna opción, el paquete no aparecerá.
 > Del mismo modo, si se seleccionan todas las categorías, solo aparecerán los paquetes que contengan alguna de esas categorías.
 > **No aparecerán los paquetes que no pertenezcan a ninguna de esas categorías.**

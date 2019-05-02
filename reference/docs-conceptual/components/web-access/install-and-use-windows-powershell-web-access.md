@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: powershell, cmdlet
 title: Instalación y uso de Windows PowerShell Web Access
 ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058571"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Instalación y uso de Windows PowerShell Web Access
 
@@ -187,7 +187,7 @@ De manera predeterminada, el cmdlet instala la aplicación web, **pswa** (y un g
    > [!NOTE]
    > No podrá iniciar sesión hasta que se haya concedido a los usuarios acceso al sitio web mediante la adición de reglas de autorización. Para más información, vea [Configurar una regla de autorización restrictiva](#configure-a-restrictive-authorization-rule) en este tema y [Reglas de autorización y características de seguridad de Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
-### <a name="configure-a-restrictive-authorization-rule"></a>configurar una regla de autorización restrictiva
+### <a name="configure-a-restrictive-authorization-rule"></a>Configuración de una regla de autorización restrictiva
 
 Una vez instalado Windows PowerShell Web Access y configurada la puerta de enlace, los usuarios podrán abrir la página de inicio de sesión en un explorador, pero no podrán iniciar sesión hasta que el administrador de Windows PowerShell Web Access les conceda acceso de manera explícita. El control de acceso de Windows PowerShell Web Access se administra mediante el conjunto de cmdlets de Windows PowerShell descrito en la siguiente tabla. No existe una GUI comparable para agregar o administrar reglas de autorización. Para obtener más información sobre los cmdlets de Windows PowerShell Web Access, consulte los temas de referencia de cmdlet, [Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps) (Cmdlets de Windows PowerShell Web Access).
 
@@ -200,7 +200,7 @@ Para obtener más información sobre la seguridad y las reglas de autorización 
    - En el escritorio de Windows, haga clic con el botón derecho en **Windows PowerShell**, en la barra de tareas y, luego,en **Ejecutar como administrador**.
    - En la pantalla **Inicio** de Windows, haga clic con el botón derecho en **Windows PowerShell** y, luego, en **Ejecutar como administrador**.
 
-2. Paso opcional para restringir el acceso de usuario con el uso de configuraciones de sesión: Compruebe que las configuraciones de sesión que quiere usar en las reglas ya existen. Si aún no se han creado, use las instrucciones para crear configuraciones de sesión proporcionadas en [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+2. Paso opcional para restringir el acceso de usuario con el uso de configuraciones de sesión: compruebe que las configuraciones de sesión que quiere usar en las reglas ya existen. Si aún no se han creado, use las instrucciones para crear configuraciones de sesión proporcionadas en [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Escriba lo siguiente y, después, presione **Entrar**.
 
@@ -248,7 +248,7 @@ Después de instalar Windows PowerShell Web Access, puede personalizar la config
 
 8. Después de hacer clic en **Instalar**, la página **Progreso de la instalación** mostrará el progreso de la instalación, los resultados y diferentes mensajes, como advertencias, errores o los pasos de configuración posteriores a la instalación necesarios para Windows PowerShell Web Access. Una vez instalado Windows PowerShell Web Access, se le pedirá que revise el archivo Léame, que contiene las instrucciones de configuración necesarias básicas para la puerta de enlace. Estas instrucciones también se incluyen en este tema. La ruta de acceso al archivo Léame es `C:\Windows\Web\PowerShellWebAccess\wwwroot\README.txt`.
 
-### <a name="configure-the-gateway"></a>configurar la puerta de enlace
+### <a name="configure-the-gateway"></a>Configuración de la puerta de enlace
 
 Las instrucciones de esta sección explican cómo instalar la aplicación web Windows PowerShell Web Access en un subdirectorio del sitio web, no en el directorio raíz. Este procedimiento es el equivalente basado en GUI de las acciones realizadas por el cmdlet `Install-PswaWebApplication` . En esta sección, también se incluyen instrucciones sobre cómo usar el Administrador de IIS para configurar la puerta de enlace de Windows PowerShell Web Access como un sitio web raíz.
 
@@ -373,7 +373,7 @@ Para obtener más información sobre la seguridad y las reglas de autorización 
 
 1. ![Nota de seguridad](images/SecurityNote.jpeg) Paso opcional para restringir el acceso de usuario con el uso de configuraciones de sesión:
 
-   Compruebe que las configuraciones de sesión que quiere usar en las reglas ya existen. Si aún no se han creado, use las instrucciones para crear configuraciones de sesión proporcionadas en [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+   compruebe que las configuraciones de sesión que quiere usar en las reglas ya existen. Si aún no se han creado, use las instrucciones para crear configuraciones de sesión proporcionadas en [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 1. Escriba lo siguiente y, después, presione **Entrar**.
 

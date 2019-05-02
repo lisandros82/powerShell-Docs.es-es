@@ -3,11 +3,11 @@ ms.date: 06/27/2017
 keywords: powershell, cmdlet
 title: Reglas de autorización y características de seguridad de Windows PowerShell Web Access
 ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55681265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058427"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reglas de autorización y características de seguridad de Windows PowerShell Web Access
 
@@ -156,9 +156,9 @@ Cada sesión de Windows PowerShell usa una configuración de sesión. Si esta no
 - Un administrador crea un punto de conexión, llamado **PswaEndpoint**, con un espacio de ejecución restringido. Después, crea una regla, `*,*,PswaEndpoint`, y distribuye el punto de conexión a otros equipos. La regla permite a todos los usuarios obtener acceso a todos los equipos con el punto de conexión **PswaEndpoint**.
   Si esta es la única regla de autorización definida en el conjunto de reglas, no se podrá obtener acceso a los equipos que no tengan ese extremo.
 
-- Un administrador ha creado un punto de conexión con un espacio de ejecución restringido, llamado **PswaEndpoint**, y desea restringir el acceso a usuarios específicos. El administrador crea un grupo de usuarios llamado **Level1Support** y define la siguiente regla: **Level1Support,\*,PswaEndpoint**. La regla concede a cualquier usuario del grupo **Level1Support** acceso a todos los equipos con la configuración **PswaEndpoint**. De modo semejante, se puede restringir el acceso a un conjunto específico de equipos.
+- Un administrador ha creado un punto de conexión con un espacio de ejecución restringido, llamado **PswaEndpoint**, y desea restringir el acceso a usuarios específicos. El administrador crea un grupo de usuarios llamado **Level1Support** y define la regla siguiente: **Level1Support,\*,PswaEndpoint**. La regla concede a cualquier usuario del grupo **Level1Support** acceso a todos los equipos con la configuración **PswaEndpoint**. De modo semejante, se puede restringir el acceso a un conjunto específico de equipos.
 
-- Algunos administradores proporcionan a determinados usuarios más acceso que a otros. Por ejemplo, un administrador crea dos grupos de usuarios, **Admins** y **BasicSupport**. También crea un punto de conexión con un espacio de ejecución restringido llamado **PswaEndpoint** y define las dos reglas siguientes: **Admins,\*,\*** y **BasicSupport,\*,PswaEndpoint**. La primera regla proporciona a todos los usuarios del grupo **Admin** acceso a todos los equipos y la segunda regla proporciona a todos los usuarios del grupo **BasicSupport** acceso únicamente a los equipos con **PswaEndpoint**.
+- Algunos administradores proporcionan a determinados usuarios más acceso que a otros. Por ejemplo, un administrador crea dos grupos de usuarios, **Admins** y **BasicSupport**. El administrador también crea un punto de conexión con un espacio de ejecución restringido llamado **PswaEndpoint** y define las dos reglas siguientes: **Admins,\*,\*** y **BasicSupport,\*,PswaEndpoint**. La primera regla proporciona a todos los usuarios del grupo **Admin** acceso a todos los equipos y la segunda regla proporciona a todos los usuarios del grupo **BasicSupport** acceso únicamente a los equipos con **PswaEndpoint**.
 
 - Un administrador ha configurado un entorno de prueba privado y desea conceder a todos los usuarios de red autorizados acceso a todos los equipos de la red a los que tienen acceso normalmente, con acceso a todas las configuraciones de sesión a las que tienen acceso normalmente. Como se trata de un entorno de prueba privado, el administrador crea una regla de autorización que no es segura. - Ejecuta el cmdlet `Add-PswaAuthorizationRule * * *`, que usa el carácter comodín **\*** para representar todos los usuarios, todos los equipos y todas las configuraciones. - Esta regla equivale a lo siguiente: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 

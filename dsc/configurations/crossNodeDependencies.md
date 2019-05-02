@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Especificación de dependencias entre nodos
 ms.openlocfilehash: 1bdfbd9f8a94809d6bf410eff525e1c877fb6aad
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080210"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Especificación de dependencias entre nodos
 
@@ -15,14 +15,14 @@ ms.locfileid: "53402201"
 
 DSC proporciona recursos especiales, **WaitForAll**, **WaitForAny** y **WaitForSome**, que se pueden usar en configuraciones para especificar las dependencias en configuraciones de otros nodos. El comportamiento de estos recursos es el siguiente:
 
-- **WaitForAll**: Se realiza correctamente si el recurso especificado está en el estado deseado en todos los nodos de destino definidos en el **NodeName** propiedad.
-- **WaitForAny**: Se realiza correctamente si el recurso especificado está en el estado deseado en al menos uno de los nodos de destino definido en el **NodeName** propiedad.
-- **WaitForSome**: Especifica un **NodeCount** propiedad además un **NodeName** propiedad. El recurso se ejecuta si está en el estado deseado en un número mínimo de nodos (especificado por **NodeCount**) definido por la propiedad **NodeName**.
+- **WaitForAll**: se ejecuta si el recurso especificado está en el estado deseado en todos los nodos de destino definidos en la propiedad **NodeName**.
+- **WaitForAny**: se ejecuta si el recurso especificado está en el estado deseado en al menos uno de los nodos de destino definidos en la propiedad **NodeName**.
+- **WaitForSome**: especifica una propiedad **NodeCount** además de **NodeName**. El recurso se ejecuta si está en el estado deseado en un número mínimo de nodos (especificado por **NodeCount**) definido por la propiedad **NodeName**.
 
 ## <a name="syntax"></a>Sintaxis
 
-El **WaitForAll** y **WaitForAny** recursos comparten la misma sintaxis. Reemplace \<ResourceType\> en el ejemplo siguiente con cualquiera **WaitForAny** o **WaitForAll**.
-Al igual que el **DependsOn** palabra clave, tendrá que dar formato al nombre como "[ResourceType] ResourceName". Si el recurso pertenece a otro [configuración](configurations.md), incluya el **ConfigurationName** en la cadena con formato "[ResourceType] ResourceName:: [ConfigurationName]:: [ConfigurationName]". El **NodeName** es el equipo, o nodo, en el que debe esperar el recurso actual.
+Los recursos **WaitForAll** y **WaitForAny** comparten la misma sintaxis. Reemplace \<ResourceType\> en el ejemplo siguiente por **WaitForAny** o **WaitForAll**.
+Al igual que la palabra clave **DependsOn**, el nombre debe presentar el formato"[ResourceType]ResourceName". Si el recurso pertenece a otra [configuración](configurations.md), incluya el valor de **ConfigurationName** en la cadena con formato "[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]". El **NodeName** es el equipo, o nodo, en el que debe esperar el recurso actual.
 
 ```
 <ResourceType> [string] #ResourceName
@@ -37,7 +37,7 @@ Al igual que el **DependsOn** palabra clave, tendrá que dar formato al nombre c
 }
 ```
 
-El **WaitForSome** recurso tiene una sintaxis similar al ejemplo anterior, pero agrega la **NodeCount** clave. El **NodeCount** indica cuántos nodos debe esperar el recurso actual.
+El recurso **WaitForSome** tiene una sintaxis similar al ejemplo anterior, pero agrega la clave **NodeCount**. **NodeCount** indica cuántos nodos debe esperar el recurso actual.
 
 ```
 WaitForSome [String] #ResourceName
@@ -53,14 +53,14 @@ WaitForSome [String] #ResourceName
 }
 ```
 
-Todos los **WaitForXXXX** compartir las claves de la sintaxis siguiente.
+Todos los valores de **WaitForXXXX** comparten las claves de la sintaxis siguiente.
 
-|  Propiedad |  Descripción || RetryIntervalSec | El número de segundos antes de Reintentar. Valor mínimo es 1. | | RetryCount | El número máximo de reintentos. | | ThrottleLimit | Número de equipos se conecten simultáneamente. El valor predeterminado es `New-CimSession` predeterminada. | | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de configura este recurso. Para obtener más información, consulte [DependsOn](resource-depends-on.md)|| PsDscRunAsCredential | Consulte [mediante DSC con credenciales de usuario](./runAsUser.md) |
+|  Property  |  Description   | | RetryIntervalSec| El número de segundos antes de reintentar. El valor mínimo es 1.| | RetryCount| El número máximo de veces que se reintentará.| | ThrottleLimit| Número de equipos que se pueden conectar simultáneamente. El valor predeterminado es `New-CimSession`.| | DependsOn | Indica que la configuración de otro recurso debe ejecutarse antes de que se configure este recurso. Para obtener más información, consulte [DependsOn](resource-depends-on.md)| | PsDscRunAsCredential | Consulte [Using DSC with User Credentials](./runAsUser.md) (Uso de DSC con credenciales de usuario) |
 
 
 ## <a name="using-waitforxxxx-resources"></a>Uso de recursos WaitForXXXX
 
-Cada **WaitForXXXX** esperas de recursos para que los recursos especificados completar en el nodo especificado. Otros recursos en la misma configuración pueden, a continuación, *dependen* el **WaitForXXXX** recursos mediante el **DependsOn** clave.
+Cada recurso **WaitForXXXX** espera a que se completen los recursos especificados en el nodo especificado. Otros recursos de la misma configuración pueden entonces *depender* del recurso **WaitForXXXX**  usando la clave **DependsOn**.
 
 Por ejemplo, en la configuración siguiente, el nodo de destino está esperando que el recurso **xADDomain** finalice en el nodo **MyDC** con un número máximo de 30 reintentos, a intervalos de 15 segundos, antes de que el nodo de destino pueda unirse al dominio.
 
@@ -109,13 +109,13 @@ Configuration JoinDomain
 }
 ```
 
-Cuando se compila la configuración, se generan dos archivos de "MOF". Ambos archivos "MOF" se aplican a los nodos de destino mediante el [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet
+Cuando se compila la configuración, se generan dos archivos ".mof". Aplique ambos archivos ".mof" a los nodos de destino mediante el cmdlet [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
 
->**Nota:** De forma predeterminada el waitforxxx lo recursos intentan una vez y, a continuación, se producirá un error. Aunque no es necesario, normalmente querrá especificar un **RetryCount** y **RetryIntervalSec**.
+>**Nota:** De manera predeterminada, los recursos de WaitForXXX lo intentan una vez y después se produce un error. Aunque no es necesario, normalmente la intención será especificar un valor para **RetryCount** y otro para **RetryIntervalSec**.
 
 ## <a name="see-also"></a>Véase también
 
 - [Configuraciones DSC](configurations.md)
-- [Usar dependencias de recursos](resource-depends-on.md)
+- [Dependencias de los recursos](resource-depends-on.md)
 - [Recursos de DSC](../resources/resources.md)
 - [Configuración del administrador de configuración local](../managing-nodes/metaConfig.md)

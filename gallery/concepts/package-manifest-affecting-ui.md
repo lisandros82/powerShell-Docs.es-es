@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: powershell
 title: Valores de los archivos de manifiesto de los paquetes que afectan a la interfaz de usuario de la Galería de PowerShell
 ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58058222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084715"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valores de los archivos de manifiesto de los paquetes que afectan a la interfaz de usuario de la Galería de PowerShell
 

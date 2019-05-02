@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Recurso nxFile de DSC para Linux
 ms.openlocfilehash: 80969ba2ea6247fcd616a301d951403a840c851d
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078034"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>Recurso nxFile de DSC para Linux
 
@@ -45,7 +45,7 @@ nxFile <string> #ResourceName
 | Tipo| Especifica si el recurso que se está configurando es un directorio o un archivo. Establezca esta propiedad en "directory" para indicar que el recurso es un directorio. Establézcala en "file" para indicar que el recurso es un archivo. El valor predeterminado es "file".|
 | Contenido| Especifica el contenido de un archivo, como una cadena determinada.|
 | Checksum| Define el tipo que se usará cuando se determine si dos archivos son iguales. Si no se especifica **Checksum**, solo se usa el nombre del archivo o directorio para la comparación. Los valores son: "ctime", "mtime" o "md5".|
-| Recurse| Indica si se incluyen los subdirectorios. Establezca esta propiedad en **$true** para indicar que quiere que los subdirectorios se incluyan. El valor predeterminado es **$false**. **Nota:** Esta propiedad sólo es válida cuando la **tipo** propiedad está establecida en el directorio.|
+| Recurse| Indica si se incluyen los subdirectorios. Establezca esta propiedad en **$true** para indicar que quiere que los subdirectorios se incluyan. El valor predeterminado es **$false**. **Nota:** Esta propiedad solo es válida cuando la propiedad **Type** está establecida en Directory.|
 | Force| Determinadas operaciones de archivos (por ejemplo, sobrescribir un archivo o eliminar un directorio que no está vacío) provocarán un error. Si se usa la propiedad **Force**, se invalidan estos errores. El valor predeterminado es **$false**.|
 | Vínculos| Especifica el comportamiento deseado de los vínculos simbólicos. Establezca esta propiedad en "follow" para seguir los vínculos simbólicos y actuar sobre el destino de los vínculos (por ejemplo, copiar el archivo en lugar del vínculo). Establezca esta propiedad en "manage" para actuar sobre el vínculo (por ejemplo, copiar el propio vínculo). Establezca esta propiedad en "ignore" para omitir los vínculos simbólicos.|
 | Grupo| El nombre del elemento **Group** propietario del archivo o directorio.|
@@ -98,7 +98,7 @@ nxFile resolvConf
 ```
 
 
-Paso 3: Usar una función de PowerShell para reemplazar los saltos de línea con caracteres de salto de línea de Linux de Windows.
+Paso 3: use una función de PowerShell para reemplazar los saltos de línea de Windows por caracteres de salto de línea de Linux.
 
 ```
 Function LinuxString($inputStr){

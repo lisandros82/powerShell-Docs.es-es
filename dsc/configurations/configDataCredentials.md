@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Opciones de credenciales en los datos de configuración
 ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "55681235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080159"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Opciones de credenciales en los datos de configuración
 
@@ -25,7 +25,7 @@ Para suprimir estos mensajes de advertencia y de error, utilice las palabras cla
 > [!NOTE]
 > En general, no es seguro almacenar o transmitir contraseñas de texto sin formato y no cifradas. Se recomienda proteger las credenciales mediante el uso de las técnicas que se describirán más adelante en este tema.
 > El servicio DSC de Azure Automation le permite administrar de forma centralizada las credenciales que se deben compilar en las configuraciones y almacenar de forma segura.
-> Para obtener información, vea los artículos [Compilación de configuraciones DSC y Recursos de credenciales](/azure/automation/automation-dsc-compile#credential-assets).
+> Para obtener información, consulte: [Compilación de configuraciones DSC y Recursos de credenciales](/azure/automation/automation-dsc-compile#credential-assets)
 
 ## <a name="handling-credentials-in-dsc"></a>Control de credenciales en DSC
 
@@ -137,7 +137,7 @@ Este ejemplo tiene dos problemas:
 1. Un error explica que no se recomiendan las contraseñas de texto sin formato.
 2. Una advertencia recomienda que no se use una credencial de dominio.
 
-Las marcas de **PSDSCAllowPlainTextPassword** y **PSDSCAllowDomainUser** suprimir el error y advertencia que informa al usuario de riesgo que conlleva.
+Las marcas de **PSDSCAllowPlainTextPassword** y **PSDSCAllowDomainUser** suprimen el error y la advertencia que informan al usuario del riesgo que conlleva.
 
 ## <a name="psdscallowplaintextpassword"></a>PSDSCAllowPlainTextPassword
 
@@ -181,7 +181,7 @@ DomainCredentialExample -ConfigurationData $cd
 
 ### <a name="localhostmof"></a>localhost.mof
 
-El **PSDSCAllowPlainTextPassword** marca requiere que el usuario confirme el riesgo de almacenar las contraseñas de texto sin formato en un archivo MOF. En el archivo MOF generado, aunque un **PSCredential** objeto que contiene un **SecureString** se utilizó, seguirá aparecen las contraseñas como texto sin formato. Esta es la única vez que se exponen las credenciales. Obtener acceso a cualquier persona tener acceso a la cuenta de administrador de este modo, archivo MOF.
+La marca **PSDSCAllowPlainTextPassword** requiere que el usuario reconozca el riesgo de almacenar contraseñas de texto sin formato en un archivo MOF. En el archivo MOF generado, aunque se utilizó un objeto **PSCredential** que contenía un valor **SecureString**, las contraseñas aún aparecen como texto sin formato. Esta es la única vez que se exponen las credenciales. Al obtener acceso a este archivo MOF, cualquier persona puede acceder a la cuenta de administrador.
 
 ```
 /*
@@ -218,14 +218,14 @@ ModuleVersion = "1.0";
 
 ### <a name="credentials-in-transit-and-at-rest"></a>Credenciales en tránsito y en reposo
 
-- El **PSDscAllowPlainTextPassword** marca permite la compilación de archivos MOF que contengan las contraseñas como texto no cifrado.
-  Tome precauciones cuando se almacenan los archivos MOF que contiene contraseñas de texto no cifrado.
-- Cuando el archivo MOF se entrega a un nodo en **Push** modo, WinRM cifra la comunicación para proteger la contraseña de texto no cifrado a menos que reemplace el valor predeterminado con el **AllowUnencrypted** parámetro.
-  - El archivo MOF con un certificado de cifrado protege el archivo MOF en reposo antes de que se ha aplicado a un nodo.
-- En **extracción** modo, puede configurar el servidor de extracción de Windows para usar HTTPS para cifrar el tráfico mediante el protocolo especificado en Internet Information Server. Para obtener más información, consulte los artículos [configuración de un cliente de extracción de DSC](../pull-server/pullclient.md) y [archivos MOF de protección con certificados](../pull-server/secureMOF.md).
-  - En el [State Configuration de Azure Automation](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) de servicio, siempre se cifra el tráfico de la incorporación de cambios.
+- La marca **PSDscAllowPlainTextPassword** permite la compilación de archivos MOF que contienen contraseñas como texto no cifrado.
+  Tome precauciones cuando almacene archivos MOF que contienen contraseñas de texto no cifrado.
+- Cuando el archivo MOF se entrega a un nodo en modo de **inserción**, WinRM cifra la comunicación para proteger la contraseña de texto no cifrado a menos que reemplace el valor predeterminado por el parámetro **AllowUnencrypted**.
+  - El cifrado del MOF con un certificado protege el archivo MOF en reposo antes de que se haya aplicado a un nodo.
+- En el modo de **extracción**, puede configurar el servidor de extracción de Windows para usar HTTPS para el cifrado del tráfico mediante el protocolo especificado en Internet Information Server. Para obtener más información, consulte los artículos [Configuración de un cliente de extracción de DSC](../pull-server/pullclient.md) y [Proteger el archivo MOF](../pull-server/secureMOF.md).
+  - En el servicio [Azure Automation State Configuration](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview), siempre se cifra el tráfico de extracción.
 - En el nodo, los archivos MOF se cifran en reposo a partir de PowerShell 5.0.
-  - En PowerShell 4.0 MOF archivos no están cifrados en reposo, a menos que se cifran con un certificado cuando insertado o extraído al nodo.
+  - En PowerShell 4.0, los archivos MOF no se cifran en reposo, a menos que se cifrasen con un certificado cuando se insertaron en el nodo o se extrajeron de él.
 
 **Microsoft aconseja evitar las contraseñas de texto sin formato por sus riesgos de seguridad considerables.**
 

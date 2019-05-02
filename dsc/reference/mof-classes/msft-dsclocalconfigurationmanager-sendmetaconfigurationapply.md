@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Método SendMetaConfigurationApply de la clase MSFT_DSCLocalConfigurationManager
 ms.openlocfilehash: b372a6c0ab9d4561dcf67026275e7d3ca6aa2584
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55682445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078319"
 ---
 # <a name="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método SendMetaConfigurationApply de la clase MSFT_DSCLocalConfigurationManager
 

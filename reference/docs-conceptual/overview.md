@@ -2,12 +2,12 @@
 ms.date: 08/27/2018
 keywords: powershell, cmdlet
 title: Scripting de PowerShell
-ms.openlocfilehash: 07925ce8dcafd33970a703c9b241bf6f76f88d10
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058495"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -50,7 +50,7 @@ Get-Service | Get-Member
 
 ### <a name="consistency"></a>Consistency
 
-La administración de sistemas puede ser una tarea compleja. Las herramientas que tienen una interfaz coherente ayudan a controlar esa complejidad inherente. Lamentablemente, ni las herramientas de línea de comandos ni los objetos COM que permiten ejecutar scripts son famosos por su coherencia.
+La administración de sistemas puede ser una tarea compleja. Las herramientas que tienen una interfaz coherente ayudan a controlar esa complejidad inherente. Lamentablemente, ni las herramientas de línea de comandos ni los objetos Component Object Model (COM) que permiten ejecutar scripts son famosos por su coherencia.
 
 La coherencia de PowerShell es uno de sus activos principales. Por ejemplo, si aprende a usar el cmdlet `Sort-Object`, podrá usar dicho conocimiento para ordenar la salida de cualquier cmdlet. No es necesario obtener información sobre las distintas rutinas de ordenación de cada cmdlet.
 

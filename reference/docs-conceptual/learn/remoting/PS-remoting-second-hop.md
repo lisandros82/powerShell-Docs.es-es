@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Realizar el segundo salto en la comunicación remota de PowerShell
 ms.openlocfilehash: 1b6e5ad53346324adc7be2d013e154c8600afa4f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086347"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Realizar el segundo salto en la comunicación remota de PowerShell
 
@@ -43,7 +43,7 @@ Para obtener un ejemplo sobre cómo habilitar y usar CredSSP para la comunicaci�
 
 También puede usar la delegación Kerberos sin restricciones para realizar el segundo salto. En cambio, este método no proporciona control sobre dónde se usan las credenciales delegadas.
 
->**Nota:** No se pueden delegar las cuentas de Active Directory que tienen la propiedad **La cuenta es importante y no se puede delegar** establecida. Para obtener más información, consulte [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) (Enfoque de seguridad: analizar "La cuenta es importante y no se puede delegar" para cuentas con privilegios) y [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) (Configuración y herramientas de la autenticación Kerberos).
+>**Nota:** No se pueden delegar las cuentas de Active Directory que tengan la propiedad **La cuenta es importante y no se puede delegar** establecida. Para obtener más información, consulte [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) (Enfoque de seguridad: analizar "La cuenta es importante y no se puede delegar" para cuentas con privilegios) y [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) (Configuración y herramientas de la autenticación Kerberos).
 
 ### <a name="pros"></a>Pros
 
@@ -56,7 +56,7 @@ También puede usar la delegación Kerberos sin restricciones para realizar el s
 
 ## <a name="kerberos-constrained-delegation"></a>Delegación limitada de Kerberos
 
-Puede usar la delegación limitada heredada (no basada en recursos) para realizar el segundo salto. Configurar la delegación restringida de Kerberos con la opción "Usar cualquier protocolo de autenticación" para permitir la transición del protocolo.
+Puede usar la delegación limitada heredada (no basada en recursos) para realizar el segundo salto. Configure la delegación restringida de Kerberos con la opción "Usar cualquier protocolo de autenticación" para permitir la transición del protocolo.
 
 > [!NOTE]
 > No se pueden delegar las cuentas de Active Directory que tengan la propiedad **La cuenta es importante y no se puede delegar** establecida. Para obtener más información, consulte [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) (Enfoque de seguridad: analizar "La cuenta es importante y no se puede delegar" para cuentas con privilegios) y [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) (Configuración y herramientas de la autenticación Kerberos).
@@ -77,7 +77,7 @@ Puede usar la delegación limitada heredada (no basada en recursos) para realiza
 Con la delegación limitada de Kerberos basada en recursos (introducida en Windows Server 2012), configura la delegación de credenciales en el objeto de servidor en que residen los recursos.
 En el escenario del segundo salto descrito anteriormente, puede configurar el _ServidorC_ para especificar desde dónde va a aceptar credenciales delegadas.
 
->**Nota:** No se pueden delegar las cuentas de Active Directory que tienen la propiedad **La cuenta es importante y no se puede delegar** establecida. Para obtener más información, consulte [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) (Enfoque de seguridad: analizar "La cuenta es importante y no se puede delegar" para cuentas con privilegios) y [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) (Configuración y herramientas de la autenticación Kerberos).
+>**Nota:** No se pueden delegar las cuentas de Active Directory que tengan la propiedad **La cuenta es importante y no se puede delegar** establecida. Para obtener más información, consulte [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) (Enfoque de seguridad: analizar "La cuenta es importante y no se puede delegar" para cuentas con privilegios) y [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) (Configuración y herramientas de la autenticación Kerberos).
 
 ### <a name="pros"></a>Pros
 
@@ -215,7 +215,7 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2) (Cómo simplifica Windows Server 2012 el proceso de delegación limitada de Kerberos, parte 2)
 - [Understanding Kerberos Constrained Delegation for Azure Active Directory Application Proxy Deployments with Integrated Windows Authentication](https://aka.ms/kcdpaper) (Comprender la delegación limitada de Kerberos para implementaciones de proxy de aplicación de Active Directory con la autenticación integrada de Windows)
 - [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx) ([MS-ADA2]: atributos de esquema de Active Directory, atributo M2.210 msDS-AllowedToActOnBehalfOfOtherIdentity)
-- [[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx) ([MS-SFU]: Extensiones de protocolo de Kerberos: protocolo de delegación limitada y de servicio para el usuario 1.3.2 S4U2proxy)
+- [[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx) ([MS-SFU]: Extensiones del protocolo de Kerberos: servicio para el usuario y protocolo de delegación restringida 1.3.2 S4U2proxy)
 - [Delegación limitada de Kerberos basada en recursos](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/) (Administración remota sin delegación limitada con PrincipalsAllowedToDelegateToAccount)
 

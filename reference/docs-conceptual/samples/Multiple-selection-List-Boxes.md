@@ -4,11 +4,11 @@ keywords: powershell, cmdlet
 title: Cuadros de lista de selección múltiple
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
 ms.openlocfilehash: a762145dc197ec7e1424b2fbdcef5e7380d13803
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057968"
 ---
 # <a name="multiple-selection-list-boxes"></a>Cuadros de lista de selección múltiple
 
@@ -74,7 +74,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-El script comienza cargando dos clases de .NET Framework: **System.Drawing** y **System.Windows.Forms**. A continuación, se inicia una nueva instancia de la clase de .NET Framework **System.Windows.Forms.Form**, que proporciona un formulario o ventana en blanco en la que puede empezar a agregar controles.
+El script comienza con la carga de dos clases de .NET Framework: **System.Drawing** y **System.Windows.Forms**. A continuación, se inicia una nueva instancia de la clase de .NET Framework **System.Windows.Forms.Form**, que proporciona un formulario o ventana en blanco en la que puede empezar a agregar controles.
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
@@ -183,6 +183,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Véase también
 
--   Hey Scripting Guy:[  ¿Por qué no funcionan estos ejemplos de GUI de PowerShell?](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub WinFormsExampleUpdates de Dave Wyatt](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week:  Cuadros de lista de selección múltiple - y mucho más.](https://technet.microsoft.com/library/ff730950.aspx)
+- [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644) (Hey Scripting Guy: ¿Por qué estos ejemplos de GUI de PowerShell no funcionan?)
+- [GitHub: ](https://github.com/dlwyatt/WinFormsExampleUpdates)Dave Wyatt's WinFormsExampleUpdates (GitHub: WinFormsExampleUpdates de Dave Wyatt)
+- [Windows PowerShell Tip of the Week:  Multi-Select List Boxes - And More!](https://technet.microsoft.com/library/ff730950.aspx) (Consejo de la semana de Windows PowerShell: cuadros de lista de selección múltiple, ¡y mucho más!)

@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,psgallery,GDPR
 title: Cumplimiento del RGPD en la Galería de PowerShell
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084239"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>Cumplimiento del RGPD en la Galería de PowerShell
 
@@ -53,8 +53,8 @@ Para los correos electrónicos enviados a la Galería de PowerShell o mediante e
 Los correos electrónicos se eliminan de acuerdo con la directiva mencionada al cabo de 90 días.
 
 Dispone de un término de 90 días para solicitar copias de los correos electrónicos enviados a su dirección de correo electrónico o desde esta y a la Galería de PowerShell o desde esta.
-Para solicitar estas comunicaciones, envíe un correo electrónico a [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) con el asunto "DSR Request for emails relating to this account" (Solicitud de DSR para los correos electrónicos relativos a esta cuenta).
-En el cuerpo del mensaje, indique qué información solicita (por ejemplo, recibir todos los correos electrónicos enviados o recibidos en esta dirección de correo electrónico). Todos los correos electrónicos relacionados con su dirección de correo electrónico en los 90 días posteriores a la solicitud se enviarán en un término de 7 días laborables.
+Para solicitar esta correspondencia, envíe un correo electrónico a [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) con el asunto: "DSR Request for emails relating to this account" (Solicitud de DSR para los correos electrónicos relacionados con esta cuenta").
+En el cuerpo del mensaje, indique qué información solicita (por ejemplo: envíen todos los correos electrónicos enviados a esta dirección de correo electrónico o recibidos desde ella). Todos los correos electrónicos relacionados con su dirección de correo electrónico en los 90 días posteriores a la solicitud se enviarán en un término de 7 días laborables.
 
 ### <a name="powershell-gallery-account-information"></a>Información sobre la cuenta de la Galería de PowerShell
 
@@ -92,7 +92,7 @@ Se le pedirá que proporcione el autor y una carpeta en su sistema donde se debe
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>Eliminación de los datos personales de la Galería de PowerShell
 
-Para eliminar la cuenta de la Galería de PowerShell o cualquiera de sus paquetes de la Galería de PowerShell, envíe un correo electrónico a cgadmin@microsoft.com con el asunto "GDPR Request for items relating to this account" (Solicitud relativa al RGPD para elementos relacionados con esta cuenta).
+Para eliminar la cuenta de la Galería de PowerShell o cualquiera de sus paquetes de la Galería de PowerShell, envíe un correo electrónico a cgadmin@microsoft.com con el asunto: "GDPR Request for items relating to this account" (Solicitud relativa al RGPD para elementos relacionados con esta cuenta).
 En el cuerpo del mensaje, indique qué información quiere que se elimine. Por ejemplo:
 
 - Elimine la versión x.y.z del paquete "nombre del paquete".

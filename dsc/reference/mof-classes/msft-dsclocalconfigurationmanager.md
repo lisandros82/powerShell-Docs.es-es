@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Clase MSFT_DSCLocalConfigurationManager
 ms.openlocfilehash: 7f6aaf209601e99b0120407eb301d32fcfda9eb8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55680544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078068"
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>Clase MSFT_DSCLocalConfigurationManager
 

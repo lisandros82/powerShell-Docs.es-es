@@ -4,22 +4,22 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Sintaxis de búsqueda de la Galería
 ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
-ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52742863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084307"
 ---
 # <a name="gallery-search-syntax"></a>Sintaxis de búsqueda de la Galería
 
-Puede buscar la Galería de PowerShell mediante el [sitio web de la Galería de PowerShell](https://www.powershellgallery.com/).
-Sitio web Galería de PowerShell ofrece un control searchbox de texto donde puede usar palabras, frases y expresiones de palabra clave para restringir los resultados de búsqueda.
+Puede buscar en la Galería de PowerShell mediante el [sitio web de la Galería de PowerShell](https://www.powershellgallery.com/).
+El sitio web de la Galería de PowerShell ofrece un cuadro de búsqueda de texto en el que puede usar palabras, frases y expresiones de palabra clave para restringir los resultados de la búsqueda.
 
 ## <a name="search-by-keywords"></a>Buscar por palabras clave
 
     dsc azure sql
 
-Búsqueda intenta encontrar documentos relevantes que contiene todos los 3 palabras clave y devolver documentos coincidentes.
+La búsqueda intenta encontrar documentos relevantes que contengan las tres palabras clave y devolver documentos coincidentes.
 
 ## <a name="search-using-phrases-and-keywords"></a>Buscar mediante palabras clave y frases
 
@@ -50,13 +50,13 @@ El filtro "Id" es una coincidencia de subcadena, por lo que si busca lo siguient
 
     Id:"azure"
 
-Esto proporciona resultados que incluyan AzureRM.Profile "y"Azure.Storage".
+Esto proporciona resultados que incluyen AzureRM.Profile "y"Azure.Storage".
 
 También puede buscar varias palabras clave en un único campo, 
 
     id:azure tags:intellisense
 
-Además, puede realizar búsquedas de frases con comillas dobles:
+También puede buscar frases usando comillas dobles:
 
     id:"azure.storage"
 

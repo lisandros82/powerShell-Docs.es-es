@@ -4,20 +4,20 @@ keywords: powershell, cmdlet
 title: Ordenar objetos
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
 ms.openlocfilehash: 06aa15d89888f1ecbe60b8e1dfb4efebb1d73673
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086058"
 ---
 # <a name="sorting-objects"></a>Ordenar objetos
 
-Podemos organizar los datos mostrados para que resulte más fácil examinar mediante el `Sort-Object` cmdlet. `Sort-Object` toma el nombre de uno o más propiedades para la ordenación y devuelve los datos ordenados por los valores de esas propiedades.
+Mediante el cmdlet `Sort-Object` se pueden organizar los datos que se muestran para facilitar su examen. `Sort-Object` toma el nombre de una o varias propiedades por los que se ordena y devuelve los datos ordenados por los valores de dichas propiedades.
 
 ## <a name="basic-sorting"></a>Ordenación básica
 
-Considere el problema de enumerar los subdirectorios y archivos en el directorio actual.
-Si queremos ordenar por **LastWriteTime** y luego por **nombre**, podemos hacerlo escribiendo:
+Considere el problema de enumerar los subdirectorios y los archivos del directorio actual.
+Si queremos ordenar por **LastWriteTime** y luego por **Name**, podemos escribir lo siguiente para hacerlo:
 
 ```powershell
 Get-ChildItem |
@@ -40,7 +40,7 @@ LastWriteTime          Name
 ...
 ```
 
-También puede ordenar los objetos en orden inverso especificando el **descendente** parámetro de modificador.
+También puede ordenar los objetos en orden inverso especificando el parámetro de modificador **Descending**.
 
 ```powershell
 Get-ChildItem |
@@ -68,11 +68,11 @@ LastWriteTime          Name
 ## <a name="using-hash-tables"></a>Uso de las tablas hash
 
 Puede ordenar propiedades diferentes en distintos órdenes mediante el uso de las tablas hash en una matriz.
-Cada tabla hash utiliza una **expresión** clave para especificar el nombre de propiedad como cadena y un **ascendente** o **descendente** clave para especificar el criterio de ordenación por `$true` o `$false`.
-El **expresión** clave es obligatoria.
-El **ascendente** o **descendente** clave es opcional.
+Cada tabla hash utiliza una clave **Expression** para especificar el nombre de la propiedad como cadena y una clave **Ascending** o **Descending** para especificar el criterio de ordenación por `$true` o `$false`.
+La clave **Expression** es obligatoria.
+La clave **Ascending** o **Descending** es opcional.
 
-El ejemplo siguiente ordena los objetos en orden descendente **LastWriteTime** orden y orden ascendente **nombre** orden.
+El ejemplo siguiente ordena los objetos en orden descendente por **LastWriteTime** y en orden ascendente por **Name**.
 
 ```powershell
 Get-ChildItem |
@@ -92,10 +92,10 @@ LastWriteTime          Name
 ...
 ```
 
-También puede establecer un bloque de script en el **expresión** clave.
-Cuando se ejecuta el `Sort-Object` cmdlet, se ejecuta el bloque de script y el resultado se utiliza para ordenar.
+También puede establecer un bloque de script en la clave **Expression**.
+Cuando se ejecuta el cmdlet `Sort-Object`, se ejecuta el bloque de script y el resultado se utiliza para ordenar.
 
-El ejemplo siguiente ordena en orden descendente por el intervalo de tiempo entre los objetos **CreationTime** y **LastWriteTime**.
+El ejemplo siguiente ordena los objetos en orden descendente según el intervalo de tiempo entre **CreationTime** y **LastWriteTime**.
 
 ```powershell
 Get-ChildItem |
@@ -119,7 +119,7 @@ LastWriteTime          CreationTime
 
 ## <a name="tips"></a>Sugerencias
 
-Puede omitir el **propiedad** nombre del parámetro como sigue:
+Puede omitir el nombre de parámetro **Property** del modo siguiente:
 
 ```powershell
 Sort-Object LastWriteTime, Name
@@ -137,7 +137,7 @@ Las claves de las tablas hash para la ordenación se pueden abreviar como sigue:
 Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
 ```
 
-En este ejemplo, el **e** significa **expresión**, el **d.** significa **descendente**y el **un** es el acrónimo **ascendente**.
+En este ejemplo, **e** significa **Expression**, **d** significa **Descending** y **a** significa **Ascending**.
 
 Para mejorar la legibilidad, puede colocar las tablas hash en una variable independiente:
 

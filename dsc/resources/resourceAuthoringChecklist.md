@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Lista de comprobación de creación de recursos
 ms.openlocfilehash: 7b1a096bba1b729c096b6689178ee022e12e4634
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402730"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076589"
 ---
 # <a name="resource-authoring-checklist"></a>Lista de comprobación de creación de recursos
 
@@ -210,11 +210,11 @@ La creación de ejemplos de calidad ayudará a otros usuarios a aprender a usarl
 
 Los mensajes de error correctos deben:
 
-- No existe: El mayor problema con los mensajes de error es que a menudo no existen, por tanto, asegúrese de que existan.
-- Fácil de entender: Códigos de error legible y poco claro no humana
-- Precisa Describir qué es exactamente el problema
-- Constructivos: Consejos para solucionar el problema
-- Normal: No culpar al usuario ni hacerle sentir mal
+- Existir: el principal problema de los mensajes de error es que a menudo no existen, por lo que debe asegurarse de que estén presentes.
+- Fáciles de entender: usar lenguaje natural, sin códigos de error ilegibles.
+- Precisos: describir el problema con exactitud.
+- Constructivos: aconsejar cómo corregir el problema.
+- Educados: no culpar al usuario ni hacerle sentir mal.
 
 Asegúrese de comprobar los errores en los escenarios de un extremo a otro (mediante `Start-DscConfiguration`), ya que pueden diferir de los devueltos al ejecutar las funciones de recursos directamente.
 
@@ -222,7 +222,7 @@ Asegúrese de comprobar los errores en los escenarios de un extremo a otro (medi
 
 Asegúrese de que los registros que emite el recurso son fáciles de comprender y proporcionan valor al usuario. Los recursos deben generar toda la información que pueda resultar útil para el usuario, pero un mayor número de registros no siempre es mejor. Debe evitar la redundancia y la salida de datos que no proporcionen valor adicional: evite que nadie deba consultar cientos de entradas de registro para encontrar lo que busca. Por supuesto, la ausencia de registros tampoco es una solución aceptable para este problema.
 
-Al realizar pruebas, también debe analizar los registros detallados y de depuración (ejecutando `Start-DscConfiguration` con los modificadores `–Verbose` y `–Debug`, respectivamente), así como los registros ETW. Para ver los registros de ETW de DSC, vaya al Visor de eventos y abra la carpeta siguiente: Las aplicaciones y servicios - Microsoft - Windows - Desired State Configuration.  De forma predeterminada, será Canal operativo, pero asegúrese de habilitar Canal analítico y Canal de depuración antes de ejecutar la configuración.
+Al realizar pruebas, también debe analizar los registros detallados y de depuración (ejecutando `Start-DscConfiguration` con los modificadores `–Verbose` y `–Debug`, respectivamente), así como los registros ETW. Para ver los registros de ETW de DSC, vaya al Visor de eventos y abra la carpeta siguiente: Applications and Services- Microsoft - Windows - Desired State Configuration.  De forma predeterminada, será Canal operativo, pero asegúrese de habilitar Canal analítico y Canal de depuración antes de ejecutar la configuración.
 Para habilitar los canales analítico o de depuración, puede ejecutar el script siguiente:
 
 ```powershell
@@ -283,7 +283,7 @@ Las funciones **Get/Set/Test-TargetResource** deben ejecutarse automáticamente 
 
 Esta lista de comprobación contiene elementos que es importante probar y/o que suelen omitirse. Se realizarán muchas pruebas, principalmente funcionales, que serán específicas para el recurso que se está probando y que no se mencionan aquí. No olvide los casos de prueba negativos.
 
-## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Procedimiento recomendado Módulo de recursos contiene la carpeta Tests con el script ResourceDesignerTests.ps1
+## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Procedimiento recomendado: el módulo de recursos contiene la carpeta Tests con el script ResourceDesignerTests.ps1
 
 Se recomienda crear la carpeta "Tests" en el módulo de recursos, crear el archivo `ResourceDesignerTests.ps1` y agregar pruebas mediante **Test-xDscResource** y **Test-xDscSchema** para todos los recursos del módulo determinado.
 De este modo puede validar rápidamente los esquemas de todos los recursos de los módulos determinados y realizar una comprobación de integridad antes de la publicación.
@@ -294,7 +294,7 @@ Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Procedimiento recomendado Carpeta de recursos contiene el script del Diseñador de recursos para generar el esquema
+## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Procedimiento recomendado: la carpeta de recursos contiene el script del Diseñador de recursos para generar el esquema
 
 Cada recurso debe contener un script del Diseñador de recursos que genere un esquema MOF del recurso. Este archivo debe colocarse en `<ResourceName>\ResourceDesignerScripts` y denominarse Generate`<ResourceName>Schema.ps1` Para el recurso xRemoteFile, este archivo se llamaría `GenerateXRemoteFileSchema.ps1` y contendría:
 
@@ -310,7 +310,7 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile
 ```
 
-## <a name="best-practice-resource-supports--whatif"></a>Procedimiento recomendado Recurso admite - WhatIf
+## <a name="best-practice-resource-supports--whatif"></a>Procedimiento recomendado: el recurso admite -whatif
 
 Si el recurso realiza operaciones "peligrosas", se recomienda implementar la funcionalidad `-WhatIf`. Después de hacerlo, asegúrese de que la salida `-WhatIf` describe correctamente las operaciones que se realizarían si se ejecutara el comando sin el modificador `-WhatIf`.
 Asimismo, compruebe que las operaciones no se ejecutan (no se realiza ningún cambio en el estado del nodo) cuando el modificador`–WhatIf` está presente.

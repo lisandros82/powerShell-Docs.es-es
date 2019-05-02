@@ -4,11 +4,11 @@ keywords: powershell, cmdlet
 title: Novedades de PowerShell ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
 ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55682345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058189"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Novedades de Windows PowerShell ISE
 En este tema se explican las características nuevas y actualizadas que se introdujeron en las versiones de Entorno de scripting integrado (ISE) de Windows PowerShell.
@@ -147,11 +147,11 @@ Windows PowerShell ISE 2.0 presenta paneles de comandos y de salida independient
 
 Si inicia Windows PowerShell ISE desde la línea de comandos (escribiendo **Powershell_ise.exe**), puede agregar los siguientes modificadores de línea de comandos nuevos.
 
-- *-NoProfile*: Se inicia Windows PowerShell ISE sin ejecutar **$profile**
+- *-NoProfile*: inicia Windows PowerShell ISE sin ejecutar **$profile**
 
 - *-Help*: muestra una ventana de Ayuda
 
-- *-mta*: Inicia Windows PowerShell ISE en modo de apartamento multiproceso. El modo de operación predeterminado de Windows PowerShell ISE es el modo de contenedor uniproceso o *-sta*.
+- *-mta*: inicia Windows PowerShell ISE en modo de contenedor multiproceso. El modo de operación predeterminado de Windows PowerShell ISE es el modo de contenedor uniproceso o *-sta*.
 
 **¿Qué valor aporta este cambio?**
 

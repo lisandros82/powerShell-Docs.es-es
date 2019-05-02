@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Creación de una canalización de integración continua e implementación continua con DSC
-ms.openlocfilehash: c305d9bc7e0f8c659129b5a20d0b7e8b34d09ba8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076487"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Creación de una canalización de integración continua e implementación continua con DSC
 
@@ -388,7 +388,7 @@ Vamos a crear una definición de versión para que el proyecto se implemente en 
 
 Para esto, agregue una nueva definición de versión asociada con la definición de compilación `InfraDNS` que creó anteriormente.
 Asegúrese de seleccionar **Implementación continua** para que una nueva versión se desencadene cada vez que se complete una nueva compilación.
-[Cómo: Trabajar con definiciones de versión](https://www.visualstudio.com/en-us/docs/build/actions/work-with-release-definitions)) y configúrelo como sigue:
+([¿Cuáles son las canalizaciones de versiones? ](/azure/devops/pipelines/release/what-is-release-management)) y configúrelo como sigue:
 
 Agregue los pasos siguientes a la definición de versión:
 

@@ -4,11 +4,11 @@ keywords: powershell, cmdlet
 title: Accesibilidad en ISE de Windows PowerShell
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058461"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Accesibilidad en ISE de Windows PowerShell
 
@@ -85,8 +85,8 @@ Puede usar los siguientes métodos abreviados de teclado cuando ejecute scripts 
 |**Ejecutar**|F5|
 |**Ejecutar selección**|F8|
 |**Detener la ejecución**|CTRL+INTER. CTRL+C se puede usar cuando el contexto no es ambiguo (cuando no hay ningún texto seleccionado).|
-|**Tabulación** (para el siguiente script)|CTRL + TAB **Nota:** Pestaña para el siguiente script funciona solo cuando hay una sola pestaña de PowerShell abierta, o cuando tiene más de una pestaña de PowerShell abierta, pero el foco está en el panel de scripts.|
-|**Tabulación** (para el script anterior)|CTRL + MAYÚS + TAB **Nota:** Pestaña para el script anterior funciona cuando hay solo una pestaña de PowerShell abierta, o si tiene más de una pestaña de PowerShell abierta, pero el foco está en el panel de scripts.|
+|**Tabulación** (para el siguiente script)|CTRL+TAB **Nota:** El desplazamiento con la tecla TAB al siguiente script solo funciona si hay una sola pestaña de PowerShell abierta, o bien si hay más de una abierta, pero el foco está en el panel de scripts.|
+|**Tabulación** (para el script anterior)|CTRL+SHIFT+TAB **Nota:** El desplazamiento con la tecla TAB al script anterior solo funciona si hay una sola pestaña de PowerShell abierta, o si hay más de una abierta, pero el foco está en el panel de scripts.|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Métodos abreviados de teclado para personalizar la vista
 

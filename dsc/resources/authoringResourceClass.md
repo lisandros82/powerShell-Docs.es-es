@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Escribir un recurso de DSC personalizado con clases de PowerShell
 ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55682616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076725"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Escribir un recurso de DSC personalizado con clases de PowerShell
 
@@ -21,7 +21,7 @@ En este tema, se creará un recurso simple denominado **FileResource** que admin
 
 Para más información sobre los recursos DSC, consulte [Crear recursos de configuración de estado deseado de Windows PowerShell personalizados](authoringResource.md).
 
->**Nota:** No se admiten colecciones genéricas en recursos basados en clases.
+>**Nota:** Los recursos basados en clases no admiten colecciones genéricas.
 
 ## <a name="folder-structure-for-a-class-resource"></a>Estructura de carpetas de un recurso de clase
 
@@ -66,8 +66,8 @@ Observe que las propiedades se modifican mediante atributos. El significado de l
 
 - **DscProperty(Key)**: La propiedad es obligatoria. Se trata de una clave. Los valores de todas las propiedades marcadas como claves deben combinarse para identificar de forma única la instancia de un recurso dentro de una configuración.
 - **DscProperty(Mandatory)**: La propiedad es obligatoria.
-- **DscProperty(NotConfigurable)**: la propiedad es de solo lectura. Las propiedades marcadas con este atributo no se pueden establecer mediante una configuración, pero se rellenan con el método **Get()** cuando existe.
-- **DscProperty()**: La propiedad es configurable, pero no es necesario.
+- **DscProperty(NotConfigurable)**: La propiedad es de solo lectura. Las propiedades marcadas con este atributo no se pueden establecer mediante una configuración, pero se rellenan con el método **Get()** cuando existe.
+- **DscProperty()**: La propiedad se puede configurar, pero no es obligatoria.
 
 Las propiedades **$Path** y **$SourcePath** son cadenas. **$CreationTime** es una propiedad [DateTime](/dotnet/api/system.datetime). La propiedad **$Ensure** es un tipo de enumeración, que se define como se indica a continuación.
 
@@ -473,7 +473,7 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="supporting-psdscrunascredential"></a>Compatibilidad con PsDscRunAsCredential
 
->**Nota:** **PsDscRunAsCredential** se admite en PowerShell 5.0 y versiones posteriores.
+>**Nota:** **PsDscRunAsCredential** es compatible con PowerShell 5.0 y versiones posteriores.
 
 La propiedad **PsDscRunAsCredential** se puede usar en el bloque de recursos de [configuraciones de DSC](../configurations/configurations.md) para especificar que el recurso se debe ejecutar bajo un conjunto especificado de credenciales.
 Para más información, consulte [DSC de ejecución con las credenciales de usuario](../configurations/runAsUser.md).
@@ -496,11 +496,11 @@ class FileResource {
 }
 ```
 
-### <a name="declaring-multiple-class-resources-in-a-module"></a>Declarar varios recursos de clase en un módulo
+### <a name="declaring-multiple-class-resources-in-a-module"></a>Declaración de varios recursos de clase en un módulo
 
-Un módulo puede definir varios recursos de DSC basado en clases. Puede crear la estructura de carpetas de las maneras siguientes:
+Un módulo puede definir varios recursos de DSC basados en clases. Puede crear la estructura de carpetas de las maneras siguientes:
 
-1. Definir el primer recurso de la "<ModuleName>. psm1" archivos y los recursos siguientes en el **DSCResources** carpeta.
+1. Defina el primer recurso en el archivo "<ModuleName>.psm1" y los recursos siguientes en la carpeta **DSCResources**.
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -511,7 +511,7 @@ Un módulo puede definir varios recursos de DSC basado en clases. Puede crear la
            |- SecondResource.psm1
    ```
 
-2. Definir todos los recursos en el **DSCResources** carpeta.
+2. Defina todos los recursos en la carpeta **DSCResources**.
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -524,7 +524,7 @@ Un módulo puede definir varios recursos de DSC basado en clases. Puede crear la
    ```
 
 > [!NOTE]
-> En los ejemplos anteriores, agregue los archivos. PSM1 el **DSCResources** a la **NestedModules** clave en el archivo. PSD1.
+> En los ejemplos anteriores, agregue cualquier archivo PSM1 bajo **DSCResources** a la clave **NestedModules** en su archivo PSD1.
 
 ### <a name="access-the-user-context"></a>Acceso al contexto de usuario
 

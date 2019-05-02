@@ -4,15 +4,15 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Introducción a la Galería de PowerShell
 ms.openlocfilehash: c8beba3009e462ce52cdecd34fc0313d9234f289
-ms.sourcegitcommit: 1082b13115c5c5be4b76574ba55307b3e567983f
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52576896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084766"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Introducción a la Galería de PowerShell
 
-La Galería de PowerShell es un repositorio de paquete que contiene los recursos de DSC que puede descargar y aprovechar, módulos y scripts. Use los cmdlets en el [PowerShellGet](/powershell/module/powershellget) module para instalar paquetes desde la Galería de PowerShell. No es necesario iniciar sesión para descargar los elementos de la Galería de PowerShell.
+La Galería de PowerShell es un repositorio de paquetes que contiene scripts, módulos y recursos DSC que puede descargar y aprovechar. Los cmdlets del módulo [PowerShellGet](/powershell/module/powershellget) se usan para instalar paquetes desde la Galería de PowerShell. No es necesario iniciar sesión para descargar los elementos de la Galería de PowerShell.
 
 > [!NOTE]
 > Es posible descargar un paquete desde la Galería de PowerShell directamente, pero este no es un enfoque recomendado.
@@ -20,9 +20,9 @@ La Galería de PowerShell es un repositorio de paquete que contiene los recursos
 
 ## <a name="discovering-packages-from-the-powershell-gallery"></a>Detectar paquetes de la Galería de PowerShell
 
-Puede encontrar los paquetes en la Galería de PowerShell mediante el **búsqueda** control en la Galería de PowerShell [página principal](https://www.powershellgallery.com), o desplazándose por los módulos y Scripts desde la [página paquetes ](https://www.powershellgallery.com/packages). También puede buscar paquetes desde la Galería de PowerShell al ejecutar el [Find-Module][], [Find-DscResource], y [Find-Script][] cmdlets, según el tipo de paquete con `-Repository PSGallery`.
+Puede buscar paquetes en la Galería de PowerShell mediante el control de **búsqueda** en la [página principal](https://www.powershellgallery.com) de la Galería de PowerShell, o examinando los módulos y scripts de la [página de paquetes](https://www.powershellgallery.com/packages). También puede buscar paquetes de la Galería de PowerShell al ejecutar los cmdlets [Find-Module][], [Find-DscResource] y [Find-Script][], en función del tipo de paquete, con `-Repository PSGallery`.
 
-Puede filtrar los resultados de la galería mediante los parámetros siguientes:
+Puede filtrar los resultados de la Galería mediante los siguientes parámetros:
 
 - Nombre
 - AllVersions
@@ -75,15 +75,15 @@ Para instalar una versión anterior del paquete, agregue el parámetro `-Require
 
 ### <a name="deploy"></a>Implementar
 
-Para implementar un paquete desde la Galería de PowerShell para Azure Automation, haga clic en **Azure Automation**, a continuación, haga clic en **implementar en Azure Automation** en la página de detalles del paquete. Se le redirigirá al Portal de administración de Azure, donde deberá iniciar sesión con sus credenciales de cuenta de Azure. Tenga en cuenta que la implementación de paquetes con dependencias implementa todas las dependencias en Azure Automation. El botón Deploy to Azure Automation (Implementar en Azure Automation) se puede deshabilitar mediante la adición de la etiqueta **AzureAutomationNotSupported** a los metadatos del paquete.
+Para implementar un paquete desde la Galería de PowerShell en Azure Automation, haga clic en **Azure Automation** y luego en **Implementar en Azure Automation** en la página de detalles del paquete. Se le redirige al Portal de administración de Azure, donde deberá iniciar sesión con sus credenciales de la cuenta de Azure. Tenga en cuenta que, si se implementan paquetes con dependencias, se implementan todas las dependencias en Azure Automation. El botón Deploy to Azure Automation (Implementar en Azure Automation) se puede deshabilitar mediante la adición de la etiqueta **AzureAutomationNotSupported** a los metadatos del paquete.
 
 Para obtener más información sobre Azure Automation, consulte la documentación de [Azure Automation](/azure/automation).
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>Actualizar paquetes desde la Galería de PowerShell
 
-Para actualizar paquetes instalados desde la Galería de PowerShell, ejecute los cmdlets [Update-Module][] o [Update-Script][]. Cuando se ejecuta sin parámetros adicionales, [] [Update-Module] al intentar actualizar todos los módulos instalados mediante la ejecución de [Install-Module][]. Para actualizar módulos de forma selectiva, agregue el parámetro `-Name`. 
+Para actualizar paquetes instalados desde la Galería de PowerShell, ejecute los cmdlets [Update-Module][] o [Update-Script][]. Cuando se ejecuta sin parámetros adicionales, [Update-Module][] intenta actualizar todos los módulos instalado mediante la ejecución de [Install-Module][]. Para actualizar módulos de forma selectiva, agregue el parámetro `-Name`. 
 
-De forma similar, cuando se ejecuta sin parámetros adicionales, [] [Update-Script] también intenta actualizar todos los scripts que se instala ejecutando [Install-Script][]. Para actualizar scripts de forma selectiva, agregue el parámetro `-Name`.
+Del mismo modo, cuando se ejecuta sin parámetros adicionales, [Update-Script][] también intenta actualizar todos los scripts instalados mediante la ejecución de [Install-Script][]. Para actualizar scripts de forma selectiva, agregue el parámetro `-Name`.
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>Enumerar los paquetes instalados desde la Galería de PowerShell
 

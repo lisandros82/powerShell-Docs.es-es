@@ -3,11 +3,11 @@ ms.date: 06/20/2018
 keywords: dsc,powershell,configuration,setup
 title: Recurso PackageManagement de DSC
 ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077626"
 ---
 # <a name="dsc-packagemanagement-resource"></a>Recurso PackageManagement de DSC
 

@@ -4,11 +4,11 @@ contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Arranque de NuGet
 ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084392"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Arrancar el proveedor de NuGet y NuGet.exe
 
@@ -155,7 +155,7 @@ Si los cmdlets se ejecutaron como usuario sin permisos elevados:
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-Una segunda opción es descargar NuGet.exe desde el sitio web NuGet.Org: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads)Cuando se selecciona una versión de NuGet para máquinas de producción, asegúrese de que sea una versión posterior a 2.8.5.208 e identifique la versión etiquetada como "recomendada". Recuerde desbloquear el archivo si se descargó con un explorador. Para ello, use el cmdlet `Unblock-File`.
+Otra opción consiste en descargar NuGet.exe desde el sitio web de NuGet.org: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) Cuando se selecciona una versión de NuGet para máquinas de producción, asegúrese de que sea una versión posterior a 2.8.5.208 e identifique la versión etiquetada como "recomendada". Recuerde desbloquear el archivo si se descargó con un explorador. Para ello, use el cmdlet `Unblock-File`.
 
 En cualquier caso, el archivo NuGet.exe se puede copiar a cualquier ubicación en `$env:path`, pero las ubicaciones estándar son las siguientes:
 
