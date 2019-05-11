@@ -8,16 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
-ms.openlocfilehash: cc014487a680747ad59437052f79d4576154a1cb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9a080b6db7416ae6bf65a1b0353e9f17a56cc6c5
+ms.sourcegitcommit: 00cf9a99972ce40db7c25b9a3fc6152dec6bddb6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082556"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64530624"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Inicio rápido de Host de Windows PowerShell
 
-Para hospedar Windows PowerShell en la aplicación, usa el [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) clase. Esta clase proporciona métodos que se creación una canalización de comandos y, a continuación, ejecutan esos comandos en un espacio de ejecución. La manera más sencilla de crear una aplicación host es usar el espacio de ejecución predeterminado. El espacio de ejecución predeterminada contiene todos los comandos de Windows PowerShell core. Si desea que la aplicación para exponer solo un subconjunto de los comandos de Windows PowerShell, debe crear un espacio de ejecución personalizado.
+Para hospedar Windows PowerShell en la aplicación, usa el [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) clase.
+Esta clase proporciona métodos que se creación una canalización de comandos y, a continuación, ejecutan esos comandos en un espacio de ejecución.
+La manera más sencilla de crear una aplicación host es usar el espacio de ejecución predeterminado.
+El espacio de ejecución predeterminada contiene todos los comandos de Windows PowerShell core.
+Si desea que la aplicación para exponer solo un subconjunto de los comandos de Windows PowerShell, debe crear un espacio de ejecución personalizado.
 
 ## <a name="using-the-default-runspace"></a>Uso de espacio de ejecución predeterminado
 
@@ -25,7 +29,9 @@ Para empezar, se utilizará el espacio de ejecución de forma predeterminada y u
 
 ### <a name="addcommand"></a>AddCommand
 
-Usa el [System.Management.Automation.Powershell.AddCommand*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) método de la [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) clase para agregar comandos a la canalización. Por ejemplo, suponga que desea obtener la lista de procesos en ejecución en el equipo. La forma de ejecutar este comando es como sigue.
+Usa el [System.Management.Automation.Powershell.AddCommand](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) método para agregar comandos a la canalización.
+Por ejemplo, suponga que desea obtener la lista de procesos en ejecución en el equipo.
+La forma de ejecutar este comando es como sigue.
 
 1. Crear un [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) objeto.
 
@@ -45,11 +51,14 @@ Usa el [System.Management.Automation.Powershell.AddCommand*](/dotnet/api/System.
    ps.Invoke();
    ```
 
-Si se llama a la [System.Management.Automation.Powershell.AddCommand*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) más de una vez antes de llamar al método el [System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) método, el resultado de la primer comando se canaliza hacia el segundo y así sucesivamente. Si no desea canalizar el resultado de un comando a un comando anterior, puede agregarlo mediante una llamada a la [System.Management.Automation.Powershell.AddStatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) en su lugar.
+Si se llama al método AddCommand más de una vez antes de llamar a la [System.Management.Automation.Powershell.Invoke](/dotnet/api/System.Management.Automation.PowerShell.Invoke) método, el resultado del primer comando se canaliza hacia el segundo y así sucesivamente.
+Si no desea canalizar el resultado de un comando a un comando anterior, puede agregarlo mediante una llamada a la [System.Management.Automation.Powershell.AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) en su lugar.
 
 ### <a name="addparameter"></a>AddParameter
 
-El ejemplo anterior ejecuta un comando único sin ningún parámetro. Puede agregar parámetros al comando mediante el [System.Management.Automation.PSCommand.AddParameter*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) método, por ejemplo, el código siguiente obtiene una lista de todos los procesos que se denominan `PowerShell` que se ejecutan en el máquina.
+El ejemplo anterior ejecuta un comando único sin ningún parámetro.
+Puede agregar parámetros al comando mediante el [System.Management.Automation.PSCommand.AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) método.
+Por ejemplo, el código siguiente obtiene una lista de todos los procesos que se denominan `PowerShell` que se ejecuta en la máquina.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -57,7 +66,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
-Puede agregar parámetros adicionales mediante una llamada a [System.Management.Automation.PSCommand.AddParameter*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) repetidamente.
+Puede agregar parámetros adicionales llamando al método AddParameter repetidamente.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -66,7 +75,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
-También puede agregar un diccionario de nombres de parámetros y valores mediante una llamada a la [System.Management.Automation.PowerShell.AddParameters*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) método.
+También puede agregar un diccionario de nombres de parámetros y valores mediante una llamada a la [System.Management.Automation.PowerShell.AddParameters](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) método.
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
@@ -81,7 +90,8 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
-Puede simular el procesamiento por lotes utilizando el [System.Management.Automation.PowerShell.AddStatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) método, que agrega una instrucción adicional al final de la canalización en el código siguiente obtiene una lista de procesos en ejecución con el nombre `PowerShell`y, a continuación, obtiene la lista de servicios en ejecución.
+Puede simular el procesamiento por lotes utilizando el [System.Management.Automation.PowerShell.AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) método, que agrega una instrucción adicional al final de la canalización.
+El código siguiente obtiene una lista de procesos en ejecución con el nombre `PowerShell`y, a continuación, obtiene la lista de servicios en ejecución.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -92,14 +102,18 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
-Puede ejecutar un script existente mediante una llamada a la [System.Management.Automation.PowerShell.AddScript*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) método. El ejemplo siguiente agrega una secuencia de comandos a la canalización y lo ejecuta. En este ejemplo se da por supuesto que ya hay un script denominado `MyScript.ps1` en una carpeta denominada `D:\PSScripts`.
+Puede ejecutar un script existente mediante una llamada a la [System.Management.Automation.PowerShell.AddScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript) método.
+El ejemplo siguiente agrega una secuencia de comandos a la canalización y lo ejecuta.
+En este ejemplo se da por supuesto que ya hay un script denominado `MyScript.ps1` en una carpeta denominada `D:\PSScripts`.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
-También hay una versión de la [System.Management.Automation.PowerShell.AddScript*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) método que toma un parámetro booleano denominado `useLocalScope`. Si este parámetro se establece en `true`, a continuación, el script se ejecuta en el ámbito local. El siguiente código ejecutará el script en el ámbito local.
+También hay una versión del método AddScript que toma un parámetro booleano denominado `useLocalScope`.
+Si este parámetro se establece en `true`, a continuación, el script se ejecuta en el ámbito local.
+El siguiente código ejecutará el script en el ámbito local.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -108,11 +122,15 @@ ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 
 ## <a name="creating-a-custom-runspace"></a>Creación de un espacio de ejecución personalizado
 
-Mientras todos los comandos de Windows PowerShell core carga en el espacio de ejecución predeterminado utilizado en los ejemplos anteriores, puede crear un espacio de ejecución personalizado que solo un subconjunto especificado de todos los comandos de carga. Es posible que desee hacer esto para mejorar el rendimiento (cargando un mayor número de comandos es una disminución del rendimiento), o para restringir la capacidad del usuario para realizar operaciones. Un espacio de ejecución que expone sólo un número limitado de comandos se llama a un espacio de ejecución restringido. Para crear un espacio de ejecución restringido, utilice el [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) y [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) clases.
+Mientras todos los comandos de Windows PowerShell core carga en el espacio de ejecución predeterminado utilizado en los ejemplos anteriores, puede crear un espacio de ejecución personalizado que solo un subconjunto especificado de todos los comandos de carga.
+Es posible que desee hacer esto para mejorar el rendimiento (cargando un mayor número de comandos es una disminución del rendimiento), o para restringir la capacidad del usuario para realizar operaciones.
+Un espacio de ejecución que expone sólo un número limitado de comandos se llama a un espacio de ejecución restringido.
+Para crear un espacio de ejecución restringido, utilice el [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) y [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) clases.
 
 ### <a name="creating-an-initialsessionstate-object"></a>Creación de un objeto InitialSessionState
 
-Para crear un espacio de ejecución personalizado, debe crear primero un [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto. En el ejemplo siguiente, usamos el [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) para crear un espacio de ejecución después de crear el valor predeterminado es [System.Management.Automation.Runspaces.InitialSessionState ](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto.
+Para crear un espacio de ejecución personalizado, debe crear primero un [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto.
+En el ejemplo siguiente, usamos el [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) para crear un espacio de ejecución después de crear un objeto de InitialSessionState predeterminado.
 
 ```csharp
 InitialSessionState iss = InitialSessionState.CreateDefault();
@@ -126,11 +144,15 @@ ps.Invoke();
 
 ### <a name="constraining-the-runspace"></a>Restringir el espacio de ejecución
 
-En el ejemplo anterior, creamos un valor predeterminado [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto que se carga todo el núcleo integrado de Windows PowerShell. Llamamos también podríamos haber a la [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) método para crear un objeto InitialSessionState que se pueda cargar solo los comandos en el Microsoft.PowerShell.Core complemento. Para crear un espacio de ejecución más restringido, debe crear vacío [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto mediante una llamada a la [ System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) método y, a continuación, agregar comandos a la InitialSessionState.
+En el ejemplo anterior, creamos un valor predeterminado [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objeto que se carga todo el núcleo integrado de Windows PowerShell.
+Llamamos también podríamos haber a la [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) método para crear un objeto InitialSessionState que se pueda cargar solo los comandos en el Microsoft.PowerShell.Core complemento.
+Para crear un espacio de ejecución más restringido, debe crear un objeto InitialSessionState vacío llamando el [System.Management.Automation.Runspaces.InitialSessionState.Create](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) método y, a continuación, agregar comandos a la InitialSessionState.
 
 Uso de un espacio de ejecución que carga únicamente los comandos que especifique proporciona mejora significativa del rendimiento.
 
-Utilice los métodos de la [System.Management.Automation.Runspaces.SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) clase para definir los cmdlets de para el estado de sesión inicial. En el ejemplo siguiente se crea un estado de sesión inicial vacío, a continuación, define y agrega el `Get-Command` y `Import-Module` comandos para el estado de sesión inicial. A continuación, crear un espacio de ejecución restringido por ese estado de sesión inicial y ejecute los comandos en ese espacio de ejecución.
+Utilice los métodos de la [System.Management.Automation.Runspaces.SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) clase para definir los cmdlets de para el estado de sesión inicial.
+En el ejemplo siguiente se crea un estado de sesión inicial vacío, a continuación, define y agrega el `Get-Command` y `Import-Module` comandos para el estado de sesión inicial.
+A continuación, crear un espacio de ejecución restringido por ese estado de sesión inicial y ejecute los comandos en ese espacio de ejecución.
 
 Crear el estado de sesión inicial.
 

@@ -8,26 +8,29 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068137"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229289"
 ---
 # <a name="events01-sample"></a>Ejemplo Events01
 
-En este ejemplo se muestra cómo crear un cmdlet que permite al usuario al registrarse para eventos generados por [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Con este cmdlet, los usuarios pueden registrar una acción que se ejecutará cuando se crea un archivo en un directorio específico. En este ejemplo se deriva de la [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) clase base.
+En este ejemplo se muestra cómo crear un cmdlet que permite al usuario al registrarse para eventos generados por [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
+Con este cmdlet, los usuarios pueden registrar una acción que se ejecutará cuando se crea un archivo en un directorio específico.
+En este ejemplo se deriva de la [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) clase base.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Cómo generar el ejemplo mediante Visual Studio.
 
-1. Con Windows PowerShell 2.0 instalado el SDK, vaya a la carpeta Events01. La ubicación predeterminada es C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.
+1. Con Windows PowerShell 2.0 instalado el SDK, vaya a la carpeta Events01.
+   La ubicación predeterminada es `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
 
-2. Haga doble clic en el icono del archivo de solución (.sln). Se abre el proyecto de ejemplo en Microsoft Visual Studio.
+2. Haga doble clic en el icono del archivo de solución (.sln).
+   Se abre el proyecto de ejemplo en Microsoft Visual Studio.
 
 3. En el **compilar** menú, seleccione **compilar solución**.
-
-    En las carpetas \bin o \bin\debug de forma predeterminada, se compilará la biblioteca para el ejemplo.
+   La biblioteca para el ejemplo se generará en el valor predeterminado `\bin` o `\bin\debug` carpetas.
 
 ### <a name="how-to-run-the-sample"></a>Cómo ejecutar el ejemplo
 
@@ -78,11 +81,14 @@ Este ejemplo requiere Windows PowerShell 2.0.
 
 Este ejemplo muestra lo siguiente.
 
-- Cómo escribir un cmdlet para el registro de eventos. El cmdlet se deriva de la [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) (clase), que proporciona compatibilidad para los parámetros comunes a Register-* cmdlets del evento. Los cmdlets que se derivan de [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) sólo tiene que definir sus parámetros concretos e invalidar la `GetSourceObject` y `GetSourceObjectEventName` métodos abstractos.
+### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Cómo escribir un cmdlet para el registro de eventos
+
+El cmdlet se deriva de la [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) (clase), que proporciona compatibilidad para los parámetros comunes a la `Register-*Event` cmdlets.
+Los cmdlets que se derivan de [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) sólo tiene que definir sus parámetros concretos e invalidar la `GetSourceObject` y `GetSourceObjectEventName` métodos abstractos.
 
 ## <a name="example"></a>Ejemplo
 
-En este ejemplo se muestra cómo registrar los eventos generados por [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).
+En este ejemplo se muestra cómo registrar los eventos generados por [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
 
 ```csharp
 namespace Sample
@@ -183,4 +189,4 @@ namespace Sample
 
 ## <a name="see-also"></a>Véase también
 
-[Escribir un cmdlet de Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)
+[Escribir un cmdlet de Windows PowerShell](writing-a-windows-powershell-cmdlet.md)

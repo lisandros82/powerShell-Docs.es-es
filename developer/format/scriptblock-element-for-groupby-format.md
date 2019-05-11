@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
 caps.latest.revision: 6
-ms.openlocfilehash: f2f6b9af7740b1231881294c2f32bf97b5a1568b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 37a297228eb33ff75daf94a12635d42b52c6cc9f
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62064516"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229324"
 ---
 # <a name="scriptblock-element-for-groupby-format"></a>Elemento ScriptBlock para GroupBy (formato)
 
@@ -51,14 +51,14 @@ Especifique el script que se evalúa.
 
 ## <a name="remarks"></a>Observaciones
 
-Windows PowerShell se inicia un nuevo grupo cada vez que cambia el valor de esta secuencia de comandos.
+PowerShell inicia un nuevo grupo cada vez que cambia el valor de esta secuencia de comandos.
 
-Cuando se especifica este elemento, no puede especificar el [PropertyName](http://msdn.microsoft.com/en-us/396dede0-039a-4a87-a5ef-3ecabb729676) elemento para iniciar un nuevo grupo.
+Cuando se especifica este elemento, no puede especificar el [PropertyName](propertyname-element-for-groupby-format.md) elemento para iniciar un nuevo grupo.
 
 ## <a name="see-also"></a>Véase también
 
-[Elemento PropertyName para GroupBy (formato)](./propertyname-element-for-groupby-format.md)
+[Elemento PropertyName para GroupBy (formato)](propertyname-element-for-groupby-format.md)
 
-[Elemento GroupBy para vista (formato)](./groupby-element-for-view-format.md)
+[Elemento GroupBy para vista (formato)](groupby-element-for-view-format.md)
 
-[Escribir un archivo de formato de PowerShell](./writing-a-powershell-formatting-file.md)
+[Escribir un archivo de formato de PowerShell](writing-a-powershell-formatting-file.md)

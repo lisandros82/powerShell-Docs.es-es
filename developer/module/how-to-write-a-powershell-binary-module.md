@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
-ms.openlocfilehash: 9ddb3bc172c66314603d2be4df5192a76c92e05d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082233"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229321"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>Cómo escribir un módulo binario de PowerShell
 
@@ -29,7 +29,10 @@ El siguiente procedimiento describe cómo crear e instalar un módulo binario de
 
 2. Si es necesario, cree el resto de la solución: (otros cmdlets, archivos XML etc.) y se describen con un manifiesto de módulo.
 
-   Además de describir los ensamblados de cmdlet en la solución, un manifiesto de módulo puede describir cómo desea que el módulo exporta y se importa, se expondrán los cmdlets y lo pasará archivos adicionales en el módulo. Como se indicó anteriormente sin embargo, PowerShell puede tratar un cmdlet binario como un módulo sin ningún esfuerzo adicional. Por lo tanto, un manifiesto de módulo es útil principalmente para combinar varios archivos en un único paquete, o para controlar explícitamente la publicación de un ensamblado determinado. Para obtener más información, consulte [cómo escribir un manifiesto del módulo de PowerShell](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+   Además de describir los ensamblados de cmdlet en la solución, un manifiesto de módulo puede describir cómo desea que el módulo exporta y se importa, se expondrán los cmdlets y lo pasará archivos adicionales en el módulo.
+   Como se indicó anteriormente sin embargo, PowerShell puede tratar un cmdlet binario como un módulo sin ningún esfuerzo adicional.
+   Por lo tanto, un manifiesto de módulo es útil principalmente para combinar varios archivos en un único paquete, o para controlar explícitamente la publicación de un ensamblado determinado.
+   Para obtener más información, consulte [cómo escribir un manifiesto del módulo de PowerShell](how-to-write-a-powershell-module-manifest.md).
 
    El siguiente código es muy sencillo C# bloque de código que contiene tres cmdlets en el mismo archivo que se pueden usar como un módulo.
 
@@ -82,7 +85,9 @@ El siguiente procedimiento describe cómo crear e instalar un módulo binario de
 
 Los cmdlets y proveedores que existen en ensamblados de complementos se pueden cargar como módulos binarios. Cuando los ensamblados de complementos se cargan como módulos binarios, los cmdlets y proveedores en el complemento están disponibles para el usuario, pero se omite la clase de complemento en el ensamblado y el complemento no está registrado. Como resultado, los cmdlets del complemento proporcionados por Windows PowerShell no puede detectar el complemento, aunque los cmdlets y proveedores están disponibles para la sesión.
 
-Además, los archivos de formato o tipos que se hace referencia mediante el complemento no se puede importar como parte de un módulo binario. Para importar los archivos de formato y tipos debe crear un manifiesto de módulo. Ver, [cómo escribir un manifiesto de módulo de PowerShell](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+Además, los archivos de formato o tipos que se hace referencia mediante el complemento no se puede importar como parte de un módulo binario.
+Para importar los archivos de formato y tipos debe crear un manifiesto de módulo.
+Ver, [cómo escribir un manifiesto de módulo de PowerShell](how-to-write-a-powershell-module-manifest.md).
 
 ## <a name="see-also"></a>Véase también
 
