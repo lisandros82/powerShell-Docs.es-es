@@ -68,7 +68,7 @@
   items:
     - name: Consola
       items:
-        - name: Ayuda para la línea de comandos de PowerShell.exe
+        - name: Opciones de línea de comandos de PowerShell
           href: components/console/powershell.exe-command-line-help.md
         - name: Usar expansión de pestañas
           href: components/console/using-tab-expansion.md
