@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Configuración del administrador de configuración local
-ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 15d696587d54d4a6464096cfb78757c41e9185c6
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079685"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229499"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Configuración del administrador de configuración local
 
@@ -121,6 +121,10 @@ Un bloque **ConfigurationRepositoryWeb** define las siguientes propiedades.
 |ConfigurationNames|String[]|Una matriz de nombres de configuraciones que el nodo de destino extraerá. Solo se usan si el nodo se registra con el servicio de extracción mediante un elemento **RegistrationKey**. Para más información, consulte [Configuración de un cliente de extracción con nombres de configuración](../pull-server/pullClientConfigNames.md).|
 |RegistrationKey|cadena|Un GUID que registra el nodo con el servicio de extracción. Para más información, consulte [Configuración de un cliente de extracción con nombres de configuración](../pull-server/pullClientConfigNames.md).|
 |ServerURL|cadena|La dirección URL del servicio de configuración.|
+|ProxyURL*|cadena|URL del proxy HTTP que se debe usar al conectar con el servicio de configuración.|
+|ProxyCredential*|PSCredential|Credencial que se debe usar para el proxy HTTP.|
+
+>NOTA \* Se admite en Windows 1809 y versiones posteriores.
 
 Hay disponible un script de ejemplo para simplificar la configuración del valor ConfigurationRepositoryWeb para los nodos locales, consulte el artículo sobre la [configuración de metaconfiguraciones DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -143,6 +147,10 @@ Un bloque **ResourceRepositoryWeb** define las siguientes propiedades.
 |CertificateID|cadena|La huella digital de un certificado usado para autenticar el servidor.|
 |RegistrationKey|cadena|Un GUID que identifica el nodo para el servicio de extracción.|
 |ServerURL|cadena|La dirección URL del servidor de configuración.|
+|ProxyURL*|cadena|URL del proxy HTTP que se debe usar al conectar con el servicio de configuración.|
+|ProxyCredential*|PSCredential|Credencial que se debe usar para el proxy HTTP.|
+
+>NOTA \* Se admite en Windows 1809 y versiones posteriores.
 
 Hay disponible un script de ejemplo para simplificar la configuración del valor ResourceRepositoryWeb para los nodos locales, consulte el artículo sobre la [configuración de metaconfiguraciones DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -166,6 +174,10 @@ El rol del servidor de informes no es compatible con el servicio de extracción 
 |CertificateID|cadena|La huella digital de un certificado usado para autenticar el servidor.|
 |RegistrationKey|cadena|Un GUID que identifica el nodo para el servicio de extracción.|
 |ServerURL|cadena|La dirección URL del servidor de configuración.|
+|ProxyURL*|cadena|URL del proxy HTTP que se debe usar al conectar con el servicio de configuración.|
+|ProxyCredential*|PSCredential|Credencial que se debe usar para el proxy HTTP.|
+
+>NOTA \* Se admite en Windows 1809 y versiones posteriores.
 
 Hay disponible un script de ejemplo para simplificar la configuración del valor ReportServerWeb para los nodos locales, consulte el artículo sobre la [configuración de metaconfiguraciones DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 

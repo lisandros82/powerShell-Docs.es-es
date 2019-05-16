@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: dsc,powershell,configuration,setup
 title: Solución de problemas de DSC
-ms.openlocfilehash: 5ee1b68f4f769426fea3c8e10738c3bb6ef94480
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076555"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229537"
 ---
 # <a name="troubleshooting-dsc"></a>Solución de problemas de DSC
 
@@ -627,6 +627,21 @@ onlyProperty                            PSComputerName
 ------------                            --------------
 14                                      localhost
 ```
+
+## <a name="dsc-returns-unexpected-response-code-internalservererror-when-registering-with-windows-pull-server"></a>DSC devuelve el código de respuesta inesperado "InternalServerError" al registrarse con Windows Pull Server
+
+Al aplicar una metaconfiguración a un servidor para registrarlo con una instancia de Windows Pull Server, es posible que se produzca el error que se indica a continuación.
+
+```PowerShell
+Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
+https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
+    + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
+    + FullyQualifiedErrorId : RegisterDscAgentUnsuccessful,Microsoft.PowerShell.DesiredStateConfiguration.Commands.RegisterDscAgentCommand
+    + PSComputerName        : <computername>
+```
+
+Dicho error puede darse cuando el certificado usado en el servidor para cifrar el tráfico tiene un nombre común (CN) distinto al nombre de DNS usado por el nodo para resolver la URL.
+Actualice la instancia de Windows Pull Server para que use un certificado con un nombre corregido.
 
 ## <a name="see-also"></a>Véase también
 
