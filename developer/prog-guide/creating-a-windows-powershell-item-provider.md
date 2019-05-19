@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: f2c9e10f0dc392399cf062500b7f28b3d1c07f6e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6f91fd53d41dd72c99f8fbc7bc7b863322d88787
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081876"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855048"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Creación de un proveedor de elementos de Windows PowerShell
 
@@ -30,44 +30,6 @@ Este tema describe cómo crear un proveedor de Windows PowerShell que puede mani
 > Para obtener más información acerca de otras implementaciones del proveedor de Windows PowerShell, consulte [diseñar su proveedor de Windows PowerShell](./designing-your-windows-powershell-provider.md).
 
 El proveedor de elementos de Windows PowerShell que se describe en este tema obtiene los elementos de datos de una base de datos de Access. En este caso, un "elemento" es una tabla en la base de datos de Access o una fila en una tabla.
-
-En la lista siguiente contiene las secciones de este tema. Si no está familiarizado con la escritura de un proveedor de elementos de Windows PowerShell, lea estas secciones en el orden en que aparecen. Sin embargo, si está familiarizado con la escritura de un proveedor de elementos de Windows PowerShell, vaya directamente a la información que necesita:
-
-- [Definición de la clase de proveedor de Windows PowerShell elemento](#Defining-the-Windows-PowerShell-Item-Provider-Class)
-
-- [Definir la funcionalidad de Base](#Defining-Base-Functionality)
-
-- [Comprobación de validez de la ruta de acceso](#Checking-for-Path-Validity)
-
-- [Determinar si existe un elemento](#Determining-if-an-Item-Exists)
-
-- [Asociar los parámetros dinámicos a la `Test-Path` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Test-Path-Cmdlet)
-
-- [Recuperación de un elemento](#Retrieving-an-Item)
-
-- [Asociar los parámetros dinámicos a la `Get-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Item-Cmdlet)
-
-- [Definición de un elemento](#Setting-an-Item)
-
-- [Asociar los parámetros dinámicos a la `Set-Item` Cmdlet](#Retrieving-Dynamic-Parameters-for-SetItem)
-
-- [Borrar un elemento](#Clearing-an-Item)
-
-- [Asociar los parámetros dinámicos para el Cmdlet Clear-Item](#Retrieve-Dynamic-Parameters-for-ClearItem)
-
-- [Llevar a cabo una acción predeterminada para un elemento](#Performing-a-Default-Action-for-an-Item)
-
-- [Recuperar los parámetros dinámicos para InvokeDefaultAction](#Retrieve-Dynamic-Parameters-for-InvokeDefaultAction)
-
-- [Implementación de métodos y clases auxiliares](#Implementing-Helper-Methods-and-Classes)
-
-- [Ejemplo de código](#Code-Sample)
-
-- [Definir los tipos de objeto y el formato](#Defining-Object-Types-and-Formatting)
-
-- [Creación del proveedor de Windows PowerShell](#Building-the-Windows-PowerShell-provider)
-
-- [Probar el proveedor de Windows PowerShell](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-item-provider-class"></a>Definición de la clase de proveedor de Windows PowerShell elemento
 
@@ -223,7 +185,7 @@ Este proveedor de elementos no implementa este método. Sin embargo, el código 
 
 ## <a name="implementing-helper-methods-and-classes"></a>Implementación de métodos y clases auxiliares
 
-Este proveedor de elementos implementa varios métodos auxiliares y las clases que son utilizadas por el público reemplazar métodos definidos por Windows PowerShell. El código para estas clases y métodos auxiliares se muestran en el [código de ejemplo](#Code-Sample) sección.
+Este proveedor de elementos implementa varios métodos auxiliares y las clases que son utilizadas por el público reemplazar métodos definidos por Windows PowerShell. El código para estas clases y métodos auxiliares se muestran en el [código de ejemplo](#code-sample) sección.
 
 ### <a name="normalizepath-method"></a>Método NormalizePath
 

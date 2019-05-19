@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 2df5a59833fcdd58c6b2afbb4882111592fb3d76
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 1aaf936aa22af5c4a4b8c2fa4e6b3bbd2cff6d20
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082505"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855079"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Escritura de una aplicación de Host de Windows PowerShell
 
 Windows PowerShell se puede hospedar en la aplicación. La aplicación host puede definir el espacio de ejecución donde los comandos son ejecutar, abra las sesiones en un equipo local o remoto e invocar los comandos de forma sincrónica o asincrónica se basa en las necesidades de la aplicación.
 
-Los siguientes temas explican cómo crear una aplicación que hospeda
+Los siguientes temas explican cómo crear una aplicación que hospeda Windows PowerShell.
 
 ## <a name="in-this-section"></a>En esta sección
 

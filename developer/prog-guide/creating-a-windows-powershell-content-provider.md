@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 35c68a2b0f8c9bd1ed4fc54c41aa427ddd75907c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d7e237514b4db4bce3366836d3b6e0cd340bf107
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081927"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855019"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Creación de un proveedor de contenido de Windows PowerShell
 
@@ -28,36 +28,6 @@ Este tema describe cómo crear un proveedor de Windows PowerShell que permite al
 > Están disponibles en los archivos de origen descargado el  **\<ejemplos de PowerShell >** directory.
 >
 > Para obtener más información acerca de otras implementaciones del proveedor de Windows PowerShell, consulte [diseñar su proveedor de Windows PowerShell](./designing-your-windows-powershell-provider.md).
-
-En la lista siguiente contiene las secciones de este tema. Si no está familiarizado con la escritura de un proveedor de contenido de Windows PowerShell, lea estas secciones en el orden en que aparecen. Sin embargo, si está familiarizado con la escritura de un proveedor de contenido de Windows PowerShell, vaya directamente a la información que necesita.
-
-- [Definición de la clase de proveedor de contenido de PowerShell de Windows](#Define-the-Windows-PowerShell-Content-Provider-Class)
-
-- [Definir la funcionalidad de Base](#Define-Functionality-of-Base-Class)
-
-- [Implementación de un lector de contenido](#Implementing-a-Content-Reader)
-
-- [Implementar un sistema de escritura de contenido](#Implementing-a-Content-Writer)
-
-- [Recuperando el lector de contenido](#Retrieving-the-Content-Reader)
-
-- [Asociar los parámetros dinámicos a la `Get-Content` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Content-Cmdlet)
-
-- [Recuperar el sistema de escritura de contenido](#Retrieving-the-Content-Writer)
-
-- [Asociar los parámetros dinámicos a la Add_Content y `Set-Content` Cmdlets](#Attaching-Dynamic-Parameters-to-the-Add-Content-and-Set-Content-Cmdlets)
-
-- [Borrar contenido](#Clearing-Content)
-
-- [Asociar los parámetros dinámicos a la `Clear-Content` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Clear-Content-Cmdlet)
-
-- [Ejemplo de código](#Code-Sample)
-
-- [Definir los tipos de objeto y el formato](#defining-object-types-and-formatting)
-
-- [Creación del proveedor de Windows PowerShell](#Building-the-Windows-PowerShell-Provider)
-
-- [Probar el proveedor de Windows PowerShell](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="define-the-windows-powershell-content-provider-class"></a>Definir la clase de proveedor de contenido de PowerShell de Windows
 

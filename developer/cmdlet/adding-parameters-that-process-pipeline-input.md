@@ -11,34 +11,18 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: bd52dc8aee7975d0899083a5c2f595b17690dc33
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068766"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854977"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Adición de parámetros que procesan la entrada de la canalización
 
 Un origen de entrada para un cmdlet es un objeto en la canalización que se origina en un cmdlet de nivel superior. En esta sección se describe cómo agregar un parámetro al cmdlet Get-Proc (se describe en [crear su primer Cmdlet](./creating-a-cmdlet-without-parameters.md)) para que el cmdlet puede procesar objetos de la canalización.
 
 Este cmdlet Get-Proc usa un `Name` parámetro que acepta la entrada desde un objeto de canalización, recupera información de proceso del equipo local en función de los nombres proporcionados y, a continuación, muestra información acerca de los procesos en la línea de comandos.
-
-Temas de esta sección incluyen lo siguiente:
-
-- [Definición de la clase de Cmdlet](#Defining-the-Cmdlet-Class)
-
-- [Definir la entrada de la canalización](#Defining-Input-from-the-Pipeline)
-
-- [Reemplazar una método de procesamiento de entrada](#Overriding-an-Input-Processing-Method)
-
-- [Ejemplo de código](#Code-Sample)
-
-- [Definir los tipos de objeto y el formato](#Defining-Object-Types-and-Formatting)
-
-- [Compilar el Cmdlet](#Building-the-Cmdlet)
-
-- [Probar el Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>Definición de la clase de Cmdlet
 

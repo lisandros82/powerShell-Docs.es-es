@@ -8,24 +8,14 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083389"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855130"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Cómo agregar una sintaxis a un tema de Ayuda del cmdlet
-
-- [Atributos de parámetro](#Parameter-Attributes)
-
-- [Atributos de valor de parámetro](#Parameter-Value-Attributes)
-
-- [Recopilando información sobre la sintaxis](#Gathering-Syntax-Information)
-
-- [El diagrama de sintaxis XML de codificación](#Coding-the-Syntax-Diagram-XML)
-
-## <a name="things-to-know-about-the-syntax-diagram-in-cmdlet-help"></a>Aspectos que debe conocer sobre el diagrama de sintaxis en la Ayuda de Cmdlet
 
 Antes de empezar a codificar el XML para el diagrama de sintaxis en el archivo de Ayuda de cmdlet, lea esta sección para obtener una visión clara del tipo de datos que necesita para proporcionar, como los atributos de parámetro y cómo esos datos se muestran en el diagrama de sintaxis...
 
@@ -166,7 +156,7 @@ Normalmente, los valores de parámetros que son marcadores de posición son nece
 
 ## <a name="coding-the-syntax-diagram-xml"></a>El diagrama de sintaxis XML de codificación
 
-El nodo de sintaxis de XML comienza inmediatamente después del nodo de la descripción, que termina con la \</maml:description > etiqueta. Para obtener información sobre la recopilación de los datos utilizados en el diagrama de sintaxis, vea [recopilar información sobre la sintaxis](#Gathering-Syntax-Information).
+El nodo de sintaxis de XML comienza inmediatamente después del nodo de la descripción, que termina con la \</maml:description > etiqueta. Para obtener información sobre la recopilación de los datos utilizados en el diagrama de sintaxis, vea [recopilar información sobre la sintaxis](#gathering-syntax-information).
 
 ### <a name="adding-a-syntax-node"></a>Agregar un nodo de sintaxis
 
@@ -210,7 +200,7 @@ El ejemplo siguiente incluye un nodo de sintaxis que tiene nodos de elemento de 
 
 Cada parámetro se agrega al nodo de elemento de sintaxis se especifica dentro de un par de \<: parámetro de comando > etiquetas. Necesita un par de \<: parámetro de comando > etiquetas para cada parámetro incluido en el conjunto de parámetros, a excepción de los parámetros comunes proporcionadas por Windows PowerShell?.
 
-Los atributos de la apertura \<: parámetro de comando > etiqueta determinar cómo el parámetro aparece en el diagrama de sintaxis. Para obtener información sobre los atributos de parámetro, vea [atributos de parámetro](#Parameter-Attributes).
+Los atributos de la apertura \<: parámetro de comando > etiqueta determinar cómo el parámetro aparece en el diagrama de sintaxis. Para obtener información sobre los atributos de parámetro, vea [atributos de parámetro](#parameter-attributes).
 
 > [!NOTE]
 > El \<: parámetro de comando > etiqueta admite un elemento secundario \<maml:description > cuyo contenido nunca se muestra. Las descripciones de parámetros se especifican en el nodo de parámetro de XML. Para evitar incoherencias entre la información en el elemento de sintaxis intervención y el nodo de parámetro, omita el (\<maml:description > o déjela en blanco.

@@ -10,34 +10,14 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6a3b592c5f85c1f065ad4b5b0290cf44dcef484e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068844"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854874"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Adición de conjuntos de parámetros a un cmdlet
-
-En esta sección se describe cómo agregar el parámetro se establece en el cmdlet Stop-Proc (se describe en [creación de un Cmdlet que modifica el sistema](./creating-a-cmdlet-that-modifies-the-system.md)). Al igual que los otros cmdlets de parada de proceso se describe en esta guía del programador, intentos de este cmdlet detener los procesos que se recuperan mediante el cmdlet Get-Proc (se describe en [crear su primer Cmdlet](./creating-a-cmdlet-without-parameters.md)).
-
-Temas de esta sección incluyen lo siguiente:
-
-- [Cosas que saber acerca de conjuntos de parámetros](#Adding-Parameter-Sets-to-a-Cmdlet)
-
-- [Declarar la clase de Cmdlet](#Declaring-the-Cmdlet-Class)
-
-- [Declarar los parámetros del Cmdlet](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [Reemplazar una método de procesamiento de entrada](#Overriding-an-Input-Processing-Method)
-
-- [Ejemplo de código](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [Definir los tipos de objeto y el formato](#Defining-Object-Types-and-Formatting)
-
-- [Compilar el Cmdlet](#Building-the-Cmdlet)
-
-- [Probar el Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="things-to-know-about-parameter-sets"></a>Cosas que saber acerca de conjuntos de parámetros
 

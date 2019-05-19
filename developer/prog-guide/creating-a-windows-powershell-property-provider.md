@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 6ec0752a9ae06c5c2cdd1a1851caeeff52d8eb74
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c503b17a670a5d1f07aa48e714d8a0eb0aa78ae9
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081842"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854999"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Creación de un proveedor de propiedades de Windows PowerShell
 
@@ -31,26 +31,6 @@ Este tema describe cómo crear un proveedor que permite al usuario manipular las
 
 > [!CAUTION]
 > Los métodos de su proveedor de propiedades deben escribir los objetos mediante el [System.Management.Automation.Provider.Cmdletprovider.Writepropertyobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject) método.
-
-En la lista siguiente contiene las secciones de este tema. Si no está familiarizado con la escritura de un proveedor de propiedades de Windows PowerShell, lea esta información en el orden en que aparece. Sin embargo, si está familiarizado con la escritura de un proveedor de propiedades de Windows PowerShell, vaya directamente a la información que necesita.
-
-- [Define el proveedor de Windows PowerShell](#Defining-the-Windows-PowerShell-provider)
-
-- [Definir la funcionalidad de Base](#Defining-Base-Functionality)
-
-- [Recuperación de propiedades](#Retrieving-Properties)
-
-- [Asociar los parámetros dinámicos a la `Get-ItemProperty` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-ItemProperty-Cmdlet)
-
-- [Establecer las propiedades](#Setting-Properties)
-
-- [Asociar los parámetros dinámicos a la `Set-ItemProperty` Cmdlet](#Attaching-Dynamic-Parameters-for-the-Set-ItemProperty-Cmdlet)
-
-- [Cuando se borra una propiedad](#Clearing-Properties)
-
-- [Asociar los parámetros dinámicos a la `Clear-ItemProperty` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Clear-ItemProperty-Cmdlet)
-
-- [Creación del proveedor de Windows PowerShell](#Building-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-provider"></a>Define el proveedor de Windows PowerShell
 

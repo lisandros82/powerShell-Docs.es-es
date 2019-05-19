@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 138c6a43937e72fffaa2a09243e500e9822e6111
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068783"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854934"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Adición de mensajes de usuario al cmdlet
 
@@ -51,32 +51,6 @@ Cmdlets puede escribir varios tipos de mensajes que se pueden mostrar al usuario
 - Informe de progreso de los mensajes que contienen información sobre la cantidad funcionar el cmdlet se ha completado cuando se realiza una operación que tarda mucho tiempo.
 
 No hay ningún límite al número de mensajes que puede escribir el cmdlet o el tipo de mensajes que el cmdlet escribe. Cada mensaje se escribe mediante una llamada específica desde dentro de la entrada que procesar el método de su cmdlet.
-
-## <a name="the-stopproc-cmdlet"></a>El StopProc Cmdlet
-
-Temas de esta sección incluyen lo siguiente:
-
-- [Definir el Cmdlet](#Defining-the-Cmdlet)
-
-- [Definir parámetros para la modificación del sistema](#Defining-Parameters-for-System-Modification)
-
-- [Reemplazar una método de procesamiento de entrada](#Overriding-an-Input-Processing-Method)
-
-- [Escribir un mensaje detallado](#Writing-a-Verbose-Message)
-
-- [Escribir un mensaje de depuración](#Writing-a-Debug-Message)
-
-- [Escribir un mensaje de advertencia](#Writing-a-Warning-Message)
-
-- [Escribir un mensaje de progreso](#Writing-a-Progress-Message)
-
-- [Ejemplo de código](#Code-Sample)
-
-- [Definir tipos de objeto y el formato](#Define-Object-Types-and-Formatting)
-
-- [Compilar el Cmdlet](#Building-the-Cmdlet)
-
-- [Probar el Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Definir el Cmdlet
 

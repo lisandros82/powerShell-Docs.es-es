@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 40454f880b57d5b3a8a8ded21c8c97aebba027fe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5f7a61e261399d3d2abe62fe4523e8c9895d5ad4
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081859"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855170"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Creación de un proveedor de navegación de Windows PowerShell
 
@@ -33,34 +33,6 @@ El proveedor que se describe aquí permite el identificador de usuario de una ba
 
 > [!CAUTION]
 > Tenga en cuenta que este diseño considera una base de datos que tiene un campo con el identificador de nombre y que el tipo del campo es LongInteger.
-
-En la lista siguiente incluye las secciones de este tema. Si no está familiarizado con la escritura de un proveedor de navegación de Windows PowerShell, lea esta información en el orden en que aparece. Sin embargo, si está familiarizado con la escritura de un proveedor de navegación de Windows PowerShell, vaya directamente a la información que necesita.
-
-- [Definir una clase de proveedor de navegación de PS](#Define-the-Windows-PowerShell-provider)
-
-- [Definir la funcionalidad de Base](#Defining-Base-Functionality)
-
-- [Creación de una ruta de acceso PS](#Creating-a-Windows-PowerShell-Path)
-
-- [Recuperar la ruta de acceso primaria](#Retrieving-the-Parent-Path)
-
-- [Recuperar el nombre de ruta de acceso secundaria](#Retrieve-the-Child-Path-Name)
-
-- [Determinar si un elemento es un contenedor](#Determining-if-an-Item-is-a-Container)
-
-- [Mover un elemento](#Moving-an-Item)
-
-- [Asociar los parámetros dinámicos a la `Move-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Move-Item-Cmdlet)
-
-- [La normalización de una ruta de acceso relativa](#Normalizing-a-Relative-Path)
-
-- [Ejemplo de código](#Code-Sample)
-
-- [Definir los tipos de objeto y el formato](#Defining-Object-Types-and-Formatting)
-
-- [Creación del proveedor de Windows PowerShell](#Building-the-Windows-PowerShell-provider)
-
-- [Probar el proveedor de Windows PowerShell](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="define-the-windows-powershell-provider"></a>Defina el proveedor de Windows PowerShell
 

@@ -8,42 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068800"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854860"
 ---
 # <a name="advisory-development-guidelines"></a>Directrices de desarrollo de consulta
 
 En esta sección se describe instrucciones que se deben considerar para asegurarse de buenas experiencias de desarrollo y de usuario. A veces pueden aplicar y, a veces podría no.
-
-## <a name="design-guidelines"></a>Instrucciones de diseño
-
-- [Admite un parámetro InputObject (AD01)](./advisory-development-guidelines.md#AD01)
-
-- [Compatibilidad con el parámetro Force (AD02)](./advisory-development-guidelines.md#AD02)
-
-- [Controlar las credenciales a través de Windows PowerShell (AD03)](./advisory-development-guidelines.md#AD03)
-
-- [Admite los parámetros de codificación (AD04)](./advisory-development-guidelines.md#AD04)
-
-- [Los Cmdlets de prueba debe devolver un valor booleano (AD05)](./advisory-development-guidelines.md#AD05)
-
-## <a name="code-guidelines"></a>Instrucciones de código
-
-- [Siga convenciones de nomenclatura de clase de Cmdlet (AC01)](./advisory-development-guidelines.md#AC01)
-
-- [Si ninguna entrada de la canalización invalida el método BeginProcessing (AC02)](./advisory-development-guidelines.md#AC02)
-
-- [Para controlar las solicitudes de detención invalidación el método StopProcessing (AC03)](./advisory-development-guidelines.md#AC03)
-
-- [Implementar la interfaz IDisposable (AC04)](./advisory-development-guidelines.md#AC04)
-
-- [Usar tipos de parámetros de serialización sencillo (AC05)](./advisory-development-guidelines.md#AC05)
-
-- [Use SecureString para datos confidenciales (AC06)](./advisory-development-guidelines.md#AC06)
 
 ## <a name="design-guidelines"></a>Instrucciones de diseño
 

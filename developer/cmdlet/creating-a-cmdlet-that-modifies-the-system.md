@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: bbe9f0213754d1cc47e0fd9a7a898bde916c0636
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068453"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854914"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Creación de un cmdlet que modifica el sistema
 
@@ -42,28 +42,6 @@ El acto de "cambiar el sistema" hace referencia a cualquier cmdlet que potencial
 ## <a name="the-stopproc-cmdlet"></a>El StopProc Cmdlet
 
 Este tema describe un cmdlet Stop-Proc que intenta detener los procesos que se recuperan mediante el cmdlet Get-Proc (se describe en [crear su primer Cmdlet](./creating-a-cmdlet-without-parameters.md)).
-
-Temas de esta sección incluyen lo siguiente:
-
-- [Definir el Cmdlet](#Defining-the-Cmdlet)
-
-- [Definir parámetros para la modificación del sistema](#Defining-Parameters-for-System-Modification)
-
-- [Reemplazar una método de procesamiento de entrada](#Overriding-an-Input-Processing-Method)
-
-- [Una llamada al método ShouldProcess](#Calling-the-ShouldProcess-Method)
-
-- [Una llamada al método ShouldContinue](#Calling-the-ShouldContinue-Method)
-
-- [Detener procesamiento de entrada](#Stopping-Input-Processing)
-
-- [Ejemplo de código](#Code-Sample)
-
-- [Definir los tipos de objeto y el formato](#Defining-Object-Types-and-Formatting)
-
-- [Compilar el Cmdlet](#Building-the-Cmdlet)
-
-- [Probar el Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Definir el Cmdlet
 

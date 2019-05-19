@@ -12,38 +12,18 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 2696d78cae7739310b7684161b597ce436dabe92
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055657"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855206"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Creación de un proveedor de unidad de Windows PowerShell
 
 Este tema describe cómo crear un proveedor de unidades de Windows PowerShell que proporciona una manera de obtener acceso a un almacén de datos a través de una unidad de Windows PowerShell. Este tipo de proveedor también se conoce como proveedores de la unidad de Windows PowerShell. Las unidades de Windows PowerShell usadas el proveedor proporcionan los medios para conectarse al almacén de datos.
 
 El proveedor de la unidad de Windows PowerShell descrito aquí proporciona acceso a una base de datos de Microsoft Access. Para este proveedor, la unidad de Windows PowerShell representa la base de datos (es posible agregar cualquier número de unidades a un proveedor de unidades), los contenedores de nivel superior de la unidad representan las tablas de la base de datos, y los elementos de los contenedores de las filas de las tablas.
-
-Esta es una lista de las secciones de este tema. Si no está familiarizado con la escritura de un proveedor de la unidad de Windows PowerShell, lea estas secciones en el orden en que aparecen. Sin embargo, si está familiarizado con la escritura de un proveedor de unidades, vaya directamente a la información que necesita.
-
-- [Definición de la clase de proveedor de PowerShell de Windows](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Definir la funcionalidad de Base](#Defining-Base-Functionality)
-
-- [Creación de información de estado de la unidad](#Creating-Drive-State-Information)
-
-- [Creación de una unidad](#Creating-a-Drive)
-
-- [Asociar los parámetros dinámicos a NewDrive](#Attaching-Dynamic-Parameters-to-NewDrive)
-
-- [Quitar una unidad](#Removing-a-Drive)
-
-- [Inicialización predeterminada de unidades](#Initializing-Default-Drives)
-
-- [Ejemplo de código](#Code-Sample)
-
-- [Probar el proveedor de la unidad de PowerShell de Windows](#Testing-the-Windows-PowerShell-Drive-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Definición de la clase de proveedor de PowerShell de Windows
 
