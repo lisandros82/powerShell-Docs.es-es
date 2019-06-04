@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: 77d328bc1cb8cb42d5a10f107a149c05ab270ce3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082114"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470774"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Descripción de un módulo de Windows PowerShell
 
@@ -55,7 +55,7 @@ Un *módulo del manifiesto* es un módulo que utiliza un archivo de manifiesto p
 
 ### <a name="dynamic-modules"></a>Módulos dinámicos
 
-Un *módulo dinámico* es un módulo no se carga desde o guardado en un archivo. En su lugar, se crean dinámicamente mediante una secuencia de comandos, utilizando el [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet. Este tipo de módulo permite una secuencia de comandos crear un módulo a petición que no es necesario cargar o guardar en un almacenamiento persistente. Por su naturaleza, un módulo dinámico está pensado para ser de corta duración y, por lo tanto, no puede tener acceso el `Get-Module` cmdlet. De forma similar, que normalmente no necesitan los manifiestos del módulo, tampoco es probable que necesitan permanentes carpetas para almacenar sus ensamblados relacionados.
+Un *módulo dinámico* es un módulo que no está cargado o guardado en un archivo. En su lugar, se crean dinámicamente mediante una secuencia de comandos, utilizando el [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet. Este tipo de módulo permite una secuencia de comandos crear un módulo a petición que no es necesario cargar o guardar en un almacenamiento persistente. Por su naturaleza, un módulo dinámico está pensado para ser de corta duración y, por lo tanto, no puede tener acceso el `Get-Module` cmdlet. De forma similar, que normalmente no necesitan los manifiestos del módulo, tampoco es probable que necesitan permanentes carpetas para almacenar sus ensamblados relacionados.
 
 ## <a name="module-manifests"></a>Manifiestos del módulo
 

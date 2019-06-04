@@ -2,12 +2,12 @@
 title: SDK de Windows PowerShell
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: 600d43874d9eda04d556a0ece198026dde9174c3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7627ab336ddc40ab47c3017eed77c78bbdac4e7f
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080465"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470808"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
@@ -22,7 +22,7 @@ Para obtener información básica necesaria para comenzar a usar Windows PowerSh
 
 ## <a name="windows-powershell-documents-on-msdn"></a>Documentos de Windows PowerShell en MSDN
 
-- [Instalar el SDK de Windows PowerShell](https://msdn.microsoft.com/en-us/library/ff458115.aspx) proporciona información sobre cómo instalar el SDK de Windows PowerShell.
+- [Instalar el SDK de Windows PowerShell](./installing-the-windows-powershell-sdk.md) proporciona información sobre cómo instalar el SDK de Windows PowerShell.
 
 - [Escribir un módulo de Windows PowerShell](./module/writing-a-windows-powershell-module.md) proporciona información para administradores, desarrolladores de la secuencia de comandos y los desarrolladores de cmdlets que necesitan para empaquetar y distribuir sus soluciones de Windows PowerShell.
 
