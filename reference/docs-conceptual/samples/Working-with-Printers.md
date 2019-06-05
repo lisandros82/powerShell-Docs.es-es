@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Trabajar con impresoras
 ms.assetid: 4f29ead3-f83b-4706-ac3e-f2154ff38dc5
-ms.openlocfilehash: 77ebb26369b6a40e9c8c7bbbc52347d614cbf083
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: fce1bc129ada3c509c55941a59a70de230edf68f
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058546"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470959"
 ---
 # <a name="working-with-printers"></a>Trabajar con impresoras
 
@@ -19,7 +19,7 @@ Puede usar Windows PowerShell para administrar impresoras mediante WMI y el obje
 La manera más sencilla de enumerar las impresoras instaladas en un equipo es usar la clase WMI **Win32_Printer**:
 
 ```powershell
-Get-WmiObject -Class Win32_Printer -ComputerName
+Get-WmiObject -Class Win32_Printer
 ```
 
 También puede enumerar las impresoras mediante el objeto COM **WScript.Network** que suele usarse en los scripts de WSH:

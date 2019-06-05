@@ -1,12 +1,12 @@
 ---
-ms.date: 3/18/2019
+ms.date: 03/18/2019
 title: Creación de consultas Get-WinEvent con FilterHashtable
-ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2f598fceb570f189bee776b6ed572b11a6938f64
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058835"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66471025"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Creación de consultas Get-WinEvent con FilterHashtable
 
@@ -159,9 +159,9 @@ Get-WinEvent -FilterHashtable @{
 ### <a name="keywords-static-property-value-optional"></a>Valor de propiedad estática de palabras clave (opcional)
 
 La clave **Keywords** se enumera, pero puede usar un nombre de propiedad estática en la consulta de tabla hash.
-En lugar de usar la cadena devuelta, el nombre de propiedad debe convertirse en un valor con la propiedad **Value__**.
+En lugar de usar la cadena devuelta, el nombre de propiedad debe convertirse en un valor con la propiedad **Value__** .
 
-Por ejemplo, el script siguiente usa la propiedad **Value__**.
+Por ejemplo, el script siguiente usa la propiedad **Value__** .
 
 ```powershell
 $C = [System.Diagnostics.Eventing.Reader.StandardEventKeywords]::EventLogClassic
@@ -239,9 +239,9 @@ Get-WinEvent -FilterHashtable @{
 ### <a name="level-static-property-in-enumeration-optional"></a>Propiedad estática de nivel en enumeración (opcional)
 
 La clave **Level** se enumera, pero puede usar un nombre de propiedad estática en la consulta de tabla hash.
-En lugar de usar la cadena devuelta, el nombre de propiedad debe convertirse en un valor con la propiedad **Value__**.
+En lugar de usar la cadena devuelta, el nombre de propiedad debe convertirse en un valor con la propiedad **Value__** .
 
-Por ejemplo, el script siguiente usa la propiedad **Value__**.
+Por ejemplo, el script siguiente usa la propiedad **Value__** .
 
 ```powershell
 $C = [System.Diagnostics.Eventing.Reader.StandardEventLevel]::Informational
