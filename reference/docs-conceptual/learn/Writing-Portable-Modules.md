@@ -2,12 +2,12 @@
 ms.date: 12/14/2018
 keywords: powershell, cmdlet
 title: Escritura de módulos portables
-ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 237f6aaea0ed019c54d04a8477d7a456edf00910
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086415"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470981"
 ---
 # <a name="portable-modules"></a>Módulos portables
 
@@ -17,11 +17,12 @@ Windows PowerShell está escrito para [.NET Framework][], mientras que PowerShel
 
 ### <a name="porting-a-pssnapin"></a>Migración de un elemento PSSnapIn
 
-Los complementos PowerShell SnapIns (PSSnapIn) no se admiten en PowerShell Core. Sin embargo, resulta trivial convertir un PSSnapIn en un módulo de PowerShell. Normalmente, el código de registro del PSSnapIn se encuentra en un único archivo de código fuente de una clase que se deriva de [PSSnapIn][]. Quite este archivo de código fuente de la compilación; ya no es necesario.
+Los complementos PowerShell [SnapIns](/powershell/developer/cmdlet/modules-and-snap-ins) no se admiten en PowerShell Core. Sin embargo, resulta trivial convertir un PSSnapIn en un módulo de PowerShell. Normalmente, el código de registro del PSSnapIn se encuentra en un único archivo de código fuente de una clase que se deriva de [PSSnapIn][].
+Quite este archivo de código fuente de la compilación; ya no es necesario.
 
-Use [New-ModuleManifest][] para crear un nuevo manifiesto de módulo que reemplace la necesidad del código de registro del PSSnapIn. Algunos de los valores del PSSnapIn (como la descripción) se pueden reutilizar en el manifiesto del módulo.
+Use [New-ModuleManifest][] para crear un nuevo manifiesto de módulo que reemplace la necesidad del código de registro del PSSnapIn. Algunos de los valores del complemento **PSSnapIn** (como la **descripción**) se pueden reutilizar en el manifiesto del módulo.
 
-La propiedad `RootModule` del manifiesto del módulo debe establecerse en el nombre del ensamblado (dll) que implementa los cmdlets.
+La propiedad **RootModule** del manifiesto del módulo debe establecerse en el nombre del ensamblado (dll) que implementa los cmdlets.
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>Analizador de portabilidad de .NET (también conocido como APIPort)
 

@@ -3,12 +3,12 @@ ms.date: 11/13/2018
 keywords: powershell, cmdlet
 title: Descodificación de un comando de PowerShell desde un proceso en ejecución
 author: randomnote1
-ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086245"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470965"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>Descodificación de un comando de PowerShell desde un proceso en ejecución
 
@@ -33,7 +33,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>Visualización del proceso
 
-El cuerpo del comando que PowerShell está ejecutando se almacena en la propiedad **CommandLine** de la clase [Win32_Process][]. Si el comando es un [comando codificado][], la propiedad **CommandLine** contiene la cadena "EncodedCommand". Con esta información, el comando codificado puede ser desofuscado mediante el siguiente proceso.
+El cuerpo del comando que PowerShell está ejecutando se almacena en la propiedad **CommandLine** de la clase [Win32_Process][]. Si el comando es un comando codificado, la propiedad **CommandLine** contiene la cadena "EncodedCommand". Con esta información, el comando codificado puede ser desofuscado mediante el siguiente proceso.
 
 Inicie PowerShell como administrador. Es vital que PowerShell se esté ejecutando como administrador; de lo contrario, no se obtienen resultados al consultar los procesos en ejecución.
 
@@ -107,4 +107,3 @@ DecodedCommand :
 [Programador de tareas]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [Agente SQL Server]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[comando codificado]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-
