@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: El objeto ISEFile
-ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
-ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: ebb5a35f6ea9d93eab633b9f4e6c84e4fddd6ae8
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057560"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028965"
 ---
 # <a name="the-isefile-object"></a>El objeto ISEFile
 
@@ -22,7 +21,7 @@ Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
 Guarda el archivo en disco.
 
-**\[saveEncoding\]**: [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) opcional. Un parámetro de codificación de carácter opcional que se usará para el archivo guardado. El valor predeterminado es **UTF8**.
+**\[saveEncoding\]** : [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) opcional. Un parámetro de codificación de carácter opcional que se usará para el archivo guardado. El valor predeterminado es **UTF8**.
 
 ### <a name="exceptions"></a>Excepciones
 
@@ -48,7 +47,7 @@ Guarda el archivo con el nombre de archivo y codificación especificados.
 
 **filename**: cadena. El nombre que se utilizará para guardar el archivo.
 
-**\[saveEncoding\]**: [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) opcional. Un parámetro de codificación de carácter opcional que se usará para el archivo guardado. El valor predeterminado es **UTF8**.
+**\[saveEncoding\]** : [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) opcional. Un parámetro de codificación de carácter opcional que se usará para el archivo guardado. El valor predeterminado es **UTF8**.
 
 ### <a name="exceptions"></a>Excepciones
 

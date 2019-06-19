@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Recopilar información acerca de los equipos
-ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dc8fcc5f12fdf9e3fc8151d3e50b8b660262c62
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058342"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030836"
 ---
 # <a name="collecting-information-about-computers"></a>Recopilar información acerca de los equipos
 
@@ -18,7 +17,7 @@ Además, WMI trata los datos como objetos que están en colecciones de uno o má
 Dado que Windows PowerShell también funciona con objetos y tiene una canalización que permite tratar uno o varios objetos de la misma manera, el acceso genérico a WMI le permite realizar algunas tareas avanzadas con muy poco esfuerzo.
 
 Los ejemplos siguientes muestran cómo recopilar información específica mediante `Get-CimInstance` en un equipo arbitrario.
-Especificamos el parámetro **ComputerName** con el valor de punto (**.**), que representa el equipo local.
+Especificamos el parámetro **ComputerName** con el valor de punto ( **.** ), que representa el equipo local.
 Puede especificar una dirección IP o un nombre asociado a cualquier equipo que pueda alcanzar a través de WMI.
 Para recuperar información sobre el equipo local, puede omitir el parámetro **ComputerName**.
 

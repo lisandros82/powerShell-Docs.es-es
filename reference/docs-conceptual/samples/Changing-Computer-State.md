@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Cambiar el estado del equipo
-ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: f8a2ed6a1a0390021eb633c9af64a725146ad136
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 80692ad7c56aa13e55d4997cfec289ffb3605458
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086330"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030287"
 ---
 # <a name="changing-computer-state"></a>Cambiar el estado del equipo
 
@@ -30,7 +29,7 @@ Para cerrar sesiones determinadas en un servidor de Terminal Server, use la herr
 
 ## <a name="logging-off-the-current-session"></a>Cerrar la sesión actual
 
-Puede usar varias técnicas diferentes para cerrar una sesión en el sistema local. La manera más sencilla es usar la herramienta de línea de comandos **logoff.exe** de Escritorio remoto/Terminal Services (para obtener más información, en el símbolo del sistema de Windows PowerShell, escriba **logoff /?**). Para cerrar la sesión activa actualmente, escriba **logoff** sin argumentos.
+Puede usar varias técnicas diferentes para cerrar una sesión en el sistema local. La manera más sencilla es usar la herramienta de línea de comandos **logoff.exe** de Escritorio remoto/Terminal Services (para obtener más información, en el símbolo del sistema de Windows PowerShell, escriba **logoff /?** ). Para cerrar la sesión activa actualmente, escriba **logoff** sin argumentos.
 
 También puede usar la herramienta **shutdown.exe** con su opción de cierre de sesión:
 
@@ -48,7 +47,7 @@ Para obtener más información y otras características del método Win32Shutdow
 
 ## <a name="shutting-down-or-restarting-a-computer"></a>Apagar o reiniciar un equipo
 
-Apagar y reiniciar equipos suelen ser los mismos tipos de tarea. Las herramientas que apagan un equipo generalmente también lo reinician, y viceversa. Hay dos opciones sencillas para reiniciar un equipo desde Windows PowerShell. Use Tsshutdn.exe o Shutdown.exe con los argumentos apropiados. Puede obtener información de uso detallada en **tsshutdn.exe /?** o **shutdown.exe /?**.
+Apagar y reiniciar equipos suelen ser los mismos tipos de tarea. Las herramientas que apagan un equipo generalmente también lo reinician, y viceversa. Hay dos opciones sencillas para reiniciar un equipo desde Windows PowerShell. Use Tsshutdn.exe o Shutdown.exe con los argumentos apropiados. Puede obtener información de uso detallada en **tsshutdn.exe /?** o **shutdown.exe /?** .
 
 También puede realizar las operaciones de apagar y reiniciar directamente desde Windows PowerShell.
 

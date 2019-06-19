@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Usar comandos de formato para cambiar la vista de salida
-ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-ms.openlocfilehash: fba37b1d0479bf605d8f2171da27cd1bceb9976e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a1712dade1e7508c0c4a004685bd1bb04a126f74
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058274"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030063"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Usar comandos de formato para cambiar la vista de salida
 
@@ -111,7 +110,7 @@ Id          : 3448
 
 ### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Obtener información detallada usando Format-List con caracteres comodín
 
-El cmdlet **Format-List** permite usar un carácter comodín como valor de su parámetro **Property**. Esto le permite visualizar información detallada. A menudo, los objetos incluyen más información de la que necesita, motivo por el cual Windows PowerShell no muestra todos los valores de propiedad de forma predeterminada. Para mostrar todas las propiedades de un objeto, use el comando **Format-List -Property \&#42;**. El siguiente comando genera más de 60 líneas de salida para un único proceso:
+El cmdlet **Format-List** permite usar un carácter comodín como valor de su parámetro **Property**. Esto le permite visualizar información detallada. A menudo, los objetos incluyen más información de la que necesita, motivo por el cual Windows PowerShell no muestra todos los valores de propiedad de forma predeterminada. Para mostrar todas las propiedades de un objeto, use el comando **Format-List -Property \&#42;** . El siguiente comando genera más de 60 líneas de salida para un único proceso:
 
 ```powershell
 Get-Process -Name powershell | Format-List -Property *

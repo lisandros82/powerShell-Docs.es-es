@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Administrar unidades de Windows PowerShell
-ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 32efa282fb787753942e43acab53c7b6eaeb88e3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057832"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030150"
 ---
 # <a name="managing-windows-powershell-drives"></a>Administrar unidades de Windows PowerShell
 
@@ -117,7 +116,7 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 > [!NOTE]
 > Por lo general, las rutas de acceso no distinguen mayúsculas de minúsculas.
 
-La referencia a la nueva unidad de Windows PowerShell se hace como con cualquier otra unidad de Windows PowerShell; es decir, por su nombre seguido de dos puntos (**:**).
+La referencia a la nueva unidad de Windows PowerShell se hace como con cualquier otra unidad de Windows PowerShell; es decir, por su nombre seguido de dos puntos ( **:** ).
 
 Una unidad de Windows PowerShell puede hacer que muchas tareas sean mucho más sencillas de realizar. Por ejemplo, algunas de las claves más importantes en el Registro de Windows tienen rutas de acceso muy largas, lo que las hace complicadas de acceder y difíciles de recordar. La información de configuración crítica reside en **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion**. Si quiere ver y cambiar elementos en la clave del Registro CurrentVersion, puede escribir lo siguiente para crear una unidad de Windows PowerShell que se base en esa clave:
 
@@ -130,7 +129,7 @@ Name       Provider      Root                                   CurrentLocation
 cvkey      Registry      HKLM\Software\Microsoft\Windows\...
 ```
 
-Luego, puede cambiar la ubicación a la unidad **cvkey:**, como lo haría con cualquier otra unidad:``
+Luego, puede cambiar la ubicación a la unidad **cvkey:** , como lo haría con cualquier otra unidad:``
 
 `PS> cd cvkey:`
 

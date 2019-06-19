@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: El objeto ISEFileCollection
-ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
-ms.openlocfilehash: eb4b2784820cbe51f662fd2fd945d8760ef9dbff
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 96db51ee921cc0fa34803091d563bc6e118643b6
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086755"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030522"
 ---
 # <a name="the-isefilecollection-object"></a>El objeto ISEFileCollection
 
@@ -22,7 +21,7 @@ Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
 Crea y devuelve un archivo sin título nuevo y lo agrega a la colección. La propiedad **IsUntitled** del archivo recién creado es **$true**.
 
-**\[fullPath\]**: cadena opcional. Ruta de acceso completamente especificada del archivo. Se genera una excepción si incluye el parámetro **rutaAccesoCompleta** y una ruta de acceso relativa, o si utiliza un nombre de archivo en lugar de la ruta de acceso completa.
+**\[fullPath\]** : cadena opcional. Ruta de acceso completamente especificada del archivo. Se genera una excepción si incluye el parámetro **rutaAccesoCompleta** y una ruta de acceso relativa, o si utiliza un nombre de archivo en lugar de la ruta de acceso completa.
 
 ```powershell
 # Adds a new untitled file to the collection of files in the current PowerShell tab.
@@ -40,7 +39,7 @@ Quita un archivo especificado en la pestaña actual de PowerShell.
 
 **File**: cadena. Archivo ISEFile que quiere quitar de la colección. Si el archivo no se ha guardado, este método inicia una excepción. Utilice el parámetro modificador **Force** parámetro para forzar la eliminación de un archivo no guardado.
 
-**\[Force\]**: booleano opcional. Si se establece en **$true**, concede permiso para quitar el archivo incluso si no se ha guardado después del último uso. El valor predeterminado es **$false**.
+**\[Force\]** : booleano opcional. Si se establece en **$true**, concede permiso para quitar el archivo incluso si no se ha guardado después del último uso. El valor predeterminado es **$false**.
 
 ```powershell
 # Removes the first opened file from the file collection associated with the current PowerShell tab.
