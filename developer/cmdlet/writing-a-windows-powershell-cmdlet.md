@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a82aba91-71af-447d-b9ef-b6b6ac7d9de4
 caps.latest.revision: 19
-ms.openlocfilehash: d1abdca9ecbb5ab0a13593072e6dcb0d647b0b14
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 743efcf23174a9521925c5c19dd670979bc0c523
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62066998"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263818"
 ---
 # <a name="writing-a-windows-powershell-cmdlet"></a>Escribir un cmdlet de Windows PowerShell
 
@@ -27,7 +27,7 @@ ms.locfileid: "62066998"
 
 [Ejemplos de código del Cmdlet](./examples-of-cmdlet-code.md) en esta sección contiene código de ejemplo que puede usar para empezar a escribir sus propios cmdlets.
 
-[Ejemplos de formato de salida del Cmdlet](https://msdn.microsoft.com/en-us/65829249-124d-47d0-9bf3-8e397dc55855) en esta sección contiene ejemplos que muestran cómo se aplica el formato de salida del cmdlet.
+[Escritura de archivos de formato de salida del Cmdlet](../format/writing-a-powershell-formatting-file.md) en esta sección se describe cómo crear archivos de formato. Archivos de formato definen el modo en que PowerShell muestra los objetos en la línea de comandos.
 
 [Tutoriales para la escritura de Cmdlets](./tutorials-for-writing-cmdlets.md) esta sección contiene tutoriales que puede usar para obtener información sobre los fundamentos detrás del código del cmdlet.
 
