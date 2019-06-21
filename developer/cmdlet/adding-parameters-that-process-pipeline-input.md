@@ -11,12 +11,12 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 34643d20c16f8cc45e7fb20dc2a87d78b18bbf10
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854977"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298641"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Adición de parámetros que procesan la entrada de la canalización
 
@@ -77,7 +77,7 @@ Los conjuntos de la declaración anterior el `ValueFromPipeline` palabra clave p
 
 Si es su cmdlet controlar la entrada de canalización, debe invalidar los métodos de procesamiento de entrada adecuada. Los métodos de procesamiento de entrada básico se introducen en [crear su primer Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-Este cmdlet Get-Proc invalida la [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método para controlar el `Name` proporcionado por el usuario o un script de entrada de parámetros. Este método obtiene los procesos para cada nombre de proceso solicitado o todos los procesos si se proporciona ningún nombre. Tenga en cuenta que dentro de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), la llamada a [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) es el resultado mecanismo para enviar el resultado de los objetos a la canalización. El segundo parámetro de esta llamada, `enumerateCollection`, se establece en `true` para indicar al runtime de Windows PowerShell para enumerar la matriz de objetos de proceso y escribir un proceso a la vez en la línea de comandos.
+Este cmdlet Get-Proc invalida la [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) método para controlar el `Name` proporcionado por el usuario o un script de entrada de parámetros. Este método obtiene los procesos para cada nombre de proceso solicitado o todos los procesos si se proporciona ningún nombre. Tenga en cuenta que dentro de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), la llamada a [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) es el mecanismo de salida para enviar objetos de salida a la canalización. El segundo parámetro de esta llamada, `enumerateCollection`, se establece en `true` para indicar al runtime de Windows PowerShell para enumerar la matriz de objetos de proceso y escribir un proceso a la vez en la línea de comandos.
 
 ```csharp
 protected override void ProcessRecord()
@@ -130,11 +130,11 @@ Para la completa C# código de ejemplo, vea [GetProcessSample03 ejemplo](./getpr
 
 ## <a name="defining-object-types-and-formatting"></a>Definir los tipos de objeto y el formato
 
-Windows PowerShell pasa información entre cmdlets mediante objetos. NET. Por lo tanto, un cmdlet que deba definir su propio tipo o el cmdlet puede necesitar extender un tipo existente proporcionado por otro cmdlet. Para obtener más información acerca de los nuevos tipos se definen o amplían los tipos existentes, consulte [extender los tipos de objeto y formato](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell pasa información entre cmdlets mediante objetos. NET. Por lo tanto, un cmdlet que deba definir su propio tipo o el cmdlet puede necesitar extender un tipo existente proporcionado por otro cmdlet. Para obtener más información acerca de los nuevos tipos se definen o amplían los tipos existentes, consulte [extender los tipos de objeto y formato](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Compilar el Cmdlet
 
-Después de implementar un cmdlet se debe registrar con Windows PowerShell a través de un complemento de Windows PowerShell. Para obtener más información sobre cómo registrar cmdlets, consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Después de implementar un cmdlet se debe registrar con Windows PowerShell a través de un complemento de Windows PowerShell. Para obtener más información sobre cómo registrar cmdlets, consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Probar el Cmdlet
 
@@ -180,9 +180,9 @@ Aparece el siguiente resultado.
 
 [Creación del primer Cmdlet](./creating-a-cmdlet-without-parameters.md)
 
-[Extensión de tipos de objeto y el formato](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extensión de tipos de objeto y el formato](/previous-versions//ms714665(v=vs.85))
 
-[Cómo registrar Cmdlets, proveedores y aplicaciones Host](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cómo registrar Cmdlets, proveedores y aplicaciones Host](/previous-versions//ms714644(v=vs.85))
 
 [Referencia de Windows PowerShell](../windows-powershell-reference.md)
 

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854914"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301401"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Creación de un cmdlet que modifica el sistema
 
@@ -59,7 +59,7 @@ Tenga en cuenta que, en el [System.Management.Automation.CmdletAttribute](/dotne
 
 ### <a name="extremely-destructive-actions"></a>Acciones destructivas extremadamente
 
-Algunas operaciones son extremadamente destructivas, como volver a formatear una partición de disco duro activo. En estos casos, debe establecer el cmdlet `ConfirmImpact`  =  `ConfirmImpact.High` al declarar el [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) atributo. Esta opción fuerza el cmdlet para solicitar la confirmación de usuario incluso cuando el usuario no ha especificado el `Confirm` parámetro. Sin embargo, los desarrolladores de cmdlets deben evitar el uso excesivo `ConfirmImpact` para las operaciones que son simplemente potencialmente destructivas, como la eliminación de una cuenta de usuario. Recuerde que si `ConfirmImpact` está establecido en [System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High).
+Algunas operaciones son extremadamente destructivas, como volver a formatear una partición de disco duro activo. En estos casos, debe establecer el cmdlet `ConfirmImpact`  =  `ConfirmImpact.High` al declarar el [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) atributo. Esta opción fuerza el cmdlet para solicitar la confirmación de usuario incluso cuando el usuario no ha especificado el `Confirm` parámetro. Sin embargo, los desarrolladores de cmdlets deben evitar el uso excesivo `ConfirmImpact` para las operaciones que son simplemente potencialmente destructivas, como la eliminación de una cuenta de usuario. Recuerde que si `ConfirmImpact` está establecido en [System.Management.Automation.ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **alta**.
 
 De forma similar, algunas operaciones suelen ser destructivo, aunque en teoría modifican el estado de ejecución de un sistema fuera de Windows PowerShell. Puede establecer estos cmdlets `ConfirmImpact` a [System.Management.Automation.Confirmimpact.Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Esto pasará por alto las solicitudes de confirmación que ha solicitado el usuario para confirmar las operaciones solo impacto medio y alto impacto.
 
@@ -278,11 +278,11 @@ Para la completa C# código de ejemplo, vea [StopProcessSample01 ejemplo](./stop
 
 ## <a name="defining-object-types-and-formatting"></a>Definir los tipos de objeto y el formato
 
-Windows PowerShell pasa información entre cmdlets mediante objetos. NET. Por lo tanto, un cmdlet que deba definir su propio tipo o el cmdlet puede necesitar extender un tipo existente proporcionado por otro cmdlet. Para obtener más información acerca de los nuevos tipos se definen o amplían los tipos existentes, consulte [extender los tipos de objeto y formato](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell pasa información entre cmdlets mediante objetos. NET. Por lo tanto, un cmdlet que deba definir su propio tipo o el cmdlet puede necesitar extender un tipo existente proporcionado por otro cmdlet. Para obtener más información acerca de los nuevos tipos se definen o amplían los tipos existentes, consulte [extender los tipos de objeto y formato](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Compilar el Cmdlet
 
-Después de implementar un cmdlet, se debe registrar con Windows PowerShell a través de un complemento de Windows PowerShell. Para obtener más información sobre cómo registrar cmdlets, consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Después de implementar un cmdlet, se debe registrar con Windows PowerShell a través de un complemento de Windows PowerShell. Para obtener más información sobre cómo registrar cmdlets, consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Probar el Cmdlet
 
@@ -354,9 +354,9 @@ Aparece el siguiente resultado.
 
 [Adición de parámetros que procesa la entrada de línea de comandos](./adding-parameters-that-process-command-line-input.md)
 
-[Extensión de tipos de objeto y el formato](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extensión de tipos de objeto y el formato](/previous-versions//ms714665(v=vs.85))
 
-[Cómo registrar Cmdlets, proveedores y aplicaciones Host](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cómo registrar Cmdlets, proveedores y aplicaciones Host](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
