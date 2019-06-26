@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Creación de una canalización de integración continua e implementación continua con DSC
-ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076487"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301490"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Creación de una canalización de integración continua e implementación continua con DSC
 
@@ -22,10 +22,10 @@ Una canalización CI/CD automatizada le ayuda a actualizar software de forma má
 
 Para usar este ejemplo, debe estar familiarizado con lo siguiente:
 
-- Los conceptos de CI-CD. Puede encontrar una excelente referencia en [el modelo de canalización de versiones](http://aka.ms/thereleasepipelinemodelpdf).
+- Los conceptos de CI-CD. Puede encontrar una excelente referencia en [el modelo de canalización de versiones](https://aka.ms/thereleasepipelinemodelpdf).
 - El control de código fuente de [Git](https://git-scm.com/)
 - El entorno de pruebas [Pester](https://github.com/pester/Pester)
-- [Team Foundation Server](https://www.visualstudio.com/tfs/)
+- [Team Foundation Server](https://visualstudio.microsoft.com/tfs/)
 
 ## <a name="what-you-will-need"></a>Qué necesitará
 
@@ -44,7 +44,7 @@ El equipo cliente debe ser un equipo Windows que tenga instalado lo siguiente:
 ### <a name="tfssrv1"></a>TFSSrv1
 
 El equipo que hospeda el servidor TFS donde definirá la compilación y la versión.
-Este equipo debe tener instalado [Team Foundation Server 2017](https://www.visualstudio.com/tfs/).
+Este equipo debe tener instalado [Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/).
 
 ### <a name="buildagent"></a>BuildAgent
 
@@ -157,7 +157,7 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 Esta instrucción encuentra cualquier nodo que se haya definido con un rol de `DNSServer` en los [datos de configuración](../configurations/configData.md), creados por el script `DevEnv.ps1`.
 
-Puede obtener más información sobre el método `Where` en [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md).
+Puede obtener más información sobre el método `Where` en [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays).
 
 Usar datos de configuración para definir nodos es importantes cuando se hace CI, porque es probable que la información de los nodos cambie entre los entornos y usar los datos de configuración le permite hacer cambios con facilidad en la información de los nodos sin cambiar el código de configuración.
 
@@ -319,7 +319,7 @@ El script de prueba de aceptación usa una combinación de sintaxis de [Pester](
 
 Ahora que cargamos el código en TFS y sabemos qué hace, definamos la compilación.
 
-En esta sección, solo analizaremos los pasos de compilación que agregará a la misma. Si desea instrucciones sobre cómo crear una definición de compilación en TFS, consulte el artículo sobre cómo [crear una definición de compilación y ponerla en cola](/azure/devops/pipelines/get-started-designer).
+En esta sección, solo analizaremos los pasos de compilación que agregará a la misma. Si desea instrucciones sobre cómo crear una definición de compilación en TFS, consulte el artículo sobre cómo [crear una definición de compilación y ponerla en cola](/azure/devops/pipelines/create-first-pipeline).
 
 Cree una nueva definición de compilación (seleccione la plantilla **vacía**) llamada "InfraDNS".
 Agregue los pasos siguientes a la definición de compilación:
@@ -388,7 +388,7 @@ Vamos a crear una definición de versión para que el proyecto se implemente en 
 
 Para esto, agregue una nueva definición de versión asociada con la definición de compilación `InfraDNS` que creó anteriormente.
 Asegúrese de seleccionar **Implementación continua** para que una nueva versión se desencadene cada vez que se complete una nueva compilación.
-([¿Cuáles son las canalizaciones de versiones? ](/azure/devops/pipelines/release/what-is-release-management)) y configúrelo como sigue:
+([¿Cuáles son las canalizaciones de versiones? ](/azure/devops/pipelines/release/)) y configúrelo como sigue:
 
 Agregue los pasos siguientes a la definición de versión:
 
