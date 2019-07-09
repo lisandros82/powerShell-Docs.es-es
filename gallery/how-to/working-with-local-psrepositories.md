@@ -17,7 +17,7 @@ Estos cmdlets permiten los siguientes escenarios:
 
 - Compatibilidad con un conjunto confiable y validado previamente de módulos de PowerShell para usar en su entorno
 - Prueba de una canalización de CI/CD que compila los módulos o scripts de PowerShell
-- Proporcionar módulos y scripts de PowerShell a los sistemas que no pueden acceder a Internet
+- Suministro de módulos y scripts de PowerShell a los sistemas que no pueden acceder a Internet
 
 En este artículo se describe cómo configurar un repositorio local de PowerShell. El artículo también trata el módulo [OfflinePowerShellGetDeploy][] disponible en la Galería de PowerShell. Este módulo contiene cmdlets para instalar la versión más reciente de PowerShellGet en el repositorio local.
 
@@ -29,18 +29,18 @@ Servidor de NuGet
 
 | Ventajas| Desventajas |
 | --- | --- |
-| Imita con precisión la funcionalidad de la Galería de PowerShell | La aplicación de varios niveles requiere la planeación y el soporte de las aplicaciones |
-| NuGet se integra con Visual Studio, otras herramientas | Se necesita un modelo de autenticación y administración de cuentas de NuGet |
-| NuGet es compatible con los metadatos en paquetes `.Nupkg` | La publicación requiere mantenimiento y administración de claves de API |
+| Imita con precisión la funcionalidad de la Galería de PowerShell. | La aplicación de niveles múltiples requiere la planeación y la compatibilidad de las aplicaciones. |
+| NuGet se integra con Visual Studio, otras herramientas. | Se necesita un modelo de autenticación y administración de cuentas de NuGet. |
+| NuGet es compatible con los metadatos en paquetes `.Nupkg`. | La publicación requiere mantenimiento y administración de claves de API. |
 | Proporciona búsqueda, administración de paquetes, etc. | |
 
 Recurso compartido de archivos
 
 | Ventajas| Desventajas |
 | --- | --- |
-| Fácil configuración, proceso de copia de seguridad y mantenimiento | Los metadatos usados por PowerShellGet no están disponibles |
-| Modelo de seguridad simple: permisos de usuario en el recurso compartido | Sin interfaz de usuario más allá del recurso compartido de archivos básico |
-| Sin restricciones como el reemplazo de los elementos existentes | Seguridad limitada y ausencia de registro de quién actualiza qué |
+| Fácil configuración, proceso de copia de seguridad y mantenimiento. | Los metadatos usados por PowerShellGet no están disponibles. |
+| Modelo de seguridad simple: permisos de usuario en el recurso compartido. | Sin interfaz de usuario más allá del recurso compartido de archivos básico. |
+| Sin restricciones como el reemplazo de los elementos existentes. | Seguridad limitada y ausencia de registro de quién actualiza qué. |
 
 PowerShellGet funciona con cualquier tipo y admite la búsqueda de versiones y la instalación de dependencias.
 Sin embargo, algunas características que funcionan para la Galería de PowerShell no están disponibles para los servidores o los recursos compartidos de archivos de NuGet básicos.
@@ -56,7 +56,7 @@ El siguiente artículo enumera los pasos para configurar su propio servidor de N
 
 Siga los pasos hasta el momento de agregar los paquetes. Los pasos para [publicar un paquete](#publishing-to-a-local-repository) se tratan más adelante en este artículo.
 
-En el caso de un repositorio basado en recursos compartidos de archivos, asegúrese de que los usuarios tienen permisos para acceder al recurso compartido de archivos.
+En el caso de un repositorio basado en recursos compartidos de archivos, asegúrese de que los usuarios tienen permisos para acceder a dicho recurso.
 
 ## <a name="registering-a-local-repository"></a>Registro de un repositorio local
 
@@ -71,7 +71,7 @@ Register-PSRepository -Name LocalPSRepo -SourceLocation http://MyLocalNuget/Api/
 Register-PSRepository -Name LocalPSRepo -SourceLocation '\\localhost\PSRepoLocal\' -ScriptSourceLocation '\\localhost\PSRepoLocal\' -InstallationPolicy Trusted
 ```
 
-Observe la diferencia entre el modo en que los dos comandos controlan **ScriptSourceLocation**. Para repositorios basados en recursos compartidos de archivos, las propiedades **SourceLocation** y **ScriptSourceLocation** deben coincidir. En el caso de un repositorio basado en web, deben ser diferentes; por tanto, en este ejemplo se agrega un "/" final a **SourceLocation**.
+Observe la diferencia entre el modo en que los dos comandos controlan **ScriptSourceLocation**. Para repositorios basados en recursos compartidos de archivos, las propiedades **SourceLocation** y **ScriptSourceLocation** deben coincidir. En el caso de un repositorio basado en web, deben ser diferentes; por tanto, en este ejemplo se agrega "/" final a **SourceLocation**.
 
 Si desea que el repositorio PSRepository recién creado sea el repositorio predeterminado, debe anular el registro de todos los demás repositorios PSRepositories. Por ejemplo:
 
@@ -92,7 +92,7 @@ Register-PSRepository -Default
 
 Una vez que haya registrado la instancia local de PSRepository, puede publicar en ella. Hay dos escenarios principales de publicación: publicación de su propio módulo y publicación de un módulo desde PSGallery.
 
-### <a name="publishing-a-module-you-authored"></a>Publicación de un módulo de su creación
+### <a name="publishing-a-module-you-authored"></a>Publicación de un módulo que ha creado
 
 Use `Publish-Module` y `Publish-Script` para publicar el módulo en su PSRepository local del mismo modo que lo hace para la Galería de PowerShell.
 

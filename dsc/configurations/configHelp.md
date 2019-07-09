@@ -13,8 +13,8 @@ ms.locfileid: "62080193"
 
 >Se aplica a: Windows PowerShell 5.0
 
-Puede usar la ayuda basada en comentarios en configuraciones de DSC. Los usuarios pueden acceder a la ayuda mediante una llamada a la **configuración** con `-?`, o mediante el cmdlet [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help). Coloque la ayuda basada en comentarios directamente encima de la palabra clave `Configuration`.
-Puede colocar la ayuda de parámetro en línea con el bloque de comentario, justo encima de la declaración de parámetros o en ambos lugares, como se muestra en el ejemplo siguiente.
+Puede usar la ayuda basada en comentarios en configuraciones de DSC. Los usuarios pueden acceder a la ayuda mediante una llamada a la **configuración** con `-?` o mediante el cmdlet [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help). Coloque la ayuda basada en comentarios directamente encima de la palabra clave `Configuration`.
+Puede colocar la ayuda de parámetros en línea con el bloque de comentario, justo encima de la declaración de parámetros o en ambos lugares, como se muestra en el ejemplo siguiente.
 
 Para obtener más información sobre la ayuda basada en comentarios de PowerShell, vea [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
@@ -157,7 +157,7 @@ REMARKS
 ```
 
 > [!NOTE]
-> Los campos de la sintaxis y los atributos de parámetro se generan automáticamente mediante PowerShell.
+> Los campos de la sintaxis y los atributos del parámetro se generan automáticamente mediante PowerShell.
 
 ## <a name="see-also"></a>Véase también
 
