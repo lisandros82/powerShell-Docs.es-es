@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 555baec08539403d3c15d1eca2b23eec0a874e49
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854851"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733948"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Creación de un cmdlet para obtener acceso a un almacén de datos
 
@@ -72,7 +72,7 @@ Tenga en cuenta que este parámetro pertenece a dos conjuntos de parámetros dif
 
 Dos [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) atributos que declaran los `Path` parámetro pertenece a la `ScriptParameterSet` y `PatternParameterSet`. Para obtener más información acerca de conjuntos de parámetros, vea [agregar conjuntos de parámetros a un Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
 
-El [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) atributo declara un `PSPath` alias para el `Path` parámetro. Se recomienda encarecidamente declarar este alias para mantener la coherencia con otros cmdlets que tienen acceso a los proveedores de Windows PowerShell. Para obtener más información aboutWindows las rutas de PowerShell, consulte "Conceptos de ruta de acceso de PowerShell" en [cómo Windows PowerShell funciona](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+El [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) atributo declara un `PSPath` alias para el `Path` parámetro. Se recomienda encarecidamente declarar este alias para mantener la coherencia con otros cmdlets que tienen acceso a los proveedores de Windows PowerShell. Para obtener más información aboutWindows las rutas de PowerShell, consulte "Conceptos de ruta de acceso de PowerShell" en [cómo Windows PowerShell funciona](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="declaring-the-pattern-parameter"></a>Declarar el parámetro del patrón
 
@@ -379,7 +379,7 @@ Este cmdlet Select-Str de ejemplo usa el [System.Management.Automation.Provideri
 
 ## <a name="code-sample"></a>Ejemplo de código
 
-El código siguiente muestra la implementación de esta versión de este cmdlet Select-Str. Tenga en cuenta que este código incluye la clase del cmdlet, métodos privados utilizados por el cmdlet y el Windows PowerShell complemento código usado para registrar el cmdlet. Para obtener más información sobre cómo registrar el cmdlet, consulte [compilar el Cmdlet](#building-the-cmdlet).
+El código siguiente muestra la implementación de esta versión de este cmdlet Select-Str. Tenga en cuenta que este código incluye la clase del cmdlet, métodos privados utilizados por el cmdlet y el Windows PowerShell complemento código usado para registrar el cmdlet. Para obtener más información sobre cómo registrar el cmdlet, consulte [compilar el Cmdlet](#Defining-the-Cmdlet-Class).
 
 ```csharp
 //
@@ -1090,7 +1090,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="building-the-cmdlet"></a>Compilar el Cmdlet
 
-Después de implementar un cmdlet, debe registrarlo con Windows PowerShell a través de un complemento de Windows PowerShell. Para obtener más información sobre cómo registrar cmdlets, consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Después de implementar un cmdlet, debe registrarlo con Windows PowerShell a través de un complemento de Windows PowerShell. Para obtener más información sobre cómo registrar cmdlets, consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Probar el Cmdlet
 
@@ -1212,9 +1212,9 @@ Cuando el cmdlet se ha registrado con Windows PowerShell, puede probarla mediant
     Pattern      :
     ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
-[Creación de un Cmdlet de Windows PowerShell](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Creación de un Cmdlet de Windows PowerShell](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
 [Creación del primer Cmdlet](./creating-a-cmdlet-without-parameters.md)
 
@@ -1222,8 +1222,8 @@ Cuando el cmdlet se ha registrado con Windows PowerShell, puede probarla mediant
 
 [Diseñar el proveedor de Windows PowerShell](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[Cómo funciona Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Cómo funciona Windows PowerShell](/previous-versions//ms714658(v=vs.85))
 
-[Cómo registrar Cmdlets, proveedores y aplicaciones Host](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cómo registrar Cmdlets, proveedores y aplicaciones Host](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080921"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734864"
 ---
 # <a name="windows-powershell-provider-overview"></a>Información general sobre Proveedor de Windows PowerShell
 
@@ -27,7 +27,7 @@ Al escribir un proveedor, puede especificar unidades predeterminado que se crean
 
 ## <a name="type-of-providers"></a>Tipo de proveedores
 
-Hay varios tipos de proveedores, cada uno de los cuales proporciona un nivel de funcionalidad diferentes. Un proveedor se implementa como una clase que derive de uno de los descendientes de los [System.Management.Automation.Sessionstatecategory.Cmdletprovider](/dotnet/api/System.Management.Automation.SessionStateCategory.CmdletProvider) clase. Para obtener información sobre los diferentes tipos de proveedores, consulte [tipos de proveedor](./provider-types.md).
+Hay varios tipos de proveedores, cada uno de los cuales proporciona un nivel de funcionalidad diferentes. Un proveedor se implementa como una clase que derive de uno de los descendientes de los [System.Management.Automation.SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0) **CmdletProvider** clase. Para obtener información sobre los diferentes tipos de proveedores, consulte [tipos de proveedor](./provider-types.md).
 
 ## <a name="provider-cmdlets"></a>Cmdlets de proveedor
 
@@ -63,7 +63,7 @@ Los proveedores pueden definir los parámetros dinámicos que se agregan a un cm
 
 ## <a name="provider-capabilities"></a>Capacidades del proveedor
 
-El [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeración define una serie de funcionalidades que los proveedores pueden admitir. Éstos incluyen la capacidad para usar caracteres comodín, filtrar elementos y compatibilidad con transacciones. Para especificar las capacidades de un proveedor, agregue una lista de valores de la [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeración, combinada con un valor lógico `OR` operación, como el [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) propiedad (el segundo parámetro del atributo) de la [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) atributo para la clase de proveedor. Por ejemplo, el atributo siguiente especifica que el proveedor admite la [System.Management.Automation.Provider.Providercapabilities.Shouldprocess](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.ShouldProcess) y [ System.Management.Automation.Provider.Providercapabilities.Transactions](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.Transactions) capacidades.
+El [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeración define una serie de funcionalidades que los proveedores pueden admitir. Éstos incluyen la capacidad para usar caracteres comodín, filtrar elementos y compatibilidad con transacciones. Para especificar las capacidades de un proveedor, agregue una lista de valores de la [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeración, combinada con un valor lógico `OR` operación, como el [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) propiedad (el segundo parámetro del atributo) de la [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) atributo para la clase de proveedor. Por ejemplo, el atributo siguiente especifica que el proveedor admite la [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** y [ System.Management.Automation.Provider.ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **transacciones** capacidades.
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]
@@ -90,7 +90,7 @@ Se escribe el contenido del archivo de ayuda mediante PSMAML XML. Este es el mis
 <CmdletHelpPath>
 ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
 [Funcionalidad de proveedor de PowerShell de Windows](./provider-types.md)
 

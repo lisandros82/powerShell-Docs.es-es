@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 44a9c970d32dc6f98456227f8b02101280541dd9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081094"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734876"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Programador de Windows PowerShell&#39;guía
 
@@ -37,7 +37,7 @@ En el desarrollo de comandos tradicionales, deberá escribir un analizador de pa
 
 Windows PowerShell define varios tipos de comandos que puede usar en el desarrollo. Estos comandos incluyen: funciones, filtros, las secuencias de comandos, alias y los archivos ejecutables (aplicaciones). El tipo de comando principal descrito en esta guía es un comando simple y pequeño denominado un "cmdlet". Windows PowerShell ofrece un conjunto de cmdlets y es totalmente compatible con la personalización de cmdlet para adaptarlo a su entorno. El tiempo de ejecución de Windows PowerShell procesa todos los tipos de comando, al igual que los cmdlets, uso de canalizaciones.
 
-Además de los comandos, Windows PowerShell es compatible con distintos proveedores de Windows PowerShell personalizables que realizan disponibles conjuntos específicos de los cmdlets. El shell funciona dentro de la aplicación de host proporcionados por Windows PowerShell (PowerShell.exe Windows), pero es igualmente accesible desde una aplicación de host personalizado que puede desarrollar para satisfacer necesidades específicas. Para obtener más información, consulte [cómo Windows PowerShell funciona](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Además de los comandos, Windows PowerShell es compatible con distintos proveedores de Windows PowerShell personalizables que realizan disponibles conjuntos específicos de los cmdlets. El shell funciona dentro de la aplicación de host proporcionados por Windows PowerShell (PowerShell.exe Windows), pero es igualmente accesible desde una aplicación de host personalizado que puede desarrollar para satisfacer necesidades específicas. Para obtener más información, consulte [cómo Windows PowerShell funciona](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="windows-powershell-cmdlets"></a>Cmdlets de Windows PowerShell
 
@@ -51,17 +51,17 @@ Para realizar tareas administrativas, puede que el usuario deberá examinar los 
 
 Windows PowerShell proporciona distintos proveedores de Windows PowerShell. Por ejemplo, el proveedor del registro es compatible con la navegación y manipulación del registro de Windows. Las claves del registro se representan como elementos y valores del registro se tratan como propiedades.
 
-Si expone un almacén de datos que el usuario deberá acceder, es posible que deberá escribir su propio proveedor de Windows PowerShell, como se describe en [crear proveedores de Windows PowerShell](./how-to-create-a-windows-powershell-provider.md). Para obtener más información aboutWindows proveedores de PowerShell, consulte [cómo Windows PowerShell funciona](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Si expone un almacén de datos que el usuario deberá acceder, es posible que deberá escribir su propio proveedor de Windows PowerShell, como se describe en [crear proveedores de Windows PowerShell](./how-to-create-a-windows-powershell-provider.md). Para obtener más información aboutWindows proveedores de PowerShell, consulte [cómo Windows PowerShell funciona](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="host-application"></a>Aplicación host
 
 Windows PowerShell incluye el valor predeterminado host aplicación powershell.exe, que es una aplicación de consola que interactúa con el usuario y hospeda el tiempo de ejecución de Windows PowerShell con una ventana de consola.
 
-Solo en raras ocasiones deberá escribir su propia aplicación de host de Windows PowerShell, aunque se admite la personalización. Un caso en que es posible que necesite su propia aplicación es cuando tiene un requisito para una interfaz gráfica de usuario que sea más rico que la interfaz proporcionada por la aplicación de host predeterminado. También puede una aplicación personalizada cuando base la interfaz gráfica de usuario en la línea de comandos. Para obtener más información, consulte [cómo crear una aplicación de Host de Windows PowerShell](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Solo en raras ocasiones deberá escribir su propia aplicación de host de Windows PowerShell, aunque se admite la personalización. Un caso en que es posible que necesite su propia aplicación es cuando tiene un requisito para una interfaz gráfica de usuario que sea más rico que la interfaz proporcionada por la aplicación de host predeterminado. También puede una aplicación personalizada cuando base la interfaz gráfica de usuario en la línea de comandos. Para obtener más información, consulte [cómo crear una aplicación de Host de Windows PowerShell](/powershell/developer/hosting/writing-a-windows-powershell-host-application).
 
 ### <a name="windows-powershell-runtime"></a>Tiempo de ejecución de Windows PowerShell
 
-El tiempo de ejecución de Windows PowerShell es el motor de ejecución que implementa el procesamiento de comandos. Incluye las clases que proporcionan la interfaz entre la aplicación host y los comandos de Windows PowerShell y los proveedores. El tiempo de ejecución de Windows PowerShell se implementa como un objeto de espacio de ejecución de la sesión actual de Windows PowerShell, que es el entorno operativo en el que se ejecutan comandos y el shell. Para obtener detalles operativos, consulte [cómo Windows PowerShell funciona](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+El tiempo de ejecución de Windows PowerShell es el motor de ejecución que implementa el procesamiento de comandos. Incluye las clases que proporcionan la interfaz entre la aplicación host y los comandos de Windows PowerShell y los proveedores. El tiempo de ejecución de Windows PowerShell se implementa como un objeto de espacio de ejecución de la sesión actual de Windows PowerShell, que es el entorno operativo en el que se ejecutan comandos y el shell. Para obtener detalles operativos, consulte [cómo Windows PowerShell funciona](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="windows-powershell-language"></a>Lenguaje de Windows PowerShell
 
@@ -81,7 +81,7 @@ Windows PowerShell proporciona acceso a una variedad de diferentes objetos, como
 
   Con ETS, puede crear nuevos flexibles "tipos" que son compatibles con el lenguaje de Windows PowerShell. Si es desarrollador de. NET, es posible trabajar con objetos con la misma semántica que el lenguaje de Windows PowerShell se aplica a secuencias de comandos, por ejemplo, para determinar si un objeto se evalúa como `true`.
 
-  Para obtener más información acerca de ETS y cómo Windows PowerShell usa los objetos, consulte [conceptos de objetos de Windows PowerShell](http://msdn.microsoft.com/en-us/12700631-be23-4e6b-9bf0-81ea0d166353).
+  Para obtener más información acerca de ETS y cómo Windows PowerShell usa los objetos, consulte [conceptos de objetos de Windows PowerShell](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6).
 
 ## <a name="programming-for-windows-powershell"></a>Programación para Windows PowerShell
 
@@ -100,7 +100,7 @@ Para obtener más información acerca de cómo empezar a usar el shell de Window
 |Tema|Definición|
 |-----------|----------------|
 |[Cómo crear un proveedor de Windows PowerShell](./how-to-create-a-windows-powershell-provider.md)|En esta sección se describe cómo crear un proveedor de Windows PowerShell para Windows PowerShell.|
-|[Cómo crear una aplicación de Host de PowerShell de Windows](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|En esta sección se describe cómo escribir una aplicación host que manipula un espacio de ejecución y cómo escribir una aplicación host que implementa su propio host personalizado.|
+|[Cómo crear una aplicación de Host de PowerShell de Windows](/powershell/developer/hosting/writing-a-windows-powershell-host-application)|En esta sección se describe cómo escribir una aplicación host que manipula un espacio de ejecución y cómo escribir una aplicación host que implementa su propio host personalizado.|
 |[Cómo crear un complemento Windows PowerShell](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|En esta sección se describe cómo crear un complemento que se usa para registrar todos los cmdlets y proveedores en un ensamblado y cómo crear un complemento personalizado.|
 |[Cómo crear un Shell de la consola](./how-to-create-a-console-shell.md)|En esta sección se describe cómo crear un shell de consola que no es extensible.|
 |[Conceptos de Windows PowerShell](./windows-powershell-concepts.md)|Esta sección contiene información conceptual que le ayudará a entender Windows PowerShell desde el punto de vista de un desarrollador.|

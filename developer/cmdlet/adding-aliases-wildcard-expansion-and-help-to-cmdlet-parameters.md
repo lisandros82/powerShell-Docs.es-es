@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: 946b71e4480a47ac6ccd6930be445d7efb4fb62d
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: bc921537062e35aa203fa3ee95d3b7211c89cb28
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854903"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733850"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Adición de alias, expansión de caracteres comodín y Ayuda a los parámetros del cmdlet
 
@@ -134,11 +134,11 @@ Para la completa C# código de ejemplo, vea [StopProcessSample03 ejemplo](./stop
 
 ## <a name="define-object-types-and-formatting"></a>Definir tipos de objeto y el formato
 
-Windows PowerShell pasa información entre cmdlets mediante objetos. NET. Por lo tanto, un cmdlet que deba definir su propio tipo o el cmdlet puede necesitar extender un tipo existente proporcionado por otro cmdlet. Para obtener más información acerca de los nuevos tipos se definen o amplían los tipos existentes, consulte [extender los tipos de objeto y formato](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell pasa información entre cmdlets mediante objetos. NET. Por lo tanto, un cmdlet que deba definir su propio tipo o el cmdlet puede necesitar extender un tipo existente proporcionado por otro cmdlet. Para obtener más información acerca de los nuevos tipos se definen o amplían los tipos existentes, consulte [extender los tipos de objeto y formato](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Compilar el Cmdlet
 
-Después de implementar un cmdlet, se debe registrar con Windows PowerShell a través de un complemento de Windows PowerShell. Para obtener más información sobre cómo registrar cmdlets, consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Después de implementar un cmdlet, se debe registrar con Windows PowerShell a través de un complemento de Windows PowerShell. Para obtener más información sobre cómo registrar cmdlets, consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Probar el Cmdlet
 
@@ -209,15 +209,15 @@ Aparece el siguiente resultado.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
 [Crear un Cmdlet que modifique el sistema](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Creación de un Cmdlet de Windows PowerShell](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Creación de un Cmdlet de Windows PowerShell](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Extensión de tipos de objeto y el formato](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extensión de tipos de objeto y el formato](/previous-versions//ms714665(v=vs.85))
 
-[Cómo registrar Cmdlets, proveedores y aplicaciones Host](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cómo registrar Cmdlets, proveedores y aplicaciones Host](/previous-versions//ms714644(v=vs.85))
 
 [Compatibilidad con caracteres comodín en los parámetros de Cmdlet](./supporting-wildcard-characters-in-cmdlet-parameters.md)
 

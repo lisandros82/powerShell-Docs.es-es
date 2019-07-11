@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateLength attribute
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
-ms.openlocfilehash: 4d3cdccc0fe3e24b1221e41beef4821b613aab93
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: a25fa2410fcc6803563573596af1bc99052c3ffa
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855162"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735095"
 ---
 # <a name="validatelength-attribute-declaration"></a>Declaración de atributo ValidateLength
 
@@ -31,9 +31,9 @@ El atributo ValidateLength especifica el número mínimo y máximo de caracteres
 
 #### <a name="parameters"></a>Parámetros
 
-`MinLength` ([System.Integer](/dotnet/api/System.Integer)) necesarios. Especifica el número mínimo de caracteres permitidos.
+`MinLength` ([System.Int32](/dotnet/api/System.Int32)) necesarios. Especifica el número mínimo de caracteres permitidos.
 
-`MaxLength` ([System.Integer](/dotnet/api/System.Integer)) necesarios. Especifica el número máximo de caracteres permitidos.
+`MaxLength` ([System.Int32](/dotnet/api/System.Int32)) necesarios. Especifica el número máximo de caracteres permitidos.
 
 ## <a name="remarks"></a>Observaciones
 
@@ -51,7 +51,7 @@ El atributo ValidateLength especifica el número mínimo y máximo de caracteres
 
 - El atributo ValidateLength está definido por el [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute) clase.
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
 [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)
 

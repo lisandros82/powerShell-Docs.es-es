@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Parameter attribute
 ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
 caps.latest.revision: 13
-ms.openlocfilehash: a3488d5fb3f7eb3df28d0242d6c39d07145a3c8d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81b1ed95669f51ba554f6f99031d098e239f02e0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067559"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735136"
 ---
 # <a name="parameter-attribute-declaration"></a>Declaración de atributo de parámetro
 
@@ -36,7 +36,7 @@ El atributo de parámetro identifica una propiedad pública de la clase de cmdle
 
 `ParameterSetName` ([System.String](/dotnet/api/System.String)) con el nombre de parámetro opcional. Especifica que el parámetro establecido que pertenece este parámetro de cmdlet. Si no se especifica ningún conjunto de parámetros, el parámetro pertenece a todos los conjuntos de parámetros.
 
-`Position` ([System.Integer](/dotnet/api/System.Integer)) con el nombre de parámetro opcional. Especifica la posición del parámetro dentro de un comando de Windows PowerShell.
+`Position` ([System.Int32](/dotnet/api/System.Int32)) con el nombre de parámetro opcional. Especifica la posición del parámetro dentro de un comando de Windows PowerShell.
 
 `ValueFromPipeline` ([System.Boolean](/dotnet/api/System.Boolean)) con el nombre de parámetro opcional. `True` indica que el parámetro de cmdlet toma su valor de un objeto de canalización. Especifique esta palabra clave si el cmdlet obtiene acceso a la completa de objetos, no solo una propiedad del objeto. El valor predeterminado es `false`.
 
@@ -76,7 +76,7 @@ El atributo de parámetro identifica una propiedad pública de la clase de cmdle
 
 - El atributo de parámetro está definido por el [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) clase.
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
 [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)
 

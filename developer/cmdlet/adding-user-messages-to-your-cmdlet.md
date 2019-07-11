@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 138c6a43937e72fffaa2a09243e500e9822e6111
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 1e048f6ae94ac226218c18c8f8f7590a4db26226
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854934"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733760"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Adición de mensajes de usuario al cmdlet
 
@@ -212,11 +212,11 @@ Para la completa C# código de ejemplo, vea [StopProcessSample02 ejemplo](./stop
 
 ## <a name="define-object-types-and-formatting"></a>Definir tipos de objeto y el formato
 
-Windows PowerShell pasa información entre cmdlets mediante objetos. NET. Por lo tanto, un cmdlet es posible que deba definir su propio tipo o el cmdlet que tenga que ampliar un tipo existente proporcionado por otro cmdlet. Para obtener más información acerca de los nuevos tipos se definen o amplían los tipos existentes, consulte [extender los tipos de objeto y formato](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell pasa información entre cmdlets mediante objetos. NET. Por lo tanto, un cmdlet es posible que deba definir su propio tipo o el cmdlet que tenga que ampliar un tipo existente proporcionado por otro cmdlet. Para obtener más información acerca de los nuevos tipos se definen o amplían los tipos existentes, consulte [extender los tipos de objeto y formato](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Compilar el Cmdlet
 
-Después de implementar un cmdlet, se debe registrar con Windows PowerShell a través de un complemento de Windows PowerShell. Para obtener más información sobre cómo registrar cmdlets, consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Después de implementar un cmdlet, se debe registrar con Windows PowerShell a través de un complemento de Windows PowerShell. Para obtener más información sobre cómo registrar cmdlets, consulte [cómo registrar Cmdlets, proveedores y aplicaciones Host](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Probar el Cmdlet
 
@@ -249,10 +249,10 @@ Aparece el siguiente resultado.
 
 [Crear un Cmdlet que modifique el sistema](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Creación de un Cmdlet de Windows PowerShell](http://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Creación de un Cmdlet de Windows PowerShell](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Extensión de tipos de objeto y el formato](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extensión de tipos de objeto y el formato](/previous-versions//ms714665(v=vs.85))
 
-[Cómo registrar Cmdlets, proveedores y aplicaciones Host](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cómo registrar Cmdlets, proveedores y aplicaciones Host](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

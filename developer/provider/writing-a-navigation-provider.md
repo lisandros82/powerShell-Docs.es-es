@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: edb4d9944a527391983e068ddf07f4fac415c3f9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080873"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734731"
 ---
 # <a name="writing-a-navigation-provider"></a>Escritura de un proveedor de navegación
 
@@ -25,7 +25,7 @@ Para obtener más información acerca de los proveedores de Windows PowerShell, 
 
 ## <a name="implementing-navigation-methods"></a>Implementación de métodos de navegación
 
-El [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) clase implementa métodos que admiten los contenedores anidados, rutas de acceso relativas y movimiento de los elementos. Para obtener una lista completa de estos métodos, consulte [NavigationCmdletProvider métodos](http://msdn.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider_methods\(v=vs.85\).aspx).
+El [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) clase implementa métodos que admiten los contenedores anidados, rutas de acceso relativas y movimiento de los elementos. Para obtener una lista completa de estos métodos, consulte [NavigationCmdletProvider métodos](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods).
 
 > [!NOTE]
 > Este tema se basa en la información de [inicio rápido de proveedor de Windows PowerShell](./windows-powershell-provider-quickstart.md). Este tema no tratan los aspectos básicos de cómo configurar un proyecto de proveedor, o cómo se implementan los métodos heredados de la [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) clase que crear y quitar unidades. En este tema también no cubre cómo implementar los métodos expuestos por el [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) o [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) clases. Para obtener un ejemplo que muestra cómo implementar el elemento cmdlets, consulte [escribir un proveedor de elementos](./writing-an-item-provider.md). Para obtener un ejemplo que muestra cómo implementar el contenedor cmdlets, consulte [escribir un proveedor de contenedor](./writing-a-container-provider.md).
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>Implementar MakePath
 
-El [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) método combina una ruta de acceso del elemento primario especificado y una ruta de acceso secundaria especificada para crear una ruta de acceso interna del proveedor (para tipos de información acerca de la ruta de acceso que los proveedores pueden admitir, vea [Introducción al proveedor de Windows PowerShell](./windows-powershell-provider-overview.md). El motor de PowerShell llama a este método cuando un usuario llama a la [Microsoft.PowerShell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) cmdlet.
+El [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) método combina una ruta de acceso del elemento primario especificado y una ruta de acceso secundaria especificada para crear una ruta de acceso interna del proveedor (para tipos de información acerca de la ruta de acceso que los proveedores pueden admitir, vea [Introducción al proveedor de Windows PowerShell](./windows-powershell-provider-overview.md). El motor de PowerShell llama a este método cuando un usuario llama a la [Microsoft.PowerShell.Commands.JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) cmdlet.
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>Implementar MoveItem
 
-El [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) método mueve un elemento de la ruta de acceso especificada para la ruta de acceso de destino especificado. El motor de PowerShell llama a este método cuando un usuario llama a la [Microsoft.PowerShell.Commands.Move elemento](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) cmdlet.
+El [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) método mueve un elemento de la ruta de acceso especificada para la ruta de acceso de destino especificado. El motor de PowerShell llama a este método cuando un usuario llama a la [Microsoft.PowerShell.Commands.MoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.moveitemcommand) cmdlet.
 
 ```csharp
 protected override void MoveItem(string path, string destination)

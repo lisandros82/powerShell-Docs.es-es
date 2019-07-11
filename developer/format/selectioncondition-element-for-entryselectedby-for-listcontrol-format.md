@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: 633204f3b181316761746ea2679910216fb74657
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: f04a07c241268566eaedfe2b299c33d5be4dc19d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62064108"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735089"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>Elemento SelectionCondition para EntrySelectedBy for ListControl (formato)
 
@@ -38,11 +38,11 @@ Las secciones siguientes describen los atributos, elementos secundarios y el ele
 
 ### <a name="attributes"></a>Atributos
 
-Ninguna.
+Ninguno.
 
 ### <a name="child-elements"></a>Elementos secundarios
 
-|Elemento|Descripción|
+|Elemento|DESCRIPCIÓN|
 |-------------|-----------------|
 |[Elemento PropertyName para SelectionCondition para EntrySelectedBy para ListEntry (formato)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Elemento opcional.<br /><br /> Especifica la propiedad de .NET que desencadena la condición.|
 |[Elemento de bloque de script para SelectionCondition para EntrySelectedBy para ListEntry (formato)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Elemento opcional.<br /><br /> Especifica la secuencia de comandos que desencadena la condición.|
@@ -51,7 +51,7 @@ Ninguna.
 
 ### <a name="parent-elements"></a>Elementos primarios
 
-|Elemento|Descripción|
+|Elemento|DESCRIPCIÓN|
 |-------------|-----------------|
 |[Elemento EntrySelectedBy para TableRowEntry (formato)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Define los tipos de .NET que usan esta entrada de tabla o la condición que debe existir para que esta entrada que se usará.|
 
@@ -77,6 +77,6 @@ Para obtener más información sobre otros componentes de una vista de lista, co
 
 [Elemento SelectionSetName para EntrySelectedBy para ListEntry (formato)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-[Elemento TypeName para EntrySelectedBy para ListEntry (formato)](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
+[Elemento TypeName para EntrySelectedBy para ListEntry (formato)](/powershell/developer/format/typename-element-for-entryselectedby-for-listcontrol-format)
 
 [Escribir un archivo de formato de PowerShell](./writing-a-powershell-formatting-file.md)
