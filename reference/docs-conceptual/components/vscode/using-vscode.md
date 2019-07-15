@@ -84,7 +84,7 @@ Escriba `R` para ejecutar el archivo. A continuación, abra Visual Studio Code y
 
 #### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>Elección de una versión de PowerShell para usarla con la extensión
 
-Con la instalación de PowerShell Core en paralelo con Windows PowerShell, ahora es posible usar una versión determinada de PowerShell con la extensión de PowerShell. Use estos pasos para elegir la versión:
+Con la instalación de PowerShell Core en paralelo con Windows PowerShell, ahora es posible usar una versión determinada de PowerShell con la extensión de PowerShell. Siga estas etapas para escolher a versão:
 
 1. Abra la paleta de comandos (<kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>P</kbd> en Windows y Linux, <kbd>Cmd</kbd>+<kbd>Mayús</kbd>+<kbd>P</kbd> en macOS).
 1. Busque "Sesión".
@@ -92,14 +92,14 @@ Con la instalación de PowerShell Core en paralelo con Windows PowerShell, aho
 1. Elija en la lista la versión de PowerShell que quiere usar, por ejemplo, "PowerShell Core".
 
 >[!IMPORTANT]
-> Esta característica examina algunas rutas de acceso conocidas en distintos sistemas operativos para detectar las ubicaciones de instalación de PowerShell. Si instaló PowerShell en una ubicación no típica, podría no mostrarse inicialmente en el menú de la sesión. Para extender el menú de la sesión, [agregue sus propias rutas de acceso personalizadas](#adding-your-own-powershell-paths-to-the-session-menu) tal como se describe a continuación.
+> Esta característica examina algunas rutas de acceso conocidas en distintos sistemas operativos para detectar las ubicaciones de instalación de PowerShell. O PowerShell pode não ser inicialmente mostrado no menu de sessão caso você o tenha instalado em um local atípico. Para extender el menú de la sesión, [agregue sus propias rutas de acceso personalizadas](#adding-your-own-powershell-paths-to-the-session-menu) tal como se describe a continuación.
 
 >[!NOTE]
 > Esta es otra forma de acceder al menú de la sesión. Cuando se abre un archivo de PowerShell en el editor, verá un número de versión verde en la esquina inferior derecha. Haga clic en este número de versión para acceder al menú de la sesión.
 
-##### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>Incorporación de sus propias rutas de acceso de PowerShell al menú de la sesión
+##### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>Adição dos seus caminhos do PowerSheel ao menu de sessão
 
-Puede agregar otras rutas de acceso ejecutables de PowerShell al menú de la sesión a través de una configuración de VS Code.
+É possível adicionar outros caminhos executáveis do PowerShell ao menu de sessão por meio de uma configuração do VS Code.
 
 Agregue un elemento a la lista `powershell.powerShellAdditionalExePaths` o cree la lista si no existe en su `settings.json`:
 
@@ -118,12 +118,12 @@ Agregue un elemento a la lista `powershell.powerShellAdditionalExePaths` o cree 
 }
 ```
 
-Cada elemento debe tener:
+Cada item precisa ter:
 
 * `exePath`: la ruta de acceso al ejecutable `pwsh` o `powershell`.
 * `versionName`: el texto que se mostrará en el menú de la sesión.
 
-Puede establecer la versión predeterminada de PowerShell que se va a usar con la configuración `powershell.powerShellDefaultVersion` si establece esta opción en el texto que se muestra en el menú de la sesión (es decir, `versionName` en la última configuración):
+É possível definir a versão padrão do PowerShell a ser usada. Para isso, utilize a configuração `powershell.powerShellDefaultVersion` definindo-a como o texto exibido no menu de sessão (também conhecido como `versionName` na última configuração):
 
 ```json
 {
@@ -142,7 +142,7 @@ Puede establecer la versión predeterminada de PowerShell que se va a usar con l
 }
 ```
 
-Una vez que establezca esta configuración, reinicie Visual Studio Code o use la acción "Developer: Reload Window" (Desarrollador: recargar ventana) de la paleta de comandos para recargar la ventana actual de VSCode.
+Depois de definir essa configuração, reinicie o Visual Studio Code ou use a ação "Desenvolvedor: recarregar janela" da paleta de comando para atualizar a janela atual do vscode.
 
 Si abre el menú de la sesión, ahora verá las versiones adicionales de PowerShell.
 
