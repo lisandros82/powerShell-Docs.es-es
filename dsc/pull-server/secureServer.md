@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Procedimientos recomendados del servidor de extracción
-ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a3c4ca039b1e061a9246848bef6aeecebcd89011
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079207"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727199"
 ---
 # <a name="pull-server-best-practices"></a>Procedimientos recomendados del servidor de extracción
 
 Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> El servidor de extracción (característica de Windows *DSC-Service*) es un componente de Windows Server admitido, si bien no está previsto ofrecer nuevas características o funcionalidades. Se recomienda empezar a realizar la transición de los clientes administrados a [DSC de Azure Automation](/azure/automation/automation-dsc-getting-started) (incluye características más allá del servidor de extracción de Windows Server) o a una de las soluciones de la comunidad que figuran [aquí](pullserver.md#community-solutions-for-pull-service).
+> El servidor de extracción (característica de Windows *DSC-Service*) es un componente de Windows Server admitido, si bien no está previsto ofrecer nuevas características o funcionalidades. Se recomienda empezar a realizar la transición de los clientes administrados a [DSC de Azure Automation](/azure/automation/automation-dsc-getting-started) (incluye características más allá del servidor de extracción de Windows Server) o a una de las soluciones de la comunidad que figuran [aquí](/powershell/dsc/pull-server/pullserver#community-solutions-for-pull-service).
 
 Resumen: El objetivo de este documento es incluir el proceso y la extensibilidad para ayudar a los ingenieros que se estén preparando para la solución. En los detalles se deberían ofrecer procedimientos recomendados identificados por los clientes y después validados por el equipo del producto para garantizar que estén orientados al futuro y se consideren estables.
 
@@ -50,9 +50,9 @@ Windows PowerShell proporciona un conjunto de extensiones de lenguaje para Confi
 Un servidor de extracción proporciona un servicio centralizado para almacenar configuraciones que sean accesibles a los nodos de destino.
 
 El rol de servidor de extracción puede implementarse como una instancia de servidor web o como un recurso compartido de archivos SMB. La característica de servidor web incluye una interfaz OData y opcionalmente puede incluir capacidades para que los nodos de destino confirmen el éxito o el error a medida que se apliquen las configuraciones. Esta funcionalidad es útil en entornos donde hay muchos nodos de destino.
-Después de configurar un nodo de destino (también conocido como cliente) para que apunte al servidor de extracción, se descargan y se aplican los datos de configuración más recientes y los scripts necesarios. Puede ser como una implementación única o como un trabajo recurrente, lo que también convierte al servidor de extracción en un activo importante para administrar el cambio a escala. Para más información, consulte [ Windows PowerShell Desired State Configuration Pull Servers ](/powershell/dsc/pullServer) (Servidores de incorporación de cambios de la configuración de estado deseado de Windows PowerShell) y
+Después de configurar un nodo de destino (también conocido como cliente) para que apunte al servidor de extracción, se descargan y se aplican los datos de configuración más recientes y los scripts necesarios. Puede ser como una implementación única o como un trabajo recurrente, lo que también convierte al servidor de extracción en un activo importante para administrar el cambio a escala. Para más información, consulte [ Windows PowerShell Desired State Configuration Pull Servers ](/powershell/dsc/pullServer/pullserver) (Servidores de incorporación de cambios de la configuración de estado deseado de Windows PowerShell) y
 
-[Push and Pull Configuration Modes](/powershell/dsc/pullServer) (Modos de configuración de inserción y extracción).
+[Push and Pull Configuration Modes](/powershell/dsc/pullServer/pullserver) (Modos de configuración de inserción y extracción).
 
 ## <a name="configuration-planning"></a>Planeamiento de configuración
 

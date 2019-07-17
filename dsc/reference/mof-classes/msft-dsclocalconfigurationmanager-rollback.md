@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
-title: Método RollBack de la clase MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 4956900ecd2c9cb7f2e2b5bcab94616f9f5d5565
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: Método RollBack
+ms.openlocfilehash: 6452bdffd5160d9956576fb59c98e2f9ff7ddbbb
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078374"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727031"
 ---
-# <a name="rollback-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método RollBack de la clase MSFT_DSCLocalConfigurationManager
+# <a name="rollback-method"></a>Método RollBack
 
 Revierte la configuración a una versión anterior.
 

@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Problemas conocidos de PowerShell 6.0
-ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 502143b660204edada6a9e62bdf6b260a384a078
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085973"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733830"
 ---
 # <a name="known-issues-for-powershell-60"></a>Problemas conocidos de PowerShell 6.0
 
@@ -55,7 +55,7 @@ Consulte [#954](https://github.com/PowerShell/PowerShell/issues/954) para propor
 
 PowerShell en Linux/macOS usa .NET Core, que es un subconjunto de la instancia completa de .NET Framework en Microsoft Windows. Esto es significativo porque PowerShell proporciona acceso directo a los tipos de marco subyacentes, métodos, etc. Como resultado, los scripts que se ejecutan en Windows pueden no ejecutarse en plataformas que no son de Windows por las diferencias en los marcos. Para obtener más información sobre .NET Core Framework, consulte <https://dotnetfoundation.org/net-core>
 
-Con la llegada de [.NET Standard2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/), .NET Core 2.0 volverá a traer muchos de los tipos y métodos tradicionales presentes en la instancia completa de .NET Framework. Esto significa que PowerShell Core podrá cargar muchos módulos de Windows PowerShell tradicionales sin modificación. Puede seguir nuestro trabajo relacionado con .NET Standard 2.0 [aquí](https://github.com/PowerShell/PowerShell/projects/4).
+Con la llegada de [.NET Standard2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/), .NET Core 2.0 volverá a traer muchos de los tipos y métodos tradicionales presentes en la instancia completa de .NET Framework. Esto significa que PowerShell Core podrá cargar muchos módulos de Windows PowerShell tradicionales sin modificación. Puede seguir nuestro trabajo relacionado con .NET Standard 2.0 [aquí](https://github.com/PowerShell/PowerShell/projects/4).
 
 ### <a name="redirection-issues"></a>Problemas de redireccionamiento
 
@@ -69,7 +69,7 @@ La salida redirigida incluirá la marca de orden de bytes (BOM) Unicode al usars
 > [!Note]
 > consulte [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) para proporcionarnos comentarios sobre cómo mejorar la experiencia de codificación para PowerShell Core en todas las plataformas. Estamos trabajando para admitir UTF-8 sin una BOM y cambiando potencialmente los valores predeterminados de codificación para diversos cmdlets de las plataformas.
 
-### <a name="job-control"></a>Control de trabajo   
+### <a name="job-control"></a>Control de trabajo
 
 No hay ninguna funcionalidad de control de trabajo en PowerShell en Linux/macOS.
 Los comandos `fg` y `bg` no están disponibles.
@@ -82,7 +82,7 @@ Actualmente, PowerShell Core admite la Comunicación remota de PowerShell (PSRP)
 
 El trabajo para la comunicación remota basada en WSMan se realiza en el repositorio [psl-omi-provider](https://github.com/PowerShell/psl-omi-provider).
 
-PowerShell Core también admite la Comunicación remota de PowerShell (PSRP) sobre SSH en todas las plataformas (Windows, macOS y Linux). Aunque no se admite actualmente en producción, puede obtener más información sobre cómo configurarla [aquí](../core-powershell/ssh-remoting-in-powershell-core.md).
+PowerShell Core también admite la Comunicación remota de PowerShell (PSRP) sobre SSH en todas las plataformas (Windows, macOS y Linux). Aunque no se admite actualmente en producción, puede obtener más información sobre cómo configurarla [aquí](../learn/remoting/SSH-Remoting-in-PowerShell-Core.md).
 
 ### <a name="just-enough-administration-jea-support"></a>Compatibilidad con Just Enough Administration (JEA)
 

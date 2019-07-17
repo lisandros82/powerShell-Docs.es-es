@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Recurso WindowsFeatureSet de DSC
-ms.openlocfilehash: 8b7c7e72dd58459bd19cb723e5790a82841515c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8a64168d9ad0d6a6c40eb0398cc734fa93a247dc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076793"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726794"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>Recurso WindowsFeatureSet de DSC
 
@@ -38,7 +38,7 @@ WindowsFeatureSet [string] #ResourceName
 
 |  Propiedad  |  Descripción   |
 |---|---|
-| Nombre| Los nombres de los roles o características que quiere garantizar que se agreguen o se quiten. Estos son los mismos que con la propiedad **Name** del cmdlet [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) y no el nombre para mostrar de los roles o características.|
+| Nombre| Los nombres de los roles o características que quiere garantizar que se agreguen o se quiten. Estos son los mismos que con la propiedad **Name** del cmdlet [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) y no el nombre para mostrar de los roles o características.|
 | Credential| Las credenciales que se usarán para agregar o quitar los roles o las características.|
 | Ensure| Indica si se agregan las funciones o características. Para asegurarse de que los roles o características se agregan, establezca esta propiedad en "Present"; para asegurarse de que se quitan los roles o características, establezca la propiedad en "Absent".|
 | IncludeAllSubFeature| Establezca esta propiedad en **$true** para incluir todas las subcaracterísticas requeridas de las características que se especifican con la propiedad **Name**.|

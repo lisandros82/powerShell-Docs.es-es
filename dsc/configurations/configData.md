@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Uso de datos de configuración
-ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080227"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727205"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Uso de datos de configuración en DSC
 
@@ -187,11 +187,11 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 DSC proporciona las siguientes variables especiales que se pueden usar en un script de configuración:
 
-- **$AllNodes** hace referencia a toda la colección de nodos que se define en **ConfigurationData**. Puede filtrar la colección **AllNodes** mediante **.Where()** y **.ForEach()**.
+- **$AllNodes** hace referencia a toda la colección de nodos que se define en **ConfigurationData**. Puede filtrar la colección **AllNodes** mediante **.Where()** y **.ForEach()** .
 - **ConfigurationData** hace referencia a toda la tabla hash que se pasa como parámetro al compilar una configuración.
 - **MyTypeName** contiene el nombre de [configuración](configurations.md) en que se usa la variable. Por ejemplo, en la configuración `MyDscConfiguration`, `$MyTypeName` tendrá un valor de `MyDscConfiguration`.
-- **Node** hace referencia a un valor determinado en la colección **AllNodes** después de que se filtre mediante **.Where()** o **.ForEach()**.
-  - Puede obtener más información sobre estos métodos en [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md).
+- **Node** hace referencia a un valor determinado en la colección **AllNodes** después de que se filtre mediante **.Where()** o **.ForEach()** .
+  - Puede obtener más información sobre estos métodos en [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays).
 
 ## <a name="using-non-node-data"></a>Uso de datos que no son de nodo
 

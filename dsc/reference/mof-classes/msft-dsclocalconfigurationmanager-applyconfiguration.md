@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
-title: Método ApplyConfiguration de la clase MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 559ff1793a18e28dad2f176bdb20eb53bc08630d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: Método ApplyConfiguration
+ms.openlocfilehash: 0425b9a7db37e421830ba37da8f5c0a4877a1b72
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079173"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727182"
 ---
-# <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Método ApplyConfiguration de la clase MSFT_DSCLocalConfigurationManager
+# <a name="applyconfiguration-method"></a>Método ApplyConfiguration
 
 Usa el agente de configuración para aplicar la configuración que está pendiente.
 
