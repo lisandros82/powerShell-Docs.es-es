@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Recurso WaitForSome de DSC
-ms.openlocfilehash: 888da1810f0a9233579bad5eef8d5dd556947c61
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2260f37002171154a6f2c3996b2af1bd9120039d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076861"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726772"
 ---
 # <a name="dsc-waitforsome-resource"></a>Recurso WaitForSome de DSC
 
@@ -17,6 +17,9 @@ El recurso **WaitForSome** de Desired State Configuration (DSC) se puede usar de
 
 Este recurso se ejecuta si el recurso especificado por la propiedad **ResourceName** está en el estado deseado en un número mínimo de nodos (especificado por **NodeCount**) definido por la propiedad **NodeName**.
 
+> [!NOTE]
+> El recurso **WaitForSome** usa Administración remota de Windows para comprobar el estado de otros nodos.
+> Para obtener más información sobre los requisitos de seguridad y puerto de WinRM, vea [Consideraciones de seguridad de comunicación remota de PowerShell](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="syntax"></a>Sintaxis
 

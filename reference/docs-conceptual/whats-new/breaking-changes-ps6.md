@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Cambios importantes en PowerShell Core 6.0
-ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085939"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843934"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Cambios importantes en PowerShell Core 6.0
 
@@ -15,7 +15,7 @@ ms.locfileid: "62085939"
 
 ### <a name="powershell-workflow"></a>Flujo de trabajo de PowerShell
 
-El [flujo de trabajo de PowerShell][workflow] es una característica de Windows PowerShell basada en [Windows Workflow Foundation (WF)][workflow-foundation] que permite la creación de runbooks sólidos para tareas de ejecución prolongada o paralelizadas.
+[Flujo de trabajo de PowerShell][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation] que permite la creación de runbooks sólidos para las tareas de ejecución prolongada o en paralelo.
 
 Debido a la falta de compatibilidad con Windows Workflow Foundation en .NET Core, no seguiremos admitiendo el flujo de trabajo de PowerShell en PowerShell Core.
 
@@ -113,9 +113,13 @@ Anteriormente, si se especificaban `-Verbose` o `-Debug`, invalidaba el comporta
 
 Cuando una API devuelve solo `null`, Invoke-RestMethod lo serializaba como la cadena `"null"` en lugar de `$null`. Este cambio corrige la lógica en `Invoke-RestMethod` para serializar correctamente un valor único válido JSON `null` literal como `$null`.
 
-### <a name="remove--computername-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Quitar `-ComputerName` de los cmdlets `*-Computer` [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Quitar `-Protocol` de los cmdlets `*-Computer` [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-Debido a problemas con la comunicación remota RPC en CoreFX (especialmente en plataformas que no son de Windows) y la garantía de una experiencia de comunicación remota coherente en PowerShell, el parámetro `-ComputerName` se quitó de los cmdlets `\*-Computer`. Use `Invoke-Command` en su lugar como la forma de ejecutar cmdlets de manera remota.
+Debido a problemas con la comunicación remota RPC en CoreFX (especialmente en plataformas que no son de Windows) y la garantía de una experiencia de comunicación remota coherente en PowerShell, el parámetro `-Protocol` se quitó de los cmdlets `\*-Computer`. DCOM ya no se admite para la comunicación remota. Los cmdlets siguientes solo admiten la comunicación remota mediante WSMAN:
+
+- Rename-Computer
+- Restart-Computer
+- Stop-Computer
 
 ### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Quitar `-ComputerName` de los cmdlets `*-Service` [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
@@ -159,7 +163,7 @@ Las siguientes características se quitaron al no admitirse en PowerShell Core y
 
 ### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Compatibilidad con `RunspaceConfiguration` quitada [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-Anteriormente, al crear un espacio de ejecución de PowerShell mediante programación con la API, podía usar el elemento [`RunspaceConfiguration`][runspaceconfig] heredado o el elemento [`InitialSessionState`][iss] más reciente. Este cambio quitó la compatibilidad con `RunspaceConfiguration` y solo admite `InitialSessionState`.
+Anteriormente, al crear un espacio de ejecución de PowerShell mediante programación con la API, se podía usar el elemento [`RunspaceConfiguration`][runspaceconfig] heredado or the newer [`InitialSessionState`][iss]. Este cambio quitó la compatibilidad con `RunspaceConfiguration` y solo admite `InitialSessionState`.
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate

@@ -2,19 +2,19 @@
 title: Uso de Visual Studio Code para el desarrollo de PowerShell
 description: Uso de Visual Studio Code para el desarrollo de PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
-ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
+ms.openlocfilehash: 6a0da6e060693dc7cfc08d40fd658414dc23d660
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882572"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733879"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Uso de Visual Studio Code para el desarrollo de PowerShell
 
 Además de [PowerShell ISE][ise], PowerShell también se admite en Visual Studio Code.
 Por otra parte, el ISE no es compatible con PowerShell Core, mientras que Visual Studio Code es compatible con PowerShell Core en todas las plataformas (Windows, macOS y Linux).
 
-Puede usar Visual Studio Code en Windows con PowerShell versión 5 a través de Windows 10 o mediante la instalación de [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) para sistemas operativos Windows inferiores (por ejemplo, Windows 8.1, etc).
+Puede usar Visual Studio Code en Windows con PowerShell versión 5 a través de Windows 10 o mediante la instalación de [Windows Management Framework 5.0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/) para sistemas operativos Windows inferiores (por ejemplo, Windows 8.1, etc).
 
 Antes de iniciarlo, asegúrese de que tiene PowerShell en el sistema.
 Para cargas de trabajo modernas de Windows, macOS y Linux, vea:
@@ -23,7 +23,7 @@ Para cargas de trabajo modernas de Windows, macOS y Linux, vea:
 - [Instalación de PowerShell Core en macOS][install-pscore-macos]
 - [Instalación de PowerShell Core en Windows][install-pscore-windows]
 
-Para cargas de trabajo de Windows PowerShell tradicionales, vea [Instalación de Windows PowerShell][install-winps].
+Para las cargas de trabajo de Windows PowerShell tradicionales, vea [Instalación de Windows PowerShell][install-winps].
 
 ## <a name="editing-with-visual-studio-code"></a>Edición con Visual Studio Code
 
@@ -182,7 +182,7 @@ Para obtener más información sobre la codificación de archivo en VS Code, con
 
 ### <a name="no-workspace-debugging"></a>Depuración fuera del área de trabajo
 
-A partir de Visual Studio Code versión 1.9 puede depurar scripts de PowerShell sin tener que abrir la carpeta que contiene el script de PowerShell. Abra el archivo de script de PowerShell con **Archivo -> Abrir archivo…**, establezca un punto de interrupción en una línea (presione F9) y, después, presione F5 para iniciar la depuración. Aparece el panel de acciones de depuración, que le permite obtener acceso al depurador, realizar la depuración paso a paso, reanudarla y detenerla.
+A partir de Visual Studio Code versión 1.9 puede depurar scripts de PowerShell sin tener que abrir la carpeta que contiene el script de PowerShell. Abra el archivo de script de PowerShell con **Archivo -> Abrir archivo…** , establezca un punto de interrupción en una línea (presione F9) y, después, presione F5 para iniciar la depuración. Aparece el panel de acciones de depuración, que le permite obtener acceso al depurador, realizar la depuración paso a paso, reanudarla y detenerla.
 
 ### <a name="workspace-debugging"></a>Depuración del área de trabajo
 
@@ -238,7 +238,7 @@ Siga los pasos siguientes para crear el archivo de configuración de depuración
   ```
 
   Esto representa los escenarios de depuración comunes.
-  Aun así, cuando se abre este archivo en el editor, se ve el botón **Agregar configuración…**.
+  Aun así, cuando se abre este archivo en el editor, se ve el botón **Agregar configuración…** .
   Puede presionar este botón para agregar más configuraciones de depuración de PowerShell. Una configuración muy útil que conviene agregar es **PowerShell: Iniciar Script**.
   Con esta configuración, puede especificar un archivo concreto con argumentos opcionales que se debe iniciar cada vez que se presione F5, independientemente del archivo que esté activo en el momento en el editor.
 

@@ -2,12 +2,12 @@
 title: Novedades de PowerShell Core 6.0
 description: Nuevas características y cambios publicados en PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1218a38398f4d86829cf2b4ba6a3a882675eaab
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62059022"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843932"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Novedades de PowerShell Core 6.0
 
@@ -139,7 +139,7 @@ La mayoría de los módulos que se incluyen como parte de Windows (por ejemplo, 
 El equipo de PowerShell está trabajando con estos grupos y equipos de productos para validar y portar sus módulos existentes a PowerShell Core.
 Con .NET Standard y [CDXML][], muchos de estos módulos tradicionales de Windows PowerShell parecen funcionar en PowerShell Core, pero todavía no se han validado ni se admiten formalmente.
 
-Si instala el módulo [`WindowsPSModulePath`][windowspsmodulepath], puede usar módulos de Windows PowerShell. Para ello, agregue `PSModulePath` de Windows PowerShell a `PSModulePath` de PowerShell Core.
+Si instala el módulo [`WindowsPSModulePath`][windowspsmodulepath], puede usar módulos de Windows PowerShell si anexa `PSModulePath` de Windows PowerShell a `PSModulePath` de PowerShell Core.
 
 En primer lugar, instale el módulo `WindowsPSModulePath` desde la Galería de PowerShell:
 
@@ -169,7 +169,7 @@ El Protocolo de comunicación remota de PowerShell (PSRP) ahora funciona con el 
 Esto significa que puede usar cmdlets como `Enter-PSSession` y `New-PSSession` y autenticarse a través de SSH.
 Lo único que debe hacer es registrar PowerShell como un subsistema con un servidor SSH basado en OpenSSH. Puede usar sus mecanismos de autenticación basados en SSH existentes (como contraseñas o claves privadas) con la semántica `PSSession` tradicional.
 
-Para más información sobre cómo configurar y usar la comunicación remota basada en SSH, vea [PowerShell Remoting over SSH][ssh-remoting] (Comunicación remota de PowerShell a través de SSH).
+Para obtener más información sobre cómo configurar y usar la comunicación remota basada en SSH, vea [Comunicación remota de PowerShell a través de SSH][ssh-remoting].
 
 ## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>La codificación predeterminada es UTF-8 sin marca BOM excepto en el caso de New-ModuleManifest.
 
@@ -295,9 +295,10 @@ Para más información sobre los trabajos de PowerShell, vea [about_Jobs](https:
 
 ### <a name="csv-cmdlets"></a>Cmdlets CSV
 
+- `Import-Csv` ahora admite el formato de archivo de registro extendido W3C (#2482) (gracias a [@iSazonov](https://github.com/iSazonov))
 - Agregue compatibilidad con `PSTypeName` para `Import-Csv` y `ConvertFrom-Csv`. (#5389) (Gracias, [@markekraus](https://github.com/markekraus)).
 - Haga que `Import-Csv` admita `CR`, `LF` y `CRLF` como delimitadores de línea. (#5363) (Gracias, [@iSazonov](https://github.com/iSazonov)).
-- Convierta `-NoTypeInformation` en el valor predeterminado en `Export-Csv` y `ConvertTo-Csv`. (#5164) (Gracias, [@markekraus](https://github.com/markekraus)).
+- Convierta `-NoTypeInformation` en el valor predeterminado en `Export-Csv` y `ConvertTo-Csv`. (#5164) (Gracias, [@markekraus](https://github.com/markekraus))
 
 ### <a name="service-cmdlets"></a>Cmdlets de servicio
 
@@ -346,7 +347,7 @@ Para más información sobre los trabajos de PowerShell, vea [about_Jobs](https:
 ## <a name="breaking-changes"></a>Cambios importantes
 
 Hemos introducido una serie de cambios importantes en PowerShell Core 6.0.
-Para más información sobre ellos, vea [Breaking Changes in PowerShell Core 6.0][breaking-changes] (Cambios importantes en PowerShell Core 6.0).
+Para obtener más información sobre ellos, vea [Cambios importantes en PowerShell Core 6.0][breaking-changes].
 
 ## <a name="debugging"></a>Depuración
 
@@ -375,7 +376,7 @@ Para obtener una lista completa de correcciones y cambios, visite nuestro [regis
 
 Si quiere dejar de participar en esta telemetría, solo tiene que crear la variable de entorno `POWERSHELL_TELEMETRY_OPTOUT` con uno de estos valores: `true`, `1` o `yes`.
 Al crear la variable se omite toda la telemetría, incluida la anterior a la primera ejecución de PowerShell.
-También tenemos previsto exponer estos datos de telemetría y la información que se obtenga a partir de la telemetría en el [panel de comunidad][community-dashboard].
+También tenemos previsto exponer estos datos de telemetría y la información que se obtenga a partir de la telemetría en el [panel de la comunidad][community-dashboard].
 Encontrará más información sobre la forma en que usamos estos datos en esta [entrada de blog][telemetry-blog].
 
 [github]: https://github.com/PowerShell/PowerShell
