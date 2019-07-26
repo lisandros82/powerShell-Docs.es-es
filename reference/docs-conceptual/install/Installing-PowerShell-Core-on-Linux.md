@@ -1,27 +1,23 @@
 ---
 title: Instalación de PowerShell Core en Linux
 description: Información sobre cómo instalar PowerShell Core en varias distribuciones Linux
-ms.date: 08/06/2018
-ms.openlocfilehash: 32d6c0e718ca798af2f6a5d796c3ca362e7befd9
-ms.sourcegitcommit: 13e170e8bff29d3d5f854c874de88f53c5e5ef20
+ms.date: 07/19/2019
+ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829435"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372199"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Instalación de PowerShell Core en Linux
 
-Admite [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810],  [Debian 9][deb9],
-[CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse],
-[Fedora 27][fedora], [Fedora 28][fedora] y [Arch Linux][arch].
+Admite [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Debian 9][deb9],
+ [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora] y [Arch Linux][arch].
 
-Para las distribuciones de Linux que no se admiten de forma oficial, puede probar el [Paquete Snap de PowerShell][snap].
-También puede intentar implementar los archivos binarios de PowerShell directamente mediante el [archivo `tar.gz`][tar] de Linux, pero tendrá que configurar las dependencias necesarias según el sistema operativo en pasos independientes.
+Para las distribuciones de Linux que no se admiten de forma oficial, puede probar a instalar PowerShell con el [Paquete Snap de PowerShell][snap]. También puede intentar implementar los archivos binarios de PowerShell directamente mediante el [archivo `tar.gz`][tar] de Linux, pero tendrá que configurar las dependencias necesarias según el sistema operativo en pasos independientes.
 
-Todos los paquetes están disponibles en nuestra página de [versiones][] de GitHub.
-Una vez que se haya instalado el paquete, ejecute `pwsh` desde un terminal.
+Todos los paquetes están disponibles en nuestra página de [versiones][] de GitHub. Una vez instalado el paquete, ejecute `pwsh` desde un terminal.
 
-[u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
@@ -40,7 +36,7 @@ Al instalar una versión preliminar de PowerShell Core para Linux mediante un re
 
 La instalación mediante la descarga directa solo cambia el nombre de archivo.
 
-A continuación se muestra una tabla con los comandos para instalar los paquetes estables y de versión preliminar mediante los diversos administradores de paquetes:
+La tabla siguiente contiene los comandos para instalar los paquetes estables y de versión preliminar mediante los diversos administradores de paquetes:
 
 |Distribuciones|Comando estable | Comando de versión preliminar |
 |---------------|---------------|-----------------|
@@ -48,61 +44,13 @@ A continuación se muestra una tabla con los comandos para instalar los paquetes
 | CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
 | Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
-## <a name="ubuntu-1404"></a>Ubuntu 14.04
-
-### <a name="installation-via-package-repository---ubuntu-1404"></a>Instalación mediante un repositorio de paquetes, Ubuntu 14.04
-
-PowerShell Core para Linux se publica en repositorios de paquetes para facilitar la instalación (y las actualizaciones).
-Este es el método preferido.
-
-```sh
-# Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/14.04/packages-microsoft-prod.deb
-
-# Register the Microsoft repository GPG keys
-sudo dpkg -i packages-microsoft-prod.deb
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-Como superusuario, registre el repositorio de Microsoft.
-Desde ese momento, solo debe usar `sudo apt-get upgrade powershell` para actualizar la instalación.
-
-### <a name="installation-via-direct-download---ubuntu-1404"></a>Instalación mediante descarga directa, Ubuntu 14.04
-
-Descargue el paquete de Debian `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
-desde la página de [versiones][] en la máquina Ubuntu.
-
-Después, ejecute lo siguiente en el terminal:
-
-```sh
-sudo dpkg -i powershell_6.2.0-1.ubuntu.14.04_amd64.deb
-sudo apt-get install -f
-```
-
-> [!NOTE]
-> El comando `dpkg -i` produce un error con las dependencias unmet.
-> El comando siguiente, `apt-get install -f`, resuelve estos problemas y, luego, termina de configurar el paquete de PowerShell.
-
-### <a name="uninstallation---ubuntu-1404"></a>Desinstalación, Ubuntu 14.04
-
-```sh
-sudo apt-get remove powershell
-```
-
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
 ### <a name="installation-via-package-repository---ubuntu-1604"></a>Instalación mediante un repositorio de paquetes, Ubuntu 16.04
 
-PowerShell Core para Linux se publica en repositorios de paquetes para facilitar la instalación (y las actualizaciones).
-Este es el método preferido.
+PowerShell Core para Linux se publica en repositorios de paquetes para facilitar la instalación y las actualizaciones.
+
+El método preferido es el siguiente:
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -121,14 +69,13 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Una vez que haya registrado el repositorio de Microsoft como superusuario, solo deberá debe usar `sudo apt-get upgrade powershell` para actualizarlo.
+Como superusuario, registre el repositorio de Microsoft una vez. Después del registro, puede actualizar PowerShell con `sudo apt-get upgrade powershell`.
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Instalación mediante descarga directa, Ubuntu 16.04
 
-Descargue el paquete de Debian `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
-desde la página de [versiones][] en la máquina Ubuntu.
+Descargue el paquete de Debian `powershell_6.2.0-1.ubuntu.16.04_amd64.deb` desde la página de [versiones][] en la máquina Ubuntu.
 
-Después, ejecute lo siguiente en el terminal:
+Luego, ejecute los comandos siguientes en el terminal:
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.16.04_amd64.deb
@@ -136,8 +83,7 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> El comando `dpkg -i` produce un error con las dependencias unmet.
-> El comando siguiente, `apt-get install -f`, resuelve estos problemas y, luego, termina de configurar el paquete de PowerShell.
+> El comando `dpkg -i` produce un error con las dependencias unmet. El comando siguiente, `apt-get install -f`, resuelve estos problemas y, luego, termina de configurar el paquete de PowerShell.
 
 ### <a name="uninstallation---ubuntu-1604"></a>Desinstalación, Ubuntu 16.04
 
@@ -149,8 +95,9 @@ sudo apt-get remove powershell
 
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>Instalación mediante un repositorio de paquetes, Ubuntu 18.04
 
-PowerShell Core para Linux se publica en repositorios de paquetes para facilitar la instalación (y las actualizaciones).
-Este es el método preferido.
+PowerShell Core para Linux se publica en repositorios de paquetes para facilitar la instalación y las actualizaciones.
+
+El método preferido es el siguiente:
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -172,14 +119,13 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Una vez que haya registrado el repositorio de Microsoft como superusuario, solo deberá debe usar `sudo apt-get upgrade powershell` para actualizarlo.
+Como superusuario, registre el repositorio de Microsoft una vez. Después del registro, puede actualizar PowerShell con `sudo apt-get upgrade powershell`.
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Instalación mediante descarga directa, Ubuntu 18.04
 
-Descargue el paquete de Debian `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
-desde la página de [versiones][] en la máquina Ubuntu.
+Descargue el paquete de Debian `powershell_6.2.0-1.ubuntu.18.04_amd64.deb` desde la página de [versiones][] en la máquina Ubuntu.
 
-Después, ejecute lo siguiente en el terminal:
+Luego, ejecute los comandos siguientes en el terminal:
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.18.04_amd64.deb
@@ -187,8 +133,7 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> El comando `dpkg -i` produce un error con las dependencias unmet.
-> El comando siguiente, `apt-get install -f`, resuelve estos problemas y, luego, termina de configurar el paquete de PowerShell.
+> El comando `dpkg -i` produce un error con las dependencias unmet. El comando siguiente, `apt-get install -f`, resuelve estos problemas y, luego, termina de configurar el paquete de PowerShell.
 
 ### <a name="uninstallation---ubuntu-1804"></a>Desinstalación, Ubuntu 18.04
 
@@ -207,8 +152,9 @@ La instalación en 18.10 se admite mediante `snapd`. Vea [Paquete Snap][snap] pa
 
 ### <a name="installation-via-package-repository---debian-8"></a>Instalación mediante un repositorio de paquetes, Debian 8
 
-PowerShell Core para Linux se publica en repositorios de paquetes para facilitar la instalación (y las actualizaciones).
-Este es el método preferido.
+PowerShell Core para Linux se publica en repositorios de paquetes para facilitar la instalación y las actualizaciones.
+
+El método preferido es el siguiente:
 
 ```sh
 # Install system components
@@ -231,14 +177,15 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Una vez que haya registrado el repositorio de Microsoft como superusuario, solo deberá debe usar `sudo apt-get upgrade powershell` para actualizarlo.
+Como superusuario, registre el repositorio de Microsoft una vez. Después del registro, puede actualizar PowerShell con `sudo apt-get upgrade powershell`.
 
 ## <a name="debian-9"></a>Debian 9
 
 ### <a name="installation-via-package-repository---debian-9"></a>Instalación mediante un repositorio de paquetes, Debian 9
 
-PowerShell Core para Linux se publica en repositorios de paquetes para facilitar la instalación (y las actualizaciones).
-Este es el método preferido.
+PowerShell Core para Linux se publica en repositorios de paquetes para facilitar la instalación y las actualizaciones.
+
+El método preferido es el siguiente:
 
 ```sh
 # Install system components
@@ -261,14 +208,13 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Una vez que haya registrado el repositorio de Microsoft como superusuario, solo deberá debe usar `sudo apt-get upgrade powershell` para actualizarlo.
+Como superusuario, registre el repositorio de Microsoft una vez. Después del registro, puede actualizar PowerShell con `sudo apt-get upgrade powershell`.
 
 ### <a name="installation-via-direct-download---debian-9"></a>Instalación mediante descarga directa, Debian 9
 
-Descargue el paquete de Debian `powershell_6.2.0-1.debian.9_amd64.deb`
-desde la página de [versiones][] en la máquina Debian.
+Descargue el paquete de Debian `powershell_6.2.0-1.debian.9_amd64.deb` desde la página de [versiones][] en la máquina Debian.
 
-Después, ejecute lo siguiente en el terminal:
+Luego, ejecute los comandos siguientes en el terminal:
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.debian.9_amd64.deb
@@ -284,11 +230,11 @@ sudo apt-get remove powershell
 ## <a name="centos-7"></a>CentOS 7
 
 > [!NOTE]
-> Este paquete también funciona en Oracle Linux 7.
+> Este paquete funciona en Oracle Linux 7.
 
 ### <a name="installation-via-package-repository-preferred---centos-7"></a>Instalación mediante un repositorio de paquetes (opción preferida), CentOS 7
 
-PowerShell Core para Linux se publica en repositorios oficiales de Microsoft para facilitar la instalación (y las actualizaciones).
+PowerShell Core para Linux se publica en repositorios oficiales de Microsoft para facilitar la instalación y las actualizaciones.
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -301,20 +247,19 @@ sudo yum install -y powershell
 pwsh
 ```
 
-Una vez que haya registrado el repositorio de Microsoft como superusuario, solo deberá debe usar `sudo yum update powershell` para actualizar PowerShell.
+Como superusuario, registre el repositorio de Microsoft una vez. Después del registro, puede actualizar PowerShell con `sudo yum update powershell`.
 
 ### <a name="installation-via-direct-download---centos-7"></a>Instalación mediante descarga directa, CentOS 7
 
-Con [CentOS 7][], descargue el paquete RPM `powershell-6.2.0-1.rhel.7.x86_64.rpm`
-desde la página de [versiones][] en la máquina CentOS.
+Cuando use [CentOS 7][], descargue el paquete RPM `powershell-6.2.0-1.rhel.7.x86_64.rpm` desde la página de [versiones][] en la máquina CentOS.
 
-Después, ejecute lo siguiente en el terminal:
+Luego, ejecute los comandos siguientes en el terminal:
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-También puede instalar el paquete RPM sin el paso intermedio de descargarlo:
+Puede instalar el paquete RPM sin el paso intermedio de descargarlo:
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
@@ -332,7 +277,7 @@ sudo yum remove powershell
 
 ### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a>Instalación a través de un repositorio de paquetes (opción preferida), Red Hat Enterprise Linux (RHEL) 7
 
-PowerShell Core para Linux se publica en repositorios oficiales de Microsoft para facilitar la instalación (y las actualizaciones).
+PowerShell Core para Linux se publica en repositorios oficiales de Microsoft para facilitar la instalación y las actualizaciones.
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -345,20 +290,19 @@ sudo yum install -y powershell
 pwsh
 ```
 
-Una vez que haya registrado el repositorio de Microsoft como superusuario, solo deberá debe usar `sudo yum update powershell` para actualizar PowerShell.
+Como superusuario, registre el repositorio de Microsoft una vez. Después del registro, puede actualizar PowerShell con `sudo yum update powershell`.
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Instalación mediante descarga directa, Red Hat Enterprise Linux (RHEL) 7
 
-Descargue el paquete RPM `powershell-6.2.0-1.rhel.7.x86_64.rpm`
-desde la página de [versiones][] en la máquina Red Hat Enterprise Linux.
+Descargue el paquete RPM `powershell-6.2.0-1.rhel.7.x86_64.rpm` desde la página de [versiones][] en la máquina Red Hat Enterprise Linux.
 
-Después, ejecute lo siguiente en el terminal:
+Luego, ejecute los comandos siguientes en el terminal:
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-También puede instalar el paquete RPM sin el paso intermedio de descargarlo:
+Puede instalar el paquete RPM sin el paso intermedio de descargarlo:
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
@@ -435,7 +379,7 @@ rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Instalación mediante un repositorio de paquetes (opción preferida), Fedora 27, Fedora 28
 
-PowerShell Core para Linux se publica en repositorios oficiales de Microsoft para facilitar la instalación (y las actualizaciones).
+PowerShell Core para Linux se publica en repositorios oficiales de Microsoft para facilitar la instalación y las actualizaciones.
 
 ```sh
 # Register the Microsoft signature key
@@ -459,17 +403,16 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Instalación mediante descarga directa, Fedora 27, Fedora 28
 
-Descargue el paquete RPM `powershell-6.2.0-1.rhel.7.x86_64.rpm`
-desde la página de [versiones][] en la máquina Fedora.
+Descargue el paquete RPM `powershell-6.2.0-1.rhel.7.x86_64.rpm` desde la página de [versiones][] en la máquina Fedora.
 
-Después, ejecute lo siguiente en el terminal:
+Luego, ejecute los comandos siguientes en el terminal:
 
 ```sh
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-También puede instalar el paquete RPM sin el paso intermedio de descargarlo:
+Puede instalar el paquete RPM sin el paso intermedio de descargarlo:
 
 ```sh
 sudo dnf install compat-openssl10
@@ -506,13 +449,13 @@ Para más información sobre cómo instalar paquetes desde el AUR, vea la [wiki 
 
 ### <a name="getting-snapd"></a>Obtención de snapd
 
-`snapd` es necesario para ejecutar paquetes Snap.
-Use [estas instrucciones](https://docs.snapcraft.io/core/install) para asegurarse de que tiene `snapd` instalado.
+`snapd` es necesario para ejecutar paquetes Snap. Use [estas instrucciones](https://docs.snapcraft.io/core/install) para asegurarse de que tiene `snapd` instalado.
 
 ### <a name="installation-via-snap"></a>Instalación mediante Snap
 
-PowerShell Core para Linux se publica en la [Snap store](https://snapcraft.io/store) para facilitar la instalación (y las actualizaciones).
-Este es el método preferido.
+PowerShell Core para Linux se publica en la [Snap store](https://snapcraft.io/store) para facilitar la instalación y las actualizaciones.
+
+El método preferido es el siguiente:
 
 ```sh
 # Install PowerShell
@@ -522,7 +465,7 @@ sudo snap install powershell --classic
 pwsh
 ```
 
-Si desea instalar la versión preliminar, use el siguiente método.
+Para instalar una versión preliminar, use el método siguiente:
 
 ```sh
 # Install PowerShell
@@ -532,7 +475,7 @@ sudo snap install powershell-preview --classic
 pwsh-preview
 ```
 
-Después de instalar Snap, se actualizará automáticamente, pero puede desencadenar una actualización con `sudo snap refresh powershell` o `sudo snap refresh powershell-preview`.
+Después de la instalación, Snap se actualizará automáticamente. Puede desencadenar una actualización mediante `sudo snap refresh powershell` o `sudo snap refresh powershell-preview`.
 
 ### <a name="uninstallation"></a>Desinstalación
 
@@ -583,7 +526,7 @@ apt-get remove -y powershell
 
 Actualmente, PowerShell solo se admite en Raspbian Stretch.
 
-Asimismo, CoreCLR (y, por tanto, PowerShell Core) solo funcionará en dispositivos Pi 2 y Pi 3 dado que otros dispositivos, como [Pi Zero](https://github.com/dotnet/coreclr/issues/10605), tienen un procesador no admitido.
+CoreCLR y PowerShell Core solo funcionarán en dispositivos Pi 2 y Pi 3 dado que otros dispositivos, como [Pi Zero](https://github.com/dotnet/coreclr/issues/10605), tienen un procesador no admitido.
 
 Descargue [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) y siga las [instrucciones de instalación](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) para tenerlo en su Pi.
 
@@ -616,7 +559,7 @@ tar -xvf ./powershell-6.2.0-linux-arm32.tar.gz -C ~/powershell
 ~/powershell/pwsh
 ```
 
-Opcionalmente, puede crear un vínculo simbólico para poder iniciar PowerShell sin especificar la ruta de acceso al archivo binario "pwsh".
+Opcionalmente, puede crear un vínculo simbólico para iniciar PowerShell sin especificar la ruta de acceso al archivo binario `pwsh`.
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
@@ -640,14 +583,12 @@ Se proporcionan archivos binarios `tar.gz` de PowerShell para plataformas Linux,
 
 ### <a name="dependencies"></a>Dependencias
 
-PowerShell compila archivos binarios portátiles para todas las distribuciones de Linux.
-Aun así, el entorno de ejecución de .NET Core requiere dependencias diferentes en otras distribuciones, y por eso PowerShell hace lo mismo.
+PowerShell compila archivos binarios portátiles para todas las distribuciones de Linux. Aun así, el entorno de ejecución de .NET Core requiere dependencias diferentes en otras distribuciones, y PowerShell también.
 
 En la tabla siguiente se muestran las dependencias de .NET Core 2.0 que se admiten oficialmente en diferentes distribuciones de Linux.
 
 | Sistema operativo                 | Dependencias |
 | ------------------ | ------------ |
-| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
 | Ubuntu 17.10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
 | Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
@@ -658,8 +599,7 @@ En la tabla siguiente se muestran las dependencias de .NET Core 2.0 que se admit
 | openSUSE Leap 15 | libcurl4, libopenssl1_0_0 y libicu60_2 |
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
 
-Para implementar archivos binarios de PowerShell en distribuciones de Linux que no se admiten oficialmente, debe instalar las dependencias necesarias para el sistema operativo de destino en varios pasos.
-Por ejemplo, nuestro [dockerfile de Amazon Linux][amazon-dockerfile] instala primero las dependencias y, después, extrae el archivo `tar.gz` de Linux.
+Para implementar archivos binarios de PowerShell en distribuciones de Linux que no se admiten oficialmente, debe instalar las dependencias necesarias para el sistema operativo de destino en varios pasos. Por ejemplo, nuestro [dockerfile de Amazon Linux][amazon-dockerfile] instala primero las dependencias y, después, extrae el archivo `tar.gz` de Linux.
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
