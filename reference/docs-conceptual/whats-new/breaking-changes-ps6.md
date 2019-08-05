@@ -3,10 +3,10 @@ ms.date: 05/17/2018
 keywords: powershell,core
 title: Cambios importantes en PowerShell Core 6.0
 ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
-ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67843934"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Cambios importantes en PowerShell Core 6.0
@@ -15,7 +15,7 @@ ms.locfileid: "67843934"
 
 ### <a name="powershell-workflow"></a>Flujo de trabajo de PowerShell
 
-[Flujo de trabajo de PowerShell][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation] que permite la creación de runbooks sólidos para las tareas de ejecución prolongada o en paralelo.
+El [flujo de trabajo de PowerShell][workflow] es una característica de Windows PowerShell basada en [Windows Workflow Foundation (WF)][workflow-foundation] que permite la creación de runbooks sólidos para tareas de larga ejecución o paralelizadas.
 
 Debido a la falta de compatibilidad con Windows Workflow Foundation en .NET Core, no seguiremos admitiendo el flujo de trabajo de PowerShell en PowerShell Core.
 
@@ -163,7 +163,7 @@ Las siguientes características se quitaron al no admitirse en PowerShell Core y
 
 ### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Compatibilidad con `RunspaceConfiguration` quitada [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-Anteriormente, al crear un espacio de ejecución de PowerShell mediante programación con la API, se podía usar el elemento [`RunspaceConfiguration`][runspaceconfig] heredado or the newer [`InitialSessionState`][iss]. Este cambio quitó la compatibilidad con `RunspaceConfiguration` y solo admite `InitialSessionState`.
+Anteriormente, al crear un espacio de ejecución de PowerShell mediante programación con la API, podía usar el elemento [`RunspaceConfiguration`][runspaceconfig] heredado o el más reciente [`InitialSessionState`][iss]. Este cambio quitó la compatibilidad con `RunspaceConfiguration` y solo admite `InitialSessionState`.
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
