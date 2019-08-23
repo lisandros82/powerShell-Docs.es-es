@@ -1,32 +1,32 @@
 ---
-title: Extender las propiedades de objetos | Microsoft Docs
+title: Extender propiedades para objetos | Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/21/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: 496e363b041194563d46c09eee67a12055bb54b0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 3b14007384cca0d0cfa35655aee437adf73b1ff0
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068154"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986482"
 ---
 # <a name="extending-properties-for-objects"></a>Extensión de las propiedades de los objetos
 
-Al extender los objetos de .NET Framework, puede agregar alias propiedades, propiedades de código, las propiedades de nota, las propiedades de la secuencia de comandos y conjuntos de propiedades a los objetos. El XML que se usa para definir estas propiedades se describe en las secciones siguientes.
+Al extender .NET Framework objetos, puede Agregar propiedades de alias, propiedades de código, propiedades de notas, propiedades de script y conjuntos de propiedades a los objetos. El XML que define estas propiedades se describe en las secciones siguientes.
 
 > [!NOTE]
-> Los ejemplos de las siguientes secciones son desde el archivo de tipos predeterminado Types.ps1xml en el directorio de instalación de Windows PowerShell (`$pshome`).
+> Los ejemplos de las secciones siguientes son del archivo de `Types.ps1xml` tipos predeterminado en el directorio de instalación de`$PSHOME`PowerShell (). Para obtener más información, vea [About Types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
 
-## <a name="alias-properties"></a>Propiedades del alias
+## <a name="alias-properties"></a>Propiedades de alias
 
-Una propiedad de alias define un nombre nuevo para una propiedad existente.
+Una propiedad de alias define un nuevo nombre para una propiedad existente.
 
-¿En el ejemplo siguiente, la `Count` propiedad se agrega a la [System.Array? Displayproperty = Fullname](/dotnet/api/System.Array) tipo. El [AliasProperty](http://msdn.microsoft.com/en-us/b140038c-807a-4bb9-beca-332491cda1b1) elemento define la propiedad extendida como una propiedad de alias. El [nombre](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) elemento especifica el nuevo nombre. Y, el [ReferencedMemberName](http://msdn.microsoft.com/en-us/0c5db6cc-9033-4d48-88a7-76b962882f7a) elemento especifica la propiedad existente al que hace referencia el alias. (También puede agregar el [AliasProperty](http://msdn.microsoft.com/en-us/d6647953-94ad-4b0b-af2e-4dda6952dee1) elemento a los miembros de la [conjuntos de miembros](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) elemento.)
+En el ejemplo siguiente, la propiedad **Count** se agrega al tipo [System. Array](/dotnet/api/System.Array) . El elemento [AliasProperty](/dotnet/api/system.management.automation.psaliasproperty) define la propiedad extendida como una propiedad de alias. El elemento [Name](/dotnet/api/system.management.automation.psmemberinfo.name) especifica el nuevo nombre. Y el elemento [ReferencedMemberName](/dotnet/api/system.management.automation.psaliasproperty.referencedmembername) especifica la propiedad existente a la que hace referencia el alias. También puede Agregar el `AliasProperty` elemento a los miembros del elemento [MemberSets](/dotnet/api/system.management.automation.psmemberset) .
 
 ```xml
 <Type>
@@ -42,9 +42,9 @@ Una propiedad de alias define un nombre nuevo para una propiedad existente.
 
 ## <a name="code-properties"></a>Propiedades de código
 
-Una propiedad de código hace referencia a una propiedad estática de un objeto de .NET Framework.
+Una propiedad de código hace referencia a una propiedad estática de un objeto .NET Framework.
 
-¿En el ejemplo siguiente, la `Node` propiedad se agrega a la [System.IO.Directoryinfo? Displayproperty = Fullname](/dotnet/api/System.IO.DirectoryInfo) tipo. El [CodeProperty](http://msdn.microsoft.com/en-us/59bc4d18-41eb-4c0d-8ad3-bbfa5dc488db) elemento define la propiedad extendida como una propiedad de código. El [nombre](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) elemento especifica el nombre de la propiedad extendida. Y, el [GetCodeReference](http://msdn.microsoft.com/en-us/62af34f5-cc22-42c0-9e0c-3bd0f5c1a4a0) elemento define el método estático al que hace referencia la propiedad extendida. (También puede agregar el [CodeProperty](http://msdn.microsoft.com/en-us/59bc4d18-41eb-4c0d-8ad3-bbfa5dc488db) elemento a los miembros de la [conjuntos de miembros](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) elemento.)
+En el ejemplo siguiente, la propiedad **mode** se agrega al tipo [System. IO. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) . El elemento [CodeProperty](/dotnet/api/system.management.automation.pscodeproperty) define la propiedad extendida como una propiedad de código. El elemento [Name](/dotnet/api/system.management.automation.psmemberinfo.name) especifica el nombre de la propiedad extendida. Y el elemento [GetCodeReference](/dotnet/api/system.management.automation.pscodeproperty.gettercodereference) define el método estático al que hace referencia la propiedad extendida. También puede Agregar el `CodeProperty` elemento a los miembros del elemento [MemberSets](/dotnet/api/system.management.automation.psmemberset) .
 
 ```xml
 <Type>
@@ -63,9 +63,9 @@ Una propiedad de código hace referencia a una propiedad estática de un objeto 
 
 ## <a name="note-properties"></a>Propiedades de nota
 
-Una propiedad de nota define una propiedad que tiene un valor estático.
+Una propiedad note define una propiedad que tiene un valor estático.
 
-¿En el ejemplo siguiente, la `Status` propiedad (cuyo valor siempre es "Correcto") se agrega a la [System.IO.Directoryinfo? Displayproperty = Fullname](/dotnet/api/System.IO.DirectoryInfo) tipo. El [NoteProperty](http://msdn.microsoft.com/en-us/331e6c50-d703-43f0-89bc-ca9fb97800eb) elemento define la propiedad extendida como una propiedad de nota; el [nombre](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) elemento especifica el nombre de la propiedad extendida; y la [valor](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c) elemento Especifica el valor estático de la propiedad extendida. (El [NoteProperty](http://msdn.microsoft.com/en-us/331e6c50-d703-43f0-89bc-ca9fb97800eb) elemento también se puede agregar a los miembros de la [conjuntos de miembros](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) elemento.)
+En el ejemplo siguiente, la propiedad status, cuyo valor essiempre Success, se agrega al tipo [System. IO. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) . El elemento [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty) define la propiedad extendida como una propiedad de nota. El elemento [Name](/dotnet/api/system.management.automation.psmemberinfo.name) especifica el nombre de la propiedad extendida. El elemento [Value](/dotnet/api/system.management.automation.psnoteproperty.value) especifica el valor estático de la propiedad extendida. El `NoteProperty` elemento también se puede Agregar a los miembros del elemento [MemberSets](/dotnet/api/system.management.automation.psmemberset) .
 
 ```xml
 <Type>
@@ -79,11 +79,11 @@ Una propiedad de nota define una propiedad que tiene un valor estático.
 </Type>
 ```
 
-## <a name="script-properties"></a>Propiedades de script
+## <a name="script-properties"></a>Propiedades del script
 
-Una propiedad de secuencia de comandos define una propiedad cuyo valor es el resultado de una secuencia de comandos.
+Una propiedad de script define una propiedad cuyo valor es la salida de un script.
 
-¿En el ejemplo siguiente, la `VersionInfo` propiedad se agrega a la [System.IO.FileInfo? Displayproperty = Fullname](/dotnet/api/System.IO.FileInfo) tipo. El [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) elemento define la propiedad extendida como una propiedad de secuencia de comandos. El [nombre](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) elemento especifica el nombre de la propiedad extendida. Y, el [GetScriptBlock](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c) elemento especifica el script que genera el valor de propiedad. (También puede agregar el [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) elemento a los miembros de la [conjuntos de miembros](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) elemento.)
+En el ejemplo siguiente, la propiedad **versionInfo** se agrega al tipo [System. IO. FileInfo](/dotnet/api/System.IO.FileInfo) . El elemento [ScriptProperty](/dotnet/api/system.management.automation.psscriptproperty) define la propiedad extendida como una propiedad de script. El elemento [Name](/dotnet/api/system.management.automation.psmemberinfo.name) especifica el nombre de la propiedad extendida. Y el elemento [GetScriptBlock](/dotnet/api/system.management.automation.psscriptproperty.getterscript) especifica el script que genera el valor de propiedad. También puede Agregar el `ScriptProperty` elemento a los miembros del elemento [MemberSets](/dotnet/api/system.management.automation.psmemberset) .
 
 ```xml
 <Type>
@@ -101,11 +101,13 @@ Una propiedad de secuencia de comandos define una propiedad cuyo valor es el res
 
 ## <a name="property-sets"></a>Conjuntos de propiedades
 
-Un conjunto de propiedades define un grupo de propiedades extendidas que se puede hacer referencia por el nombre del conjunto. Por ejemplo, el `Property` parámetro de la [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) cmdlet puede especificar una propiedad específica establecida en mostrarse. Cuando se especifica un conjunto de propiedades, se muestran solo las propiedades que pertenecen al conjunto.
+Un conjunto de propiedades define un grupo de propiedades extendidas al que se puede hacer referencia mediante el nombre del conjunto.
+Por ejemplo, el parámetro de la**propiedad** [format-table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)
+puede especificar que se muestre un conjunto de propiedades específico. Cuando se especifica un conjunto de propiedades, solo se muestran las propiedades que pertenecen al conjunto.
 
-No hay ninguna restricción en el número de conjuntos de propiedades que se pueden definir para un objeto. Sin embargo, se deben especificar los conjuntos de propiedades que se usan para definir las propiedades de presentación predeterminada de un objeto en el conjunto de miembros PSStandardMembers. En el archivo Types.ps1xml tipos, los nombres de conjunto de propiedades predeterminada incluyen DefaultDisplayProperty, DefaultDisplayPropertySet y DefaultKeyPropertySet. Se omiten los conjuntos de propiedades adicionales que agregue al conjunto de miembros PSStandardMembers.
+No hay ninguna restricción en el número de conjuntos de propiedades que se pueden definir para un objeto. Sin embargo, los conjuntos de propiedades que se usan para definir las propiedades de presentación predeterminadas de un objeto deben especificarse en el conjunto de miembros **PSStandardMembers** . En el `Types.ps1xml` archivo de tipos, los nombres de los conjuntos de propiedades predeterminados son **DefaultDisplayProperty**, **DefaultDisplayPropertySet**y **DefaultKeyPropertySet**. Se omiten los conjuntos de propiedades adicionales que se agreguen al conjunto de miembros **PSStandardMembers** .
 
-¿En el ejemplo siguiente, el conjunto de propiedades DefaultDisplayPropertySet se agrega al conjunto de miembros de PSStandardMembers el [System.Serviceprocess.Servicecontroller? Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController) tipo. El [PropertySet](http://msdn.microsoft.com/en-us/14cdc234-796e-4857-9b51-bdbaa1412188) elemento define el grupo de propiedades. El [nombre](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) elemento especifica el nombre del conjunto de propiedades. Y, el [ReferencedProperties](http://msdn.microsoft.com/en-us/5e620423-8679-4fbf-b6db-9f79288e4786) elemento especifica las propiedades del conjunto. (También puede agregar el [PropertySet](http://msdn.microsoft.com/en-us/14cdc234-796e-4857-9b51-bdbaa1412188) elemento a los miembros de la [tipo](http://msdn.microsoft.com/en-us/e5dbd353-d6b2-40a1-92b6-6f1fea744ebe) elemento.)
+En el ejemplo siguiente, el conjunto de propiedades **DefaultDisplayPropertySet** se agrega al conjunto de miembros **PSStandardMembers** del tipo [System. ServiceProcess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) . El elemento [PropertySet](/dotnet/api/system.management.automation.pspropertyset) define el grupo de propiedades. El elemento [Name](/dotnet/api/system.management.automation.psmemberinfo.name) especifica el nombre del conjunto de propiedades. Y el elemento [ReferencedProperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames) especifica las propiedades del conjunto. También puede Agregar el `PropertySet` elemento a los miembros del elemento [Type](/dotnet/api/system.management.automation.pstypename) .
 
 ```xml
 <Type>
@@ -128,6 +130,10 @@ No hay ninguna restricción en el número de conjuntos de propiedades que se pue
 </Type>
 ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
+
+[Acerca de types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)
+
+[System. Management. Automation](/dotnet/api/System.Management.Automation)
 
 [Escribir un cmdlet de Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)
