@@ -12,6 +12,8 @@
   items:
     - name: Introducción a DSC para Linux
       href: getting-started/lnxGettingStarted.md
+    - name: Introducción a DSC para Windows
+      href: getting-started/winGettingStarted.md
     - name: Introducción a DSC en Nano
       href: getting-started/nanoDSC.md
     - name: Introducción a DSC en Azure Automation
