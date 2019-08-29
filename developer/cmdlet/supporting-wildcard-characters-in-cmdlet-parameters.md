@@ -1,72 +1,82 @@
 ---
-title: Compatibilidad con caracteres comodín en los parámetros de Cmdlet | Microsoft Docs
+title: Compatibilidad con caracteres comodín en los parámetros del cmdlet
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/26/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- wildcards [PowerShell Programmer's Guide]
-- parameters [PowerShell Programmer's Guide], wildcards
-ms.assetid: 9b26e1e9-9350-4a5a-aad5-ddcece658d93
-caps.latest.revision: 12
-ms.openlocfilehash: 6c762d3889bc4b649252390625525db4735f4c1d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19644c5bc186a5554d6b134a67fc7c4d7aa7b64c
+ms.sourcegitcommit: a02ccbeaa17c0e513d6c4a21b877c88ac7725458
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067406"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104444"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>Compatibilidad con caracteres comodín en los parámetros del cmdlet
 
-A menudo, tendrá que diseñar un cmdlet para ejecutar en un grupo de recursos en lugar de en un único recurso. Por ejemplo, un cmdlet posible que deba buscar todos los archivos en un almacén de datos que tienen el mismo nombre o la extensión. Debe proporcionar compatibilidad con caracteres comodín cuando se diseña un cmdlet que se va a ejecutar en un grupo de recursos.
+A menudo, tendrá que diseñar un cmdlet para que se ejecute en un grupo de recursos, en lugar de hacerlo en un solo recurso. Por ejemplo, un cmdlet puede necesitar Buscar todos los archivos de un almacén de datos que tengan el mismo nombre o extensión. Debe proporcionar compatibilidad con caracteres comodín al diseñar un cmdlet que se ejecutará en un grupo de recursos.
 
 > [!NOTE]
-> Uso de caracteres comodín se denomina a veces *comodines*.
+> El uso de caracteres comodín a veces se conoce como *comodines*.
 
-## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Cmdlets de PowerShell de Windows que usan caracteres comodín
+## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Cmdlets de Windows PowerShell que usan caracteres comodín
 
- Muchos de los cmdlets de Windows PowerShell admiten caracteres comodín para sus valores de parámetro. Por ejemplo, casi todos los cmdlets que tiene un `Name` o `Path` parámetro admite caracteres comodín para estos parámetros. (Aunque la mayoría de los cmdlets que tengan un `Path` parámetro también tienen un `LiteralPath` parámetro que no admite caracteres comodín.) El comando siguiente muestra cómo se usa un carácter comodín para devolver todos los cmdlets de la sesión actual cuyos nombres contienen el verbo Get.
+ Muchos cmdlets de Windows PowerShell admiten caracteres comodín para sus valores de parámetro. Por ejemplo, casi todos los cmdlets que `Name` tienen `Path` un parámetro o admiten caracteres comodín para estos parámetros. (Aunque la mayoría de los cmdlets `Path` que tienen un parámetro `LiteralPath` también tienen un parámetro que no admite caracteres comodín). El siguiente comando muestra cómo se usa un carácter comodín para devolver todos los cmdlets de la sesión actual cuyo nombre contiene el verbo GET.
 
- **PS > get-command get -\***
+ `Get-Command get-*`
 
 ## <a name="supported-wildcard-characters"></a>Caracteres comodín admitidos
 
-Windows PowerShell es compatible con los siguientes caracteres comodín.
+Windows PowerShell admite los siguientes caracteres comodín.
 
-|carácter comodín|Descripción|Ejemplo|Coincidencia|No coincide con|
-|------------------------|-----------------|-------------|-------------|--------------------|
-|*|Coincide con cero o más caracteres, empezando en la posición especificada|a*|Una, ag, Apple||
-|?|Cualquiercarácter coincide con la posición especificada|?n|Una, en, en|se ejecutó|
-|[ ]|Coincide con un intervalo de caracteres|[a-l] ook|libro, cook, apariencia|tardó|
-|[ ]|Coincide con los caracteres especificados|[bc]ook|libro, cook|look|
+| N |                             DESCRIPCIÓN                             |  Ejemplo   |     Coincidencia      | No coincide |
+| -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
+| *        | Coincide con cero o más caracteres, empezando en la posición especificada | `a*`       | A, AG, Apple     |                |
+| ?        | Coincide con cualquier carácter que se encuentra en la posición especificada                     | `?n`       | , En, en       | ejecuta            |
+| [ ]      | Coincide con un intervalo de caracteres                                       | `[a-l]ook` | libro, Cook, mire | Nook, tardó     |
+| [ ]      | Coincide con los caracteres especificados                                    | `[bn]ook`  | libro, Nook       | Cook, mire     |
 
-Al diseñar los cmdlets que admiten caracteres comodín, se permite para combinaciones de caracteres comodín. Por ejemplo, el siguiente comando usa el `Get-ChildItem` para recuperar todos los archivos .txt que se encuentran en la carpeta c:\Techdocs y que comienzan con las letras "a" a "l".
+Al diseñar cmdlets que admiten caracteres comodín, permita combinaciones de caracteres comodín. Por ejemplo, el siguiente comando usa el `Get-ChildItem` cmdlet para recuperar todos los archivos. txt que se encuentran en la carpeta c:\Techdocs y que comienzan con las letras "a" a "l".
 
-**get-childitem c:\techdocs\\[a-l]\*.txt**
+`Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-El comando anterior usa el carácter comodín de intervalo **[a-l]** para especificar el nombre de archivo debe empezar con los caracteres "a" a "l". El comando usa el * carácter comodín como marcador de posición para cualquier carácter entre la primera letra del nombre de archivo y la extensión. txt.
+El comando anterior usa el carácter comodín `[a-l]` de intervalo para especificar que el nombre de archivo debe empezar con los caracteres "a" a "l" `*` y usar el carácter comodín como marcador de posición para los caracteres entre la primera letra del nombre de archivo y la extensión **. txt** .
 
-En el ejemplo siguiente se usa un modelo de carácter comodín de intervalo que excluye la letra "d", pero incluye todas las letras de la "a" a "f".
+En el ejemplo siguiente se usa un patrón de caracteres comodín de intervalo que excluye la letra "d", pero se incluyen todas las demás Letras de la "a" a la "f".
 
-**get-childitem c:\techdocs\\[a-cef]\*.txt**
+`Get-ChildItem c:\techdocs\[a-cef]\*.txt`
 
-## <a name="handling-literal-characters-in-wildcard-patterns"></a>Caracteres literales de carácter comodín patrones de control
+## <a name="handling-literal-characters-in-wildcard-patterns"></a>Controlar caracteres literales en patrones de caracteres comodín
 
-Si el patrón de carácter comodín que especifique contiene caracteres literales, use el carácter de acento grave (') como carácter de escape. Al especificar caracteres literales mediante programación, utilice un acento grave único. Al especificar los caracteres literales en el símbolo del sistema, use dos graves. Por ejemplo, el siguiente patrón contiene dos corchetes que se deben tener literalmente.
+Si el patrón de carácter comodín que especifica contiene caracteres literales que no deben interpretarse como caracteres comodín, use el carácter`` ` ``de acento grave () como carácter de escape. Cuando especifique caracteres literales int en la API de PowerShell, use una sola marca de paso. Cuando especifique caracteres literales en el símbolo del sistema de PowerShell, use dos TICs.
 
-"John Smith \`[*']" (especificado mediante programación)
+Por ejemplo, el siguiente patrón contiene dos corchetes que deben tomarse literalmente.
 
-"John Smith \` \`[*\`']" (especificado en el símbolo del sistema)
+Cuando se usa en la API de PowerShell, use:
 
-Este patrón coincide con "John Smith [Marketing]" o "John Smith [desarrollo de]".
+- "John Smith \`[* ']"
 
-## <a name="cmdlet-output-and-wildcard-characters"></a>Salida del cmdlet y caracteres comodín
+Cuando se usa desde el símbolo del sistema de PowerShell:
 
-Cuando los parámetros de cmdlet admiten caracteres comodín, una operación de cmdlet normalmente genera una salida de la matriz. En ocasiones, no tiene sentido para admitir una matriz de salida porque el usuario podría usar sólo un elemento a la vez. Por ejemplo, el `Set-Location` cmdlet es compatible con una matriz de salida porque el usuario establece una única ubicación. En este caso, el cmdlet todavía admite caracteres comodín, pero fuerza la resolución a una única ubicación.
+- "John Smith \` \`[*\`']"
 
-## <a name="see-also"></a>Véase también
+Este patrón coincide con "John Smith [marketing]" o "John Smith [desarrollo]". Por ejemplo:
+
+```
+PS> "John Smith [Marketing]" -like "John Smith ``[*``]"
+True
+
+PS> "John Smith [Development]" -like "John Smith ``[*``]"
+True
+```
+
+## <a name="cmdlet-output-and-wildcard-characters"></a>Resultados de cmdlet y caracteres comodín
+
+Cuando los parámetros de cmdlet admiten caracteres comodín, la operación normalmente genera una salida de matriz.
+En ocasiones, no tiene sentido admitir una salida de matriz porque el usuario podría usar un solo elemento. Por ejemplo, el `Set-Location` cmdlet no admite la salida de matriz porque el usuario establece una sola ubicación. En esta instancia, el cmdlet sigue admitiendo caracteres comodín, pero fuerza la resolución en una sola ubicación.
+
+## <a name="see-also"></a>Vea también
 
 [Escribir un cmdlet de Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)
 
