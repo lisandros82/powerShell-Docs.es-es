@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
+contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,cmdlet,psgallery
 description: Instrucciones para publicadores
 title: Instrucciones y procedimientos recomendados para publicar en la Galería de PowerShell
-ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b470dbd81e79d2a6a228b8c89f85e57c03803ede
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084664"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986512"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Instrucciones y procedimientos recomendados para publicar en PowerShellGallery
 
@@ -85,6 +85,22 @@ Los ejemplos de los módulos publicados en la Galería de PowerShell deben estar
 
 Encontrará un buen patrón de ejemplos en el [módulo PSDscResource](https://www.powershellgallery.com/packages/PSDscResources), en la carpeta Examples\RegistryResource.
 Hay cuatro casos de uso de ejemplo con una breve descripción en la parte superior de cada archivo que documenta lo que se demuestra.
+
+## <a name="manage-dependencies"></a>Administrar dependencias
+
+Es importante especificar los módulos de los que depende el suyo en el Manifiesto de módulo.
+Esto permite al usuario final no tener que preocuparse de instalar las versiones adecuadas de los módulos de los que depende el suyo.
+Para especificar los módulos dependientes, debe usar el campo de módulo requerido en el manifiesto de módulo.
+De este modo, los módulos mostrados se cargarán en el entorno global antes de importar su módulo a menos que ya se hayan cargado (por ejemplo, es posible que un módulo diferente ya haya cargado algunos módulos).
+También es posible indicar una versión específica que cargar mediante el campo RequiredVersion en lugar del campo ModuleVersion. Al usar ModuleVersion, se cargará la versión más reciente disponible con un mínimo de la versión especificada.
+Cuando no se usa el campo RequiredVersion para indicar una versión específica, es importante supervisar las actualizaciones de versión en el módulo requerido.
+Es especialmente crucial tener en cuenta los cambios importantes que podrían afectar a la experiencia del usuario con su módulo.
+
+```powershell
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+```
 
 ## <a name="respond-to-feedback"></a>Responder a los comentarios
 
