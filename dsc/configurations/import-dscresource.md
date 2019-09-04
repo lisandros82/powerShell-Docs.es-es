@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Uso de Import-DSCResource
-ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1c2c06d756a70c2de516f330e3123235ce740ba
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080108"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215407"
 ---
 # <a name="using-import-dscresource"></a>Uso de Import-DSCResource
 
@@ -78,7 +78,7 @@ Este uso tiene las siguientes ventajas:
 
 Al crear la configuración de DSC en el ISE, PowerShell proporciona IntelliSence para los recursos y las propiedades de recursos. Las definiciones de recursos en la ruta de acceso del módulo `$pshome` se cargan automáticamente. Al importar los recursos mediante la palabra clave `Import-DSCResource`, se agregan las definiciones de recursos especificadas e Intellisense se expande para incluir el esquema del recurso importado.
 
-![Intellisense para recursos](/media/resource-intellisense.png)
+![Intellisense para recursos](../media/resource-intellisense.png)
 
 > [!NOTE]
 > A partir de PowerShell 5.0, se agregó la finalización con tabulación al ISE para los recursos de DSC y sus propiedades. Para obtener más información, consulte [Recursos](../resources/resources.md).
@@ -137,11 +137,11 @@ La instalación y el uso de varias versiones de recursos en paralelo no se admit
 
 En la imagen siguiente, se instalan dos versiones del módulo **xPSDesiredStateConfiguration**.
 
-![Corrección de varias versiones de recursos](/media/multiple-resource-versions-broken.md)
+![Corrección de varias versiones de recursos](../media/multiple-resource-versions-broken.png)
 
 Copie el contenido de la versión del módulo deseada en el nivel superior del directorio de módulo.
 
-![Corrección de varias versiones de recursos](/media/multiple-resource-versions-fixed.md)
+![Corrección de varias versiones de recursos](../media/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>Ubicación de los recursos
 
