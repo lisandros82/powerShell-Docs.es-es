@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Trabajar con archivos y carpetas
-ms.openlocfilehash: 0f7cb233918b59475417ec49b611ecc25a94ebe1
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 743e261d2f5e8bfa39f2731fca7fea6e5678c711
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030689"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215522"
 ---
 # <a name="working-with-files-and-folders"></a>Trabajar con archivos y carpetas
 
@@ -106,15 +106,17 @@ Si no quiere que se le solicite confirmación por cada elemento contenido, espec
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Asignar una carpeta local como una unidad accesible de Windows
+## <a name="mapping-a-local-folder-as-a-drive"></a>Asignación de una carpeta local como una unidad
 
-También puede asignar una carpeta local mediante el comando **subst**. El siguiente comando crea una unidad local P: con raíz en el directorio local Archivos de programa:
+También puede asignar una carpeta local mediante el comando **New-PSDrive**. El siguiente comando crea una unidad local P: con raíz en el directorio local Archivos de programa, visible solo desde la sesión de PowerShell:
 
 ```powershell
-subst p: $env:programfiles
+New-PSDrive -Name P -Root $env:ProgramFiles -PSProvider FileSystem
 ```
 
-Al igual que con las unidades de red, las unidades asignadas dentro de Windows PowerShell con **subst** son visibles inmediatamente en el shell de Windows PowerShell.
+Al igual que con las unidades de red, las unidades asignadas dentro de Windows PowerShell son visibles inmediatamente en el shell de Windows PowerShell.
+Para crear una unidad asignada visible desde el Explorador de archivos, se necesita el parámetro **-Persist**. Sin embargo, solo se pueden usar rutas de acceso remotas con Persist.
+
 
 ## <a name="reading-a-text-file-into-an-array"></a>Leer un archivo de texto en una matriz
 
