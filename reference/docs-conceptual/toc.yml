@@ -94,8 +94,6 @@
       items:
         - name: Presentación de Windows PowerShell ISE
           href: components/ise/introducing-the-windows-powershell-ise.md
-        - name: Entorno de scripting integrado (ISE) de Windows PowerShell
-          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
         - name: "Usar Windows\_PowerShell\_ISE"
           items:
             - name: "Explorar Windows\_PowerShell\_ISE"
@@ -200,12 +198,66 @@
   items:
     - name: Scripts de muestra para la administración
       href: samples/sample-scripts-for-administration.yml
-    - name: Cambiar el estado del equipo
-      href: samples/changing-computer-state.md
-    - name: Recopilar información acerca de los equipos
-      href: samples/collecting-information-about-computers.md
-    - name: Creación de consultas Get-WinEvent con FilterHashtable
-      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: Trabajar con objetos
+      items:
+        - name: 'Ver la estructura del objeto: Get-Member'
+          href: samples/viewing-object-structure--get-member-.md
+        - name: 'Seleccionar partes de objetos: Select-Object'
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: 'Quitar objetos de la canalización: Where-Object'
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: Ordenar objetos
+          href: samples/sorting-objects.md
+        - name: 'Repetir una tarea para varios objetos: ForEach-Object'
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: 'Crear objetos .NET y COM: New-Object'
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: Usar métodos y clases estáticas
+          href: samples/using-static-classes-and-methods.md
+        - name: 'Obtener objetos de WMI: Get-WmiObject'
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+    - name: Administración de equipos
+      items:
+        - name: Cambiar el estado del equipo
+          href: samples/changing-computer-state.md
+        - name: Recopilar información acerca de los equipos
+          href: samples/collecting-information-about-computers.md
+        - name: Creación de consultas Get-WinEvent con FilterHashtable
+          href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: Administración de procesos y servicios
+      items:
+        - name: Administración de procesos con cmdlets de proceso
+          href: samples/managing-processes-with-process-cmdlets.md
+        - name: Administración de servicios
+          href: samples/managing-services.md
+        - name: "Administrar unidades de Windows\_PowerShell"
+          href: samples/managing-windows-powershell-drives.md
+        - name: Trabajar con impresoras
+          href: samples/working-with-printers.md
+        - name: Realizar tareas de redes
+          href: samples/performing-networking-tasks.md
+        - name: Trabajar con instalaciones de software
+          href: samples/working-with-software-installations.md
+        - name: Descodificación de un comando de PowerShell desde un proceso en ejecución
+          href: samples/decode-powershell-command-from-a-running-process.md
+    - name: Trabajar con la salida
+      items:
+        - name: Redireccionamiento de datos con cmdlets Out-*
+          href: samples/redirecting-data-with-out---cmdlets.md
+        - name: Usar comandos de formato para cambiar la vista de salida
+          href: samples/using-format-commands-to-change-output-view.md
+    - name: Administrar unidades y archivos
+      items:
+        - name: Administrar la ubicación actual
+          href: samples/managing-current-location.md
+        - name: Trabajar con archivos y carpetas
+          href: samples/working-with-files-and-folders.md
+        - name: 'Trabajar con archivos, carpetas y claves del Registro'
+          href: samples/working-with-files-folders-and-registry-keys.md
+        - name: Trabajar con entradas del Registro
+          href: samples/working-with-registry-entries.md
+        - name: Trabajar con claves del Registro
+          href: samples/working-with-registry-keys.md
     - name: Creación de elementos de UI
       items:
         - name: Crear un cuadro de entrada personalizado
@@ -216,57 +268,13 @@
           href: samples/multiple-selection-list-boxes.md
         - name: Seleccionar elementos de un cuadro de lista
           href: samples/selecting-items-from-a-list-box.md
-    - name: Descodificación de un comando de PowerShell desde un proceso en ejecución
-      href: samples/decode-powershell-command-from-a-running-process.md
-    - name: Administrar la ubicación actual
-      href: samples/managing-current-location.md
-    - name: Administración de procesos con cmdlets de proceso
-      href: samples/managing-processes-with-process-cmdlets.md
-    - name: Administración de servicios
-      href: samples/managing-services.md
-    - name: "Administrar unidades de Windows\_PowerShell"
-      href: samples/managing-windows-powershell-drives.md
-    - name: Manipular elementos directamente
-      href: samples/manipulating-items-directly.md
-    - name: Realizar tareas de redes
-      href: samples/performing-networking-tasks.md
-    - name: Redireccionamiento de datos con cmdlets Out-*
-      href: samples/redirecting-data-with-out---cmdlets.md
-    - name: Usar comandos de formato para cambiar la vista de salida
-      href: samples/using-format-commands-to-change-output-view.md
-    - name: Trabajar con archivos y carpetas
-      href: samples/working-with-files-and-folders.md
-    - name: 'Trabajar con archivos, carpetas y claves del Registro'
-      href: samples/working-with-files-folders-and-registry-keys.md
-    - name: Trabajar con objetos
+    - name: Otros ejemplos
       items:
-        - name: 'Obtener objetos de WMI: Get-WmiObject'
-          href: samples/getting-wmi-objects--get-wmiobject-.md
-        - name: 'Crear objetos .NET y COM: New-Object'
-          href: samples/creating-.net-and-com-objects--new-object-.md
-        - name: 'Quitar objetos de la canalización: Where-Object'
-          href: samples/removing-objects-from-the-pipeline--where-object-.md
-        - name: 'Seleccionar partes de objetos: Select-Object'
-          href: samples/selecting-parts-of-objects--select-object-.md
-        - name: Ordenar objetos
-          href: samples/sorting-objects.md
-        - name: 'Repetir una tarea para varios objetos: ForEach-Object'
-          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-        - name: Usar métodos y clases estáticas
-          href: samples/using-static-classes-and-methods.md
-        - name: 'Ver la estructura del objeto: Get-Member'
-          href: samples/viewing-object-structure--get-member-.md
-    - name: Trabajar con impresoras
-      href: samples/working-with-printers.md
-    - name: Trabajar con entradas del Registro
-      href: samples/working-with-registry-entries.md
-    - name: Trabajar con claves del Registro
-      href: samples/working-with-registry-keys.md
-    - name: Trabajar con instalaciones de software
-      href: samples/working-with-software-installations.md
-    - name: Otros objetos de scripting útiles
-      href: samples/other-useful-scripting-objects.md
-    - name: Apéndice 1 Alias de compatibilidad
-      href: samples/appendix-1---compatibility-aliases.md
-    - name: Apéndice 2 Crear un acceso directo de PowerShell personalizado
-      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+        - name: Manipular elementos directamente
+          href: samples/manipulating-items-directly.md
+        - name: Otros objetos de scripting útiles
+          href: samples/other-useful-scripting-objects.md
+        - name: Apéndice 1 Alias de compatibilidad
+          href: samples/appendix-1---compatibility-aliases.md
+        - name: Apéndice 2 Crear un acceso directo de PowerShell personalizado
+          href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
