@@ -887,39 +887,13 @@
         - name: Escritura de la Ayuda de los cmdlets de Windows PowerShell
           href: ./help/writing-help-for-windows-powershell-cmdlets.md
         - name: Escritura de la Ayuda de los proveedores de Windows PowerShell
-          href: ./help/writing-help-for-windows-powershell-providers.md
           items:
-            - name: Cómo crear un tema de Ayuda de proveedor
-              href: ./help/how-to-create-a-provider-help-topic.md
-            - name: Cómo agregar el nombre del proveedor
-              href: ./help/how-to-add-the-provider-name.md
-            - name: Cómo agregar las unidades del proveedor
-              href: ./help/how-to-add-the-provider-drives.md
-            - name: Cómo agregar la sinopsis del proveedor
-              href: ./help/how-to-add-the-provider-synopsis.md
-            - name: Cómo agregar una descripción del proveedor
-              href: ./help/how-to-add-a-provider-description.md
-            - name: Cómo agregar capacidades
-              href: ./help/how-to-add-capabilities.md
-            - name: Cómo agregar tareas a un tema de Ayuda de proveedor
-              href: ./help/how-to-add-tasks-to-a-provider-help-topic.md
             - name: Cómo agregar parámetros dinámicos a un tema de Ayuda de proveedor
               href: ./help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
-            - name: Cómo agregar notas a un tema de Ayuda de proveedor
-              href: ./help/how-to-add-notes-to-a-provider-help-topic.md
             - name: Cómo agregar una sección Consulte también a un tema de Ayuda de proveedor
               href: ./help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
         - name: Escritura de la Ayuda de los scripts y las funciones de Windows PowerShell
           href: ./help/writing-help-for-windows-powershell-scripts-and-functions.md
-          items:
-            - name: Escritura de temas de Ayuda basados en XML para los scripts y las funciones
-              href: ./help/writing-xml-based-help-topics-for-scripts-and-functions.md
-        - name: Escritura de la Ayuda de los complementos de Windows PowerShell
-          href: ./help/writing-help-for-windows-powershell-snap-ins.md
-        - name: Escritura de la Ayuda de los cmdlets personalizados para los proveedores de Windows PowerShell
-          href: ./help/writing-custom-cmdlet-help-for-windows-powershell-providers.md
-        - name: Escritura de la Ayuda de Acerca de Windows PowerShell
-          href: ./help/writing-windows-powershell-about-help.md
         - name: Escritura de temas de Ayuda basados en comentarios
           href: ./help/writing-comment-based-help-topics.md
           items:
@@ -936,7 +910,6 @@
             - name: Ejemplos de la Ayuda basada en comentarios
               href: ./help/examples-of-comment-based-help.md
         - name: Escritura de temas de Ayuda basados en XML para los comandos
-          href: ./help/writing-xml-based-help-topics-for-commands.md
           items:
             - name: Cómo crear el archivo de Ayuda del cmdlet
               href: ./help/how-to-create-the-cmdlet-help-file.md
