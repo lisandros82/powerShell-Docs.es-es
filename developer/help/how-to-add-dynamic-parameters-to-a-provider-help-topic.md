@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
-ms.openlocfilehash: cc4877242a16a9caa99564aeaae985f85e38791e
-ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
+ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70737600"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848117"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Cómo agregar parámetros dinámicos a un tema de Ayuda de proveedor
 
@@ -23,7 +23,7 @@ En esta sección se explica cómo rellenar la sección de **parámetros dinámic
 
 Los parámetros dinámicos que se documentan en un tema de ayuda del proveedor son los parámetros dinámicos que el proveedor agrega al cmdlet o la función cuando el cmdlet o la función se usa en la unidad del proveedor.
 
-Los parámetros dinámicos también se pueden documentar en la ayuda de cmdlet personalizada para un proveedor. Al escribir la ayuda de proveedor y la ayuda de cmdlet personalizada para un proveedor, incluya la documentación de parámetros dinámicos en ambos documentos. Para obtener más información sobre la ayuda de cmdlet personalizada, consulte [Writing Windows PowerShell Custom cmdlet Help for Providers](./writing-custom-cmdlet-help-for-windows-powershell-providers.md).
+Los parámetros dinámicos también se pueden documentar en la ayuda de cmdlet personalizada para un proveedor. Al escribir la ayuda de proveedor y la ayuda de cmdlet personalizada para un proveedor, incluya la documentación de parámetros dinámicos en ambos documentos.
 
 Si un proveedor no implementa ningún parámetro dinámico, el tema de ayuda del proveedor contiene un `DynamicParameters` elemento vacío.
 
@@ -116,7 +116,7 @@ Si un proveedor no implementa ningún parámetro dinámico, el tema de ayuda del
    |------------------|-----------------|
    |PossibleValues|Este elemento es un contenedor. A continuación se describen sus elementos secundarios. Agregue un `PossibleValues` elemento a cada tema de ayuda del proveedor. El elemento puede estar vacío.|
    |PossibleValue|Este elemento es un contenedor. A continuación se describen sus elementos secundarios. Agregue un `PossibleValue` elemento para cada valor del parámetro dinámico.|
-   |Valor|Especifica el nombre del valor.|
+   |Value|Especifica el nombre del valor.|
    |DESCRIPCIÓN|Este elemento contiene un `Para` elemento. El texto `Para` del elemento describe el valor que se denomina en el `Value` elemento.|
 
    Por ejemplo, el siguiente código XML muestra `PossibleValue` un elemento `Encoding` del parámetro dinámico.

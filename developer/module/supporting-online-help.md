@@ -1,5 +1,5 @@
 ---
-title: Compatibilidad con la Ayuda en línea | Microsoft Docs
+title: Compatibilidad con la ayuda en línea | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,48 +8,48 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
-ms.openlocfilehash: b76f45299d11dc10c8b16ed80f87c7f1fcc5ed65
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5c5707d1c533e0498c6794b60f4499e530e25813
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082148"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848081"
 ---
 # <a name="supporting-online-help"></a>Compatibilidad con la ayuda en línea
 
-A partir de Windows PowerShell 3.0, hay dos maneras para admitir la `Get-Help` características en línea de comandos de Windows PowerShell. Este tema explica cómo implementar esta característica para los tipos de comandos diferente.
+A partir de Windows PowerShell 3,0, hay dos maneras de admitir la `Get-Help` característica en línea para los comandos de Windows PowerShell. En este tema se explica cómo implementar esta característica para distintos tipos de comandos.
 
-## <a name="about-online-help"></a>Acerca de la Ayuda en línea
+## <a name="about-online-help"></a>Acerca de la ayuda en línea
 
-Ayuda en línea siempre ha sido una parte fundamental de Windows PowerShell. Aunque el `Get-Help` cmdlet muestra los temas de ayuda en el símbolo del sistema, muchos usuarios prefieren la experiencia de lectura en pantalla, como la codificación en colores, hipervínculos y para compartir ideas en el contenido de la Comunidad y documentos basados en la wiki. Lo más importante, antes de la llegada de ayuda actualizable, ayuda en línea que proporciona la versión más actualizada de los archivos de ayuda.
+La ayuda en línea siempre ha sido una parte fundamental de Windows PowerShell. Aunque el `Get-Help` cmdlet muestra temas de ayuda en el símbolo del sistema, muchos usuarios prefieren la experiencia de lectura en línea, como la codificación de colores, los hipervínculos y el uso compartido de ideas en el contenido de la comunidad y en los documentos basados en wiki. Lo más importante, antes de la llegada de la ayuda actualizable, la ayuda en línea proporcionó la versión más actualizada de los archivos de ayuda.
 
-Con la llegada de la Ayuda actualizable en Windows PowerShell 3.0, ayuda en línea sigue desempeñando un papel fundamental. Además de la experiencia de usuario flexible, ayuda en línea proporciona ayuda a los usuarios que no lo hace o no se pueden usar la Ayuda actualizable para descargar los temas de ayuda.
+Con la llegada de la ayuda actualizable en Windows PowerShell 3,0, la ayuda en línea sigue desempeñando un papel fundamental. Además de la experiencia de usuario flexible, la ayuda en línea proporciona ayuda a los usuarios que no pueden usar la ayuda actualizable para descargar temas de ayuda.
 
-## <a name="how-get-help--online-works"></a>Cómo Get-Help-Online Works
+## <a name="how-get-help--online-works"></a>Funcionamiento de Get-Help-online
 
-Para ayudar a los usuarios a encontrar los temas de ayuda en línea de comandos, el `Get-Help` comando tiene un parámetro en línea que se abre la versión en línea de tema de ayuda para un comando en el Explorador de Internet predeterminado del usuario.
+Para ayudar a los usuarios a encontrar los temas de ayuda en `Get-Help` línea para los comandos, el comando tiene un parámetro en línea que abre la versión en línea del tema de ayuda para un comando en el explorador de Internet predeterminado del usuario.
 
-Por ejemplo, el comando siguiente abre el tema de ayuda en línea el `Invoke-Command` cmdlet.
+Por ejemplo, el siguiente comando abre el tema de ayuda en pantalla `Invoke-Command` para el cmdlet.
 
 ```powershell
 Get-Help Invoke-Command -Online
 ```
 
-Para implementar `Get-Help` -en línea, el `Get-Help` cmdlet busca para un identificador uniforme de recursos (URI) para el tema de Ayuda de la versión en línea en las siguientes ubicaciones.
+Para implementar `Get-Help` -online, el `Get-Help` cmdlet busca un identificador uniforme de recursos (URI) para el tema de ayuda de la versión en línea en las siguientes ubicaciones.
 
-- El primer vínculo en la sección vínculos relacionados del tema de ayuda para el comando. El tema de ayuda debe instalarse en el equipo del usuario. Esta característica se introdujo en Windows PowerShell 2.0.
+- El primer vínculo de la sección vínculos relacionados del tema de ayuda para el comando. El tema de ayuda debe instalarse en el equipo del usuario. Esta característica se presentó en Windows PowerShell 2,0.
 
-- La propiedad HelpUri de los comandos. La propiedad HelpUri es accesible, incluso cuando el tema de ayuda para el comando no está instalado en el equipo del usuario. Esta característica se introdujo en Windows PowerShell 3.0.
+- La propiedad HelpUri de cualquier comando. La propiedad HelpUri es accesible incluso cuando el tema de ayuda para el comando no está instalado en el equipo del usuario. Esta característica se presentó en Windows PowerShell 3,0.
 
-  `Get-Help` Busca un URI en la primera entrada en la sección vínculos relacionados antes de obtener el valor de la propiedad HelpUri. Si el valor de propiedad no es correcto o ha cambiado, puede invalidarlo especificando un valor diferente en el primer vínculo relacionado. Sin embargo, el primer vínculo relacionado sólo funciona si los temas de ayuda se instalan en el equipo del usuario.
+  `Get-Help`busca un URI en la primera entrada de la sección links relacionado antes de obtener el valor de la propiedad HelpUri. Si el valor de la propiedad es incorrecto o ha cambiado, puede invalidarlo escribiendo un valor diferente en el primer vínculo relacionado. Sin embargo, el primer vínculo relacionado solo funciona cuando los temas de ayuda se instalan en el equipo del usuario.
 
-## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Adición de un URI para el primer vínculo relacionado de un tema de Ayuda del comando
+## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Agregar un URI al primer vínculo relacionado de un tema de ayuda de comando
 
-Puede admitir `Get-Help` -Online para cualquier comando mediante la adición de un URI válido para la primera entrada en la sección vínculos relacionados del tema de ayuda basado en XML para el comando. Esta opción solo es válida en los temas de Ayuda basados en XML y solo funciona si el tema de ayuda está instalado en el equipo del usuario. Cuando se instala el tema de ayuda y el URI se rellena, este valor tiene prioridad sobre la **HelpUri** propiedad del comando. Para obtener información acerca de los temas de Ayuda basados en XML para los comandos, vea [Writing XML-Based temas de ayuda para los comandos](../help/writing-xml-based-help-topics-for-commands.md).
+Puede admitir `Get-Help` -online para cualquier comando agregando un URI válido a la primera entrada de la sección vínculos relacionados del tema de ayuda basado en XML para el comando. Esta opción solo es válida en los temas de ayuda basados en XML y solo funciona cuando el tema de ayuda está instalado en el equipo del usuario. Cuando se instala el tema de ayuda y se rellena el URI, este valor tiene prioridad sobre la propiedad **HelpUri** del comando.
 
-Para admitir esta característica, el URI debe aparecer en el `maml:uri` elemento debajo del primer `maml:relatedLinks/maml:navigationLink` elemento en el `maml:relatedLinks` elemento.
+Para admitir esta característica, el URI debe aparecer en el `maml:uri` elemento bajo el primer `maml:relatedLinks/maml:navigationLink` elemento `maml:relatedLinks` del elemento.
 
-El siguiente XML muestra la posición correcta de la dirección URI. La "versión en línea:" texto en el `maml:linkText` elemento es una práctica recomendada, pero no es necesario.
+El siguiente XML muestra la ubicación correcta del URI. El texto `maml:linkText` "versión en línea:" del elemento es un procedimiento recomendado, pero no es necesario.
 
 ```xml
 
@@ -65,15 +65,15 @@ El siguiente XML muestra la posición correcta de la dirección URI. La "versió
 </maml:relatedLinks>
 ```
 
-## <a name="adding-the-helpuri-property-to-a-command"></a>Adición de la propiedad HelpUri a un comando
+## <a name="adding-the-helpuri-property-to-a-command"></a>Agregar la propiedad HelpUri a un comando
 
-En esta sección se muestra cómo agregar la propiedad HelpUri a los comandos de diferentes tipos.
+En esta sección se muestra cómo agregar la propiedad HelpUri a los comandos de tipos diferentes.
 
-### <a name="adding-a-helpuri-property-to-a-cmdlet"></a>Agregar una propiedad HelpUri a un Cmdlet
+### <a name="adding-a-helpuri-property-to-a-cmdlet"></a>Agregar una propiedad HelpUri a un cmdlet
 
-Para los cmdlets que se escriben C#, agregue un **HelpUri** a la clase de Cmdlet. El valor del atributo debe ser un URI que empieza por "http" o "https".
+En el caso de los C#cmdlets escritos en, agregue un atributo **HelpUri** a la clase de cmdlet. El valor del atributo debe ser un URI que comience por "http" o "https".
 
-El código siguiente muestra el atributo HelpUri de los `Get-History` clase del cmdlet.
+En el código siguiente se muestra el atributo HelpUri `Get-History` de la clase cmdlet.
 
 ```
 [Cmdlet(VerbsCommon.Get, "History", HelpUri = "http://go.microsoft.com/fwlink/?LinkID=001122")]
@@ -81,9 +81,9 @@ El código siguiente muestra el atributo HelpUri de los `Get-History` clase del 
 
 ### <a name="adding-a-helpuri-property-to-an-advanced-function"></a>Agregar una propiedad HelpUri a una función avanzada
 
-Para las funciones avanzadas, agregue un **HelpUri** propiedad a la **CmdletBinding** atributo. El valor de la propiedad debe ser un URI que empieza por "http" o "https".
+En el caso de las funciones avanzadas, agregue una propiedad **HelpUri** al atributo **CmdletBinding** . El valor de la propiedad debe ser un URI que comience por "http" o "https".
 
-El código siguiente muestra el atributo HelpUri de la función New-calendario
+En el código siguiente se muestra el atributo HelpUri de la función New-Calendar.
 
 ```powershell
 
@@ -94,9 +94,9 @@ function New-Calendar {
 
 ### <a name="adding-a-helpuri-attribute-to-a-cim-command"></a>Agregar un atributo HelpUri a un comando CIM
 
-Para los comandos CIM, agregue un **HelpUri** atributo a la **CmdletMetadata** elemento en el archivo CDXML. El valor del atributo debe ser un URI que empieza por "http" o "https".
+En el caso de los comandos CIM, agregue un atributo **HelpUri** al elemento **CmdletMetadata** en el archivo CDXML. El valor del atributo debe ser un URI que comience por "http" o "https".
 
-El código siguiente muestra el atributo HelpUri del comando Start-Debug CIM
+En el código siguiente se muestra el atributo HelpUri del comando CIM Start-Debug
 
 ```
 <CmdletMetadata Verb="Debug" HelpUri="http://go.microsoft.com/fwlink/?LinkID=001122"/>
@@ -104,12 +104,12 @@ El código siguiente muestra el atributo HelpUri del comando Start-Debug CIM
 
 ### <a name="adding-a-helpuri-attribute-to-a-workflow"></a>Agregar un atributo HelpUri a un flujo de trabajo
 
-Para los flujos de trabajo que se escriben en el lenguaje de Windows PowerShell, agregue un **. ExternalHelp** comment (directiva) en el código de flujo de trabajo. El valor de la directiva debe ser un URI que empieza por "http" o "https".
+En el caso de los flujos de trabajo que se escriben en el lenguaje de Windows PowerShell, agregue un **. ExternalHelp** : Directiva de comentario al código del flujo de trabajo. El valor de la Directiva debe ser un URI que comience por "http" o "https".
 
 > [!NOTE]
-> No se admite la propiedad HelpUri de los flujos de trabajo basados en XAML en Windows PowerShell.
+> La propiedad HelpUri no es compatible con los flujos de trabajo basados en XAML en Windows PowerShell.
 
-El código siguiente muestra el. Directiva ExternalHelp en un archivo de flujo de trabajo.
+En el código siguiente se muestra el. Directiva ExternalHelp en un archivo de flujo de trabajo.
 
 ```powershell
 # .ExternalHelp "http://go.microsoft.com/fwlink/?LinkID=138338"

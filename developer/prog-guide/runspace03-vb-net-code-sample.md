@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 (VB.NET) ejemplo de código | Microsoft Docs
+title: Ejemplo de código RunSpace03 (VB.NET) | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,23 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
-ms.openlocfilehash: 6c625c325e491135af3e5c8d58eead62e89ccb4a
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 0931fe7a606b09475084203eaf9fa263ea1cd5f8
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67734986"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848022"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>Ejemplo de código Runspace03 (VB.NET)
 
-Aquí está el código fuente VB.NET para la aplicación de consola se describe en [crear una aplicación de consola que funciona una secuencia de comandos especificado](fd). Este ejemplo se utiliza el [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) clase para ejecutar un script que recupera información de la lista de nombres de proceso pasado a la secuencia de comandos de proceso. Muestra cómo pasar objetos de entrada a una secuencia de comandos y cómo recuperar los objetos de error, así como los objetos de salida.
+Este es el código fuente de VB.NET para la aplicación de consola que se describe en "crear una aplicación de consola que ejecuta un script especificado". En este ejemplo se usa la clase [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) para ejecutar un script que recupera información del proceso para la lista de nombres de proceso que se pasa al script. Muestra cómo pasar objetos de entrada a un script y cómo recuperar objetos de error, así como los objetos de salida.
 
 > [!NOTE]
-> Puede descargar el archivo de código fuente VB.NET (runspace03.vb) para este ejemplo con el Kit del desarrollo de Software de Windows para Windows Vista y Microsoft .NET Framework 3.0 Runtime Components. Para obtener instrucciones de descarga, vea [cómo instalar Windows PowerShell y descarga el SDK de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
->
-> Están disponibles en los archivos de origen descargado el  **\<ejemplos de PowerShell >** directory.
+> Puede descargar el archivo de código fuente de VB.NET (runspace03. VB) para este ejemplo mediante el uso del kit de desarrollo de software de Windows para los componentes de tiempo de ejecución de Windows Vista y Microsoft .NET Framework 3,0. Para obtener instrucciones de descarga, consulte [Cómo instalar Windows PowerShell y descargar el SDK de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
+> Los archivos de código fuente descargados  **\<** están disponibles en el directorio de ejemplos de PowerShell >.
 
-## <a name="code-sample"></a>Ejemplo de código
+## <a name="code-sample"></a>Código de ejemplo
 
 ```vb
 Imports System
@@ -106,7 +105,7 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace03.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace03.vb#L09-L83 "Runspace03.vb")] -->
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
 [Guía del programador de Windows PowerShell](./windows-powershell-programmer-s-guide.md)
 
