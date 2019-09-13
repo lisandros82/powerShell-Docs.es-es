@@ -1,5 +1,5 @@
 ---
-title: Establece el parámetro de cmdlet | Microsoft Docs
+title: Conjuntos de parámetros de cmdlet | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,28 +8,28 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f902fd4d-8f6e-4ef1-b07f-59983039a0d1
 caps.latest.revision: 10
-ms.openlocfilehash: a5822ef1ed3c9efb5957c20255783d515de8957a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d8c00c7ffd369a32af151836785a2c5f47b05a68
+ms.sourcegitcommit: 889b93d170aeb3d444288e7ccf67e62ce822cb7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068519"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70936196"
 ---
-# <a name="cmdlet-parameter-sets"></a>Conjuntos de parámetros del cmdlet
+# <a name="cmdlet-parameter-sets"></a>Conjuntos de parámetros de cmdlet
 
-Windows PowerShell usa conjuntos de parámetros para que pueda escribir un solo cmdlet que puede realizar acciones diferentes para distintos escenarios. Conjuntos de parámetros le permiten exponer diferentes parámetros para el usuario y para devolver información diferente en función de los parámetros especificados por el usuario.
+PowerShell usa conjuntos de parámetros para que pueda escribir un único cmdlet que puede realizar diferentes acciones en diferentes escenarios. Los conjuntos de parámetros permiten exponer diferentes parámetros al usuario. Y, para devolver información diferente en función de los parámetros especificados por el usuario.
 
 ## <a name="examples-of-parameter-sets"></a>Ejemplos de conjuntos de parámetros
 
-Por ejemplo, el `Get-EventLog` cmdlet (proporcionado por Windows PowerShell) devuelve información diferente dependiendo de si el usuario especifica la `List` o `LogName` parámetro. Si el `List` parámetro se especifica, el cmdlet devuelve información acerca de los archivos de registro a sí mismos, pero no la información de evento que contienen. Si el `LogName` parámetro se especifica, el cmdlet devuelve información acerca de los eventos en un registro de eventos específico. El `List` y `LogName` parámetros identifican dos conjuntos de parámetros independiente.
+Por ejemplo, el cmdlet `Get-EventLog` de PowerShell devuelve información diferente en función de si el usuario especifica el parámetro **List** o **logname** . Si se especifica el parámetro **List** , el cmdlet devuelve información sobre los propios archivos de registro, pero no la información de evento que contienen. Si se especifica el parámetro **logname** , el cmdlet devuelve información sobre los eventos de un registro de eventos específico. Los parámetros **List** y **logname** identifican dos conjuntos de parámetros independientes.
 
 ## <a name="unique-parameter"></a>Parámetro único
 
-Cada conjunto de parámetros debe tener un parámetro único que puede utilizar el tiempo de ejecución de Windows PowerShell para exponer el conjunto de parámetros apropiado. Si es posible, el único parámetro debe ser un parámetro obligatorio. Cuando un parámetro es obligatorio, se obliga al usuario especificar el parámetro y el tiempo de ejecución de Windows PowerShell puede usar ese parámetro para identificar el parámetro configurado para usar. El parámetro unique no puede ser obligatorio si el cmdlet está diseñado para ejecutarse sin especificar ningún parámetro.
+Cada conjunto de parámetros debe tener un parámetro único que el motor en tiempo de ejecución de PowerShell use para exponer el conjunto de parámetros adecuado. Si es posible, el parámetro único debe ser un parámetro obligatorio. Cuando un parámetro es obligatorio, el usuario debe especificar el parámetro y el tiempo de ejecución de PowerShell usa ese parámetro para identificar el conjunto de parámetros. El parámetro Unique no puede ser obligatorio si el cmdlet está diseñado para ejecutarse sin especificar ningún parámetro.
 
 ## <a name="multiple-parameter-sets"></a>Varios conjuntos de parámetros
 
-En la siguiente ilustración, la columna izquierda muestra tres conjuntos de parámetros válidos. Un parámetro es único para el primer conjunto de parámetros, parámetro B es único para el segundo conjunto de parámetros y parámetro C es único para el tercer conjunto de parámetros. Sin embargo, en la columna derecha, los conjuntos de parámetros no tienen un parámetro único.
+En la ilustración siguiente, la columna izquierda muestra tres conjuntos de parámetros válidos. El **parámetro** a es único para el primer conjunto de parámetros, el **parámetro B** es único para el segundo conjunto de parámetros y el **parámetro C** es único para el tercer conjunto de parámetros. En la columna derecha, los conjuntos de parámetros no tienen un parámetro único.
 
 ![ps_parametersets](../media/ps-parametersets.gif)
 
@@ -37,23 +37,27 @@ En la siguiente ilustración, la columna izquierda muestra tres conjuntos de par
 
 Los siguientes requisitos se aplican a todos los conjuntos de parámetros.
 
-- Cada conjunto de parámetros debe tener al menos un parámetro único. Asegúrese de este parámetro si es posible, un parámetro obligatorio.
+- Cada conjunto de parámetros debe tener al menos un parámetro único. Si es posible, convierta este parámetro en un parámetro obligatorio.
 
-- Un conjunto de parámetros que contiene varios parámetros posicionales debe definir posiciones únicas para cada parámetro. No hay dos parámetros posicionales pueden especificar la misma posición.
+- Un conjunto de parámetros que contiene varios parámetros posicionales debe definir posiciones únicas para cada parámetro. Dos parámetros posicionales no pueden especificar la misma posición.
 
-- Solo un parámetro en un conjunto se puede declarar el `ValueFromPipeline` palabra clave con un valor de `true`. Pueden definir varios parámetros la `ValueFromPipelineByPropertyName` palabra clave con un valor de `true`.
+- Solo un parámetro de un conjunto puede declarar la `ValueFromPipeline` palabra clave con un valor `true`de.
+  Varios parámetros pueden definir la `ValueFromPipelineByPropertyName` palabra clave con un valor `true`de.
 
 - Si no se especifica ningún conjunto de parámetros para un parámetro, el parámetro pertenece a todos los conjuntos de parámetros.
 
+> [!NOTE]
+> Para un cmdlet o una función, hay un límite de 32 conjuntos de parámetros.
+
 ## <a name="default-parameter-sets"></a>Conjuntos de parámetros predeterminados
 
-Cuando se definen varios conjuntos de parámetros, puede usar el `DefaultParameterSetName` palabra clave del atributo de Cmdlet para especificar el conjunto de parámetros de forma predeterminada. Windows PowerShell usa el parámetro predeterminado configurado si no se puede determinar el parámetro establecido en utilizar según la información proporcionada por el comando. Para obtener más información sobre el atributo de Cmdlet, consulte [declaración de atributo de Cmdlet](./cmdlet-attribute-declaration.md).
+Cuando se definen varios conjuntos de parámetros, puede usar la `DefaultParameterSetName` palabra clave del atributo **cmdlet** para especificar el conjunto de parámetros predeterminado. PowerShell usa el conjunto de parámetros predeterminado si no puede determinar el conjunto de parámetros que se va a usar según la información proporcionada por el comando. Para obtener más información sobre el atributo **cmdlet** , consulte [declaración de atributos de cmdlet](./cmdlet-attribute-declaration.md).
 
-## <a name="declaring-parameter-sets"></a>Declarar los conjuntos de parámetros
+## <a name="declaring-parameter-sets"></a>Declarar conjuntos de parámetros
 
-Para crear un conjunto de parámetros, debe especificar el `ParameterSetName` palabra clave cuando se declara el atributo de parámetro para cada parámetro en el conjunto de parámetros. Para los parámetros que pertenecen a varios conjuntos de parámetros, agregue un atributo de parámetro para cada conjunto de parámetros. Esto le permite definir el parámetro de forma diferente para cada conjunto de parámetros. Por ejemplo, puede definir un parámetro como obligatorio en un conjunto y opcional en otro. Sin embargo, cada conjunto de parámetros debe contener un parámetro único.
+Para crear un conjunto de parámetros, debe especificar la `ParameterSetName` palabra clave al declarar el atributo de **parámetro** para cada parámetro del conjunto de parámetros. Para los parámetros que pertenecen a varios conjuntos de parámetros, agregue un atributo de **parámetro** para cada conjunto de parámetros. Este atributo permite definir el parámetro de forma diferente para cada conjunto de parámetros. Por ejemplo, puede definir un parámetro como obligatorio en un conjunto y opcional en otro. Sin embargo, cada conjunto de parámetros debe contener un parámetro único. Para obtener más información, vea [declaración de atributos de parámetros](parameter-attribute-declaration.md).
 
-En el ejemplo siguiente, la `UserName` parámetro es el único parámetro del conjunto de parámetro Test01 y el `ComputerName` parámetro es el único parámetro del conjunto de parámetro Prueba02. El `SharedParam` parámetro pertenece a ambos conjuntos y es obligatorio para el parámetro Test01 establecer pero opcional para el conjunto de parámetros Prueba02.
+En el ejemplo siguiente, el parámetro de **nombre de usuario** es el parámetro `Test01` único del conjunto de parámetros y el parámetro **ComputerName** `Test02` es el parámetro único del conjunto de parámetros. El parámetro **SharedParam** pertenece a ambos conjuntos y es obligatorio para el `Test01` conjunto de parámetros, pero es `Test02` opcional para el conjunto de parámetros.
 
 ```csharp
 [Parameter(Position = 0, Mandatory = true,
@@ -81,12 +85,5 @@ public string SharedParam
     get { return sharedParam; }
     set { sharedParam = value; }
 }
-private string sharedParam;    [Parameter(Position = 0, Mandatory = true,
-           ParameterSetName = "Test01")]
-public string UserName
-{
-  get { return userName; }
-  set { userName = value; }
-}
-private string userName;
+private string sharedParam;
 ```
