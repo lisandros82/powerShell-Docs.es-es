@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Notas de la versión WMF 5.0
-ms.openlocfilehash: 8bdc423234cf0b104b72b1bee1de35e50783d8a4
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 8924240a4bbedcd34bc68b7cacdd23189a3716d6
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855770"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848144"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Notas de la versión de Windows Management Framework (WMF) 5.x
 
@@ -41,6 +41,9 @@ WMF 5.1 incluye los componentes de PowerShell, WMI, WinRM y Registro de inventar
 - Mejoras de depuración para las clases DSC y PowerShell
 - Mejoras de seguridad, incluido el cumplimiento de módulos firmados por catálogos procedentes del servidor de extracción y al usar cmdlets de PowerShellGet
 - Respuestas a varios problemas y varias solicitudes de usuarios
+
+> [!IMPORTANT]
+> Antes de instalar WMF 5.1 en Windows Server 2008 o Windows 7, confirme que WMF 3.0 no está instalado. Para obtener más información, consulte [Requisitos previos de WMF 5.1 para Windows Server 2008 R2 SP1 y Windows 7 SP1](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
 
 ## <a name="powershell-editions"></a>Ediciones de PowerShell
 
@@ -90,6 +93,7 @@ Antes no había forma de especificar una versión concreta del módulo; si habí
 En WMF 5.1:
 
 - Puede usar el [constructor ModuleSpecification (tabla hash)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
+
   Esta tabla hash tiene el mismo formato que `Get-Module -FullyQualifiedName`.
 
   **Ejemplo:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`

@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: Scripts de muestra para la administración del sistema
+summary: Una colección de ejemplos recorre los escenarios para la administración de sistemas con PowerShell.
+metadata:
+  title: Scripts de muestra para la administración del sistema
+  description: Una colección de ejemplos recorre los escenarios para la administración de sistemas con PowerShell.
+  ms.topic: landing-page
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 09/05/2019
+  ms.openlocfilehash: 95ed43cf713f79d8b648a0f3af77fe2e0119f9c4
+  ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+  ms.translationtype: HT
+  ms.contentlocale: es-ES
+  ms.lasthandoff: 09/05/2019
+  ms.locfileid: "70392032"
+landingContent:
+- title: Trabajar con objetos
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Ver la estructura del objeto
+      url: ./viewing-object-structure--get-member-.md
+    - text: Seleccionar partes de objetos
+      url: ./selecting-parts-of-objects--select-object-.md
+    - text: Filtrar objetos de la canalización
+      url: ./removing-objects-from-the-pipeline--where-object-.md
+    - text: Ordenar objetos
+      url: ./sorting-objects.md
+    - text: Repetir una tarea para varios objetos
+      url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
+    - text: Crear objetos .NET y COM
+      url: ./creating-.net-and-com-objects--new-object-.md
+    - text: Usar métodos y clases estáticas
+      url: ./using-static-classes-and-methods.md
+    - text: 'Obtener objetos de WMI: Get-WmiObject'
+      url: ./getting-wmi-objects--get-wmiobject-.md
+- title: Administración de equipos
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Cambiar el estado del equipo
+      url: ./changing-computer-state.md
+    - text: Recopilar información acerca de los equipos
+      url: ./collecting-information-about-computers.md
+    - text: Creación de consultas Get-WinEvent con FilterHashtable
+      url: ./creating-get-winEvent-queries-with-filterhashtable.md
+- title: Administración de procesos y servicios
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Administración de procesos con cmdlets de proceso
+      url: ./managing-processes-with-process-cmdlets.md
+    - text: Administración de servicios
+      url: ./managing-services.md
+    - text: Administrar unidades de Windows PowerShell
+      url: ./managing-windows-powershell-drives.md
+    - text: Trabajar con impresoras
+      url: ./working-with-printers.md
+    - text: Realizar tareas de redes
+      url: ./performing-networking-tasks.md
+    - text: Trabajar con instalaciones de software
+      url: ./working-with-software-installations.md
+    - text: Descodificación de un comando de PowerShell desde un proceso en ejecución
+      url: ./decode-powershell-command-from-a-running-process.md
+- title: Trabajar con la salida
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Redireccionamiento de datos con cmdlets Out-*
+      url: ./redirecting-data-with-out---cmdlets.md
+    - text: Usar comandos de formato para cambiar la vista de salida
+      url: ./using-format-commands-to-change-output-view.md
+- title: Administrar unidades y archivos
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Administrar la ubicación actual
+      url: ./managing-current-location.md
+    - text: Trabajar con archivos y carpetas
+      url: ./working-with-files-and-folders.md
+    - text: Trabajar con archivos, carpetas y claves del Registro
+      url: ./working-with-files-folders-and-registry-keys.md
+    - text: Trabajar con entradas del Registro
+      url: ./working-with-registry-entries.md
+    - text: Trabajar con claves del Registro
+      url: ./working-with-registry-keys.md
+- title: Creación de elementos de UI
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Crear un cuadro de entrada personalizado
+      url: ./creating-a-custom-input-box.md
+    - text: Crear un selector de fecha gráfico
+      url: ./creating-a-graphical-date-picker.md
+    - text: Cuadros de lista de selección múltiple
+      url: ./multiple-selection-list-boxes.md
+    - text: Seleccionar elementos de un cuadro de lista
+      url: ./selecting-items-from-a-list-box.md
