@@ -1,9 +1,9 @@
 ### YamlMime:Landing
-title: <span data-ttu-id="f092f-101">Scripts de muestra para la administración del sistema</span><span class="sxs-lookup"><span data-stu-id="f092f-101">Sample scripts for system administration</span></span>
-summary: <span data-ttu-id="f092f-102">Una colección de ejemplos recorre los escenarios para la administración de sistemas con PowerShell.</span><span class="sxs-lookup"><span data-stu-id="f092f-102">A collection of examples walks through scenarios for administering systems with PowerShell.</span></span>
+title: Scripts de muestra para la administración del sistema
+summary: Una colección de ejemplos recorre los escenarios para la administración de sistemas con PowerShell.
 metadata:
-  title: <span data-ttu-id="f092f-103">Scripts de muestra para la administración del sistema</span><span class="sxs-lookup"><span data-stu-id="f092f-103">Sample scripts for system administration</span></span>
-  description: <span data-ttu-id="f092f-104">Una colección de ejemplos recorre los escenarios para la administración de sistemas con PowerShell.</span><span class="sxs-lookup"><span data-stu-id="f092f-104">A collection of examples walks through scenarios for administering systems with PowerShell.</span></span>
+  title: Scripts de muestra para la administración del sistema
+  description: Una colección de ejemplos recorre los escenarios para la administración de sistemas con PowerShell.
   ms.topic: landing-page
   author: sdwheeler
   ms.author: sewhee
@@ -15,85 +15,85 @@ metadata:
   ms.lasthandoff: 09/05/2019
   ms.locfileid: "70392032"
 landingContent:
-- title: <span data-ttu-id="f092f-105">Trabajar con objetos</span><span class="sxs-lookup"><span data-stu-id="f092f-105">Working with objects</span></span>
+- title: Trabajar con objetos
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="f092f-106">Ver la estructura del objeto</span><span class="sxs-lookup"><span data-stu-id="f092f-106">Viewing object structure</span></span>
+    - text: Ver la estructura del objeto
       url: ./viewing-object-structure--get-member-.md
-    - text: <span data-ttu-id="f092f-107">Seleccionar partes de objetos</span><span class="sxs-lookup"><span data-stu-id="f092f-107">Selecting parts of object</span></span>
+    - text: Seleccionar partes de objetos
       url: ./selecting-parts-of-objects--select-object-.md
-    - text: <span data-ttu-id="f092f-108">Filtrar objetos de la canalización</span><span class="sxs-lookup"><span data-stu-id="f092f-108">Filtering objects in the pipeline</span></span>
+    - text: Filtrar objetos de la canalización
       url: ./removing-objects-from-the-pipeline--where-object-.md
-    - text: <span data-ttu-id="f092f-109">Ordenar objetos</span><span class="sxs-lookup"><span data-stu-id="f092f-109">Sorting objects</span></span>
+    - text: Ordenar objetos
       url: ./sorting-objects.md
-    - text: <span data-ttu-id="f092f-110">Repetir una tarea para varios objetos</span><span class="sxs-lookup"><span data-stu-id="f092f-110">Repeating a task for multiple objects</span></span>
+    - text: Repetir una tarea para varios objetos
       url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
-    - text: <span data-ttu-id="f092f-111">Crear objetos .NET y COM</span><span class="sxs-lookup"><span data-stu-id="f092f-111">Creating .NET and COM objects</span></span>
+    - text: Crear objetos .NET y COM
       url: ./creating-.net-and-com-objects--new-object-.md
-    - text: <span data-ttu-id="f092f-112">Usar métodos y clases estáticas</span><span class="sxs-lookup"><span data-stu-id="f092f-112">Using static classes and methods</span></span>
+    - text: Usar métodos y clases estáticas
       url: ./using-static-classes-and-methods.md
-    - text: '<span data-ttu-id="f092f-113">Obtener objetos de WMI: Get-WmiObject</span><span class="sxs-lookup"><span data-stu-id="f092f-113">Getting WMI objects - Get-WmiObject</span></span>'
+    - text: 'Obtener objetos de WMI: Get-WmiObject'
       url: ./getting-wmi-objects--get-wmiobject-.md
-- title: <span data-ttu-id="f092f-114">Administración de equipos</span><span class="sxs-lookup"><span data-stu-id="f092f-114">Managing computers</span></span>
+- title: Administración de equipos
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="f092f-115">Cambiar el estado del equipo</span><span class="sxs-lookup"><span data-stu-id="f092f-115">Changing computer state</span></span>
+    - text: Cambiar el estado del equipo
       url: ./changing-computer-state.md
-    - text: <span data-ttu-id="f092f-116">Recopilar información acerca de los equipos</span><span class="sxs-lookup"><span data-stu-id="f092f-116">Collecting information about computers</span></span>
+    - text: Recopilar información acerca de los equipos
       url: ./collecting-information-about-computers.md
-    - text: <span data-ttu-id="f092f-117">Creación de consultas Get-WinEvent con FilterHashtable</span><span class="sxs-lookup"><span data-stu-id="f092f-117">Creating Get-WinEvent queries with FilterHashtable</span></span>
+    - text: Creación de consultas Get-WinEvent con FilterHashtable
       url: ./creating-get-winEvent-queries-with-filterhashtable.md
-- title: <span data-ttu-id="f092f-118">Administración de procesos y servicios</span><span class="sxs-lookup"><span data-stu-id="f092f-118">Managing processes & services</span></span>
+- title: Administración de procesos y servicios
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="f092f-119">Administración de procesos con cmdlets de proceso</span><span class="sxs-lookup"><span data-stu-id="f092f-119">Managing processes with process cmdlets</span></span>
+    - text: Administración de procesos con cmdlets de proceso
       url: ./managing-processes-with-process-cmdlets.md
-    - text: <span data-ttu-id="f092f-120">Administración de servicios</span><span class="sxs-lookup"><span data-stu-id="f092f-120">Managing services</span></span>
+    - text: Administración de servicios
       url: ./managing-services.md
-    - text: <span data-ttu-id="f092f-121">Administrar unidades de Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="f092f-121">Managing Windows PowerShell drives</span></span>
+    - text: Administrar unidades de Windows PowerShell
       url: ./managing-windows-powershell-drives.md
-    - text: <span data-ttu-id="f092f-122">Trabajar con impresoras</span><span class="sxs-lookup"><span data-stu-id="f092f-122">Working with printers</span></span>
+    - text: Trabajar con impresoras
       url: ./working-with-printers.md
-    - text: <span data-ttu-id="f092f-123">Realizar tareas de redes</span><span class="sxs-lookup"><span data-stu-id="f092f-123">Performing networking tasks</span></span>
+    - text: Realizar tareas de redes
       url: ./performing-networking-tasks.md
-    - text: <span data-ttu-id="f092f-124">Trabajar con instalaciones de software</span><span class="sxs-lookup"><span data-stu-id="f092f-124">Working with software installations</span></span>
+    - text: Trabajar con instalaciones de software
       url: ./working-with-software-installations.md
-    - text: <span data-ttu-id="f092f-125">Descodificación de un comando de PowerShell desde un proceso en ejecución</span><span class="sxs-lookup"><span data-stu-id="f092f-125">Decode a PowerShell command from a running process</span></span>
+    - text: Descodificación de un comando de PowerShell desde un proceso en ejecución
       url: ./decode-powershell-command-from-a-running-process.md
-- title: <span data-ttu-id="f092f-126">Trabajar con la salida</span><span class="sxs-lookup"><span data-stu-id="f092f-126">Working with output</span></span>
+- title: Trabajar con la salida
   linkLists:
   - linkListType: concept
     links:
-    - text: <span data-ttu-id="f092f-127">Redireccionamiento de datos con cmdlets Out-\*</span><span class="sxs-lookup"><span data-stu-id="f092f-127">Redirecting data with Out-\* cmdlets</span></span>
+    - text: Redireccionamiento de datos con cmdlets Out-*
       url: ./redirecting-data-with-out---cmdlets.md
-    - text: <span data-ttu-id="f092f-128">Usar comandos de formato para cambiar la vista de salida</span><span class="sxs-lookup"><span data-stu-id="f092f-128">Using format commands to change output view</span></span>
+    - text: Usar comandos de formato para cambiar la vista de salida
       url: ./using-format-commands-to-change-output-view.md
-- title: <span data-ttu-id="f092f-129">Administrar unidades y archivos</span><span class="sxs-lookup"><span data-stu-id="f092f-129">Managing drives & files</span></span>
+- title: Administrar unidades y archivos
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="f092f-130">Administrar la ubicación actual</span><span class="sxs-lookup"><span data-stu-id="f092f-130">Managing current location</span></span>
+    - text: Administrar la ubicación actual
       url: ./managing-current-location.md
-    - text: <span data-ttu-id="f092f-131">Trabajar con archivos y carpetas</span><span class="sxs-lookup"><span data-stu-id="f092f-131">Working with files and folders</span></span>
+    - text: Trabajar con archivos y carpetas
       url: ./working-with-files-and-folders.md
-    - text: <span data-ttu-id="f092f-132">Trabajar con archivos, carpetas y claves del Registro</span><span class="sxs-lookup"><span data-stu-id="f092f-132">Working with files folders and registry keys</span></span>
+    - text: Trabajar con archivos, carpetas y claves del Registro
       url: ./working-with-files-folders-and-registry-keys.md
-    - text: <span data-ttu-id="f092f-133">Trabajar con entradas del Registro</span><span class="sxs-lookup"><span data-stu-id="f092f-133">Working with registry entries</span></span>
+    - text: Trabajar con entradas del Registro
       url: ./working-with-registry-entries.md
-    - text: <span data-ttu-id="f092f-134">Trabajar con claves del Registro</span><span class="sxs-lookup"><span data-stu-id="f092f-134">Working with registry keys</span></span>
+    - text: Trabajar con claves del Registro
       url: ./working-with-registry-keys.md
-- title: <span data-ttu-id="f092f-135">Creación de elementos de UI</span><span class="sxs-lookup"><span data-stu-id="f092f-135">Creating UI elements</span></span>
+- title: Creación de elementos de UI
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="f092f-136">Crear un cuadro de entrada personalizado</span><span class="sxs-lookup"><span data-stu-id="f092f-136">Creating a custom input box</span></span>
+    - text: Crear un cuadro de entrada personalizado
       url: ./creating-a-custom-input-box.md
-    - text: <span data-ttu-id="f092f-137">Crear un selector de fecha gráfico</span><span class="sxs-lookup"><span data-stu-id="f092f-137">Creating a graphical date picker</span></span>
+    - text: Crear un selector de fecha gráfico
       url: ./creating-a-graphical-date-picker.md
-    - text: <span data-ttu-id="f092f-138">Cuadros de lista de selección múltiple</span><span class="sxs-lookup"><span data-stu-id="f092f-138">Multiple selection list boxes</span></span>
+    - text: Cuadros de lista de selección múltiple
       url: ./multiple-selection-list-boxes.md
-    - text: <span data-ttu-id="f092f-139">Seleccionar elementos de un cuadro de lista</span><span class="sxs-lookup"><span data-stu-id="f092f-139">Selecting items from a list box</span></span>
+    - text: Seleccionar elementos de un cuadro de lista
       url: ./selecting-items-from-a-list-box.md
