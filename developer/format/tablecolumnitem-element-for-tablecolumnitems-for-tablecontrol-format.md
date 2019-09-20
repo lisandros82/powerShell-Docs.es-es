@@ -1,5 +1,5 @@
 ---
-title: Elemento TableColumnItem para TableColumnItems para TableControl (formato) | Microsoft Docs
+title: Elemento TableColumnItem para TableColumnItems para Tablecontrol ((Format) | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,24 +8,25 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ef8395aa-4b31-48c0-a0b8-b481fd0b3738
 caps.latest.revision: 15
-ms.openlocfilehash: 159f943f6bfb33c5403b5714380631351523789f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9e6cffc7476ef01124d95ecbf287d9788b0324c9
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62063945"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143577"
 ---
 # <a name="tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format"></a>Elemento TableColumnItem para TableColumnItems for TableControl (formato)
 
 Define la propiedad o el script cuyo valor se muestra en la columna de la fila.
 
-Elemento (formato) elemento ViewDefinitions (formato) vista elemento (formato) elemento TableControl (formato) TableRowEntries elemento de configuración (elemento) TableRowEntry TableControl (formato) para TableRowEntries para TableControl (formato) Elemento TableColumnItems para TableControlEntry para TableControl (formato) (elemento) TableColumnItem para TableColumnItems para TableControl (formato)
+Elemento Configuration (Format) elemento ViewDefinitions (Format) elemento View (Format) elemento Tablecontrol ((Format) elemento TableRowEntries para Tablecontrol ((Format) elemento TableRowEntry para TableRowEntries para Tablecontrol ((Format) Elemento TableColumnItems para TableControlEntry para Tablecontrol ((Format) elemento TableColumnItem para TableColumnItems para Tablecontrol ((Format)
 
 ## <a name="syntax"></a>Sintaxis
 
 ```xml
 <TableColumnItem>
   <Alignment>Left, Right, or Center</Alignment>
+  <FormatString>FormatPattern</FormatString>
   <PropertyName>Nameof.NetProperty</PropertyName>
   <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 </TableColumnItem>
@@ -33,7 +34,7 @@ Elemento (formato) elemento ViewDefinitions (formato) vista elemento (formato) e
 
 ## <a name="attributes-and-elements"></a>Atributos y elementos
 
-Las secciones siguientes describen los atributos, elementos secundarios y elemento primario de la `TableColumnItem` elemento.
+En las secciones siguientes se describen los atributos, los elementos secundarios y el elemento `TableColumnItem` primario del elemento.
 
 ### <a name="attributes"></a>Atributos
 
@@ -43,26 +44,26 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento Alignment para TableColumnItem para TableControl (formato)](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)|Elemento opcional.<br /><br /> Define cómo se muestran los datos en una columna de la fila.|
-|[Elemento FormatString para TableColumnItem para TableControl (formato)](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)|Especifica un patrón de formato que se usa para dar formato a los datos de la columna de la fila.|
-|[Elemento PropertyName para TableColumnItem para TableControl (formato)](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)|Elemento opcional.<br /><br /> Especifica el nombre de la propiedad cuyo valor se muestra.|
-|[Elemento de bloque de script para TableColumnItem para TableControl (formato)](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)|Elemento opcional.<br /><br /> Especifica la secuencia de comandos cuyo valor se muestra en la columna de una fila.|
+|[Elemento Alignment para TableColumnItem para Tablecontrol ((Format)](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)|Elemento opcional.<br /><br /> Define cómo se muestran los datos de una columna de la fila.|
+|[Elemento FormatString para TableColumnItem para Tablecontrol ((Format)](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)|Especifica un modelo de formato que se utiliza para dar formato a los datos de la columna de la fila.|
+|[Elemento PropertyName para TableColumnItem para Tablecontrol ((Format)](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)|Elemento opcional.<br /><br /> Especifica el nombre de la propiedad cuyo valor se muestra.|
+|[Elemento ScriptBlock para TableColumnItem para Tablecontrol ((Format)](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)|Elemento opcional.<br /><br /> Especifica el script cuyo valor se muestra en la columna de una fila.|
 
 ### <a name="parent-elements"></a>Elementos primarios
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento TableColumnItems para TableControlEntry para TableControl (formato)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|Define las propiedades o scripts cuyos valores se muestran en la fila.|
+|[Elemento TableColumnItems para TableControlEntry para Tablecontrol ((Format)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|Define las propiedades o los scripts cuyos valores se muestran en la fila.|
 
 ## <a name="remarks"></a>Observaciones
 
-Puede especificar una propiedad de un objeto o un script en cada columna de la fila. Si no hay elementos secundarios se especifican, el elemento es un marcador de posición, y no se muestra ningún dato.
+Puede especificar una propiedad de un objeto o un script en cada columna de la fila. Si no se especifica ningún elemento secundario, el elemento es un marcador de posición y no se muestra ningún dato.
 
-Para obtener más información acerca de los componentes de una vista de tabla, vea [crear una vista de tabla](./creating-a-table-view.md).
+Para obtener más información sobre los componentes de una vista de tabla, vea [crear una vista de tabla](./creating-a-table-view.md).
 
 ## <a name="example"></a>Ejemplo
 
-Este ejemplo se muestra un `TableColumnItem` elemento que muestra el valor de la `Status` propiedad de la [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objeto.
+En este ejemplo se `TableColumnItem` muestra un elemento que muestra el valor `Status` de la propiedad del objeto [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) .
 
 ```xml
 <TableColumnItem>
@@ -74,16 +75,16 @@ Este ejemplo se muestra un `TableColumnItem` elemento que muestra el valor de la
 
 ## <a name="see-also"></a>Véase también
 
-[Creación de una vista de tabla](./creating-a-table-view.md)
+[Crear una vista de tabla](./creating-a-table-view.md)
 
-[Elemento Alignment para TableColumnItem para TableControl (formato)](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)
+[Elemento Alignment para TableColumnItem para Tablecontrol ((Format)](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)
 
-[Elemento TableColumnItems (formato)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)
+[Elemento TableColumnItems (Format)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)
 
-[Elemento FormatString para TableColumnItem para TableControl (formato)](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)
+[Elemento FormatString para TableColumnItem para Tablecontrol ((Format)](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)
 
-[Elemento PropertyName para TableColumnItem para TableControl (formato)](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)
+[Elemento PropertyName para TableColumnItem para Tablecontrol ((Format)](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)
 
-[Elemento de bloque de script para TableColumnItem para TableControl (formato)](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)
+[Elemento ScriptBlock para TableColumnItem para Tablecontrol ((Format)](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)
 
 [Escribir un archivo de formato de PowerShell](./writing-a-powershell-formatting-file.md)
