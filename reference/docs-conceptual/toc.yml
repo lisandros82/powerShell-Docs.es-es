@@ -194,6 +194,55 @@
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
 - name: Ciclo de vida de soporte técnico de PowerShell Core
   href: powershell-support-lifecycle.md
+- name: Windows Management Framework (WMF)
+  items:
+    - name: Introducción
+      href: wmf/overview.md
+    - name: Instalación
+      items:
+        - name: Instalación y configuración de WMF 5.1
+          href: wmf/setup/install-configure.md
+        - name: Desinstalación de WMF 5.0
+          href: wmf/setup/uninstall.md
+    - name: Novedades
+      expanded: true
+      items:
+        - name: Notas de la versión WMF 5.0
+          href: wmf/whats-new/release-notes.md
+        - name: Corrección de errores de WMF 5.1
+          href: wmf/whats-new/bugfixes.md
+        - name: Cmdlets nuevos y actualizados
+          href: wmf/whats-new/new-updated-cmdlets.md
+        - name: Creación de tipos personalizados mediante clases de PowerShell
+          href: wmf/whats-new/class-overview.md
+        - name: Mejoras de la consola en WMF 5.1
+          href: wmf/whats-new/console-improvements.md
+        - name: Mejoras en la depuración de scripts de PowerShell
+          href: wmf/whats-new/debug-overview.md
+        - name: Seguimiento y registro de scripts
+          href: wmf/whats-new/script-logging.md
+        - name: Mejoras de la configuración del estado deseado en WMF 5.1
+          href: wmf/whats-new/DSC-improvements.md
+        - name: Mejoras del motor de PowerShell en WMF 5.1
+          href: wmf/whats-new/engine-improvements.md
+        - name: Flujo de información
+          href: wmf/whats-new/informationstream-overview.md
+        - name: Mejoras de Just Enough Administration (JEA)
+          href: wmf/whats-new/jea-improvements.md
+        - name: Mejoras en la administración de paquetes en WMF 5.1
+          href: wmf/whats-new/package-management-improvements.md
+        - name: Registro de inventario de software (SIL)
+          href: wmf/whats-new/sil-overview.md
+        - name: Estado de compatibilidad de producto
+          href: wmf/whats-new/compatibility.md
+    - name: Problemas conocidos
+      items:
+        - name: Problemas conocidos de WMF 5.0
+          href: wmf/known-issues/known-issues-50.md
+        - name: Problemas conocidos de WMF 5.1
+          href: wmf/known-issues/known-issues-51.md
+        - name: Problemas y limitaciones conocidos en DSC
+          href: wmf/known-issues/known-issues-dsc.md
 - name: Muestras de scripts
   items:
     - name: Scripts de muestra para la administración
