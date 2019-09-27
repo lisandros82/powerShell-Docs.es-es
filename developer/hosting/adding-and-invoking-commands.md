@@ -1,5 +1,5 @@
 ---
-title: Agregar e invocar comandos | Microsoft Docs
+title: Adición e invocación de comandos | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
 caps.latest.revision: 5
-ms.openlocfilehash: 9a01f948c5b474b4f9068030907601543e13cc7e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: f776f13fe743a3f5f67de0d94883e3f754040ffc
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083032"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323479"
 ---
 # <a name="adding-and-invoking-commands"></a>Adición e invocación de comandos
 
-Después de crear un espacio de ejecución, puede agregar Windows PowerShellcommands y scripts en una canalización y, a continuación, invocar la canalización de forma sincrónica o asincrónica.
+Después de crear un espacio de ejecución, puede Agregar PowerShellcommands de Windows y scripts a una canalización y, a continuación, invocar la canalización de forma sincrónica o asincrónica.
 
 ## <a name="creating-a-pipeline"></a>Creación de una canalización
 
- El [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) clase proporciona varios métodos para agregar secuencias de comandos, parámetros y comandos a la canalización. Puede invocar la canalización de forma sincrónica mediante una llamada a una sobrecarga de la [System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) método, o de forma asincrónica mediante una llamada a una sobrecarga de la [ System.Management.Automation.Powershell.Begininvoke*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) y, a continuación, el [System.Management.Automation.Powershell.Endinvoke*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) método.
+ La clase [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) proporciona varios métodos para agregar comandos, parámetros y scripts a la canalización. Puede invocar la canalización sincrónicamente mediante una llamada a una sobrecarga del método [System. Management. Automation. PowerShell. Invoke *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) o de forma asincrónica llamando a una sobrecarga de [System. Management. Automation. PowerShell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) y, a continuación, el método [System. Management. Automation. PowerShell. EndInvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) .
 
 ### <a name="addcommand"></a>AddCommand
 
-1. Crear un [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objeto.
+1. Cree un objeto [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
 
    ```csharp
    PowerShell ps = PowerShell.Create();
@@ -43,11 +43,11 @@ Después de crear un espacio de ejecución, puede agregar Windows PowerShellcomm
    ps.Invoke();
    ```
 
- Si se llama a la [System.Management.Automation.Powershell.Addcommand*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) más de una vez antes de llamar al método el [System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) método, el resultado de la primer comando se canaliza hacia el segundo y así sucesivamente. Si no desea canalizar el resultado de un comando a un comando anterior, puede agregarlo mediante una llamada a la [System.Management.Automation.Powershell.Addstatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) en su lugar.
+ Si llama al método [System. Management. Automation. PowerShell. addCommand *](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) más de una vez antes de llamar al método [System. Management. Automation. PowerShell. Invoke *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) , el resultado del primer comando se canaliza al segundo, y así sucesivamente. Si no desea canalizar el resultado de un comando anterior a un comando, agréguelo llamando a [System. Management. Automation. PowerShell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) en su lugar.
 
 ### <a name="addparameter"></a>AddParameter
 
- El ejemplo anterior ejecuta un comando único sin ningún parámetro. Puede agregar parámetros al comando mediante el [System.Management.Automation.Pscommand.Addparameter*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) método, por ejemplo, el código siguiente obtiene una lista de todos los procesos que se denominan `PowerShell` que se ejecutan en el máquina.
+ En el ejemplo anterior se ejecuta un solo comando sin parámetros. Puede agregar parámetros al comando mediante el método [System. Management. Automation. Pscommand. Addparameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) por ejemplo, el código siguiente obtiene una lista de todos los procesos denominados `PowerShell` que se ejecutan en la máquina.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -55,7 +55,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- Puede agregar parámetros adicionales mediante una llamada a [System.Management.Automation.Pscommand.Addparameter*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) repetidamente.
+ Puede agregar parámetros adicionales llamando a [System. Management. Automation. Pscommand. Addparameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) varias veces.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -64,7 +64,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- También puede agregar un diccionario de nombres de parámetros y valores mediante una llamada a la [System.Management.Automation.Powershell.Addparameters*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) método.
+ También puede Agregar un diccionario de nombres y valores de parámetros llamando al método [System. Management. Automation. PowerShell. AddParameters *](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) .
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
@@ -79,7 +79,7 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
- Puede simular el procesamiento por lotes utilizando el [System.Management.Automation.Powershell.Addstatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) método, que agrega una instrucción adicional al final de la canalización en el código siguiente obtiene una lista de procesos en ejecución con el nombre `PowerShell`y, a continuación, obtiene la lista de servicios en ejecución.
+ Puede simular el procesamiento por lotes mediante el método [System. Management. Automation. PowerShell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , que agrega una instrucción adicional al final de la canalización. el código siguiente obtiene una lista de los procesos en ejecución `PowerShell`con el nombre y Obtiene la lista de servicios en ejecución.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -90,14 +90,14 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
- Puede ejecutar un script existente mediante una llamada a la [System.Management.Automation.Powershell.Addscript*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) método. El ejemplo siguiente agrega una secuencia de comandos a la canalización y lo ejecuta. En este ejemplo se da por supuesto que ya hay un script denominado `MyScript.ps1` en una carpeta denominada `D:\PSScripts`.
+ Puede ejecutar un script existente llamando al método [System. Management. Automation. PowerShell. addScript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) . En el ejemplo siguiente se agrega un script a la canalización y se ejecuta. En este ejemplo se da por supuesto que ya `MyScript.ps1` existe un script denominado `D:\PSScripts`en una carpeta denominada.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- También hay una versión de la [System.Management.Automation.Powershell.Addscript*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) método que toma un parámetro booleano denominado `useLocalScope`. Si este parámetro se establece en `true`, a continuación, el script se ejecuta en el ámbito local. El siguiente código ejecutará el script en el ámbito local.
+ También hay una versión del método [System. Management. Automation. PowerShell. addScript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) que toma un parámetro booleano denominado `useLocalScope`. Si este parámetro se establece en `true`, el script se ejecuta en el ámbito local. En el código siguiente se ejecutará el script en el ámbito local.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -106,7 +106,7 @@ ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 
 ### <a name="invoking-a-pipeline-synchronously"></a>Invocar una canalización de forma sincrónica
 
- Después de agregar elementos a la canalización, se invoca. Para invocar la canalización de forma sincrónica, llame a una sobrecarga de la [System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) método. El ejemplo siguiente muestra cómo invocar una canalización de forma sincrónica.
+ Después de agregar elementos a la canalización, se invoca. Para invocar la canalización sincrónicamente, llame a una sobrecarga del método [System. Management. Automation. PowerShell. Invoke *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) . En el ejemplo siguiente se muestra cómo invocar una canalización de forma sincrónica.
 
 ```csharp
 using System;
@@ -138,9 +138,9 @@ namespace HostPS1e
 
 ### <a name="invoking-a-pipeline-asynchronously"></a>Invocar una canalización de forma asincrónica
 
- Invocar una canalización de forma asincrónica mediante una llamada a una sobrecarga de la [System.Management.Automation.Powershell.Begininvoke*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) para crear un [IAsyncResult](http://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) objeto y, a continuación, llamar a la [ System.Management.Automation.Powershell.Endinvoke*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) método.
+ Una canalización se invoca de forma asincrónica mediante una llamada a una sobrecarga de [System. Management. Automation. PowerShell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) para crear un objeto [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) y, a continuación, llamar a [System. Management. Automation. PowerShell. EndInvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) método.
 
- El ejemplo siguiente muestra cómo invocar una canalización de forma asincrónica.
+ En el ejemplo siguiente se muestra cómo invocar una canalización de forma asincrónica.
 
 ```csharp
 using System;
@@ -182,8 +182,8 @@ namespace HostPS3
 }
 ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
  [Creación de un InitialSessionState](./creating-an-initialsessionstate.md)
 
- [Creación de un espacio de ejecución restringida](./creating-a-constrained-runspace.md)
+ [Crear un espacio de ejecución restringido](./creating-a-constrained-runspace.md)

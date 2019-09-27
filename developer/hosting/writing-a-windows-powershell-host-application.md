@@ -1,5 +1,5 @@
 ---
-title: Escribir una aplicación de Host de PowerShell de Windows | Microsoft Docs
+title: Escritura de una aplicación host de Windows PowerShell | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,33 +8,33 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 1aaf936aa22af5c4a4b8c2fa4e6b3bbd2cff6d20
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: b44708b3bbcb974a6178323dff2302b7da121af6
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855079"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323496"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Escritura de una aplicación de Host de Windows PowerShell
 
-Windows PowerShell se puede hospedar en la aplicación. La aplicación host puede definir el espacio de ejecución donde los comandos son ejecutar, abra las sesiones en un equipo local o remoto e invocar los comandos de forma sincrónica o asincrónica se basa en las necesidades de la aplicación.
+Puede hospedar Windows PowerShell en la aplicación. La aplicación host puede definir el espacio de ejecución donde se ejecutan los comandos, abrir sesiones en un equipo local o remoto e invocar los comandos de forma sincrónica o asincrónica según las necesidades de la aplicación.
 
-Los siguientes temas explican cómo crear una aplicación que hospeda Windows PowerShell.
+En los temas siguientes se explica cómo crear una aplicación que hospede Windows PowerShell.
 
 ## <a name="in-this-section"></a>En esta sección
 
-[Inicio rápido de Host de Windows PowerShell](./windows-powershell-host-quickstart.md) proporciona instrucciones y ejemplos de código para ayudarle a crear aplicaciones de host.
+[Inicio rápido de host de Windows PowerShell](./windows-powershell-host-quickstart.md) Proporciona instrucciones y ejemplos de código para empezar a crear aplicaciones host.
 
-[Creación de espacios de ejecución](./creating-runspaces.md) un conjunto de temas que explican cómo crear espacios de ejecución para ejecutar el comando de Windows PowerShell en una aplicación host.
+[Crear espacios de espacios](./creating-runspaces.md) Un conjunto de temas que explican cómo crear espacios de ejecución para ejecutar el comando de Windows PowerShell en una aplicación host.
 
-[Agregar e invocar comandos](./adding-and-invoking-commands.md) se explica cómo crear y ejecutar una canalización de comandos en la aplicación host...
+[Agregar e invocar comandos](./adding-and-invoking-commands.md) Explica cómo crear y ejecutar una canalización de comandos en la aplicación host.
 
-[Creación de espacios de ejecución remoto](./creating-remote-runspaces.md) explica cómo conectar un espacio de ejecución a un equipo remoto.
+[Crear espacios de control remotos](./creating-remote-runspaces.md) Explica cómo conectar un espacio de ejecución a un equipo remoto.
 
-[Creación de una interfaz de usuario personalizada](./creating-a-custom-user-interface.md) proporciona vínculos a ejemplos e interfaces de usuario personalizado presenta.
+[Crear una interfaz de usuario personalizada](./creating-a-custom-user-interface.md) Presenta interfaces de usuario personalizadas y proporciona vínculos a ejemplos.
 
-[Ejemplos de aplicación de host](./host-application-samples.md) esta sección incluyen ejemplos de aplicaciones de host completo.
+[Ejemplos de aplicaciones host](./host-application-samples.md) En esta sección se incluyen ejemplos de aplicaciones host completas.
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
-[Windows PowerShell](http://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
+[Windows PowerShell](https://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
