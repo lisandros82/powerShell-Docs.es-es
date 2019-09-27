@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4ba6d1d2-7055-4fef-b752-a5ae8b4eeb65
 caps.latest.revision: 7
-ms.openlocfilehash: 50a02e9a7522fc04b407329f513670215ad051cf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0a4d4b0cd2c9672ea9b11698258916ae1d0520c0
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080550"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323036"
 ---
-# <a name="role-based-authorization-configuration-schema"></a><span data-ttu-id="cce82-102">Esquema de configuración de la autorización basada en roles</span><span class="sxs-lookup"><span data-stu-id="cce82-102">Role-Based Authorization Configuration Schema</span></span>
+# <a name="role-based-authorization-configuration-schema"></a><span data-ttu-id="4776e-102">Esquema de configuración de la autorización basada en roles</span><span class="sxs-lookup"><span data-stu-id="4776e-102">Role-Based Authorization Configuration Schema</span></span>
 
-<span data-ttu-id="cce82-103">El [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) archivos XML de ejemplo utiliza para configurar la directiva de autorización.</span><span class="sxs-lookup"><span data-stu-id="cce82-103">The [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy.</span></span> <span data-ttu-id="cce82-104">El esquema XSD siguiente define el esquema utilizado para estos archivos.</span><span class="sxs-lookup"><span data-stu-id="cce82-104">The following XSD defines the schema used for these files.</span></span>
+<span data-ttu-id="4776e-103">En el ejemplo [PswsRoleBasedPlugins](https://go.microsoft.com/fwlink/?LinkId=243041) se usan archivos XML para configurar la Directiva de autorización.</span><span class="sxs-lookup"><span data-stu-id="4776e-103">The [PswsRoleBasedPlugins](https://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy.</span></span> <span data-ttu-id="4776e-104">El siguiente XSD define el esquema que se usa para estos archivos.</span><span class="sxs-lookup"><span data-stu-id="4776e-104">The following XSD defines the schema used for these files.</span></span>
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
