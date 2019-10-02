@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Uso de la herramienta Diseñador de recursos
-ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4f678f4586c75c830bf876b891fe4784aa3b4e95
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076674"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323755"
 ---
 # <a name="using-the-resource-designer-tool"></a>Uso de la herramienta Diseñador de recursos
 
@@ -17,7 +17,7 @@ La herramienta Diseñador de recursos es un conjunto de cmdlets que expone el m�
 En este tema, se creará un recurso de DSC que administre los usuarios de Active Directory.
 Use el cmdlet [Install-Module](/powershell/module/PowershellGet/Install-Module) para instalar el módulo **xDscResourceDesigner**.
 
->**Nota**: **Install-Module** está incluido en el módulo **PowerShellGet**, que se incluye en PowerShell 5.0. Puede descargar el módulo **PowerShellGet** para PowerShell 3.0 y 4.0 en [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186) (Vista previa de los módulos de PowerShell PackageManagement).
+>**Nota**: Install-Module está incluido en el módulo **PowerShellGet**, que se incluye en PowerShell 5.0. Puede descargar el módulo **PowerShellGet** para PowerShell 3.0 y 4.0 en [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186) (Vista previa de los módulos de PowerShell PackageManagement).
 
 ## <a name="creating-resource-properties"></a>Crear propiedades de recursos
 Lo primero que es necesario hacer es decidir qué propiedades expondrá el recurso. En este ejemplo, definimos un usuario de Active Directory con las siguientes propiedades.
@@ -32,7 +32,7 @@ Para crear las propiedades, use el cmdlet **New-xDscResourceProperty**. Los sigu
 
 ```powershell
 $UserName = New-xDscResourceProperty –Name UserName -Type String -Attribute Key
-$Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet “Present”, “Absent”
+$Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet "Present", "Absent"
 $DomainCredential = New-xDscResourceProperty –Name DomainCredential -Type PSCredential -Attribute Write
 $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
@@ -42,7 +42,7 @@ $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attrib
 Ahora que se han creado las propiedades del recurso, se puede llamar al cmdlet **New-xDscResource** para crear el recurso. El cmdlet **New-xDscResource** toma la lista de propiedades como parámetros. También toma la ruta de acceso donde se debe crear el módulo, el nombre del nuevo recurso y el nombre del módulo que lo contiene. El siguiente comando de PowerShell crea el recurso:
 
 ```powershell
-New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCredential, $Password –Path ‘C:\Program Files\WindowsPowerShell\Modules’ –ModuleName Demo_DSCModule
+New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCredential, $Password –Path 'C:\Program Files\WindowsPowerShell\Modules' –ModuleName Demo_DSCModule
 ```
 
 El cmdlet **New-xDscResource** crea el esquema MOF, un script del recurso de esqueleto, la estructura de directorios necesaria para el nuevo recurso y un manifiesto del módulo que expone el nuevo recurso.
@@ -167,8 +167,8 @@ Si necesita agregar o modificar la lista de parámetros del recurso, puede llama
 Por ejemplo, suponga que quiere incluir el último registro en el tiempo del usuario en el recurso. En lugar de escribir completamente de nuevo el recurso, puede llamar a **New-xDscResourceProperty** para crear la nueva propiedad y después llamar a **Update-xDscResource** y agregar la nueva propiedad a la lista de propiedades.
 
 ```powershell
-$lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Attribute Write –Description “For mapping users to their last log on time”
-Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
+$lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Attribute Write –Description "For mapping users to their last log on time"
+Update-xDscResource –Name 'Demo_ADUser' –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
 ```
 
 ## <a name="testing-a-resource-schema"></a>Probar un esquema de recurso
