@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Opciones de credenciales en los datos de configuración
-ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 660c3643f7eb2e9ccb91bd992747fb9d5da0ccdb
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080159"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323297"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Opciones de credenciales en los datos de configuración
 
@@ -143,7 +143,7 @@ Las marcas de **PSDSCAllowPlainTextPassword** y **PSDSCAllowDomainUser** suprime
 
 El primer mensaje de error tiene una dirección URL con documentación.
 En este vínculo se explica cómo cifrar contraseñas con una estructura [ConfigurationData](./configData.md) y un certificado.
-Para más información sobre certificados y DSC, [lea esta publicación](http://aka.ms/certs4dsc).
+Para más información sobre certificados y DSC, [lea esta publicación](https://aka.ms/certs4dsc).
 
 Para forzar una contraseña de texto sin formato, el recurso requiere la palabra clave `PsDscAllowPlainTextPassword` en la sección de datos de configuración, como se indica a continuación:
 

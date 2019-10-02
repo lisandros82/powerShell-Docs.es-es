@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Crear objetos de .NET y COM New Object
-ms.openlocfilehash: 8bb0326d350be634a50897bdcd432e13ec93450c
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 6e98a159451bc7da4ba3b37eaeb813eb71590d2b
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030272"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325166"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>Crear objetos .NET y COM (New-Object)
 
@@ -226,7 +226,7 @@ $ie.Visible = $true
 A continuación, puede navegar a una dirección web específica mediante el método Navigate:
 
 ```powershell
-$ie.Navigate("http://www.microsoft.com/technet/scriptcenter/default.mspx")
+$ie.Navigate("https://devblogs.microsoft.com/scripting/")
 ```
 
 Con otros miembros del modelo de objetos de Internet Explorer, es posible recuperar el contenido de texto de la página web. El siguiente comando mostrará el texto HTML en el cuerpo de la página web actual:
