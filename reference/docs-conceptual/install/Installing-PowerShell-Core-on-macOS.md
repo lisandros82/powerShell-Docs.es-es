@@ -2,12 +2,12 @@
 title: Instalación de PowerShell Core en macOS
 description: Información sobre cómo instalar PowerShell Core en macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: 70f5d64aa8a697a9011d07fbcb2bb821463827e1
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+ms.openlocfilehash: a53cb5b7e159635dac45fb9ca3df28e86dffc653
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229745"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325278"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Instalación de PowerShell Core en macOS
 
@@ -47,7 +47,7 @@ brew cask upgrade powershell
 > [!NOTE]
 > Los comandos anteriores pueden llamarse desde un host de PowerShell (pwsh), pero, acto seguido, el shell de PowerShell se debe cerrar y volver a iniciar para finalizar la actualización y actualizar los valores que aparecen en `$PSVersionTable`.
 
-[brew]: http://brew.sh/
+[brew]: https://brew.sh/
 
 ## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>Instalación de la versión preliminar más reciente a través de Homebrew en macOS 10.12 o superior
 

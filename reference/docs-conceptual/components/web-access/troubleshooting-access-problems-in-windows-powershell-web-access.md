@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell, cmdlet
 title: Solución de problemas de acceso en Windows PowerShell Web Access
-ms.openlocfilehash: 66e913504cf0c34f8d9ab18b088fb06173aca24c
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 74cebbe418fecd21567ba9ecc7c561b51ac008fd
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733857"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692237"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Solución de problemas de acceso en Windows PowerShell Web Access
 
@@ -49,7 +49,7 @@ Esto puede ocurrir si el usuario ha iniciado sesión con un nombre de dominio qu
 
 #### <a name="workaround"></a>Solución alternativa
 
-1. [Instale y ejecute Internet Explorer 10](https://ie.microsoft.com/testdrive/info/downloads/Default.html)
+1. Instale y ejecute Internet Explorer 10
 1. Cambie la configuración **Modo de documento** de Internet Explorer a *Estándar de IE10*.
    1. Presione **F12** para abrir la consola Herramientas de desarrollo.
    1. En Internet Explorer 10, haga clic en **Modo de explorador** y, luego, seleccione *Internet Explorer 10*.

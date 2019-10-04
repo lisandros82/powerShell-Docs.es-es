@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell, cmdlet
 title: Instalación y uso de Windows PowerShell Web Access
-ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5f6e94859c55bbd07f3f8a83bc4b9a83bc89d0fa
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058571"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692251"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Instalación y uso de Windows PowerShell Web Access
 
@@ -165,7 +165,7 @@ De manera predeterminada, el cmdlet instala la aplicación web, **pswa** (y un g
 
 3. Abra la consola del Administrador de IIS mediante uno de los siguientes procedimientos.
 
-   - En el escritorio de Windows, haga clic en **Administrador del servidor** en la barra de tareas de Windows para iniciar el Administrador del servidor. En el menú **Herramientas** del Administrador del servidor, haga clic en **Administrador de Internet Information Services (IIS)**.
+   - En el escritorio de Windows, haga clic en **Administrador del servidor** en la barra de tareas de Windows para iniciar el Administrador del servidor. En el menú **Herramientas** del Administrador del servidor, haga clic en **Administrador de Internet Information Services (IIS)** .
    - En la pantalla **Inicio** de Windows, haga clic en **Administrador del servidor**.
 
 4. En el panel del árbol del Administrador de IIS, expanda el nodo del servidor en el que está instalado Windows PowerShell Web Access hasta que aparezca la carpeta **Sitios**. Expanda la carpeta **Sitios**.
@@ -256,8 +256,8 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
 1. Abra la consola del Administrador de IIS mediante uno de los siguientes procedimientos.
 
-   - En el escritorio de Windows, haga clic en **Administrador del servidor** en la barra de tareas de Windows para iniciar el Administrador del servidor. En el menú **Herramientas** del Administrador del servidor, haga clic en **Administrador de Internet Information Services (IIS)**.
-   - En la pantalla **Inicio** de Windows, escriba cualquier parte del nombre **Administrador de Internet Information Services (IIS)**. Haga clic en el acceso directo cuando se muestre en los resultados de **Aplicaciones**.
+   - En el escritorio de Windows, haga clic en **Administrador del servidor** en la barra de tareas de Windows para iniciar el Administrador del servidor. En el menú **Herramientas** del Administrador del servidor, haga clic en **Administrador de Internet Information Services (IIS)** .
+   - En la pantalla **Inicio** de Windows, escriba cualquier parte del nombre **Administrador de Internet Information Services (IIS)** . Haga clic en el acceso directo cuando se muestre en los resultados de **Aplicaciones**.
 
 2. Cree un nuevo grupo de aplicaciones para Windows PowerShell Web Access. Expanda el nodo del servidor de puerta de enlace en el panel del árbol del Administrador de IIS, seleccione **Grupos de aplicaciones** y haga clic en **Agregar grupo de aplicaciones** en el panel **Acciones**.
 
@@ -275,7 +275,7 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
 9. Siga los pasos del procedimiento [Para configurar un certificado SSL en el Administrador de IIS](#to-configure-an-ssl-certificate-in-iis-manager) en este tema.
 
-10. ![](images/SecurityNote.jpeg) Paso de seguridad opcional:
+10. ![Nota de seguridad](images/SecurityNote.jpeg) Paso de seguridad opcional:
 
     Con el sitio web seleccionado en el panel del árbol, haga doble clic en **Configuración de SSL** en el panel de contenido.
     Seleccione **Requerir SSL** y, a continuación, en el panel **Acciones**, haga clic en **Aplicar**. De forma opcional, en el panel **Configuración de SSL**, puede requerir que los usuarios que se conecten al sitio web de Windows PowerShell Web Access tengan certificados de cliente. Los certificados de cliente ayudan a comprobar la identidad de un usuario del dispositivo cliente. Para más información sobre el modo en que se puede incrementar la seguridad de Windows PowerShell Web Access al requerir certificados de cliente, consulte [Reglas de autorización y características de seguridad de Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) en esta guía.
@@ -307,8 +307,8 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
 1. Abra la consola del Administrador de IIS mediante uno de los siguientes procedimientos.
 
-   - En el escritorio de Windows, haga clic en **Administrador del servidor** en la barra de tareas de Windows para iniciar el Administrador del servidor. En el menú **Herramientas** del Administrador del servidor, haga clic en **Administrador de Internet Information Services (IIS)**.
-   - En la pantalla **Inicio** de Windows, escriba cualquier parte del nombre **Administrador de Internet Information Services (IIS)**. Haga clic en el acceso directo cuando se muestre en los resultados de **Aplicaciones**.
+   - En el escritorio de Windows, haga clic en **Administrador del servidor** en la barra de tareas de Windows para iniciar el Administrador del servidor. En el menú **Herramientas** del Administrador del servidor, haga clic en **Administrador de Internet Information Services (IIS)** .
+   - En la pantalla **Inicio** de Windows, escriba cualquier parte del nombre **Administrador de Internet Information Services (IIS)** . Haga clic en el acceso directo cuando se muestre en los resultados de **Aplicaciones**.
 
 1. En el panel del árbol del Administrador de IIS, expanda el nodo del servidor en el que está instalado Windows PowerShell Web Access hasta que aparezca la carpeta **Sitios**. Seleccione la carpeta **Sitios**.
 
@@ -327,7 +327,7 @@ Las instrucciones de esta sección explican cómo instalar la aplicación web Wi
 
    Cambie el puerto predeterminado si otro sitio web ya está usando el 443 o por algún otro motivo de seguridad. Si otro sitio web que se ejecuta en el servidor de puerta de enlace está usando el puerto seleccionado, se mostrará una advertencia cuando haga clic en **Aceptar** en el cuadro de diálogo **Agregar sitio web**. Debe usar un puerto que no esté en uso para ejecutar Windows PowerShell Web Access.
 
-1. De forma opcional, si es necesario en su organización, especifique un nombre de host que tenga sentido para la organización y los usuarios, como **`www.contoso.com`**. Haga clic en **Aceptar**.
+1. De forma opcional, si es necesario en su organización, especifique un nombre de host que tenga sentido para la organización y los usuarios, como **`www.contoso.com`** . Haga clic en **Aceptar**.
 
 1. En un entorno de producción más seguro, se recomienda encarecidamente proporcionar un certificado válido firmado por una CA. Debe proporcionar un certificado SSL, porque los usuarios solo se pueden conectar a Windows PowerShell Web Access a través de un sitio web HTTPS. Consulte [Para configurar un certificado SSL en el Administrador de IIS](#to-configure-an-ssl-certificate-in-iis-manager) en este tema para obtener más información sobre cómo obtener un certificado.
 
