@@ -36,7 +36,7 @@ Para obtener más detalles sobre cómo ejecutar estos cmdlets, visite la pestañ
 
 **No es necesario registrarse o iniciar sesión en la Galería para instalar o guardar paquetes.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>He recibido el error "Failed to process request. 'The specified API key is invalid or does not have permission to access the specified package.'. El servidor remoto ha devuelto un error: (403) Prohibido." al intentar publicar un paquete en la Galería de PowerShell. ¿Qué significa?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>"Error al procesar la solicitud. 'La API especificada no es válida o no tiene permisos para acceder al paquete especificado.'. Error en el servidor remoto: [403] Prohibido." al intentar publicar un paquete en la Galería de PowerShell. ¿Qué significa?
 
 Este error puede producirse por los motivos siguientes:
 
