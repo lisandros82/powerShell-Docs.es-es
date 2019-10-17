@@ -2,12 +2,12 @@
 title: Ciclo de vida de soporte técnico de PowerShell Core
 description: Directivas que rigen la compatibilidad para PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 60999ed54ca3be15232ffee3ab0c49cb94873a8f
-ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
+ms.openlocfilehash: fbbda0a5f8460e5625625adcc50c631729df53f1
+ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69986739"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72351810"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Ciclo de vida de soporte técnico de PowerShell Core
 
@@ -49,28 +49,35 @@ Nuestra comunidad también ha aportado paquetes para algunas plataformas, pero n
 
 Las plataformas mencionadas como `Experimental` no se admiten oficialmente, pero están disponibles para experimentación y comentarios.
 
-| Plataforma                                          | 6.1         | 6.2         |
-|---------------------------------------------------|:-----------:|:-----------:|
-| Windows 7, 8.1 y 10                            | Compatible   | Compatible   |
-| Windows Server 2008 R2, 2012 R2 y 2016             | Compatible   | Compatible   |
-| [Canal semianual de Windows Server][semi-annual] | Compatible   | Compatible   |
-| Ubuntu 16.04 y 18.04                            | Compatible   | Compatible   |
-| Ubuntu 18.10 (mediante un paquete Snap)                   | Comunidad   | Comunidad   |
-| Ubuntu 19.04 (mediante un paquete Snap)                   | Comunidad   | Comunidad   |
-| Debian 9                                          | Compatible   | Compatible   |
-| CentOS 7                                          | Compatible   | Compatible   |
-| Red Hat Enterprise Linux 7                        | Compatible   | Compatible   |
-| openSUSE 42.3                                     | Compatible   | Compatible   |
-| Fedora 28                                         | Compatible   | Compatible   |
-| macOS 10.12+                                      | Compatible   | Compatible   |
-| Arch                                              | Comunidad   | Comunidad   |
-| Raspbian                                          | Comunidad   | Comunidad   |
-| Kali                                              | Comunidad   | Comunidad   |
-| AppImage (funciona en varias plataformas Linux)      | Comunidad   | Comunidad   |
-| [Paquete Snap](https://snapcraft.io/powershell)   | Ver nota    | Ver nota    |
+| Plataforma                                          |      6.2      |    7.0    |
+|---------------------------------------------------|:-------------:|:---------:|
+| Windows 7, 8.1 y 10                            |   Compatible   | Compatible |
+| Windows Server 2008 R2, 2012 R2 y 2016             |   Compatible   | Compatible |
+| [Canal semianual de Windows Server][semi-annual] |   Compatible   | Compatible |
+| Ubuntu 16.04 y 18.04                            |   Compatible   | Compatible |
+| Ubuntu 18.10 (mediante un paquete Snap)                   |   Comunidad   | Comunidad |
+| Ubuntu 19.04 (mediante un paquete Snap)                   |   Comunidad   | Comunidad |
+| Debian 9                                          |   Compatible   | Compatible |
+| Debian 10                                         | No admitido | Compatible |
+| CentOS 7                                          |   Compatible   | Compatible |
+| Red Hat Enterprise Linux 7                        |   Compatible   | Compatible |
+| openSUSE 42.3                                     |   Compatible   | Compatible |
+| Fedora 28                                         |   Compatible   | Compatible |
+| Fedora 29, 30                                     | No admitido | Compatible |
+| Alpine 3.8                                        |   Ver nota    | Ver nota  |
+| Alpine 3.9 y 3.10                               | No admitido | Ver nota  |
+| macOS 10.12+                                      |   Compatible   | Compatible |
+| Arch                                              |   Comunidad   | Comunidad |
+| Raspbian                                          |   Comunidad   | Comunidad |
+| Kali                                              |   Comunidad   | Comunidad |
+| AppImage (funciona en varias plataformas Linux)      |   Comunidad   | Comunidad |
+| [Paquete Snap](https://snapcraft.io/powershell)   |   Ver nota    | Ver nota  |
 
 > [!NOTE]
 > Los paquetes Snap se admiten del mismo modo que la distribución en la que se ejecuta el paquete.
+
+> [!NOTE]
+> CIM, la comunicación remota de PowerShell y DSC no son compatibles con Alpine.
 
 ## <a name="powershell-releases-end-of-life"></a>Final de la vida útil de las versiones de PowerShell
 
