@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Cambios importantes en PowerShell Core 6.0
-ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
-ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
+ms.openlocfilehash: df716fc3ad48d640ddefcfd87da445eaf104cfbe
+ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "67843934"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72561261"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Cambios importantes en PowerShell Core 6.0
 
@@ -20,6 +20,8 @@ El [flujo de trabajo de PowerShell][workflow] es una característica de Windows 
 Debido a la falta de compatibilidad con Windows Workflow Foundation en .NET Core, no seguiremos admitiendo el flujo de trabajo de PowerShell en PowerShell Core.
 
 En el futuro, nos gustaría habilitar paralelismo nativo/simultaneidad en el lenguaje de PowerShell sin la necesidad del flujo de trabajo de PowerShell.
+
+Si es necesario usar puntos de control para reanudar un script una vez reiniciado el sistema operativo, recomendamos usar Programador de tareas para ejecutar un script al iniciarse el sistema operativo, pero el script debería mantener su propio estado (como conservarlo en un archivo).
 
 [workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
