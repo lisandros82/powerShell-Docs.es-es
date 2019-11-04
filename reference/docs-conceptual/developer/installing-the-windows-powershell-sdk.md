@@ -2,12 +2,12 @@
 title: Instalar el SDK de Windows PowerShell
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: da1b3dbb8a599aee2cdbab9115aedcab0b4c78c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72367274"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444514"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Instalar el SDK de Windows PowerShell
 
@@ -17,24 +17,21 @@ En el siguiente tema se describe cómo instalar PowerShell SDK en distintas vers
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Instalar el SDK de Windows PowerShell 3.0 para Windows 8 y Windows Server 2012
 
-Windows PowerShell 3.0 se instala automáticamente con Windows 8 y Windows Server 2012. Además, puede descargar e instalar los ensamblados de referencia para Windows PowerShell 3.0 como parte de Windows 8 SDK. Estos ensamblados le permiten escribir cmdlets, proveedores y programas host para Windows PowerShell 3.0. Al instalar Windows SDK para Windows 8, los ensamblados de Windows PowerShell se instalan automáticamente en la carpeta de ensamblados de referencia, en \Archivos de programa (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0. Para obtener más información, consulte el sitio de descarga del SDK de Windows 8. También hay disponibles ejemplos de código de Windows PowerShell en el Centro de desarrollo.
-Para obtener más información, vea la página de ejemplo de código de escritorio en el sitio del centro de desarrollo.
-
-Además, Windows PowerShell 3.0 también es compatible con Windows PowerShell 2.0 SDK, que incluye varios ejemplos de código. Más abajo le indicamos cómo descargar Windows PowerShell 2.0 SDK. (Tenga en cuenta que, a pesar de que los ejemplos de código de la versión 2.0 son compatibles con Windows 8 y Windows PowerShell 3.0, no puede instalar Windows PowerShell 2.0 en una plataforma de Windows 8).
+Windows PowerShell 3.0 se instala automáticamente con Windows 8 y Windows Server 2012. Además, puede descargar e instalar los ensamblados de referencia para Windows PowerShell 3.0 como parte de Windows 8 SDK. Estos ensamblados le permiten escribir cmdlets, proveedores y programas host para Windows PowerShell 3.0. Al instalar Windows SDK para Windows 8, los ensamblados de Windows PowerShell se instalan automáticamente en la carpeta de ensamblados de referencia, en `\Program Files
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`. Para obtener más información, consulte el sitio de descarga del SDK de Windows 8. Los ejemplos de código de Windows PowerShell también están disponibles en el centro de desarrollo en el [paquete de ejemplo del SDK de Windows powershell 3,0](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d).
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Instalar el SDK de Windows PowerShell 3.0 para Windows 7 y Windows Server 2008 R2
 
-Windows 7 y Windows Server 2008 R2 tienen instalado automáticamente PowerShell 2.0. Además, puede instalar PowerShell 3.0 en estos sistemas. (Para obtener más información, consulte Instalación de Windows PowerShell). Tal como se ha descrito anteriormente, también puede instalar Windows 8 SDK en Windows 7 y Windows Server 2008 R2.
+Windows 7 y Windows Server 2008 R2 tienen instalado automáticamente PowerShell 2.0. Además, puede instalar PowerShell 3.0 en estos sistemas. También puede instalar el SDK de Windows 8 en Windows 7 y Windows Server 2008 R2, tal y como se ha descrito anteriormente.
 
 ## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>Instalar el SDK de Windows PowerShell 2.0 para Windows 7, Vista, XP, Server 2003 y Server 2008
 
-El SDK de Windows PowerShell 2.0 proporciona los ensamblados de referencia necesarios para escribir cmdlets, proveedores y aplicaciones host, así como código de ejemplo en C# que se puede usar como punto de partida para comenzar a escribir código.
-
-Para instalar este SDK, consulte el SDK de Windows PowerShell 2,0.
+El SDK de Windows PowerShell 2.0 proporciona los ensamblados de referencia necesarios para escribir cmdlets, proveedores y aplicaciones host, así como código de ejemplo en C# que se puede usar como punto de partida para comenzar a escribir código. Puede descargar los ejemplos de código de [https://www.microsoft.com/download/details.aspx?id=2560](https://www.microsoft.com/download/details.aspx?id=2560).
 
 ### <a name="reference-assemblies"></a>Ensamblados de referencia
 
-Los ensamblados de referencia se instalan en la siguiente ubicación de forma predeterminada: C:\Archivos de Programa\reference Assemblies\Microsoft\WindowsPowerShell\V1.0.
+Los ensamblados de referencia se instalan de forma predeterminada en la siguiente ubicación: `c:\Program Files\Reference
+Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
 > [!NOTE]
 >
@@ -43,7 +40,8 @@ Los ensamblados de referencia se instalan en la siguiente ubicación de forma pr
 
 ### <a name="samples"></a>muestras
 
-Los ejemplos de código se instalan en la siguiente ubicación de forma predeterminada: C:\Archivos de Programa\microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\. En las secciones siguientes, se proporciona una breve descripción de lo que hace cada ejemplo.
+Los ejemplos de código se instalan de forma predeterminada en la siguiente ubicación: `C:\Program Files\Microsoft
+SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. En las secciones siguientes, se proporciona una breve descripción de lo que hace cada ejemplo.
 
 #### <a name="cmdlet-samples"></a>Ejemplos de cmdlet
 
