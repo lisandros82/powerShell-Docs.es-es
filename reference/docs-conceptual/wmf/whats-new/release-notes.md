@@ -43,7 +43,7 @@ WMF 5.1 incluye los componentes de PowerShell, WMI, WinRM y Registro de inventar
 - Respuestas a varios problemas y varias solicitudes de usuarios
 
 > [!IMPORTANT]
-> Antes de instalar WMF 5.1 en Windows Server 2008 o Windows 7, confirme que WMF 3.0 no está instalado. Para obtener más información, consulte [Requisitos previos de WMF 5.1 para Windows Server 2008 R2 SP1 y Windows 7 SP1](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
+> Antes de instalar WMF 5.1 en Windows Server 2008 o Windows 7, confirme que WMF 3.0 no está instalado. Para obtener más información, consulte [Requisitos previos de WMF 5.1 para Windows Server 2008 R2 SP1 y Windows 7 SP1](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
 
 ## <a name="powershell-editions"></a>Ediciones de PowerShell
 
