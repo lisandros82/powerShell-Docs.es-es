@@ -2,16 +2,23 @@
 title: Instalación de PowerShell Core en Windows
 description: Información sobre cómo instalar PowerShell Core en Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 3f21761037311891162f1083234edb0aca80d28b
-ms.sourcegitcommit: 4ec9e10647b752cc62b1eabb897ada3dc03c93eb
+ms.openlocfilehash: c06eba06e376c3f795ab9c0fae9270cf6cf8f2ce
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66830226"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444451"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Instalación de PowerShell Core en Windows
 
 Hay varias formas de instalar PowerShell Core en Windows.
+
+> [!TIP]
+> Si ya tiene instalado el [SDK de .NET Core](/dotnet/core/sdk), es fácil instalar PowerShell como una [herramienta global de .NET](/dotnet/core/tools/global-tools).
+>
+> ```
+> dotnet tool install --global PowerShell
+> ```
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -22,7 +29,7 @@ Para habilitar la comunicación remota de PowerShell a través de WSMan, deben c
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Instalación del paquete MSI
 
-Para instalar PowerShell en un cliente de Windows o Windows Server (funciona en Windows 7 SP1, Server 2008 R2 y versiones posteriores), descargue el paquete MSI desde nuestra página de [versiones][releases] de GitHub. Desplácese hacia abajo hasta la sección **Recursos** de la versión que quiere instalar. Es posible que la sección Recursos esté contraída, por lo que tendría que hacer clic para expandirla.
+Para instalar PowerShell en un cliente de Windows o Windows Server (funciona en Windows 7 SP1, Server 2008 R2 y versiones posteriores), descargue el paquete MSI desde nuestra página de [versiones][releases] de GitHub. Desplácese hacia abajo hasta la sección **Recursos** de la versión que quiere instalar. Es posible que la sección Recursos esté contraída, por lo que tendría que hacer clic para expandirla.
 
 El archivo MSI tiene este aspecto: `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->

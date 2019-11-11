@@ -2,12 +2,12 @@
 title: Comunicación remota de PowerShell a través de SSH
 description: Comunicación remota en PowerShell Core con SSH
 ms.date: 09/30/2019
-ms.openlocfilehash: 744fa95e42b0cf6eb28db0c7014d07f143174214
-ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
+ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71692164"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444374"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Comunicación remota de PowerShell a través de SSH
 
@@ -64,23 +64,24 @@ Deben estar instalados PowerShell 6 o versiones posteriores y SSH en todos los 
    Cree el subsistema SSH que hospeda un proceso de PowerShell en el equipo remoto:
 
    ```
-   Subsystem powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
    ```
 
    > [!NOTE]
-   > Hay un error en OpenSSH para Windows que impide que los espacios funcionen en rutas de acceso ejecutables del subsistema. Para obtener más información, vea [este problema de GitHub](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
-
-   Una solución consiste en crear un vínculo simbólico al directorio de instalación de PowerShell que no incluya espacios:
-
-   ```powershell
-   New-Item -ItemType SymbolicLink -Path "C:\pwshdir" -Value "C:\Program Files\PowerShell\6"
-   ```
-
-   Use la ruta de acceso al vínculo simbólico al ejecutable de PowerShell en el subsistema:
-
-   ```
-   Subsystem powershell C:\pwshdir\pwsh.exe -sshs -NoLogo -NoProfile
-   ```
+   > Debe usar el nombre corto de 8.3 para las rutas de acceso de archivo que contengan espacios. Hay un error en OpenSSH para Windows que impide que los espacios funcionen en rutas de acceso ejecutables del subsistema. Para obtener más información, vea [este problema de GitHub](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+   >
+   > Normalmente, el nombre corto de 8.3 de la carpeta `Program Files` en Windows es `Progra~1`. No obstante, puede usar el comando siguiente para asegurarse:
+   >
+   > ```powershell
+   > Get-CimInstance Win32_Directory -Filter 'Name="C:\\Program Files"' |
+   >   Select-Object EightDotThreeFileName
+   > ```
+   >
+   > ```Output
+   > EightDotThreeFileName
+   > ---------------------
+   > c:\progra~1
+   > ```
 
    Opcionalmente, habilite la autenticación de clave:
 

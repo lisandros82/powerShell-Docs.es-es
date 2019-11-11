@@ -1,12 +1,12 @@
 ---
 ms.date: 09/13/2019
 title: Creación de consultas Get-WinEvent con FilterHashtable
-ms.openlocfilehash: 1bf321c09c20736de36eb896fabced31cfdfbd75
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71143669"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444390"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Creación de consultas Get-WinEvent con FilterHashtable
 
@@ -36,14 +36,14 @@ Get-WinEvent -FilterHashtable @{
 En este artículo se presenta información acerca de cómo usar los valores enumerados en una tabla hash. Para obtener más información sobre la enumeración, lea estas entradas de blog de **Scripting Guy**. Para crear una función que devuelva los valores enumerados, consulte [Enumerations and Values](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values) (Enumeraciones y valores).
 Para obtener más información, consulte la [serie de entradas de blob de Scripting Guy sobre la enumeración](https://devblogs.microsoft.com/scripting/?s=about+enumeration).
 
-## <a name="hash-table-keyvalue-pairs"></a>Pares clave-valor de tablas hash
+## <a name="hash-table-key-value-pairs"></a>Pares clave-valor de tablas hash
 
 Para generar consultas eficaces, utilice el cmdlet `Get-WinEvent` con el parámetro **FilterHashtable**.
 **FilterHashtable** acepta una tabla hash como un filtro para obtener información específica de los registros de eventos de Windows. Una tabla hash usa pares **clave-valor**. Para obtener más información sobre las tablas hash, consulte [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
 
-Si los pares **clave-valor** se encuentran en la misma línea, deben estar separados por puntos y comas. Si cada par **clave-valor** está en una línea independiente, no es necesario usar puntos y comas. Por ejemplo, en este artículo se colocan los pares **clave-valor** en líneas independientes y no se usan puntos y comas.
+Si los pares **clave-valor** se encuentran en la misma línea, se deben separar mediante punto y coma. Si cada par **clave-valor** está en una línea independiente, no es necesario usar punto y coma. Por ejemplo, en este artículo se colocan los pares **clave-valor** en líneas independientes y no se usan puntos y comas.
 
-En este ejemplo se utilizan varios de los pares **clave-valor** del parámetro **FilterHashtable**. La consulta completada incluye **LogName**, **ProviderName**, **Keywords**, **ID** y **Level**.
+En este ejemplo se usan varios de los pares **clave-valor** del parámetro **FilterHashtable**. La consulta completada incluye **LogName**, **ProviderName**, **Keywords**, **ID** y **Level**.
 
 Los pares **clave-valor** aceptados se muestran en la tabla siguiente y se incluyen en la documentación del parámetro **FilterHashtable** de [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
 .
@@ -62,9 +62,9 @@ En la tabla siguiente se muestran los nombres de clave, los tipos de datos y si 
 | EndTime        | `<DateTime>`    | No                           |
 | UserID         | `<SID>`         | No                           |
 | Datos           | `<String[]>`    | No                           |
-| \<named-data\> | `<String[]>`    | No                           |
+| `<named-data>` | `<String[]>`    | No                           |
 
-La clave \<named-data\> representa un campo de datos de evento con nombre. Por ejemplo, el evento 1008 de Perflib puede contener los siguientes datos de evento:
+La clave `<named-data>` representa un campo de datos de evento con nombre. Por ejemplo, el evento 1008 de Perflib puede contener los siguientes datos de evento:
 
 ```xml
 <EventData>
@@ -80,11 +80,14 @@ Puede consultar estos eventos con el comando siguiente:
 Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
 ```
 
+> [!NOTE]
+> La capacidad de consultar `<named-data>` se ha agregado en PowerShell 6.
+
 ## <a name="building-a-query-with-a-hash-table"></a>Creación de una consulta con una tabla hash
 
-Para comprobar los resultados y solucionar problemas, ayuda a generar la tabla hash con un par **clave-valor** a la vez. La consulta obtiene datos del registro **Aplicación**. La tabla hash es equivalente a `Get-WinEvent –LogName Application`.
+Para comprobar los resultados y solucionar problemas, es de utilidad generar la tabla hash con un par **clave-valor** a la vez. La consulta obtiene datos del registro **Aplicación**. La tabla hash es equivalente a `Get-WinEvent –LogName Application`.
 
-Para comenzar, cree la consulta `Get-WinEvent`. Use el par **clave-valor**  del parámetro **FilterHashtable** con la clave, **LogName**, y el valor, **Aplicación**.
+Para comenzar, cree la consulta `Get-WinEvent`. Use el par **clave-valor** del parámetro **FilterHashtable** con la clave **LogName** y el valor **Application**.
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -96,7 +99,7 @@ Continúe para generar la tabla hash con la clave **ProviderName**. **ProviderNa
 
 ![Imagen de los orígenes del Visor de eventos de Windows.](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
-Actualice la tabla hash e incluya el par **clave-valor** con la clave, **ProviderName, y el valor, **.NET Runtime**.
+Actualice la tabla hash e incluya el par **clave-valor** con la clave **ProviderName y el valor **.NET Runtime**.
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -148,7 +151,7 @@ WdiContext       Property   static System.Diagnostics.Eventing.Reader.StandardEv
 WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEventKey…
 ```
 
-Los valores enumerados se documentan en **.NET Framework**. Para obtener más información, consulte [ StandardEventKeywords Enum ](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2).
+Los valores enumerados se documentan en **.NET Framework**. Para obtener más información, consulte [ StandardEventKeywords Enum ](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2).
 
 Los valores enumerados y nombres de **Keywords** son los siguientes:
 
@@ -164,7 +167,7 @@ Los valores enumerados y nombres de **Keywords** son los siguientes:
 | ResponseTime     | 281474976710656   |
 | Ninguno             | 0                 |
 
-Actualice la tabla hash e incluya el par **clave-valor** con la clave, **Keywords** y el valor de enumeración **EventLogClassic**, **36028797018963968**.
+Actualice la tabla hash e incluya el par **clave-valor** con la clave **Keywords** y el valor de enumeración **EventLogClassic**, **36028797018963968**.
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -194,7 +197,7 @@ Get-WinEvent -FilterHashtable @{
 
 Para obtener datos más específicos, los resultados de la consulta se filtran por **identificador de evento**. Se hace referencia al **identificador de evento** en la tabla hash como la clave **ID** y el valor es un **identificador de evento** determinado. El **Visor de eventos de Windows** muestra el **identificador de evento**. En este ejemplo se utiliza **Event Id 1023**.
 
-Actualice la tabla hash e incluya el par **clave-valor** con la clave, **ID**, y el valor, **1023**.
+Actualice la tabla hash e incluya el par **clave-valor** con la clave **ID** y el valor **1023**.
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -229,7 +232,7 @@ Verbose       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEventLevel Warning {get;}
 ```
 
-Los valores enumerados se documentan en **.NET Framework**. Para obtener más información, consulte [ StandardEventLevel Enum](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2).
+Los valores enumerados se documentan en **.NET Framework**. Para obtener más información, consulte [ StandardEventLevel Enum](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2).
 
 Los valores enumerados y nombres de la clave **Level** son los siguientes:
 
