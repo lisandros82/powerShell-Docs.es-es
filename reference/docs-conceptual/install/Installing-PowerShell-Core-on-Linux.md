@@ -2,12 +2,12 @@
 title: Instalación de PowerShell Core en Linux
 description: Información sobre cómo instalar PowerShell Core en varias distribuciones Linux
 ms.date: 07/19/2019
-ms.openlocfilehash: fc5a278f0fc10733a0d60fb856d0400332ba2719
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 3159de2d64d9c473e00b58c9f9c52b6d1c7779af
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72350192"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444399"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Instalación de PowerShell Core en Linux
 
@@ -30,6 +30,13 @@ Todos los paquetes están disponibles en nuestra página de [versiones][] de Git
 [arch]: #arch-linux
 [snap]: #snap-package
 [tar]: #binary-archives
+
+> [!TIP]
+> Si ya tiene instalado el [SDK de .NET Core](/dotnet/core/sdk), es fácil instalar PowerShell como una [herramienta global de .NET](/dotnet/core/tools/global-tools).
+>
+> ```
+> dotnet tool install --global PowerShell
+> ```
 
 ## <a name="installing-preview-releases"></a>Instalación de versiones preliminares
 
@@ -536,7 +543,7 @@ sudo dnf remove powershell
 ## <a name="arch-linux"></a>Arch Linux
 
 > [!NOTE]
-> La compatibilidad con Arch es experimental.
+> Microsoft no admite de forma oficial la compatibilidad con Arch, cuyo mantenimiento lo realiza la comunidad.
 
 PowerShell está disponible en el repositorio de usuario [Arch Linux][] (AUR).
 
@@ -598,6 +605,9 @@ sudo snap remove powershell-preview
 ```
 
 ## <a name="kali"></a>Kali
+
+> [!NOTE]
+> Microsoft no admite de forma oficial la compatibilidad con Kali, cuyo mantenimiento lo realiza la comunidad.
 
 ### <a name="installation---kali"></a>Instalación, Kali
 
