@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Cómo depurar scripts en ISE de Windows PowerShell
-ms.openlocfilehash: b7af2de83a3f796a2057514e36ad8b74367e8ce2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 99d6fbcb805e3fe31f95eafd4daf272cf41fd845
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086874"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117435"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Cómo depurar scripts en ISE de Windows PowerShell
 
@@ -195,4 +195,4 @@ C:\ps-test\MyScript.ps1
 
 ## <a name="see-also"></a>Véase también
 
-- [Explorar Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
+- [Explorar Windows PowerShell ISE](exploring-the-windows-powershell-ise.md)

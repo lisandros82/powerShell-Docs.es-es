@@ -1,15 +1,15 @@
 ---
 ms.date: 09/06/2019
 keywords: powershell, cmdlet
-title: Novedades de PowerShell 5.0 ISE
-ms.openlocfilehash: a719baef0da1600f0a5377e1b72c81b67e37eef2
-ms.sourcegitcommit: a74ae7ed089301992fed201fbe55d827a622afa0
+title: Novedades de PowerShell 5.0 ISE
+ms.openlocfilehash: f687c409a1a4b0e6b872863e9f132f7cf5baff20
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70746221"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117518"
 ---
-# <a name="whats-new-in-the-windows-powershell-50-ise"></a>Novedades de Windows PowerShell 5.0 ISE
+# <a name="whats-new-in-the-windows-powershell-50-ise"></a>Novedades de Windows PowerShell 5.0 ISE
 
 En este tema se explican las características nuevas y actualizadas que se introdujeron en las versiones de Entorno de scripting integrado (ISE) de Windows PowerShell.
 
@@ -48,7 +48,7 @@ El uso de fragmentos de código permite ensamblar y crear rápidamente scripts p
 
 **¿Qué funciona de manera diferente?**
 
-Para usar fragmentos de código en Windows PowerShell 3.0, o cualquier versión posterior, en el menú **Edición**, haga clic en **Iniciar fragmentos de código** o presione <kbd>Ctrl</kbd>+<kbd>J</kbd>.
+Para usar fragmentos de código en Windows PowerShell 3.0, o cualquier versión posterior, en el menú **Edición**, haga clic en **Iniciar fragmentos de código** o presione <kbd>Ctrl</kbd>+<kbd>J</kbd>.
 
 ## <a name="add-on-tools"></a>Herramientas de complemento
 
@@ -80,7 +80,7 @@ Ahora puede trabajar en Windows PowerShell ISE con la tranquilidad de saber que 
 
 **¿Qué funciona de manera diferente?**
 
-Windows PowerShell ISE 2.0 no guarda los scripts automáticamente.
+Windows PowerShell ISE 2.0 no guarda los scripts automáticamente.
 
 ## <a name="most-recently-used-list"></a>Lista Usados más recientemente
 
@@ -96,7 +96,7 @@ Ahora puede usar la lista Usados más recientemente para acceder fácilmente a l
 
 **¿Qué funciona de manera diferente?**
 
-Windows PowerShell ISE 2.0 no tiene una lista Usados más recientemente.
+Windows PowerShell ISE 2.0 no tiene una lista Usados más recientemente.
 
 ## <a name="console-pane"></a>Panel de consola
 
@@ -141,7 +141,7 @@ La adición de estos modificadores de línea de comandos permite controlar el en
 
 **¿Qué funciona de manera diferente?**
 
-Windows PowerShell ISE 2.0 no reconoce estos modificadores de línea de comandos.
+Windows PowerShell ISE 2.0 no reconoce estos modificadores de línea de comandos.
 
 ## <a name="new-editor-features"></a>Nuevas características del editor
 
@@ -150,9 +150,9 @@ Windows PowerShell ISE 2.0 no reconoce estos modificadores de línea de comando
 Otras características de edición de Windows PowerShell ISE son:
 
 - **Color de la sintaxis XML**: Windows PowerShell ISE ahora colorea la sintaxis XML de la misma manera que la sintaxis de Windows PowerShell.
-- **Coincidencia de llaves**: Windows PowerShell ISE incluye la coincidencia de llaves y el resaltado, y se pueden usar de las siguientes maneras: por ejemplo, con el comando **Ir a Igualar** o <kbd>Ctrl</kbd>+<kbd>]</kbd> se localiza la llave de cierre, si hay alguna llave de apertura seleccionada.
+- **Coincidencia de llaves**: Windows PowerShell ISE incluye la coincidencia de llaves y el resaltado, y se pueden usar de las siguientes maneras: (por ejemplo, con el comando **Ir a Igualar** o <kbd>Ctrl</kbd>+<kbd>]</kbd> se localiza la llave de cierre, si hay alguna llave de apertura seleccionada).
 - **Vista Esquema**: el panel de scripts admite la esquematización, que permite expandir y contraer secciones de código al hacer clic en los signos más o menos en el margen izquierdo. Puede usar llaves o las etiquetas `#region` y `#endregion` para marcar el inicio o el final de una sección contraíble. Para expandir o contraer todas las regiones, presione <kbd>Ctrl</kbd>+<kbd>M</kbd>.
-- **Edición de texto con arrastrar y colocar**: Windows PowerShell ISE permite ahora la edición de texto con arrastrar y colocar. Puede seleccionar cualquier bloque de texto y arrastrar el texto a otra ubicación en el editor o la consola para mover el texto. Si mantiene presionada la tecla <kbd>Ctrl</kbd> mientras arrastra el texto seleccionado, al soltar el botón del mouse, el texto se copiará en la nueva ubicación. En esta versión de Windows PowerShell ISE, al arrastrar y colocar archivos en Windows PowerShell ISE, el archivo se abrirá.
+- **Edición de texto con arrastrar y colocar**: Windows PowerShell ISE permite ahora la edición de texto con arrastrar y colocar. Puede seleccionar cualquier bloque de texto y arrastrar el texto a otra ubicación en el editor o la consola para mover el texto. Si mantiene presionada la tecla <kbd>Ctrl</kbd> mientras arrastra el texto seleccionado, al soltar el botón del mouse, el texto se copiará en la nueva ubicación. En esta versión de Windows PowerShell ISE, al arrastrar y colocar archivos en Windows PowerShell ISE, el archivo se abre.
 - **Presentación de errores de análisis**: los errores de análisis se indican con un subrayado rojo. Cuando desplaza el cursor sobre un error indicado, el texto de información sobre herramientas muestra el problema que se encontró en el código.
 - **Zoom**: el porcentaje de zoom del contenido de la consola puede establecerse mediante el control deslizante del zoom (en la esquina inferior derecha de la ventana de Windows PowerShell ISE) o escribiendo el comando `$psise.options.Zoom` en el panel de consola.
 - **Copiar y pegar texto enriquecido**: la copia en el Portapapeles de Windows PowerShell ISE conserva la información de fuente, tamaño y color de la selección original.
@@ -164,7 +164,7 @@ Las características de edición adicionales proporcionan un entorno de edición
 
 **¿Qué funciona de manera diferente?**
 
-Estas mejoras de edición no estaban presentes en Windows PowerShell ISE 2.0.
+Estas mejoras de edición no estaban presentes en Windows PowerShell ISE 2.0.
 
 ## <a name="new-help-viewer-window"></a>Ventana del nuevo visor de Ayuda
 
@@ -197,8 +197,8 @@ Si usa `Show-Command` en sus scripts de Windows PowerShell, puede proporcionar a
 
 **¿Qué funciona de manera diferente?**
 
-`Show-Command` es el nuevo Windows PowerShell ISE 3.0.
+`Show-Command` es el nuevo Windows PowerShell ISE 3.0.
 
 ## <a name="see-also"></a>Vea también
 
-Para obtener más información sobre cómo usar Windows PowerShell ISE, consulte [Exploración del Entorno de scripting integrado de Windows PowerShell](../getting-started/fundamental/exploring-the-windows-powershell-ise.md).
+Para obtener más información sobre cómo usar Windows PowerShell ISE, consulte [Exploración del Entorno de scripting integrado de Windows PowerShell](../components/ise/exploring-the-windows-powershell-ise.md).

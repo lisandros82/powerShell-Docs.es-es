@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: Explorar Windows PowerShell ISE
-ms.openlocfilehash: 8c47e236e2e345a887fc3af281e429f440e176ff
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 7949b690cda73148f07922985b1fc30fe1e8b2d0
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67031033"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117445"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Explorar Windows PowerShell ISE
 
@@ -18,7 +18,7 @@ Puede usar el Entorno de scripting integrado (ISE) de Windows PowerShell® para 
 
 ## <a name="menu-bar"></a>Barra de menús
 
-La barra de menús contiene los menús **Archivo**, **Edición**, **Ver**, **Herramientas**, **Depurar**, **Complementos** y **Ayuda**. Los botones de los menús permiten realizar tareas relacionadas con la escritura y ejecución de scripts y la ejecución de comandos en Windows PowerShell ISE. Además, se puede colocar una [herramienta de complemento](../../core-powershell/ise/The-ISEAddOnTool-Object.md) en la barra de menús mediante la ejecución de scripts que usan la [jerarquía del modelo de objetos de ISE](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
+La barra de menús contiene los menús **Archivo**, **Edición**, **Ver**, **Herramientas**, **Depurar**, **Complementos** y **Ayuda**. Los botones de los menús permiten realizar tareas relacionadas con la escritura y ejecución de scripts y la ejecución de comandos en Windows PowerShell ISE. Además, se puede colocar una [herramienta de complemento](object-model/The-ISEAddOnTool-Object.md) en la barra de menús mediante la ejecución de scripts que usan la [jerarquía del modelo de objetos de ISE](object-model/The-ISE-Object-Model-Hierarchy.md).
 
 > [!NOTE]
 > En Windows PowerShell ISE 2.0, no existían los menús **Herramientas** y **Complementos**.
@@ -83,4 +83,4 @@ La ayuda de Windows PowerShell ISE está disponible en la biblioteca de TechNet 
 
 ## <a name="see-also"></a>Véase también
 
-- [Presentación de Windows PowerShell ISE](../../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
+- [Presentación de Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
