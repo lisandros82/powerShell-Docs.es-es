@@ -2,12 +2,12 @@
 title: Cómo replicar la experiencia de ISE en Visual Studio Code
 description: Cómo replicar la experiencia de ISE en Visual Studio Code
 ms.date: 08/06/2018
-ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d5542e9a3a48b1ae64356309be669418edf6c79e
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058529"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117489"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Cómo replicar la experiencia de ISE en Visual Studio Code
 
@@ -27,12 +27,29 @@ El objetivo de este documento es confeccionar un listado con las opciones que pu
 
 En VSCode también puede [configurar sus propios enlaces de teclado](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings).
 
+## <a name="simplified-ise-like-ui"></a>Interfaz de usuario de tipo ISE simplificada
+
+Si quiere simplificar la interfaz de usuario de Visual Studio Code para que se asemeje más a la interfaz de usuario del ISE, aplique estas dos configuraciones:
+
+```json
+"workbench.activityBar.visible": false,
+"debug.openDebug": "neverOpen",
+```
+
+Se ocultarán las secciones de la barra de actividades y la barra lateral de depuración que se encuentran debajo del cuadro rojo:
+
+![La sección resaltada incluye la barra de actividades y la barra lateral de depuración](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+
+El resultado final tiene el siguiente aspecto:
+
+![Vista simplificada de VS Code](images/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
+
 ## <a name="tab-completion"></a>Finalización con tabulación
 
 Para habilitar una finalización con tabulación más similar a ISE, agregue este parámetro:
 
 ```json
-"editor.tabCompletion": "on"
+"editor.tabCompletion": "on",
 ```
 
 > [!NOTE]
@@ -64,7 +81,7 @@ Para detener la consola integrada en el inicio, configure:
 Para tener archivos nuevos/sin título, regístrelos como de PowerShell de forma predeterminada:
 
 ```json
-"files.defaultLanguage": "powershell"
+"files.defaultLanguage": "powershell",
 ```
 
 ## <a name="color-scheme"></a>Combinación de colores
@@ -77,7 +94,7 @@ En la lista desplegable, seleccione `PowerShell ISE`.
 Puede establecer en este tema en la configuración con:
 
 ```json
-"workbench.colorTheme": "PowerShell ISE"
+"workbench.colorTheme": "PowerShell ISE",
 ```
 
 ## <a name="powershell-command-explorer"></a>Explorador de comandos de PowerShell

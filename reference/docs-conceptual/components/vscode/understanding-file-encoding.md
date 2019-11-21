@@ -2,12 +2,12 @@
 title: Descripción de la codificación de archivo en VSCode y PowerShell
 description: Configuración de la codificación de archivo en VSCode y PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 3283e1262c8eb26906429ecf195cfa0b122b330f
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058444"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117408"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Descripción de la codificación de archivo en VSCode y PowerShell
 
@@ -15,7 +15,7 @@ Al usar VS Code para crear y editar scripts de PowerShell, es importante que los
 
 ## <a name="what-is-file-encoding-and-why-is-it-important"></a>¿Qué es la codificación de archivo y por qué es importante?
 
-VSCode administra la interfaz entre una entrada manual de cadenas de caracteres en un búfer y la lectura/escritura de bloques de bytes en el sistema de archivos. Cuando VSCode guarda un archivo, usa una codificación de texto para hacerlo.
+VSCode administra la interfaz entre una entrada manual de cadenas de caracteres en un búfer y la lectura/escritura de bloques de bytes en el sistema de archivos. Cuando VSCode guarda un archivo, usa una codificación de texto para decidir en qué bytes se convierte cada carácter.
 
 De forma similar, cuando PowerShell ejecuta un script debe convertir los bytes de un archivo a caracteres para reconstruir el archivo en un programa de PowerShell. Dado que VSCode escribe el archivo y PowerShell lee el archivo, deben usar el mismo sistema de codificación. Este proceso de análisis de un script de PowerShell es: *bytes* -> *caracteres* -> *tokens* -> *árbol de sintaxis abstracta* -> *ejecución*.
 
@@ -27,9 +27,10 @@ Se producen problemas de codificación cuando la codificación de VSCode o el ar
 
 Es más probable tener problemas de codificación cuando se usan caracteres que no están en el [juego de caracteres ASCII de 7 bits](https://ascii.cl/). Por ejemplo:
 
+- Caracteres que no son letras extendidos, como guion largo (`—`), espacio de no separación (` `) o comilla doble izquierda (`“`)
 - Caracteres latinos acentuados (`É`, `ü`)
 - Caracteres no latinos; por ejemplo, cirílico (`Д`, `Ц`)
-- Chino Han (`脚`, `本`)
+- Caracteres de CJK (`本`, `화`, `が`)
 
 Algunas causas comunes de problemas de codificación son las siguientes:
 
