@@ -1,5 +1,5 @@
 ---
-title: Crear un cmdlet sin parámetros | Microsoft Docs
+title: Creating a Cmdlet without Parameters | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -11,37 +11,37 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 2685215f41c96955fc662d5eee27fc0e7a31da83
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: af41c2c9855310d047404114a07b27180a7aa8fc
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72369864"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74415673"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Creación de un cmdlet sin parámetros
 
-En esta sección se describe cómo crear un cmdlet que recupera información del equipo local sin el uso de parámetros y, a continuación, escribe la información en la canalización. El cmdlet descrito aquí es un cmdlet Get-proc que recupera información sobre los procesos del equipo local y, a continuación, muestra esa información en la línea de comandos.
+This section describes how to create a cmdlet that retrieves information from the local computer without the use of parameters, and then writes the information to the pipeline. The cmdlet described here is a Get-Proc cmdlet that retrieves information about the processes of the local computer, and then displays that information at the command line.
 
 > [!NOTE]
-> Tenga en cuenta que al escribir cmdlets, los ensamblados de referencia de® de Windows PowerShell se descargan en el disco (de forma predeterminada, en C:\Archivos de Programa\reference Assemblies\Microsoft\WindowsPowerShell\v1.0). No se instalan en la caché de ensamblados global (GAC).
+> Be aware that when writing cmdlets, the Windows PowerShell® reference assemblies are downloaded onto disk (by default at C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0). They are not installed in the Global Assembly Cache (GAC).
 
-## <a name="naming-the-cmdlet"></a>Asignar nombre al cmdlet
+## <a name="naming-the-cmdlet"></a>Naming the Cmdlet
 
-Un nombre de cmdlet consta de un verbo que indica la acción que el cmdlet toma y un sustantivo que indica los elementos sobre los que actúa el cmdlet. Dado que este cmdlet Get-proc de ejemplo recupera objetos de proceso, usa el verbo "Get", definido por la enumeración [System. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) y el nombre "proc" para indicar que el cmdlet funciona en elementos de proceso.
+A cmdlet name consists of a verb that indicates the action the cmdlet takes and a noun that indicates the items that the cmdlet acts upon. Because this sample Get-Proc cmdlet retrieves process objects, it uses the verb "Get", defined by the [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) enumeration, and the noun "Proc" to indicate that the cmdlet works on process items.
 
-Al asignar nombres a los cmdlets, no use ninguno de los siguientes caracteres: #, () {} [] &-/\ $; : "' < > &#124; ? @ ` .
+When naming cmdlets, do not use any of the following characters: # , () {} [] & - /\ $ ; : " '<> &#124; ? @ ` .
 
-### <a name="choosing-a-noun"></a>Elección de un Sustantivo
+### <a name="choosing-a-noun"></a>Choosing a Noun
 
-Debe elegir un nombre específico. Es mejor usar un Sustantivo Singular precedido de una versión abreviada del nombre del producto. Un nombre de cmdlet de ejemplo de este tipo es "`Get-SQLServer`".
+You should choose a noun that is specific. It is best to use a singular noun prefixed with a shortened version of the product name. An example cmdlet name of this type is "`Get-SQLServer`".
 
-### <a name="choosing-a-verb"></a>Elección de un verbo
+### <a name="choosing-a-verb"></a>Choosing a Verb
 
-Debe usar un verbo del conjunto de nombres de verbo de cmdlet aprobados. Para obtener más información sobre los verbos de cmdlet aprobados, consulte [nombres de verbos de cmdlet](./approved-verbs-for-windows-powershell-commands.md).
+You should use a verb from the set of approved cmdlet verb names. For more information about the approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
 
-## <a name="defining-the-cmdlet-class"></a>Definir la clase de cmdlet
+## <a name="defining-the-cmdlet-class"></a>Defining the Cmdlet Class
 
-Una vez que haya elegido un nombre de cmdlet, defina una clase .NET para implementar el cmdlet. Esta es la definición de clase de este cmdlet Get-proc de ejemplo:
+Once you have chosen a cmdlet name, define a .NET class to implement the cmdlet. Here is the class definition for this sample Get-Proc cmdlet:
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "Proc")]
@@ -54,35 +54,35 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-Observe que antes de la definición de clase, el atributo [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) , con la sintaxis `[Cmdlet(verb, noun, ...)]`, se usa para identificar esta clase como un cmdlet. Este es el único atributo necesario para todos los cmdlets y permite que el tiempo de ejecución de Windows PowerShell los llame correctamente. Puede establecer palabras clave de atributo para declarar más la clase si es necesario. Tenga en cuenta que la declaración de atributo para la clase GetProcCommand de ejemplo declara solo los nombres de nombre y verbo para el cmdlet Get-proc.
+Notice that previous to the class definition, the [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute, with the syntax `[Cmdlet(verb, noun, ...)]`, is used to identify this class as a cmdlet. This is the only required attribute for all cmdlets, and it allows the Windows PowerShell runtime to call them correctly. You can set attribute keywords to further declare the class if necessary. Be aware that the attribute declaration for our sample GetProcCommand class declares only the noun and verb names for the Get-Proc cmdlet.
 
 > [!NOTE]
-> Para todas las clases de atributos de Windows PowerShell, las palabras clave que se pueden establecer corresponden a las propiedades de la clase de atributo.
+> For all Windows PowerShell attribute classes, the keywords that you can set correspond to properties of the attribute class.
 
-Al asignar un nombre a la clase del cmdlet, se recomienda reflejar el nombre del cmdlet en el nombre de clase. Para ello, use el formato "VerbNounCommand" y reemplace "Verb" y "Sustantivo" por el verbo y el sustantivo usados en el nombre del cmdlet. Como se muestra en la definición de clase anterior, el cmdlet Get-proc de ejemplo define una clase denominada GetProcCommand, que deriva de la clase base [System. Management. Automation. cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) .
+When naming the class of the cmdlet, it is a good practice to reflect the cmdlet name in the class name. To do this, use the form "VerbNounCommand" and replace "Verb" and "Noun" with the verb and noun used in the cmdlet name. As is shown in the previous class definition, the sample Get-Proc cmdlet defines a class called GetProcCommand, which derives from the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) base class.
 
 > [!IMPORTANT]
-> Si desea definir un cmdlet que tenga acceso directamente al tiempo de ejecución de Windows PowerShell, la clase .NET debe derivarse de la clase base [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) . Para obtener más información sobre esta clase, consulte [crear un cmdlet que defina conjuntos de parámetros](./adding-parameter-sets-to-a-cmdlet.md).
+> If you want to define a cmdlet that accesses the Windows PowerShell runtime directly, your .NET class should derive from the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class. For more information about this class, see [Creating a Cmdlet that Defines Parameter Sets](./adding-parameter-sets-to-a-cmdlet.md).
 
 > [!NOTE]
-> La clase de un cmdlet debe marcarse explícitamente como Public. Las clases que no están marcadas como públicas tendrán como valor predeterminado Internal y el tiempo de ejecución de Windows PowerShell no las encontrará.
+> The class for a cmdlet must be explicitly marked as public. Classes that are not marked as public will default to internal and will not be found by the Windows PowerShell runtime.
 
-Windows PowerShell usa el espacio de nombres [Microsoft. PowerShell. Commands](/dotnet/api/Microsoft.PowerShell.Commands) para sus clases de cmdlet. Se recomienda colocar las clases de cmdlet en un espacio de nombres de comandos del espacio de nombres de la API, por ejemplo, xxx. PS. Commands.
+Windows PowerShell uses the [Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) namespace for its cmdlet classes. It is recommended to place your cmdlet classes in a Commands namespace of your API namespace, for example, xxx.PS.Commands.
 
-## <a name="overriding-an-input-processing-method"></a>Reemplazar un método de procesamiento de entrada
+## <a name="overriding-an-input-processing-method"></a>Overriding an Input Processing Method
 
-La clase [System. Management. Automation. cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) proporciona tres métodos de procesamiento de entrada principales, al menos uno de los cuales el cmdlet debe reemplazar. Para obtener más información sobre cómo Windows PowerShell procesa los registros, vea [Cómo funciona Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
+The [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) class provides three main input processing methods, at least one of which your cmdlet must override. For more information about how Windows PowerShell processes records, see [How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85)).
 
-En el caso de todos los tipos de entrada, el tiempo de ejecución de Windows PowerShell llama a [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) para habilitar el procesamiento. Si el cmdlet debe realizar algún proceso de preprocesamiento o configuración, puede hacerlo invalidando este método.
+For all types of input, the Windows PowerShell runtime calls [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) to enable processing. If your cmdlet must perform some preprocessing or setup, it can do this by overriding this method.
 
 > [!NOTE]
-> Windows PowerShell usa el término "registro" para describir el conjunto de valores de parámetro proporcionados cuando se llama a un cmdlet.
+> Windows PowerShell uses the term "record" to describe the set of parameter values supplied when a cmdlet is called.
 
-Si el cmdlet acepta la entrada de canalización, debe invalidar el método [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) y, opcionalmente, el método [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Por ejemplo, un cmdlet podría invalidar ambos métodos si recopila toda la entrada mediante [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) y, a continuación, opera en la entrada como un conjunto en lugar de un elemento a la vez, como hace el cmdlet `Sort-Object`.
+If your cmdlet accepts pipeline input, it must override the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method, and optionally the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method. For example, a cmdlet might override both methods if it gathers all input using [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) and then operates on the input as a whole rather than one element at a time, as the `Sort-Object` cmdlet does.
 
-Si el cmdlet no toma la entrada de canalización, debe invalidar el método [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Tenga en cuenta que este método se usa con frecuencia en lugar de [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) cuando el cmdlet no puede operar en un elemento cada vez, como es el caso de un cmdlet de ordenación.
+If your cmdlet does not take pipeline input, it should override the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method. Be aware that this method is frequently used in place of [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) when the cmdlet cannot operate on one element at a time, as is the case for a sorting cmdlet.
 
-Dado que este cmdlet Get-proc de ejemplo debe recibir la entrada de canalización, invalida el método [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) y usa las implementaciones predeterminadas para [System. Management. Automation. cmdlet. BeginProcessing ](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)y [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). La invalidación [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) recupera los procesos y los escribe en la línea de comandos mediante el método [System. Management. Automation. cmdlet. writeObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) .
+Because this sample Get-Proc cmdlet must receive pipeline input, it overrides the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method and uses the default implementations for [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) and [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). The [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) override retrieves processes and writes them to the command line using the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method.
 
 ```csharp
 protected override void ProcessRecord()
@@ -114,44 +114,44 @@ Protected Overrides Sub ProcessRecord()
 End Sub 'ProcessRecord
 ```
 
-#### <a name="things-to-remember-about-input-processing"></a>Aspectos que se deben recordar sobre el procesamiento de entradas
+#### <a name="things-to-remember-about-input-processing"></a>Things to Remember About Input Processing
 
-- El origen predeterminado de la entrada es un objeto explícito (por ejemplo, una cadena) proporcionado por el usuario en la línea de comandos. Para obtener más información, vea [crear un cmdlet para procesar la entrada de la línea de comandos](./adding-parameters-that-process-command-line-input.md).
+- The default source for input is an explicit object (for example, a string) provided by the user on the command line. For more information, see [Creating a Cmdlet to Process Command Line Input](./adding-parameters-that-process-command-line-input.md).
 
-- Un método de procesamiento de entrada también puede recibir la entrada del objeto de salida de un cmdlet de nivel superior en la canalización. Para obtener más información, vea [crear un cmdlet para procesar la entrada de canalización](./adding-parameters-that-process-pipeline-input.md). Tenga en cuenta que el cmdlet puede recibir la entrada de una combinación de orígenes de línea de comandos y de canalización.
+- An input processing method can also receive input from the output object of an upstream cmdlet on the pipeline. For more information, see [Creating a Cmdlet to Process Pipeline Input](./adding-parameters-that-process-pipeline-input.md). Be aware that your cmdlet can receive input from a combination of command-line and pipeline sources.
 
-- Es posible que el cmdlet de nivel inferior no devuelva mucho tiempo o que no se encuentre en absoluto. Por ese motivo, el método de procesamiento de entrada del cmdlet no debe mantener bloqueos durante las llamadas a [System. Management. Automation. cmdlet. writeObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), especialmente los bloqueos para los que el ámbito se extiende más allá de la instancia del cmdlet.
+- The downstream cmdlet might not return for a long time, or not at all. For that reason, the input processing method in your cmdlet should not hold locks during calls to [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), especially locks for which the scope extends beyond the cmdlet instance.
 
 > [!IMPORTANT]
-> Los cmdlets nunca deben llamar a [System. Console. WriteLine *](/dotnet/api/System.Console.WriteLine) ni a su equivalente.
+> Cmdlets should never call [System.Console.Writeline*](/dotnet/api/System.Console.WriteLine) or its equivalent.
 
-- Es posible que el cmdlet tenga variables de objeto para limpiar cuando termine el procesamiento (por ejemplo, si abre un identificador de archivo en el método [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) y mantiene abierto el identificador para que lo use [ System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). Es importante recordar que el tiempo de ejecución de Windows PowerShell no siempre llama al método [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) , que debe realizar la limpieza de objetos.
+- Your cmdlet might have object variables to clean up when it is finished processing (for example, if it opens a file handle in the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method and keeps the handle open for use by [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). It is important to remember that the Windows PowerShell runtime does not always call the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method, which should perform object cleanup.
 
-Por ejemplo, no se puede llamar a [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) si el cmdlet se cancela a la mitad o si se produce un error de terminación en cualquier parte del cmdlet. Por lo tanto, un cmdlet que requiera la limpieza de objetos debe implementar el patrón [System. IDisposable](/dotnet/api/System.IDisposable) completo, incluido el finalizador, de modo que el tiempo de ejecución pueda llamar a [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) y [ System. IDisposable. Dispose *](/dotnet/api/System.IDisposable.Dispose) al final del procesamiento.
+For example, [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) might not be called if the cmdlet is canceled midway or if a terminating error occurs in any part of the cmdlet. Therefore, a cmdlet that requires object cleanup should implement the complete [System.IDisposable](/dotnet/api/System.IDisposable) pattern, including the finalizer, so that the runtime can call both [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) and [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) at the end of processing.
 
-## <a name="code-sample"></a>Código de ejemplo
+## <a name="code-sample"></a>Code Sample
 
-Para obtener el C# código de ejemplo completo, vea el [ejemplo de GetProcessSample01](./getprocesssample01-sample.md).
+For the complete C# sample code, see [GetProcessSample01 Sample](./getprocesssample01-sample.md).
 
-## <a name="defining-object-types-and-formatting"></a>Definir tipos de objeto y formato
+## <a name="defining-object-types-and-formatting"></a>Defining Object Types and Formatting
 
-Windows PowerShell pasa información entre cmdlets mediante objetos .NET. Por lo tanto, es posible que un cmdlet tenga que definir su propio tipo o que el cmdlet tenga que extender un tipo existente proporcionado por otro cmdlet. Para obtener más información sobre la definición de nuevos tipos o la extensión de tipos existentes, vea [extender tipos de objeto y formato](/previous-versions//ms714665(v=vs.85)).
+Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet might need to define its own type, or the cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
 
-## <a name="building-the-cmdlet"></a>Compilación del cmdlet
+## <a name="building-the-cmdlet"></a>Building the Cmdlet
 
-Después de implementar un cmdlet, debe registrarlo con Windows PowerShell a través de un complemento de Windows PowerShell. Para obtener más información acerca del registro de cmdlets, consulte [Cómo registrar cmdlets, proveedores y aplicaciones host](/previous-versions//ms714644(v=vs.85)).
+After implementing a cmdlet, you must register it with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
 
-## <a name="testing-the-cmdlet"></a>Prueba del cmdlet
+## <a name="testing-the-cmdlet"></a>Testing the Cmdlet
 
-Cuando el cmdlet se ha registrado con Windows PowerShell, puede probarlo mediante su ejecución en la línea de comandos. El código de nuestro cmdlet Get-proc de ejemplo es pequeño, pero todavía usa el tiempo de ejecución de Windows PowerShell y un objeto .NET existente, que es suficiente para que resulte útil. Vamos a probarlo para comprender mejor lo que puede hacer Get-proc y cómo puede usarse su salida. Para obtener más información sobre el uso de cmdlets desde la línea de comandos, consulte la [Introducción con Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. The code for our sample Get-Proc cmdlet is small, but it still uses the Windows PowerShell runtime and an existing .NET object, which is enough to make it useful. Let's test it to better understand what Get-Proc can do and how its output can be used. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-1. Inicie Windows PowerShell y obtenga los procesos actuales que se ejecutan en el equipo.
+1. Start Windows PowerShell, and get the current processes running on the computer.
 
     ```powershell
     get-proc
     ```
 
-    Aparece el siguiente resultado.
+    The following output appears.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -163,31 +163,31 @@ Cuando el cmdlet se ha registrado con Windows PowerShell, puede probarlo mediant
     ...
     ```
 
-2. Asigne una variable a los resultados del cmdlet para facilitar la manipulación.
+2. Assign a variable to the cmdlet results for easier manipulation.
 
     ```powershell
     $p=get-proc
     ```
 
-3. Obtiene el número de procesos.
+3. Get the number of processes.
 
     ```powershell
     $p.length
     ```
 
-    Aparece el siguiente resultado.
+    The following output appears.
 
     ```output
     63
     ```
 
-4. Recuperar un proceso específico.
+4. Retrieve a specific process.
 
     ```powershell
     $p[6]
     ```
 
-    Aparece el siguiente resultado.
+    The following output appears.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id    ProcessName
@@ -195,13 +195,13 @@ Cuando el cmdlet se ha registrado con Windows PowerShell, puede probarlo mediant
     1033     3       2400   3336   35     0.53    1588  rundll32
     ```
 
-5. Obtiene la hora de inicio de este proceso.
+5. Get the start time of this process.
 
     ```powershell
     $p[6].starttime
     ```
 
-    Aparece el siguiente resultado.
+    The following output appears.
 
     ```output
     Tuesday, July 26, 2005 9:34:15 AM
@@ -215,13 +215,13 @@ Cuando el cmdlet se ha registrado con Windows PowerShell, puede probarlo mediant
     207
     ```
 
-6. Obtiene los procesos para los que el número de identificadores es mayor que 500 y ordena el resultado.
+6. Get the processes for which the handle count is greater than 500, and sort the result.
 
     ```powershell
     $p | Where-Object {$_.HandleCount -gt 500 } | Sort-Object HandleCount
     ```
 
-    Aparece el siguiente resultado.
+    The following output appears.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -233,7 +233,7 @@ Cuando el cmdlet se ha registrado con Windows PowerShell, puede probarlo mediant
     ...
     ```
 
-7. Use el cmdlet `Get-Member` para enumerar las propiedades disponibles para cada proceso.
+7. Use the `Get-Member` cmdlet to list the properties available for each process.
 
     ```powershell
     $p | Get-Member -MemberType property
@@ -243,7 +243,7 @@ Cuando el cmdlet se ha registrado con Windows PowerShell, puede probarlo mediant
         TypeName: System.Diagnostics.Process
     ```
 
-    Aparece el siguiente resultado.
+    The following output appears.
 
     ```output
     Name                     MemberType Definition
@@ -256,18 +256,18 @@ Cuando el cmdlet se ha registrado con Windows PowerShell, puede probarlo mediant
 
 ## <a name="see-also"></a>Véase también
 
-[Crear un cmdlet para procesar la entrada de la línea de comandos](./adding-parameters-that-process-command-line-input.md)
+[Creating a Cmdlet to Process Command Line Input](./adding-parameters-that-process-command-line-input.md)
 
-[Crear un cmdlet para procesar la entrada de canalización](./adding-parameters-that-process-pipeline-input.md)
+[Creating a Cmdlet to Process Pipeline Input](./adding-parameters-that-process-pipeline-input.md)
 
-[Cómo crear un cmdlet de Windows PowerShell](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Extender tipos de objeto y formato](/previous-versions//ms714665(v=vs.85))
+[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
 
-[Cómo funciona Windows PowerShell](/previous-versions//ms714658(v=vs.85))
+[How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85))
 
-[Cómo registrar cmdlets, proveedores y aplicaciones host](/previous-versions//ms714644(v=vs.85))
+[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
 
 [Referencia de Windows PowerShell](../windows-powershell-reference.md)
 
-[Ejemplos de cmdlet](./cmdlet-samples.md)
+[Cmdlet Samples](./cmdlet-samples.md)
