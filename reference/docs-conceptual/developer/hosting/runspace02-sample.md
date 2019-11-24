@@ -17,7 +17,7 @@ ms.locfileid: "72360984"
 ---
 # <a name="runspace02-sample"></a>Ejemplo Runspace02
 
-En este ejemplo se muestra cómo usar la clase [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) para ejecutar los cmdlets [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) y [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) sincrónicamente. El cmdlet [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) devuelve objetos [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) para cada proceso que se ejecuta en el equipo local y el @no__t 2 ordena los objetos basándose en su propiedad [System.Diagnostics.Process.ID *](/dotnet/api/System.Diagnostics.Process.Id) . Los resultados de estos comandos se muestran mediante un control [System. Windows. Forms. DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) .
+En este ejemplo se muestra cómo usar la clase [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) para ejecutar los cmdlets [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) y [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) sincrónicamente. El cmdlet [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) devuelve objetos [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) para cada proceso que se ejecuta en el equipo local y el `Sort-Object` ordena los objetos basándose en su propiedad [System.Diagnostics.Process.ID *](/dotnet/api/System.Diagnostics.Process.Id) . Los resultados de estos comandos se muestran mediante un control [System. Windows. Forms. DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) .
 
 ## <a name="requirements"></a>Requisitos
 
@@ -114,6 +114,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
 [Escritura de una aplicación host de Windows PowerShell](./writing-a-windows-powershell-host-application.md)

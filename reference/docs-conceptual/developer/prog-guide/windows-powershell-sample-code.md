@@ -21,7 +21,7 @@ Los ejemplos de® de Windows PowerShell están disponibles a través de la Windo
 
 > [!NOTE]
 > Cuando se instala el Windows SDK, se crea un directorio de **ejemplos** en el que se ponen a disposición todos los ejemplos de Windows PowerShell. Un directorio de instalación típico es **c:\Archivos de Programa\microsoft SDKs\Windows\v6.0**.
-> Inicie Windows PowerShell y escriba **"CD Samples\SysMgmt\PowerShell"** para buscar el directorio de ejemplos de Windows PowerShell. En este documento, se hace referencia al directorio de ejemplos de Windows PowerShell como **@no__t ejemplos de 1PowerShell >** .
+> Inicie Windows PowerShell y escriba **"CD Samples\SysMgmt\PowerShell"** para buscar el directorio de ejemplos de Windows PowerShell. En este documento, el directorio de ejemplos de Windows PowerShell se conoce como **\<ejemplos de powershell >** .
 
 ## <a name="sample-code-listing"></a>Lista de códigos de ejemplo
 
@@ -33,13 +33,13 @@ Los ejemplos de® de Windows PowerShell están disponibles a través de la Windo
 |[Código de ejemplo de AccessDbProviderSample04](./accessdbprovidersample04-code-sample.md)|Este es el proveedor que se describe en [crear un proveedor de contenedores de Windows PowerShell](./creating-a-windows-powershell-container-provider.md).|
 |[Código de ejemplo de AccessDbProviderSample05](./accessdbprovidersample05-code-sample.md)|Este es el proveedor que se describe en [crear un proveedor de navegación de Windows PowerShell](./creating-a-windows-powershell-navigation-provider.md).|
 |[Código de ejemplo de AccessDbProviderSample06](./accessdbprovidersample06-code-sample.md)|Este es el proveedor que se describe en [crear un proveedor de contenido de Windows PowerShell](./creating-a-windows-powershell-content-provider.md).|
-|[Ejemplos de código de GetProc01](./getproc01-code-samples.md)|Este es el ejemplo de cmdlet Basic `Get-Process` que se describe en [creación del primer cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md).|
+|[Ejemplos de código de GetProc01](./getproc01-code-samples.md)|Este es el ejemplo de cmdlet de `Get-Process` básico que se describe en [creación del primer cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md).|
 |[Ejemplos de código de GetProc02](./getproc02-code-samples.md)|Este es el ejemplo de cmdlet `Get-Process` descrito en [agregar parámetros que procesan la entrada de la línea de comandos](../cmdlet/adding-parameters-that-process-command-line-input.md).|
 |[Ejemplos de código de GetProc03](./getproc03-code-samples.md)|Este es el ejemplo de cmdlet `Get-Process` descrito en [agregar parámetros que procesan la entrada de canalización](../cmdlet/adding-parameters-that-process-pipeline-input.md).|
 |[Ejemplos de código de GetProc04](./getproc04-code-samples.md)|Este es el ejemplo de cmdlet `Get-Process` que se describe en [Agregar informes de errores de no terminación al cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
 |[Ejemplos de código de GetProc05](./getproc05-code-samples.md)|Este cmdlet `Get-Process` es similar al cmdlet descrito en adición de informes de errores de no [terminación al cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
 |[Ejemplos de código de StopProc01](./stopproc01-code-samples.md)|Este es el ejemplo de cmdlet `Stop-Process` que se describe en [creación de un cmdlet que modifica el sistema](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md).|
-|[Ejemplos de código de StopProcessSample04](./stopprocesssample04-code-samples.md)|Este es el ejemplo de cmdlet `Stop-Process` que se describe en [Agregar conjuntos de parámetros a un cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).|
+|[Ejemplos de código de StopProcessSample04](./stopprocesssample04-code-samples.md)|Este es el ejemplo de cmdlet `Stop-Process` descrito en [Agregar conjuntos de parámetros a un cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).|
 |[Ejemplos de código de Runspace01](./runspace01-code-samples.md)|Estos son los ejemplos de código para el espacio de ejecución que se describe en [crear una aplicación de consola que ejecuta un comando especificado](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).|
 |[Ejemplos de código de Runspace02](./runspace02-code-samples.md)|En este ejemplo se usa la clase [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) para ejecutar el cmdlet `Get-Process` sincrónicamente.|
 |[Ejemplos de código de RunSpace03](./runspace03-code-samples.md)|Estos son los ejemplos de código para el espacio de ejecución que se describe en "crear una aplicación de consola que ejecuta un script especificado".|
@@ -51,7 +51,7 @@ Los ejemplos de® de Windows PowerShell están disponibles a través de la Windo
 |[Código de ejemplo de RunSpace09](./runspace09-code-sample.md)|Este es el código fuente del ejemplo Runspace09 que se describe en [crear una aplicación de consola que invoca una canalización de forma asincrónica](https://msdn.microsoft.com/en-us/198c1c94-2a06-457e-93ce-c0d910618e47).|
 |[Código de ejemplo de RunSpace10](./runspace10-code-sample.md)|Este es el código fuente del ejemplo Runspace10, que agrega un cmdlet a [System. Management. Automation. runspace. Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) y, a continuación, usa la información de configuración modificada para crear el espacio de ejecución.|
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
 [Guía del programador de Windows PowerShell](./windows-powershell-programmer-s-guide.md)
 

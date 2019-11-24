@@ -27,7 +27,7 @@ La sección Vea también se crea a partir del elemento `RelatedLinks` y las etiq
 
 ### <a name="to-add-see-also-topics"></a>Para agregar temas "vea también"
 
-1. En el archivo *AssemblyName*. dll-help. XML, dentro del elemento `providerHelp`, agregue un elemento `RelatedLinks`. El elemento `RelatedLinks` debe ser el último elemento del elemento `providerHelp`. Solo se permite un elemento `RelatedLinks` en cada tema de ayuda del proveedor.
+1. En el archivo *AssemblyName*. dll-help. XML, dentro del elemento `providerHelp`, agregue un elemento `RelatedLinks`. El elemento `RelatedLinks` debe ser el último elemento del elemento `providerHelp`. Solo se permite un elemento `RelatedLinks` en el tema de ayuda de cada proveedor.
 
    Por ejemplo:
 
@@ -38,7 +38,7 @@ La sección Vea también se crea a partir del elemento `RelatedLinks` y las etiq
     </providerHelp>
     ```
 
-2. Para cada tema de la sección **vea también** , dentro del elemento `RelatedLinks`, agregue un elemento `navigationLink`. Después, dentro de cada elemento `navigationLink`, agregue un elemento `linkText` y un elemento @no__t 2. Si no usa el elemento `uri`, puede agregarlo como un elemento vacío (\<uri/>).
+2. Para cada tema de la sección **vea también** , dentro del elemento `RelatedLinks`, agregue un elemento `navigationLink`. Después, dentro de cada elemento `navigationLink`, agregue un elemento `linkText` y un elemento `uri`. Si no está utilizando el elemento `uri`, puede agregarlo como un elemento vacío (\<URI/>).
 
    Por ejemplo:
 
@@ -53,7 +53,7 @@ La sección Vea también se crea a partir del elemento `RelatedLinks` y las etiq
     </providerHelp>
     ```
 
-3. Escriba el nombre del tema entre las etiquetas `linkText`. Si va a proporcionar un URI, escríbalo entre las etiquetas `uri`. Para indicar la versión en línea del tema de ayuda del proveedor actual, entre las etiquetas `linkText`, escriba "versión en línea:" en lugar del nombre del tema. Normalmente, el vínculo "versión en línea:" es el primer tema de la lista de temas vea también.
+3. Escriba el nombre del tema entre las etiquetas de `linkText`. Si va a proporcionar un URI, escríbalo entre las etiquetas de `uri`. Para indicar la versión en línea del tema de ayuda del proveedor actual, entre las etiquetas de `linkText`, escriba "versión en línea:" en lugar del nombre del tema. Normalmente, el vínculo "versión en línea:" es el primer tema de la lista de temas vea también.
 
    En el ejemplo siguiente se incluyen tres temas, vea también. El primero hace referencia a la versión en línea del tema actual. El segundo hace referencia a un tema de ayuda de cmdlet de Windows PowerShell. El tercero hace referencia a otro tema en línea.
 

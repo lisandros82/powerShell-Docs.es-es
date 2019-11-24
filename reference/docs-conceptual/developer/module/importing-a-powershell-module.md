@@ -31,13 +31,13 @@ PowerShell 2,0 usa el cmdlet [Import-Module](/powershell/module/Microsoft.PowerS
 Import-Module myModule
 ```
 
-Suponiendo que MyModule se encuentre en el `PSModulePath`, PowerShell cargaría MyModule en la memoria activa. Si no se encuentra MyModule en una ruta de acceso `PSModulePath`, puede indicar explícitamente a PowerShell dónde encontrarlo:
+Suponiendo que MyModule se encuentre en el `PSModulePath`, PowerShell cargaría MyModule en la memoria activa. Si MyModule no se encuentra en una ruta de acceso de `PSModulePath`, podría indicar explícitamente a PowerShell dónde encontrarlo:
 
 ```powershell
 Import-Module -Name C:\myRandomDirectory\myModule -Verbose
 ```
 
-También puede usar el parámetro-verbose para identificar lo que se va a exportar fuera del módulo y lo que se va a importar en la memoria activa. Las exportaciones y las importaciones restringen lo que se expone al usuario: la diferencia es quién controla la visibilidad. Esencialmente, las exportaciones se controlan mediante código dentro del módulo. Por el contrario, la llamada `Import-Module` controla las importaciones. Para obtener más información, vea **restringir los miembros que se importan**a continuación.
+También puede usar el parámetro-verbose para identificar lo que se va a exportar fuera del módulo y lo que se va a importar en la memoria activa. Las exportaciones y las importaciones restringen lo que se expone al usuario: la diferencia es quién controla la visibilidad. Esencialmente, las exportaciones se controlan mediante código dentro del módulo. En cambio, las importaciones se controlan mediante la llamada `Import-Module`. Para obtener más información, vea **restringir los miembros que se importan**a continuación.
 
 ## <a name="implicitly-importing-a-module-powershell-30"></a>Importación implícita de un módulo (PowerShell 3,0)
 
@@ -47,7 +47,7 @@ Las siguientes acciones desencadenan la importación automática de un módulo, 
 
 - Usar un cmdlet en un comando. Por ejemplo, al escribir `Get-ExecutionPolicy` se importa el módulo Microsoft. PowerShell. Security que contiene el cmdlet `Get-ExecutionPolicy`.
 
-- Usar el cmdlet [get-command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) para obtener el comando.  Por ejemplo, al escribir `Get-Command Get-JobTrigger` se importa el módulo **PSScheduledJob** que contiene el cmdlet @no__t 2. Un comando `Get-Command` que incluye caracteres comodín se considera detección y no desencadena la importación de un módulo.
+- Usar el cmdlet [get-command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) para obtener el comando.  Por ejemplo, al escribir `Get-Command Get-JobTrigger` se importa el módulo **PSScheduledJob** que contiene el cmdlet `Get-JobTrigger`. Un comando `Get-Command` que incluye caracteres comodín se considera detección y no desencadena la importación de un módulo.
 
 - Use el cmdlet [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) para obtener ayuda para un cmdlet. Por ejemplo, al escribir `Get-Help Get-WinEvent` se importa el módulo Microsoft. PowerShell. Diagnostics que contiene el cmdlet `Get-WinEvent`.
 
@@ -76,6 +76,6 @@ Cuando se importa un módulo mediante el cmdlet [Import-Module](/powershell/modu
 
 - `Alias`: este parámetro restringe los alias que se exportan (si usa un manifiesto de módulo, consulte la clave AliasesToExport).
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
 [Escribir un módulo de Windows PowerShell](./writing-a-windows-powershell-module.md)

@@ -61,7 +61,7 @@ Un cmdlet necesita parámetros que reciban los datos en los que debe funcionar y
 
 #### <a name="use-standard-parameter-names"></a>Usar nombres de parámetros estándar
 
-El cmdlet debe usar nombres de parámetros estándar para que el usuario pueda determinar rápidamente lo que significa un parámetro determinado. Si se requiere un nombre más específico, use un nombre de parámetro estándar y, a continuación, especifique un nombre más específico como alias. Por ejemplo, el cmdlet `Get-Service` tiene un parámetro con un nombre genérico (`Name`) y un alias más específico (`ServiceName`). Ambos términos se pueden usar para especificar el parámetro.
+El cmdlet debe usar nombres de parámetros estándar para que el usuario pueda determinar rápidamente lo que significa un parámetro determinado. Si se requiere un nombre más específico, use un nombre de parámetro estándar y, a continuación, especifique un nombre más específico como alias. Por ejemplo, el cmdlet `Get-Service` tiene un parámetro que tiene un nombre genérico (`Name`) y un alias más específico (`ServiceName`). Ambos términos se pueden usar para especificar el parámetro.
 
 Para obtener más información acerca de los nombres de parámetro y sus tipos de datos, consulte [instrucciones de nombre y funcionalidad del cmdlet](./standard-cmdlet-parameter-names-and-types.md).
 
@@ -73,7 +73,7 @@ Los nombres de parámetro plural solo deben usarse en aquellos casos en los que 
 
 #### <a name="use-pascal-case-for-parameter-names"></a>Usar mayúsculas y minúsculas Pascal para nombres de parámetros
 
-Use mayúsculas y minúsculas Pascal para los nombres de parámetros. En otras palabras, ponga en mayúscula la primera letra de cada palabra en el nombre del parámetro, incluida la primera letra del nombre. Por ejemplo, el nombre de parámetro `ErrorAction` usa el uso de mayúsculas correcto. Los nombres de parámetro siguientes usan el uso incorrecto de mayúsculas:
+Use mayúsculas y minúsculas Pascal para los nombres de parámetros. En otras palabras, ponga en mayúscula la primera letra de cada palabra en el nombre del parámetro, incluida la primera letra del nombre. Por ejemplo, el nombre de parámetro `ErrorAction` usa el uso correcto de mayúsculas. Los nombres de parámetro siguientes usan el uso incorrecto de mayúsculas:
 
 - `errorAction`
 
@@ -97,13 +97,13 @@ Los parámetros se deben definir como tipos de .NET Framework para proporcionar 
 
 #### <a name="use-consistent-parameter-types"></a>Usar tipos de parámetro coherentes
 
-Cuando varios cmdlets usan el mismo parámetro, use siempre el mismo tipo de parámetro.  Por ejemplo, si el parámetro `Process` es un tipo [System. Int16](/dotnet/api/System.Int16) para un cmdlet, no haga que el parámetro `Process` para otro cmdlet sea un tipo [System. Uint16](/dotnet/api/System.UInt16) .
+Cuando varios cmdlets usan el mismo parámetro, use siempre el mismo tipo de parámetro.  Por ejemplo, si el parámetro `Process` es un tipo [System. Int16](/dotnet/api/System.Int16) para un cmdlet, no convierta el parámetro `Process` de otro cmdlet en un tipo [System. Uint16](/dotnet/api/System.UInt16) .
 
 #### <a name="parameters-that-take-true-and-false"></a>Parámetros que toman true y false
 
 Si el parámetro solo toma `true` y `false`, defina el parámetro como tipo [System. Management. Automation. parámetrodemodificador](/dotnet/api/System.Management.Automation.SwitchParameter). Un parámetro de modificador se trata como `true` cuando se especifica en un comando. Si el parámetro no se incluye en un comando, Windows PowerShell considera que el valor del parámetro es `false`. No defina parámetros booleanos.
 
-Si el parámetro necesita diferenciar entre 3 valores: $true, $false y "no especificado", defina un parámetro de tipo Nullable @ no__t-0bool >.  La necesidad de un tercer valor "no especificado" normalmente se produce cuando el cmdlet puede modificar una propiedad booleana de un objeto. En este caso "sin especificar" significa no cambiar el valor actual de la propiedad.
+Si el parámetro necesita diferenciar entre 3 valores: $true, $false y "sin especificar", defina un parámetro de tipo que acepte valores NULL\<bool >.  La necesidad de un tercer valor "no especificado" normalmente se produce cuando el cmdlet puede modificar una propiedad booleana de un objeto. En este caso "sin especificar" significa no cambiar el valor actual de la propiedad.
 
 #### <a name="support-arrays-for-parameters"></a>Compatibilidad con matrices para parámetros
 
@@ -111,7 +111,7 @@ Con frecuencia, los usuarios deben realizar la misma operación en varios argume
 
 #### <a name="support-the-passthru-parameter"></a>Compatibilidad con el parámetro PassThru
 
-De forma predeterminada, muchos cmdlets que modifican el sistema, como el cmdlet [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) , actúan como "receptores" para los objetos y no devuelven un resultado. Estos cmdlets deben implementar el parámetro `PassThru` para forzar que el cmdlet devuelva un objeto. Cuando se especifica el parámetro `PassThru`, el cmdlet devuelve un objeto mediante una llamada al método [System. Management. Automation. cmdlet. writeObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) . Por ejemplo, el comando siguiente detiene el proceso de cálculo y pasa el proceso resultante a la canalización.
+De forma predeterminada, muchos cmdlets que modifican el sistema, como el cmdlet [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) , actúan como "receptores" para los objetos y no devuelven un resultado. Estos cmdlets deben implementar el parámetro `PassThru` para obligar a que el cmdlet devuelva un objeto. Cuando se especifica el parámetro `PassThru`, el cmdlet devuelve un objeto mediante una llamada al método [System. Management. Automation. cmdlet. writeObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) . Por ejemplo, el comando siguiente detiene el proceso de cálculo y pasa el proceso resultante a la canalización.
 
 ```powershell
 Stop-Process calc -passthru
@@ -172,7 +172,7 @@ La ruta de acceso de Windows PowerShell es el mecanismo para normalizar el acces
 
 Si el cmdlet permite al usuario especificar un archivo o un origen de datos, debe definir un parámetro de tipo [System. String](/dotnet/api/System.String). Si se admite más de una unidad, el tipo debe ser una matriz. El nombre del parámetro debe ser `Path`, con un alias de `PSPath`. Además, el parámetro `Path` debe admitir caracteres comodín. Si no es necesario admitir caracteres comodín, defina un parámetro `LiteralPath`.
 
-Si los datos que lee o escribe el cmdlet tienen que ser un archivo, el cmdlet debe aceptar la entrada de la ruta de acceso de Windows PowerShell y el cmdlet debe usar la propiedad [System. Management. Automation. SessionState. Path](/dotnet/api/System.Management.Automation.SessionState.Path) para traducir las rutas de Windows PowerShell en rutas de acceso que reconoce el sistema de archivos. Los mecanismos específicos incluyen los siguientes métodos:
+Si los datos que lee o escribe el cmdlet tienen que ser un archivo, el cmdlet debe aceptar la entrada de la ruta de Windows PowerShell y el cmdlet debe usar la propiedad [System. Management. Automation. SessionState. Path](/dotnet/api/System.Management.Automation.SessionState.Path) para traducir las rutas de acceso de Windows PowerShell en rutas de acceso que el sistema de archivos reconoce. Los mecanismos específicos incluyen los siguientes métodos:
 
 - [System. Management. Automation. PSCmdlet. GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
@@ -182,7 +182,7 @@ Si los datos que lee o escribe el cmdlet tienen que ser un archivo, el cmdlet de
 
 - [System. Management. Automation. PathIntrinsics. GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-Si los datos que lee o escribe el cmdlet solo son un conjunto de cadenas en lugar de un archivo, el cmdlet debe usar la información de contenido del proveedor (miembro `Content`) para leer y escribir. Esta información se obtiene de la propiedad [System. Management. Automation. Provider. CmdletProvider. InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) . Estos mecanismos permiten a otros almacenes de datos participar en la lectura y la escritura de datos.
+Si los datos que lee o escribe el cmdlet solo son un conjunto de cadenas en lugar de un archivo, el cmdlet debe usar la información de contenido del proveedor (`Content` miembro) para leer y escribir. Esta información se obtiene de la propiedad [System. Management. Automation. Provider. CmdletProvider. InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) . Estos mecanismos permiten a otros almacenes de datos participar en la lectura y la escritura de datos.
 
 #### <a name="support-wildcard-characters"></a>Compatibilidad con caracteres comodín
 
@@ -206,7 +206,7 @@ Si está diseñando un objeto para un cmdlet, asegúrese de que sus miembros se 
 
 Los objetos .NET Framework preexistentes devueltos por los cmdlets a menudo faltan algunos miembros importantes o cómodos que son necesarios para el desarrollador o el usuario de scripts. Estos miembros que faltan pueden ser especialmente importantes para la presentación y para crear los nombres de miembro correctos, de modo que el objeto pueda pasarse correctamente a la canalización. Cree un archivo Types. ps1xml personalizado para documentar estos miembros necesarios. Al crear este archivo, se recomienda la Convención de nomenclatura siguiente: *< Your_Product_Name >* . Types. ps1xml.
 
-Por ejemplo, puede Agregar una propiedad de script `Mode` al tipo [System. IO. FileInfo](/dotnet/api/System.IO.FileInfo) para mostrar los atributos de un archivo con mayor claridad. Además, puede Agregar una propiedad de alias `Count` al tipo [System. Array](/dotnet/api/System.Array) para permitir el uso coherente de ese nombre de propiedad (en lugar de `Length`).
+Por ejemplo, puede Agregar una propiedad de script `Mode` al tipo [System. IO. FileInfo](/dotnet/api/System.IO.FileInfo) para mostrar los atributos de un archivo con mayor claridad. Además, puede Agregar una propiedad alias `Count` al tipo [System. Array](/dotnet/api/System.Array) para permitir el uso coherente de ese nombre de propiedad (en lugar de `Length`).
 
 ##### <a name="implement-the-icomparable-interface"></a>Implementar la interfaz IComparable
 
@@ -214,13 +214,13 @@ Implemente una interfaz [System. IComparable](/dotnet/api/System.IComparable) en
 
 ##### <a name="update-display-information"></a>Actualizar información de pantalla
 
-Si la presentación de un objeto no proporciona los resultados esperados, cree un *> \<YourProductName*personalizado. Archivo Format. ps1xml para ese objeto.
+Si la presentación de un objeto no proporciona los resultados esperados, cree un *> de\<personalizado YourProductName*. Archivo Format. ps1xml para ese objeto.
 
 ### <a name="support-well-defined-pipeline-input-sc02"></a>Compatibilidad con entrada de canalización bien definida (SC02)
 
 #### <a name="implement-for-the-middle-of-a-pipeline"></a>Implementar para la mitad de una canalización
 
-Implemente un cmdlet asumiendo que se llamará desde el medio de una canalización (es decir, otros cmdlets generarán su entrada o consumirán su salida). Por ejemplo, podría suponer que el cmdlet `Get-Process`, porque genera datos, solo se usa como primer cmdlet en una canalización. Sin embargo, dado que este cmdlet está diseñado para la mitad de una canalización, este cmdlet permite que los cmdlets o datos anteriores de la canalización especifiquen los procesos que se van a recuperar.
+Implemente un cmdlet asumiendo que se llamará desde el medio de una canalización (es decir, otros cmdlets generarán su entrada o consumirán su salida). Por ejemplo, podría suponer que el cmdlet `Get-Process`, ya que genera datos, solo se usa como primer cmdlet en una canalización. Sin embargo, dado que este cmdlet está diseñado para la mitad de una canalización, este cmdlet permite que los cmdlets o datos anteriores de la canalización especifiquen los procesos que se van a recuperar.
 
 #### <a name="support-input-from-the-pipeline"></a>Compatibilidad con la entrada de la canalización
 
@@ -240,7 +240,7 @@ Cuando un cmdlet devuelve objetos, el cmdlet debe escribir los objetos inmediata
 
 De forma predeterminada, Windows PowerShell no distingue entre mayúsculas y minúsculas. Sin embargo, dado que se trata de muchos sistemas preexistentes, Windows PowerShell conserva el uso de mayúsculas y minúsculas para facilitar la operación y la compatibilidad. En otras palabras, si se proporciona un carácter en mayúsculas, Windows PowerShell lo mantiene en mayúsculas. Para que los sistemas funcionen bien, un cmdlet debe seguir esta Convención. Si es posible, debe funcionar sin distinción entre mayúsculas y minúsculas. Sin embargo, debe conservar el caso original para los cmdlets que se producen posteriormente en un comando o en la canalización.
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
 [Instrucciones de desarrollo necesarias](./required-development-guidelines.md)
 

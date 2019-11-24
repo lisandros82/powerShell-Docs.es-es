@@ -55,7 +55,7 @@ Para obtener más información sobre los componentes de una vista de tabla, vea 
 
 ## <a name="example"></a>Ejemplo
 
-En el ejemplo siguiente se muestra un elemento @no__t 0 cuyo ancho es de 16 caracteres.
+En el ejemplo siguiente se muestra un elemento `TableColumnHeader` cuyo ancho es de 16 caracteres.
 
 ```xml
 <TableColumnHeader>
@@ -65,7 +65,7 @@ En el ejemplo siguiente se muestra un elemento @no__t 0 cuyo ancho es de 16 cara
 </TableColumnHeader>
 ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
 [Crear una vista de tabla](./creating-a-table-view.md)
 

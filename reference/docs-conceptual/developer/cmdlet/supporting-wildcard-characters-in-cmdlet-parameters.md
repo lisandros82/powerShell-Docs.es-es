@@ -41,7 +41,7 @@ Al diseñar cmdlets que admiten caracteres comodín, permita combinaciones de ca
 
 `Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-El comando anterior usa el carácter comodín de intervalo `[a-l]` para especificar que el nombre de archivo debe empezar con los caracteres "a" a "l" y usa el carácter comodín `*` como marcador de posición para los caracteres entre la primera letra del nombre de archivo y el archivo **. txt.** extensión.
+El comando anterior usa el carácter comodín de intervalo `[a-l]` para especificar que el nombre de archivo debe empezar con los caracteres "a" a "l" y usa el carácter comodín `*` como un marcador de posición para los caracteres entre la primera letra del nombre de archivo y la extensión **. txt** .
 
 En el ejemplo siguiente se usa un patrón de caracteres comodín de intervalo que excluye la letra "d", pero se incluyen todas las demás Letras de la "a" a la "f".
 
@@ -55,11 +55,11 @@ Por ejemplo, el siguiente patrón contiene dos corchetes que deben tomarse liter
 
 Cuando se usa en la API de PowerShell, use:
 
-- "John Smith \` [* ']"
+- "John Smith \`[* ']"
 
 Cuando se usa desde el símbolo del sistema de PowerShell:
 
-- "John Smith \` @ no__t-1 [* \` ']"
+- "John Smith \`\`[*\`']"
 
 Este patrón coincide con "John Smith [marketing]" o "John Smith [desarrollo]". Por ejemplo:
 
@@ -74,9 +74,9 @@ True
 ## <a name="cmdlet-output-and-wildcard-characters"></a>Resultados de cmdlet y caracteres comodín
 
 Cuando los parámetros de cmdlet admiten caracteres comodín, la operación normalmente genera una salida de matriz.
-En ocasiones, no tiene sentido admitir una salida de matriz porque el usuario podría usar un solo elemento. Por ejemplo, el cmdlet `Set-Location` no admite la salida de matriz porque el usuario establece una sola ubicación. En esta instancia, el cmdlet sigue admitiendo caracteres comodín, pero fuerza la resolución en una sola ubicación.
+En ocasiones, no tiene sentido admitir una salida de matriz porque el usuario podría usar un solo elemento. Por ejemplo, el cmdlet `Set-Location` no admite la salida de la matriz porque el usuario establece una sola ubicación. En esta instancia, el cmdlet sigue admitiendo caracteres comodín, pero fuerza la resolución en una sola ubicación.
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
 [Escribir un cmdlet de Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)
 

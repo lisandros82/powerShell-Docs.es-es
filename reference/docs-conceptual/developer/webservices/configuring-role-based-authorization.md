@@ -17,15 +17,15 @@ ms.locfileid: "72359774"
 ---
 # <a name="configuring-role-based-authorization"></a>Configuración de la autorización basada en roles
 
-En este tema se muestra cómo configurar la Directiva de autorización basada en roles para la implementación de ejemplo de la interfaz [Microsoft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) que se describe en implementación de la [autorización personalizada para la administración. Extensión de IIS de OData](./implementing-custom-authorization-for-a-management-odata-web-service.md).
+En este tema se muestra cómo configurar la Directiva de autorización basada en roles para la implementación de ejemplo de la interfaz [Microsoft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) que se describe en [Implementing Custom Authorization for Management OData IIS Extension](./implementing-custom-authorization-for-a-management-odata-web-service.md).
 
 En este ejemplo, configurará un archivo XML usado por la aplicación de ejemplo de administración de OData para definir la Directiva de autorización. Creará dos roles y asociará distintos módulos de Windows PowerShell que contengan flujos de trabajo con esos roles. El esquema que define el archivo XML se muestra en el [esquema de configuración de autorización basada en roles](./role-based-authorization-configuration-schema.md).
 
 ## <a name="modifying-the-rbacconfigurationxml-file"></a>Modificación del archivo RBacConfiguration. XML
 
-Este archivo define la Directiva de autorización para la aplicación. Los roles se definen mediante el uso de nodos `Group`. Un nodo `Group` define los comandos de Windows PowerShell que pueden ejecutar los usuarios asignados a ese grupo. Los usuarios se asignan a los grupos mediante los nodos `User`.
+Este archivo define la Directiva de autorización para la aplicación. Los roles se definen mediante el uso de `Group` nodos. Un nodo `Group` define los comandos de Windows PowerShell que pueden ejecutar los usuarios asignados a ese grupo. Los usuarios se asignan a los grupos mediante `User` nodos.
 
-En estos ejemplos, agregará un módulo al nodo @no__t de administrador-0 y agregará un usuario a cada grupo.
+En estos ejemplos, agregará un módulo al nodo `Group` de administrador y agregará un usuario a cada grupo.
 
 #### <a name="adding-a-module-to-a-group-node"></a>Agregar un módulo a un nodo de grupo
 
@@ -87,7 +87,7 @@ En estos ejemplos, agregará un módulo al nodo @no__t de administrador-0 y agre
 
 2. El archivo contiene dos nodos `Group`. Estos representan los dos roles utilizados en este ejemplo, los roles `NonAdminGroup` y `AdminGroup`.
 
-   Agregue el siguiente código XML directamente después del cierre de la etiqueta `Cmdlets` en el primer nodo `Group`:
+   Agregue el siguiente código XML directamente después de la etiqueta de cierre `Cmdlets` en el primer nodo `Group`:
 
    ```xml
    <Modules>
@@ -97,9 +97,9 @@ En estos ejemplos, agregará un módulo al nodo @no__t de administrador-0 y agre
 
 #### <a name="adding-a-user-to-a-group-node"></a>Agregar un usuario a un nodo de grupo
 
-1. Abra el archivo **RBacConfiguration. XML** en un editor de texto. Este archivo se encuentra en la carpeta C: \\ \ inetpub\wwwroot\Modata si no cambió el nombre del punto de conexión antes de la instalación.
+1. Abra el archivo **RBacConfiguration. XML** en un editor de texto. Este archivo se encuentra en la carpeta C:\\\inetpub\wwwroot\Modata si no cambió el nombre del punto de conexión antes de la instalación.
 
-2. Directamente después de la etiqueta de cierre en el nodo `Users`, agregue el siguiente código XML:
+2. Directamente después de la etiqueta de cierre del nodo `Users`, agregue el siguiente código XML:
 
    ```xml
    <User Name="UserName" GroupName="AdminGroup" AuthenticationType="Basic" DomainName="DomainName"/>

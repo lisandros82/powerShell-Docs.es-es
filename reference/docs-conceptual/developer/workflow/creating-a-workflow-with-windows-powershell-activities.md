@@ -23,7 +23,7 @@ En los procedimientos siguientes se describe cómo crear un flujo de trabajo que
 
 ### <a name="setting-up-the-project"></a>Configurar el proyecto
 
-1. Siga el procedimiento descrito en [Agregar actividades de Windows PowerShell al cuadro de herramientas de Visual Studio](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md) para crear un proyecto de flujo de trabajo y agregar las actividades de [Microsoft. PowerShell. Activities](/dotnet/api/Microsoft.PowerShell.Activities) y [Microsoft. PowerShell. Management. Activities ](/dotnet/api/Microsoft.PowerShell.Management.Activities)ensamblados en el cuadro de herramientas.
+1. Siga el procedimiento descrito en [Agregar actividades de Windows PowerShell al cuadro de herramientas de Visual Studio](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md) para crear un proyecto de flujo de trabajo y agregar las actividades de los ensamblados [Microsoft. PowerShell. Activities](/dotnet/api/Microsoft.PowerShell.Activities) y [Microsoft. PowerShell. Management. Activities](/dotnet/api/Microsoft.PowerShell.Management.Activities) al cuadro de herramientas.
 
 2. Agregue System. Management. Automation, Microsoft. PowerShell. Activities, System. Management, Microsoft. PowerShell. Management. Activities y Microsoft. PowerShell. Commands. Management al proyecto como ensamblados de referencia.
 
@@ -33,11 +33,11 @@ En los procedimientos siguientes se describe cómo crear un flujo de trabajo que
 
 2. Cree un argumento denominado `ComputerName` con un tipo de argumento de `String[]`. Este argumento representa los nombres de los equipos que se van a comprobar y a los que se va a combinar.
 
-3. Cree un argumento denominado `DomainCred` de tipo [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Este argumento representa las credenciales de dominio de una cuenta de dominio que está autorizada para unir un equipo al dominio.
+3. Cree un argumento denominado `DomainCred` del tipo [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Este argumento representa las credenciales de dominio de una cuenta de dominio que está autorizada para unir un equipo al dominio.
 
-4. Cree un argumento denominado `MachineCred` de tipo [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Este argumento representa las credenciales de un administrador en los equipos para comprobar y unirse.
+4. Cree un argumento denominado `MachineCred` del tipo [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Este argumento representa las credenciales de un administrador en los equipos para comprobar y unirse.
 
-5. Agregue una actividad **ParallelForEach** dentro de la actividad **Sequence** . Escriba `comp` y `ComputerName` en los cuadros de texto para que el bucle recorra en iteración los elementos de la matriz `ComputerName`.
+5. Agregue una actividad **ParallelForEach** dentro de la actividad **Sequence** . Escriba `comp` y `ComputerName` en los cuadros de texto para que el bucle recorra en iteración los elementos de la matriz de `ComputerName`.
 
 6. Agregue una actividad **Sequence** al cuerpo de la actividad **ParallelForEach** . Establezca la propiedad **displayName** de la secuencia en `JoinDomain`.
 
@@ -45,7 +45,7 @@ En los procedimientos siguientes se describe cómo crear un flujo de trabajo que
 
 8. Edite las propiedades de la actividad **GetWmiObject** como se indica a continuación.
 
-   |Propiedad|Value|
+   |Property|Valor|
    |--------------|-----------|
    |**Las**|"Win32_ComputerSystem"|
    |**PSComputerName**|COMP|
@@ -55,7 +55,7 @@ En los procedimientos siguientes se describe cómo crear un flujo de trabajo que
 
 10. Edite las propiedades de la actividad **AddComputer** como se indica a continuación.
 
-    |Propiedad|Value|
+    |Property|Valor|
     |--------------|-----------|
     |**NombreDeEquipo**|COMP|
     |**DomainCredential**|DomainCred|
@@ -64,7 +64,7 @@ En los procedimientos siguientes se describe cómo crear un flujo de trabajo que
 
 12. Edite las propiedades de la actividad **RestartComputer** como se indica a continuación.
 
-    |Propiedad|Value|
+    |Property|Valor|
     |--------------|-----------|
     |**NombreDeEquipo**|COMP|
     |**Caja**|MachineCred|
@@ -77,4 +77,5 @@ En los procedimientos siguientes se describe cómo crear un flujo de trabajo que
 
     Cuando haya terminado los procedimientos, la ventana de diseño de flujo de trabajo debería tener este aspecto.
 
-    @no__t 0JoinDomain XAML en el diseñador de flujo de trabajo @ no__t-1![JOINDOMAIN XAML en el diseñador de flujo de trabajo](../media/joindomainworkflow.png "JoinDomainWorkflow")
+    ![el XAML de JoinDomain en el diseñador de flujo de trabajo](../media/joindomainworkflow.png)
+    ![JOINDOMAIN XAML en el diseñador de flujo de trabajo](../media/joindomainworkflow.png "JoinDomainWorkflow")

@@ -20,7 +20,7 @@ ms.locfileid: "72364454"
 Al extender .NET Framework objetos, puede Agregar propiedades de alias, propiedades de código, propiedades de notas, propiedades de script y conjuntos de propiedades a los objetos. El XML que define estas propiedades se describe en las secciones siguientes.
 
 > [!NOTE]
-> Los ejemplos de las secciones siguientes son del archivo de tipos `Types.ps1xml` predeterminado en el directorio de instalación de PowerShell (`$PSHOME`). Para obtener más información, vea [About Types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
+> Los ejemplos de las secciones siguientes son del archivo de tipos de `Types.ps1xml` predeterminado en el directorio de instalación de PowerShell (`$PSHOME`). Para obtener más información, vea [About Types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
 
 ## <a name="alias-properties"></a>Propiedades de alias
 
@@ -102,10 +102,10 @@ En el ejemplo siguiente, la propiedad **versionInfo** se agrega al tipo [System.
 ## <a name="property-sets"></a>Conjuntos de propiedades
 
 Un conjunto de propiedades define un grupo de propiedades extendidas al que se puede hacer referencia mediante el nombre del conjunto.
-Por ejemplo, el parámetro de**propiedad** [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)
- puede especificar que se muestre un conjunto de propiedades específico. Cuando se especifica un conjunto de propiedades, solo se muestran las propiedades que pertenecen al conjunto.
+Por ejemplo, el parámetro de **propiedad** [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)
+puede especificar un conjunto de propiedades específico que se mostrará. Cuando se especifica un conjunto de propiedades, solo se muestran las propiedades que pertenecen al conjunto.
 
-No hay ninguna restricción en el número de conjuntos de propiedades que se pueden definir para un objeto. Sin embargo, los conjuntos de propiedades que se usan para definir las propiedades de presentación predeterminadas de un objeto deben especificarse en el conjunto de miembros **PSStandardMembers** . En el archivo de tipos `Types.ps1xml`, los nombres de los conjuntos de propiedades predeterminados son **DefaultDisplayProperty**, **DefaultDisplayPropertySet**y **DefaultKeyPropertySet**. Se omiten los conjuntos de propiedades adicionales que se agreguen al conjunto de miembros **PSStandardMembers** .
+No hay ninguna restricción en el número de conjuntos de propiedades que se pueden definir para un objeto. Sin embargo, los conjuntos de propiedades que se usan para definir las propiedades de presentación predeterminadas de un objeto deben especificarse en el conjunto de miembros **PSStandardMembers** . En el archivo de tipos de `Types.ps1xml`, los nombres de los conjuntos de propiedades predeterminados son **DefaultDisplayProperty**, **DefaultDisplayPropertySet**y **DefaultKeyPropertySet**. Se omiten los conjuntos de propiedades adicionales que se agreguen al conjunto de miembros **PSStandardMembers** .
 
 En el ejemplo siguiente, el conjunto de propiedades **DefaultDisplayPropertySet** se agrega al conjunto de miembros **PSStandardMembers** del tipo [System. ServiceProcess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) . El elemento [PropertySet](/dotnet/api/system.management.automation.pspropertyset) define el grupo de propiedades. El elemento [Name](/dotnet/api/system.management.automation.psmemberinfo.name) especifica el nombre del conjunto de propiedades. Y el elemento [ReferencedProperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames) especifica las propiedades del conjunto. También puede Agregar el elemento `PropertySet` a los miembros del elemento [Type](/dotnet/api/system.management.automation.pstypename) .
 
@@ -130,7 +130,7 @@ En el ejemplo siguiente, el conjunto de propiedades **DefaultDisplayPropertySet*
 </Type>
 ```
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 [Acerca de types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)
 
