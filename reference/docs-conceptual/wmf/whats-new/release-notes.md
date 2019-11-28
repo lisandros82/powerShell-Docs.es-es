@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Notas de la versión WMF 5.0
-ms.openlocfilehash: 8924240a4bbedcd34bc68b7cacdd23189a3716d6
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147585"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416507"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Notas de la versión de Windows Management Framework (WMF) 5.x
 
@@ -43,7 +43,7 @@ WMF 5.1 incluye los componentes de PowerShell, WMI, WinRM y Registro de inventar
 - Respuestas a varios problemas y varias solicitudes de usuarios
 
 > [!IMPORTANT]
-> Antes de instalar WMF 5.1 en Windows Server 2008 o Windows 7, confirme que WMF 3.0 no está instalado. Para obtener más información, consulte [Requisitos previos de WMF 5.1 para Windows Server 2008 R2 SP1 y Windows 7 SP1](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
+> Antes de instalar WMF 5.1 en Windows Server 2008 o Windows 7, confirme que WMF 3.0 no está instalado. Para obtener más información, consulte [Requisitos previos de WMF 5.1 para Windows Server 2008 R2 SP1 y Windows 7 SP1](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
 
 ## <a name="powershell-editions"></a>Ediciones de PowerShell
 
@@ -56,8 +56,8 @@ A partir de la versión 5.1, PowerShell está disponible en diferentes ediciones
 
 - [Determinación de la edición de ejecución de PowerShell con $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [Filtrado de los resultados de Get-Module mediante CompatiblePSEditions con el parámetro PSEdition](/powershell/module/microsoft.powershell.core/get-module)
-- [Impedir la ejecución de scripts, a menos que se ejecuten en una edición compatible de PowerShell](/powershell/gallery/concepts/script-psedition-support)
-- [Declarar la compatibilidad de un módulo con versiones específicas de PowerShell](/powershell/gallery/concepts/module-psedition-support)
+- [Impedir la ejecución de scripts, a menos que se ejecuten en una edición compatible de PowerShell](/powershell/scripting/gallery/concepts/script-psedition-support)
+- [Declarar la compatibilidad de un módulo con versiones específicas de PowerShell](/powershell/scripting/gallery/concepts/module-psedition-support)
 
 ## <a name="module-analysis-cache"></a>Caché de análisis de módulo
 

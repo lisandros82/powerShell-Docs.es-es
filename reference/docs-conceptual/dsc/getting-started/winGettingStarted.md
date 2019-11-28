@@ -2,12 +2,12 @@
 ms.date: 08/15/2019
 keywords: dsc,powershell,configuration,setup
 title: Introducción a la configuración de estado deseado (DSC) para Windows
-ms.openlocfilehash: a4f9db481afda65fc4ac5e553230dbba3037ac9a
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: a9346b96693acdbad9bacbd4b6ca85971e17a3d1
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954412"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417765"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Introducción a la configuración de estado deseado (DSC) para Windows
 
@@ -110,4 +110,4 @@ Requiere la ruta de acceso al MOF de metaconfiguración.
 ## <a name="windows-powershell-desired-state-configuration-log-files"></a>Archivos de registro de configuración de estado deseado de Windows PowerShell
 
 Los registros para DSC se escriben en el registro de eventos de Windows en la ruta de acceso `Microsoft-Windows-Dsc/Operational`.
-Se pueden habilitar registros adicionales con fines de depuración siguiendo los pasos en [¿Dónde se encuentran los registros de eventos de DSC?](/powershell/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs)
+Se pueden habilitar registros adicionales con fines de depuración siguiendo los pasos en [¿Dónde se encuentran los registros de eventos de DSC?](/powershell/scripting/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs)

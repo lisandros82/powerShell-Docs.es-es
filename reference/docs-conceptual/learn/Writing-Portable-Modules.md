@@ -2,12 +2,12 @@
 ms.date: 12/14/2018
 keywords: powershell, cmdlet
 title: Escritura de módulos portables
-ms.openlocfilehash: 237f6aaea0ed019c54d04a8477d7a456edf00910
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 7871f524495c1ce5283b30696a24185d427edebf
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66470981"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417649"
 ---
 # <a name="portable-modules"></a>Módulos portables
 
@@ -17,7 +17,7 @@ Windows PowerShell está escrito para [.NET Framework][], mientras que PowerShel
 
 ### <a name="porting-a-pssnapin"></a>Migración de un elemento PSSnapIn
 
-Los complementos PowerShell [SnapIns](/powershell/developer/cmdlet/modules-and-snap-ins) no se admiten en PowerShell Core. Sin embargo, resulta trivial convertir un PSSnapIn en un módulo de PowerShell. Normalmente, el código de registro del PSSnapIn se encuentra en un único archivo de código fuente de una clase que se deriva de [PSSnapIn][].
+Los complementos PowerShell [SnapIns](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) no se admiten en PowerShell Core. Sin embargo, resulta trivial convertir un PSSnapIn en un módulo de PowerShell. Normalmente, el código de registro del PSSnapIn se encuentra en un único archivo de código fuente de una clase que se deriva de [PSSnapIn][].
 Quite este archivo de código fuente de la compilación; ya no es necesario.
 
 Use [New-ModuleManifest][] para crear un nuevo manifiesto de módulo que reemplace la necesidad del código de registro del PSSnapIn. Algunos de los valores del complemento **PSSnapIn** (como la **descripción**) se pueden reutilizar en el manifiesto del módulo.
@@ -266,4 +266,4 @@ Ejemplo:
 [PowerShell estándar 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [Galería de PowerShell]: https://www.powershellgallery.com
 [Analizador de portabilidad de .NET]: https://github.com/Microsoft/dotnet-apiport
-[CompatiblePSEditions]: /powershell/gallery/concepts/module-psedition-support
+[CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support

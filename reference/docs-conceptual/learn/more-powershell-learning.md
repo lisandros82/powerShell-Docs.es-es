@@ -2,12 +2,12 @@
 ms.date: 06/18/2019
 keywords: powershell, cmdlet
 title: Más aprendizaje de PowerShell
-ms.openlocfilehash: 9b9c95f1348edf90221fb9e27b13218cbe310cfc
-ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
+ms.openlocfilehash: 9d756d24e46215bea5cb9530c2628b996327cb87
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67263875"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416748"
 ---
 # <a name="more-powershell-learning"></a>Más aprendizaje de PowerShell
 
@@ -40,5 +40,5 @@ Los vídeos de Microsoft Virtual Academy se movieron a Channel 9.
 
 Los siguientes recursos sirven para ayudar a los desarrolladores a crear sus propios módulos, funciones, cmdlets, proveedores y aplicaciones de hospedaje de PowerShell.
 
-- [SDK de PowerShell](/powershell/developer/windows-powershell)
+- [SDK de PowerShell](/powershell/scripting/developer/windows-powershell)
 - [PowerShell SDK API Browser](/dotnet/api/system.management.automation) (Explorador de la API del SDK de PowerShell)

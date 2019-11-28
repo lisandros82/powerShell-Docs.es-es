@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,cmdlet,psgallery
 description: Instrucciones para publicadores
 title: Instrucciones y procedimientos recomendados para publicar en la Galería de PowerShell
-ms.openlocfilehash: 03c3a037b1d6c523914a2275249124940111fdcd
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 9047e938ab961c68e225c9029e52403c40afbe26
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71328516"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417673"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Instrucciones y procedimientos recomendados para publicar en PowerShellGallery
 
@@ -98,7 +98,7 @@ Si en cualquiera de estos canales de comunicación se observa un comportamiento 
 
 El uso compartido de un script con otros usuarios es genial y proporciona a los demás usuarios ejemplos de cómo solucionar problemas que puedan tener. El problema es que los scripts de la Galería de PowerShell son archivos únicos sin documentación, ejemplos y pruebas por separado.
 
-Los módulos de PowerShell tienen una estructura de carpetas que permite incluir varias carpetas y archivos en el paquete. La estructura del módulo permite incluir los otros paquetes que indicamos como procedimientos recomendados: ayuda de cmdlet, documentación, ejemplos y pruebas. La principal desventaja es que un script dentro de un módulo se debe exponer y usar como función. Para información sobre cómo crear un módulo, consulte [Escribir un módulo de Windows PowerShell](/powershell/developer/module/writing-a-windows-powershell-module).
+Los módulos de PowerShell tienen una estructura de carpetas que permite incluir varias carpetas y archivos en el paquete. La estructura del módulo permite incluir los otros paquetes que indicamos como procedimientos recomendados: ayuda de cmdlet, documentación, ejemplos y pruebas. La principal desventaja es que un script dentro de un módulo se debe exponer y usar como función. Para información sobre cómo crear un módulo, consulte [Escribir un módulo de Windows PowerShell](/powershell/scripting/developer/module/writing-a-windows-powershell-module).
 
 Hay situaciones en las que un script brinda una mejor experiencia para el usuario, especialmente con configuraciones de DSC. El procedimiento recomendado para las configuraciones de DSC es publicar la configuración como script acompañado de un módulo que contiene los documentos, los ejemplos y las pruebas. El script muestra el módulo que lo acompaña mediante `RequiredModules = @(Name of the Module)`. Este enfoque se puede usar con cualquier script.
 
@@ -165,7 +165,7 @@ PowerShell admite la validación de la firma de código mediante dos enfoques pr
 
 Firmar archivos de PowerShell es un enfoque establecido para garantizar que el código que se ejecuta proviene de un origen de confianza y que no se ha modificado. El artículo [Información sobre la firma](/powershell/module/microsoft.powershell.core/about/about_signing) muestra detalles sobre cómo firmar los archivos de script de PowerShell. Como información general, se puede agregar una firma a cualquier archivo `.PS1` que PowerShell valida cuando se carga el script. Es posible restringir a PowerShell si se usan los cmdlets de [directiva de ejecución](/powershell/module/microsoft.powershell.core/about/about_execution_policies) para garantizar que se usen scripts firmados.
 
-La firma de catálogo de módulos es una característica que se agregó a PowerShell en la versión 5.1. En el artículo [Cmdlets del catálogo](/powershell/wmf/5.1/catalog-cmdlets) puede encontrar información sobre cómo firmar un módulo. Como información general, la firma de catálogo se hace mediante la creación de un archivo de catálogo, el que contiene un valor hash para cada archivo del módulo y, luego, se firma ese archivo.
+La firma de catálogo de módulos es una característica que se agregó a PowerShell en la versión 5.1. En el artículo [Cmdlets del catálogo](/powershell/scripting/wmf/5.1/catalog-cmdlets) puede encontrar información sobre cómo firmar un módulo. Como información general, la firma de catálogo se hace mediante la creación de un archivo de catálogo, el que contiene un valor hash para cada archivo del módulo y, luego, se firma ese archivo.
 
 Los cmdlets `Publish-Module`, `Install-Module` y `Update-Module` de **PowerShellGet** comprobarán si la firma es válida y, luego, confirmarán si el valor hash de cada paquete coincide con lo que aparece en el catálogo. `Save-Module` no valida una firma. Si hay instalada una versión anterior del módulo en el sistema, `Install-Module` confirmará si la autoridad de firma de la versión nueva coincide con la instalada anteriormente. `Install-Module` y `Update-Module` usarán la firma de un archivo `.PSD1` si el paquete no está firmado con el catálogo. La firma de catálogo funciona en conjunto con la firma de archivos de script, pero no la reemplaza. PowerShell no valida las firmas de catálogo en el momento de cargar módulos.
 

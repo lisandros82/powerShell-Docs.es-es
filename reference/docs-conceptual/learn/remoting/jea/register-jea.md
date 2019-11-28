@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Registro de configuraciones de JEA
-ms.openlocfilehash: c85eddea2196e4db4bbeea54bde11074f3d1c927
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.openlocfilehash: dbed5c7dd71f2f7a09d97416be56dff675799548
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/25/2019
-ms.locfileid: "70017716"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417602"
 ---
 # <a name="registering-jea-configurations"></a>Registro de configuraciones de JEA
 
@@ -51,7 +51,7 @@ Después del registro, estará listo para [usar JEA](using-jea.md). Puede elimin
 
 ## <a name="multi-machine-configuration-with-dsc"></a>Configuración de varios equipos con DSC
 
-Al implementar JEA en varios equipos, el modelo de implementación más sencillo usa el recurso de [configuración de estado deseado (DSC)](/powershell/dsc/overview) de JEA para implementar JEA en todos los equipos de forma rápida y coherente.
+Al implementar JEA en varios equipos, el modelo de implementación más sencillo usa el recurso de [configuración de estado deseado (DSC)](/powershell/scripting/dsc/overview) de JEA para implementar JEA en todos los equipos de forma rápida y coherente.
 
 Para implementar JEA con DSC, asegúrese de que se cumplen los requisitos previos siguientes:
 
@@ -59,7 +59,7 @@ Para implementar JEA con DSC, asegúrese de que se cumplen los requisitos previo
 - El módulo de PowerShell que contiene los roles se almacena en un recurso compartido de archivo (de solo lectura) al que pueden obtener acceso todos los equipos.
 - Se ha determinado la configuración de la sesión. No es necesario crear un archivo de configuración de sesión cuando se usa el recurso DSC de JEA.
 - Tiene credenciales que le permiten realizar acciones administrativas en todos los equipos, o bien tiene acceso al servidor de extracción de DSC que se usa para administrar los equipos.
-- Ha descargado el [recurso de DSC de JEA](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource).
+- Ha descargado el [recurso de DSC de JEA](https://github.com/powershell/JEA/tree/master/DSC%20Resource).
 
 Cree una configuración de DSC para el punto de conexión de JEA en un equipo de destino o servidor de extracción. En esta configuración, el recurso de DSC **JustEnoughAdministration** define el archivo de configuración de sesión y el recurso **File** copia las funcionalidades de rol desde el recurso compartido de archivos.
 
@@ -102,7 +102,7 @@ Configuration JEAMaintenance
 }
 ```
 
-Después, esta configuración se aplica en un sistema mediante la invocación directa del [administrador de configuración local](/powershell/dsc/managing-nodes/metaConfig) o la actualización de la [configuración del servidor de extracción](/powershell/dsc/pull-server/pullServer).
+Después, esta configuración se aplica en un sistema mediante la invocación directa del [administrador de configuración local](/powershell/scripting/dsc/managing-nodes/metaConfig) o la actualización de la [configuración del servidor de extracción](/powershell/scripting/dsc/pull-server/pullServer).
 
 El recurso de DSC también permite reemplazar el punto de conexión de **Microsoft.PowerShell** predeterminado. Cuando se reemplaza, el recurso registra de forma automática un punto de conexión de reserva denominado **Microsoft.PowerShell.Restricted**. El punto de conexión de reserva tiene la ACL de WinRM predeterminada que permite el acceso a los miembros del grupo Usuarios de administración remota y Administradores local.
 

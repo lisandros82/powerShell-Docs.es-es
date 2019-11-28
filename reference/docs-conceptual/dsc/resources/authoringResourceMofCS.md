@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Creación de un recurso de DSC en C#
-ms.openlocfilehash: 6f2bb4d411237f13e2735c2e5f630b4f40dc6842
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: a19559c225dd91eceed397df91dd584a577cd7d4
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954322"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417698"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>Creación de un recurso de DSC en C\#
 
 > Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Normalmente, un recurso personalizado de configuración de estado deseado (DSC) de Windows PowerShell se implementa en un script de PowerShell. Sin embargo, también puede implementar la funcionalidad de un recurso de DSC personalizado mediante la escritura de cmdlets en C#. Para ver una introducción sobre la escritura de cmdlets en C#, consulte [Escribir un cmdlet de Windows PowerShell](/powershell/developer/windows-powershell).
+Normalmente, un recurso personalizado de configuración de estado deseado (DSC) de Windows PowerShell se implementa en un script de PowerShell. Sin embargo, también puede implementar la funcionalidad de un recurso de DSC personalizado mediante la escritura de cmdlets en C#. Para ver una introducción sobre la escritura de cmdlets en C#, consulte [Escribir un cmdlet de Windows PowerShell](/powershell/scripting/developer/windows-powershell).
 
 Además de implementar el recurso en C# como cmdlets, el proceso de creación del esquema MOF, la creación de la estructura de carpetas, la importación y la utilización del recurso personalizado de DSC son idénticos a cómo se describen en [Escribir un recurso de DSC personalizado con MOF](authoringResourceMOF.md).
 
@@ -281,4 +281,4 @@ $env: psmodulepath (folder)
 #### <a name="concepts"></a>Conceptos
 [Escribir un recurso de DSC personalizado con MOF](authoringResourceMOF.md)
 #### <a name="other-resources"></a>Otros recursos
-[Escribir un cmdlet de Windows PowerShell](/powershell/developer/windows-powershell)
+[Escribir un cmdlet de Windows PowerShell](/powershell/scripting/developer/windows-powershell)

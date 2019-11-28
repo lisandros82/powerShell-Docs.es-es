@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Configuraciones parciales de la configuración de estado deseado de PowerShell
-ms.openlocfilehash: f25bdec54e0a028e94b8c7d7b623e53ff3e3c666
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.openlocfilehash: 379ecf804329f318e9604c1af43a60a0e24551f1
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444527"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417750"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Configuraciones parciales de la configuración de estado deseado de PowerShell
 
@@ -23,7 +23,7 @@ Para utilizar configuraciones parciales en modo de inserción, debe configurar e
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Configurar el LCM para configuraciones parcial del modo de inserción
 
-Para configurar el LCM para configuraciones parciales en el modo de inserción, debe crear una configuración **DSCLocalConfigurationManager** con un bloque **PartialConfiguration** para cada configuración parcial. Para más información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local de Windows](/powershell/dsc/metaConfig). En el ejemplo siguiente se muestra una configuración de LCM que espera dos configuraciones parciales: una que implemente el sistema operativo y otra que implemente y configure SharePoint.
+Para configurar el LCM para configuraciones parciales en el modo de inserción, debe crear una configuración **DSCLocalConfigurationManager** con un bloque **PartialConfiguration** para cada configuración parcial. Para más información sobre la configuración del LCM, consulte [Configuración del administrador de configuración local de Windows](/powershell/scripting/dsc/metaConfig). En el ejemplo siguiente se muestra una configuración de LCM que espera dos configuraciones parciales: una que implemente el sistema operativo y otra que implemente y configure SharePoint.
 
 ```powershell
 [DSCLocalConfigurationManager()]
