@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Valores de los archivos de manifiesto de los paquetes que afectan a la interfaz de usuario de la Galería de PowerShell
-ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 9e37fec879f2f5cbe3926c7dbc946389425d856a
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71328136"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417048"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valores de los archivos de manifiesto de los paquetes que afectan a la interfaz de usuario de la Galería de PowerShell
 
@@ -37,7 +37,7 @@ En la tabla siguiente se muestran los paquetes de la interfaz de usuario de la G
 | **Funciones** | Se proporcionan en el manifiesto del módulo con FunctionsToExport. Tenga en cuenta que el procedimiento recomendado consiste en enumerar explícitamente los elementos, en lugar de utilizar el carácter comodín "*", ya que se mejorará el rendimiento del módulo de carga para los usuarios. | Sí | No |
 | **Recursos de DSC** | En los módulos que se usarán en PowerShell versión 5.0 y versiones posteriores, se proporciona en el manifiesto mediante DscResourcesToExport. Si el módulo se va a usar en PowerShell 4, no debe usarse DSCResourcesToExport ya que no es una clave de manifiestos compatible. (DSC no estaba disponible antes de PowerShell 4). | Sí | No |
 | **Flujos de trabajo** | Los flujos de trabajo se publican en Galería de PowerShell como scripts y se identifican como flujos de trabajo en el código (consulte [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) para obtener un ejemplo). Esto no lo controla el manifiesto. | No | No |
-| **Funcionalidades de rol** | Esto se mostrará cuando el módulo publicado en Galería de PowerShell contiene uno o más archivos de función de funcionalidad de rol (.psrc) que utilice JEA. Consulte la documentación de JEA para más información sobre [las funcionalidades de rol](/powershell/jea/role-capabilities). | Sí | No |
+| **Funcionalidades de rol** | Esto se mostrará cuando el módulo publicado en Galería de PowerShell contiene uno o más archivos de función de funcionalidad de rol (.psrc) que utilice JEA. Consulte la documentación de JEA para más información sobre [las funcionalidades de rol](/powershell/scripting/learn/remoting/jea/role-capabilities). | Sí | No |
 | **Ediciones de PowerShell** | Esto se especifica en el manifiesto del script o del módulo. Para los módulos diseñados para usarse con PowerShell 5.0 y versiones anteriores, esto se controlaba mediante etiquetas. Para equipos de escritorio, utilice la etiqueta PSEdition_Desktop y para núcleos, utilice la etiqueta PSEdition_Core. En el caso de los módulos que se van a usar solo en PowerShell 5.1 y versiones posteriores, hay una clave CompatiblePSEditions en el manifiesto principal. Para más detalles, consulte la característica de PS Edition en [la documentación de PowerShell Get](module-psedition-support.md). | Sí | Sí |
 | **Dependencias** | Las dependencias son los módulos de Galería de PowerShell que se declaran bien en el módulo como RequiredModules o en el manifiesto del script como #Requires -Module (nombre). | Sí | Sí |
 | **Versión mínima de PowerShell** | Se puede especificar en un manifiesto de módulo como PowerShellVersion | Sí | No |
