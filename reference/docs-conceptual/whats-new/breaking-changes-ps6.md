@@ -1,15 +1,15 @@
 ---
-ms.date: 05/17/2018
+ms.date: 11/15/2019
 keywords: powershell,core
 title: Cambios importantes en PowerShell Core 6.0
-ms.openlocfilehash: df716fc3ad48d640ddefcfd87da445eaf104cfbe
-ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
+ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72561261"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417559"
 ---
-# <a name="breaking-changes-for-powershell-60"></a>Cambios importantes en PowerShell Core 6.0
+# <a name="breaking-changes-for-powershell-6x"></a>Cambios importantes en PowerShell Core 6.x
 
 ## <a name="features-no-longer-available-in-powershell-core"></a>Características que ya no están disponibles en PowerShell Core
 
@@ -23,7 +23,7 @@ En el futuro, nos gustaría habilitar paralelismo nativo/simultaneidad en el len
 
 Si es necesario usar puntos de control para reanudar un script una vez reiniciado el sistema operativo, recomendamos usar Programador de tareas para ejecutar un script al iniciarse el sistema operativo, pero el script debería mantener su propio estado (como conservarlo en un archivo).
 
-[workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
+[workflow]: /powershell/scripting/components/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
 
 ### <a name="custom-snap-ins"></a>Complementos personalizados
@@ -291,3 +291,4 @@ La API de .NET subyacente de los cmdlets web se ha cambiado a `System.Net.Http.H
 - Actualmente no hay ninguna autenticación disponible en macOS basada en certificado.
 - El uso de `-Credential` sobre un URI `http://` dará lugar a un error. Use un URI `https://` o proporcione el parámetro `-AllowUnencryptedAuthentication` para suprimir el error.
 - `-MaximumRedirection` ahora genera un error de terminación cuando los intentos de redirección superan el límite proporcionado en lugar de devolver los resultados de la última redirección.
+- En PowerShell 6.2, se ha realizado un cambio para usar de forma predeterminada la codificación UTF-8 en las respuestas JSON. Cuando no se proporciona un juego de caracteres para una respuesta JSON, la codificación predeterminada debe ser UTF-8 según la norma RFC 8259.

@@ -2,12 +2,12 @@
 title: Instalación de PowerShell Core en Windows
 description: Información sobre cómo instalar PowerShell Core en Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: c06eba06e376c3f795ab9c0fae9270cf6cf8f2ce
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.openlocfilehash: 00a1d8064a3c1ec6608a46415bbabb8d98d880f0
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444451"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416786"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Instalación de PowerShell Core en Windows
 
@@ -25,7 +25,7 @@ Hay varias formas de instalar PowerShell Core en Windows.
 Para habilitar la comunicación remota de PowerShell a través de WSMan, deben cumplirse los siguientes requisitos previos:
 
 - Instale el [entorno de ejecución de C universal](https://www.microsoft.com/download/details.aspx?id=50410) en las versiones de Windows anteriores a Windows 10. Está disponible mediante descarga directa o Windows Update. Los sistemas admitidos a los que se hayan aplicado todas las revisiones (incluidos los paquetes opcionales) ya lo tienen instalado.
-- Instale Windows Management Framework (WMF) 4.0 o una versión más reciente en Windows 7 y Windows Server 2008 R2. Para más información sobre WMF, consulte la [información general sobre WMF](/powershell/wmf/overview).
+- Instale Windows Management Framework (WMF) 4.0 o una versión más reciente en Windows 7 y Windows Server 2008 R2. Para más información sobre WMF, consulte la [información general sobre WMF](/powershell/scripting/wmf/overview).
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Instalación del paquete MSI
 
@@ -56,6 +56,18 @@ msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_
 ```
 
 Para obtener una lista completa de opciones de línea de comandos de Msiexec.exe, consulte [Opciones de línea de comandos](/windows/desktop/Msi/command-line-options).
+
+## <a name="a-idmsix-installing-the-msix-package"></a><a id="msix" />Instalación del paquete de MSIX
+
+Para instalar manualmente el paquete de MSIX en un cliente de Windows 10, descargue el paquete de nuestra página de [versiones][releases] de GitHub. Desplácese hacia abajo hasta la sección **Recursos** de la versión que quiere instalar. Es posible que la sección Recursos esté contraída, por lo que tendría que hacer clic para expandirla.
+
+El archivo MSI tiene este aspecto: `PowerShell-<version>-win-<os-arch>.msix`
+
+Una vez descargado, no basta con hacer doble clic en el instalador, sino que es necesario el uso de recursos no virtualizados.  Para realizar la instalación, debe usar el cmdlet `Add-AppxPackage`:
+
+```powershell
+Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
+```
 
 ## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />Instalación del paquete ZIP
 
