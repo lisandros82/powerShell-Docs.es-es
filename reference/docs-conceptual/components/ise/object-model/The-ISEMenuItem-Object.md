@@ -3,23 +3,23 @@ ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: El objeto ISEMenuItem
 ms.openlocfilehash: a513a3e9f2eb97f3955fa817faedbcbf4e0ed018
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028944"
 ---
-# <a name="the-isemenuitem-object"></a><span data-ttu-id="45464-103">El objeto ISEMenuItem</span><span class="sxs-lookup"><span data-stu-id="45464-103">The ISEMenuItem Object</span></span>
+# <a name="the-isemenuitem-object"></a><span data-ttu-id="b3978-103">El objeto ISEMenuItem</span><span class="sxs-lookup"><span data-stu-id="b3978-103">The ISEMenuItem Object</span></span>
 
-<span data-ttu-id="45464-104">Un objeto **ISEMenuItem** es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEMenuItem.</span><span class="sxs-lookup"><span data-stu-id="45464-104">An **ISEMenuItem** object is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItem class.</span></span> <span data-ttu-id="45464-105">Todos los objetos de menú **Complementos** son instancias de la clase **Microsoft.PowerShell.Host.ISE.ISEMenuItem**.</span><span class="sxs-lookup"><span data-stu-id="45464-105">All menu objects on the **Add-ons** menu are instances of the **Microsoft.PowerShell.Host.ISE.ISEMenuItem** class.</span></span>
+<span data-ttu-id="b3978-104">Un objeto **ISEMenuItem** es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEMenuItem.</span><span class="sxs-lookup"><span data-stu-id="b3978-104">An **ISEMenuItem** object is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItem class.</span></span> <span data-ttu-id="b3978-105">Todos los objetos de menú **Complementos** son instancias de la clase **Microsoft.PowerShell.Host.ISE.ISEMenuItem**.</span><span class="sxs-lookup"><span data-stu-id="b3978-105">All menu objects on the **Add-ons** menu are instances of the **Microsoft.PowerShell.Host.ISE.ISEMenuItem** class.</span></span>
 
-## <a name="properties"></a><span data-ttu-id="45464-106">Propiedades</span><span class="sxs-lookup"><span data-stu-id="45464-106">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="b3978-106">Propiedades</span><span class="sxs-lookup"><span data-stu-id="b3978-106">Properties</span></span>
 
-### <a name="displayname"></a><span data-ttu-id="45464-107">DisplayName</span><span class="sxs-lookup"><span data-stu-id="45464-107">DisplayName</span></span>
+### <a name="displayname"></a><span data-ttu-id="b3978-107">DisplayName</span><span class="sxs-lookup"><span data-stu-id="b3978-107">DisplayName</span></span>
 
-<span data-ttu-id="45464-108">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="45464-108">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b3978-108">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="b3978-108">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="45464-109">La propiedad de solo lectura que obtiene el nombre para mostrar del elemento de menú.</span><span class="sxs-lookup"><span data-stu-id="45464-109">The read-only property that gets the display name of the menu item.</span></span>
+<span data-ttu-id="b3978-109">La propiedad de solo lectura que obtiene el nombre para mostrar del elemento de menú.</span><span class="sxs-lookup"><span data-stu-id="b3978-109">The read-only property that gets the display name of the menu item.</span></span>
 
 ```powershell
 # Get the display name of the Add-ons menu item
@@ -28,11 +28,11 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 ```
 
-### <a name="action"></a><span data-ttu-id="45464-110">Acción</span><span class="sxs-lookup"><span data-stu-id="45464-110">Action</span></span>
+### <a name="action"></a><span data-ttu-id="b3978-110">Acción</span><span class="sxs-lookup"><span data-stu-id="b3978-110">Action</span></span>
 
-<span data-ttu-id="45464-111">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="45464-111">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b3978-111">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="b3978-111">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="45464-112">La propiedad de solo lectura que obtiene el bloque del script.</span><span class="sxs-lookup"><span data-stu-id="45464-112">The read-only property that gets the block of script.</span></span> <span data-ttu-id="45464-113">Invoca la acción al hacer clic en el elemento de menú.</span><span class="sxs-lookup"><span data-stu-id="45464-113">It invokes the action when you click the menu item.</span></span>
+<span data-ttu-id="b3978-112">La propiedad de solo lectura que obtiene el bloque del script.</span><span class="sxs-lookup"><span data-stu-id="b3978-112">The read-only property that gets the block of script.</span></span> <span data-ttu-id="b3978-113">Invoca la acción al hacer clic en el elemento de menú.</span><span class="sxs-lookup"><span data-stu-id="b3978-113">It invokes the action when you click the menu item.</span></span>
 
 ```powershell
 # Get the action associated with the first submenu item.
@@ -44,11 +44,11 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
-### <a name="shortcut"></a><span data-ttu-id="45464-114">Directa</span><span class="sxs-lookup"><span data-stu-id="45464-114">Shortcut</span></span>
+### <a name="shortcut"></a><span data-ttu-id="b3978-114">Directa</span><span class="sxs-lookup"><span data-stu-id="b3978-114">Shortcut</span></span>
 
-<span data-ttu-id="45464-115">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="45464-115">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b3978-115">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="b3978-115">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="45464-116">La propiedad de solo lectura que obtiene el método abreviado de teclado de entrada de Windows para el elemento de menú.</span><span class="sxs-lookup"><span data-stu-id="45464-116">The read-only property that gets the Windows input keyboard shortcut for the menu item.</span></span>
+<span data-ttu-id="b3978-116">La propiedad de solo lectura que obtiene el método abreviado de teclado de entrada de Windows para el elemento de menú.</span><span class="sxs-lookup"><span data-stu-id="b3978-116">The read-only property that gets the Windows input keyboard shortcut for the menu item.</span></span>
 
 ```powershell
 # Get the shortcut for the first submenu item.
@@ -57,11 +57,11 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-### <a name="submenus"></a><span data-ttu-id="45464-117">Submenus</span><span class="sxs-lookup"><span data-stu-id="45464-117">Submenus</span></span>
+### <a name="submenus"></a><span data-ttu-id="b3978-117">Submenus</span><span class="sxs-lookup"><span data-stu-id="b3978-117">Submenus</span></span>
 
-<span data-ttu-id="45464-118">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="45464-118">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b3978-118">Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="b3978-118">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="45464-119">La propiedad de solo lectura que obtiene la [lista de submenús](The-ISEMenuItemCollection-Object.md) del elemento de menú.</span><span class="sxs-lookup"><span data-stu-id="45464-119">The read-only property that gets the [list of submenus](The-ISEMenuItemCollection-Object.md) of the menu item.</span></span>
+<span data-ttu-id="b3978-119">La propiedad de solo lectura que obtiene la [lista de submenús](The-ISEMenuItemCollection-Object.md) del elemento de menú.</span><span class="sxs-lookup"><span data-stu-id="b3978-119">The read-only property that gets the [list of submenus](The-ISEMenuItemCollection-Object.md) of the menu item.</span></span>
 
 ```powershell
 # List the submenus of the Add-ons menu
@@ -70,9 +70,9 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus
 ```
 
-## <a name="scripting-example"></a><span data-ttu-id="45464-120">Ejemplo de scripting</span><span class="sxs-lookup"><span data-stu-id="45464-120">Scripting example</span></span>
+## <a name="scripting-example"></a><span data-ttu-id="b3978-120">Ejemplo de scripting</span><span class="sxs-lookup"><span data-stu-id="b3978-120">Scripting example</span></span>
 
-<span data-ttu-id="45464-121">Para entender mejor el uso del menú de complementos y sus propiedades que admiten scripts, consulte el siguiente ejemplo de scripting.</span><span class="sxs-lookup"><span data-stu-id="45464-121">To better understand the use of the Add-ons menu and its scriptable properties, read through the following scripting example.</span></span>
+<span data-ttu-id="b3978-121">Para entender mejor el uso del menú de complementos y sus propiedades que admiten scripts, consulte el siguiente ejemplo de scripting.</span><span class="sxs-lookup"><span data-stu-id="b3978-121">To better understand the use of the Add-ons menu and its scriptable properties, read through the following scripting example.</span></span>
 
 ```powershell
 # This is a scripting example that shows the use of the Add-ons menu.
@@ -87,8 +87,8 @@ $parentAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('Parent', $nu
 $parentAdded.SubMenus.Add('_Dir', {dir}, 'Alt+D')
 ```
 
-## <a name="see-also"></a><span data-ttu-id="45464-122">Véase también</span><span class="sxs-lookup"><span data-stu-id="45464-122">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b3978-122">Véase también</span><span class="sxs-lookup"><span data-stu-id="b3978-122">See Also</span></span>
 
-- [<span data-ttu-id="45464-123">El objeto ISEMenuItemCollection</span><span class="sxs-lookup"><span data-stu-id="45464-123">The ISEMenuItemCollection Object</span></span>](The-ISEMenuItemCollection-Object.md)
-- [<span data-ttu-id="45464-124">Finalidad del modelo de objetos de scripting de Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="45464-124">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [<span data-ttu-id="45464-125">La jerarquía del modelo de objetos de ISE</span><span class="sxs-lookup"><span data-stu-id="45464-125">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
+- [<span data-ttu-id="b3978-123">El objeto ISEMenuItemCollection</span><span class="sxs-lookup"><span data-stu-id="b3978-123">The ISEMenuItemCollection Object</span></span>](The-ISEMenuItemCollection-Object.md)
+- [<span data-ttu-id="b3978-124">Finalidad del modelo de objetos de scripting de Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="b3978-124">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [<span data-ttu-id="b3978-125">La jerarquía del modelo de objetos de ISE</span><span class="sxs-lookup"><span data-stu-id="b3978-125">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
