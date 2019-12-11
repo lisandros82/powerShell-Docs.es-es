@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Ponerse en contacto con los administradores de la Galería
 ms.openlocfilehash: f9197dfbf0cedb642259f554b42ec6f63eae30a4
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328406"
 ---
 # <a name="contact-gallery-administrators"></a>Ponerse en contacto con los administradores de la Galería
