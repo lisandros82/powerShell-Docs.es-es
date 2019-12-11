@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: gallery,powershell,psgallery
 title: Descarga del paquete manual
 ms.openlocfilehash: c0a96e866dfd27f9b2170ea540ec6dd0c67701fd
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71327896"
 ---
 # <a name="manual-package-download"></a>Descarga del paquete manual

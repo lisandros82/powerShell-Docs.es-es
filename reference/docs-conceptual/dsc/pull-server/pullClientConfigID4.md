@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Configuración de un cliente de extracción mediante ID de configuración en PowerShell 4.0
 ms.openlocfilehash: 9259c624c8725f7d76f61e9ad7caa42e1bfa308c
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71955152"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>Configuración de un cliente de extracción mediante ID de configuración en PowerShell 4.0

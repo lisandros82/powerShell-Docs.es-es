@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Instrucciones condicionales y bucles en las configuraciones
 ms.openlocfilehash: 0073d94d28afbb45bb635442129a6cddde4c805a
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71954082"
 ---
 # <a name="conditional-statements-and-loops-in-configurations"></a>Instrucciones condicionales y bucles en las configuraciones

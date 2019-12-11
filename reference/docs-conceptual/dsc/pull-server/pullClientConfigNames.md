@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Configuración de un cliente de extracción mediante nombres de configuración en PowerShell 5.0 y versiones posteriores
 ms.openlocfilehash: d591e2a757130ccecaf4eaf9f363f607fca82b93
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71953632"
 ---
 # <a name="set-up-a-pull-client-using-configuration-names-in-powershell-50-and-later"></a>Configuración de un cliente de extracción mediante nombres de configuración en PowerShell 5.0 y versiones posteriores
