@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
 ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366294"
 ---
 # <a name="windows-powershell-provider-overview"></a>Información general sobre Proveedor de Windows PowerShell
 
-Un proveedor de Windows PowerShell permite que cualquier almacén de datos se exponga como un sistema de archivos como si fuera una unidad montada. Por ejemplo, el proveedor de registro integrado le permite navegar por el registro como si fuera la unidad `c` del equipo. Un proveedor también puede invalidar los cmdlets `Item` (por ejemplo, `Get-Item`, `Set-Item`, etc.) de forma que los datos del almacén de datos se puedan tratar como archivos y directorios se tratan al navegar por un sistema de archivos. Para obtener más información sobre los proveedores y las unidades, y los proveedores integrados en Windows PowerShell, vea [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
+Un proveedor de Windows PowerShell permite que cualquier almacén de datos se exponga como un sistema de archivos como si fuera una unidad montada. Por ejemplo, el proveedor de registro integrado le permite navegar por el registro como si fuera la unidad de `c` del equipo. Un proveedor también puede invalidar los cmdlets de `Item` (por ejemplo, `Get-Item`, `Set-Item`, etc.) de forma que los datos del almacén de datos se puedan tratar como archivos y directorios se tratan al navegar por un sistema de archivos. Para obtener más información sobre los proveedores y las unidades, y los proveedores integrados en Windows PowerShell, consulte [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
 
 ## <a name="providers-and-drives"></a>Proveedores y unidades
 
@@ -47,7 +47,7 @@ Para que el motor de Windows PowerShell pueda inicializar y anular la inicializa
 
 ### <a name="provider-direct-paths"></a>Proveedor-rutas de acceso directas
 
-Para permitir el acceso remoto a su proveedor de Windows PowerShell, debe admitir una ruta de acceso directa de proveedor para pasar directamente al proveedor de Windows PowerShell para la ubicación actual. Por ejemplo, el proveedor de Windows PowerShell del registro puede usar `\\server\regkeypath` como ruta de acceso directa del proveedor.
+Para permitir el acceso remoto a su proveedor de Windows PowerShell, debe admitir una ruta de acceso directa de proveedor para pasar directamente al proveedor de Windows PowerShell para la ubicación actual. Por ejemplo, el proveedor de Windows PowerShell del registro puede usar `\\server\regkeypath` como una ruta de acceso directa de proveedor.
 
 ### <a name="provider-internal-paths"></a>Rutas internas del proveedor
 
@@ -63,7 +63,7 @@ Los proveedores pueden definir los parámetros dinámicos que se agregan a un cm
 
 ## <a name="provider-capabilities"></a>Capacidades del proveedor
 
-La enumeración [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) define una serie de funcionalidades que los proveedores pueden admitir. Entre ellas se incluye la capacidad de usar caracteres comodín, filtrar elementos y admitir transacciones. Para especificar las capacidades de un proveedor, agregue una lista de valores de la enumeración [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) , combinado con una operación lógica de `OR`, como la [ Propiedad System. Management. Automation. Provider. Cmdletproviderattribute. Providercapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (el segundo parámetro del atributo) del atributo [System. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) para clase de proveedor. Por ejemplo, el atributo siguiente especifica que el proveedor admite [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** y [System. Management. Automation. Provider. Providercapabilities ](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0)Capacidades de **transacciones** .
+La enumeración [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) define una serie de funcionalidades que los proveedores pueden admitir. Entre ellas se incluye la capacidad de usar caracteres comodín, filtrar elementos y admitir transacciones. Para especificar las capacidades de un proveedor, agregue una lista de valores de la enumeración [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) , combinado con una operación de `OR` lógica, como la propiedad [System. Management. Automation. Provider. Cmdletproviderattribute. Providercapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (el segundo parámetro del atributo) del atributo [System. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) de la clase de proveedor. Por ejemplo, el atributo siguiente especifica que el proveedor admite las capacidades de **las transacciones** [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** y [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) .
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]

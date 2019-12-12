@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: e45929d1-bbb4-4dc6-892f-f9eacdb1c84c
 caps.latest.revision: 8
 ms.openlocfilehash: 553878c34e74129f9876cca25a5393cb0d53445a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364394"
 ---
 # <a name="input-filter-parameters"></a>Parámetros de filtros de entrada
 
-Un cmdlet puede definir parámetros `Filter`, `Include` y `Exclude` que filtren el conjunto de objetos de entrada al que afecta el cmdlet.
+Un cmdlet puede definir `Filter`, `Include`y `Exclude` parámetros que filtren el conjunto de objetos de entrada al que afecta el cmdlet.
 
-Normalmente, el conjunto de objetos de entrada se especifica mediante un parámetro `InputObject`, `Path` o `Name`. Por ejemplo, un cmdlet puede tener un parámetro `Path` que acepta varias rutas de acceso mediante el uso de caracteres comodín y cada ruta de acceso señala a un objeto de entrada. En conjunto, los parámetros `Filter`, `Include` y `Exclude` califican aún más las rutas de acceso en las que funciona el cmdlet cada vez que se invoca.
+Normalmente, el conjunto de objetos de entrada se especifica mediante un parámetro `InputObject`, `Path`o `Name`. Por ejemplo, un cmdlet puede tener un parámetro `Path` que acepte varias rutas de acceso mediante el uso de caracteres comodín y cada ruta de acceso apunte a un objeto de entrada. En conjunto, los parámetros `Filter`, `Include`y `Exclude` califican aún más las rutas de acceso en las que funciona el cmdlet cada vez que se invoca.
 
 ## <a name="include-and-exclude-parameters"></a>Parámetros include y Exclude
 
@@ -27,7 +27,7 @@ Los parámetros `Include` y `Exclude` identifican los objetos que se incluyen o 
 
 ## <a name="filter-parameter"></a>Parámetro de filtro
 
-El parámetro `Filter` especifica un filtro que no se expresa en el lenguaje de caracteres comodín estándar. Por ejemplo, Active Directory las interfaces de servicio (ADSI) o los filtros SQL se pueden pasar al cmdlet a través de su parámetro `Filter`. En los cmdlets proporcionados por Windows PowerShell, estos filtros se especifican mediante los proveedores de Windows PowerShell que usan el cmdlet para tener acceso a un almacén de datos. Cada proveedor define normalmente su propio filtro.
+El parámetro `Filter` especifica un filtro que no se expresa en el lenguaje de caracteres comodín estándar. Por ejemplo, Active Directory interfaces de servicio (ADSI) o los filtros SQL se pueden pasar al cmdlet a través de su parámetro `Filter`. En los cmdlets proporcionados por Windows PowerShell, estos filtros se especifican mediante los proveedores de Windows PowerShell que usan el cmdlet para tener acceso a un almacén de datos. Cada proveedor define normalmente su propio filtro.
 
 ## <a name="filtering-if-no-set-of-input-objects-is-specified"></a>Filtrar si no se especifica ningún conjunto de objetos de entrada
 

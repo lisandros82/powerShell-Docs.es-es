@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
 caps.latest.revision: 5
 ms.openlocfilehash: 9140d03e046def2fbbcc2a842b9ea1b9e1fa2985
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367624"
 ---
 # <a name="creating-an-initialsessionstate"></a>Creación de un InitialSessionState
@@ -25,7 +25,7 @@ InitialSessionState especifica características del espacio de ejecución, como 
 ## <a name="create-a-default-initialsessionstate"></a>Crear un InitialSessionState predeterminado
 
 Los métodos [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) y [createdefault2)](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) de la clase **InitialSessionState** se pueden usar para crear un objeto **InitialSessionState** .
-El método **CreateDefault** crea una **InitialSessionState** con todos los comandos integrados cargados, mientras que el método **createdefault2)** solo carga los comandos necesarios para hospedar PowerShell (los comandos de la Módulo Microsoft. PowerShell. Core).
+El método **CreateDefault** crea una **InitialSessionState** con todos los comandos integrados cargados, mientras que el método **createdefault2)** solo carga los comandos necesarios para hospedar PowerShell (los comandos del módulo Microsoft. PowerShell. Core).
 
 Si desea limitar aún más los comandos disponibles en la aplicación host, debe crear un espacio de ejecución restringido.
 Para obtener más información, vea [crear un espacio de ejecución restringido](creating-a-constrained-runspace.md).

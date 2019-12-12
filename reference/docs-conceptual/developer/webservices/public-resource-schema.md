@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
 ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366274"
 ---
 # <a name="public-resource-schema"></a>Esquema de recursos públicos
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-Para declarar una propiedad de entidad como un tipo complejo, se declara como un tipo `string` con el calificador `EmbeddedInstance`, incluido el nombre del tipo complejo. En el ejemplo siguiente se muestra la declaración de una propiedad del tipo `PswsTest_ProcessModule` declarado en el ejemplo anterior.
+Para declarar una propiedad de entidad como un tipo complejo, se declara como un tipo de `string` con el calificador `EmbeddedInstance`, incluido el nombre del tipo complejo. En el ejemplo siguiente se muestra la declaración de una propiedad del tipo `PswsTest_ProcessModule` declarado en el ejemplo anterior.
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];

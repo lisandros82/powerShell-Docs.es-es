@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
 caps.latest.revision: 5
 ms.openlocfilehash: b6f8aef76a5f4b5dc1a60425541856ead9a9c77a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368114"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>Cómo agregar ejemplos a un tema de Ayuda del cmdlet
@@ -89,7 +89,7 @@ El siguiente XML muestra cómo agregar el comando real del ejemplo. Al agregar e
 
 ## <a name="adding-a-description"></a>Agregar una descripción
 
-El siguiente XML muestra cómo agregar una descripción para el ejemplo. Windows PowerShell® usa un único conjunto de etiquetas \<maml: para > para la descripción, aunque se pueden usar varias etiquetas \<maml: para >.
+El siguiente XML muestra cómo agregar una descripción para el ejemplo. Windows PowerShell® usa un único conjunto de \<maml: para > Etiquetas para la descripción, aunque se puedan usar \<varias etiquetas maml: para >.
 
 ```xml
 <command:examples>
@@ -108,7 +108,7 @@ El siguiente XML muestra cómo agregar una descripción para el ejemplo. Windows
 
 ## <a name="adding-example-output"></a>Agregar salida de ejemplo
 
-En el código XML siguiente se muestra cómo agregar el resultado del comando. La información de los resultados del comando es opcional, pero en algunos casos resulta útil mostrar el efecto de usar parámetros específicos. Windows PowerShell® usa dos conjuntos de etiquetas \<maml: para > para separar el resultado del comando del comando.
+En el código XML siguiente se muestra cómo agregar el resultado del comando. La información de los resultados del comando es opcional, pero en algunos casos resulta útil mostrar el efecto de usar parámetros específicos. Windows PowerShell® usa dos conjuntos de etiquetas \<maml: para > para separar los resultados del comando del comando.
 
 ```xml
 <command:examples>

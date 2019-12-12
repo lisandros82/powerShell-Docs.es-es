@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fc9d80ee-6ebd-48cd-a7ea-53cb2b442a22
 caps.latest.revision: 6
 ms.openlocfilehash: ec5a8c284dd3fa772261099281aba1fb68c49118
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369714"
 ---
 # <a name="getprocesssample03-sample"></a>Ejemplo GetProcessSample03
@@ -25,11 +25,11 @@ Este ejemplo muestra cómo implementar un cmdlet que recupera los procesos en el
 
 2. Haga doble clic en el icono del archivo de solución (. sln). Se abrirá el proyecto de ejemplo en Visual Studio.
 
-3. En el menú **compilar** , seleccione **compilar solución**.
+3. En el menú **Compilar**, seleccione **Compilar solución**.
 
     La biblioteca del ejemplo se generará en las carpetas \Bin o \bin\debug predeterminadas.
 
-### <a name="how-to-run-the-sample"></a>Cómo ejecutar el ejemplo
+### <a name="how-to-run-the-sample"></a>Ejecución del ejemplo
 
 1. Cree la siguiente carpeta de módulo:
 

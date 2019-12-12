@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 547e6695-e936-4cac-a90b-417d0dab393d
 caps.latest.revision: 12
 ms.openlocfilehash: 3efa98c7aa22fdaee8042bae99282aea0618ef5f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369294"
 ---
 # <a name="types-of-cmdlet-output"></a>Tipos de salida de cmdlet
@@ -34,7 +34,7 @@ Cuando se especifica el parámetro de modificador **Passthru** en la línea de c
 
 Los cmdlets pueden informar de errores. Cuando se produce un error de terminación, el cmdlet produce una excepción. Cuando se produce un error de no terminación, el cmdlet llama al método [System. Management. Automation. Provider. CmdletProvider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) para enviar un registro de error al flujo de datos de error. Para obtener más información sobre los informes de errores, vea [conceptos de informes de errores](./error-reporting-concepts.md).
 
-### <a name="verbose-output"></a>Resultados detallados
+### <a name="verbose-output"></a>Salida detallada
 
 Los cmdlets pueden proporcionar información útil mientras el cmdlet procesa correctamente los registros llamando al método [System. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) . El método genera mensajes detallados que indican cómo se va a continuar la acción.
 
@@ -62,7 +62,7 @@ Para todas las llamadas de método de escritura, la presentación del contenido 
 
 ## <a name="accessing-the-output-functionality-of-a-host-application"></a>Obtener acceso a la funcionalidad de salida de una aplicación host
 
-También puede diseñar un cmdlet para acceder directamente a la funcionalidad de salida de una aplicación host a través del tiempo de ejecución de PowerShell. El uso de las API de host que proporciona PowerShell en lugar de [System. Console](/dotnet/api/System.Console) o [System. Windows. Forms](/dotnet/api/System.Windows.Forms) garantiza que el cmdlet funcionará con varios hosts. Por ejemplo: el host de consola de **PowerShell. exe** , el host gráfico **powershell_ise. exe** , el host de comunicación remota de PowerShell y los hosts de terceros.
+También puede diseñar un cmdlet para acceder directamente a la funcionalidad de salida de una aplicación host a través del tiempo de ejecución de PowerShell. El uso de las API de host que proporciona PowerShell en lugar de [System. Console](/dotnet/api/System.Console) o [System. Windows. Forms](/dotnet/api/System.Windows.Forms) garantiza que el cmdlet funcionará con varios hosts. Por ejemplo: el host de la consola de **PowerShell. exe** , el host gráfico de **powershell_ise. exe** , el host de comunicación remota de PowerShell y los hosts de terceros.
 
 ## <a name="see-also"></a>Consulta también
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
 caps.latest.revision: 10
 ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369384"
 ---
 # <a name="stopprocesssample02-sample"></a>Ejemplo StopProcessSample02
@@ -27,11 +27,11 @@ En este ejemplo se muestra cómo escribir un cmdlet que escribe mensajes de depu
 
 2. Haga doble clic en el icono del archivo de solución (. sln). Se abrirá el proyecto de ejemplo en Microsoft Visual Studio.
 
-3. En el menú **compilar** , seleccione **compilar solución**.
+3. En el menú **Compilar**, seleccione **Compilar solución**.
 
     La biblioteca del ejemplo se generará en las carpetas \Bin o \bin\debug predeterminadas.
 
-### <a name="how-to-run-the-sample"></a>Cómo ejecutar el ejemplo
+### <a name="how-to-run-the-sample"></a>Ejecución del ejemplo
 
 1. Cree la siguiente carpeta de módulo:
 
@@ -69,7 +69,7 @@ Este ejemplo muestra lo siguiente.
 
 ## <a name="example"></a>Ejemplo
 
-En este ejemplo se muestra cómo escribir mensajes de depuración, detallado y de advertencia mediante los métodos `WriteDebug`, `WriteVerbose` y `WriteWarning`.
+En este ejemplo se muestra cómo escribir mensajes de depuración, detallado y de advertencia mediante los métodos `WriteDebug`, `WriteVerbose`y `WriteWarning`.
 
 ```csharp
 using System;

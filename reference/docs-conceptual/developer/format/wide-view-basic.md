@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 9abb63b8-6d02-4e24-9c0e-2d15a04e9051
 caps.latest.revision: 8
 ms.openlocfilehash: 7a36f548a3eccdf2c9cad04a8bfe28bf4e8d6dfd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367944"
 ---
 # <a name="wide-view-basic"></a>Vista amplia (Basic)
@@ -23,7 +23,7 @@ En este ejemplo se muestra cómo implementar una vista ampliada básica que mues
 
 1. Copie el XML de la sección de ejemplo de este tema en un archivo de texto.
 
-2. Guarde el archivo de texto. Asegúrese de agregar la extensión `format.ps1xml` al archivo para identificarlo como un archivo de formato.
+2. Guarde el archivo de texto. Asegúrese de agregar la extensión de `format.ps1xml` al archivo para identificarlo como un archivo de formato.
 
 3. Abra Windows PowerShell y ejecute el siguiente comando para cargar el archivo de formato en la sesión actual: `Update-formatdata -prependpath PathToFormattingFile`.
 

@@ -17,15 +17,15 @@ helpviewer_keywords:
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
 ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365934"
 ---
 # <a name="cmdlet-parameters"></a>Parámetros del cmdlet
 
-Los parámetros de cmdlet proporcionan el mecanismo que permite a un cmdlet aceptar la entrada. Los parámetros pueden aceptar la entrada directamente desde la línea de comandos o desde los objetos pasados al cmdlet a través de la canalización, los argumentos (también conocidos como *valores*) de estos parámetros pueden especificar la entrada que el cmdlet acepta, cómo debe realizar el cmdlet. acciones y los datos que el cmdlet devuelve a la canalización.
+Los parámetros de cmdlet proporcionan el mecanismo que permite a un cmdlet aceptar la entrada. Los parámetros pueden aceptar la entrada directamente desde la línea de comandos o desde los objetos pasados al cmdlet a través de la canalización, los argumentos (también conocidos como *valores*) de estos parámetros pueden especificar la entrada que el cmdlet acepta, cómo el cmdlet debe realizar sus acciones y los datos que el cmdlet devuelve a la canalización.
 
 ## <a name="in-this-section"></a>En esta sección
 
@@ -47,7 +47,7 @@ Los parámetros de cmdlet proporcionan el mecanismo que permite a un cmdlet acep
 
 [Validar la entrada de parámetros](./validating-parameter-input.md) Describe cómo Windows PowerShell valida los argumentos pasados a los parámetros de cmdlet.
 
-[Parámetros de filtro de entrada](./input-filter-parameters.md) Describe los parámetros `Filter`, `Include` y `Exclude` que filtran el conjunto de objetos de entrada al que afecta el cmdlet.
+[Parámetros de filtro de entrada](./input-filter-parameters.md) Describe los parámetros `Filter`, `Include`y `Exclude` que filtran el conjunto de objetos de entrada al que afecta el cmdlet.
 
 ## <a name="related-sections"></a>Secciones relacionadas
 
