@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
 ms.openlocfilehash: d210a852a90d94df2ab360dd86f0b83a396330e3
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74415660"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Adición de alias, expansión de caracteres comodín y Ayuda a los parámetros del cmdlet
@@ -128,7 +128,7 @@ if (!wildcard.IsMatch(processName))
 }
 ```
 
-## <a name="code-sample"></a>Código de ejemplo
+## <a name="code-sample"></a>Ejemplo de código
 
 Para obtener el C# código de ejemplo completo, vea el [ejemplo de StopProcessSample03](./stopprocesssample03-sample.md).
 
@@ -150,7 +150,7 @@ Cuando el cmdlet se ha registrado con Windows PowerShell, puede probarlo mediant
     PS> stop-proc -ProcessName notepad
     ```
 
-Aparece el siguiente resultado.
+Aparece la salida siguiente.
 
     ```
     Confirm
@@ -165,7 +165,7 @@ Aparece el siguiente resultado.
     PS> stop-proc
     ```
 
-Aparece el siguiente resultado.
+Aparece la salida siguiente.
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -182,7 +182,7 @@ Aparece el siguiente resultado.
     PS> stop-proc -Name *note*
     ```
 
-Aparece el siguiente resultado.
+Aparece la salida siguiente.
 
     ```
     Confirm
@@ -191,7 +191,7 @@ Aparece el siguiente resultado.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-Aparece el siguiente resultado.
+Aparece la salida siguiente.
 
     ```
     Confirm
@@ -200,7 +200,7 @@ Aparece el siguiente resultado.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-Aparece el siguiente resultado.
+Aparece la salida siguiente.
 
     ```
     Confirm
@@ -209,7 +209,7 @@ Aparece el siguiente resultado.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Véase también
 
 [Crear un cmdlet que modifique el sistema](./creating-a-cmdlet-that-modifies-the-system.md)
 
