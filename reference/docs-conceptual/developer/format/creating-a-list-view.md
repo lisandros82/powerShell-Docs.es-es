@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8c7a40ca-1786-46f0-bab5-6ce229daa7ee
 caps.latest.revision: 14
 ms.openlocfilehash: 25d24063501196d44e0f806a55bb699c82f771ce
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368984"
 ---
 # <a name="creating-a-list-view"></a>Creación de una vista de lista
@@ -99,7 +99,7 @@ Los siguientes elementos XML se utilizan para definir una vista de lista:
 
 - El elemento [Name](./name-element-for-view-format.md) especifica el nombre de la vista. Este elemento es necesario para todas las vistas.
 
-- El elemento [ViewSelectedBy](./viewselectedby-element-format.md) define los objetos que utilizan la vista. Este elemento es obligatorio.
+- El elemento [ViewSelectedBy](./viewselectedby-element-format.md) define los objetos que utilizan la vista. Se requiere el elemento.
 
 - El elemento [GroupBy](./groupby-element-for-view-format.md) define cuándo se muestra un nuevo grupo de objetos. Se inicia un nuevo grupo siempre que cambia el valor de una propiedad o un script específicos. Este elemento es opcional.
 
@@ -141,7 +141,7 @@ Los siguientes elementos XML se pueden usar para proporcionar definiciones para 
 
 - El elemento [ListControl](./listcontrol-element-format.md) y sus elementos secundarios definen lo que se muestra en la vista.
 
-- El elemento [ListEntries](./listentries-element-for-listcontrol-format.md) proporciona las definiciones de la vista. En la mayoría de los casos, una vista solo tendrá una definición. Este elemento es obligatorio.
+- El elemento [ListEntries](./listentries-element-for-listcontrol-format.md) proporciona las definiciones de la vista. En la mayoría de los casos, una vista solo tendrá una definición. Se requiere el elemento.
 
 - El elemento [ListEntry](./listentry-element-for-listcontrol-format.md) proporciona una definición de la vista. Se requiere al menos una [ListEntry](./listentry-element-for-listcontrol-format.md) ; sin embargo, no hay ningún límite máximo para el número de elementos que se pueden agregar. En la mayoría de los casos, una vista solo tendrá una definición.
 

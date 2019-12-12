@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 6c24dd44-a8ec-421d-ac86-90912e1a8cc6
 caps.latest.revision: 5
 ms.openlocfilehash: 7166881bd1403ea8c81ec2928321f6b93e3ac58d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360274"
 ---
 # <a name="how-to-create-a-console-shell"></a>Cómo crear un shell de la consola
@@ -65,7 +65,7 @@ Esta es una breve descripción de los parámetros de make-Shell.
 |-builtinscript S1. PS1 [, S2. ps1,...]|Una lista de scripts integrados para el shell. Estos scripts se detectan antes que los scripts de la ruta de acceso y su contenido no se puede cambiar una vez compilado el shell.<br /><br /> Los archivos se incluyen "tal cual"; Make-Shell no realiza ninguna comprobación de la validez.|
 |-Resource resourcefile. txt|El archivo. txt que contiene los recursos de ayuda y banner del shell. El primer recurso se denomina ShellHelp y contiene el texto que se muestra si el Shell se invoca con el parámetro `help`. El segundo recurso se denomina ShellBanner y contiene el texto y la información de copyright que se muestra cuando el Shell se inicia en modo interactivo.<br /><br /> Si no se proporciona este parámetro, o si estos recursos no están presentes, se usa una ayuda y un banner genéricos.|
 |-cscflags cscFlags|Marcas que se deben pasar al C# compilador (CSC. exe). Se pasan sin modificar. Si este parámetro incluye espacios, debe ir entre comillas dobles.|
-|-?<br /><br /> -Help|Muestra el mensaje de copyright y las opciones de línea de comandos de make-Shell.|
+|-?<br /><br /> -help|Muestra el mensaje de copyright y las opciones de línea de comandos de make-Shell.|
 |-verbose|Muestra información detallada mientras se crea el shell.|
 
 ## <a name="see-also"></a>Véase también

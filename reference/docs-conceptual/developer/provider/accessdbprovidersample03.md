@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 9e576199-49c7-4355-9686-f9ed40c64a5f
 caps.latest.revision: 10
 ms.openlocfilehash: aa67bb605f90c1ea40323b4583766069ff1226fb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359994"
 ---
 # <a name="accessdbprovidersample03"></a>AccessDBProviderSample03
 
-En este ejemplo se muestra cómo sobrescribir los métodos [System. Management. Automation. Provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) y [System. Management. Automation. Provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) para admitir llamadas a `Get-Item` y @no__ cmdlets t-3. La clase de proveedor de este ejemplo se deriva de la clase [System. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) .
+En este ejemplo se muestra cómo sobrescribir los métodos [System. Management. Automation. Provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) y [System. Management. Automation. Provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) para admitir llamadas a los cmdlets `Get-Item` y `Set-Item`. La clase de proveedor de este ejemplo se deriva de la clase [System. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) .
 
 ## <a name="demonstrates"></a>Demuestra
 
@@ -32,7 +32,7 @@ En este ejemplo se muestra cómo sobrescribir los métodos [System. Management. 
 
 Este ejemplo muestra lo siguiente:
 
-- Declarar el atributo `CmdletProvider`.
+- Declarar el atributo de `CmdletProvider`.
 
 - Definir una clase de proveedor que se deriva de la clase [System. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) .
 

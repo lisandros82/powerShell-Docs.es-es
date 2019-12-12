@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
 ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369744"
 ---
 # <a name="events01-sample"></a>Ejemplo Events01
@@ -29,10 +29,10 @@ Este ejemplo se deriva de la clase base [Microsoft. PowerShell. Commands. Object
 2. Haga doble clic en el icono del archivo de solución (. sln).
    Se abrirá el proyecto de ejemplo en Microsoft Visual Studio.
 
-3. En el menú **compilar** , seleccione **compilar solución**.
+3. En el menú **Compilar**, seleccione **Compilar solución**.
    La biblioteca del ejemplo se compilará en las carpetas predeterminadas `\bin` o `\bin\debug`.
 
-### <a name="how-to-run-the-sample"></a>Cómo ejecutar el ejemplo
+### <a name="how-to-run-the-sample"></a>Ejecución del ejemplo
 
 1. Cree la siguiente carpeta de módulo:
 
@@ -83,7 +83,7 @@ Este ejemplo muestra lo siguiente.
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Cómo escribir un cmdlet para el registro de eventos
 
-El cmdlet se deriva de la clase [Microsoft. PowerShell. Commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , que proporciona compatibilidad con los parámetros comunes a los cmdlets `Register-*Event`.
+El cmdlet se deriva de la clase [Microsoft. PowerShell. Commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , que proporciona compatibilidad con los parámetros comunes a los cmdlets de `Register-*Event`.
 Los cmdlets que se derivan de [Microsoft. PowerShell. Commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) solo necesitan definir sus parámetros particulares e invalidar los métodos abstractos `GetSourceObject` y `GetSourceObjectEventName`.
 
 ## <a name="example"></a>Ejemplo

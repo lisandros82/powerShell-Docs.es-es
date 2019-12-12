@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e620bf6d-76be-47b0-a7a8-f43418f30c60
 caps.latest.revision: 6
 ms.openlocfilehash: b81a32b867795ae51c3f5308c2f82c31ed2747fa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359824"
 ---
 # <a name="adding-resources-to-a-management-odata-web-service"></a>Adición de recursos a un servicio web de Management OData
@@ -49,19 +49,19 @@ El primer paso consiste en importar el esquema del extremo de administración de
 
 2. Asegúrese de que el **equipo local** está seleccionado y haga clic en **siguiente**.
 
-3. Asegúrese de que está seleccionado módulos de Windows PowerShell instalados y seleccione Hyper-V en la lista desplegable. Haga clic en **siguiente**. Haga clic en **Siguiente**.
+3. Asegúrese de que está seleccionado módulos de Windows PowerShell instalados y seleccione Hyper-V en la lista desplegable. Haga clic en **Siguiente**. Haga clic en **Siguiente**.
 
 4. En la lista de **nombres de cmdlet** , seleccione **VM**. Haga clic en **Siguiente**.
 
-5. En este ejemplo, solo se enlazarán los comandos GET y DELETE con cmdlets. Desactive las casillas **crear** y **Actualizar** y asegúrese de que estén activadas las casillas **obtener** y **eliminar** . Asegúrese de que se ha seleccionado el cmdlet `Get-VM` para **Get**y el cmdlet `Remove-VM` para **eliminar**.
+5. En este ejemplo, solo se enlazarán los comandos GET y DELETE con cmdlets. Desactive las casillas **crear** y **Actualizar** y asegúrese de que estén activadas las casillas **obtener** y **eliminar** . Asegúrese de que el cmdlet `Get-VM` está seleccionado para **Get**y el cmdlet `Remove-VM` está seleccionado para **eliminar**.
 
-6. Dado que los metadatos de los cmdlets de máquina virtual no especifican un tipo de salida, deberá ejecutar el cmdlet para especificar el tipo de salida. Seleccione **proporcionar el tipo de salida** y haga clic en **Ejecutar cmdlet**. Aparece el cuadro de diálogo **Ejecutar cmdlet** . Haga clic en **Ejecutar**. El cuadro **tipo CLR** se rellena con el tipo `VirtualMachine`. Haga clic en **Aceptar**y, a continuación, en **siguiente**.
+6. Dado que los metadatos de los cmdlets de máquina virtual no especifican un tipo de salida, deberá ejecutar el cmdlet para especificar el tipo de salida. Seleccione **proporcionar el tipo de salida** y haga clic en **Ejecutar cmdlet**. Aparece el cuadro de diálogo **Ejecutar cmdlet** . Haga clic en **Ejecutar**. El cuadro **tipo CLR** se rellena con el tipo de `VirtualMachine`. Haga clic en **Aceptar**y, a continuación, en **siguiente**.
 
 7. De forma predeterminada, se seleccionan todas las propiedades del objeto VirtualMachine. Puede borrar cualquier propiedad que no desee como parte de los datos que se devuelven al solicitar este recurso desde el servicio Web. Haga clic en **Siguiente**.
 
 8. Debe seleccionar al menos una propiedad para usarla como clave. Seleccione **nombre** en la lista y haga clic en **siguiente**.
 
-9. La siguiente ventana permite asignar propiedades del recurso de OData de administración a las propiedades de los cmdlets subyacentes. De forma predeterminada, el asistente asigna propiedades con nombres idénticos. Por ejemplo, la propiedad `ComputerName` del recurso se asigna a la propiedad `ComputerName` de los cmdlets.  Esto le permite especificar la propiedad `ComputerName` en una solicitud al servicio Web y hacer que el valor que especifique se pase al cmdlet `Get-VM`. también se asignan de forma predeterminada `Id` y `Name`.
+9. La siguiente ventana permite asignar propiedades del recurso de OData de administración a las propiedades de los cmdlets subyacentes. De forma predeterminada, el asistente asigna propiedades con nombres idénticos. Por ejemplo, la propiedad `ComputerName` del recurso se asigna a la propiedad `ComputerName` de los cmdlets.  Esto le permite especificar la propiedad `ComputerName` en una solicitud al servicio Web y hacer que el valor que especifique se pase al cmdlet `Get-VM`. también se asignan `Id` y `Name` de forma predeterminada.
 
    10. Haga clic en **siguiente**y, a continuación, en **Finalizar**.
 
@@ -77,4 +77,4 @@ El primer paso consiste en importar el esquema del extremo de administración de
 
 ## <a name="next-steps"></a>Pasos a seguir
 
-Antes de tener acceso al nuevo recurso de máquina virtual desde el servicio Web Management OData, debe actualizar el archivo RbacConfiguration. XML para permitir el acceso al módulo de Windows PowerShell de Hyper-V, tal como se describe en configuración de la [autorización basada en roles](./configuring-role-based-authorization.md), y también es necesario reiniciar el servicio Web.
+Antes de tener acceso al nuevo recurso de máquina virtual desde el servicio Web de Management OData, debe actualizar el archivo RbacConfiguration. XML para permitir el acceso al módulo de Windows PowerShell de Hyper-V, tal como se describe en configuración de la [autorización basada en roles](./configuring-role-based-authorization.md), y también tendrá que reiniciar el servicio Web.

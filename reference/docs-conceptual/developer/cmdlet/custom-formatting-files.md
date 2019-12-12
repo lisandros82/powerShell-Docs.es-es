@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 85d27545-8097-4010-9947-6d8b3ce2eac0
 caps.latest.revision: 15
 ms.openlocfilehash: 71c1c181058c5646c817b90d9832976a78c6c7de
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369834"
 ---
 # <a name="custom-formatting-files"></a>Archivos de formato personalizado
@@ -40,7 +40,7 @@ Vista personalizada muestra una vista personalizable de las propiedades de objet
 
 ## <a name="view-xml-elements"></a>Ver elementos XML
 
-En el ejemplo siguiente se muestran las etiquetas XML utilizadas para definir una vista de tabla que contiene dos columnas. El elemento [ViewDefinitions](../format/viewdefinitions-element-format.md) es el elemento contenedor de todas las vistas definidas en el archivo de formato. El elemento de [vista](../format/view-element-format.md) define la vista de tabla, lista, ancho o personalizada específica. Dentro de cada vista, el elemento [Name](../format/name-element-for-view-format.md) especifica el nombre de la vista, el elemento [ViewSelectedBy](../format/viewselectedby-element-format.md) define los objetos que utilizan la vista y los distintos elementos control (como el elemento `TableControl`) definen el formato de la vista.
+En el ejemplo siguiente se muestran las etiquetas XML utilizadas para definir una vista de tabla que contiene dos columnas. El elemento [ViewDefinitions](../format/viewdefinitions-element-format.md) es el elemento contenedor de todas las vistas definidas en el archivo de formato. El elemento de [vista](../format/view-element-format.md) define la vista de tabla, lista, ancho o personalizada específica. Dentro de cada vista, el elemento [Name](../format/name-element-for-view-format.md) especifica el nombre de la vista, el elemento [ViewSelectedBy](../format/viewselectedby-element-format.md) define los objetos que utilizan la vista y los distintos elementos de control (como el elemento `TableControl`) definen el formato de la vista.
 
 ```xml
 ViewDefinitions

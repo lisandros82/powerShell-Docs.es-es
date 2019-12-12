@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 439ba3f3-91b1-46a4-8d07-9af6edb71bc4
 caps.latest.revision: 5
 ms.openlocfilehash: 0ca2ccc5188f0c1784ec14ac204c1fdd624c2e66
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416114"
 ---
 # <a name="getproc04-c-sample-code"></a>Código de ejemplo GetProc04 (C#)
@@ -24,11 +24,11 @@ En el código siguiente se muestra la implementación de un cmdlet `Get-Process`
 >
 > Los archivos de código fuente descargados están disponibles en el directorio **\<ejemplos de PowerShell >** .
 
-## <a name="code-sample"></a>Código de ejemplo
+## <a name="code-sample"></a>Ejemplo de código
 
 [!code-csharp[GetProcessSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample04/GetProcessSample04.cs#L11-L98 "GetProcessSample04.cs")]
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Véase también
 
 [Guía del programador de Windows PowerShell](./windows-powershell-programmer-s-guide.md)
 

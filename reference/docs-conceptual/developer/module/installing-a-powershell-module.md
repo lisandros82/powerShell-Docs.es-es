@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
 ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367074"
 ---
 # <a name="installing-a-powershell-module"></a>Instalación de un módulo de PowerShell
@@ -62,7 +62,7 @@ De forma predeterminada, el valor de la variable de entorno **PSModulePath** con
   ```
 
   > [!IMPORTANT]
-  > Una vez que haya agregado la ruta de acceso a **PSModulePath**, debe difundir un mensaje de entorno sobre el cambio. Difundir el cambio permite a otras aplicaciones, como el Shell, recoger el cambio. Para difundir el cambio, haga que el código de instalación del producto envíe un mensaje **WM_SETTINGCHANGE** con `lParam` establecido en la cadena "entorno". Asegúrese de enviar el mensaje después de que el código de instalación del módulo haya actualizado **PSModulePath**.
+  > Una vez que haya agregado la ruta de acceso a **PSModulePath**, debe difundir un mensaje de entorno sobre el cambio. Difundir el cambio permite a otras aplicaciones, como el Shell, recoger el cambio. Para difundir el cambio, haga que el código de instalación del producto envíe un mensaje de **WM_SETTINGCHANGE** con `lParam` establecido en la cadena "entorno". Asegúrese de enviar el mensaje después de que el código de instalación del módulo haya actualizado **PSModulePath**.
 
 ### <a name="use-the-correct-module-directory-name"></a>Usar el nombre de directorio del módulo correcto
 
@@ -101,7 +101,7 @@ Si el módulo no tiene el formato correcto y su ubicación no se incluye en el v
 
 - El cmdlet [Show-Command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) no puede encontrar y mostrar los comandos en el módulo.
 
-  Faltan los comandos del módulo en la ventana `Show-Command` en el entorno de scripting integrado (ISE) de Windows PowerShell.
+  Faltan los comandos del módulo en la ventana `Show-Command` del entorno de scripting integrado (ISE) de Windows PowerShell.
 
 ## <a name="where-to-install-modules"></a>Dónde instalar los módulos
 
@@ -228,7 +228,7 @@ Microsoft.PowerShell.Utility\Get-Date
 
 Para evitar conflictos de nombres, los autores de módulos pueden usar la clave **DefaultCommandPrefix** en el manifiesto del módulo para especificar un prefijo de sustantivo para todos los comandos exportados desde el módulo.
 
-Los usuarios pueden usar el parámetro **prefix** del cmdlet `Import-Module` para utilizar un prefijo alternativo. El valor del parámetro **prefix** tiene prioridad sobre el valor de la clave **DefaultCommandPrefix** .
+Los usuarios pueden usar el parámetro **prefix** del cmdlet `Import-Module` para usar un prefijo alternativo. El valor del parámetro **prefix** tiene prioridad sobre el valor de la clave **DefaultCommandPrefix** .
 
 ## <a name="see-also"></a>Véase también
 

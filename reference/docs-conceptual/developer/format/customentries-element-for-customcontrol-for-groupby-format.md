@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: af83c0f6-7fdd-4aa0-af12-efc62f632974
 caps.latest.revision: 7
 ms.openlocfilehash: f073142bf836ae892f161cf8c36ed16c35e311f5
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364094"
 ---
 # <a name="customentries-element-for-customcontrol-for-groupby-format"></a>Elemento CustomEntries para CustomControl for GroupBy (formato)
@@ -41,7 +41,7 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento CustomEntry para CustomControl para GroupBy (Format)](./customentry-element-for-customcontrol-for-groupby-format.md)|Elemento obligatorio.<br /><br /> Proporciona una definición del control.|
+|[Elemento CustomEntry para CustomControl para GroupBy (Format)](./customentry-element-for-customcontrol-for-groupby-format.md)|Elemento necesario.<br /><br /> Proporciona una definición del control.|
 
 ### <a name="parent-elements"></a>Elementos primarios
 
@@ -51,7 +51,7 @@ Ninguna.
 
 ## <a name="remarks"></a>Observaciones
 
-En la mayoría de los casos, un control solo tiene una definición, que se especifica en un único elemento `CustomEntry`. Sin embargo, es posible proporcionar varias definiciones si desea utilizar el mismo control para mostrar grupos diferentes. En esos casos, puede definir un elemento `CustomEntry` para un grupo.
+En la mayoría de los casos, un control solo tiene una definición, que se especifica en un único elemento de `CustomEntry`. Sin embargo, es posible proporcionar varias definiciones si desea utilizar el mismo control para mostrar grupos diferentes. En esos casos, puede definir un elemento `CustomEntry` para un grupo.
 
 ## <a name="see-also"></a>Véase también
 

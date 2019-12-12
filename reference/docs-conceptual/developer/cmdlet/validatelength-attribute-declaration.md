@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
 ms.openlocfilehash: a25fa2410fcc6803563573596af1bc99052c3ffa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369184"
 ---
 # <a name="validatelength-attribute-declaration"></a>Declaración de atributo ValidateLength
@@ -45,7 +45,7 @@ se requiere `MaxLength` ([System. Int32](/dotnet/api/System.Int32)). Especifica 
 
     - Cuando el valor del parámetro del atributo `MaxLength` es menor que el valor del parámetro del atributo `MinLength`.
 
-    - Cuando el parámetro del atributo `MaxLength` se establece en 0.
+    - Cuando el parámetro del atributo `MaxLength` está establecido en 0.
 
     - Cuando el argumento no es una cadena.
 

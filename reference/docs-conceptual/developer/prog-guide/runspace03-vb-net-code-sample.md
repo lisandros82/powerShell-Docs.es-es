@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
 ms.openlocfilehash: e744caf0201a6e2a7fbf86138d7b28e4f14d549f
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417971"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>Ejemplo de código Runspace03 (VB.NET)
@@ -23,7 +23,7 @@ Este es el código fuente de VB.NET para la aplicación de consola que se descri
 > Puede descargar el archivo de código fuente de VB.NET (runspace03. VB) para este ejemplo mediante el uso del kit de desarrollo de software de Windows para los componentes de tiempo de ejecución de Windows Vista y Microsoft .NET Framework 3,0. Para obtener instrucciones de descarga, consulte [Cómo instalar Windows PowerShell y descargar el SDK de Windows PowerShell](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 > Los archivos de código fuente descargados están disponibles en el directorio **\<ejemplos de PowerShell >** .
 
-## <a name="code-sample"></a>Código de ejemplo
+## <a name="code-sample"></a>Ejemplo de código
 
 ```vb
 Imports System
@@ -105,7 +105,7 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace03.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace03.vb#L09-L83 "Runspace03.vb")] -->
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Véase también
 
 [Guía del programador de Windows PowerShell](./windows-powershell-programmer-s-guide.md)
 

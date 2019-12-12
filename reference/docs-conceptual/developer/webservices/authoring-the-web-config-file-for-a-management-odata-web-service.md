@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: d569f5d5-9746-40c0-be5e-f218bc4560f7
 caps.latest.revision: 4
 ms.openlocfilehash: f52953ee091f05df5f355719ecba788d3d5ee055
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359794"
 ---
 # <a name="authoring-the-webconfig-file-for-a-management-odata-web-service"></a>Creación del archivo Web.config para un servicio web de Management OData
 
-Para poder implementar el servicio Web de administración de OData, debe configurar el archivo Web. config para que apunte a los archivos de esquema XML y a los archivos DLL que implementan [Microsoft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) y [ Interfaces System. Management. Automation. Remoting. Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) .
+Para poder implementar el servicio Web de Management OData, debe configurar el archivo Web. config para que apunte a los archivos de esquema XML y a los archivos DLL que implementan las interfaces [Microsoft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) y [System. Management. Automation. Remoting. Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) .
 
 ## <a name="sample-config-file"></a>Archivo de configuración de ejemplo
 

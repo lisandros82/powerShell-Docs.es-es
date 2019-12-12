@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 39acce45-5144-43ba-894d-a4ce782fa67d
 caps.latest.revision: 13
 ms.openlocfilehash: f89f0009972d5237d71cb8f0d1c53cd0ae614b67
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361414"
 ---
 # <a name="writing-a-powershell-formatting-file"></a>Escritura de un archivo de formato de PowerShell
@@ -21,7 +21,7 @@ ms.locfileid: "72361414"
 
 ## <a name="in-this-section"></a>En esta sección
 
-[Información general sobre el formato de archivo](./formatting-file-overview.md) Describe qué es un archivo de formato y los componentes generales de un archivo de formato, incluidas las características comunes que se pueden definir en el archivo, los distintos tipos de vistas de formato que se pueden definir para objetos .NET y un ejemplo simplificado del XML usado para definir una tabla v ER.
+[Información general sobre el formato de archivo](./formatting-file-overview.md) Describe qué es un archivo de formato y los componentes generales de un archivo de formato, incluidas las características comunes que se pueden definir en el archivo, los distintos tipos de vistas de formato que se pueden definir para los objetos .NET y un ejemplo simplificado del XML que se usa para definir una vista de tabla.
 
 [Conceptos del archivo de formato](./formatting-file-concepts.md) Incluye información que podría necesitar saber al crear sus propios archivos de formato, como los diferentes tipos de vistas que puede definir y componentes especiales de esas vistas.
 

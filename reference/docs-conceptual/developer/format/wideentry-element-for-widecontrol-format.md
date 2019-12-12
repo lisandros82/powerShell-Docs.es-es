@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 014763cb-7716-4931-899c-8375b5d7a3dd
 caps.latest.revision: 15
 ms.openlocfilehash: d1d13b5c3436871053353814293d9163ea13c7fb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367904"
 ---
 # <a name="wideentry-element-for-widecontrol-format"></a>Elemento WideEntry para WideControl (formato)
@@ -43,7 +43,7 @@ Ninguna.
 |Elemento|Descripción|
 |-------------|-----------------|
 |[Elemento EntrySelectedBy para WideEntry (Format)](./entryselectedby-element-for-wideentry-format.md)|Elemento opcional.<br /><br /> Define los tipos .NET que usan esta definición de entrada ancha o la condición que debe existir para que se use esta definición.|
-|[Elemento WideItem (Format)](./wideitem-element-for-widecontrol-format.md)|Elemento obligatorio.<br /><br /> Define la propiedad o el script cuyo valor se muestra.|
+|[Elemento WideItem (Format)](./wideitem-element-for-widecontrol-format.md)|Elemento necesario.<br /><br /> Define la propiedad o el script cuyo valor se muestra.|
 
 ### <a name="parent-elements"></a>Elementos primarios
 

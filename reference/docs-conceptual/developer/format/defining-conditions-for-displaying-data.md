@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c1e05821-6aec-437b-84a5-218a5727f88b
 caps.latest.revision: 10
 ms.openlocfilehash: 8a5b84b6a461e9fc340a5981578d95ca2ac6b9f7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363904"
 ---
 # <a name="defining-conditions-for-displaying-data"></a>Definición de condiciones para mostrar datos
@@ -21,7 +21,7 @@ Al definir los datos que se muestran en una vista o un control, puede especifica
 
 ## <a name="specifying-a-selection-condition-for-a-definition"></a>Especificar una condición de selección para una definición
 
-Al crear una definición para una vista o un control, se usa el elemento `EntrySelectedBy` para especificar qué objetos usarán la definición o qué condición debe existir para que se use la definición. La condición se especifica mediante el elemento `SelectionCondition`.
+Al crear una definición para una vista o un control, el elemento `EntrySelectedBy` se utiliza para especificar qué objetos usarán la definición o qué condición debe existir para que se use la definición. La condición se especifica mediante el elemento `SelectionCondition`.
 
 En el ejemplo siguiente, se especifica una condición de selección para una definición de una vista de tabla. En este ejemplo, la definición se usa solo cuando el script especificado se evalúa como `true`.
 

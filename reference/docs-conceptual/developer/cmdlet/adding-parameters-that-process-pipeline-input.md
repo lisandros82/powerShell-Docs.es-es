@@ -12,17 +12,17 @@ helpviewer_keywords:
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
 ms.openlocfilehash: 9ecb73a4138a5853fa5fb378874da2d81c5dbdba
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364604"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Adición de parámetros que procesan la entrada de la canalización
 
 Un origen de entrada para un cmdlet es un objeto de la canalización que se origina en un cmdlet de nivel superior. En esta sección se describe cómo agregar un parámetro al cmdlet Get-proc (descrito en [creación del primer cmdlet](./creating-a-cmdlet-without-parameters.md)) para que el cmdlet pueda procesar objetos de canalización.
 
-Este cmdlet Get-proc usa un parámetro `Name` que acepta la entrada de un objeto de canalización, recupera información del proceso del equipo local en función de los nombres proporcionados y, a continuación, muestra información sobre los procesos en la línea de comandos.
+Este cmdlet Get-proc usa un `Name` parámetro que acepta la entrada de un objeto de canalización, recupera información del proceso del equipo local en función de los nombres proporcionados y, a continuación, muestra información sobre los procesos en la línea de comandos.
 
 ## <a name="defining-the-cmdlet-class"></a>Definir la clase de cmdlet
 
@@ -68,7 +68,7 @@ End Property
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesgetproc03#GetProc03VBNameParameter](Msh_samplesgetproc03#GetProc03VBNameParameter)]  -->
 
-La declaración anterior establece la palabra clave `ValueFromPipeline` en `true` para que el tiempo de ejecución de Windows PowerShell enlace el parámetro al objeto entrante si el objeto es del mismo tipo que el parámetro, o si se puede convertir en el mismo tipo. La palabra clave `ValueFromPipelineByPropertyName` también se establece en `true` para que el tiempo de ejecución de Windows PowerShell Compruebe el objeto de entrada de una propiedad `Name`. Si el objeto entrante tiene este tipo de propiedad, el tiempo de ejecución enlazará el parámetro `Name` a la propiedad `Name` del objeto entrante.
+La declaración anterior establece la palabra clave `ValueFromPipeline` en `true` de modo que el tiempo de ejecución de Windows PowerShell enlace el parámetro al objeto entrante si el objeto es del mismo tipo que el parámetro, o si se puede convertir en el mismo tipo. La palabra clave `ValueFromPipelineByPropertyName` también se establece en `true` de modo que el tiempo de ejecución de Windows PowerShell comprobará el objeto entrante en busca de una propiedad `Name`. Si el objeto entrante tiene este tipo de propiedad, el tiempo de ejecución enlazará el parámetro `Name` a la propiedad `Name` del objeto entrante.
 
 > [!NOTE]
 > La configuración de la palabra clave del atributo `ValueFromPipeline` para un parámetro tiene prioridad sobre la configuración de la palabra clave `ValueFromPipelineByPropertyName`.
@@ -77,7 +77,7 @@ La declaración anterior establece la palabra clave `ValueFromPipeline` en `true
 
 Si el cmdlet controla la entrada de canalización, debe invalidar los métodos de procesamiento de entrada adecuados. Los métodos de procesamiento de entrada básicos se introducen en [crear el primer cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-Este cmdlet Get-proc invalida el método [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) para controlar la entrada de parámetro `Name` proporcionada por el usuario o un script. Este método obtendrá los procesos de cada nombre de proceso solicitado o de todos los procesos si no se proporciona ningún nombre. Tenga en cuenta que en [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), la llamada a [writeObject (System. Object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) es el mecanismo de salida para enviar objetos de salida a la canalización. El segundo parámetro de esta llamada, `enumerateCollection`, se establece en `true` para indicar al tiempo de ejecución de Windows PowerShell que Enumere la matriz de objetos de proceso y que escriba un proceso cada vez en la línea de comandos.
+Este cmdlet Get-proc invalida el método [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) para controlar la entrada de `Name` parámetro proporcionada por el usuario o un script. Este método obtendrá los procesos de cada nombre de proceso solicitado o de todos los procesos si no se proporciona ningún nombre. Tenga en cuenta que en [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), la llamada a [writeObject (System. Object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) es el mecanismo de salida para enviar objetos de salida a la canalización. El segundo parámetro de esta llamada, `enumerateCollection`, se establece en `true` para indicar al tiempo de ejecución de Windows PowerShell que Enumere la matriz de objetos de proceso y que escriba un proceso cada vez en la línea de comandos.
 
 ```csharp
 protected override void ProcessRecord()
@@ -124,7 +124,7 @@ Protected Overrides Sub ProcessRecord()
 End Sub 'ProcessRecord
 ```
 
-## <a name="code-sample"></a>Código de ejemplo
+## <a name="code-sample"></a>Ejemplo de código
 
 Para obtener el C# código de ejemplo completo, vea el [ejemplo de GetProcessSample03](./getprocesssample03-sample.md).
 
@@ -146,7 +146,7 @@ Cuando el cmdlet se haya registrado con Windows PowerShell, pruébelo en la lín
     PS> type ProcessNames | get-proc
     ```
 
-Aparece el siguiente resultado.
+Aparece la salida siguiente.
 
     ```
     Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName
@@ -163,7 +163,7 @@ Aparece el siguiente resultado.
     PS> get-process iexplore | get-proc
     ```
 
-Aparece el siguiente resultado.
+Aparece la salida siguiente.
 
     ```
     Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName

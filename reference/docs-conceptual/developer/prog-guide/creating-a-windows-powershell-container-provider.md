@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
 ms.openlocfilehash: fcb03d4021f00837095ce703beb0d841233391d6
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416217"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Creación de un proveedor de contenedores de Windows PowerShell
@@ -370,7 +370,7 @@ Este proveedor no implementa este método. Sin embargo, el código siguiente es 
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidercopyitemdynamicparameters](Msh_samplestestcmdlets#testprovidercopyitemdynamicparameters)]  -->
 
-## <a name="code-sample"></a>Código de ejemplo
+## <a name="code-sample"></a>Ejemplo de código
 
 Para obtener el código de ejemplo completo, vea el [ejemplo de código AccessDbProviderSample04](./accessdbprovidersample04-code-sample.md).
 
@@ -388,7 +388,7 @@ Cuando el proveedor de Windows PowerShell se ha registrado con Windows PowerShel
    Get-ChildItem mydb:customers
    ```
 
-   Aparece el siguiente resultado.
+   Aparece la salida siguiente.
 
    ```output
    PSPath        : AccessDB::customers
@@ -407,7 +407,7 @@ Cuando el proveedor de Windows PowerShell se ha registrado con Windows PowerShel
    (Get-ChildItem mydb:customers).data
    ```
 
-   Aparece el siguiente resultado.
+   Aparece la salida siguiente.
 
    ```output
    TABLE_CAT   : c:\PS\northwind
@@ -423,7 +423,7 @@ Cuando el proveedor de Windows PowerShell se ha registrado con Windows PowerShel
    Get-Item mydb:\customers\0
    ```
 
-   Aparece el siguiente resultado.
+   Aparece la salida siguiente.
 
    ```output
    PSPath        : AccessDB::customers\0
@@ -440,7 +440,7 @@ Cuando el proveedor de Windows PowerShell se ha registrado con Windows PowerShel
    (Get-Item mydb:\customers\0).data
    ```
 
-   Aparece el siguiente resultado.
+   Aparece la salida siguiente.
 
    ```output
    CustomerID   : 1234
@@ -469,7 +469,7 @@ Cuando el proveedor de Windows PowerShell se ha registrado con Windows PowerShel
    PS mydb:\Customers> (Get-Item 3).data
    ```
 
-   Aparece el siguiente resultado.
+   Aparece la salida siguiente.
 
    ```output
    ID        : 3
@@ -486,7 +486,7 @@ Cuando el proveedor de Windows PowerShell se ha registrado con Windows PowerShel
    Country   : USA
    ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Véase también
 
 [Crear proveedores de Windows PowerShell](./how-to-create-a-windows-powershell-provider.md)
 

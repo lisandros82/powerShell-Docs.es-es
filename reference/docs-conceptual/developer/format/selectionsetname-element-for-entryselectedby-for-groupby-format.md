@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d569c623-2277-49e3-933e-c26262b91cd5
 caps.latest.revision: 6
 ms.openlocfilehash: 69cd113c444b4e3c5dceabcdfddb439cd1376f6b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364744"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-groupby-format"></a>Elemento SelectionSetName para EntrySelectedBy for GroupBy (formato)
@@ -61,6 +61,6 @@ Para obtener más información sobre los componentes de una vista de control per
 
 [Elemento EntrySelectedBy para CustomEntry para GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)
 
-[Crear controles personalizados](./creating-custom-controls.md)
+[Creación de controles personalizados](./creating-custom-controls.md)
 
 [Escribir un archivo de formato de PowerShell](./writing-a-powershell-formatting-file.md)

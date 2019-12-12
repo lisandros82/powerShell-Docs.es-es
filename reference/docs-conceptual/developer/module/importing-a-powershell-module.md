@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 697791b3-2135-4a39-b9d7-8566ed67acf2
 caps.latest.revision: 13
 ms.openlocfilehash: bb5d036e5658c365a4fafa2cac05c0bba9f87019
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360704"
 ---
 # <a name="importing-a-powershell-module"></a>Importación de un módulo de PowerShell
@@ -41,7 +41,7 @@ También puede usar el parámetro-verbose para identificar lo que se va a export
 
 ## <a name="implicitly-importing-a-module-powershell-30"></a>Importación implícita de un módulo (PowerShell 3,0)
 
-A partir de Windows PowerShell 3,0, los módulos se importan automáticamente cuando cualquier cmdlet o función del módulo se usa en un comando. Esta característica funciona en cualquier módulo de un directorio que se incluye en el valor de la variable de entorno **PSModulePath** . Sin embargo, si no guarda el módulo en una ruta de acceso válida, todavía puede cargarlo mediante la opción [de Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) explícita, descrita anteriormente.
+A partir de Windows PowerShell 3.0, los módulos se importan automáticamente cuando se usa cualquier cmdlet o función del módulo en un comando. Esta característica funciona en cualquier módulo de un directorio que se incluye en el valor de la variable de entorno **PSModulePath** . Sin embargo, si no guarda el módulo en una ruta de acceso válida, todavía puede cargarlo mediante la opción [de Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) explícita, descrita anteriormente.
 
 Las siguientes acciones desencadenan la importación automática de un módulo, también conocido como "carga automática de módulos".
 
@@ -76,6 +76,6 @@ Cuando se importa un módulo mediante el cmdlet [Import-Module](/powershell/modu
 
 - `Alias`: este parámetro restringe los alias que se exportan (si usa un manifiesto de módulo, consulte la clave AliasesToExport).
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Véase también
 
 [Escribir un módulo de Windows PowerShell](./writing-a-windows-powershell-module.md)

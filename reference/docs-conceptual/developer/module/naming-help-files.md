@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: bf54eac7-88c6-4108-a5f6-2f0906d1662b
 caps.latest.revision: 5
 ms.openlocfilehash: f65a90023df88fceafae1d1875ddf46b9088e2b8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367014"
 ---
 # <a name="naming-help-files"></a>Asignación de un nombre a los archivos de ayuda
@@ -45,7 +45,7 @@ Por ejemplo, el proveedor de certificados se define en el ensamblado Microsoft. 
 
 ## <a name="function-help-files"></a>Archivos de ayuda de función
 
-Las funciones se pueden documentar mediante [la ayuda basada en comentarios](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) o documentada en un archivo de ayuda XML. Cuando la función está documentada en un archivo XML, la función debe tener una palabra clave de comentario `.ExternalHelp` que asocie la función con el archivo XML. De lo contrario, el cmdlet `Get-Help` no puede encontrar el archivo de ayuda.
+Las funciones se pueden documentar mediante [la ayuda basada en comentarios](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) o documentada en un archivo de ayuda XML. Cuando la función está documentada en un archivo XML, la función debe tener una palabra clave `.ExternalHelp` comment que asocie la función con el archivo XML. De lo contrario, el cmdlet `Get-Help` no puede encontrar el archivo de ayuda.
 
 No hay ningún requisito técnico para el nombre de un archivo de ayuda de función. Sin embargo, se recomienda asignar un nombre al archivo de ayuda para el módulo de script en el que se define la función. Por ejemplo, la siguiente función se define en el archivo MyModule. psm1.
 
@@ -72,6 +72,6 @@ Los flujos de trabajo de script que se incluyen en los módulos se pueden docume
 <ScriptModule>.psm1-help.xml
 ```
 
-A diferencia de otros comandos scripts, los flujos de trabajo de scripts no requieren una palabra clave comment `.ExternalHelp` para asociarlos con un archivo de ayuda. En su lugar, Windows PowerShell busca en los subdirectorios específicos de la referencia cultural de la interfaz de usuario del directorio de módulos para los archivos de ayuda basados en XML y busca ayuda para el flujo de trabajo de script en todos los archivos. se omite la palabra clave de comentario `.ExternalHelp`.
+A diferencia de otros comandos scripts, los flujos de trabajo de scripts no requieren una palabra clave `.ExternalHelp` comment para asociarlos con un archivo de ayuda. En su lugar, Windows PowerShell busca en los subdirectorios específicos de la referencia cultural de la interfaz de usuario del directorio de módulos para los archivos de ayuda basados en XML y busca ayuda para el flujo de trabajo de script en todos los archivos. `.ExternalHelp` palabra clave comment se omiten.
 
-Dado que se omite la palabra clave comment `.ExternalHelp`, el cmdlet `Get-Help` solo puede encontrar ayuda para flujos de trabajo de script cuando se incluyen en los módulos.
+Dado que se omite la palabra clave `.ExternalHelp` comment, el cmdlet `Get-Help` puede buscar ayuda para flujos de trabajo de scripts solo cuando se incluyen en módulos.

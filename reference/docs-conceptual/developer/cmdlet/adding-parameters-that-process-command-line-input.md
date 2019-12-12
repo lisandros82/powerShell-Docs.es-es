@@ -16,10 +16,10 @@ helpviewer_keywords:
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
 ms.openlocfilehash: 7db93af33717dc4802ed915793f6cd570cfb48f6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364634"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>Adición de parámetros que procesan la entrada de la línea de comandos
@@ -49,7 +49,7 @@ Un parámetro de cmdlet permite al usuario proporcionar entradas al cmdlet. En e
 
 **PS > Get-proc; propiedad `get-member`-MemberType**
 
-Para declarar los parámetros de un cmdlet, primero debe definir las propiedades que representan los parámetros. En el cmdlet **Get-proc** , el único parámetro es `Name`, que en este caso representa el nombre del objeto de proceso de .NET Framework que se va a recuperar. Por lo tanto, la clase de cmdlet define una propiedad de tipo cadena para aceptar una matriz de nombres.
+Para declarar los parámetros de un cmdlet, debe definir en primer lugar las propiedades que representan los parámetros. En el cmdlet **Get-proc** , el único parámetro es `Name`, que en este caso representa el nombre del objeto de proceso de .NET Framework que se va a recuperar. Por lo tanto, la clase de cmdlet define una propiedad de tipo cadena para aceptar una matriz de nombres.
 
 Esta es la declaración de parámetro para el parámetro `Name` del cmdlet **Get-proc** .
 
@@ -176,7 +176,7 @@ Protected Overrides Sub ProcessRecord()
 End Sub 'ProcessRecord
 ```
 
-## <a name="code-sample"></a>Código de ejemplo
+## <a name="code-sample"></a>Ejemplo de código
 
 Para obtener el C# código de ejemplo completo, vea el [ejemplo de GetProcessSample02](./getprocesssample02-sample.md).
 
@@ -198,7 +198,7 @@ Cuando el cmdlet se registra con Windows PowerShell, puede probarlo mediante su 
     PS> get-proc -name iexplore
     ```
 
-Aparece el siguiente resultado.
+Aparece la salida siguiente.
 
     ```
     Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)   Id   ProcessName
@@ -212,7 +212,7 @@ Aparece el siguiente resultado.
     PS> get-proc -name iexplore, outlook, notepad
     ```
 
-Aparece el siguiente resultado.
+Aparece la salida siguiente.
 
     ```
     Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)   Id   ProcessName
@@ -224,7 +224,7 @@ Aparece el siguiente resultado.
          39       2   1024     356     30   0.08  3396   notepad
     ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Véase también
 
 [Agregar parámetros que procesan la entrada de canalización](./adding-parameters-that-process-pipeline-input.md)
 

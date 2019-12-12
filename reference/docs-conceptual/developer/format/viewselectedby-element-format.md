@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: acdeef4d-3554-4f39-a7e6-a684e3848fd7
 caps.latest.revision: 19
 ms.openlocfilehash: efc1c5d1338889ecd0be7150b7733842ce78979e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367974"
 ---
 # <a name="viewselectedby-element-format"></a>Elemento ViewSelectedBy (formato)
@@ -79,7 +79,7 @@ En el ejemplo siguiente se muestra cómo especificar el objeto [System. ServiceP
 
 [Crear una vista amplia](./creating-a-wide-view.md)
 
-[Crear controles personalizados](./creating-custom-controls.md)
+[Creación de controles personalizados](./creating-custom-controls.md)
 
 [Definir conjuntos de selección](./defining-selection-sets.md)
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fe888fee-1fe9-459f-9d62-35732c19a7f8
 caps.latest.revision: 13
 ms.openlocfilehash: d418cff70c1197aa3c331eed909f49198da139e9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363694"
 ---
 # <a name="formatting-file-overview"></a>Información general del archivo de formato
@@ -50,7 +50,7 @@ Vista personalizada muestra una vista personalizable de las propiedades de objet
 
 En los siguientes ejemplos XML se muestran los componentes XML básicos de una vista. Los elementos XML individuales varían en función de la vista que desea crear, pero los componentes básicos de las vistas son los mismos.
 
-Para empezar, cada vista tiene un elemento `Name` que especifica un nombre descriptivo que se usa para hacer referencia a la vista. un elemento `ViewSelectedBy` que define qué objetos .NET se muestran en la vista, y un elemento de *control* que define la vista.
+Para empezar, cada vista tiene un elemento `Name` que especifica un nombre descriptivo que se utiliza para hacer referencia a la vista. `ViewSelectedBy` elemento que define qué objetos .NET se muestran en la vista, y un elemento de *control* que define la vista.
 
 ```xml
 <ViewDefinitions>
@@ -116,7 +116,7 @@ Como se muestra en los ejemplos anteriores, el archivo de formato puede contener
 
 ## <a name="example-of-a-table-view"></a>Ejemplo de una vista de tabla
 
-En el ejemplo siguiente se muestran las etiquetas XML utilizadas para definir una vista de tabla que contiene dos columnas. El elemento [ViewDefinitions](./viewdefinitions-element-format.md) es el elemento contenedor de todas las vistas definidas en el archivo de formato. El elemento de [vista](./view-element-format.md) define la vista de tabla, lista, ancho o personalizada específica. Dentro de cada elemento de [vista](./view-element-format.md) , el elemento [Name](./name-element-for-view-format.md) especifica el nombre de la vista, el elemento [ViewSelectedBy](./viewselectedby-element-format.md) define los objetos que utilizan la vista y los distintos elementos de control (como el elemento `TableControl` que se muestra en la siguiente ejemplo) defina el tipo de la vista.
+En el ejemplo siguiente se muestran las etiquetas XML utilizadas para definir una vista de tabla que contiene dos columnas. El elemento [ViewDefinitions](./viewdefinitions-element-format.md) es el elemento contenedor de todas las vistas definidas en el archivo de formato. El elemento de [vista](./view-element-format.md) define la vista de tabla, lista, ancho o personalizada específica. Dentro de cada elemento de [vista](./view-element-format.md) , el elemento [Name](./name-element-for-view-format.md) especifica el nombre de la vista, el elemento [ViewSelectedBy](./viewselectedby-element-format.md) define los objetos que utilizan la vista y los distintos elementos control (como el elemento `TableControl` que se muestra en el ejemplo siguiente) definen el tipo de la vista.
 
 ```xml
 <ViewDefinitions>
@@ -161,6 +161,6 @@ En el ejemplo siguiente se muestran las etiquetas XML utilizadas para definir un
 
 [Crear una vista amplia](./creating-a-wide-view.md)
 
-[Crear controles personalizados](./creating-custom-controls.md)
+[Creación de controles personalizados](./creating-custom-controls.md)
 
 [Escribir un archivo de formato y tipos de PowerShell](./writing-a-powershell-formatting-file.md)

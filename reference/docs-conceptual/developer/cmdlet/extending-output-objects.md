@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a252e0ec-d456-42d7-bd49-d6b8bc57f388
 caps.latest.revision: 11
 ms.openlocfilehash: 9c9d50c880f843e21621e5735c800e3afb48b2ad
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369724"
 ---
 # <a name="extending-output-objects"></a>Extensión de los objetos de salida
@@ -21,7 +21,7 @@ Puede extender el .NET Framework objetos que devuelven los cmdlets, las funcione
 
 ## <a name="extending-the-systemarray-object"></a>Extender el objeto System. Array
 
-En el ejemplo siguiente se muestra cómo Windows PowerShell extiende el objeto [System. Array](/dotnet/api/System.Array) en el archivo Types. ps1xml. De forma predeterminada, los objetos [System. Array](/dotnet/api/System.Array) tienen una propiedad `Length` que muestra el número de objetos de la matriz. Sin embargo, dado que el nombre "length" no describe claramente la propiedad, Windows PowerShell agrega la propiedad de alias `Count`, que muestra el mismo valor que la propiedad `Length`. El siguiente XML agrega la propiedad `Count` al tipo [System. Array](/dotnet/api/System.Array) .
+En el ejemplo siguiente se muestra cómo Windows PowerShell extiende el objeto [System. Array](/dotnet/api/System.Array) en el archivo Types. ps1xml. De forma predeterminada, los objetos [System. Array](/dotnet/api/System.Array) tienen una propiedad `Length` que muestra el número de objetos de la matriz. Sin embargo, dado que el nombre "length" no describe claramente la propiedad, Windows PowerShell agrega la propiedad alias `Count`, que muestra el mismo valor que la propiedad `Length`. El siguiente XML agrega la propiedad `Count` al tipo [System. Array](/dotnet/api/System.Array) .
 
 ```xml
 <Type>

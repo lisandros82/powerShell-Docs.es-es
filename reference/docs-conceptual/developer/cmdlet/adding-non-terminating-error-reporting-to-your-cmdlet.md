@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
 ms.openlocfilehash: a4426abec96cd922360aeef8c157b4e9f41a15b9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364614"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Adición de informes de errores de no terminación al cmdlet
@@ -23,7 +23,7 @@ En esta sección se explica cómo crear un cmdlet que informe de errores de no t
 En el caso de los errores de no terminación (así como de los errores de terminación), el cmdlet debe pasar un objeto [System. Management. Automation. ErrorRecord][] que identifique el error.
 Cada registro de error se identifica mediante una cadena única denominada "identificador de error".
 Además del identificador, la categoría de cada error se especifica mediante constantes definidas por una enumeración [System. Management. Automation. ErrorCategory][] .
-El usuario puede ver los errores en función de su categoría estableciendo la variable `$ErrorView` en "CategoryView".
+El usuario puede ver los errores en función de su categoría estableciendo la variable de `$ErrorView` en "CategoryView".
 
 Para obtener más información sobre los registros de errores, consulte [registros de errores de Windows PowerShell](./windows-powershell-error-records.md).
 
@@ -47,7 +47,7 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-## <a name="defining-parameters"></a>Definir parámetros
+## <a name="defining-parameters"></a>Definición de parámetros
 
 Si es necesario, el cmdlet debe definir parámetros para procesar la entrada.
 Este cmdlet Get-proc define un parámetro de **nombre** tal y como se describe en [agregar parámetros que procesan la entrada de la línea de comandos](adding-parameters-that-process-command-line-input.md).
@@ -191,7 +191,7 @@ Si define el parámetro `ErrorAction`, el cmdlet presenta las opciones de usuari
 El cmdlet puede guardar errores de no terminación en una variable mediante el parámetro `ErrorVariable`, que no se ve afectado por la configuración de `ErrorAction`.
 Los errores se pueden anexar a una variable de error existente agregando un signo más (+) al principio del nombre de la variable.
 
-## <a name="code-sample"></a>Código de ejemplo
+## <a name="code-sample"></a>Ejemplo de código
 
 Para obtener el C# código de ejemplo completo, vea el [ejemplo de GetProcessSample04](./getprocesssample04-sample.md).
 
@@ -217,7 +217,7 @@ Vamos a probar el cmdlet Get-proc de ejemplo para ver si informa de un error:
     PS> get-proc -name test
     ```
 
-Aparece el siguiente resultado.
+Aparece la salida siguiente.
 
     ```
     get-proc : Operation is not valid due to the current state of the object.

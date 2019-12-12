@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
 caps.latest.revision: 8
 ms.openlocfilehash: 2f145795a57c988da0cb4ed294142aa141c53cae
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364464"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>Cómo importar cmdlets mediante módulos
@@ -24,7 +24,7 @@ En este artículo se describe cómo importar cmdlets en una sesión de PowerShel
 
 ## <a name="how-to-load-cmdlets-using-a-module"></a>Cómo cargar cmdlets mediante un módulo
 
-1. Cree una carpeta de módulo que tenga el mismo nombre que el archivo de ensamblado en el que se implementan los cmdlets. En este procedimiento, la carpeta del módulo se crea en la carpeta Windows `system32`.
+1. Cree una carpeta de módulo que tenga el mismo nombre que el archivo de ensamblado en el que se implementan los cmdlets. En este procedimiento, se crea la carpeta del módulo en la carpeta Windows `system32`.
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 

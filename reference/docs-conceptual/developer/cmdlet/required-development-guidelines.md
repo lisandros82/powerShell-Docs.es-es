@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
 ms.openlocfilehash: e68e43a91f9139e8d3dc636b5740121515aab2e6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369524"
 ---
 # <a name="required-development-guidelines"></a>Directrices de desarrollo necesarias
@@ -81,33 +81,33 @@ Los usuarios necesitan un conjunto de nombres de cmdlet reconocible y esperado. 
 
 Cuando asigne nombre a los cmdlets, no use ninguno de los siguientes caracteres especiales.
 
-|Óptico|Name|
+|Carácter|Name|
 |---------------|----------|
 |#|signo de número|
-|,|unas|
+|,|coma|
 |()|paréntesis|
 |{}|llaves|
 |[]|corchetes|
-|&|Operador|
+|&|operador|
 |-|Guion **Nota:** el guion se puede usar para separar el verbo del nombre, pero no se puede usar dentro del sustantivo o dentro del verbo.|
-|/|Barra diagonal|
-|\\ | barra diagonal inversa|
+|/|barra diagonal|
+|\\| barra diagonal inversa|
 |$|signo de dólar|
-|^|intercalación|
+|^|símbolo de intercalación|
 |;|punto y coma|
-|:|Y|
+|:|y|
 |"|comillas dobles|
-|'|comilla simple|
+|“|comilla simple|
 |<>|corchetes angulares|
 |&#124;|barra vertical|
 |?|signo de interrogación|
-|@|arroba|
+|@|signo arroba|
 |`|marca de retroceso (acento grave)|
-|*|aparezca|
+|*|asterisco|
 |%|signo de porcentaje|
-|+|Signo más|
+|+|signo más|
 |=|signo igual|
-|~|Supresor|
+|~|supresor|
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>Nombres de parámetros que no se pueden usar (RD03)
 
@@ -115,12 +115,12 @@ Windows PowerShell proporciona un conjunto común de parámetros a todos los cmd
 
 ### <a name="support-confirmation-requests-rd04"></a>Solicitudes de confirmación de soporte técnico (RD04)
 
-En el caso de los cmdlets que realizan una operación que modifica el sistema, deben llamar al método [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) para solicitar la confirmación y, en casos especiales, llamar a la [ Método System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) . (El método [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) solo debe llamarse después de que se llame al método [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ).
+En el caso de los cmdlets que realizan una operación que modifica el sistema, deben llamar al método [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) para solicitar la confirmación y, en casos especiales, llamar al método [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) . (El método [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) solo debe llamarse después de que se llame al método [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ).
 
-Para realizar estas llamadas, el cmdlet debe especificar que admite solicitudes de confirmación estableciendo la palabra clave `SupportsShouldProcess` del atributo cmdlet. Para obtener más información sobre la configuración de este atributo, vea [declaración de atributos de cmdlet](./cmdlet-attribute-declaration.md).
+Para realizar estas llamadas, el cmdlet debe especificar que admite solicitudes de confirmación estableciendo la palabra clave `SupportsShouldProcess` del atributo de cmdlet. Para obtener más información sobre la configuración de este atributo, vea [declaración de atributos de cmdlet](./cmdlet-attribute-declaration.md).
 
 > [!NOTE]
-> Si el atributo cmdlet de la clase de cmdlet indica que el cmdlet admite llamadas al método [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y el cmdlet no realiza la llamada a [ System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) , el usuario podría modificar el sistema de forma inesperada.
+> Si el atributo cmdlet de la clase de cmdlet indica que el cmdlet admite llamadas al método [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y el cmdlet no realiza la llamada al método [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) , el usuario podría modificar el sistema de forma inesperada.
 
 Use el método [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) para cualquier modificación del sistema. Una preferencia de usuario y el parámetro `WhatIf` controlan el método [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) . En cambio, la llamada a [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) realiza una comprobación adicional de las modificaciones potencialmente peligrosas. Este método no está controlado por ninguna preferencia del usuario ni por el parámetro `WhatIf`. Si el cmdlet llama al método [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) , debería tener un parámetro `Force` que omita las llamadas a estos dos métodos y que continúe con la operación. Esto es importante porque permite que el cmdlet se use en scripts y hosts no interactivos.
 
@@ -196,9 +196,9 @@ Un entorno de administración detecta de forma inherente y realiza cambios impor
 
 - Cuando un error impide que un cmdlet continúe procesando más registros, se trata de un error de terminación. El cmdlet debe llamar al método [System. Management. Automation. cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) que hace referencia a un objeto [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) . Si el cmdlet no detecta una excepción, el propio tiempo de ejecución de Windows PowerShell genera un error de terminación que contiene menos información.
 
-- En el caso de un error de no terminación que no detenga la operación en el siguiente registro procedente de la canalización (por ejemplo, un registro generado por un proceso diferente), el cmdlet debe llamar al método [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) que hace referencia a un objeto [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) . Un ejemplo de error de no terminación es el error que se produce si un proceso determinado no se detiene. Llamar al método [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) permite al usuario realizar de forma coherente las acciones solicitadas y conservar la información de acciones concretas que producen un error. El cmdlet debe administrar cada registro de la forma más independiente posible.
+- Para un error de no terminación que no detenga la operación en el siguiente registro procedente de la canalización (por ejemplo, un registro generado por un proceso diferente), el cmdlet debe llamar al método [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) que hace referencia a un objeto [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) . Un ejemplo de error de no terminación es el error que se produce si un proceso determinado no se detiene. Llamar al método [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) permite al usuario realizar de forma coherente las acciones solicitadas y conservar la información de acciones concretas que producen un error. El cmdlet debe administrar cada registro de la forma más independiente posible.
 
-- El objeto [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) al que hacen referencia los métodos [System. Management. Automation. cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) y [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) requiere un cmdlet excepción en su núcleo. Siga las instrucciones de diseño de .NET Framework cuando determine la excepción que se va a usar. Si el error es semánticamente igual que una excepción existente, use esa excepción o derive de esa excepción. De lo contrario, derive una nueva jerarquía de excepción o excepción directamente del tipo [System. Exception](/dotnet/api/System.Exception) .
+- El objeto [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) al que hacen referencia los métodos [System. Management. Automation. cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) y [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) requiere una excepción en su núcleo. Siga las instrucciones de diseño de .NET Framework cuando determine la excepción que se va a usar. Si el error es semánticamente igual que una excepción existente, use esa excepción o derive de esa excepción. De lo contrario, derive una nueva jerarquía de excepción o excepción directamente del tipo [System. Exception](/dotnet/api/System.Exception) .
 
 Un objeto [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) también requiere una categoría de error que agrupa los errores del usuario. El usuario puede ver los errores en función de la categoría estableciendo el valor de la variable de Shell `$ErrorView` en CategoryView. Las categorías posibles se definen mediante la enumeración [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) .
 

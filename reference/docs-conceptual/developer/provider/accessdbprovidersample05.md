@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a26661f2-a63c-4ca7-ad3e-dcb4d32ce5a1
 caps.latest.revision: 8
 ms.openlocfilehash: d7d6d3b377a0089bcf96d0ea46e866321441b537
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359974"
 ---
 # <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
@@ -32,7 +32,7 @@ En este ejemplo se muestra cómo sobrescribir los métodos de contenedor para ad
 
 Este ejemplo muestra lo siguiente:
 
-- Declarar el atributo `CmdletProvider`.
+- Declarar el atributo de `CmdletProvider`.
 
 - Definir una clase de proveedor que se deriva de la clase [System. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) .
 

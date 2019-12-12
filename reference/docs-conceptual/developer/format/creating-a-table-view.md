@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
 ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363414"
 ---
 # <a name="creating-a-table-view"></a>Creación de una vista de tabla
@@ -79,7 +79,7 @@ Los siguientes elementos XML se utilizan para definir una vista de lista:
 
 - El elemento [Name](./name-element-for-view-format.md) especifica el nombre de la vista. Este elemento es necesario para todas las vistas.
 
-- El elemento [ViewSelectedBy](./viewselectedby-element-format.md) define los objetos que utilizan la vista. Este elemento es obligatorio.
+- El elemento [ViewSelectedBy](./viewselectedby-element-format.md) define los objetos que utilizan la vista. Se requiere el elemento.
 
 - El elemento [GroupBy](./groupby-element-for-view-format.md) (no se muestra en este ejemplo) define cuándo se muestra un nuevo grupo de objetos. Se inicia un nuevo grupo siempre que cambia el valor de una propiedad o un script específicos. Este elemento es opcional.
 

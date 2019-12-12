@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4606fec0-ff31-4d36-af68-227405335ec3
 caps.latest.revision: 15
 ms.openlocfilehash: 0427367efa2c8a7e352d718706d1341a0c8e3621
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367964"
 ---
 # <a name="types-element-for-selectionset-format"></a>Elemento Types para SelectionSet (formato)
@@ -42,7 +42,7 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento TypeName de Types (Format)](./typename-element-for-types-format.md)|Elemento obligatorio.<br /><br /> Especifica el objeto .NET que pertenece al conjunto de selección.|
+|[Elemento TypeName de Types (Format)](./typename-element-for-types-format.md)|Elemento necesario.<br /><br /> Especifica el objeto .NET que pertenece al conjunto de selección.|
 
 ### <a name="parent-elements"></a>Elementos primarios
 

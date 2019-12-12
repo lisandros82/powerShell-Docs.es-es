@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 715ea055-037b-46ad-b70f-87b3f5134403
 caps.latest.revision: 14
 ms.openlocfilehash: 2742be0389a1bf04af100a490a59c0d938165811
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367994"
 ---
 # <a name="widecontrol-element-format"></a>Elemento WideControl (formato)
@@ -45,7 +45,7 @@ Ninguna.
 |-------------|-----------------|
 |[AutoSize (elemento) para WideControl (Format)](./autosize-element-for-widecontrol-format.md)|Elemento opcional.<br /><br /> Especifica si el tamaño de la columna y el número de columnas se ajustan en función del tamaño de los datos.|
 |[Elemento ColumnNumber para WideControl (Format)](./columnnumber-element-for-widecontrol-format.md)|Elemento opcional.<br /><br /> Especifica el número de columnas que se muestran en la vista amplia.|
-|[Elemento WideEntries (Format)](./wideentries-element-for-widecontrol-format.md)|Elemento obligatorio.<br /><br /> Proporciona las definiciones de la vista amplia.|
+|[Elemento WideEntries (Format)](./wideentries-element-for-widecontrol-format.md)|Elemento necesario.<br /><br /> Proporciona las definiciones de la vista amplia.|
 
 ### <a name="parent-elements"></a>Elementos primarios
 

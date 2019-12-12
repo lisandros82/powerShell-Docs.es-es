@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2d4303c5-b451-4ccb-9831-b17a17ceac20
 caps.latest.revision: 16
 ms.openlocfilehash: 651de5d3bc2619f20438f3951ac5a8c4b0bf46d4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368954"
 ---
 # <a name="creating-a-wide-view"></a>Creación de una vista amplia
@@ -76,7 +76,7 @@ Los siguientes elementos XML se utilizan para definir una vista ampliada:
 
 - El elemento [Name](./name-element-for-view-format.md) especifica el nombre de la vista. Este elemento es necesario para todas las vistas.
 
-- El elemento [ViewSelectedBy](./viewselectedby-element-format.md) define los objetos que utilizan la vista. Este elemento es obligatorio.
+- El elemento [ViewSelectedBy](./viewselectedby-element-format.md) define los objetos que utilizan la vista. Se requiere el elemento.
 
 - El elemento [GroupBy](./groupby-element-for-view-format.md) define cuándo se muestra un nuevo grupo de objetos. Se inicia un nuevo grupo siempre que cambia el valor de una propiedad o un script específicos. Este elemento es opcional.
 
@@ -112,7 +112,7 @@ Los siguientes elementos XML se pueden usar para proporcionar definiciones para 
 
 - El elemento [ColumnNumber](./columnnumber-element-for-widecontrol-format.md) especifica el número de columnas que se muestran en la vista amplia. Este elemento es opcional.
 
-- El elemento [WideEntries](./wideentries-element-for-widecontrol-format.md) proporciona las definiciones de la vista. En la mayoría de los casos, una vista solo tendrá una definición. Este elemento es obligatorio.
+- El elemento [WideEntries](./wideentries-element-for-widecontrol-format.md) proporciona las definiciones de la vista. En la mayoría de los casos, una vista solo tendrá una definición. Se requiere el elemento.
 
 - El elemento [WideEntry](./wideentry-element-for-widecontrol-format.md) proporciona una definición de la vista. Se requiere al menos un [WideEntry](./wideentry-element-for-widecontrol-format.md) ; sin embargo, no hay ningún límite máximo para el número de elementos que se pueden agregar. En la mayoría de los casos, una vista solo tendrá una definición.
 

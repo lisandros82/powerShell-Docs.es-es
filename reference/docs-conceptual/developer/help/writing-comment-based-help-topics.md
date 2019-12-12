@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: e619ab16-90ad-46e9-9bde-d6dce492ba56
 caps.latest.revision: 4
 ms.openlocfilehash: e3d32f36b597088abc41e229bb0955c1b25504e6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361084"
 ---
 # <a name="writing-comment-based-help-topics"></a>Escritura de temas de Ayuda basados en comentarios
 
 Puede escribir temas de ayuda basados en comentarios para funciones y scripts mediante el uso de palabras clave especiales de comentarios de la ayuda.
 
- El cmdlet `Get-Help` muestra ayuda basada en comentarios en el mismo formato en el que muestra los temas de ayuda de los cmdlets que se generan a partir de archivos XML. Los usuarios pueden usar todos los parámetros de `Get-Help`, como Detailed, Full, example y online, para mostrar la ayuda de funciones y scripts.
+ El cmdlet `Get-Help` muestra la ayuda basada en comentarios en el mismo formato en el que muestra los temas de ayuda de los cmdlets que se generan a partir de archivos XML. Los usuarios pueden usar todos los parámetros de `Get-Help`, como Detailed, Full, example y online, para mostrar la ayuda de funciones y scripts.
 
  También puede escribir temas de ayuda basados en XML para scripts y funciones y utilizar las palabras clave de comentarios de la ayuda para redirigir a los usuarios a los temas basados en XML u otros temas.
 

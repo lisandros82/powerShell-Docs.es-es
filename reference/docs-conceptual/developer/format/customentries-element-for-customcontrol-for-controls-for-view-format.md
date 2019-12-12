@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3485958a-ba87-4932-907c-a8f140c4abdb
 caps.latest.revision: 8
 ms.openlocfilehash: 4856aee930285781a101868bd6cb67824585bce1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368814"
 ---
 # <a name="customentries-element-for-customcontrol-for-controls-for-view-format"></a>Elemento CustomEntries para CustomControl for Controls for View (formato)
@@ -41,7 +41,7 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento CustomEntry para CustomEntries para controles para View (Format)](./customentry-element-for-customentries-for-controls-for-view-format.md)|Elemento obligatorio.<br /><br /> Proporciona una definición del control.|
+|[Elemento CustomEntry para CustomEntries para controles para View (Format)](./customentry-element-for-customentries-for-controls-for-view-format.md)|Elemento necesario.<br /><br /> Proporciona una definición del control.|
 
 ### <a name="parent-elements"></a>Elementos primarios
 
@@ -51,7 +51,7 @@ Ninguna.
 
 ## <a name="remarks"></a>Observaciones
 
-En la mayoría de los casos, un control solo tiene una definición, que se especifica en un único elemento `CustomEntry`. Sin embargo, es posible proporcionar varias definiciones si desea utilizar el mismo control para mostrar objetos .NET diferentes. En esos casos, puede definir un elemento `CustomEntry` para cada objeto o conjunto de objetos.
+En la mayoría de los casos, un control solo tiene una definición, que se especifica en un único elemento de `CustomEntry`. Sin embargo, es posible proporcionar varias definiciones si desea utilizar el mismo control para mostrar objetos .NET diferentes. En esos casos, puede definir un elemento `CustomEntry` para cada objeto o conjunto de objetos.
 
 ## <a name="see-also"></a>Véase también
 

@@ -11,10 +11,10 @@ applies_to:
 ms.assetid: 3f7388a9-9fa8-42bc-b294-538c9a01e30a
 caps.latest.revision: 12
 ms.openlocfilehash: f2dfb9642ba2dde38124142b659b425bbbb00f37
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366964"
 ---
 # <a name="updatable-help-overview"></a>Información general acerca de la Ayuda actualizable
@@ -25,7 +25,7 @@ En este documento se proporciona una introducción básica al diseño y el funci
 
 Los temas de ayuda de Windows PowerShell son una parte integral de la experiencia con Windows PowerShell. Al igual que los módulos de Windows PowerShell, los temas de ayuda se actualizan y mejoran continuamente los autores y las contribuciones de la comunidad de usuarios de Windows PowerShell.
 
-La característica de *ayuda actualizable* , introducida en Windows PowerShell 3,0, garantiza que los usuarios tengan las versiones más recientes de los temas de ayuda en el símbolo del sistema, incluso en el caso de los comandos integrados de Windows PowerShell, sin necesidad de descargar nuevos módulos o de ejecutarlos Windows Update . La ayuda actualizable facilita la actualización al proporcionar cmdlets que descargan las versiones más recientes de los temas de ayuda de Internet e instalarlas en los subdirectorios correctos del equipo local del usuario. Incluso los usuarios que están detrás de firewalls pueden usar los nuevos cmdlets para obtener ayuda actualizada desde un recurso compartido de archivos interno.
+La característica de *ayuda actualizable* , introducida en Windows PowerShell 3,0, garantiza que los usuarios tengan las versiones más recientes de los temas de ayuda en el símbolo del sistema, incluso en el caso de los comandos integrados de Windows PowerShell, sin necesidad de descargar nuevos módulos ni de ejecutar Windows Update. La ayuda actualizable facilita la actualización al proporcionar cmdlets que descargan las versiones más recientes de los temas de ayuda de Internet e instalarlas en los subdirectorios correctos del equipo local del usuario. Incluso los usuarios que están detrás de firewalls pueden usar los nuevos cmdlets para obtener ayuda actualizada desde un recurso compartido de archivos interno.
 
 La ayuda actualizable es totalmente compatible con todos los módulos de Windows PowerShell en Windows® 8 y Windows Server® 2012, y sus características están disponibles para todos los autores del módulo de Windows PowerShell. La ayuda actualizable solo admite archivos de ayuda basados en XML. No admite la ayuda basada en Comentarios.
 

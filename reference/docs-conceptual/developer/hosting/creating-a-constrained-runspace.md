@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
 caps.latest.revision: 5
 ms.openlocfilehash: 20ac1e2af8e047b8b572d86a55439676aa8df25c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367654"
 ---
 # <a name="creating-a-constrained-runspace"></a>Creación de un espacio de ejecución restringido
 
-Por motivos de rendimiento o seguridad, es posible que desee restringir los comandos de Windows PowerShell disponibles para la aplicación host. Para ello, cree una vacía [System. Management. Automation. espacios de Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) llamando al método [System. Management. Automation. espacios de Initialsessionstate. Create *](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) y, a continuación, agregue únicamente los comandos que desee. disponible.
+Por motivos de rendimiento o seguridad, es posible que desee restringir los comandos de Windows PowerShell disponibles para la aplicación host. Para ello, cree una vacía [System. Management. Automation. espacios de Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) llamando al método [System. Management. Automation. espacios de acceso. Initialsessionstate. Create *](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) y, a continuación, agregue únicamente los comandos que desee que estén disponibles.
 
  El uso de un espacio de ejecución que solo carga los comandos especificados proporciona un rendimiento significativamente mejorado.
 

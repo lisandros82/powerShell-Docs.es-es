@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
 caps.latest.revision: 15
 ms.openlocfilehash: 88de19be02de4933f892e02093403a82ccdd5788
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368154"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>Elemento TableRowEntries para TableControl (formato)
@@ -41,7 +41,7 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento TableRowEntry para TableRowEntries para Tablecontrol ((Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Elemento obligatorio.<br /><br /> Define los datos que se muestran en una fila de la tabla.|
+|[Elemento TableRowEntry para TableRowEntries para Tablecontrol ((Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Elemento necesario.<br /><br /> Define los datos que se muestran en una fila de la tabla.|
 
 ### <a name="parent-elements"></a>Elementos primarios
 
@@ -51,7 +51,7 @@ Ninguna.
 
 ## <a name="remarks"></a>Observaciones
 
-Debe especificar uno o varios elementos `TableRowEntry` para la vista de tabla. No hay ningún límite máximo para el número de elementos `TableRowEntry` que se pueden agregar y su orden es significativo.
+Debe especificar uno o varios elementos `TableRowEntry` para la vista de tabla. No hay ningún límite máximo para el número de elementos de `TableRowEntry` que se pueden agregar, y su orden es significativo.
 
 Para obtener más información sobre los componentes de una vista de tabla, vea [crear una vista de tabla](./creating-a-table-view.md).
 

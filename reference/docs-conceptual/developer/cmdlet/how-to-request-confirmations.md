@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
 caps.latest.revision: 9
 ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369684"
 ---
 # <a name="how-to-request-confirmations"></a>Cómo solicitar confirmaciones
@@ -24,7 +24,7 @@ En este ejemplo se muestra cómo llamar a los métodos [System. Management. Auto
 
 ## <a name="to-request-confirmation"></a>Para solicitar confirmación
 
-1. Asegúrese de que el parámetro `SupportsShouldProcess` del atributo de cmdlet esté establecido en `true`. (En el caso de las funciones, es un parámetro del atributo CmdletBinding).
+1. Asegúrese de que el parámetro `SupportsShouldProcess` del atributo cmdlet esté establecido en `true`. (En el caso de las funciones, es un parámetro del atributo CmdletBinding).
 
     ```csharp
     [Cmdlet(VerbsDiagnostic.Test, "RequestConfirmationTemplate1",
@@ -49,7 +49,7 @@ En este ejemplo se muestra cómo llamar a los métodos [System. Management. Auto
 
 ## <a name="example"></a>Ejemplo
 
-En el ejemplo de código siguiente, se llama a los métodos [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) desde dentro de la invalidación del [cmdlet Método System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) . Sin embargo, también puede llamar a estos métodos desde los otros métodos de procesamiento de entrada.
+En el ejemplo de código siguiente, se llama a los métodos [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) desde la invalidación del método [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) . Sin embargo, también puede llamar a estos métodos desde los otros métodos de procesamiento de entrada.
 
 ```csharp
 protected override void ProcessRecord()

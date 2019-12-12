@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
 ms.openlocfilehash: b42ba6b2bf42a74213eb78f2db22e16de7e90583
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360644"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Descripción de un módulo de Windows PowerShell
@@ -85,7 +85,7 @@ Un *manifiesto de módulo* es un archivo. psd1 que contiene una tabla hash. Las 
 
 Una vez que haya creado un módulo de script, binario o de manifiesto, puede guardar el trabajo en una ubicación a la que otros usuarios puedan acceder. Por ejemplo, el módulo se puede almacenar en la carpeta del sistema donde está instalado Windows PowerShell, o bien se puede almacenar en una carpeta de usuario.
 
-Por lo general, puede determinar dónde debe instalar el módulo mediante una de las rutas de acceso almacenadas en la variable `$ENV:PSModulePath`. El uso de una de estas rutas de acceso significa que PowerShell puede buscar y cargar automáticamente el módulo cuando un usuario realiza una llamada a él en su código. Si almacena el módulo en otra parte, puede permitir explícitamente que PowerShell lo sepa pasando la ubicación del módulo como parámetro al llamar a `Install-Module`.
+Por lo general, puede determinar dónde debe instalar el módulo mediante el uso de una de las rutas de acceso almacenadas en la variable `$ENV:PSModulePath`. El uso de una de estas rutas de acceso significa que PowerShell puede buscar y cargar automáticamente el módulo cuando un usuario realiza una llamada a él en su código. Si almacena el módulo en otra parte, puede permitir explícitamente que PowerShell lo sepa pasando la ubicación del módulo como parámetro al llamar a `Install-Module`.
 
 Independientemente de la ruta de acceso de la carpeta se conoce como la *base* del módulo (ModuleBase), y el nombre del archivo de módulo de script, binario o de manifiesto debe ser el mismo que el nombre de la carpeta de módulos, con las siguientes excepciones:
 
@@ -107,7 +107,7 @@ Cmdlet [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Modul
 
 Cmdlet [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) este cmdlet recupera información sobre los módulos que se han importado o que se pueden importar a la sesión actual.
 
-Cmdlet [Export-ModuleMember:](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) este cmdlet especifica los miembros del módulo (por ejemplo, cmdlets, funciones, variables y alias) que se exportan desde un archivo de módulo de script (. psm1) o desde un módulo dinámico creado mediante el cmdlet `New-Module`.
+Cmdlet [Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) este cmdlet especifica los miembros del módulo (por ejemplo, cmdlets, funciones, variables y alias) que se exportan desde un archivo de módulo de script (. psm1) o desde un módulo dinámico creado mediante el cmdlet `New-Module`.
 
 Cmdlet [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) este cmdlet quita los módulos de la sesión actual.
 

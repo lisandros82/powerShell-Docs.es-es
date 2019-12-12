@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
 ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361854"
 ---
 # <a name="tablecolumnheader-element-format"></a>Elemento TableColumnHeader (formato)
@@ -44,7 +44,7 @@ Ninguna.
 |Elemento|Descripción|
 |-------------|-----------------|
 |[Elemento Label para TableColumnHeader para Tablecontrol ((Format)](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|Elemento opcional.<br /><br /> Define la etiqueta que se muestra en la parte superior de la columna. Si no se especifica ninguna etiqueta, se usa el nombre de la propiedad cuyo valor se muestra en las filas.|
-|[Elemento width para TableColumnHeader para Tablecontrol ((Format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|Elemento obligatorio.<br /><br /> Especifica el ancho (en caracteres) de la columna.|
+|[Elemento width para TableColumnHeader para Tablecontrol ((Format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|Elemento necesario.<br /><br /> Especifica el ancho (en caracteres) de la columna.|
 |[Elemento Alignment para TableColumnHeader para Tablecontrol ((Format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Elemento opcional.<br /><br /> Especifica cómo se muestra la etiqueta de la columna. Si no se especifica ninguna alineación, la etiqueta se alinea a la izquierda.|
 
 ### <a name="parent-elements"></a>Elementos primarios
@@ -57,7 +57,7 @@ Ninguna.
 
 Especifique un encabezado para cada columna de la tabla. Las columnas se muestran en el orden en el que se definen los elementos `TableColumnHeader`.
 
-Una tabla debe tener el mismo número de elementos `TableColumnHeader` que `TableRowEntry`. El encabezado de columna define cómo se muestra el texto en la parte superior de la tabla. Las entradas de fila definen qué datos se muestran en las filas de la tabla.
+Una tabla debe tener el mismo número de elementos `TableColumnHeader` que los elementos `TableRowEntry`. El encabezado de columna define cómo se muestra el texto en la parte superior de la tabla. Las entradas de fila definen qué datos se muestran en las filas de la tabla.
 
 Para obtener más información sobre los componentes de una vista de tabla, vea [vista de tabla](./creating-a-table-view.md).
 

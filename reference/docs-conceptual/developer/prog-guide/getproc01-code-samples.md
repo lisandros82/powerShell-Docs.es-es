@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: f85487d6-ef50-40b9-b60d-8bb65506627e
 caps.latest.revision: 6
 ms.openlocfilehash: 6d47fbc6b41d87cb830683ea412826275083b8a3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360464"
 ---
 # <a name="getproc01-code-samples"></a>Ejemplos de código GetProc01
 
-Estos son los ejemplos de código para el cmdlet de ejemplo GetProc01. Este es el ejemplo de cmdlet Basic `Get-Process` que se describe en [creación del primer cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md). Un cmdlet `Get-Process` está diseñado para recuperar información acerca de todos los procesos que se ejecutan en el equipo local.
+Estos son los ejemplos de código para el cmdlet de ejemplo GetProc01. Este es el ejemplo de cmdlet de `Get-Process` básico que se describe en [creación del primer cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md). Un cmdlet `Get-Process` está diseñado para recuperar información acerca de todos los procesos que se ejecutan en el equipo local.
 
 Para obtener el código de ejemplo completo, vea los temas siguientes.
 

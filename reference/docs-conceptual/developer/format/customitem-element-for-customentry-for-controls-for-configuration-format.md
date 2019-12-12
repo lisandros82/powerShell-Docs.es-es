@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 73fb11ee-0ebd-477a-ac36-acdfbb32e70d
 caps.latest.revision: 7
 ms.openlocfilehash: bd0cb69770817ec215ddb1862a43a838baddefcf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364034"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-configuration-format"></a>Elemento CustomItem para CustomEntry for Controls for Configuration (formato)
@@ -34,7 +34,7 @@ Elemento de configuración (formato) elementos del control de configuración (fo
 
 ## <a name="attributes-and-elements"></a>Atributos y elementos
 
-En las secciones siguientes se describen los atributos, los elementos secundarios y el elemento primario del elemento `CustomItem`. Para obtener más información, vea la sección Comentarios.
+En las secciones siguientes se describen los atributos, los elementos secundarios y el elemento primario del elemento `CustomItem`. Para obtener más información, vea Comentarios.
 
 ### <a name="attributes"></a>Atributos
 
@@ -59,7 +59,7 @@ Ninguna.
 
 Al especificar los elementos secundarios del elemento `CustomItem`, tenga en cuenta lo siguiente:
 
-- Los elementos secundarios deben agregarse en la secuencia siguiente: `ExpressionBinding`, `NewLine`, `Text` y `Frame`.
+- Los elementos secundarios se deben agregar en la secuencia siguiente: `ExpressionBinding`, `NewLine`, `Text`y `Frame`.
 
 - No hay ningún límite máximo en el número de secuencias que se pueden especificar.
 

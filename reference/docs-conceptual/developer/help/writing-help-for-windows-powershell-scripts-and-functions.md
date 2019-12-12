@@ -9,16 +9,16 @@ ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
 ms.openlocfilehash: af989fb2eeba6b68f2e3e6506f3f60d5be6f7d8a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367724"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>Escribir ayuda para scripts y funciones de PowerShell
 
 Los scripts y las funciones de PowerShell deben estar completamente documentados siempre que se compartan con otros usuarios.
-El cmdlet `Get-Help` muestra los temas de ayuda del script y la función en el mismo formato en que se muestra la ayuda para los cmdlets, y todos los parámetros de `Get-Help` funcionan en los temas de ayuda de la función y el script.
+En el cmdlet `Get-Help` se muestran los temas de ayuda de la función y el script en el mismo formato en que se muestra la ayuda de los cmdlets, y todos los parámetros de `Get-Help` funcionan en los temas de ayuda de script y función.
 
 Los scripts de PowerShell pueden incluir un tema de ayuda sobre el script y los temas de ayuda acerca de cada una de las funciones del script.
 Las funciones que se comparten con independencia de los scripts pueden incluir sus propios temas de ayuda.
@@ -30,16 +30,16 @@ En este documento se explica el formato y la ubicación correcta de los temas de
 ### <a name="comment-based-help"></a>Ayuda basada en comentarios
 El tema de ayuda que describe un script o una función se puede implementar como un conjunto de comentarios dentro del script o la función.
 Al escribir ayuda basada en comentarios para un script y para las funciones de un script, preste especial atención a las reglas para colocar la ayuda basada en Comentarios.
-La selección de ubicación determina si el cmdlet `Get-Help` asocia el tema de ayuda con el script o una función.
+La selección de ubicación determina si el cmdlet de `Get-Help` asocia el tema de ayuda con el script o una función.
 Para obtener más información sobre cómo escribir temas de ayuda basados en comentarios, vea [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
 ### <a name="xml-based-command-help"></a>Ayuda de comandos basada en XML
 El tema de ayuda que describe un script o una función se puede implementar en un archivo XML que utiliza el esquema de ayuda del comando.
-Para asociar el script o la función con el archivo XML, use la palabra clave comment `ExternalHelp` seguida de la ruta de acceso y el nombre del archivo XML.
+Para asociar el script o la función al archivo XML, use la palabra clave `ExternalHelp` comment seguida de la ruta de acceso y el nombre del archivo XML.
 
-Cuando la palabra clave comment `ExternalHelp` está presente, tiene prioridad sobre la ayuda basada en comentarios, incluso cuando `Get-Help` no encuentra un archivo de ayuda que coincida con el valor de la palabra clave `ExternalHelp`.
+Cuando está presente la palabra clave `ExternalHelp` comment, tiene prioridad sobre la ayuda basada en comentarios, incluso cuando `Get-Help` no encuentra un archivo de ayuda que coincida con el valor de la palabra clave `ExternalHelp`.
 
-### <a name="online-help"></a>Ayuda en línea
+### <a name="online-help"></a>Ayuda en pantalla de
 Puede publicar los temas de ayuda en Internet y, a continuación, dirigir `Get-Help` para abrir los temas.
 Para obtener más información acerca de cómo escribir temas de ayuda basados en comentarios, consulte [Supporting online help](../module/supporting-online-help.md).
 

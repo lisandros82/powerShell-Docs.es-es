@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
 ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72370034"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>Verbos aprobados para comandos de PowerShell
@@ -65,7 +65,7 @@ El verbo `New` se usa para crear un nuevo recurso.
 El verbo `Set` se utiliza para modificar un recurso existente y, opcionalmente, puede crear el recurso si no existe, como el cmdlet `Set-Variable`.
 
 ### <a name="find-vs-search"></a>Buscar vs. Search
-El verbo `Find` se usa para buscar un objeto.
+El verbo `Find` se utiliza para buscar un objeto.
 El verbo `Search` se usa para crear una referencia a un recurso en un contenedor.
 
 ### <a name="get-vs-read"></a>Obtener y leer
@@ -74,7 +74,7 @@ El verbo `Read` se usa para obtener información de un origen, como un archivo.
 
 ### <a name="invoke-vs-start"></a>Invocar frente a Inicio
 El verbo `Invoke` se utiliza para realizar una operación que normalmente es una operación sincrónica, como la ejecución de un comando.
-El verbo `Start` se usa para iniciar una operación que generalmente es una operación asincrónica, como iniciar un proceso.
+El verbo `Start` se usa para iniciar una operación que normalmente es una operación asincrónica, como iniciar un proceso.
 
 ### <a name="ping-vs-test"></a>Ping frente a prueba
 Utilice el verbo `Test`.
@@ -96,14 +96,14 @@ En la tabla siguiente se enumeran la mayoría de los verbos definidos.
 |[Formato](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f)|Organiza los objetos en un formulario o diseño especificado.||
 |[Obtener](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Especifica una acción que recupera un recurso. Este verbo se empareja con `Set`.|En esta acción, no use verbos como leer, abrir, CAT, escribir, dir, obtener, volcar, adquirir, examinar, buscar o buscar.|
 |[Ocultar](/dotnet/api/System.Management.Automation.VerbsCommon.Hide) (h)|Hace que un recurso no se detecte. Por ejemplo, un cmdlet cuyo nombre incluya el verbo ocultar podría ocultar un servicio de un usuario. Este verbo se empareja con `Show`.|Para esta acción, no use un verbo como bloque.|
-|[Join](/dotnet/api/System.Management.Automation.VerbsCommon.Join) (j)|Combina recursos en un recurso. Por ejemplo, el cmdlet `Join-Path` combina una ruta de acceso con una de sus rutas de acceso secundarias para crear una ruta de acceso única. Este verbo se empareja con `Split`.|En esta acción, no use verbos como combinar, unir, conectar o asociar.|
+|[Join](/dotnet/api/System.Management.Automation.VerbsCommon.Join) (j)|Combina recursos en un recurso. Por ejemplo, el cmdlet `Join-Path` combina una ruta de acceso con una de sus rutas de acceso secundarias para crear una única ruta de acceso. Este verbo se empareja con `Split`.|En esta acción, no use verbos como combinar, unir, conectar o asociar.|
 |[Bloqueo](/dotnet/api/System.Management.Automation.VerbsCommon.Lock) (LK)|Protege un recurso. Este verbo se empareja con `Unlock`.|Para esta acción, no utilice verbos como Restrict o Secure.|
 |[Move](/dotnet/api/System.Management.Automation.VerbsCommon.Move) (m)|Mueve un recurso de una ubicación a otra. Por ejemplo, el cmdlet `Move-Item` mueve un elemento de una ubicación del almacén de datos a otra ubicación.|En esta acción, no utilice verbos como Transfer, Name o Migrate.|
-|[Nuevo](/dotnet/api/System.Management.Automation.VerbsCommon.New) (n)|Crea un recurso. (El verbo `Set` también se puede usar al crear un recurso que incluya datos, como el cmdlet `Set-Variable`).|En esta acción, no use verbos como crear, generar, compilar, hacer o asignar.|
+|[Nuevo](/dotnet/api/System.Management.Automation.VerbsCommon.New) (n)|Crea un recurso. (También se puede usar el verbo `Set` al crear un recurso que incluya datos, como el cmdlet `Set-Variable`).|En esta acción, no use verbos como crear, generar, compilar, hacer o asignar.|
 |[Abrir](/dotnet/api/System.Management.Automation.VerbsCommon.Open) (OP)|Cambia el estado de un recurso para que sea accesible, disponible o utilizable. Este verbo se empareja con `Close`.||
 |[Optimizar](/dotnet/api/System.Management.Automation.VerbsCommon.Optimize) (OM)|Aumenta la eficacia de un recurso.||
 |[Pop](/dotnet/api/System.Management.Automation.VerbsCommon.Pop) (pop)|Quita un elemento de la parte superior de una pila. Por ejemplo, el cmdlet `Pop-Location` cambia la ubicación actual a la ubicación que se insertó más recientemente en la pila.||
-|[Inserciones](/dotnet/api/System.Management.Automation.VerbsCommon.Push) (PU)|Agrega un elemento a la parte superior de una pila. Por ejemplo, el cmdlet `Push-Location` realiza la instalación de la ubicación actual en la pila.||
+|[Inserciones](/dotnet/api/System.Management.Automation.VerbsCommon.Push) (PU)|Agrega un elemento a la parte superior de una pila. Por ejemplo, el cmdlet `Push-Location` envía la ubicación actual en la pila.||
 |[Rehacer](/dotnet/api/System.Management.Automation.VerbsCommon.Redo) (re)|Restablece un recurso al estado que se deshizo.||
 |[Quitar](/dotnet/api/System.Management.Automation.VerbsCommon.Remove) (r)|Elimina un recurso de un contenedor. Por ejemplo, el cmdlet `Remove-Variable` elimina una variable y su valor. Este verbo se empareja con `Add`.|En esta acción, no use verbos como borrar, cortar, desechar, descartar o borrar.|
 |[Cambiar nombre](/dotnet/api/System.Management.Automation.VerbsCommon.Rename) (RN)|Cambia el nombre de un recurso. Por ejemplo, el cmdlet `Rename-Item`, que se usa para tener acceso a los datos almacenados, cambia el nombre de un elemento en el almacén de datos.|Para esta acción, no use un verbo como Change.|
@@ -209,7 +209,7 @@ En la tabla siguiente se enumeran la mayoría de los verbos definidos.
 |[Suspender](/dotnet/api/System.Management.Automation.VerbsLifecycle.Suspend) (SS)|Pausa una actividad. Por ejemplo, el cmdlet `Suspend-Service` pausa un servicio. Este verbo se empareja con `Resume`.|Para esta acción, no use un verbo como pausar.|
 |[Desinstalar](/dotnet/api/System.Management.Automation.VerbsLifecycle.Uninstall) (EE. UU.)|Quita un recurso de una ubicación indicada. Este verbo se empareja con `Install`.||
 |[Anular el registro](/dotnet/api/System.Management.Automation.VerbsLifecycle.Unregister) (su)|Quita la entrada de un recurso de un repositorio. Este verbo se empareja con `Register`.|Para esta acción, no use un verbo como Remove.|
-|[Esperar](/dotnet/api/System.Management.Automation.VerbsLifecycle.Wait) (w)|Pausa una operación hasta que se produce un evento especificado. Por ejemplo, el cmdlet `Wait-Job` pausa las operaciones hasta que se completan uno o varios de los trabajos en segundo plano.|Para esta acción, no utilice verbos como Sleep o PAUSE.|
+|[Esperar](/dotnet/api/System.Management.Automation.VerbsLifecycle.Wait) (w)|Pausa una operación hasta que se produce un evento especificado. Por ejemplo, el cmdlet `Wait-Job` detiene las operaciones hasta que se completan uno o varios de los trabajos en segundo plano.|Para esta acción, no utilice verbos como Sleep o PAUSE.|
 
 ## <a name="security-verbs"></a>Verbos de seguridad
 

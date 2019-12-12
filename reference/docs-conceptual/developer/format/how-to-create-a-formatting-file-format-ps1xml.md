@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eb568878-f63e-4561-98e2-16ee2ac7559d
 caps.latest.revision: 8
 ms.openlocfilehash: e97e9ddb1bf81ba66e5f3cedddd22e3a861ce228
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363624"
 ---
 # <a name="how-to-create-a-formatting-file-formatps1xml"></a>Cómo crear un archivo de formato (. format.ps1xml)
@@ -36,9 +36,9 @@ En este tema se describe cómo crear un archivo de formato (. Format. ps1xml).
    </Configuration>
    ```
 
-   - Las etiquetas \<Configuration > \</Configuration > definen el nodo raíz `Configuration`. Todas las etiquetas XML adicionales se incluirán dentro de este nodo.
+   - Las etiquetas de configuración de \<\</Configuración > definen el nodo raíz `Configuration`. Todas las etiquetas XML adicionales se incluirán dentro de este nodo.
 
-   - Las <ViewDefinitions></ViewDefinitions> etiquetas definen el nodo `ViewDefinitions`. Todas las vistas se definen dentro de este nodo.
+   - Las <ViewDefinitions></ViewDefinitions> etiquetas definen el nodo de `ViewDefinitions`. Todas las vistas se definen dentro de este nodo.
 
 3. Guarde el archivo en la carpeta de instalación de Windows PowerShell, en la carpeta del módulo o en una subcarpeta de la carpeta del módulo. Use el siguiente formato de nombre al guardar el archivo: `MyFile.format.ps1xml`. Los archivos de formato deben utilizar la extensión `.format.ps1xml`.
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 46905eb9-64d7-4c55-9c2a-7bc7bf04e14b
 caps.latest.revision: 10
 ms.openlocfilehash: 6c2e5891a8e3f24969c12a2e57dc5ae8caa68e41
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365614"
 ---
 # <a name="how-to-declare-parameter-sets"></a>Cómo declarar los conjuntos de parámetros
@@ -20,7 +20,7 @@ ms.locfileid: "72365614"
 En este ejemplo se muestra cómo definir dos conjuntos de parámetros al declarar los parámetros de un cmdlet. Cada conjunto de parámetros tiene un parámetro único y un parámetro compartido que usan ambos conjuntos de parámetros. Para obtener más información sobre los conjuntos de parámetros, incluido el modo de especificar el conjunto de parámetros predeterminado, consulte conjuntos de parámetros de [cmdlet](./cmdlet-parameter-sets.md).
 
 > [!IMPORTANT]
-> Siempre que sea posible, defina el parámetro único de un conjunto de parámetros como parámetro necesario. Sin embargo, si desea que el cmdlet se ejecute sin especificar ningún parámetro, el parámetro único puede ser un parámetro opcional. Por ejemplo, el parámetro Unique del cmdlet `Get-Command` es opcional.
+> Siempre que sea posible, defina el parámetro único de un conjunto de parámetros como parámetro necesario. Sin embargo, si desea que el cmdlet se ejecute sin especificar ningún parámetro, el parámetro único puede ser un parámetro opcional. Por ejemplo, el parámetro único del cmdlet `Get-Command` es opcional.
 
 ## <a name="how-to-define-two-parameter-sets"></a>Cómo definir dos conjuntos de parámetros
 

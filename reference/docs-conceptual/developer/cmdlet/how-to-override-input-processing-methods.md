@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1a1ad921-5816-4937-acf1-ed4760fae740
 caps.latest.revision: 8
 ms.openlocfilehash: cfee55576518cf9ce38501192872ce94054f5213
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364474"
 ---
 # <a name="how-to-override-input-processing-methods"></a>Cómo invalidar los métodos de procesamiento de entrada
@@ -29,7 +29,7 @@ En estos ejemplos se muestra cómo sobrescribir los métodos de procesamiento de
 
 - Declare una invalidación protegida del método [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) .
 
-La siguiente clase imprime un mensaje de ejemplo. Para usar esta clase, cambie el verbo y el sustantivo en el atributo del cmdlet, cambie el nombre de la clase para que refleje el nuevo verbo y el nombre y, a continuación, agregue la funcionalidad que necesita para la invalidación de [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) forma.
+La siguiente clase imprime un mensaje de ejemplo. Para usar esta clase, cambie el verbo y el sustantivo en el atributo del cmdlet, cambie el nombre de la clase para que refleje el nuevo verbo y el nombre y, a continuación, agregue la funcionalidad que necesita para la invalidación del método [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) .
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "BeginProcessingClass")]

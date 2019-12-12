@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4497b64c-7875-4047-bf77-07e04c098ffe
 caps.latest.revision: 4
 ms.openlocfilehash: 376d90394b632e82322b848cb124f002ff91d8b3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366184"
 ---
 # <a name="deploying-a-management-odata-web-service"></a>Implementación de un servicio web de Management OData
@@ -23,7 +23,7 @@ Una vez que haya completado todos los pasos necesarios para crear un servicio We
 
 Complete los pasos siguientes para implementar el servicio Web Management OData.
 
-1. Cree un directorio para la aplicación web en el directorio de IIS `WWWRoot`.
+1. Cree un directorio para la aplicación web en el directorio de `WWWRoot` de IIS.
 
 2. Copie el archivo de esquema MOF, el archivo de esquema XML, los archivos DLL que exportan las interfaces [Microsoft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) y [System. Management. Automation. Remoting. Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) y el archivo Web. config en el directorio de la aplicación.
 

@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
 ms.openlocfilehash: 2e3d97e224b06bdf36ac0bc1237911e029ea762d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366834"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Creación de un proveedor de unidad de Windows PowerShell
@@ -31,7 +31,7 @@ El proveedor de unidades debe definir una clase .NET que derive de la clase base
 
 [!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L29-L30 "AccessDBProviderSample02.cs")]
 
-Observe que en este ejemplo, el atributo [System. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) especifica un nombre descriptivo para el proveedor y las capacidades específicas de Windows PowerShell que el proveedor expone a las ventanas. Tiempo de ejecución de PowerShell durante el procesamiento de comandos. Los valores posibles para las capacidades del proveedor se definen mediante la enumeración [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . Este proveedor de unidades no es compatible con ninguna de estas funcionalidades.
+Observe que en este ejemplo, el atributo [System. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) especifica un nombre descriptivo para el proveedor y las capacidades específicas de Windows PowerShell que el proveedor expone al tiempo de ejecución de Windows PowerShell durante el procesamiento de comandos. Los valores posibles para las capacidades del proveedor se definen mediante la enumeración [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . Este proveedor de unidades no es compatible con ninguna de estas funcionalidades.
 
 ## <a name="defining-base-functionality"></a>Definir la funcionalidad básica
 
@@ -67,7 +67,7 @@ La invalidación de este método debe hacer lo siguiente:
 
 ## <a name="attaching-dynamic-parameters-to-newdrive"></a>Adjuntar parámetros dinámicos a NewDrive
 
-Es posible que el cmdlet `New-PSDrive` que admite el proveedor de unidades requiera parámetros adicionales. Para adjuntar estos parámetros dinámicos al cmdlet, el proveedor implementa el método [System. Management. Automation. Provider. Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) . Este método devuelve un objeto que tiene propiedades y campos con atributos de análisis similares a una clase de cmdlet o un objeto [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) .
+El cmdlet `New-PSDrive` que admite el proveedor de unidades puede requerir parámetros adicionales. Para adjuntar estos parámetros dinámicos al cmdlet, el proveedor implementa el método [System. Management. Automation. Provider. Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) . Este método devuelve un objeto que tiene propiedades y campos con atributos de análisis similares a una clase de cmdlet o un objeto [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) .
 
 Este proveedor de unidades no invalida este método. Sin embargo, en el código siguiente se muestra la implementación predeterminada de este método:
 
@@ -95,9 +95,9 @@ Este proveedor de unidades no invalida el método [System. Management. Automatio
 
 #### <a name="things-to-remember-about-implementing-initializedefaultdrives"></a>Aspectos que se deben recordar sobre la implementación de InitializeDefaultDrives
 
-Todos los proveedores de unidades deben montar una unidad raíz para ayudar al usuario a detectar. La unidad raíz podría mostrar ubicaciones que sirvan como raíces para otras unidades montadas. Por ejemplo, el proveedor de Active Directory podría crear una unidad que muestre los contextos de nomenclatura que se encuentran en los atributos `namingContext` en el entorno de sistema distribuido raíz (DSE). Esto ayuda a los usuarios a detectar puntos de montaje para otras unidades.
+Todos los proveedores de unidades deben montar una unidad raíz para ayudar al usuario a detectar. La unidad raíz podría mostrar ubicaciones que sirvan como raíces para otras unidades montadas. Por ejemplo, el proveedor de Active Directory podría crear una unidad que muestre los contextos de nomenclatura que se encuentran en los atributos de `namingContext` en el entorno de sistema distribuido raíz (DSE). Esto ayuda a los usuarios a detectar puntos de montaje para otras unidades.
 
-## <a name="code-sample"></a>Código de ejemplo
+## <a name="code-sample"></a>Ejemplo de código
 
 Para obtener el código de ejemplo completo, vea el [ejemplo de código AccessDbProviderSample02](./accessdbprovidersample02-code-sample.md).
 
@@ -107,7 +107,7 @@ Cuando el proveedor de Windows PowerShell se ha registrado con Windows PowerShel
 
 1. Ejecute el cmdlet `Get-PSProvider` para recuperar la lista de proveedores para asegurarse de que el proveedor de la unidad AccessDB está presente:
 
-   **@No__t de > de PS-1**
+   **`Get-PSProvider` de > de PS**
 
    Aparecerá el siguiente resultado:
 

@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
 ms.openlocfilehash: ad42b8de867f468e832380ab6a22a39b6d27d3c6
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417487"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Creación de un proveedor de elementos de Windows PowerShell
@@ -203,7 +203,7 @@ Este proveedor de elementos implementa un método auxiliar ChunkPath que divide 
 
 Este proveedor de elementos implementa el método auxiliar GetTables que devuelve un objeto DatabaseTableInfo que representa información sobre la tabla especificada en la llamada.
 
-### <a name="getrow-method"></a>Método GetRow
+### <a name="getrow-method"></a>GetRow (Método)
 
 El método [System. Management. Automation. Provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) de este proveedor de elementos llama al método auxiliar de GetRows. Este método auxiliar recupera un objeto DatabaseRowInfo que representa información sobre la fila especificada en la tabla.
 
@@ -219,7 +219,7 @@ Este proveedor de elementos define la clase auxiliar DatabaseRowInfo que represe
 
 El proveedor de ejemplo define un método DatabaseRowInfo. GetRows para devolver una colección de objetos de información de fila para la tabla especificada. Este método incluye un bloque try/catch para detectar excepciones. Los errores no producirán ninguna información de fila.
 
-## <a name="code-sample"></a>Código de ejemplo
+## <a name="code-sample"></a>Ejemplo de código
 
 Para obtener el código de ejemplo completo, vea el [ejemplo de código AccessDbProviderSample03](./accessdbprovidersample03-code-sample.md).
 
@@ -235,7 +235,7 @@ Vea [Cómo registrar cmdlets, proveedores y aplicaciones host](https://msdn.micr
 
 Cuando este proveedor de elementos de Windows PowerShell se registra con Windows PowerShell, solo puede probar la funcionalidad básica y de unidad del proveedor. Para probar la manipulación de los elementos, también debe implementar la funcionalidad de contenedor descrita en [implementación de un proveedor de Windows PowerShell de contenedor](./creating-a-windows-powershell-container-provider.md).
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Véase también
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 

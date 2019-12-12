@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b8b6739b-770c-432a-95ab-551c7507c51f
 caps.latest.revision: 6
 ms.openlocfilehash: 3b5ce60d3a0d76988af48f49445a5478a415d498
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361674"
 ---
 # <a name="typename-element-for-entryselectedby-for-groupby-format"></a>Elemento TypeName para EntrySelectedBy for GroupBy (formato)
@@ -57,7 +57,7 @@ Para obtener más información sobre los componentes de una vista de control per
 
 ## <a name="see-also"></a>Véase también
 
-[Crear controles personalizados](./creating-custom-controls.md)
+[Creación de controles personalizados](./creating-custom-controls.md)
 
 [Elemento EntrySelectedBy para CustomEntry para GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)
 

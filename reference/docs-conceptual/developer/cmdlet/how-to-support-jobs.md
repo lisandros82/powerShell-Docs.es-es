@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
 caps.latest.revision: 9
 ms.openlocfilehash: d732bce1af446090c3e5741eebeba737f86c7ca8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369664"
 ---
 # <a name="how-to-support-jobs"></a>Cómo admitir trabajos
@@ -21,7 +21,7 @@ En este ejemplo se muestra cómo admitir trabajos cuando se escriben cmdlets. Si
 
 ## <a name="to-support-jobs"></a>Para admitir trabajos
 
-1. Defina un parámetro de modificador `AsJob` para que el usuario pueda decidir si ejecutar el cmdlet como un trabajo.
+1. Defina un parámetro de modificador `AsJob` de modo que el usuario pueda decidir si ejecutar el cmdlet como un trabajo.
 
     En el ejemplo siguiente se muestra una declaración de parámetro AsJob.
 

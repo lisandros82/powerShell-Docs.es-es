@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
 ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359634"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Creación de un flujo de trabajo con actividades de Windows PowerShell
@@ -45,9 +45,9 @@ En los procedimientos siguientes se describe cómo crear un flujo de trabajo que
 
 8. Edite las propiedades de la actividad **GetWmiObject** como se indica a continuación.
 
-   |Property|Valor|
+   |Propiedad|Value|
    |--------------|-----------|
-   |**Las**|"Win32_ComputerSystem"|
+   |**Clase**|"Win32_ComputerSystem"|
    |**PSComputerName**|COMP|
    |**PSCredential**|MachineCred|
 
@@ -55,21 +55,21 @@ En los procedimientos siguientes se describe cómo crear un flujo de trabajo que
 
 10. Edite las propiedades de la actividad **AddComputer** como se indica a continuación.
 
-    |Property|Valor|
+    |Propiedad|Value|
     |--------------|-----------|
-    |**NombreDeEquipo**|COMP|
+    |**nombreDeEquipo**|COMP|
     |**DomainCredential**|DomainCred|
 
 11. Agregue una actividad **RestartComputer** a la secuencia **JoinDomain** después de la actividad **AddComputer** .
 
 12. Edite las propiedades de la actividad **RestartComputer** como se indica a continuación.
 
-    |Property|Valor|
+    |Propiedad|Value|
     |--------------|-----------|
-    |**NombreDeEquipo**|COMP|
-    |**Caja**|MachineCred|
-    |**Para**|Microsoft. PowerShell. Commands. WaitForServiceTypes. PowerShell|
-    |**Aplica**|True|
+    |**nombreDeEquipo**|COMP|
+    |**Credential:**|MachineCred|
+    |**For**|Microsoft. PowerShell. Commands. WaitForServiceTypes. PowerShell|
+    |**Force**|True|
     |Wait|True|
     |PSComputerName|{""}|
 
@@ -78,4 +78,4 @@ En los procedimientos siguientes se describe cómo crear un flujo de trabajo que
     Cuando haya terminado los procedimientos, la ventana de diseño de flujo de trabajo debería tener este aspecto.
 
     ![el XAML de JoinDomain en el diseñador de flujo de trabajo](../media/joindomainworkflow.png)
-    ![JOINDOMAIN XAML en el diseñador de flujo de trabajo](../media/joindomainworkflow.png "JoinDomainWorkflow")
+    el ![XAML de JoinDomain en Workflow Designer](../media/joindomainworkflow.png "JoinDomainWorkflow")

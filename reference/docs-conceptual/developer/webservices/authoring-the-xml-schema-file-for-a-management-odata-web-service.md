@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
 ms.openlocfilehash: a806d012097d107b6cc35710b9a93f2b27dd1ace
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359804"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>Creación del archivo de esquema XML para un servicio web de Management OData
 
-Después de definir los recursos que el servicio Web expondrá (consulte [creación del archivo de esquema MOF para un servicio Web Management OData](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)), debe asignar esos recursos a los cmdlets de Windows PowerShell subyacentes que implementan las operaciones admitidas para cada uno de ellos. recurso mediante la creación de un archivo XML que se ajusta al [esquema de asignación de recursos](./resource-mapping-schema.md). El archivo XML también especifica las direcciones URL que usa el cliente para tener acceso a los recursos.
+Después de definir los recursos que el servicio Web expondrá (consulte [creación del archivo de esquema MOF para un servicio Web de Management OData](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)), debe asignar esos recursos a los cmdlets de Windows PowerShell subyacentes que implementan las operaciones admitidas para cada recurso mediante la creación de un archivo XML que se ajusta al [esquema de asignación de recursos](./resource-mapping-schema.md). El archivo XML también especifica las direcciones URL que usa el cliente para tener acceso a los recursos.
 
 ## <a name="mappng-resources-to-urls"></a>Mappng recursos a direcciones URL
 

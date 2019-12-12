@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
 ms.openlocfilehash: 9197f5635528e0f52cd08adde1c6bd69467725e8
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417469"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Creación de un proveedor de propiedades de Windows PowerShell
@@ -42,7 +42,7 @@ Un proveedor de propiedades debe crear una clase .NET que admita la interfaz [Sy
 
 La interfaz [System. Management. Automation. Provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) se puede adjuntar a cualquiera de las clases base del proveedor, con la excepción de la clase [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . Agregue la funcionalidad básica requerida por la clase base que está utilizando. Para obtener más información sobre las clases base, vea [diseñar un proveedor de Windows PowerShell](./designing-your-windows-powershell-provider.md).
 
-## <a name="retrieving-properties"></a>Recuperar propiedades
+## <a name="retrieving-properties"></a>Recuperación de propiedades
 
 Para recuperar las propiedades, el proveedor debe implementar el método [System. Management. Automation. Provider. Ipropertycmdletprovider. GetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) para admitir llamadas del cmdlet `Get-ItemProperty`. Este método recupera las propiedades del elemento que se encuentra en la ruta de acceso interna del proveedor especificado (completo).
 
@@ -130,7 +130,7 @@ Esta es la implementación predeterminada de [System. Management. Automation. Pr
 
 Vea [Cómo registrar cmdlets, proveedores y aplicaciones host](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Véase también
 
 [Proveedor de Windows PowerShell](./designing-your-windows-powershell-provider.md)
 

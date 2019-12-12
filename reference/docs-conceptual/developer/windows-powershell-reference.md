@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
 ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366284"
 ---
 # <a name="windows-powershell-reference"></a>Referencia de Windows PowerShell
@@ -23,7 +23,7 @@ Windows PowerShell es un entorno conectado a un marco de Microsoft .NET diseñad
 
 Windows PowerShell permite que un administrador del sistema automatice la administración de recursos del sistema mediante la ejecución de comandos, ya sea directamente o a través de scripts.
 
-## <a name="developer-audience"></a>Audiencia para desarrolladores
+## <a name="developer-audience"></a>Audiencia de los desarrolladores
 
 El kit de desarrollo de software (SDK) de Windows PowerShell está escrito para los desarrolladores de comandos que necesitan información de referencia sobre las API proporcionadas por Windows PowerShell. Los desarrolladores de comandos usan Windows PowerShell para crear comandos y proveedores que extienden las tareas que puede realizar Windows PowerShell.
 
@@ -37,7 +37,7 @@ Además del SDK de Windows PowerShell, los siguientes recursos proporcionan más
 
 [Escribir un cmdlet de Windows PowerShell](./cmdlet/writing-a-windows-powershell-cmdlet.md) Proporciona información y ejemplos de código para los administradores de programas que diseñan cmdlets y para desarrolladores que implementan código de cmdlet.
 
-[Blog del equipo de Windows PowerShell](https://blogs.msdn.microsoft.com/PowerShell/) El mejor recurso para aprender y colaborar con otros usuarios de Windows PowerShell. Lea el blog del equipo de Windows PowerShell y únase al foro de usuarios de Windows PowerShell (Microsoft. public. Windows. PowerShell). Use Windows Live Search para buscar otros blogs y recursos de Windows PowerShell. Después, a medida que desarrolle sus conocimientos, puede colaborar libremente con sus ideas.
+[Blog del equipo de Windows PowerShell](https://blogs.msdn.microsoft.com/PowerShell/) El mejor recurso para aprender y colaborar con otros usuarios de Windows PowerShell. Lea el blog del Equipo de Windows PowerShell y únase al Foro de usuarios de Windows PowerShell (microsoft.public.windows.powershell). Use Windows Live Search para buscar en otros blogs y recursos de Windows PowerShell. Después, a medida que desarrolle sus conocimientos, puede colaborar libremente con sus ideas.
 
 [Explorador de módulos de PowerShell](/powershell/module/) Proporciona las versiones más recientes de los temas de ayuda de la línea de comandos.
 

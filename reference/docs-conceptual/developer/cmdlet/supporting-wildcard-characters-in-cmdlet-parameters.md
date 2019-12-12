@@ -7,10 +7,10 @@ ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.openlocfilehash: 19644c5bc186a5554d6b134a67fc7c4d7aa7b64c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365314"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>Compatibilidad con caracteres comodín en los parámetros del cmdlet
@@ -30,7 +30,7 @@ A menudo, tendrá que diseñar un cmdlet para que se ejecute en un grupo de recu
 
 Windows PowerShell admite los siguientes caracteres comodín.
 
-| N |                             Descripción                             |  Ejemplo   |     Coincidencia      | No coincide |
+| Comodín |                             Descripción                             |  Ejemplo   |     Coincidencia      | No coincide |
 | -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
 | *        | Coincide con cero o más caracteres, empezando en la posición especificada | `a*`       | A, AG, Apple     |                |
 | ?        | Coincide con cualquier carácter que se encuentra en la posición especificada                     | `?n`       | , En, en       | ejecuta            |
@@ -76,7 +76,7 @@ True
 Cuando los parámetros de cmdlet admiten caracteres comodín, la operación normalmente genera una salida de matriz.
 En ocasiones, no tiene sentido admitir una salida de matriz porque el usuario podría usar un solo elemento. Por ejemplo, el cmdlet `Set-Location` no admite la salida de la matriz porque el usuario establece una sola ubicación. En esta instancia, el cmdlet sigue admitiendo caracteres comodín, pero fuerza la resolución en una sola ubicación.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Véase también
 
 [Escribir un cmdlet de Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)
 

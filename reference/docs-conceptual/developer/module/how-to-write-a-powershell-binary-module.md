@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
 ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367124"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>Cómo escribir un módulo binario de PowerShell
@@ -75,7 +75,7 @@ En el procedimiento siguiente se describe cómo crear e instalar un módulo bina
 
    La variable de entorno global `PSModulePath` describe las rutas de acceso predeterminadas que PowerShell usará para buscar el módulo. Por ejemplo, una ruta de acceso común para guardar un módulo en un sistema sería `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`. Si no utiliza las rutas de acceso predeterminadas, tendrá que indicar explícitamente la ubicación del módulo durante la instalación. Asegúrese de crear una carpeta para guardar el módulo en, ya que es posible que necesite la carpeta para almacenar varios ensamblados y archivos de la solución.
 
-   Tenga en cuenta que técnicamente no es necesario instalar el módulo en ningún lugar del `PSModulePath`; estos son simplemente las ubicaciones predeterminadas que PowerShell buscará en el módulo. Sin embargo, se recomienda que lo haga, a menos que tenga una buena razón para almacenar el módulo en otra parte. Para obtener más información, vea [instalar un módulo de PowerShell](./installing-a-powershell-module.md) y [modificar la ruta de instalación del módulo de PowerShell](./modifying-the-psmodulepath-installation-path.md).
+   Tenga en cuenta que técnicamente no es necesario instalar el módulo en ningún lugar del `PSModulePath`: son simplemente las ubicaciones predeterminadas que PowerShell buscará en el módulo. Sin embargo, se recomienda que lo haga, a menos que tenga una buena razón para almacenar el módulo en otra parte. Para obtener más información, vea [instalar un módulo de PowerShell](./installing-a-powershell-module.md) y [modificar la ruta de instalación del módulo de PowerShell](./modifying-the-psmodulepath-installation-path.md).
 
 4. Importe el módulo en PowerShell con una llamada a [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module).
 

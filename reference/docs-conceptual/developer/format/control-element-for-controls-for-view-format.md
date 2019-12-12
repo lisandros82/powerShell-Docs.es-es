@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1fd53f55-698d-4df5-bb9a-fe28dc3193e1
 caps.latest.revision: 11
 ms.openlocfilehash: df568ccb36a2646b983622cdf95718dd5cac62c3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363474"
 ---
 # <a name="control-element-for-controls-for-view--format"></a>Elemento Control para Controls for View (formato)
@@ -42,8 +42,8 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento Name del control para la vista (Format)](./name-element-for-control-for-controls-for-view-format.md)|Elemento obligatorio.<br /><br /> Especifica el nombre del control.|
-|[Elemento CustomControl para el control de los controles de View (Format)](./customcontrol-element-for-control-for-controls-for-view-format.md)|Elemento obligatorio.<br /><br /> Define el control utilizado por esta vista.|
+|[Elemento Name del control para la vista (Format)](./name-element-for-control-for-controls-for-view-format.md)|Elemento necesario.<br /><br /> Especifica el nombre del control.|
+|[Elemento CustomControl para el control de los controles de View (Format)](./customcontrol-element-for-control-for-controls-for-view-format.md)|Elemento necesario.<br /><br /> Define el control utilizado por esta vista.|
 
 ### <a name="parent-elements"></a>Elementos primarios
 

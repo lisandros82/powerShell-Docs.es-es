@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
 ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361214"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Cómo agregar una sintaxis a un tema de Ayuda del cmdlet
@@ -27,7 +27,7 @@ Antes de empezar a codificar el XML para el diagrama de sintaxis en el archivo d
 
   - Si es false, el parámetro es opcional en todos los comandos que usan el conjunto de parámetros.
 
-- Localización
+- Posición
 
   - Si se denomina, el nombre del parámetro es obligatorio.
 
@@ -160,7 +160,7 @@ El nodo de sintaxis del XML comienza inmediatamente después del nodo de descrip
 
 ### <a name="adding-a-syntax-node"></a>Agregar un nodo de sintaxis
 
-El diagrama de sintaxis que se muestra en el tema de ayuda del cmdlet se genera a partir de los datos del nodo sintaxis del XML. El nodo de sintaxis se incluye en un par si \<command: Syntax > etiquetas. Con cada conjunto de parámetros del cmdlet incluido en un par de etiquetas \<command: syntaxitem >. No hay ningún límite en el número de etiquetas \<command: syntaxitem > que puede Agregar.
+El diagrama de sintaxis que se muestra en el tema de ayuda del cmdlet se genera a partir de los datos del nodo sintaxis del XML. El nodo de sintaxis se incluye en un par si \<comando: sintaxis > etiquetas. Con cada conjunto de parámetros del cmdlet incluido en un par de \<comando: syntaxitem > etiquetas. No hay ningún límite en el número de \<comando: syntaxitem > etiquetas que puede Agregar.
 
 En el ejemplo siguiente se muestra un nodo de sintaxis que tiene nodos de elemento de sintaxis para dos conjuntos de parámetros.
 
@@ -198,12 +198,12 @@ En el ejemplo siguiente se incluye un nodo de sintaxis que tiene nodos de elemen
 
 ### <a name="adding-parameters"></a>Agregar parámetros
 
-Cada parámetro agregado al nodo elemento de sintaxis se especifica dentro de un par de etiquetas \<command: Parameter >. Necesita un par de etiquetas \<command: Parameter > para cada parámetro incluido en el conjunto de parámetros, con la excepción de los parámetros comunes que proporciona Windows PowerShell.
+Cada parámetro agregado al nodo elemento de sintaxis se especifica dentro de un par de \<comando: Parameter > Tags. Necesita un par de \<comando: Parameter > Etiquetas para cada parámetro incluido en el conjunto de parámetros, con la excepción de los parámetros comunes proporcionados por Windows PowerShell.
 
-Los atributos de la etiqueta Open \<command: Parameter > determinan cómo aparece el parámetro en el diagrama de sintaxis. Para obtener información sobre los atributos de parámetro, vea [atributos de parámetro](#parameter-attributes).
+Los atributos de la etiqueta de apertura \<comando: parámetro > determinan cómo aparece el parámetro en el diagrama de sintaxis. Para obtener información sobre los atributos de parámetro, vea [atributos de parámetro](#parameter-attributes).
 
 > [!NOTE]
-> La etiqueta \<command: Parameter > admite un elemento secundario \<maml: Description > cuyo contenido nunca se muestra. Las descripciones de los parámetros se especifican en el nodo de parámetro de XML. Para evitar incoherencias entre la información del elemento de sintaxis Bodes y el nodo de parámetro, omita (\<maml: Description > o déjelo vacío.
+> La etiqueta del comando \<: Parameter > admite un elemento secundario \<maml: Description > cuyo contenido nunca se muestra. Las descripciones de los parámetros se especifican en el nodo de parámetro de XML. Para evitar incoherencias entre la información del elemento de sintaxis Bodes y el nodo de parámetro, omita (\<maml: Description > o déjelo vacío.
 
 En el ejemplo siguiente se incluye un nodo elemento de sintaxis para un conjunto de parámetros con dos parámetros.
 

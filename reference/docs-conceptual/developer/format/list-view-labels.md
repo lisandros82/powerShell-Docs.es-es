@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 53442bb1-74a3-49f9-9150-3bc3081a7565
 caps.latest.revision: 6
 ms.openlocfilehash: 27de41c88e224f7610c10a764e51524016ecc8cb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362794"
 ---
 # <a name="list-view-labels"></a>Vista de lista (Labels)
@@ -23,7 +23,7 @@ Este ejemplo muestra cómo implementar una vista de lista que muestra una etique
 
 1. Copie el XML de la sección de ejemplo de este tema en un archivo de texto.
 
-2. Guarde el archivo de texto. Asegúrese de agregar la extensión `format.ps1xml` al archivo para identificarlo como un archivo de formato.
+2. Guarde el archivo de texto. Asegúrese de agregar la extensión de `format.ps1xml` al archivo para identificarlo como un archivo de formato.
 
 3. Abra Windows PowerShell y ejecute el siguiente comando para cargar el archivo de formato en la sesión actual: `Update-formatdata -prependpath PathToFormattingFile`.
 

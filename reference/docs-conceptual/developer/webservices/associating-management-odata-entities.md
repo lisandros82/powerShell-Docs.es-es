@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 947a3add-3593-400d-8144-8b44c8adbe5e
 caps.latest.revision: 5
 ms.openlocfilehash: 44b718e024eb98ac562edb50076287a31f5edc6b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359814"
 ---
 # <a name="associating-management-odata-entities"></a>Asociación de las entidades de Management OData
@@ -45,7 +45,7 @@ string Products[];
 
 La clase `Category` define una propiedad que es una matriz de los nombres de los productos que pertenecen a esa categoría.
 
-Para asociar dos entidades, debe definir una clase con el atributo `Association` en el archivo MOF del esquema de recursos para el servicio. La clase debe definir las dos entidades que se van a asociar, llamadas `ends` de la asociación. En el ejemplo siguiente se muestra una definición de una clase que define una asociación entre las entidades Category y Products.
+Para asociar dos entidades, debe definir una clase con el `Association` atributo en el archivo MOF del esquema de recursos para el servicio. La clase debe definir las dos entidades que se van a asociar, llamadas `ends` de la asociación. En el ejemplo siguiente se muestra una definición de una clase que define una asociación entre las entidades Category y Products.
 
 ```csharp
 [Association]
@@ -55,7 +55,7 @@ Product ref theProducts;
 }
 ```
 
-También debe cambiar la declaración de la propiedad Products en la clase Category. Use la palabra clave `AssociationClass` para especificar que la propiedad es un extremo de la asociación. La propiedad también se debe definir como una referencia a una entidad independiente, en lugar de una matriz de cadenas. Para ello, use la palabra clave `ref`. En el ejemplo siguiente se muestra la definición de la propiedad para la asociación.
+También debe cambiar la declaración de la propiedad Products en la clase Category. La palabra clave `AssociationClass` se usa para especificar que la propiedad es un extremo de la asociación. La propiedad también se debe definir como una referencia a una entidad independiente, en lugar de una matriz de cadenas. Para ello, use la palabra clave `ref`. En el ejemplo siguiente se muestra la definición de la propiedad para la asociación.
 
 ```csharp
 class Sample_Category {
@@ -94,7 +94,7 @@ Hay tres casos diferentes que se deben tener en cuenta al asignar una asociació
 
 - Si la propiedad de navegación está presente en el subyacente. .NET Framework tipo, y esa propiedad contiene claves externas, no es necesario realizar ninguna asignación explícita.
 
-- Si la propiedad de navegación no existe en el tipo de .NET Framework subyacente, debe especificar un cmdlet que recupere la lista de claves de las instancias asociadas. Para ello, agregue un elemento `Association` anidado bajo el elemento `CmdletImplementation`, siguiendo los elementos que definen el `cmdlets` para los demás comandos CRUD.
+- Si la propiedad de navegación no existe en el tipo de .NET Framework subyacente, debe especificar un cmdlet que recupere la lista de claves de las instancias asociadas. Para ello, agregue un elemento `Association` anidado bajo el elemento `CmdletImplementation`, siguiendo los elementos que definen los `cmdlets` para los demás comandos CRUD.
 
   ```xml
   Class Name=" Category">

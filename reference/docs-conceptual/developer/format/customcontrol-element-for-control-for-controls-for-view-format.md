@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eee505c3-ff2c-4bfb-b48a-037ec34bce72
 caps.latest.revision: 8
 ms.openlocfilehash: a0c8548dd916a5b32a56462058858f887a9d5803
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363374"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-view-format"></a>Elemento CustomControl para Control for Controls for View (formato)
@@ -41,7 +41,7 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento CustomEntries para CustomControl para controles para View (Format)](./customentries-element-for-customcontrol-for-controls-for-view-format.md)|Elemento obligatorio.<br /><br /> Proporciona las definiciones para el control.|
+|[Elemento CustomEntries para CustomControl para controles para View (Format)](./customentries-element-for-customcontrol-for-controls-for-view-format.md)|Elemento necesario.<br /><br /> Proporciona las definiciones para el control.|
 
 ### <a name="parent-elements"></a>Elementos primarios
 

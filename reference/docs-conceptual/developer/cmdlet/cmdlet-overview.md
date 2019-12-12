@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
 ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365894"
 ---
 # <a name="cmdlet-overview"></a>Información general del cmdlet
@@ -67,7 +67,7 @@ Para obtener más información sobre los parámetros dinámicos, consulte [pará
 ### <a name="input-processing-method"></a>Método de procesamiento de entrada
 
 Método que un cmdlet puede usar para procesar los registros que recibe como entrada.
-Los métodos de procesamiento de entrada incluyen el método [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , el método [System. Management. Automation. cmdlet. ProcessRecord, el cmdlet](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) [ System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) y el método [System. Management. Automation. cmdlet. StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) . Al implementar un cmdlet, debe invalidar al menos uno de los [sistemas System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)y [ Métodos System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) .
+Los métodos de procesamiento de entrada incluyen el método [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , el método [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , el método [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) y el método [System. Management. Automation. cmdlet. StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) . Al implementar un cmdlet, debe invalidar al menos uno de los métodos [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)y [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) .
 Normalmente, el método [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) es el método que se invalida porque se llama para cada registro que el cmdlet procesa.
 En cambio, se llama una vez al método [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) y al método [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) para realizar el procesamiento previo o el procesamiento posterior de los registros.
 Para obtener más información sobre estos métodos, vea [métodos de procesamiento de entrada](cmdlet-input-processing-methods.md).
@@ -75,7 +75,7 @@ Para obtener más información sobre estos métodos, vea [métodos de procesamie
 ### <a name="shouldprocess-feature"></a>ShouldProcess (característica)
 
 PowerShell le permite crear cmdlets que solicitan información al usuario antes de que el cmdlet realice un cambio en el sistema.
-Para usar esta característica, el cmdlet debe declarar que admite la característica ShouldProcess al declarar el atributo de cmdlet y el cmdlet debe llamar a [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y [ Métodos System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) desde dentro de un método de procesamiento de entrada.
+Para usar esta característica, el cmdlet debe declarar que admite la característica ShouldProcess al declarar el atributo de cmdlet y el cmdlet debe llamar a los métodos [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) y [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) desde dentro de un método de procesamiento de entrada.
 Para obtener más información sobre cómo admitir la funcionalidad de ShouldProcess, consulte [solicitar confirmación](requesting-confirmation-from-cmdlets.md).
 
 ### <a name="transaction"></a>Transacción
@@ -104,7 +104,7 @@ Los cmdlets se diferencian de los comandos en otros entornos de Shell de comando
 
 Windows PowerShell admite cmdlets que se derivan de las dos clases base siguientes.
 
-- La mayoría de los cmdlets se basan en .NET Framework clases que derivan de la clase base [System. Management. Automation. cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) . La derivación de esta clase permite a un cmdlet usar el conjunto mínimo de dependencias en el tiempo de ejecución de Windows PowerShell. Esto tiene dos ventajas. La primera ventaja es que los objetos de cmdlet son más pequeños y es menos probable que se vea afectado por los cambios en el tiempo de ejecución de Windows PowerShell. La segunda ventaja es que, si es necesario, puede crear directamente una instancia del objeto de cmdlet y, a continuación, invocarla directamente en lugar de invocarla a través del tiempo de ejecución de Windows PowerShell.
+- La mayoría de los cmdlets se basan en .NET Framework clases que derivan de la clase base [System. Management. Automation. cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) . La derivación de esta clase permite a un cmdlet usar el conjunto mínimo de dependencias en el tiempo de ejecución de Windows PowerShell. lo que ofrece dos ventajas. La primera ventaja es que los objetos de cmdlet son más pequeños y es menos probable que se vea afectado por los cambios en el tiempo de ejecución de Windows PowerShell. La segunda ventaja es que, si es necesario, puede crear directamente una instancia del objeto de cmdlet y, a continuación, invocarla directamente en lugar de invocarla a través del tiempo de ejecución de Windows PowerShell.
 
 - Los cmdlets más complejos se basan en .NET Framework clases que derivan de la clase base [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) . La derivación de esta clase proporciona mucho más acceso al tiempo de ejecución de Windows PowerShell. Este acceso permite que el cmdlet llame a scripts, para obtener acceso a los proveedores y para obtener acceso al estado de sesión actual. (Para tener acceso al estado de sesión actual, se obtienen y establecen las preferencias y las variables de la sesión). Sin embargo, la derivación de esta clase aumenta el tamaño del objeto de cmdlet y significa que el cmdlet se acopla más estrechamente a la versión actual del tiempo de ejecución de Windows PowerShell.
 
@@ -128,7 +128,7 @@ Para obtener más información sobre estos métodos, vea [métodos de procesamie
 
 Windows PowerShell define varios .NET Framework atributos que se usan para administrar los cmdlets y para especificar la funcionalidad común proporcionada por Windows PowerShell y que el cmdlet puede necesitar. Por ejemplo, los atributos se usan para designar una clase como un cmdlet, especificar los parámetros del cmdlet y solicitar la validación de la entrada para que los desarrolladores de cmdlets no tengan que implementar esa funcionalidad en su código de cmdlet. Para obtener más información sobre los atributos, vea [atributos de Windows PowerShell](./cmdlet-attributes.md).
 
-## <a name="cmdlet-names"></a>Nombres de cmdlet
+## <a name="cmdlet-names"></a>Nombres de cmdlets
 
 Windows PowerShell usa un par de nombres de verbo y sustantivo para asignar nombres a los cmdlets. Por ejemplo, el cmdlet `Get-Command` incluido en Windows PowerShell se usa para obtener todos los cmdlets que están registrados en el shell de comandos. El verbo identifica la acción que realiza el cmdlet y el nombre identifica el recurso en el que el cmdlet realiza su acción.
 

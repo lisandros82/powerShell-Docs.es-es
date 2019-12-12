@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4d4ef63d-5866-4319-ba00-7ed96de26821
 caps.latest.revision: 18
 ms.openlocfilehash: ac9f7ff08f6e87ef83b5a2fe23fc58ee2651566d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369004"
 ---
 # <a name="controls-element-for-configuration-format"></a>Elemento Controls para Configuration (formato)
@@ -41,7 +41,7 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Control (elemento) para controles de configuración (Format)](./control-element-for-controls-for-configuration-format.md)|Elemento obligatorio.<br /><br /> Define un control común que pueden usar todas las vistas del archivo de formato.|
+|[Control (elemento) para controles de configuración (Format)](./control-element-for-controls-for-configuration-format.md)|Elemento necesario.<br /><br /> Define un control común que pueden usar todas las vistas del archivo de formato.|
 
 ### <a name="parent-elements"></a>Elementos primarios
 

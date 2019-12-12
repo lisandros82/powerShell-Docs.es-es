@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
 caps.latest.revision: 5
 ms.openlocfilehash: f776f13fe743a3f5f67de0d94883e3f754040ffc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367644"
 ---
 # <a name="adding-and-invoking-commands"></a>Adición e invocación de comandos
@@ -47,7 +47,7 @@ Después de crear un espacio de ejecución, puede Agregar PowerShellcommands de 
 
 ### <a name="addparameter"></a>AddParameter
 
- En el ejemplo anterior se ejecuta un solo comando sin parámetros. Puede agregar parámetros al comando mediante el método [System. Management. Automation. Pscommand. Addparameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) por ejemplo, el código siguiente obtiene una lista de todos los procesos denominados `PowerShell` que se ejecutan en la máquina.
+ En el ejemplo anterior se ejecuta un solo comando sin parámetros. Puede agregar parámetros al comando mediante el método [System. Management. Automation. Pscommand. Addparameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) por ejemplo, el código siguiente obtiene una lista de todos los procesos denominados `PowerShell` que se ejecutan en el equipo.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -79,7 +79,7 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
- Puede simular el procesamiento por lotes mediante el método [System. Management. Automation. PowerShell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , que agrega una instrucción adicional al final de la canalización. el código siguiente obtiene una lista de los procesos en ejecución con el nombre `PowerShell` y, a continuación, Obtiene la lista de servicios en ejecución.
+ Puede simular el procesamiento por lotes mediante el método [System. Management. Automation. PowerShell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , que agrega una instrucción adicional al final de la canalización. el código siguiente obtiene una lista de los procesos en ejecución con el nombre `PowerShell`y, a continuación, obtiene la lista de servicios en ejecución.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -138,7 +138,7 @@ namespace HostPS1e
 
 ### <a name="invoking-a-pipeline-asynchronously"></a>Invocar una canalización de forma asincrónica
 
- Una canalización se invoca de forma asincrónica mediante una llamada a una sobrecarga de [System. Management. Automation. PowerShell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) para crear un objeto [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) y, a continuación, llamar a [System. Management. Automation. PowerShell. EndInvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) método.
+ Una canalización se invoca de forma asincrónica mediante una llamada a una sobrecarga de [System. Management. Automation. PowerShell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) para crear un objeto [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) y, a continuación, llamar al método [System. Management. Automation. PowerShell. EndInvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) .
 
  En el ejemplo siguiente se muestra cómo invocar una canalización de forma asincrónica.
 

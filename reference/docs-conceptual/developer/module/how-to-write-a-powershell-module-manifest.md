@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
 ms.openlocfilehash: 4aa6c020cf0e82a4ffcad6f6c7540688d3369aa6
-ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72561304"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Cómo escribir un manifiesto de módulo de PowerShell
@@ -63,7 +63,7 @@ En la tabla siguiente se describen los elementos que se pueden incluir en un man
 |-------------|-------------|-----------------|
 |**RootModule**<br /> Tipo: `String`|`<empty string>`|Módulo de script o archivo de módulo binario asociado a este manifiesto. Las versiones anteriores de PowerShell llamaron a este elemento **ModuleToProcess**.<br /> Los posibles tipos del módulo raíz pueden estar vacíos, lo que crea un módulo de **manifiesto** , el nombre de un módulo de script (`.psm1`) o el nombre de un módulo binario (`.exe` o `.dll`). Si se coloca el nombre de un manifiesto de módulo (`.psd1`) o un archivo de script (`.ps1`) en este elemento, se produce un error. <br /> Ejemplo: `RootModule = 'ScriptModule.psm1'`|
 |**ModuleVersion**<br /> Tipo: `Version`|`'0.0.1'`|Número de versión de este módulo. Si no se especifica un valor, `New-ModuleManifest` utiliza el valor predeterminado. La cadena debe ser capaz de convertir al tipo `Version` por ejemplo `#.#.#.#.#`. `Import-Module` carga el primer módulo que encuentra en el **$PSModulePath** que coincide con el nombre y tiene al menos un número de **ModuleVersion**, como parámetro **MinimumVersion** . Para importar una versión concreta, use el parámetro **RequiredVersion** del cmdlet `Import-Module`.<br /> Ejemplo: `ModuleVersion = '1.0'`|
-|**VOLUMEN**<br /> Tipo: `GUID`|`'<GUID>'`|IDENTIFICADOR usado para identificar de forma única este módulo. Si no se especifica un valor, `New-ModuleManifest` genera automáticamente el valor. Actualmente no se puede importar un módulo por **GUID**. <br /> Ejemplo: `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
+|**GUID**<br /> Tipo: `GUID`|`'<GUID>'`|IDENTIFICADOR usado para identificar de forma única este módulo. Si no se especifica un valor, `New-ModuleManifest` genera automáticamente el valor. Actualmente no se puede importar un módulo por **GUID**. <br /> Ejemplo: `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
 |**Autor**<br /> Tipo: `String`|`'<Current user>'`|Autor de este módulo. Si no se especifica un valor, `New-ModuleManifest` utiliza el usuario actual. <br /> Ejemplo: `Author = 'AuthorNameHere'`|
 |**Compañía**<br /> Tipo: `String`|`'Unknown'`|Compañía o proveedor de este módulo. Si no se especifica un valor, `New-ModuleManifest` utiliza el valor predeterminado.<br /> Ejemplo: `CompanyName = 'Fabrikam'`|
 |**Copyright**<br /> Tipo: `String`|`'(c) <Author>. All rights reserved.'`| Instrucción de copyright para este módulo. Si no se especifica un valor, `New-ModuleManifest` utiliza el valor predeterminado con el usuario actual como `<Author>`. Para especificar un autor, use el parámetro **Author** . <br /> Ejemplo: `Copyright = '2019 AuthorName. All rights reserved.'`|
@@ -87,7 +87,7 @@ En la tabla siguiente se describen los elementos que se pueden incluir en un man
 |**DscResourcesToExport**<br /> Tipo: `String[]`|`@()`|Especifica los recursos de DSC que se exportarán desde este módulo. Se permiten los caracteres comodín. <br /> Ejemplo: `DscResourcesToExport = @("DscResource1", "DscResource2", "DscResource3")`|
 |**ModuleList**<br /> Tipo: `Object[]`|`@()`|Especifica todos los módulos que se empaquetan con este módulo. Estos módulos se pueden escribir por nombre, mediante una cadena separada por comas o como una tabla hash con las claves **ModuleName** y **GUID** . La tabla hash también puede tener una clave **ModuleVersion** opcional. La clave **ModuleList** está diseñada para actuar como un inventario de módulo. Estos módulos no se procesan automáticamente. <br /> Ejemplo: `ModuleList = @("SampleModule", "MyModule", @{ModuleName="MyModule"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"})`|
 |**Lista de archivos**<br /> Tipo: `String[]`|`@()`|Lista de todos los archivos empaquetados con este módulo. Al igual que con **ModuleList**, **FileList** es una lista de inventario y no se procesa de otra manera. <br /> Ejemplo: `FileList = @("File1", "File2", "File3")`|
-|**PrivateData**<br /> Tipo: `Object`|`@{...}`|Especifica cualquier dato privado que deba pasarse al módulo raíz especificado por la clave **RootModule** (alias: **ModuleToProcess**). **PrivateData** es una tabla hash que consta de varios elementos **: Tags**, **LicenseUri**, **ProjectURI**, **IconUri**, **releasenotes**, **versión preliminar**, **RequireLicenseAcceptance**y  **ExternalModuleDependencies**. |
+|**PrivateData**<br /> Tipo: `Object`|`@{...}`|Especifica cualquier dato privado que deba pasarse al módulo raíz especificado por la clave **RootModule** (alias: **ModuleToProcess**). **PrivateData** es una tabla hash que consta de varios elementos **: Tags**, **LicenseUri**, **ProjectURI**, **IconUri**, **releasenotes**, **versión preliminar**, **RequireLicenseAcceptance**y **ExternalModuleDependencies**. |
 |**Etiquetas** <br /> Tipo: `String[]` |`@()`| Las etiquetas ayudan a la detección de módulos en las galerías en línea. <br /> Ejemplo: `Tags = "PackageManagement", "PowerShell", "Manifest"`|
 |**LicenseUri**<br /> Tipo: `Uri` |`<empty string>`| Una dirección URL a la licencia de este módulo. <br /> Ejemplo: `LicenseUri = 'https://www.contoso.com/license'`|
 |**ProjectUri**<br /> Tipo: `Uri` |`<empty string>`| Una dirección URL para el sitio web principal de este proyecto. <br /> Ejemplo: `ProjectUri = 'https://www.contoso.com/project'`|

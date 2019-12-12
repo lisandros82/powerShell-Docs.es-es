@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
 ms.openlocfilehash: 48ab9102e8f1b17b3b533cc3b0aa1dacef0e2076
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366244"
 ---
 # <a name="writing-a-container-provider"></a>Escritura de un proveedor de contenedores
@@ -105,7 +105,7 @@ protected override void GetChildItems(string path, bool recurse)
 
 ### <a name="implementing-getchildnames"></a>Implementación de GetChildNames
 
-El método [System. Management. Automation. Provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) es similar al método [System. Management. Automation. Provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) , excepto que solo devuelve propiedad de nombre de los elementos, y no los propios elementos.
+El método [System. Management. Automation. Provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) es similar al método [System. Management. Automation. Provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) , con la salvedad de que solo devuelve la propiedad Name de los elementos, y no los propios elementos.
 
 ```csharp
 protected override void GetChildNames(string path,

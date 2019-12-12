@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5d4c8f84-ebd2-4405-bb10-cfc5400d4ad6
 caps.latest.revision: 6
 ms.openlocfilehash: 3ec127d5ff60754de5d7f1ac73f2965524228b9c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365014"
 ---
 # <a name="windows-powershell-formatting-files"></a>Archivos de formato de Windows PowerShell
@@ -23,7 +23,7 @@ Windows PowerShell proporciona varios archivos de formato (. Format. ps1xml) que
 
 `DotNetTypes.Format.ps1xml` define la presentación de objetos .NET varios, como los objetos CultureInfo, FileVersionInfo y EventLogEntry.
 
-`FileSystem.Format.ps1xml` define la visualización de objetos del sistema de archivos, como los objetos de archivo y de directorio.
+`FileSystem.Format.ps1xml` define la presentación de los objetos del sistema de archivos, como los objetos de archivo y de directorio.
 
 `Help.Format.ps1xml` define las distintas vistas que usa el cmdlet [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) , como las vistas detallada, completa, parámetros y ejemplo.
 
@@ -31,7 +31,7 @@ Windows PowerShell proporciona varios archivos de formato (. Format. ps1xml) que
 
 `PowerShellTrace.Format.ps1xml` define la presentación de los objetos de seguimiento, como los generados por el cmdlet [Trace-Command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) .
 
-`Registry.Format.ps1xml` define la presentación de los objetos del registro, como los objetos de entrada y de clave.
+`Registry.Format.ps1xml` define la presentación de objetos del registro, como los objetos de entrada y de clave.
 
 ## <a name="see-also"></a>Véase también
 

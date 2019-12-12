@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 87b811be-6d93-4e7d-b9d0-c567a19bb0ef
 caps.latest.revision: 13
 ms.openlocfilehash: 5edcb65a6fbe1cb2fe2d0efe3f763fb84628b049
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369164"
 ---
 # <a name="validatepattern-attribute-declaration"></a>Declaración de atributo ValidatePattern
@@ -34,7 +34,7 @@ Cuando se invoca ValidatePattern dentro de un cmdlet, el tiempo de ejecución de
 
 #### <a name="parameters"></a>Parámetros
 
-`RegexString` ([System. String](/dotnet/api/System.String)) requerido. Especifica una expresión regular que valida el argumento del parámetro.
+se requiere `RegexString` ([System. String](/dotnet/api/System.String)). Especifica una expresión regular que valida el argumento del parámetro.
 
 Options ([System. Text. RegularExpressions. RegexOptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions)) opcional parámetro con nombre. Especifica una combinación bit a bit de las marcas [System. Text. RegularExpressions. RegexOptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions) que especifican las opciones de expresión regular.
 
@@ -42,7 +42,7 @@ Options ([System. Text. RegularExpressions. RegexOptions](/dotnet/api/System.Tex
 
 - Este atributo solo se puede usar una vez por parámetro.
 
-- Puede usar el parámetro `Option` del atributo para definir más el patrón. Por ejemplo, puede hacer que el patrón distinga mayúsculas de minúsculas.
+- Puede usar el parámetro `Option` del atributo para definir más el modelo. Por ejemplo, puede hacer que el patrón distinga mayúsculas de minúsculas.
 
 - Si este atributo se aplica a una colección, cada elemento de la colección debe coincidir con el patrón.
 

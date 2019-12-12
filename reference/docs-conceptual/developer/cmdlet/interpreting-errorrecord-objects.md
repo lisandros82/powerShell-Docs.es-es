@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
 ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365424"
 ---
 # <a name="interpreting-errorrecord-objects"></a>Interpretación de los objetos ErrorRecord
 
 En la mayoría de los casos, un objeto [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) representa un error de no terminación generado por un comando o script. Los errores de terminación también pueden especificar la información adicional en un ErrorRecord a través de la interfaz [System. Management. Automation. Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord) .
 
-Si desea escribir un controlador de errores en el script o en un host para controlar los errores específicos que se producen durante la ejecución de comandos o scripts, debe interpretar el objeto [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) para determinar si representa la clase de error que se desea controlar.
+Si desea escribir un controlador de errores en el script o en un host para controlar los errores específicos que se producen durante la ejecución de comandos o scripts, debe interpretar el objeto [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) para determinar si representa la clase de error que desea controlar.
 
 Cuando un cmdlet encuentra un error de terminación o de no terminación, debe crear un registro de error que describa la condición de error. La aplicación host debe investigar estos registros de errores y realizar cualquier acción que mitigará el error. La aplicación host también debe investigar los registros de errores en busca de errores de no terminación que no hayan podido procesar un registro pero hayan podido continuar, y debe investigar los registros de errores para finalizar los errores que provocaron la detención de la canalización.
 
@@ -68,7 +68,7 @@ FQID está diseñado para ser inspeccionado como una sola cadena. Sin embargo, e
 
 En el ejemplo anterior, el primer token es el identificador de error, que va seguido del nombre de la clase de cmdlet. El identificador de error puede ser un token único o puede ser un identificador separado por puntos que permita la bifurcación en la inspección del identificador. No use espacios en blanco ni signos de puntuación en el identificador de error. Es especialmente importante no usar una coma; Windows PowerShell usa una coma para separar el identificador y el nombre de la clase de cmdlet.
 
-### <a name="other-information"></a>Otra información
+### <a name="other-information"></a>Otros datos
 
 El objeto [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) también podría proporcionar información que describe el entorno en el que se produjo el error. Esta información incluye elementos como detalles del error, información de invocación y el objeto de destino que se estaba procesando cuando se produjo el error. Aunque esta información puede ser útil para la aplicación host, normalmente no se utiliza para identificar el error. Esta información está disponible a través de las siguientes propiedades:
 

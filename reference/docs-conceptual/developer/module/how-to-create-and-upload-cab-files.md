@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8d35f233-5447-48a2-a961-9fbca763262b
 caps.latest.revision: 7
 ms.openlocfilehash: 9928a0b31a57d42eb39cea1af0509613c483caf7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367334"
 ---
 # <a name="how-to-create-and-upload-cab-files"></a>Cómo crear y cargar archivos CAB
@@ -25,7 +25,7 @@ Puede usar la característica de ayuda actualizable para ofrecer archivos de ayu
 
 1. Organice los archivos de ayuda del módulo por referencia cultural de la interfaz de usuario. Cada archivo. CAB de ayuda actualizable contiene los archivos de ayuda de un módulo en una referencia cultural de la interfaz de usuario. Puede proporcionar varios archivos CAB de ayuda para el módulo, cada uno para una referencia cultural de interfaz de usuario diferente.
 
-2. Compruebe que los archivos de ayuda incluyen solo los tipos de archivo permitidos para la ayuda actualizable y los validan con respecto a un esquema de archivo de ayuda. Si el cmdlet `Update-Help` encuentra un archivo que no es válido o que no es un tipo permitido, no instala el archivo no válido y deja de instalar archivos del archivo CAB. Para obtener una lista de los tipos de archivo permitidos, consulte [tipos de archivo permitidos en un archivo CAB de ayuda actualizable](./file-types-permitted-in-an-updatable-help-cab-file.md).
+2. Compruebe que los archivos de ayuda incluyen solo los tipos de archivo permitidos para la ayuda actualizable y los validan con respecto a un esquema de archivo de ayuda. Si el cmdlet de `Update-Help` encuentra un archivo que no es válido o no es un tipo permitido, no instala el archivo no válido y deja de instalar archivos del archivo CAB. Para obtener una lista de los tipos de archivo permitidos, consulte [tipos de archivo permitidos en un archivo CAB de ayuda actualizable](./file-types-permitted-in-an-updatable-help-cab-file.md).
 
 3. Firmar digitalmente los archivos de ayuda. No se requieren firmas digitales, pero es un procedimiento recomendado.
 

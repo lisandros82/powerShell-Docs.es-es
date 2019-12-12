@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
 ms.openlocfilehash: a28c8d3df19bc72bf338d6abc4e02768c5097209
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369874"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Métodos de procesamiento de entrada del cmdlet
@@ -63,7 +63,7 @@ Por ejemplo, es posible que el cmdlet tenga que limpiar las variables de objeto 
 
 Cuando PowerShell procesa una canalización de comandos, PowerShell llama a este método una vez por cada instancia del cmdlet en la canalización.
 Sin embargo, es importante recordar que el tiempo de ejecución de PowerShell no llamará al método EndProcessing si el cmdlet se cancela a lo largo de su procesamiento de entrada o si se produce un error de terminación en cualquier parte del cmdlet.
-Por esta razón, un cmdlet que requiere la limpieza de objetos debe implementar el patrón [System. IDisposable](/dotnet/api/System.IDisposable) completo, incluido un finalizador, de modo que el tiempo de ejecución pueda llamar a los métodos EndProcessing y [System. IDisposable. Dispose](/dotnet/api/System.IDisposable.Dispose) al final de procesos.
+Por esta razón, un cmdlet que requiere la limpieza de objetos debe implementar el patrón [System. IDisposable](/dotnet/api/System.IDisposable) completo, incluido un finalizador, de modo que el tiempo de ejecución pueda llamar a los métodos EndProcessing y [System. IDisposable. Dispose](/dotnet/api/System.IDisposable.Dispose) al final del procesamiento.
 Para obtener más información sobre cómo PowerShell invoca la canalización de comandos, consulte [ciclo de vida de procesamiento de cmdlets](/previous-versions/ms714429(v=vs.85)).
 
 En el código siguiente se muestra una implementación del método EndProcessing.
@@ -86,6 +86,6 @@ protected override void EndProcessing()
 
 [Tutorial de SelectStr](selectstr-tutorial.md)
 
-[System. IDisposable](/dotnet/api/System.IDisposable)
+[System.IDisposable](/dotnet/api/System.IDisposable)
 
 [SDK de Windows PowerShell Shell](../windows-powershell-reference.md)

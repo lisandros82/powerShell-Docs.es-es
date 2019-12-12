@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
 caps.latest.revision: 5
 ms.openlocfilehash: c97b0dfc12d96f99c53383d3578579f1988efd52
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367684"
 ---
 # <a name="creating-remote-runspaces"></a>Creación de espacios de ejecución remotos
@@ -21,7 +21,7 @@ Los comandos de PowerShell que toman un parámetro **ComputerName** se pueden ej
 
 ## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a>Usar un WSManConnection para crear un espacio de ejecución remoto
 
- Para crear un espacio de ejecución que se conecte a un equipo remoto, cree un objeto [System. Management. Automation. runspace. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) . Para especificar el extremo de destino de la conexión, establezca la propiedad [System. Management. Automation. espacios de WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) del objeto. A continuación, cree un espacio de ejecución llamando al método [System. Management. Automation. runspace. RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) , especificando el objeto [System. Management. Automation. runspace. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) como `connectionInfo` parámetro.
+ Para crear un espacio de ejecución que se conecte a un equipo remoto, cree un objeto [System. Management. Automation. runspace. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) . Para especificar el extremo de destino de la conexión, establezca la propiedad [System. Management. Automation. espacios de WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) del objeto. A continuación, cree un espacio de ejecución llamando al método [System. Management. Automation. runspace. RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) , especificando el objeto [System. Management. Automation. runspace. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) como el parámetro `connectionInfo`.
 
  En el ejemplo siguiente se muestra cómo crear un espacio de ejecución que se conecta a un equipo remoto. En el ejemplo, `RemoteComputerUri` se usa como marcador de posición para el URI real de un equipo remoto.
 

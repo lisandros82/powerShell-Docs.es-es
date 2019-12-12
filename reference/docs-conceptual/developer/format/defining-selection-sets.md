@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
 caps.latest.revision: 16
 ms.openlocfilehash: 596212f2e64401a751cf3dca0ee7d60b80912c00
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368854"
 ---
 # <a name="defining-selection-sets"></a>Definición de conjuntos de selección
@@ -35,15 +35,15 @@ Defina los conjuntos de selección como parte de los datos comunes que se pueden
 
 Puede hacer referencia a los conjuntos de selección de las siguientes maneras:
 
-- Cada vista tiene un elemento `ViewSelectedBy` que define los objetos que se muestran mediante la vista. El elemento `ViewSelectedBy` tiene un elemento secundario `SelectionSetName` que especifica el conjunto de selección que usan todas las definiciones de la vista. No hay ninguna restricción en el número de conjuntos de selección a los que se puede hacer referencia desde una vista.
+- Cada vista tiene un elemento `ViewSelectedBy` que define qué objetos se muestran mediante la vista. El elemento `ViewSelectedBy` tiene un `SelectionSetName` elemento secundario que especifica el conjunto de selección que usan todas las definiciones de la vista. No hay ninguna restricción en el número de conjuntos de selección a los que se puede hacer referencia desde una vista.
 
-- En cada definición de una vista o un control, el elemento `EntrySelectedBy` define qué objetos se muestran utilizando esa definición. Normalmente, una vista o un control solo tiene una definición para que los objetos se definan mediante el elemento `ViewSelectedBy`. El elemento `EntrySelectedBy` de la definición tiene un elemento secundario `SelectionSetName` que especifica el conjunto de selección. Si especifica el conjunto de selección para una definición, no puede especificar ninguno de los demás elementos secundarios del elemento `EntrySelectedBy`.
+- En cada definición de una vista o control, el elemento `EntrySelectedBy` define qué objetos se muestran utilizando esa definición. Normalmente, una vista o un control solo tiene una definición para que los objetos se definan mediante el elemento `ViewSelectedBy`. El elemento `EntrySelectedBy` de la definición tiene un `SelectionSetName` elemento secundario que especifica el conjunto de selección. Si especifica el conjunto de selección para una definición, no puede especificar ninguno de los demás elementos secundarios del elemento `EntrySelectedBy`.
 
-- En cada definición de una vista o un control, se puede usar el elemento `SelectionCondition` para especificar una condición para cuando se usa la definición. El elemento `SelectionCondition` tiene un elemento secundario `SelectionSetName` que especifica el conjunto de selección que desencadena la condición. La condición se desencadena cuando se muestra cualquiera de los objetos definidos en el conjunto de selección. Para obtener más información sobre cómo establecer estas condiciones, consulte [definir condiciones para cuando se muestran los datos](./defining-conditions-for-displaying-data.md).
+- En cada definición de una vista o control, el elemento `SelectionCondition` se puede utilizar para especificar una condición para cuando se usa la definición. El elemento `SelectionCondition` tiene un elemento secundario `SelectionSetName` que especifica el conjunto de selección que desencadena la condición. La condición se desencadena cuando se muestra cualquiera de los objetos definidos en el conjunto de selección. Para obtener más información sobre cómo establecer estas condiciones, consulte [definir condiciones para cuando se muestran los datos](./defining-conditions-for-displaying-data.md).
 
 ## <a name="selection-set-example"></a>Ejemplo de conjunto de selección
 
-En el ejemplo siguiente se muestra un conjunto de selección que se toma directamente del archivo de formato `FileSystem` proporcionado por Windows PowerShell. Para obtener más información sobre otros archivos de formato de Windows PowerShell, consulte [archivos de formato de Windows PowerShell](./powershell-formatting-files.md).
+En el ejemplo siguiente se muestra un conjunto de selección que se toma directamente del archivo de formato de `FileSystem` proporcionado por Windows PowerShell. Para obtener más información sobre otros archivos de formato de Windows PowerShell, consulte [archivos de formato de Windows PowerShell](./powershell-formatting-files.md).
 
 ```xml
 <SelectionSets>
@@ -138,9 +138,9 @@ Se hace referencia al conjunto de selección anterior en el elemento `ViewSelect
 
 [SelectionSet](./selectionset-element-format.md)
 
-[Name](./name-element-for-selectionset-format.md)
+[Nombre](./name-element-for-selectionset-format.md)
 
-[Distintos](./types-element-for-selectionset-format.md)
+[Tipos](./types-element-for-selectionset-format.md)
 
 [Archivos de formato de PowerShell](./powershell-formatting-files.md)
 

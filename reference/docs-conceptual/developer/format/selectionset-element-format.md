@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 848e7acd-d578-4fd1-a575-c0c3b9b5e68a
 caps.latest.revision: 17
 ms.openlocfilehash: c809aa6c3a40d16cfd2fd99065a846d265ec0f61
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368384"
 ---
 # <a name="selectionset-element-format"></a>Elemento SelectionSet (formato)
@@ -42,8 +42,8 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento Name para SelectionSet (Format)](./name-element-for-selectionset-format.md)|Elemento obligatorio.<br /><br /> Especifica el nombre usado para hacer referencia al conjunto de selección.|
-|[Types (elemento, Format)](./types-element-for-selectionset-format.md)|Elemento obligatorio.<br /><br /> Define los objetos .NET que se encuentran en el conjunto de selección.|
+|[Elemento Name para SelectionSet (Format)](./name-element-for-selectionset-format.md)|Elemento necesario.<br /><br /> Especifica el nombre usado para hacer referencia al conjunto de selección.|
+|[Types (elemento, Format)](./types-element-for-selectionset-format.md)|Elemento necesario.<br /><br /> Define los objetos .NET que se encuentran en el conjunto de selección.|
 
 ### <a name="parent-elements"></a>Elementos primarios
 
@@ -55,7 +55,7 @@ Ninguna.
 
 Puede usar conjuntos de selección cuando tiene un conjunto de objetos relacionados a los que desea hacer referencia mediante un nombre único, como un conjunto de objetos que se relacionan a través de la herencia. Al definir las vistas, puede especificar el conjunto de objetos mediante el nombre del conjunto de selección en lugar de enumerar todos los objetos de cada vista.
 
-Los conjuntos de selección comunes se especifican por su nombre al definir las vistas del archivo de formato o las definiciones de las vistas. En estos casos, el elemento secundario `SelectionSetName` de los elementos `ViewSelectedBy` y `EntrySelectedBy` especifica el conjunto que se va a utilizar. Para obtener más información sobre los conjuntos de selección, consulte [definir conjuntos de objetos](./defining-selection-sets.md).
+Los conjuntos de selección comunes se especifican por su nombre al definir las vistas del archivo de formato o las definiciones de las vistas. En estos casos, el `SelectionSetName` elemento secundario de los elementos `ViewSelectedBy` y `EntrySelectedBy` especifica el conjunto que se va a utilizar. Para obtener más información sobre los conjuntos de selección, consulte [definir conjuntos de objetos](./defining-selection-sets.md).
 
 ## <a name="example"></a>Ejemplo
 

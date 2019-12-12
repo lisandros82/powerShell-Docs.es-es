@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 93a00463-af58-41c8-b088-450909fa1d05
 caps.latest.revision: 6
 ms.openlocfilehash: b98e6879bbfe0e3ec1a9ab37496dde44caf523a4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360684"
 ---
 # <a name="how-to-set-helpinfo-xml-version-numbers"></a>Cómo establecer números de versión de HelpInfo XML
@@ -22,7 +22,7 @@ En este tema se explica cómo establecer y aumentar los números de versión en 
 ## <a name="how-to-set-helpinfo-xml-version-numbers"></a>Cómo establecer números de versión de HelpInfo XML
 
 Los números de versión de un archivo XML HelpInfo son fundamentales para el funcionamiento de la ayuda actualizable.
-Los cmdlets [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) y [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) descargan nuevos archivos de ayuda solo cuando el número de versión de una referencia cultural de la interfaz de usuario en el archivo XML HelpInfo remoto es mayor que el número de versión de esa referencia cultural de la interfaz de usuario en el XML de HelpInfo local o no hay ningún HelpInfo local. Archivo XML.
+Los cmdlets [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) y [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) descargan nuevos archivos de ayuda solo cuando el número de versión de una referencia cultural de la interfaz de usuario en el archivo XML HelpInfo remoto es mayor que el número de versión de esa referencia cultural de la interfaz de usuario en el XML de HelpInfo local o no hay ningún archivo XML HelpInfo local.
 
 El archivo XML HelpInfo usa el número de versión de 4 partes que se define en la clase **System. version** del marco de Microsoft .net. El formato es `N1.N2.N3.N4`. Los autores de módulos pueden usar cualquier esquema de numeración de versiones permitido por la clase **System. version** . La ayuda actualizable solo requiere que el número de versión de una referencia cultural de la interfaz de usuario aumente cuando se cargue una nueva versión del archivo. CAB para esa referencia cultural de la interfaz de usuario en la ubicación especificada por el elemento **HelpContentURI** en el archivo XML de HelpInfo.
 

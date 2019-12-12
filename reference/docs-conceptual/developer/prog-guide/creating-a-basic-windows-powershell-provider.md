@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
 ms.openlocfilehash: e825581b96f0f33893b38f9f6499dd46a7bf38eb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360524"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Diseño de un proveedor de Windows PowerShell básico
@@ -49,13 +49,13 @@ Puede establecer palabras clave de atributo para declarar más la clase si es ne
 
 ## <a name="defining-provider-specific-state-information"></a>Definir la información de estado específica del proveedor
 
-La clase base [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) y todas las clases derivadas se consideran sin estado porque el tiempo de ejecución de Windows PowerShell crea instancias de proveedor solo según sea necesario. Por consiguiente, si el proveedor requiere un control total y el mantenimiento del estado de los datos específicos del proveedor, debe derivar una clase de la clase [System. Management. Automation. providerinfo devuelto por](/dotnet/api/System.Management.Automation.ProviderInfo) . La clase derivada debe definir los miembros necesarios para mantener el estado de forma que se pueda tener acceso a los datos específicos del proveedor cuando el tiempo de ejecución de Windows PowerShell llame al método [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) para Inicialice el proveedor.
+La clase base [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) y todas las clases derivadas se consideran sin estado porque el tiempo de ejecución de Windows PowerShell crea instancias de proveedor solo según sea necesario. Por consiguiente, si el proveedor requiere un control total y el mantenimiento del estado de los datos específicos del proveedor, debe derivar una clase de la clase [System. Management. Automation. providerinfo devuelto por](/dotnet/api/System.Management.Automation.ProviderInfo) . La clase derivada debe definir los miembros necesarios para mantener el estado de forma que se pueda tener acceso a los datos específicos del proveedor cuando el tiempo de ejecución de Windows PowerShell llame al método [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) para inicializar el proveedor.
 
 Un proveedor de Windows PowerShell también puede mantener el estado basado en la conexión. Para obtener más información sobre cómo mantener el estado de conexión, vea [crear un proveedor de unidades de PowerShell](./creating-a-windows-powershell-drive-provider.md).
 
 ## <a name="initializing-the-provider"></a>Inicializar el proveedor
 
-Para inicializar el proveedor, el tiempo de ejecución de Windows PowerShell llama al método [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) cuando se inicia Windows PowerShell. En su mayor parte, el proveedor puede usar la implementación predeterminada de este método, que simplemente devuelve el objeto [System. Management. Automation. providerinfo devuelto por](/dotnet/api/System.Management.Automation.ProviderInfo) que describe el proveedor. Sin embargo, en caso de que desee agregar información de inicialización adicional, debe implementar su propio método [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) que devuelve una versión modificada del [ Objeto System. Management. Automation. Providerinfo devuelto por](/dotnet/api/System.Management.Automation.ProviderInfo) que se pasa al proveedor. En general, este método debe devolver el objeto [System. Management. Automation. providerinfo devuelto por](/dotnet/api/System.Management.Automation.ProviderInfo) proporcionado que se le ha pasado o un objeto [System. Management. Automation. providerinfo devuelto por](/dotnet/api/System.Management.Automation.ProviderInfo) modificado que contiene otra información de inicialización.
+Para inicializar el proveedor, el tiempo de ejecución de Windows PowerShell llama al método [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) cuando se inicia Windows PowerShell. En su mayor parte, el proveedor puede usar la implementación predeterminada de este método, que simplemente devuelve el objeto [System. Management. Automation. providerinfo devuelto por](/dotnet/api/System.Management.Automation.ProviderInfo) que describe el proveedor. Sin embargo, en caso de que desee agregar información de inicialización adicional, debe implementar su propio método [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) que devuelve una versión modificada del objeto [System. Management. Automation. providerinfo devuelto por](/dotnet/api/System.Management.Automation.ProviderInfo) que se pasa al proveedor. En general, este método debe devolver el objeto [System. Management. Automation. providerinfo devuelto por](/dotnet/api/System.Management.Automation.ProviderInfo) proporcionado que se le ha pasado o un objeto [System. Management. Automation. providerinfo devuelto por](/dotnet/api/System.Management.Automation.ProviderInfo) modificado que contiene otra información de inicialización.
 
 Este proveedor básico no invalida este método. Sin embargo, en el código siguiente se muestra la implementación predeterminada de este método:
 
@@ -65,7 +65,7 @@ El proveedor puede mantener el estado de la información específica del proveed
 
 ## <a name="start-dynamic-parameters"></a>Iniciar parámetros dinámicos
 
-La implementación del proveedor del método [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) podría requerir parámetros adicionales. En este caso, el proveedor debe invalidar el método [System. Management. Automation. Provider. Cmdletprovider. Startdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters) y devolver un objeto que tiene propiedades y campos con atributos de análisis similares a una clase de cmdlet o [ Objeto System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) .
+La implementación del proveedor del método [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) podría requerir parámetros adicionales. En este caso, el proveedor debe reemplazar el método [System. Management. Automation. Provider. Cmdletprovider. Startdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters) y devolver un objeto que tiene propiedades y campos con atributos de análisis similares a una clase de cmdlet o un objeto [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) .
 
 Este proveedor básico no invalida este método. Sin embargo, en el código siguiente se muestra la implementación predeterminada de este método:
 
@@ -79,7 +79,7 @@ Este proveedor básico no invalida este método. Sin embargo, en el código sigu
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStop](Msh_samplesaccessdbprov01#accessdbprov01ProviderStop)]  -->
 
-## <a name="code-sample"></a>Código de ejemplo
+## <a name="code-sample"></a>Ejemplo de código
 
 Para obtener el código de ejemplo completo, vea el [ejemplo de código AccessDbProviderSample01](./accessdbprovidersample01-code-sample.md).
 

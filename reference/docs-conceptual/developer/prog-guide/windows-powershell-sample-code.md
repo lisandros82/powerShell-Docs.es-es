@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
 caps.latest.revision: 7
 ms.openlocfilehash: e9df44b17453e9f73f6eb388d9cbc8a69fce4ba2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366424"
 ---
 # <a name="windows-powershell-sample-code"></a>Código de ejemplo de Windows PowerShell
@@ -25,7 +25,7 @@ Los ejemplos de® de Windows PowerShell están disponibles a través de la Windo
 
 ## <a name="sample-code-listing"></a>Lista de códigos de ejemplo
 
-|Código de ejemplo|Descripción|
+|Código muestra|Descripción|
 |-----------------|-----------------|
 |[Código de ejemplo de AccessDbProviderSample01](./accessdbprovidersample01-code-sample.md)|Este es el proveedor que se describe en [crear un proveedor básico de Windows PowerShell](./creating-a-basic-windows-powershell-provider.md).|
 |[Código de ejemplo de AccessDbProviderSample02](./accessdbprovidersample02-code-sample.md)|Este es el proveedor que se describe en [crear un proveedor de unidades de Windows PowerShell](./creating-a-windows-powershell-drive-provider.md).|
@@ -51,7 +51,7 @@ Los ejemplos de® de Windows PowerShell están disponibles a través de la Windo
 |[Código de ejemplo de RunSpace09](./runspace09-code-sample.md)|Este es el código fuente del ejemplo Runspace09 que se describe en [crear una aplicación de consola que invoca una canalización de forma asincrónica](https://msdn.microsoft.com/en-us/198c1c94-2a06-457e-93ce-c0d910618e47).|
 |[Código de ejemplo de RunSpace10](./runspace10-code-sample.md)|Este es el código fuente del ejemplo Runspace10, que agrega un cmdlet a [System. Management. Automation. runspace. Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) y, a continuación, usa la información de configuración modificada para crear el espacio de ejecución.|
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Véase también
 
 [Guía del programador de Windows PowerShell](./windows-powershell-programmer-s-guide.md)
 

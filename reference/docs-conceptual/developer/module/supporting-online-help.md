@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
 ms.openlocfilehash: 5c5707d1c533e0498c6794b60f4499e530e25813
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360664"
 ---
 # <a name="supporting-online-help"></a>Compatibilidad con la ayuda en línea
 
-A partir de Windows PowerShell 3,0, hay dos maneras de admitir la característica en línea `Get-Help` para los comandos de Windows PowerShell. En este tema se explica cómo implementar esta característica para distintos tipos de comandos.
+A partir de Windows PowerShell 3,0, hay dos maneras de admitir la característica `Get-Help` online para los comandos de Windows PowerShell. En este tema se explica cómo implementar esta característica para distintos tipos de comandos.
 
 ## <a name="about-online-help"></a>Acerca de la ayuda en línea
 
-La ayuda en línea siempre ha sido una parte fundamental de Windows PowerShell. Aunque el cmdlet `Get-Help` muestra temas de ayuda en el símbolo del sistema, muchos usuarios prefieren la experiencia de lectura en línea, incluida la codificación en colores, los hipervínculos y el uso compartido de ideas en el contenido de la comunidad y en los documentos basados en wiki. Lo más importante, antes de la llegada de la ayuda actualizable, la ayuda en línea proporcionó la versión más actualizada de los archivos de ayuda.
+La ayuda en línea siempre ha sido una parte fundamental de Windows PowerShell. Aunque el cmdlet `Get-Help` muestra temas de ayuda en el símbolo del sistema, muchos usuarios prefieren la experiencia de lectura en línea, como la codificación de colores, los hipervínculos y el uso compartido de ideas en el contenido de la comunidad y en los documentos basados en wiki. Lo más importante, antes de la llegada de la ayuda actualizable, la ayuda en línea proporcionó la versión más actualizada de los archivos de ayuda.
 
 Con la llegada de la ayuda actualizable en Windows PowerShell 3,0, la ayuda en línea sigue desempeñando un papel fundamental. Además de la experiencia de usuario flexible, la ayuda en línea proporciona ayuda a los usuarios que no pueden usar la ayuda actualizable para descargar temas de ayuda.
 
@@ -35,7 +35,7 @@ Por ejemplo, el siguiente comando abre el tema de ayuda en pantalla para el cmdl
 Get-Help Invoke-Command -Online
 ```
 
-Para implementar `Get-Help`-online, el cmdlet `Get-Help` busca un identificador uniforme de recursos (URI) para el tema de ayuda de la versión en línea en las siguientes ubicaciones.
+Para implementar `Get-Help` en línea, el cmdlet `Get-Help` busca un identificador uniforme de recursos (URI) para el tema de ayuda de la versión en línea en las siguientes ubicaciones.
 
 - El primer vínculo de la sección vínculos relacionados del tema de ayuda para el comando. El tema de ayuda debe instalarse en el equipo del usuario. Esta característica se presentó en Windows PowerShell 2,0.
 
@@ -47,9 +47,9 @@ Para implementar `Get-Help`-online, el cmdlet `Get-Help` busca un identificador 
 
 Puede admitir `Get-Help`-online para cualquier comando agregando un URI válido a la primera entrada de la sección vínculos relacionados del tema de ayuda basado en XML para el comando. Esta opción solo es válida en los temas de ayuda basados en XML y solo funciona cuando el tema de ayuda está instalado en el equipo del usuario. Cuando se instala el tema de ayuda y se rellena el URI, este valor tiene prioridad sobre la propiedad **HelpUri** del comando.
 
-Para admitir esta característica, el URI debe aparecer en el elemento `maml:uri` en el primer elemento `maml:relatedLinks/maml:navigationLink` del elemento `maml:relatedLinks`.
+Para admitir esta característica, el URI debe aparecer en el elemento `maml:uri` bajo el primer elemento `maml:relatedLinks/maml:navigationLink` del elemento `maml:relatedLinks`.
 
-El siguiente XML muestra la ubicación correcta del URI. El procedimiento recomendado es el texto "versión en línea:" del elemento `maml:linkText`, pero no es necesario.
+El siguiente XML muestra la ubicación correcta del URI. Se recomienda el texto "versión en línea:" del elemento `maml:linkText`, pero no es necesario.
 
 ```xml
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: dc68af2b-f622-47c4-964f-b07f3d5bdf14
 caps.latest.revision: 5
 ms.openlocfilehash: 9aef3eeb8bfeeccd234755b6c5a7c451da6628cc
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417832"
 ---
 # <a name="stopprocesssample04-code-samples"></a>Ejemplos de código StopProcessSample04
@@ -31,7 +31,7 @@ Para obtener el código de ejemplo completo, vea los temas siguientes.
 |C#|[Código deC#ejemplo StopProc04 ()](./stopprocesssample04-csharp-sample-code.md)|
 |VB.NET|[Código de ejemplo de StopProc04 (VB.NET)](./stopprocesssample04-vb-net-sample-code.md)|
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Véase también
 
 [Guía del programador de Windows PowerShell](./windows-powershell-programmer-s-guide.md)
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 18d86af7-7ff9-4968-81be-2caa61937d49
 caps.latest.revision: 10
 ms.openlocfilehash: 946ffb3fe857503c02b9000238a86775969abbd6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361804"
 ---
 # <a name="tablerowentry-element-for-tablerowentries-for-tablecontrol-format"></a>Elemento TableRowEntry para TableRowEntries for TableControl (formato)
@@ -43,8 +43,8 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento EntrySelectedBy para TableRowEntry para Tablecontrol ((Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Elemento obligatorio.<br /><br /> Define los objetos cuyos valores de propiedad se muestran en la fila.|
-|[Elemento TableColumnItems para TableRowEntry para Tablecontrol ((Format)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|Elemento obligatorio.<br /><br /> Define las propiedades o los scripts cuyos valores se muestran.|
+|[Elemento EntrySelectedBy para TableRowEntry para Tablecontrol ((Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Elemento necesario.<br /><br /> Define los objetos cuyos valores de propiedad se muestran en la fila.|
+|[Elemento TableColumnItems para TableRowEntry para Tablecontrol ((Format)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|Elemento necesario.<br /><br /> Define las propiedades o los scripts cuyos valores se muestran.|
 |[Elemento Wrap para TableRowEntry para Tablecontrol ((Format)](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)|Elemento opcional.<br /><br /> Especifica que el texto que supera el ancho de columna se muestra en la línea siguiente.|
 
 ### <a name="parent-elements"></a>Elementos primarios
@@ -55,7 +55,7 @@ Ninguna.
 
 ## <a name="remarks"></a>Observaciones
 
-Se debe especificar un elemento `TableColumnItems` y un elemento `EntrySelectedBy`.
+Se debe especificar un elemento `TableColumnItems` y uno `EntrySelectedBy`.
 
 Para obtener más información sobre los componentes de una vista de tabla, vea [crear una vista de tabla](./creating-a-table-view.md).
 

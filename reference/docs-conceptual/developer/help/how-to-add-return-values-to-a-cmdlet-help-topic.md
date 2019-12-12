@@ -9,21 +9,21 @@ ms.topic: article
 ms.assetid: a52ab737-753c-4d04-8af7-758d5c805e18
 caps.latest.revision: 7
 ms.openlocfilehash: b21811e5a5a819c3d5c4a55fcbe685a84819b71d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367804"
 ---
 # <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a>Cómo agregar valores devueltos a un tema de Ayuda del cmdlet
 
 En esta sección se describe cómo agregar una sección de salidas a un tema de ayuda del cmdlet de® de Windows PowerShell. En la sección salidas se enumeran las clases .NET de objetos que el cmdlet devuelve o pasa por la canalización.
 
-No hay ningún límite en el número de clases que se pueden agregar a la sección de salidas. Los tipos de valor devueltos de un cmdlet se incluyen en un nodo \<command: returnValues >, donde cada clase se incluye en un elemento \<command: returnValue >.
+No hay ningún límite en el número de clases que se pueden agregar a la sección de salidas. Los tipos de valor devueltos de un cmdlet se incluyen en un \<comando: returnValues > nodo, donde cada clase se incluye en un elemento \<comando: returnValue >.
 
 Si un cmdlet no genera ningún resultado, use esta sección para indicar que no hay ninguna salida. Por ejemplo, en lugar del nombre de clase, escriba "none" y proporcione una breve explicación. Si el cmdlet genera la salida de forma condicional, use este nodo para explicar las condiciones y describir la salida condicional.
 
-El esquema incluye dos elementos \<maml: Description > en cada elemento \<command: returnValue >. Sin embargo, el cmdlet `Get-Help` solo muestra el contenido del elemento \<command: returnValue >/\<maml: Description >.
+El esquema incluye dos \<maml: Description > elementos en cada \<comando: returnValue > elemento. Sin embargo, el cmdlet `Get-Help` muestra solo el contenido del comando \<: returnValue >/\<maml: Description > elemento.
 
 A partir de Windows PowerShell 3,0, el cmdlet `Get-Help` muestra el contenido del elemento \<maml: URI >. Este elemento le permite dirigir a los usuarios a temas que describen la clase .NET.
 

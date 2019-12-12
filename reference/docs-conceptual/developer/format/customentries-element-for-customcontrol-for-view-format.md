@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: cb412831-94f7-4054-b19e-32c1b14c66dd
 caps.latest.revision: 11
 ms.openlocfilehash: 827baacd22ef258dd9b0c8a383a23fce7d975f7f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364084"
 ---
 # <a name="customentries-element-for-customcontrol-for-view-format"></a>Elemento CustomEntries para CustomControl for GroupBy (formato)
@@ -41,17 +41,17 @@ Ninguna.
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento CustomEntry para CustomEntries para View (Format)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|Elemento obligatorio.<br /><br /> Proporciona una definición de la vista de control personalizada.|
+|[Elemento CustomEntry para CustomEntries para View (Format)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|Elemento necesario.<br /><br /> Proporciona una definición de la vista de control personalizada.|
 
 ### <a name="parent-elements"></a>Elementos primarios
 
 |Elemento|Descripción|
 |-------------|-----------------|
-|[Elemento CustomControl para View (Format)](./customcontrol-element-for-view-format.md)|Elemento obligatorio.<br /><br /> Define un formato de control personalizado para la vista.|
+|[Elemento CustomControl para View (Format)](./customcontrol-element-for-view-format.md)|Elemento necesario.<br /><br /> Define un formato de control personalizado para la vista.|
 
 ## <a name="remarks"></a>Observaciones
 
-En la mayoría de los casos, un control solo tiene una definición, que se define en un único elemento `CustomEntry`. Sin embargo, es posible tener varias definiciones si desea utilizar el mismo control para mostrar objetos .NET diferentes. En esos casos, puede definir un elemento `CustomEntry` para cada objeto o conjunto de objetos.
+En la mayoría de los casos, un control solo tiene una definición, que se define en un único elemento de `CustomEntry`. Sin embargo, es posible tener varias definiciones si desea utilizar el mismo control para mostrar objetos .NET diferentes. En esos casos, puede definir un elemento `CustomEntry` para cada objeto o conjunto de objetos.
 
 ## <a name="see-also"></a>Véase también
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
 ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361264"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Cómo agregar parámetros dinámicos a un tema de Ayuda de proveedor
@@ -25,7 +25,7 @@ Los parámetros dinámicos que se documentan en un tema de ayuda del proveedor s
 
 Los parámetros dinámicos también se pueden documentar en la ayuda de cmdlet personalizada para un proveedor. Al escribir la ayuda de proveedor y la ayuda de cmdlet personalizada para un proveedor, incluya la documentación de parámetros dinámicos en ambos documentos.
 
-Si un proveedor no implementa ningún parámetro dinámico, el tema de ayuda del proveedor contiene un elemento `DynamicParameters` vacío.
+Si un proveedor no implementa ningún parámetro dinámico, el tema de ayuda del proveedor contiene un elemento de `DynamicParameters` vacío.
 
 ### <a name="to-add-dynamic-parameters"></a>Para agregar parámetros dinámicos
 
@@ -57,14 +57,14 @@ Si un proveedor no implementa ningún parámetro dinámico, el tema de ayuda del
     </DynamicParameters>
     ```
 
-3. En cada elemento `DynamicParameter`, agregue un elemento `Name` y `CmdletSupported`.
+3. En cada `DynamicParameter` elemento, agregue un elemento `Name` y `CmdletSupported`.
 
    |Nombre del elemento|Descripción|
    |------------------|-----------------|
    |Name|Especifica el nombre del parámetro.|
    |CmdletSupported|Especifica los cmdlets en los que el parámetro es válido. Escriba una lista separada por comas de nombres de cmdlet.|
 
-   Por ejemplo, el siguiente documento XML documenta el parámetro dinámico `Encoding` que el proveedor FileSystem de Windows PowerShell agrega a los cmdlets `Add-Content`, `Get-Content` y `Set-Content`.
+   Por ejemplo, el siguiente documento XML documenta el `Encoding` parámetro dinámico que el proveedor FileSystem de Windows PowerShell agrega a los cmdlets `Add-Content`, `Get-Content``Set-Content`.
 
     ```xml
     <DynamicParameters/>
@@ -75,7 +75,7 @@ Si un proveedor no implementa ningún parámetro dinámico, el tema de ayuda del
 
     ```
 
-4. En cada elemento `DynamicParameter`, agregue un elemento `Type`. El elemento `Type` es un contenedor para el elemento `Name` que contiene el tipo .NET del valor del parámetro dinámico.
+4. En cada `DynamicParameter` elemento, agregue un elemento `Type`. El elemento `Type` es un contenedor para el elemento `Name` que contiene el tipo .NET del valor del parámetro dinámico.
 
    Por ejemplo, el siguiente XML muestra que el tipo .NET del parámetro dinámico `Encoding` es la enumeración [Microsoft. PowerShell. Commands. FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) .
 
@@ -93,7 +93,7 @@ Si un proveedor no implementa ningún parámetro dinámico, el tema de ayuda del
 
 5. Agregue el elemento `Description`, que contiene una breve descripción del parámetro dinámico. Al redactar la descripción, siga las directrices prescritas para todos los parámetros de cmdlet en [Cómo agregar información de parámetros](./how-to-add-parameter-information.md).
 
-   Por ejemplo, el siguiente código XML incluye la descripción del parámetro dinámico `Encoding`.
+   Por ejemplo, el código XML siguiente incluye la descripción de la `Encoding` parámetro dinámico.
 
     ```xml
     <DynamicParameters/>

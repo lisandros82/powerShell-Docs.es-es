@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 50e6f9b1-2678-4f53-9250-7c48843a9549
 caps.latest.revision: 5
 ms.openlocfilehash: 1113c0d1cd68bb97d2f96b529f755b62137d1f40
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366044"
 ---
 # <a name="importing-and-invoking-a-windows-powershell-workflow"></a>Importación e invocación de un flujo de trabajo de Windows PowerShell
@@ -25,7 +25,7 @@ La clase [System. Management. Automation. Psjobproxy](/dotnet/api/System.Managem
 
 1. Cree un objeto [System. Management. Automation. runspace. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)para crear una conexión a un espacio de ejecución remoto.
 
-2. Establezca la propiedad [System. Management. Automation. espacios de Wsmanconnectioninfo. Shelluri *](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ShellUri) del objeto [System. Management. Automation. espacios de Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)en `Microsoft.PowerShell.Workflow` para especificar un punto de conexión de Windows PowerShell.
+2. Establezca la propiedad [System. Management. Automation. espacios de Wsmanconnectioninfo. Shelluri *](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ShellUri) del objeto [System. Management. Automation. espacios](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)de. Wsmanconnectioninfo en `Microsoft.PowerShell.Workflow` para especificar un punto de conexión de Windows PowerShell.
 
 3. Cree un espacio de ejecución que use la conexión creada al completar los pasos anteriores.
 

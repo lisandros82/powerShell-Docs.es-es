@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
 ms.openlocfilehash: 30e98bfcf06b1720005a73ee8294aeba7e1ae066
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367824"
 ---
 # <a name="examples-of-comment-based-help"></a>Ejemplos de la Ayuda basada en comentarios
@@ -145,7 +145,7 @@ C:\PS> get-help add-extension -full
 
 La siguiente función de ejemplo incluye ayuda basada en Comentarios.
 
-Observe las líneas en blanco entre el cierre **#>** y la instrucción `Param`. En un script que no tenga una instrucción `Param`, debe haber al menos dos líneas en blanco entre el comentario final en el tema de ayuda y la primera declaración de función. Sin estas líneas en blanco, Get-Help asocia el tema de ayuda a la función, en lugar del script.
+Observe las líneas en blanco entre el **#>** de cierre y la instrucción `Param`. En un script que no tiene una instrucción `Param`, debe haber al menos dos líneas en blanco entre el comentario final en el tema de ayuda y la primera declaración de función. Sin estas líneas en blanco, Get-Help asocia el tema de ayuda a la función, en lugar del script.
 
 ```powershell
 <#

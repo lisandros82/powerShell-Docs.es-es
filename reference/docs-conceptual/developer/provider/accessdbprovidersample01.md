@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 853b7e5d-76c1-490e-8269-0ef31ba2ff13
 caps.latest.revision: 10
 ms.openlocfilehash: dc1ae92af8a57d6197b595db8e098256ac444b78
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360004"
 ---
 # <a name="accessdbprovidersample01"></a>AccessDBProviderSample01
@@ -32,7 +32,7 @@ En este ejemplo se muestra cómo declarar una clase de proveedor que se deriva d
 
 Este ejemplo muestra lo siguiente:
 
-- Declarar el atributo `CmdletProvider`.
+- Declarar el atributo de `CmdletProvider`.
 
 - Definir una clase de proveedor que se deriva directamente de la clase [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) .
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
 ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363564"
 ---
 # <a name="background-jobs"></a>Trabajos en segundo plano
@@ -35,7 +35,7 @@ Para obtener más información sobre cómo se administran los trabajos en segund
 
 Para escribir un cmdlet que se pueda ejecutar como un trabajo en segundo plano, debe completar las siguientes tareas:
 
-- Defina un parámetro de modificador `asJob` para que el usuario pueda decidir si ejecutar el cmdlet como un trabajo en segundo plano.
+- Defina un parámetro de modificador `asJob` de modo que el usuario pueda decidir si ejecutar el cmdlet como un trabajo en segundo plano.
 
 - Cree un objeto que se derive de la clase [System. Management. Automation. Job](/dotnet/api/System.Management.Automation.Job) . Este objeto puede ser un objeto de trabajo personalizado o un objeto de trabajo proporcionado por Windows PowerShell, como un objeto [System. Management. Automation. Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) .
 
@@ -51,7 +51,7 @@ Para obtener un ejemplo de código, consulte [Cómo admitir trabajos](./how-to-s
 
 Windows PowerShell proporciona las siguientes API para administrar los trabajos en segundo plano.
 
-[System. Management. Automation. Job](/dotnet/api/System.Management.Automation.Job) deriva objetos de trabajo personalizados. Esta es una clase abstracta.
+[System. Management. Automation. Job](/dotnet/api/System.Management.Automation.Job) deriva objetos de trabajo personalizados. Se trata de una clase abstracta.
 
 [System. Management. Automation. Jobrepository](/dotnet/api/System.Management.Automation.JobRepository) administra y proporciona información sobre los trabajos en segundo plano activos actuales.
 

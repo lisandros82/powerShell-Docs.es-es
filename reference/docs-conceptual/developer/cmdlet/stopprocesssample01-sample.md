@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b7bed607-369b-4507-87fa-f6011c2f1970
 caps.latest.revision: 9
 ms.openlocfilehash: 2ce146df05ef876d9c17f560628ebac2c39e57bf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365304"
 ---
 # <a name="stopprocesssample01-sample"></a>Ejemplo StopProcessSample01
@@ -25,11 +25,11 @@ En este ejemplo se muestra cómo escribir un cmdlet que solicita información al
 
 2. Haga doble clic en el icono del archivo de solución (. sln). Se abrirá el proyecto de ejemplo en Microsoft Visual Studio.
 
-3. En el menú **compilar** , seleccione **compilar solución**.
+3. En el menú **Compilar**, seleccione **Compilar solución**.
 
     La biblioteca del ejemplo se generará en las carpetas \Bin o \bin\debug predeterminadas.
 
-### <a name="how-to-run-the-sample"></a>Cómo ejecutar el ejemplo
+### <a name="how-to-run-the-sample"></a>Ejecución del ejemplo
 
 1. Cree la siguiente carpeta de módulo:
 

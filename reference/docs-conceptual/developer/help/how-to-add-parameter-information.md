@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: cf6c1442-60aa-477a-8f30-ab02b1b11039
 caps.latest.revision: 7
 ms.openlocfilehash: d4a5fc934a41b00f89862674e44e4540680674f7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361234"
 ---
 # <a name="how-to-add-parameter-information"></a>Cómo agregar información de parámetros
@@ -157,7 +157,7 @@ El contenido de la sección de parámetros debe ser coherente con el contenido d
 
 Estos son algunos aspectos que debe recordar al agregar parámetros.
 
-- Los atributos del parámetro no se muestran en todas las vistas del tema de ayuda del cmdlet. Sin embargo, se muestran en una tabla que sigue la descripción del parámetro cuando el usuario solicita la vista completa (Get-Help \<cmdletname >-Full) o el parámetro (Get-Help \<cmdletname >-Parameter) del tema.
+- Los atributos del parámetro no se muestran en todas las vistas del tema de ayuda del cmdlet. Sin embargo, se muestran en una tabla que sigue la descripción del parámetro cuando el usuario solicita la vista completa (Get-Help \<CmdletName >-Full) o el parámetro (Get-Help \<CmdletName >-Parameter) del tema.
 
 - La descripción del parámetro es una de las partes más importantes de un tema de ayuda de cmdlet. La descripción debe ser breve, así como exhaustiva. Además, recuerde que si la descripción del parámetro es demasiado larga, como cuando dos parámetros interactúan entre sí, puede agregar más contenido en la sección Notas del tema de ayuda del cmdlet.
 
@@ -173,9 +173,9 @@ El valor predeterminado del parámetro es el valor que se usa si el parámetro n
 
 El valor predeterminado ayuda al usuario a entender el efecto de no usar el parámetro. Describa el valor predeterminado en concreto, como el "directorio actual" o el "directorio de instalación de Windows PowerShell ($pshome)" para una ruta de acceso opcional. También puede escribir una frase que describa el valor predeterminado, como la siguiente oración utilizada para el parámetro `PassThru`: "si no se especifica PassThru, el cmdlet no pasa los objetos por la canalización".  Además, dado que el valor se muestra de forma opuesta al nombre de campo "**default Value**", no es necesario incluir el término "default Value" en la entrada.
 
-El valor predeterminado del parámetro no se muestra en todas las vistas del tema de ayuda del cmdlet. Sin embargo, se muestra en una tabla (junto con los atributos de parámetro) a continuación de la descripción del parámetro cuando el usuario solicita la vista completa (Get-Help \<cmdletname >-Full) o el parámetro (Get-Help \<cmdletname >-Parameter) del tema.
+El valor predeterminado del parámetro no se muestra en todas las vistas del tema de ayuda del cmdlet. Sin embargo, se muestra en una tabla (junto con los atributos de parámetro) siguiendo la descripción del parámetro cuando el usuario solicita la vista completa (Get-Help \<CmdletName >-Full) o el parámetro (Get-Help \<CmdletName >-Parameter) del tema.
 
-El siguiente código XML muestra un par de etiquetas `<dev:defaultValue>` agregadas al nodo `<command:parameter>`. Observe que el valor predeterminado sigue inmediatamente después de la etiqueta de cierre `</command:parameterValue>` (cuando se especifica el valor del parámetro) o la etiqueta de cierre `</maml:description>` de la descripción del parámetro. Name.
+El siguiente código XML muestra un par de etiquetas `<dev:defaultValue>` agregadas al nodo `<command:parameter>`. Observe que el valor predeterminado sigue inmediatamente después de la etiqueta de cierre del `</command:parameterValue>` (cuando se especifica el valor del parámetro) o la etiqueta de cierre `</maml:description>` de la descripción del parámetro. name.
 
 ```xml
 <command:parameters>
@@ -195,7 +195,7 @@ El siguiente código XML muestra un par de etiquetas `<dev:defaultValue>` agrega
 
 Agregar valores para tipos enumerados
 
-Si el parámetro tiene varios valores o valores de un tipo enumerado, puede utilizar un nodo opcional \<dev: possibleValues >. Este nodo le permite especificar un nombre y una descripción para varios valores.
+Si el parámetro tiene varios valores o valores de un tipo enumerado, puede usar un nodo opcional \<dev: possibleValues >. Este nodo le permite especificar un nombre y una descripción para varios valores.
 
 Tenga en cuenta que las descripciones de los valores enumerados no aparecen en ninguna de las vistas de ayuda predeterminadas que muestra el cmdlet `Get-Help`, pero otros visores de ayuda pueden mostrar este contenido en sus vistas.
 

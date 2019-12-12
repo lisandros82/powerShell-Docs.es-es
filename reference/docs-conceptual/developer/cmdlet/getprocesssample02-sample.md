@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 481f557d-3344-4d33-b2da-4736a0165181
 caps.latest.revision: 7
 ms.openlocfilehash: fa4cd8a724793e71b615c84a5c5a833aa92c93fc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364574"
 ---
 # <a name="getprocesssample02-sample"></a>Ejemplo GetProcessSample02
 
-Este ejemplo muestra cómo escribir un cmdlet que recupere los procesos en el equipo local. Proporciona un parámetro `Name` que se puede usar para especificar los procesos que se van a recuperar. Este cmdlet es una versión simplificada del cmdlet `Get-Process` proporcionado por Windows PowerShell 2,0.
+Este ejemplo muestra cómo escribir un cmdlet que recupere los procesos en el equipo local. Proporciona un parámetro `Name` que se puede utilizar para especificar los procesos que se van a recuperar. Este cmdlet es una versión simplificada del cmdlet `Get-Process` proporcionado por Windows PowerShell 2,0.
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Cómo compilar el ejemplo con Visual Studio.
 
@@ -25,11 +25,11 @@ Este ejemplo muestra cómo escribir un cmdlet que recupere los procesos en el eq
 
 2. Haga doble clic en el icono del archivo de solución (. sln). Se abrirá el proyecto de ejemplo en Visual Studio.
 
-3. En el menú **compilar** , seleccione **compilar solución**.
+3. En el menú **Compilar**, seleccione **Compilar solución**.
 
     La biblioteca del ejemplo se generará en las carpetas \Bin o \bin\debug predeterminadas.
 
-### <a name="how-to-run-the-sample"></a>Cómo ejecutar el ejemplo
+### <a name="how-to-run-the-sample"></a>Ejecución del ejemplo
 
 1. Cree la siguiente carpeta de módulo:
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
 ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72370044"
 ---
 # <a name="advisory-development-guidelines"></a>Directrices de desarrollo de consulta
@@ -91,7 +91,7 @@ Tipos de rehydratable integrados:
 
 - PSPrimitiveDictionary
 
-- Parámetrodemodificador
+- SwitchParameter
 
 - PSListModifier
 
@@ -115,7 +115,7 @@ Otros tipos:
 
 Al controlar los datos confidenciales, utilice siempre el tipo de datos [System. Security. SecureString](/dotnet/api/System.Security.SecureString) . Esto podría incluir la entrada de canalización a los parámetros, así como devolver datos confidenciales a la canalización.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Véase también
 
 [Instrucciones de desarrollo necesarias](./required-development-guidelines.md)
 

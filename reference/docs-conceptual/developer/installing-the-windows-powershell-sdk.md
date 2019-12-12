@@ -3,10 +3,10 @@ title: Instalar el SDK de Windows PowerShell
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444514"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Instalar el SDK de Windows PowerShell
@@ -74,7 +74,7 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. En las secciones siguient
 
 - Runspace01: muestra cómo usar la clase de PowerShell para ejecutar el cmdlet `Get-Process` sincrónicamente.
 El cmdlet `Get-Process` devuelve objetos Process para cada proceso que se ejecuta en el equipo local.
-- Runspace02: muestra cómo usar la clase de PowerShell para ejecutar los cmdlets `Get-Process` y `Sort-Object` sincrónicamente. El cmdlet `Get-Process` devuelve objetos Process para cada proceso que se ejecuta en el equipo local y el `Sort-Object` ordena los objetos según su propiedad ID. Los resultados de estos comandos se muestran mediante un control DataGridView.
+- Runspace02: muestra cómo usar la clase de PowerShell para ejecutar los cmdlets `Get-Process` y `Sort-Object` sincrónicamente. El cmdlet `Get-Process` devuelve objetos Process para cada proceso que se ejecuta en el equipo local y el `Sort-Object` ordena los objetos basándose en su propiedad ID. Los resultados de estos comandos se muestran mediante un control DataGridView.
 - Runspace03: muestra cómo usar la clase de PowerShell para ejecutar un script de forma sincrónica y cómo controlar los errores de no terminación. El script recibe una lista de nombres de procesos y después los recupera. Los resultados del script, incluidos los errores de no terminación generados al ejecutarlo, se muestran en una ventana de consola.
 - Runspace04: muestra cómo usar la clase de PowerShell para ejecutar comandos y cómo detectar los errores de terminación que se producen al ejecutar los comandos. Se ejecutan dos comandos; al último, se le pasa un argumento de parámetro que no es válido. Como resultado, no se devuelve ningún objeto y se produce un error de terminación.
 - Runspace05: muestra cómo agregar un complemento a un objeto InitialSessionState para que el cmdlet del complemento esté disponible cuando se abra el espacio de ejecución. El complemento proporciona un cmdlet Get-proc (definido por el ejemplo GetProcessSample01) que se ejecuta de forma sincrónica mediante un objeto de PowerShell.
@@ -104,8 +104,8 @@ El cmdlet `Get-Process` devuelve objetos Process para cada proceso que se ejecut
 
 - AccessDBProviderSample03: muestra cómo sobrescribir los métodos GetItem y SetItem para admitir llamadas a los cmdlets `Get-Item` y `Set-Item`. La clase de proveedor de este ejemplo se deriva de la clase ItemCmdletProvider.
 
-- AccessDBProviderSample04: muestra cómo sobrescribir los métodos de contenedor para admitir llamadas a los cmdlets `Copy-Item`, `Get-ChildItem`, `New-Item` y `Remove-Item`. Estos métodos deberían implementarse cuando el almacén de datos contengan elementos que son contenedores. Un contenedor es un grupo de elementos secundarios con un elemento primario común. La clase de proveedor de este ejemplo se deriva de la clase ItemCmdletProvider.
+- AccessDBProviderSample04: muestra cómo sobrescribir los métodos de contenedor para admitir llamadas a los cmdlets `Copy-Item`, `Get-ChildItem`, `New-Item`y `Remove-Item`. Estos métodos deberían implementarse cuando el almacén de datos contengan elementos que son contenedores. Un contenedor es un grupo de elementos secundarios con un elemento primario común. La clase de proveedor de este ejemplo se deriva de la clase ItemCmdletProvider.
 
 - AccessDBProviderSample05: muestra cómo sobrescribir los métodos de contenedor para admitir llamadas a los cmdlets `Move-Item` y `Join-Path`. Estos métodos deberían implementarse cuando el usuario necesite mover elementos dentro de un contenedor y si el almacén de datos tiene contenedores anidados. La clase de proveedor de este ejemplo se deriva de la clase NavigationCmdletProvider.
 
-- AccessDBProviderSample06: muestra cómo sobrescribir métodos de contenido para admitir llamadas a los cmdlets `Clear-Content`, `Get-Content` y `Set-Content`. Estos métodos deberían implementarse cuando el usuario necesite administrar el contenido de los elementos en el almacén de datos. La clase de proveedor de este ejemplo se deriva de la clase NavigationCmdletProvider e implementa la interfaz IContentCmdletProvider.
+- AccessDBProviderSample06: muestra cómo sobrescribir métodos de contenido para admitir llamadas a los cmdlets `Clear-Content`, `Get-Content`y `Set-Content`. Estos métodos deberían implementarse cuando el usuario necesite administrar el contenido de los elementos en el almacén de datos. La clase de proveedor de este ejemplo se deriva de la clase NavigationCmdletProvider e implementa la interfaz IContentCmdletProvider.

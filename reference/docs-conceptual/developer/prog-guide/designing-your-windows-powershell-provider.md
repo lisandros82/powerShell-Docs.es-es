@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
 ms.openlocfilehash: 962d2ba9fd892c297a633276b9ac07a5fa75ea87
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366814"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Diseño del proveedor de Windows PowerShell
@@ -33,15 +33,15 @@ Para permitir que el usuario acceda a los datos ubicados en una unidad física, 
 
 ### <a name="defining-a-provider-qualified-path"></a>Definir una ruta de acceso calificada por el proveedor
 
-Para permitir que el tiempo de ejecución de Windows PowerShell inicialice y desinicialice el proveedor, el proveedor de Windows PowerShell debe admitir una ruta de acceso calificada por el proveedor. Por ejemplo, FileSystem:: \\ \ uncshare\abc\bar es la ruta de acceso calificada por el proveedor para el proveedor filesystem proporcionado por Windows PowerShell.
+Para permitir que el tiempo de ejecución de Windows PowerShell inicialice y desinicialice el proveedor, el proveedor de Windows PowerShell debe admitir una ruta de acceso calificada por el proveedor. Por ejemplo, FileSystem::\\\uncshare\abc\bar es la ruta de acceso completa del proveedor del sistema filesystem proporcionado por Windows PowerShell.
 
 ### <a name="defining-a-provider-direct-path"></a>Definir una ruta de acceso directa de proveedor
 
-Para permitir el acceso remoto a su proveedor de Windows PowerShell, debe admitir una ruta de acceso directa de proveedor para pasar directamente al proveedor de Windows PowerShell para la ubicación actual. Por ejemplo, el proveedor de Windows PowerShell del registro puede usar \\ \ server\regkeypath como una ruta de acceso directa de proveedor.
+Para permitir el acceso remoto a su proveedor de Windows PowerShell, debe admitir una ruta de acceso directa de proveedor para pasar directamente al proveedor de Windows PowerShell para la ubicación actual. Por ejemplo, el proveedor de Windows PowerShell del registro puede usar \\\server\regkeypath como una ruta de acceso directa de proveedor.
 
 ### <a name="defining-a-provider-internal-path"></a>Definir una ruta de acceso interna del proveedor
 
-Para permitir que el cmdlet de proveedor acceda a los datos mediante interfaces de programación de aplicaciones (API) que no son de Windows PowerShell, el proveedor de Windows PowerShell debe admitir una ruta de acceso interna del proveedor. Esta ruta de acceso se indica después de "::" en la ruta de acceso completa del proveedor. Por ejemplo, la ruta de acceso interna del proveedor para el proveedor de Windows PowerShell de sistema de archivos es \\ \ uncshare\abc\bar.
+Para permitir que el cmdlet de proveedor acceda a los datos mediante interfaces de programación de aplicaciones (API) que no son de Windows PowerShell, el proveedor de Windows PowerShell debe admitir una ruta de acceso interna del proveedor. Esta ruta de acceso se indica después de "::" en la ruta de acceso completa del proveedor. Por ejemplo, la ruta de acceso interna del proveedor para el proveedor de Windows PowerShell de sistema de archivos es \\\uncshare\abc\bar.
 
 ## <a name="changing-stored-data"></a>Cambiar datos almacenados
 
@@ -53,7 +53,7 @@ Windows PowerShell proporciona una serie de clases base que puede usar para impl
 
 Cada clase base del proveedor de Windows PowerShell pone a disposición un conjunto de cmdlets. En esta sección se describen los cmdlets de, pero no se describen sus parámetros.
 
-Con el estado de sesión, el tiempo de ejecución de Windows PowerShell hace que varios cmdlets de ubicación estén disponibles para determinados proveedores de Windows PowerShell, como los cmdlets `Get-Location`, `Set-Location`, `Pop-Location` y `Push-Location`. Puede usar el cmdlet `Get-Help` para obtener información acerca de estos cmdlets de ubicación.
+Con el estado de sesión, el tiempo de ejecución de Windows PowerShell hace que varios cmdlets de ubicación estén disponibles para ciertos proveedores de Windows PowerShell, como los cmdlets `Get-Location`, `Set-Location`, `Pop-Location`y `Push-Location`. Puede usar el cmdlet `Get-Help` para obtener información acerca de estos cmdlets de ubicación.
 
 ### <a name="cmdletprovider-base-class"></a>Clase base CmdletProvider
 
@@ -84,7 +84,7 @@ La clase [System. Management. Automation. Provider. Itemcmdletprovider](/dotnet/
 |`Invoke-Item`|Invoca la acción predeterminada para el elemento en la ruta de acceso especificada.|
 |`Set-Item`|Establece un elemento en la ubicación especificada con el valor indicado. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.|
 |`Resolve-Path`|Resuelve los caracteres comodín para una ruta de acceso de Windows PowerShell y transmite información de la ruta de acceso.|
-|`Test-Path`|Comprueba la ruta de acceso especificada y devuelve `true` si existe y `false` en caso contrario. Este cmdlet se implementa para admitir el parámetro `IsContainer` para el método [System. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) .|
+|`Test-Path`|Comprueba la ruta de acceso especificada y devuelve `true` si existe y `false` de lo contrario. Este cmdlet se implementa para admitir el parámetro `IsContainer` para el método [System. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) .|
 
 ### <a name="containercmdletprovider-base-class"></a>Clase base ContainerCmdletProvider
 
@@ -141,7 +141,7 @@ La interfaz [System. Management. Automation. Provider. Ipropertycmdletprovider](
 
 ### <a name="idynamicpropertycmdletprovider"></a>IDynamicPropertyCmdletProvider
 
-La interfaz [System. Management. Automation. Provider. Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) , derivada de [System. Management. Automation. Provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider), define un proveedor que especifica los parámetros dinámicos para su cmdlets compatibles. Este tipo de proveedor controla las operaciones para las que se pueden definir propiedades en tiempo de ejecución, por ejemplo, una nueva operación de propiedad. Tales operaciones no son posibles en los elementos que tienen propiedades definidas estáticamente. En la tabla siguiente se enumeran los cmdlets expuestos por esta interfaz.
+La interfaz [System. Management. Automation. Provider. Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) , derivada de [System. Management. Automation. Provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider), define un proveedor que especifica los parámetros dinámicos para sus cmdlets compatibles. Este tipo de proveedor controla las operaciones para las que se pueden definir propiedades en tiempo de ejecución, por ejemplo, una nueva operación de propiedad. Tales operaciones no son posibles en los elementos que tienen propiedades definidas estáticamente. En la tabla siguiente se enumeran los cmdlets expuestos por esta interfaz.
 
 |Cmdlet|Definición|
 |------------|----------------|

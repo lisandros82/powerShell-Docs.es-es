@@ -14,10 +14,10 @@ helpviewer_keywords:
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
 ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365764"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Creación de un cmdlet que modifica el sistema
@@ -272,7 +272,7 @@ if (criticalProcess &&!force)
 
 El método de procesamiento de entrada de un cmdlet que realiza modificaciones en el sistema debe proporcionar una manera de detener el procesamiento de la entrada. En el caso de este cmdlet Stop-proc, se realiza una llamada desde el método [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) al método [System. Diagnostics. Process. Kill *](/dotnet/api/System.Diagnostics.Process.Kill) . Dado que el parámetro `PassThru` está establecido en `true`, [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) también llama a [System. Management. Automation. cmdlet. writeObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) para enviar el objeto de proceso a la canalización.
 
-## <a name="code-sample"></a>Código de ejemplo
+## <a name="code-sample"></a>Ejemplo de código
 
 Para obtener el C# código de ejemplo completo, vea el [ejemplo de StopProcessSample01](./stopprocesssample01-sample.md).
 
@@ -294,7 +294,7 @@ Cuando el cmdlet se ha registrado con Windows PowerShell, puede probarlo mediant
     PS> stop-proc
     ```
 
-Aparece el siguiente resultado.
+Aparece la salida siguiente.
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -308,7 +308,7 @@ Aparece el siguiente resultado.
     PS> stop-proc -Name notepad
     ```
 
-Aparece el siguiente resultado.
+Aparece la salida siguiente.
 
     ```
     Confirm
@@ -323,7 +323,7 @@ Aparece el siguiente resultado.
     PS> stop-proc -Name Winlogon
     ```
 
-Aparece el siguiente resultado.
+Aparece la salida siguiente.
 
     ```output
     Confirm
@@ -341,7 +341,7 @@ Aparece el siguiente resultado.
     PS> stop-proc -Name winlogon -Force
     ```
 
-Aparece el siguiente resultado.
+Aparece la salida siguiente.
 
     ```output
     Confirm
@@ -350,7 +350,7 @@ Aparece el siguiente resultado.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Véase también
 
 [Agregar parámetros que procesan la entrada de la línea de comandos](./adding-parameters-that-process-command-line-input.md)
 
