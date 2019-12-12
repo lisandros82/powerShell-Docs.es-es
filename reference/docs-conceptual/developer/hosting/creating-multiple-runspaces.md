@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 42c40c7f-1ee7-4021-950c-2e013c8f2a4a
 caps.latest.revision: 4
 ms.openlocfilehash: 606a2ee4e70d303bf1b1d69b7523eb8649f9be0c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367614"
 ---
-# <a name="creating-multiple-runspaces"></a><span data-ttu-id="4ef6a-102">Creación de varios espacios de ejecución</span><span class="sxs-lookup"><span data-stu-id="4ef6a-102">Creating multiple runspaces</span></span>
+# <a name="creating-multiple-runspaces"></a><span data-ttu-id="5e497-102">Creación de varios espacios de ejecución</span><span class="sxs-lookup"><span data-stu-id="5e497-102">Creating multiple runspaces</span></span>
 
-<span data-ttu-id="4ef6a-103">Si crea un gran número de espacios de ejecución, considere la posibilidad de crear un grupo de espacio de ejecución.</span><span class="sxs-lookup"><span data-stu-id="4ef6a-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="4ef6a-104">El uso de un objeto [System. Management. Automation. espacios de ejecución. Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) , en lugar de crear un gran número de espacios de ejecución individuales con las mismas características, puede mejorar el rendimiento.</span><span class="sxs-lookup"><span data-stu-id="4ef6a-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
+<span data-ttu-id="5e497-103">Si crea un gran número de espacios de ejecución, considere la posibilidad de crear un grupo de espacio de ejecución.</span><span class="sxs-lookup"><span data-stu-id="5e497-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="5e497-104">El uso de un objeto [System. Management. Automation. espacios de ejecución. Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) , en lugar de crear un gran número de espacios de ejecución individuales con las mismas características, puede mejorar el rendimiento.</span><span class="sxs-lookup"><span data-stu-id="5e497-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
 
-## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="4ef6a-105">Crear y usar un grupo de espacio de ejecución.</span><span class="sxs-lookup"><span data-stu-id="4ef6a-105">Creating and using a runspace pool.</span></span>
+## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="5e497-105">Crear y usar un grupo de espacio de ejecución.</span><span class="sxs-lookup"><span data-stu-id="5e497-105">Creating and using a runspace pool.</span></span>
 
- <span data-ttu-id="4ef6a-106">En el ejemplo siguiente se muestra cómo crear un grupo de espacio de ejecución y cómo ejecutar un comando de forma asincrónica en un espacio de ejecución del grupo.</span><span class="sxs-lookup"><span data-stu-id="4ef6a-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
+ <span data-ttu-id="5e497-106">En el ejemplo siguiente se muestra cómo crear un grupo de espacio de ejecución y cómo ejecutar un comando de forma asincrónica en un espacio de ejecución del grupo.</span><span class="sxs-lookup"><span data-stu-id="5e497-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
 
 ```csharp
 namespace HostRunspacePool
@@ -79,6 +79,6 @@ namespace HostRunspacePool
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="4ef6a-107">Véase también</span><span class="sxs-lookup"><span data-stu-id="4ef6a-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5e497-107">Véase también</span><span class="sxs-lookup"><span data-stu-id="5e497-107">See Also</span></span>
 
- [<span data-ttu-id="4ef6a-108">Creación de un InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="4ef6a-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="5e497-108">Creación de un InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="5e497-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
