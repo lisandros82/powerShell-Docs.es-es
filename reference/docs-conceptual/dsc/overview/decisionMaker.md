@@ -2,12 +2,12 @@
 ms.date: 10/11/2019
 keywords: dsc,powershell,configuration,setup
 title: Información general sobre la configuración de estado deseado para responsables de toma de decisiones
-ms.openlocfilehash: 271ec04035feb17e932acd0ac80f32213a4e018b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352133"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737260"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Información general sobre Desired State Configuration para responsables de toma de decisiones
 
@@ -31,7 +31,7 @@ Las configuraciones se pueden compartir a través de la [Galería de PowerShell]
 
 ## <a name="dsc-and-devops"></a>DSC y DevOps
 
-DSC se diseñó con [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) en mente. Una combinación de personas, procesos y herramientas que permiten una rápida implementación e iteración centrada en la entrega de valor a los usuarios finales, ya sean internos o externos. Una configuración única que define un entorno significa que los desarrolladores pueden codificar sus requisitos en una configuración y comprobar esa configuración en el control de código fuente. Después, los equipos de operaciones pueden implementar código sin pasar por procesos manuales propensos a errores.
+DSC se diseñó con [DevOps](/archive/blogs/ashleymcglone/devops-for-n00bs-ie-windows-people-like-me) en mente. Una combinación de personas, procesos y herramientas que permiten una rápida implementación e iteración centrada en la entrega de valor a los usuarios finales, ya sean internos o externos. Una configuración única que define un entorno significa que los desarrolladores pueden codificar sus requisitos en una configuración y comprobar esa configuración en el control de código fuente. Después, los equipos de operaciones pueden implementar código sin pasar por procesos manuales propensos a errores.
 
 Las configuraciones están [orientadas a los datos](../configurations/configData.md). Los datos definidos facilitan que las operaciones identifiquen y cambien los entornos sin intervención del desarrollador.
 
