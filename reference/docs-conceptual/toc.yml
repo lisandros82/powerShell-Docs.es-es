@@ -1,6 +1,6 @@
 - name: Uso de esta documentación
   href: how-to-use-docs.md
-- name: Introducción
+- name: Información general
   href: overview.md
 - name: Instalar
   items:
@@ -56,9 +56,9 @@
       items:
         - name: Just Enough Administration (JEA)
           items:
-            - name: Introducción
+            - name: Información general
               href: learn/remoting/jea/overview.md
-            - name: Requisitos previos
+            - name: Prerequisites
               href: learn/remoting/jea/prerequisites.md
             - name: Funcionalidades de rol
               href: learn/remoting/jea/role-capabilities.md
@@ -68,7 +68,7 @@
               href: learn/remoting/jea/register-jea.md
             - name: Uso de JEA
               href: learn/remoting/jea/using-jea.md
-            - name: Consideraciones de seguridad
+            - name: Consideraciones sobre la seguridad
               href: learn/remoting/jea/security-considerations.md
             - name: Auditoría e informes en JEA
               href: learn/remoting/jea/audit-and-report.md
@@ -82,7 +82,7 @@
           href: learn/remoting/winrmsecurity.md
         - name: Realizar el segundo salto en la comunicación remota de PowerShell
           href: learn/remoting/ps-remoting-second-hop.md
-    - name: glosario
+    - name: Glosario
       href: learn/windows-powershell-glossary.md
 - name: Componentes
   items:
@@ -174,13 +174,13 @@
       href: components/workflows-guide.md
 - name: Galería de PowerShell
   items:
-    - name: Introducción
+    - name: Información general
       href: gallery/overview.md
     - name: Instalación de PowerShellGet
       href: gallery/installing-psget.md
     - name: Introducción
       href: gallery/getting-started.md
-    - name: Instrucciones
+    - name: Procedimiento
       items:
         - name: Búsqueda de paquetes en la Galería
           items:
@@ -222,7 +222,7 @@
               href: gallery/how-to/managing-profile/managing-account.md
             - name: Administración de claves de API
               href: gallery/how-to/managing-profile/creating-apikeys.md
-        - name: Trabajo con repositorios de PowerShellGet locales
+        - name: Trabajo con repositorios de PowerShellGet privados
           href: gallery/how-to/working-with-local-psrepositories.md
     - name: Conceptos
       items:
@@ -258,7 +258,7 @@
           href: gallery/how-to/getting-support/dispute-resolution.md
         - name: Ponerse en contacto con administradores
           href: gallery/how-to/getting-support/contacting-administrators.md
-        - name: Solucionar problemas
+        - name: Solución de problemas
           href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
         - name: Arrancar el proveedor de NuGet y NuGet.exe
           href: gallery/how-to/getting-support/bootstrapping-nuget.md
@@ -266,7 +266,7 @@
           href: gallery/how-to/getting-support/gdpr-dsr-policy.md
     - name: Preguntas más frecuentes de la Galería
       href: gallery/faqs.md
-- name: Novedades
+- name: What's New
   items:
     - name: Novedades de PowerShell Core 6.x
       items:
@@ -292,7 +292,7 @@
   href: powershell-support-lifecycle.md
 - name: Windows Management Framework (WMF)
   items:
-    - name: Introducción
+    - name: Información general
       href: wmf/overview.md
     - name: Instalación
       items:
@@ -300,7 +300,7 @@
           href: wmf/setup/install-configure.md
         - name: Desinstalación de WMF 5.0
           href: wmf/setup/uninstall.md
-    - name: Novedades
+    - name: What's New
       expanded: true
       items:
         - name: Notas de la versión WMF 5.0
@@ -341,7 +341,7 @@
           href: wmf/known-issues/known-issues-dsc.md
 - name: Configuración de estado deseado (DSC)
   items:
-    - name: Introducción
+    - name: Información general
       items:
         - name: Información general sobre la configuración de estado deseado para desarrolladores
           href: dsc/overview/overview.md
@@ -370,7 +370,7 @@
           href: dsc/quickstarts/gpo-quickstart.md
         - name: Creación de sitios web con DSC
           href: dsc/quickstarts/website-quickStart.md
-    - name: Configuraciones
+    - name: Configurations
       items:
         - name: Conceptos
           items:
@@ -504,7 +504,7 @@
           href: dsc/tutorials/bootstrapDsc.md
         - name: Configuración de la clave del Registro DSCAutomationHostEnabled
           href: dsc/tutorials/DSCAutomationHostEnabled.md
-    - name: Solucionar problemas
+    - name: Solución de problemas
       items:
         - name: Problemas conocidos
           href: dsc/troubleshooting/troubleshooting.md
@@ -588,7 +588,7 @@
               href: dsc/reference/resources/packagemanagement/PackageManagementSourceDscResource.md
         - name: Clase MSFT_DSCLocalConfigurationManager
           items:
-            - name: Introducción
+            - name: Información general
               href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager.md
             - name: Método ApplyConfiguration
               href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
@@ -718,7 +718,7 @@
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
 - name: SDK de PowerShell
   items:
-    - name: Introducción
+    - name: Información general
       href: developer/windows-powershell.md
     - name: Instalar el SDK de Windows PowerShell
       href: developer/installing-the-windows-powershell-sdk.md
@@ -744,7 +744,7 @@
           items:
             - name: Asignación de un nombre a los archivos de ayuda
               href: developer/module/naming-help-files.md
-            - name: Compatibilidad con la ayuda actualizable
+            - name: Compatibilidad con la Ayuda actualizable
               href: developer/module/supporting-updatable-help.md
               items:
                 - name: Información general acerca de la Ayuda actualizable
@@ -777,7 +777,7 @@
                   href: developer/module/how-to-update-help-files.md
                 - name: Cómo probar la Ayuda actualizable
                   href: developer/module/how-to-test-updatable-help.md
-            - name: Compatibilidad con la ayuda en línea
+            - name: Compatibilidad con la Ayuda en línea
               href: developer/module/supporting-online-help.md
     - name: Escribir un cmdlet de Windows PowerShell
       href: developer/cmdlet/writing-a-windows-powershell-cmdlet.md
@@ -812,7 +812,7 @@
                 - name: Tipos y nombres de parámetros del cmdlet estándar
                   href: developer/cmdlet/standard-cmdlet-parameter-names-and-types.md
                   items:
-                    - name: Parámetros de actividad
+                    - name: Parámetros de la actividad
                       href: developer/cmdlet/activity-parameters.md
                     - name: Parámetros de fecha y hora
                       href: developer/cmdlet/date-and-time-parameters.md
@@ -1830,5 +1830,5 @@
     - name: Referencia de Windows PowerShell
       href: developer/windows-powershell-reference.md
       items:
-        - name: Novedades
+        - name: What's New
           href: developer/windows-powershell-reference-whats-new.md
