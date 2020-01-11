@@ -10,12 +10,12 @@ helpviewer_keywords:
 - snap-ins [PowerShell SDK], PSSnapin example
 ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
 caps.latest.revision: 7
-ms.openlocfilehash: 465ab9e8fa29716ce0f46ad0dcf01d0ddd615bcd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d12a66e354a23041fffb0f8fa286c849849ec2b0
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364234"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870479"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>Escritura de un complemento de Windows PowerShell
 
@@ -31,7 +31,7 @@ Con este tipo de complemento, no se seleccionan los cmdlets y proveedores que se
 
     En este ejemplo, el nombre de la clase es "GetProcPSSnapIn01".
 
-3. Agregue una propiedad pública para el nombre del complemento (obligatorio). Al asignar nombres a los complementos, no use ninguno de los siguientes caracteres: #. , () {} [] &-/\ $; : "' \< >;? @ ` *
+3. Agregue una propiedad pública para el nombre del complemento (obligatorio). Al asignar nombres a los complementos, no use ninguno de los siguientes caracteres: `#`, `.`, `,`, `(`, `)`, `{`, `}`, `[`, `]`, `&`, `-`, `/`, `\`, `$`, `;`, `:`, `"`, `'`, `<`, `>`, `|`, `?`, `@``` ` ```*`,
 
     En este ejemplo, el nombre del complemento es "GetProcPSSnapIn01".
 
@@ -53,7 +53,7 @@ Con este tipo de complemento, no se seleccionan los cmdlets y proveedores que se
 
 ## <a name="example"></a>Ejemplo
 
-En este ejemplo se muestra cómo escribir un complemento de Windows PowerShell que se puede usar para registrar el cmdlet Get-proc en el shell de Windows PowerShell. Tenga en cuenta que en este ejemplo, el ensamblado completo solo contendría la clase de complemento GetProcPSSnapIn01 y la clase de cmdlet Get-proc.
+En este ejemplo se muestra cómo escribir un complemento de Windows PowerShell que se puede usar para registrar el cmdlet Get-proc en el shell de Windows PowerShell. Tenga en cuenta que en este ejemplo, el ensamblado completo solo contendría la clase de complemento GetProcPSSnapIn01 y la clase de cmdlet `Get-Proc`.
 
 ```csharp
 [RunInstaller(true)]
@@ -126,8 +126,8 @@ public class GetProcPSSnapIn01 : PSSnapIn
 }
 ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
-[Cómo registrar cmdlets, proveedores y aplicaciones host](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cómo registrar cmdlets, proveedores y aplicaciones host](/previous-versions/ms714644(v=vs.85))
 
 [SDK de Windows PowerShell Shell](../windows-powershell-reference.md)

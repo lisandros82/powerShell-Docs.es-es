@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: b44708b3bbcb974a6178323dff2302b7da121af6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fe0393634a1e5bb1a3d4a98ccf245e199beb0f16
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367284"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75869918"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Escritura de una aplicación de Host de Windows PowerShell
 
@@ -34,7 +34,3 @@ En los temas siguientes se explica cómo crear una aplicación que hospede Windo
 [Crear una interfaz de usuario personalizada](./creating-a-custom-user-interface.md) Presenta interfaces de usuario personalizadas y proporciona vínculos a ejemplos.
 
 [Ejemplos de aplicaciones host](./host-application-samples.md) En esta sección se incluyen ejemplos de aplicaciones host completas.
-
-## <a name="see-also"></a>Véase también
-
-[Windows PowerShell](https://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)

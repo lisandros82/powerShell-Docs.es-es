@@ -1,19 +1,14 @@
 ---
-title: Ejemplos de espacio de ejecución remoto | Microsoft Docs
-ms.custom: ''
+title: Ejemplos de espacio de ejecución remoto
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8c44df35-b22b-41b0-b34c-ba7ce17b889b
-caps.latest.revision: 7
-ms.openlocfilehash: 4b79b533e9fb926e851c9d0eebc932aec80ad959
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ada4a16b3e8142f505a2adb794c746129e3f359c
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367444"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870445"
 ---
 # <a name="remote-runspace-samples"></a>Ejemplos de espacio de ejecución remoto
 
@@ -22,10 +17,8 @@ En esta sección se incluye código de ejemplo que muestra cómo crear espacios 
 ## <a name="in-this-section"></a>En esta sección
 
 > [!NOTE]
-> Para obtener más información sobre la ejecución de comandos en un equipo remoto, vea [comunicación remota de Windows PowerShell](https://msdn.microsoft.com/en-us/library/ee706563(v=vs.85).aspx).
+> Para obtener más información sobre la ejecución de comandos en un equipo remoto, vea [comunicación remota de Windows PowerShell](/previous-versions/ms714644(v=vs.85)).
 
  [Ejemplo de RemoteRunspace01](./remoterunspace01-sample.md) En este ejemplo se muestra cómo crear un espacio de ejecución remoto que se usa para establecer una conexión remota.
 
  [Ejemplo de RemoteRunspacePool01](./remoterunspacepool01-sample.md) En este ejemplo se muestra cómo crear un grupo de espacio de ejecución remoto y cómo ejecutar varios comandos simultáneamente mediante este grupo.
-
-## <a name="see-also"></a>Véase también

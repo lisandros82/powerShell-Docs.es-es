@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], specified in snap-ins
 ms.assetid: 55c8b5cb-8ee2-4080-afc4-3f09c9f20128
 caps.latest.revision: 6
-ms.openlocfilehash: 4d50ef4dcd75d5c0ba802fbcfe2d7d1d7c954707
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: aa6e4a4615f2681efa691008c86611f0df4e07d7
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364254"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870496"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>Escritura de un complemento de Windows PowerShell personalizado
 
@@ -27,12 +27,11 @@ Con este tipo de complemento, se especifica qué cmdlets, proveedores, tipos o f
 ## <a name="to-write-a-windows-powershell-snap-in-that-registers-specific-cmdlets"></a>Para escribir un complemento de Windows PowerShell que registre cmdlets específicos.
 
 1. Agregue el atributo RunInstallerAttribute.
-
 2. Cree una clase pública que se derive de la clase [System. Management. Automation. CustomPSSnapIn](/dotnet/api/System.Management.Automation.CustomPSSnapIn) .
 
    En este ejemplo, el nombre de la clase es "CustomPSSnapinTest".
 
-3. Agregue una propiedad pública para el nombre del complemento (obligatorio). Al asignar nombres a los complementos, no use ninguno de los siguientes caracteres: #. , () {} [] &-/\ $; : "' \< > &#124; ? @ ` *
+3. Agregue una propiedad pública para el nombre del complemento (obligatorio). Al asignar nombres a los complementos, no use ninguno de los siguientes caracteres: `#`, `.`, `,`, `(`, `)`, `{`, `}`, `[`, `]`, `&`, `-`, `/`, `\`, `$`, `;`, `:`, `"`, `'`, `<`, `>`, `|`, `?`, `@``` ` ```*`,
 
    En este ejemplo, el nombre del complemento es "CustomPSSnapInTest".
 
@@ -46,13 +45,15 @@ Con este tipo de complemento, se especifica qué cmdlets, proveedores, tipos o f
 
 6. Agregue una propiedad pública para la descripción del complemento (obligatorio).
 
-   En este ejemplo, la descripción es: "se trata de un complemento personalizado de Windows PowerShell que incluye los cmdlets test-HelloWorld y test-CustomSnapinTest".
+   En este ejemplo, la descripción es: "se trata de un complemento personalizado de Windows PowerShell que incluye los cmdlets `Test-HelloWorld` y `Test-CustomSnapinTest`".
 
 7. Agregue una propiedad pública para el recurso de Descripción del complemento (opcional).
 
-   En este ejemplo, el recurso Vendor es "CustomPSSnapInTest, es un complemento personalizado de Windows PowerShell que incluye los cmdlets test-HelloWorld y test-CustomSnapinTest".
+   En este ejemplo, el recurso Vendor es:
 
-8. Especifique los cmdlets que pertenecen al complemento personalizado (opcional) mediante la clase [System. Management. Automation. espacios de Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . La información que se agrega aquí incluye el nombre del cmdlet, su tipo de .NET y el nombre del archivo de ayuda del cmdlet (el formato del nombre del archivo de ayuda del cmdlet debe ser Name. dll-help. xml).
+   > CustomPSSnapInTest, este es un complemento personalizado de Windows PowerShell que incluye los cmdlets test-HelloWorld y test-CustomSnapinTest ".
+
+8. Especifique los cmdlets que pertenecen al complemento personalizado (opcional) mediante la clase [System. Management. Automation. espacios de Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . La información que se agrega aquí incluye el nombre del cmdlet, su tipo de .NET y el nombre del archivo de ayuda del cmdlet (el formato del nombre del archivo de ayuda del cmdlet debe ser` name.dll-help.xml`).
 
    En este ejemplo se agregan los cmdlets test-HelloWorld y TestCustomSnapinTest.
 
@@ -70,7 +71,7 @@ Con este tipo de complemento, se especifica qué cmdlets, proveedores, tipos o f
 
 ## <a name="example"></a>Ejemplo
 
-En este ejemplo se muestra cómo escribir un complemento personalizado de Windows PowerShell que se puede usar para registrar los cmdlets test-HelloWorld y test-CustomSnapinTest. Tenga en cuenta que en este ejemplo, el ensamblado completo podría contener otros cmdlets y proveedores que este complemento no registraría.
+En este ejemplo se muestra cómo escribir un complemento personalizado de Windows PowerShell que se puede usar para registrar los cmdlets de `Test-HelloWorld` y `Test-CustomSnapinTest`. Tenga en cuenta que en este ejemplo, el ensamblado completo podría contener otros cmdlets y proveedores que este complemento no registraría.
 
 ```csharp
 [RunInstaller(true)]
@@ -213,10 +214,10 @@ public class CustomPSSnapinTest : CustomPSSnapIn
 }
 ```
 
-Para obtener más información sobre el registro de complementos, vea [Cómo registrar cmdlets, proveedores y aplicaciones host](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c) en la [Guía del programador de Windows PowerShell](../prog-guide/windows-powershell-programmer-s-guide.md).
+Para obtener más información sobre el registro de complementos, vea [Cómo registrar cmdlets, proveedores y aplicaciones host](/previous-versions/ms714644(v=vs.85)) en la [Guía del programador de Windows PowerShell](../prog-guide/windows-powershell-programmer-s-guide.md).
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
-[Cómo registrar cmdlets, proveedores y aplicaciones host](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cómo registrar cmdlets, proveedores y aplicaciones host](/previous-versions/ms714644(v=vs.85))
 
 [SDK de Windows PowerShell Shell](../windows-powershell-reference.md)

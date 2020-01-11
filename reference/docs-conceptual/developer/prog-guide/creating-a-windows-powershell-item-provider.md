@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: ad42b8de867f468e832380ab6a22a39b6d27d3c6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a64e49894ce5195cc177e97a7049740389b09456
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417487"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870717"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Creación de un proveedor de elementos de Windows PowerShell
 
@@ -24,10 +24,7 @@ En este tema se describe cómo crear un proveedor de Windows PowerShell que pued
 
 > [!NOTE]
 > Puede descargar el C# archivo de código fuente (AccessDBSampleProvider03.CS) para este proveedor mediante el kit de desarrollo de software de Microsoft Windows para Windows Vista y los componentes de tiempo de ejecución de .NET Framework 3,0. Para obtener instrucciones de descarga, consulte [Cómo instalar Windows PowerShell y descargar el SDK de Windows PowerShell](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
-> Los archivos de código fuente descargados están disponibles en el directorio **\<ejemplos de PowerShell >** .
->
-> Para obtener más información sobre otras implementaciones del proveedor de Windows PowerShell, vea [diseñar el proveedor de Windows PowerShell](./designing-your-windows-powershell-provider.md).
+> Los archivos de código fuente descargados están disponibles en el directorio **\<ejemplos de PowerShell >** . Para obtener más información sobre otras implementaciones del proveedor de Windows PowerShell, vea [diseñar el proveedor de Windows PowerShell](./designing-your-windows-powershell-provider.md).
 
 El proveedor de elementos de Windows PowerShell que se describe en este tema obtiene elementos de datos de una base de datos de Access. En este caso, un "elemento" es una tabla de la base de datos de Access o una fila de una tabla.
 
@@ -43,13 +40,15 @@ Tenga en cuenta que en esta definición de clase, el atributo [System. Managemen
 
 Como se describe en [diseñar un proveedor de Windows PowerShell](./designing-your-windows-powershell-provider.md), la clase [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) se deriva de otras clases que proporcionan una funcionalidad de proveedor diferente. Por lo tanto, un proveedor de elementos de Windows PowerShell debe definir toda la funcionalidad proporcionada por esas clases.
 
-Para obtener más información sobre cómo implementar la funcionalidad para agregar información de inicialización específica de la sesión y para liberar los recursos utilizados por el proveedor, consulte [crear un proveedor básico de Windows PowerShell](./creating-a-basic-windows-powershell-provider.md). Sin embargo, la mayoría de los proveedores, incluido el proveedor descrito aquí, pueden usar la implementación predeterminada de esta funcionalidad proporcionada por Windows PowerShell.
+Para obtener más información sobre cómo implementar la funcionalidad para agregar información de inicialización específica de la sesión y para liberar los recursos utilizados por el proveedor, consulte [crear un proveedor básico de Windows PowerShell](./creating-a-basic-windows-powershell-provider.md).
+Sin embargo, la mayoría de los proveedores, incluido el proveedor descrito aquí, pueden usar la implementación predeterminada de esta funcionalidad proporcionada por Windows PowerShell.
 
 Antes de que el proveedor de elementos de Windows PowerShell pueda manipular los elementos del almacén, debe implementar los métodos de la clase base [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) para tener acceso al almacén de datos. Para obtener más información sobre la implementación de esta clase, vea [crear un proveedor de unidades de Windows PowerShell](./creating-a-windows-powershell-drive-provider.md).
 
 ## <a name="checking-for-path-validity"></a>Comprobando la validez de la ruta de acceso
 
-Al buscar un elemento de datos, el tiempo de ejecución de Windows PowerShell suministra una ruta de acceso de Windows PowerShell al proveedor, tal como se define en la sección "conceptos de PSPath" de [Cómo funciona Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). Un proveedor de elementos de Windows PowerShell debe comprobar la validez sintáctica y semántica de cualquier ruta de acceso que se le haya pasado implementando el método [System. Management. Automation. Provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) . Este método devuelve `true` si la ruta de acceso es válida y `false` de lo contrario. Tenga en cuenta que la implementación de este método no debe comprobar la existencia del elemento en la ruta de acceso, pero solo la ruta de acceso es sintácticamente correcta y semánticamente.
+Al buscar un elemento de datos, el tiempo de ejecución de Windows PowerShell suministra una ruta de acceso de Windows PowerShell al proveedor, tal como se define en la sección "conceptos de PSPath" de [Cómo funciona Windows PowerShell](/previous-versions/ms714658(v=vs.85)).
+Un proveedor de elementos de Windows PowerShell debe comprobar la validez sintáctica y semántica de cualquier ruta de acceso que se le haya pasado implementando el método [System. Management. Automation. Provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) . Este método devuelve `true` si la ruta de acceso es válida y `false` de lo contrario. Tenga en cuenta que la implementación de este método no debe comprobar la existencia del elemento en la ruta de acceso, pero solo la ruta de acceso es sintácticamente correcta y semánticamente.
 
 Esta es la implementación del método [System. Management. Automation. Provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) para este proveedor. Tenga en cuenta que esta implementación llama a un método auxiliar de NormalizePath para convertir todos los separadores de la ruta de acceso en una uniforme.
 
@@ -225,17 +224,17 @@ Para obtener el código de ejemplo completo, vea el [ejemplo de código AccessDb
 
 ## <a name="defining-object-types-and-formatting"></a>Definir tipos de objeto y formato
 
-Al escribir un proveedor, puede ser necesario agregar miembros a los objetos existentes o definir nuevos objetos. Cuando termine, cree un archivo de tipos que Windows PowerShell pueda usar para identificar a los miembros del objeto y un archivo de formato que define cómo se muestra el objeto. Para obtener más información acerca de, vea [extender tipos de objeto y formato](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Al escribir un proveedor, puede ser necesario agregar miembros a los objetos existentes o definir nuevos objetos. Cuando termine, cree un archivo de tipos que Windows PowerShell pueda usar para identificar a los miembros del objeto y un archivo de formato que define cómo se muestra el objeto. Para obtener más información acerca de, vea [extender tipos de objeto y formato](/previous-versions/ms714665(v=vs.85)).
 
 ## <a name="building-the-windows-powershell-provider"></a>Compilar el proveedor de Windows PowerShell
 
-Vea [Cómo registrar cmdlets, proveedores y aplicaciones host](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Vea [Cómo registrar cmdlets, proveedores y aplicaciones host](/previous-versions/ms714644(v=vs.85)).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Probar el proveedor de Windows PowerShell
 
 Cuando este proveedor de elementos de Windows PowerShell se registra con Windows PowerShell, solo puede probar la funcionalidad básica y de unidad del proveedor. Para probar la manipulación de los elementos, también debe implementar la funcionalidad de contenedor descrita en [implementación de un proveedor de Windows PowerShell de contenedor](./creating-a-windows-powershell-container-provider.md).
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
@@ -245,12 +244,12 @@ Cuando este proveedor de elementos de Windows PowerShell se registra con Windows
 
 [Diseño del proveedor de Windows PowerShell](./designing-your-windows-powershell-provider.md)
 
-[Extender tipos de objeto y formato](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extender tipos de objeto y formato](/previous-versions/ms714665(v=vs.85))
 
-[Cómo funciona Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Cómo funciona Windows PowerShell](/previous-versions/ms714658(v=vs.85))
 
 [Creación de un contenedor de Windows PowerShell](./creating-a-windows-powershell-container-provider.md)
 
 [Crear un proveedor de Windows PowerShell para la unidad](./creating-a-windows-powershell-drive-provider.md)
 
-[Cómo registrar cmdlets, proveedores y aplicaciones host](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cómo registrar cmdlets, proveedores y aplicaciones host](/previous-versions/ms714644(v=vs.85))

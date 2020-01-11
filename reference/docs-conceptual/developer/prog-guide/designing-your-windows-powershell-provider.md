@@ -10,12 +10,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], designing
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
-ms.openlocfilehash: 962d2ba9fd892c297a633276b9ac07a5fa75ea87
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bfb29fd5df87ffa9ae270c18ce8bfb0c59ee6f90
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366814"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870666"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Diseño del proveedor de Windows PowerShell
 
@@ -57,7 +57,9 @@ Con el estado de sesión, el tiempo de ejecución de Windows PowerShell hace que
 
 ### <a name="cmdletprovider-base-class"></a>Clase base CmdletProvider
 
-La clase [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) define un proveedor básico de Windows PowerShell. Esta clase admite la declaración de proveedor y proporciona una serie de propiedades y métodos que están disponibles para todos los proveedores de Windows PowerShell. El cmdlet `Get-PSProvider` invoca la clase para enumerar todos los proveedores disponibles para una sesión. La implementación de este cmdlet se proporciona mediante el estado de sesión.
+La clase [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) define un proveedor básico de Windows PowerShell. Esta clase admite la declaración de proveedor y proporciona una serie de propiedades y métodos que están disponibles para todos los proveedores de Windows PowerShell.
+El cmdlet `Get-PSProvider` invoca la clase para enumerar todos los proveedores disponibles para una sesión.
+La implementación de este cmdlet se proporciona mediante el estado de sesión.
 
 > [!NOTE]
 > Los proveedores de Windows PowerShell están disponibles para todos los ámbitos de lenguaje de Windows PowerShell.
@@ -68,23 +70,23 @@ La clase [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet
 
 Esta clase se deriva de la clase base [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) . En la tabla siguiente se enumeran los cmdlets expuestos por esta clase. Además de los enumerados, el cmdlet `Get-PSDrive` (expuesto por el estado de sesión) es un cmdlet relacionado que se usa para recuperar las unidades disponibles.
 
-|Cmdlet|Definición|
-|------------|----------------|
-|`New-PSDrive`|Crea una nueva unidad para la sesión y transmite la información de la unidad.|
-|`Remove-PSDrive`|Quita una unidad de la sesión.|
+|      Cmdlet      |                             Definición                              |
+| ---------------- | ------------------------------------------------------------------- |
+| `New-PSDrive`    | Crea una nueva unidad para la sesión y transmite la información de la unidad. |
+| `Remove-PSDrive` | Quita una unidad de la sesión.                                   |
 
 ### <a name="itemcmdletprovider-base-class"></a>Clase base ItemCmdletProvider
 
 La clase [System. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) define un proveedor de elementos de Windows PowerShell que realiza operaciones en los elementos individuales del almacén de datos y no asume ninguna funcionalidad de navegación o contenedor. Esta clase se deriva de la clase base [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . En la tabla siguiente se enumeran los cmdlets expuestos por esta clase.
 
-|Cmdlet|Definición|
-|------------|----------------|
-|`Clear-Item`|Borra el contenido actual de los elementos que se encuentra en la ubicación especificada y lo reemplaza por el valor "Clear" especificado por el proveedor. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.|
-|`Get-Item`|Recupera elementos de la ubicación especificada y transmite los objetos resultantes.|
-|`Invoke-Item`|Invoca la acción predeterminada para el elemento en la ruta de acceso especificada.|
-|`Set-Item`|Establece un elemento en la ubicación especificada con el valor indicado. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.|
-|`Resolve-Path`|Resuelve los caracteres comodín para una ruta de acceso de Windows PowerShell y transmite información de la ruta de acceso.|
-|`Test-Path`|Comprueba la ruta de acceso especificada y devuelve `true` si existe y `false` de lo contrario. Este cmdlet se implementa para admitir el parámetro `IsContainer` para el método [System. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) .|
+|     Cmdlet     |                                                                                                                                                            Definición                                                                                                                                                            |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Clear-Item`   | Borra el contenido actual de los elementos que se encuentra en la ubicación especificada y lo reemplaza por el valor "Clear" especificado por el proveedor. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.                                                                                   |
+| `Get-Item`     | Recupera elementos de la ubicación especificada y transmite los objetos resultantes.                                                                                                                                                                                                                                                  |
+| `Invoke-Item`  | Invoca la acción predeterminada para el elemento en la ruta de acceso especificada.                                                                                                                                                                                                                                                                   |
+| `Set-Item`     | Establece un elemento en la ubicación especificada con el valor indicado. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.                                                                                                                                                   |
+| `Resolve-Path` | Resuelve los caracteres comodín para una ruta de acceso de Windows PowerShell y transmite información de la ruta de acceso.                                                                                                                                                                                                                                              |
+| `Test-Path`    | Comprueba la ruta de acceso especificada y devuelve `true` si existe y `false` de lo contrario. Este cmdlet se implementa para admitir el parámetro `IsContainer` para el método [System. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) . |
 
 ### <a name="containercmdletprovider-base-class"></a>Clase base ContainerCmdletProvider
 
@@ -92,22 +94,22 @@ La clase [System. Management. Automation. Provider. Containercmdletprovider](/do
 
 Esta clase se deriva de la clase base [System. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) . En la tabla siguiente se definen los cmdlets implementados por esta clase.
 
-|Cmdlet|Definición|
-|------------|----------------|
-|`Copy-Item`|Copia los elementos de una ubicación a otra. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.|
-|`Get-Childitem`|Recupera los elementos secundarios en la ubicación especificada y los transmite como objetos.|
-|`New-Item`|Crea nuevos elementos en la ubicación especificada y transmite el objeto resultante.|
-|`Remove-Item`|Quita los elementos de la ubicación especificada.|
-|`Rename-Item`|Cambia el nombre de un elemento en la ubicación especificada. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.|
+|     Cmdlet      |                                                                        Definición                                                                        |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Copy-Item`     | Copia los elementos de una ubicación a otra. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`. |
+| `Get-Childitem` | Recupera los elementos secundarios en la ubicación especificada y los transmite como objetos.                                                                        |
+| `New-Item`      | Crea nuevos elementos en la ubicación especificada y transmite el objeto resultante.                                                                           |
+| `Remove-Item`   | Quita los elementos de la ubicación especificada.                                                                                                               |
+| `Rename-Item`   | Cambia el nombre de un elemento en la ubicación especificada. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`. |
 
 ### <a name="navigationcmdletprovider-base-class"></a>Clase base NavigationCmdletProvider
 
 La clase [System. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) define un proveedor de navegación de Windows PowerShell que realiza operaciones para elementos que usan más de un contenedor. Esta clase se deriva de la clase base [System. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) . En la tabla siguiente se enumeran los cmdlets expuestos por esta clase.
 
-|Cmdlet|Definición|
-|------------|----------------|
-|Combinar-ruta de acceso|Combina dos rutas de acceso en una única ruta de acceso, utilizando un delimitador específico del proveedor entre las rutas de acceso. Este cmdlet transmite cadenas.|
-|`Move-Item`|Mueve los elementos a la ubicación especificada. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.|
+|    Cmdlet    |                                                                      Definición                                                                      |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Combinar-ruta de acceso | Combina dos rutas de acceso en una única ruta de acceso, utilizando un delimitador específico del proveedor entre las rutas de acceso. Este cmdlet transmite cadenas.                               |
+| `Move-Item`  | Mueve los elementos a la ubicación especificada. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`. |
 
 Un cmdlet relacionado es el cmdlet Parse-path básico proporcionado por Windows PowerShell. Este cmdlet se puede usar para analizar una ruta de acceso de Windows PowerShell para admitir el parámetro `Parent`. Transmite la cadena de ruta de acceso primaria.
 
@@ -119,12 +121,12 @@ Además de derivar de una de las clases base de Windows PowerShell, el proveedor
 
 La interfaz [System. Management. Automation. Provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) define un proveedor de contenido que realiza operaciones en el contenido de un elemento de datos. En la tabla siguiente se enumeran los cmdlets expuestos por esta interfaz.
 
-|Cmdlet|Definición|
-|------------|----------------|
-|`Add-Content`|Anexa las longitudes de los valores indicados al contenido del elemento especificado. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.|
-|`Clear-Content`|Establece el contenido del elemento especificado en el valor "Clear". Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.|
-|`Get-Content`|Recupera el contenido de los elementos especificados y transmite los objetos resultantes.|
-|`Set-Content`|Reemplaza el contenido existente para los elementos especificados. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.|
+|     Cmdlet      |                                                                                        Definición                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Add-Content`   | Anexa las longitudes de los valores indicados al contenido del elemento especificado. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`. |
+| `Clear-Content` | Establece el contenido del elemento especificado en el valor "Clear". Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.               |
+| `Get-Content`   | Recupera el contenido de los elementos especificados y transmite los objetos resultantes.                                                                                                         |
+| `Set-Content`   | Reemplaza el contenido existente para los elementos especificados. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.                     |
 
 ### <a name="ipropertycmdletprovider"></a>IPropertyCmdletProvider
 
@@ -133,37 +135,38 @@ La interfaz [System. Management. Automation. Provider. Ipropertycmdletprovider](
 > [!NOTE]
 > El parámetro `Path` en estos cmdlets indica una ruta de acceso a un elemento en lugar de identificar una propiedad.
 
-|Cmdlet|Definición|
-|------------|----------------|
-|`Clear-ItemProperty`|Establece las propiedades de los elementos especificados en el valor "Clear". Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.|
-|`Get-ItemProperty`|Recupera las propiedades de los elementos especificados y transmite los objetos resultantes.|
-|`Set-ItemProperty`|Establece las propiedades de los elementos especificados con los valores indicados. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.|
+|        Cmdlet        |                                                                                   Definición                                                                                    |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Clear-ItemProperty` | Establece las propiedades de los elementos especificados en el valor "Clear". Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.      |
+| `Get-ItemProperty`   | Recupera las propiedades de los elementos especificados y transmite los objetos resultantes.                                                                                                |
+| `Set-ItemProperty`   | Establece las propiedades de los elementos especificados con los valores indicados. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`. |
 
 ### <a name="idynamicpropertycmdletprovider"></a>IDynamicPropertyCmdletProvider
 
-La interfaz [System. Management. Automation. Provider. Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) , derivada de [System. Management. Automation. Provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider), define un proveedor que especifica los parámetros dinámicos para sus cmdlets compatibles. Este tipo de proveedor controla las operaciones para las que se pueden definir propiedades en tiempo de ejecución, por ejemplo, una nueva operación de propiedad. Tales operaciones no son posibles en los elementos que tienen propiedades definidas estáticamente. En la tabla siguiente se enumeran los cmdlets expuestos por esta interfaz.
+La interfaz [System. Management. Automation. Provider. Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) , derivada de [System. Management. Automation. Provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider), define un proveedor que especifica los parámetros dinámicos para sus cmdlets compatibles. Este tipo de proveedor controla las operaciones para las que se pueden definir propiedades en tiempo de ejecución, por ejemplo, una nueva operación de propiedad. Tales operaciones no son posibles en los elementos que tienen propiedades definidas estáticamente.
+En la tabla siguiente se enumeran los cmdlets expuestos por esta interfaz.
 
-|Cmdlet|Definición|
-|------------|----------------|
-|`Copy-ItemProperty`|Copia una propiedad del elemento especificado en otro elemento. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.|
-|`Move-ItemProperty`|Mueve una propiedad del elemento especificado a otro elemento. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.|
-|`New-ItemProperty`|Crea una propiedad en los elementos especificados y transmite los objetos resultantes.|
-|`Remove-ItemProperty`|Quita una propiedad de los elementos especificados.|
-|`Rename-ItemProperty`|Cambia el nombre de una propiedad de los elementos especificados. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.|
+|        Cmdlet         |                                                                                Definición                                                                                |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `Copy-ItemProperty`   | Copia una propiedad del elemento especificado en otro elemento. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`. |
+| `Move-ItemProperty`   | Mueve una propiedad del elemento especificado a otro elemento. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.  |
+| `New-ItemProperty`    | Crea una propiedad en los elementos especificados y transmite los objetos resultantes.                                                                                             |
+| `Remove-ItemProperty` | Quita una propiedad de los elementos especificados.                                                                                                                              |
+| `Rename-ItemProperty` | Cambia el nombre de una propiedad de los elementos especificados. Este cmdlet no pasa un objeto de salida a través de la canalización a menos que se especifique su parámetro `PassThru`.                 |
 
 ### <a name="isecuritydescriptorcmdletprovider"></a>ISecurityDescriptorCmdletProvider
 
 La interfaz [System. Management. Automation. Provider. Isecuritydescriptorcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ISecurityDescriptorCmdletProvider) agrega la funcionalidad del descriptor de seguridad a un proveedor. Esta interfaz permite al usuario obtener y establecer información del descriptor de seguridad para un elemento en el almacén de datos. En la tabla siguiente se enumeran los cmdlets expuestos por esta interfaz.
 
-|Cmdlet|Definición|
-|------------|----------------|
-|`Get-Acl`|Recupera la información contenida en una lista de control de acceso (ACL), que forma parte de un descriptor de seguridad que se usa para proteger los recursos del sistema operativo, por ejemplo, un archivo o un objeto.|
-|`Set-Acl`|Establece la información de una ACL. Está en forma de una instancia de [System. Security. AccessControl. objeto ObjectSecurity](/dotnet/api/System.Security.AccessControl.ObjectSecurity) en los elementos designados para la ruta de acceso especificada. Este cmdlet puede establecer información sobre archivos, claves y subclaves en el registro, o cualquier otro elemento de proveedor, si el proveedor de Windows PowerShell admite la configuración de la información de seguridad.|
+|  Cmdlet   |                                                                                                                                                                                                          Definición                                                                                                                                                                                                          |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Get-Acl` | Recupera la información contenida en una lista de control de acceso (ACL), que forma parte de un descriptor de seguridad que se usa para proteger los recursos del sistema operativo, por ejemplo, un archivo o un objeto.                                                                                                                                                                                                                                      |
+| `Set-Acl` | Establece la información de una ACL. Está en forma de una instancia de [System. Security. AccessControl. objeto ObjectSecurity](/dotnet/api/System.Security.AccessControl.ObjectSecurity) en los elementos designados para la ruta de acceso especificada. Este cmdlet puede establecer información sobre archivos, claves y subclaves en el registro, o cualquier otro elemento de proveedor, si el proveedor de Windows PowerShell admite la configuración de la información de seguridad. |
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
 [Crear proveedores de Windows PowerShell](./how-to-create-a-windows-powershell-provider.md)
 
-[Cómo funciona Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Cómo funciona Windows PowerShell](/previous-versions/ms714658(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
