@@ -2,16 +2,16 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: ISESnippetObject
-ms.openlocfilehash: 62d470569deb051fca80005235d4c492319cf5ec
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 60456ec90f56753fa96f141b8b8299ef3f7e41c9
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028891"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736971"
 ---
 # <a name="the-isesnippetobject"></a>ISESnippetObject
 
-Un objeto **ISESnippet** es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISESnippet. Los miembros de la colección **$psISE.CurrentPowerShellTab.Snippets** son todos ejemplos de objetos **ISESnippet**. La manera más fácil de crear un fragmento de código es usar el cmdlet [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0).
+Un objeto **ISESnippet** es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISESnippet. Todos los miembros de la colección `$psISE.CurrentPowerShellTab.Snippets` son ejemplos de objetos **ISESnippet**. La manera más fácil de crear un fragmento de código es usar el cmdlet [New-IseSnippet](/reference/5.1/ISE/New-IseSnippet.md).
 
 ## <a name="properties"></a>Propiedades
 
@@ -37,7 +37,7 @@ La propiedad de solo lectura que obtiene el fragmento de código que va a insert
 $psISE.CurrentPowerShellTab.Snippets.Item(0).CodeFragment
 ```
 
-### <a name="shortcut"></a>Directa
+### <a name="shortcut"></a>Método abreviado
 
 Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores.
 
@@ -50,7 +50,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Consulte también
 
 - [El objeto ISESnippetCollection](The-ISESnippetCollection-Object.md)
 - [Finalidad del modelo de objetos de scripting de Windows PowerShell ISE](purpose-of-the-windows-powershell-ise-scripting-object-model.md)

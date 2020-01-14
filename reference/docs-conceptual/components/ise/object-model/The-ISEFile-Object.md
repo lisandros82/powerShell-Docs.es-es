@@ -1,21 +1,21 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell, cmdlet
 title: El objeto ISEFile
-ms.openlocfilehash: ebb5a35f6ea9d93eab633b9f4e6c84e4fddd6ae8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028965"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737005"
 ---
 # <a name="the-isefile-object"></a>El objeto ISEFile
 
-Un objeto **ISEFile** representa un archivo en el Entorno de scripting integrado (ISE) de Windows PowerShell®. Es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEFile. Este tema enumera sus métodos de miembro y propiedades de miembro. **$psISE.CurrentFile** y los archivos de la colección de archivos en una pestaña de PowerShell son todas las instancias de la clase Microsoft.PowerShell.Host.ISE.ISEFile.
+Un objeto **ISEFile** representa un archivo en el Entorno de scripting integrado (ISE) de Windows PowerShell®. Es una instancia de la clase **Microsoft.PowerShell.Host.ISE.ISEFile**. Este tema enumera sus métodos de miembro y propiedades de miembro. `$psISE.CurrentFile` y los archivos de la colección de archivos en una pestaña de PowerShell son todas las instancias de la clase ****Microsoft.PowerShell.Host.ISE.ISEFile**.
 
 ## <a name="methods"></a>Métodos
 
-### <a name="save-saveencoding-"></a>Save\( \[saveEncoding\] \)
+### <a name="save-saveencoding-"></a>Guarde\( \[saveEncoding\] \)
 
 Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
@@ -69,7 +69,7 @@ $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 
 Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
-La propiedad de solo lectura que obtiene la cadena que contiene el nombre para mostrar de este archivo. El nombre se muestra en la pestaña **Archivo** en la parte superior del editor. La presencia de un asterisco \(\*\) al final del nombre indica que el archivo tiene cambios que no se han guardado.
+La propiedad de solo lectura que obtiene la cadena que contiene el nombre para mostrar de este archivo. El nombre se muestra en la pestaña **Archivo** en la parte superior del editor. La presencia de un asterisco `(*)` al final del nombre indica que el archivo tiene cambios que no se han guardado.
 
 ```powershell
 # Shows the display name of the file.
@@ -87,7 +87,7 @@ La propiedad de solo lectura que obtiene el [objeto de editor](The-ISEEditor-Obj
 $psISE.CurrentFile.Editor.Text
 ```
 
-### <a name="encoding"></a>Codificación
+### <a name="encoding"></a>Encoding
 
 Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
@@ -113,7 +113,7 @@ $psISE.CurrentFile.FullPath
 
 Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
-La propiedad booleana de solo lectura que devuelve **$true** si el archivo se ha guardado una vez que se modificó por última vez.
+La propiedad booleana de solo lectura que devuelve `$true` si el archivo se ha guardado una vez que se modificó por última vez.
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -125,7 +125,7 @@ $myfile.IsSaved
 
 Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
-La propiedad de solo lectura que devuelve **$true** si nunca se asignó un título al archivo.
+La propiedad de solo lectura que devuelve `$true` si nunca se asignó un título al archivo.
 
 ```powershell
 # Determines whether the file has never been given a title.
@@ -134,7 +134,7 @@ $psISE.CurrentFile.SaveAs("temp.txt")
 $psISE.CurrentFile.IsUntitled
 ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Consulte también
 
 - [ISEFileCollectionObject](The-ISEFileCollection-Object.md)
 - [Finalidad del modelo de objetos de scripting de Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

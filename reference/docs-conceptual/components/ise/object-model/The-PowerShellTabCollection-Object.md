@@ -2,16 +2,16 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: El objeto PowerShellTabCollection
-ms.openlocfilehash: 5a1318534ddce19c2f5faa0d2013e2b38d8b79e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0aad885afd3ba3ae3b00f5c11d2c62a9ff303798
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030490"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736120"
 ---
 # <a name="the-powershelltabcollection-object"></a>El objeto PowerShellTabCollection
 
-El objeto de colección **PowerShellTab** es una colección de objetos **PowerShellTab**. Cada objeto **PowerShellTab** funciona como un entorno de runtime independiente. Es una instancia de la clase Microsoft.PowerShell.Host.ISE.PowerShellTabs. Un ejemplo es el objeto **$psISE.PowerShellTabs**.
+El objeto de colección **PowerShellTab** es una colección de objetos **PowerShellTab**. Cada objeto **PowerShellTab** funciona como un entorno de runtime independiente. Es una instancia de la clase Microsoft.PowerShell.Host.ISE.PowerShellTabs. Un ejemplo es el objeto `$psISE.PowerShellTabs`.
 
 ## <a name="methods"></a>Métodos
 
@@ -61,7 +61,7 @@ $newTab.DisplayName = 'Brand New Tab'
 $psISE.PowerShellTabs.SelectedPowerShellTab = $oldTab
 ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Consulte también
 
 - [El objeto PowerShellTab](The-PowerShellTab-Object.md)
 - [Finalidad del modelo de objetos de scripting de Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

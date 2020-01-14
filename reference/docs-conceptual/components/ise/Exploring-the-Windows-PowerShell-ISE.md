@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 01/02/2020
 keywords: powershell, cmdlet
 title: Explorar Windows PowerShell ISE
-ms.openlocfilehash: 7949b690cda73148f07922985b1fc30fe1e8b2d0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 03728a8c83962894b27738609a5b1bec841fdb13
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117445"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737107"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Explorar Windows PowerShell ISE
 
@@ -31,25 +31,25 @@ Una pestaña de Windows PowerShell es el entorno en el que se ejecuta un script 
 
 Los botones siguientes están ubicados en la barra de herramientas.
 
-|Botón|Función|
-|----------|------------|
-|**Nuevo**|Abre un nuevo script.|
-|**Abrir**|Abre un script o un archivo existente.|
-|**Guardar**|Guarda un script o un archivo.|
-|**Cortar**|Corta el texto seleccionado y lo copia en el Portapapeles.|
-|**Copiar**|Copia el texto seleccionado en el portapapeles.|
-|**Pegar**|Pega el contenido del Portapapeles en la ubicación del cursor.|
-|**Borrar panel de salida**|Borra todo el contenido del panel de salida.|
-|**Deshacer**|Invierte la acción que se acaba de realizar.|
-|**Rehacer**|Realiza la acción que se acaba de deshacer.|
-|**Ejecutar script**|Ejecuta un script.|
-|**Ejecutar selección**|Ejecuta una parte seleccionada de un script.|
-|**Detener la ejecución**|Detiene un script que se está ejecutando.|
-|**Nueva pestaña de PowerShell en remoto**|Crea una nueva pestaña de PowerShell que establece una sesión en un equipo remoto. Aparece un cuadro de diálogo que le pide que escriba los detalles necesarios para establecer la conexión remota.|
-|**Iniciar PowerShell.exe**|Abre una consola de PowerShell.|
-|**Mostrar panel de scripts arriba**|Mueve el panel de scripts a la parte superior de la pantalla.|
-|**Mover panel de scripts a la derecha**|Mueve el panel de scripts a la derecha de la pantalla.|
-|**Mostrar panel de scripts maximizado**|Maximiza el panel de scripts.|
+|             Botón             |                                                                                     Función                                                                                     |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nuevo**                        | Abre un nuevo script.                                                                                                                                                              |
+| **Abrir**                       | Abre un script o un archivo existente.                                                                                                                                                |
+| **Guardar**                       | Guarda un script o un archivo.                                                                                                                                                          |
+| **Cortar**                        | Corta el texto seleccionado y lo copia en el Portapapeles.                                                                                                                           |
+| **Copy**                       | Copia el texto seleccionado en el portapapeles.                                                                                                                                       |
+| **Pegar**                      | Pega el contenido del Portapapeles en la ubicación del cursor.                                                                                                                     |
+| **Borrar panel de salida**          | Borra todo el contenido del panel de salida.                                                                                                                                           |
+| **Deshacer**                       | Invierte la acción que se acaba de realizar.                                                                                                                                     |
+| **Rehacer**                       | Realiza la acción que se acaba de deshacer.                                                                                                                                        |
+| **Ejecutar script**                 | Ejecuta un script.                                                                                                                                                                   |
+| **Ejecutar selección**              | Ejecuta una parte seleccionada de un script.                                                                                                                                             |
+| **Detener la ejecución**             | Detiene un script que se está ejecutando.                                                                                                                                                  |
+| **Nueva pestaña de PowerShell en remoto**  | Crea una nueva pestaña de PowerShell que establece una sesión en un equipo remoto. Aparece un cuadro de diálogo que le pide que escriba los detalles necesarios para establecer la conexión remota. |
+| **Iniciar PowerShell.exe**       | Abre una consola de PowerShell.                                                                                                                                                      |
+| **Mostrar panel de scripts arriba**       | Mueve el panel de scripts a la parte superior de la pantalla.                                                                                                                                 |
+| **Mover panel de scripts a la derecha**     | Mueve el panel de scripts a la derecha de la pantalla.                                                                                                                               |
+| **Mostrar panel de scripts maximizado** | Maximiza el panel de scripts.                                                                                                                                                       |
 
 ## <a name="script-tab"></a>Pestaña Script
 
@@ -67,7 +67,7 @@ Muestra los resultados de los comandos y scripts que ha ejecutado. También pued
 
 ## <a name="command-pane"></a>Panel de comandos
 
-Permite escribir comandos. Puede ejecutar un comando de una línea o un comando de varias líneas en el panel de comandos. Presione MAYÚS+ENTRAR para introducir cada línea de un comando de varias líneas y presione ENTRAR después de la última línea para ejecutarlo. El mensaje que aparece en la parte superior del panel de comandos muestra la ruta de acceso al directorio de trabajo actual.
+Permite escribir comandos. Puede ejecutar un comando de una línea o un comando de varias líneas en el panel de comandos. Pulse <kbd>MAYÚS</kbd>+<kbd>ENTRAR</kbd> para ingresar cada línea de un comando de varias líneas y pulse <kbd>ENTRAR</kbd> después de la última línea para ejecutarlo. El mensaje que aparece en la parte superior del panel de comandos muestra la ruta de acceso al directorio de trabajo actual.
 
 ## <a name="status-bar"></a>Barra de estado
 
@@ -79,8 +79,9 @@ Aumenta o disminuye el tamaño del texto en la pantalla.
 
 ## <a name="help"></a>Ayuda
 
-La ayuda de Windows PowerShell ISE está disponible en la biblioteca de TechNet en Internet. Para abrir la Ayuda, haga clic en **Ayuda de Windows PowerShell ISE** en el menú **Ayuda** o presione la tecla F1 en cualquier lugar excepto cuando el cursor esté en el nombre de un cmdlet en el panel de scripts o en panel de consola. Desde el menú **Ayuda** también puede ejecutar el cmdlet Update-Help y mostrar la ventana Comandos, que le muestra todos los parámetros de un cmdlet para ayudarle a construir comandos, lo que permite rellenar los parámetros en un formulario fácil de usar.
+La ayuda de Windows PowerShell ISE está disponible en la biblioteca de TechNet en Internet. Para abrir la Ayuda, haga clic en **Ayuda de Windows PowerShell ISE** en el menú **Ayuda** o presione la tecla <kbd>F1</kbd> en cualquier lugar excepto cuando el cursor esté en el nombre de un cmdlet en el panel de scripts o en panel de consola.
+Desde el menú **Ayuda** también puede ejecutar el cmdlet `Update-Help` y mostrar la ventana Comandos, que le muestra todos los parámetros de un cmdlet para ayudarle a construir comandos, lo que permite rellenar los parámetros en un formulario fácil de usar.
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Consulte también
 
 - [Presentación de Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)

@@ -1,13 +1,13 @@
 ---
-ms.date: 11/15/2019
+ms.date: 12/18/2019
 keywords: powershell,core
 title: Cambios importantes en PowerShell Core 6.0
-ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: dfbbeb5e5bb3d43959ce144afffc5b10193f8b30
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417559"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415703"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>Cambios importantes en PowerShell Core 6.x
 
@@ -17,7 +17,7 @@ ms.locfileid: "74417559"
 
 El [flujo de trabajo de PowerShell][workflow] es una característica de Windows PowerShell basada en [Windows Workflow Foundation (WF)][workflow-foundation] que permite la creación de runbooks sólidos para tareas de larga ejecución o paralelizadas.
 
-Debido a la falta de compatibilidad con Windows Workflow Foundation en .NET Core, no seguiremos admitiendo el flujo de trabajo de PowerShell en PowerShell Core.
+Debido a la falta de compatibilidad con Windows Workflow Foundation en .NET Core, no seguiremos admitiendo el flujo de trabajo de PowerShell en PowerShell Core.
 
 En el futuro, nos gustaría habilitar paralelismo nativo/simultaneidad en el lenguaje de PowerShell sin la necesidad del flujo de trabajo de PowerShell.
 
@@ -64,6 +64,10 @@ En su lugar, recomendamos que use los cmdlets de CIM (también conocido como WMI
 
 Debido al uso de API no admitidas, `Microsoft.PowerShell.LocalAccounts` se ha quitado de PowerShell Core hasta que se encuentre una solución mejor.
 
+### <a name="new-webserviceproxy-cmdlet-removed"></a>Cmdlet `New-WebServiceProxy` quitado
+
+.NET Core no es compatible con Windows Communication Framework, que proporciona servicios para usar el protocolo SOAP. Este cmdlet se quitó porque requiere SOAP.
+
 ### <a name="-computer-cmdlets"></a>Cmdlets de `*-Computer`
 
 Debido al uso de API no admitidas, los cmdlets siguientes se han quitado de PowerShell Core hasta que se encuentre una solución mejor.
@@ -83,7 +87,7 @@ Debido al uso de API no admitidas, `*-EventLog` se ha quitado de PowerShell Core
 
 ## <a name="enginelanguage-changes"></a>Cambios en el lenguaje/motor
 
-### <a name="rename-powershellexe-to-pwshexe-5101httpsgithubcompowershellpowershellissues5101"></a>Cambiar nombre `powershell.exe` a `pwsh.exe` [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
+### <a name="rename-powershellexe-to-pwshexe-5101httpsgithubcompowershellpowershellissues5101"></a>Cambio del nombre de `powershell.exe` a `pwsh.exe` [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
 
 Para ofrecer a los usuarios una forma determinista de llamar a PowerShell Core en Windows (frente a Windows PowerShell), el archivo binario de PowerShell Core se cambió a `pwsh.exe` en Windows y `pwsh` en plataformas que no son de Windows.
 
@@ -115,7 +119,7 @@ Anteriormente, si se especificaban `-Verbose` o `-Debug`, invalidaba el comporta
 
 Cuando una API devuelve solo `null`, Invoke-RestMethod lo serializaba como la cadena `"null"` en lugar de `$null`. Este cambio corrige la lógica en `Invoke-RestMethod` para serializar correctamente un valor único válido JSON `null` literal como `$null`.
 
-### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Quitar `-Protocol` de los cmdlets `*-Computer` [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Quitar `-Protocol` de los cmdlets `*-Computer`[#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
 Debido a problemas con la comunicación remota RPC en CoreFX (especialmente en plataformas que no son de Windows) y la garantía de una experiencia de comunicación remota coherente en PowerShell, el parámetro `-Protocol` se quitó de los cmdlets `\*-Computer`. DCOM ya no se admite para la comunicación remota. Los cmdlets siguientes solo admiten la comunicación remota mediante WSMAN:
 
@@ -123,7 +127,7 @@ Debido a problemas con la comunicación remota RPC en CoreFX (especialmente en p
 - Restart-Computer
 - Stop-Computer
 
-### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Quitar `-ComputerName` de los cmdlets `*-Service` [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
+### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Quitar `-ComputerName` de los cmdlets `*-Service`[#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
 Para fomentar el uso coherente de PSRP, el parámetro `-ComputerName` se quitó de los cmdlets `*-Service`.
 
@@ -145,17 +149,17 @@ Anteriormente, el cmdlet generaría un comentario como la primera línea que inc
 
 Al usar HTTP, el contenido y las contraseñas se envían como texto no cifrado. Este cambio consiste en no permitir esto de forma predeterminada y devolver un error si las credenciales se pasan con inseguridad. Los usuarios pueden omitir esto con el conmutador `-AllowUnencryptedAuthentication`.
 
-## <a name="api-changes"></a>Cambios en la API
+## <a name="api-changes"></a>Cambios de API
 
-### <a name="remove-addtypecommandbase-class-5407httpsgithubcompowershellpowershellissues5407"></a>Quitar la clase `AddTypeCommandBase` [#5407](https://github.com/PowerShell/PowerShell/issues/5407)
+### <a name="remove-addtypecommandbase-class-5407httpsgithubcompowershellpowershellissues5407"></a>Quitar la clase `AddTypeCommandBase`[#5407](https://github.com/PowerShell/PowerShell/issues/5407)
 
 La clase `AddTypeCommandBase` se quitó de `Add-Type` para mejorar el rendimiento. El cmdlet Add-Type es el único que usa esta clase, la cual no debe afectar a los usuarios.
 
 ### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080httpsgithubcompowershellpowershellissues5080"></a>Unificar los cmdlets con el parámetro `-Encoding` para que sea de tipo `System.Text.Encoding` [#5080](https://github.com/PowerShell/PowerShell/issues/5080)
 
-El valor `-Encoding` `Byte` se ha quitado de los cmdlets del proveedor del sistema de archivos. Un nuevo parámetro, `-AsByteStream`, se usa ahora para especificar que un flujo de bytes se necesita como entrada o que la salida es un flujo de bytes.
+El valor `-Encoding``Byte` se ha quitado de los cmdlets del proveedor del sistema de archivos. Un nuevo parámetro, `-AsByteStream`, se usa ahora para especificar que un flujo de bytes se necesita como entrada o que la salida es un flujo de bytes.
 
-### <a name="add-better-error-message-for-empty-and-null--uformat-parameter-5055httpsgithubcompowershellpowershellissues5055"></a>Agregar un mensaje de error mejor para el parámetro vacío y nulo `-UFormat` [#5055](https://github.com/PowerShell/PowerShell/issues/5055)
+### <a name="add-better-error-message-for-empty-and-null--uformat-parameter-5055httpsgithubcompowershellpowershellissues5055"></a>Agregar un mensaje de error mejor para el parámetro vacío y nulo `-UFormat`[#5055](https://github.com/PowerShell/PowerShell/issues/5055)
 
 Anteriormente, al pasar una cadena de formato vacía a `-UFormat`, aparecía un mensaje de error poco práctico. Se ha agregado un error más descriptivo.
 
@@ -182,11 +186,11 @@ Una posición incorrecta de un parámetro dio como resultado que los argumentos 
 
 Anteriormente, `-LiteralPath` al que se le daba un carácter comodín lo trataría de la misma forma que `-Path` y, si el carácter comodín no encontraba ningún archivo, existiría en modo silencioso. El comportamiento correcto debería ser que `-LiteralPath` fuera literal de modo que, de no existir el archivo, debería producir un error. El cambio consiste en tratar los caracteres comodín usados con `-Literal` como literales.
 
-### <a name="fix-set-service-failing-test-4802httpsgithubcompowershellpowershellissues4802"></a>Corregir la prueba con errores `Set-Service` [#4802](https://github.com/PowerShell/PowerShell/issues/4802)
+### <a name="fix-set-service-failing-test-4802httpsgithubcompowershellpowershellissues4802"></a>Corregir la prueba con errores `Set-Service`[#4802](https://github.com/PowerShell/PowerShell/issues/4802)
 
 Anteriormente, si se usaba `New-Service -StartupType foo`, `foo` se omitía y el servicio se creaba con algún tipo de inicio predeterminado. Este cambio consiste en mostrar un error de forma explícita para un tipo de inicio no válido.
 
-### <a name="rename-isosx-to-ismacos-4700httpsgithubcompowershellpowershellissues4700"></a>Cambiar nombre `$IsOSX` a `$IsMacOS` [#4700](https://github.com/PowerShell/PowerShell/issues/4700)
+### <a name="rename-isosx-to-ismacos-4700httpsgithubcompowershellpowershellissues4700"></a>Cambio del nombre de `$IsOSX` a `$IsMacOS` [#4700](https://github.com/PowerShell/PowerShell/issues/4700)
 
 La nomenclatura en PowerShell debe ser coherente con la nuestra y ajustarse al uso de macOS de Apple en lugar de OSX. Sin embargo, para legibilidad y coherencia, optamos por el uso de mayúsculas o minúsculas de Pascal.
 
@@ -238,7 +242,7 @@ En Unix, es una convención para que los shells acepten `-i` para un shell inter
 
 `BiosSerialNumber` se escribió incorrectamente como `BiosSeralNumber` y se ha cambiado a la ortografía correcta.
 
-### <a name="add-get-stringhash-and-get-filehash-cmdlets-3024httpsgithubcompowershellpowershellissues3024"></a>Agregar los cmdlets `Get-StringHash` y `Get-FileHash` [#3024](https://github.com/PowerShell/PowerShell/issues/3024)
+### <a name="add-get-stringhash-and-get-filehash-cmdlets-3024httpsgithubcompowershellpowershellissues3024"></a>Agregar los cmdlets `Get-StringHash` y `Get-FileHash`[#3024](https://github.com/PowerShell/PowerShell/issues/3024)
 
 Este cambio consiste en que algunos algoritmos hash no son compatibles con CoreFX, por lo que ya no están disponibles:
 

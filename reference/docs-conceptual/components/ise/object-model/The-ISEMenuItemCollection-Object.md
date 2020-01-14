@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell, cmdlet
 title: El objeto ISEMenuItemCollection
-ms.openlocfilehash: b3795af1a6ed61ed6e371e5fc20cc4e95f643fd4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 39e8547c9b19ba323d4b224a46eda416542b2807
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030545"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736179"
 ---
 # <a name="the-isemenuitemcollection-object"></a>El objeto ISEMenuItemCollection
 
-Un objeto **ISEMenuItemCollection** es una colección de objetos **ISEMenuItem**. Es una instancia de la clase Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection. Un ejemplo es el objeto **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** que se usa para personalizar el menú **Complemento** en el Entorno de scripting integrado (ISE) de Windows PowerShell®.
+Un objeto **ISEMenuItemCollection** es una colección de objetos **ISEMenuItem**. Es una instancia de la clase **Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection**. Un ejemplo es el objeto `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus` que se usa para personalizar el menú **Complemento** en Windows PowerShell® ISE.
 
 ## <a name="method"></a>Método
 
@@ -27,7 +27,7 @@ Agrega un elemento de menú a la colección.
 
 **Shortcut** El método abreviado de teclado para la acción.
 
-**Returns** El objeto ISEMenuItem que se acaba de agregar.
+**Returns** El objeto **ISEMenuItem** que se acaba de agregar.
 
 ```powershell
 # Create an Add-ons menu with an fast access key and a shortcut.
@@ -46,7 +46,7 @@ Quita todos los submenús del elemento de menú.
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Consulte también
 
 - [El objeto ISEMenuItem](The-ISEMenuItem-Object.md)
 - [Finalidad del modelo de objetos de scripting de Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

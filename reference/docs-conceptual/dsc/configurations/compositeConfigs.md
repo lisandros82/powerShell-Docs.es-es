@@ -2,17 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Anidamiento de configuraciones
-ms.openlocfilehash: 54162cd72d2d1e7773e3be636bfa681329854498
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07e4fb5b9d406153d2fbb4285e28b8d1f0dfdcf5
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954562"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75417872"
 ---
 # <a name="nesting-dsc-configurations"></a>Anidamiento de configuraciones DSC
 
-Una configuración anidada (también denominada configuración compuesta) es una configuración que se llama dentro de otra configuración, como si se tratara de un recurso.
-Ambas configuraciones deben definirse en el mismo archivo.
+Una configuración anidada (también denominada configuración compuesta) es una configuración que se llama dentro de otra configuración, como si se tratara de un recurso. Ambas configuraciones deben definirse en el mismo archivo.
 
 Veamos un ejemplo sencillo:
 
@@ -30,12 +29,11 @@ Configuration FileConfig
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     File FileTest
-       {
-           SourcePath = $CopyFrom
-           DestinationPath = $CopyTo
-           Ensure = 'Present'
-       }
-
+    {
+        SourcePath = $CopyFrom
+        DestinationPath = $CopyTo
+        Ensure = 'Present'
+    }
 }
 
 Configuration NestedFileConfig
@@ -51,10 +49,10 @@ Configuration NestedFileConfig
 }
 ```
 
-En este ejemplo, `FileConfig` toma dos parámetros obligatorios, **CopyFrom** y **CopyTo**, que se utilizan como los valores para las propiedades **SourcePath** y **DestinationPath** en el bloque de recursos `File`.
-La configuración `NestedConfig` llamada a `FileConfig` como si fuera un recurso.
-Las propiedades del bloque de recursos `NestedConfig` (**CopyFrom** y **CopyTo**) son los parámetros de la configuración `FileConfig`.
+En este ejemplo, `FileConfig` toma dos parámetros obligatorios, **CopyFrom** y **CopyTo**, que se utilizan como los valores para las propiedades **SourcePath** y **DestinationPath** en el bloque de recursos `File`. La configuración `NestedConfig` llamada a `FileConfig` como si fuera un recurso. Las propiedades del bloque de recursos `NestedConfig` (**CopyFrom** y **CopyTo**) son los parámetros de la configuración `FileConfig`.
 
-## <a name="see-also"></a>Véase también
+DSC no admite actualmente la anidación de configuraciones dentro de configuraciones anidadas. Solo puede anidar un nivel de configuración de una capa.
+
+## <a name="see-also"></a>Consulte también
 
 - [Recursos compuestos: uso de una configuración DSC como un recurso](../resources/authoringResourceComposite.md)

@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell, cmdlet
 title: El objeto PowerShellTab
-ms.openlocfilehash: bfa11b553f97b7b27b974855ff4e8f1a48c33fea
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028910"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736937"
 ---
 # <a name="the-powershelltab-object"></a>El objeto PowerShellTab
 
@@ -43,7 +43,7 @@ Ejecuta el script especificado en la pestaña de PowerShell.
 
 **Script**: System.Management.Automation.ScriptBlock o cadena. El bloque de script para ejecutar.
 
-**\[useNewScope\]** : booleano opcional cuyo valor predeterminado es **$true**. Si está establecido en **$true**, se crea un nuevo ámbito en el que ejecutar el comando. No modifica el entorno de tiempo de ejecución de la pestaña de PowerShell que se especifica mediante el comando.
+**\[useNewScope\]** : booleano opcional cuyo valor predeterminado es `$true`. Si está establecido en `$true`, se crea un nuevo ámbito en el que ejecutar el comando. No modifica el entorno de tiempo de ejecución de la pestaña de PowerShell que se especifica mediante el comando.
 
 **\[millisecondsTimeout\]** : entero opcional cuyo valor predeterminado es **500**.
 Si el comando no finaliza dentro del tiempo especificado, inicia **TimeoutException** con el mensaje "La operación ha agotado el tiempo de espera.".
@@ -92,7 +92,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 
 Se admite en Windows PowerShell ISE 2.0 y versiones posteriores.
 
-La propiedad booleana de solo lectura que devuelve un valor **$true** si se puede invocar un script con el método [Invoke( Script )](#invoke-script-).
+La propiedad booleana de solo lectura que devuelve un valor `$true` si se puede invocar un script con el método [Invoke( Script )](#invoke-script-).
 
 ```powershell
 # CanInvoke will be false if the PowerShell
@@ -107,9 +107,9 @@ $secondTab.Invoke({sleep 20})
 $secondTab.CanInvoke
 ```
 
-### <a name="consolepane"></a>Consolepane
+### <a name="consolepane"></a>ConsolePane
 
-Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores.  En Windows PowerShell ISE 2.0 esto se llamaba **CommandPane**.
+Se admite en Windows PowerShell ISE 3.0 y versiones posteriores y no está presente en las versiones anteriores. En Windows PowerShell ISE 2.0 esto se llamaba **CommandPane**.
 
 La propiedad de solo lectura que obtiene el objeto [editor](The-ISEEditor-Object.md) del panel de consola.
 
@@ -154,9 +154,9 @@ $newFile.Editor.Text = "a`r`nb"
 $newFile.Editor.LineCount
 ```
 
-### <a name="output"></a>Salida
+### <a name="output"></a>Output
 
-Esta característica está presente en Windows PowerShell ISE 2.0, pero se quitó o se cambió de nombre en versiones posteriores del ISE.  En versiones posteriores de Windows PowerShell ISE, puede usar el objeto **ConsolePane** con el mismo propósito.
+Esta característica está presente en Windows PowerShell ISE 2.0, pero se quitó o se cambió de nombre en versiones posteriores del ISE. En versiones posteriores de Windows PowerShell ISE, puede usar el objeto **ConsolePane** con el mismo propósito.
 
 La propiedad de solo lectura que obtiene el panel de salida del [editor](The-ISEEditor-Object.md) actual .
 
@@ -224,7 +224,7 @@ $psISE.CurrentPowerShellTab.ShowCommands = $true
 $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Consulte también
 
 - [El objeto PowerShellTabCollection](The-PowerShellTabCollection-Object.md)
 - [Finalidad del modelo de objetos de scripting de Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

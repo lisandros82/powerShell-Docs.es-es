@@ -3,14 +3,14 @@ ms.date: 11/06/2018
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery,psget
 title: Trabajo con repositorios PSRepositories locales
-ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c1bd905674ae76a3badd3eff50780f0e1bb5fc64
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71327996"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415818"
 ---
-# <a name="working-with-local-powershellget-repositories"></a>Trabajo con repositorios de PowerShellGet locales
+# <a name="working-with-private-powershellget-repositories"></a>Trabajo con repositorios de PowerShellGet privados
 
 El módulo de PowerShellGet admite repositorios que no sean la Galería de PowerShell.
 Estos cmdlets permiten los siguientes escenarios:
@@ -18,6 +18,7 @@ Estos cmdlets permiten los siguientes escenarios:
 - Compatibilidad con un conjunto confiable y validado previamente de módulos de PowerShell para usar en su entorno
 - Prueba de una canalización de CI/CD que compila los módulos o scripts de PowerShell
 - Suministro de módulos y scripts de PowerShell a los sistemas que no pueden acceder a Internet
+- Entrega de scripts y módulos de PowerShell solo disponibles para su organización
 
 En este artículo se describe cómo configurar un repositorio local de PowerShell. El artículo también trata el módulo [OfflinePowerShellGetDeploy][] disponible en la Galería de PowerShell. Este módulo contiene cmdlets para instalar la versión más reciente de PowerShellGet en el repositorio local.
 
@@ -25,18 +26,18 @@ En este artículo se describe cómo configurar un repositorio local de PowerShel
 
 Existen dos formas de crear un repositorio PSRepository local: Servidor de NuGet o recurso compartido de archivos. Cada tipo tiene ventajas y desventajas:
 
-Servidor de NuGet
+### <a name="nuget-server"></a>Servidor de NuGet
 
-| Ventajas| Desventajas |
+| Ventajas| Inconvenientes |
 | --- | --- |
 | Imita con precisión la funcionalidad de la Galería de PowerShell. | La aplicación de niveles múltiples requiere la planeación y la compatibilidad de las aplicaciones. |
 | NuGet se integra con Visual Studio, otras herramientas. | Se necesita un modelo de autenticación y administración de cuentas de NuGet. |
 | NuGet es compatible con los metadatos en paquetes `.Nupkg`. | La publicación requiere mantenimiento y administración de claves de API. |
 | Proporciona búsqueda, administración de paquetes, etc. | |
 
-Recurso compartido de archivos
+### <a name="file-share"></a>Recurso compartido de archivos
 
-| Ventajas| Desventajas |
+| Ventajas| Inconvenientes |
 | --- | --- |
 | Fácil configuración, proceso de copia de seguridad y mantenimiento. | Los metadatos usados por PowerShellGet no están disponibles. |
 | Modelo de seguridad simple: permisos de usuario en el recurso compartido. | Sin interfaz de usuario más allá del recurso compartido de archivos básico. |
@@ -98,7 +99,7 @@ Use `Publish-Module` y `Publish-Script` para publicar el módulo en su PSReposit
 
 - Especifique la ubicación del código.
 - Proporcione una clave de API.
-- Especifique el nombre del repositorio. Por ejemplo, `-PSRepository LocalPSRepo`
+- Especifique el nombre del repositorio. Por ejemplo: `-PSRepository LocalPSRepo`
 
 > [!NOTE]
 > Debe crear una cuenta en el servidor de NuGet y luego iniciar sesión para generar y guardar la clave de API.
@@ -109,7 +110,9 @@ Ejemplos:
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+```
 
+```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
@@ -130,7 +133,7 @@ Ejemplo:
 
 ```powershell
 # Publish from the PSGallery to your local Repository
-Save-Package -Name 'PackageName' -Provider Nuget -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
+Save-Package -Name 'PackageName' -Provider NuGet -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
 ```
 
 Si su repositorio PSRepository local está basado en web, se necesita un paso adicional que usa nuget.exe para publicar.
@@ -181,6 +184,10 @@ Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApi
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
+
+## <a name="use-packaging-solutions-to-host-powershellget-repositories"></a>Uso de soluciones de empaquetado para hospedar repositorios de PowerShellGet
+
+También puede usar soluciones de empaquetado como Azure Artifacts para hospedar un repositorio de PowerShellGet privado o público. Para más información e instrucciones, consulte la [documentación de Azure Artifacts](https://docs.microsoft.com/azure/devops/artifacts/tutorials/private-powershell-library).
 
 > [!IMPORTANT]
 > Para garantizar la seguridad, las claves de API no deben codificarse de forma rígida en scripts. Use un sistema de administración de claves seguro.

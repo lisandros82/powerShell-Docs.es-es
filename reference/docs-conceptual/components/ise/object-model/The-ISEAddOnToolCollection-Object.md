@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell, cmdlet
 title: El objeto ISEAddOnToolCollection
-ms.openlocfilehash: 28ab9747e573b7a76ee655289b341870b1728bc2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e07a47169381307b50ac190165307c926b4ad94e
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030622"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737022"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>El objeto ISEAddOnToolCollection
 
-El objeto **ISEAddOnToolCollection** es una colección de objetos **ISEAddOnTool**. Un ejemplo es el objeto **$psISE.CurrentPowerShellTab.VerticalAddOnTools**.
+El objeto **ISEAddOnToolCollection** es una colección de objetos **ISEAddOnTool**. Un ejemplo es el objeto `$psISE.CurrentPowerShellTab.VerticalAddOnTools`.
 
 ## <a name="methods"></a>Métodos
 
@@ -25,7 +25,7 @@ Agrega una nueva herramienta de complemento a la colección. Devuelve la herrami
 
 **ControlType** (tipo). Especifica el control que se agrega.
 
-**\[IsVisible\]** (booleano opcional). Si se establece en **$true**, la herramienta de complemento está visible inmediatamente en el panel de herramientas asociado.
+**\[IsVisible\]** (booleano opcional). Si se establece en `$true`, la herramienta de complemento está visible inmediatamente en el panel de herramientas asociado.
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE
@@ -77,7 +77,7 @@ sleep 5
 $psISE.PowerShellTabs.Remove($newTab)
 ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Consulte también
 
 - [El objeto PowerShellTab](The-PowerShellTab-Object.md)
 - [Finalidad del modelo de objetos de scripting de Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
