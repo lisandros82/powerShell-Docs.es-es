@@ -16,12 +16,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], parameters
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
-ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c1d8984f4aad7bae6f9be66a2222e2c74c8afa3d
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365934"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022210"
 ---
 # <a name="cmdlet-parameters"></a>Parámetros del cmdlet
 
@@ -33,7 +33,7 @@ Los parámetros de cmdlet proporcionan el mecanismo que permite a un cmdlet acep
 
 [Tipos de parámetros de cmdlet](./types-of-cmdlet-parameters.md) Describe los diferentes tipos de parámetros que se pueden declarar en los cmdlets de.
 
-[Instrucciones del nombre y la funcionalidad de los parámetros de cmdlet](./standard-cmdlet-parameter-names-and-types.md) Discuses los nombres, el tipo de datos recomendado y la funcionalidad de los parámetros estándar.
+[Instrucciones del nombre y la funcionalidad de los parámetros de cmdlet](./standard-cmdlet-parameter-names-and-types.md) Describe los nombres, el tipo de datos recomendado y la funcionalidad de los parámetros estándar.
 
 [Alias de parámetro](./parameter-aliases.md) Describe los alias que se pueden definir para los parámetros.
 
@@ -53,7 +53,7 @@ Los parámetros de cmdlet proporcionan el mecanismo que permite a un cmdlet acep
 
 [Cómo validar la entrada de parámetros](./how-to-validate-parameter-input.md)
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
 [Declaración de atributo de parámetro](./parameter-attribute-declaration.md)
 
