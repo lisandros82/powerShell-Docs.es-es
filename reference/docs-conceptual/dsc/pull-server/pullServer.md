@@ -1,24 +1,20 @@
 ---
-ms.date: 03/04/2019
+ms.date: 01/08/2020
 keywords: dsc,powershell,configuration,setup
 title: Servicio de extracción de DSC
-ms.openlocfilehash: 865eae5813e0c7b656a4158f0b1350e60f1e3291
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d71c87e0420a0ee54eca36f1792b43103431233f
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71955132"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870819"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Servicio de extracción de Desired State Configuration
 
 > [!IMPORTANT]
 > El servidor de extracción (característica de Windows *DSC-Service*) es un componente de Windows Server admitido, si bien no está previsto ofrecer nuevas características o funcionalidades. Se recomienda empezar a realizar la transición de los clientes administrados a [DSC de Azure Automation](/azure/automation/automation-dsc-getting-started) (incluye características más allá del servidor de extracción de Windows Server) o a una de las soluciones de la comunidad que figuran [aquí](pullserver.md#community-solutions-for-pull-service).
 
-El Administrador de configuración local puede administrarse de forma central con una solución de servicio de extracción.
-Cuando se usa este enfoque, el nodo que se está administrando se registra en un servicio y se le asigna una configuración en las opciones del LCM.
-La configuración y todos los recursos de DSC necesarios como dependencias para la configuración se descargan en la máquina y el LCM las usa para administrar la configuración.
-La información sobre el estado de la máquina que se está administrando se carga al servicio para crear un informe.
-Este concepto se conoce como "servicio de extracción".
+El Administrador de configuración local (LCM) puede administrarse de forma central con una solución de servicio de extracción. Cuando se usa este enfoque, el nodo que se está administrando se registra en un servicio y se le asigna una configuración en las opciones del LCM. La configuración y todos los recursos de DSC necesarios como dependencias para la configuración se descargan en la máquina y el LCM las usa para administrar la configuración. La información sobre el estado de la máquina que se está administrando se carga al servicio para crear un informe. Este concepto se conoce como "servicio de extracción".
 
 Las opciones actuales del servicio de extracción incluyen:
 
@@ -29,8 +25,7 @@ Las opciones actuales del servicio de extracción incluyen:
 
 **La solución recomendada**, y la opción que tiene la mayor cantidad de características disponibles, es [DSC de Azure Automation](/azure/automation/automation-dsc-getting-started).
 
-El servicio de Azure puede administrar nodos locales en centros de datos privados, o bien en nubes públicas como Azure y AWS.
-En el caso de entornos privados donde los servidores no se pueden conectar directamente a Internet, considere limitar el tráfico de salida solo al intervalo IP de Azure (consulte los [intervalos IP del centro de datos de Azure](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
+El servicio de Azure puede administrar nodos locales en centros de datos privados, o bien en nubes públicas como Azure y AWS. En el caso de entornos privados donde los servidores no se pueden conectar directamente a Internet, considere limitar el tráfico de salida solo al intervalo IP de Azure (consulte los [intervalos IP del centro de datos de Azure](https://www.microsoft.com/download/details.aspx?id=41653)).
 
 Las características del servicio en línea que no están disponibles actualmente en el servicio de extracción de Windows Server incluyen las siguientes:
 
@@ -47,9 +42,7 @@ Las características del servicio en línea que no están disponibles actualment
 
 ## <a name="dsc-pull-service-in-windows-server"></a>Servicio de extracción de DSC en Windows Server
 
-Es posible configurar un servicio de extracción para que se ejecute en Windows Server.
-Tenga en cuenta que la solución de servicio de extracción incluida en Windows Server solo tiene funcionalidades de almacenamiento de configuraciones y módulos para descargar y capturar datos de informes en una base de datos.
-No se incluyen muchas de las funcionalidades que ofrece el servicio en Azure y, por lo tanto, no es una herramienta lo suficientemente eficaz como para evaluar el uso del servicio.
+Es posible configurar un servicio de extracción para que se ejecute en Windows Server. Tenga en cuenta que la solución de servicio de extracción incluida en Windows Server solo tiene funcionalidades de almacenamiento de configuraciones y módulos para descargar y capturar datos de informes en una base de datos. No se incluyen muchas de las funcionalidades que ofrece el servicio en Azure y, por lo tanto, no es una herramienta lo suficientemente eficaz como para evaluar el uso del servicio.
 
 El servicio de extracción que se ofrece en Windows Server es un servicio web en IIS que usa una interfaz de OData para poner a disposición de los nodos de destino los archivos de configuración DSC cuando esos nodos los soliciten.
 
@@ -61,36 +54,36 @@ Requisitos para usar un servidor de extracción:
   - Servicio DSC
 - Idealmente, algún medio para generar un certificado, para proteger las credenciales que se pasan al administrador de configuración local (LCM) en los nodos de destino
 
-La mejor manera para configurar Windows Server para hospedar un servicio de extracción es usar una configuración de DSC.
-A continuación se muestra un script de ejemplo.
+La mejor manera para configurar Windows Server para hospedar un servicio de extracción es usar una configuración de DSC. A continuación se muestra un script de ejemplo.
 
 ### <a name="supported-database-systems"></a>Sistemas de base de datos admitidos
 
-|WMF 4.0   |WMF 5.0  |WMF 5.1 |WMF 5.1 (Windows Server Insider Preview 17090)|
-|---------|---------|---------|---------|
-|MDB     |ESENT (predeterminado), MDB |ESENT (predeterminado), MDB|ESENT (predeterminado), SQL Server, MDB
+| WMF 4.0 |       WMF 5.0        |       WMF 5.1        | WMF 5.1 (Windows Server Insider Preview 17090) |
+| ------- | -------------------- | -------------------- | ---------------------------------------------- |
+| MDB     | ESENT (predeterminado), MDB | ESENT (predeterminado), MDB | ESENT (predeterminado), SQL Server, MDB               |
 
-A partir de la versión 17090 de [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), SQL Server es una opción admitida en el servicio de extracción (característica de Windows *DSC-Service*). Esto constituye una nueva opción para ajustar la escala de entornos de DSC de gran envergadura que no se han migrado a [DSC de Azure Automation](/azure/automation/automation-dsc-getting-started).
+A partir de la versión 17090 de [Windows Server Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver), SQL Server es una opción admitida en el servicio de extracción (característica de Windows *DSC-Service*). Esto constituye una nueva opción para ajustar la escala de entornos de DSC de gran envergadura que no se han migrado a [DSC de Azure Automation](/azure/automation/automation-dsc-getting-started).
 
 > [!NOTE]
 > La compatibilidad con SQL Server no se incluirá en WMF 5.1 ni en versiones anteriores, y solo estará disponible en versiones de Windows Server posteriores a la 17090.
 
 Para configurar el servidor de extracción de forma que use SQL Server, establezca **SqlProvider** en `$true` y **SqlConnectionString** en una cadena de conexión de SQL Server válida. Para más información, vea [SqlClient Connection Strings](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings) (Cadenas de conexión de SqlClient).
-Para ver un ejemplo de configuración de SQL Server con **xDscWebService**, lea primero [Uso del recurso xDSCWebService](#using-the-xdscwebservice-resource) y, después, revise [Sample_xDscWebServiceRegistration_UseSQLProvider.ps1 en GitHub](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
+Para ver un ejemplo de configuración de SQL Server con **xDscWebService**, lea primero [Uso del recurso xDSCWebService](#using-the-xdscwebservice-resource) y, después, revise [Sample_xDscWebServiceRegistration_UseSQLProvider.ps1 en GitHub](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
 
 ### <a name="using-the-xdscwebservice-resource"></a>Uso del recurso xDSCWebService
 
-La manera más fácil de configurar un servidor de extracción web es usando el recurso **xDscWebService**, incluido en el módulo **xPSDesiredStateConfiguration**.
-En los siguientes pasos se explica cómo usar el recurso en una configuración que configure el servicio web.
+La manera más fácil de configurar un servidor de extracción web es usando el recurso **xDscWebService**, incluido en el módulo **xPSDesiredStateConfiguration**. En los siguientes pasos se explica cómo usar el recurso en `Configuration` que configure el servicio web.
 
-1. Llame al cmdlet [Install-Module](/powershell/module/PowershellGet/Install-Module) para instalar el módulo **xPSDesiredStateConfiguration**.
+1. Llame al cmdlet [Install-Module](/reference/6/PowerShellGet/Install-Module.md) para instalar el módulo **xPSDesiredStateConfiguration**.
+
    > [!NOTE]
-   > **Install-Module** está incluido en el módulo **PowerShellGet**, que se incluye en PowerShell 5.0. Puede descargar el módulo **PowerShellGet** para PowerShell 3.0 y 4.0 en [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186) (Vista previa de los módulos de PowerShell PackageManagement).
-2. Obtenga un certificado SSL para el servidor de extracción de DSC de una entidad de certificación de confianza, ya sea dentro de su organización o de una entidad pública. El certificado recibido de la entidad suele tener el formato PFX.
-3. Instale el certificado en el nodo que se convertirá en el servidor de extracción de DSC en la ubicación predeterminada que debe ser `CERT:\LocalMachine\My`.
+   > `Install-Module` está incluido en el módulo **PowerShellGet**, que se incluye en PowerShell 5.0 y superior.
+
+1. Obtenga un certificado SSL para el servidor de extracción de DSC de una entidad de certificación de confianza, ya sea dentro de su organización o de una entidad pública. El certificado recibido de la entidad suele tener el formato PFX.
+1. Instale el certificado en el nodo que se convertirá en el servidor de extracción de DSC en la ubicación predeterminada que debe ser `CERT:\LocalMachine\My`.
    - Anote la huella digital del certificado.
-4. Seleccione un GUID para usarlo como clave de registro. Para generar uno con PowerShell, escriba lo siguiente en el aviso de PS y pulse la tecla ENTRAR: `[guid]::newGuid()` o `New-Guid`. Esta clave la utilizarán los nodos de cliente como una clave compartida para la autenticación durante el registro. Para más información, vea la sección Clave de registro más adelante.
-5. En PowerShell ISE, inicie (F5) el siguiente script de configuración (incluido en la carpeta Examples del módulo **xPSDesiredStateConfiguration** como `Sample_xDscWebServiceRegistration.ps1`). Este script configura el servidor de incorporación de cambios.
+1. Seleccione un GUID para usarlo como clave de registro. Para generar uno con PowerShell, escriba lo siguiente en el aviso de PS y pulse la tecla ENTRAR: `[guid]::newGuid()` o `New-Guid`. Esta clave la utilizarán los nodos de cliente como una clave compartida para la autenticación durante el registro. Para más información, vea la sección Clave de registro más adelante.
+1. En PowerShell ISE, inicie (<kbd>F5</kbd>) el siguiente script de configuración (incluido en la carpeta del módulo **xPSDesiredStateConfiguration** como `Sample_xDscWebServiceRegistration.ps1`). Este script configura el servidor de incorporación de cambios.
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -146,7 +139,7 @@ En los siguientes pasos se explica cómo usar el recurso en una configuración q
     }
     ```
 
-6. Ejecute la configuración pasando la huella digital del certificado SSL como el parámetro **certificateThumbPrint** y una clave de registro GUID como el parámetro **RegistrationKey**:
+1. Ejecute la configuración pasando la huella digital del certificado SSL como el parámetro **certificateThumbPrint** y una clave de registro GUID como el parámetro **RegistrationKey**:
 
     ```powershell
     # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
@@ -213,49 +206,37 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 > [!NOTE]
 > La sección **ReportServerWeb** permite informar de datos que deben enviarse al servidor de extracción.
 
-Si falta la propiedad **ConfigurationID** en el archivo de metaconfiguration, significa implícitamente que el servidor de incorporación de cambios es compatible con la versión V2 del protocolo del servidor de incorporación de cambios, lo que requiere un registro inicial.
-Por el contrario, si hay una propiedad **ConfigurationID**, significa que se usa la versión V1 del protocolo del servidor de incorporación de cambios y que no hay ningún procesamiento de registro.
+Si falta la propiedad **ConfigurationID** en el archivo de metaconfiguration, significa implícitamente que el servidor de incorporación de cambios es compatible con la versión V2 del protocolo del servidor de incorporación de cambios, lo que requiere un registro inicial. Por el contrario, si hay una propiedad **ConfigurationID**, significa que se usa la versión V1 del protocolo del servidor de incorporación de cambios y que no hay ningún procesamiento de registro.
 
 > [!NOTE]
 > En un escenario de inserción, hay un error en la versión actual que hace que sea necesario definir una propiedad ConfigurationID en el archivo de metaconfiguration para los nodos que nunca se hayan registrado en un servidor de incorporación de cambios. De esta manera, se forzará el protocolo del servidor de incorporación de cambios V1 y se evitarán los mensajes de error de registro.
 
 ## <a name="placing-configurations-and-resources"></a>Colocación de configuraciones y recursos
 
-Una vez completada la configuración del servidor de incorporación de cambios, los módulos y las configuraciones que estarán disponibles para la incorporación de cambios de los nodos de destino se colocarán en las carpetas que definan las propiedades **ConfigurationPath** y **ModulePath** de la configuración del servidor de incorporación de cambios.
-Estos archivos deben estar en un formato concreto para que el servidor de incorporación de cambios los procese correctamente.
+Una vez completada la configuración del servidor de incorporación de cambios, los módulos y las configuraciones que estarán disponibles para la incorporación de cambios de los nodos de destino se colocarán en las carpetas que definan las propiedades **ConfigurationPath** y **ModulePath** de la configuración del servidor de incorporación de cambios. Estos archivos deben estar en un formato concreto para que el servidor de incorporación de cambios los procese correctamente.
 
 ### <a name="dsc-resource-module-package-format"></a>Formato del paquete de módulo de recursos de DSC
 
 Cada módulo de recursos se debe comprimir y se le debe asignar un nombre de acuerdo con el patrón `{Module Name}_{Module Version}.zip`.
 
-Por ejemplo, un módulo denominado xWebAdminstration con una versión de módulo de 3.1.2.0 se denominaría `xWebAdministration_3.1.2.0.zip`.
-Cada versión de un módulo debe incluirse en un solo archivo ZIP.
-Dado que solo hay una versión de un recurso en cada archivo ZIP, no se admite el formato de módulo que se agrega en WMF 5.0 con compatibilidad con varias versiones de módulo en un único directorio.
-Esto significa que antes de empaquetar los módulos de recursos de DSC para su uso con el servidor de incorporación de cambios, deberá realizar un pequeño cambio en la estructura de directorios.
-El formato predeterminado de los módulos que contienen recursos de DSC en WMF 5.0 es `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
-Antes de empaquetar para el servidor de extracción, quite la carpeta **{Versión del módulo}** para que la ruta se quede en `{Module Folder}\DscResources\{DSC Resource Folder}\`.
-Con este cambio, comprima la carpeta según lo descrito anteriormente y coloque estos archivos ZIP en la carpeta **ModulePath**.
+Por ejemplo, un módulo denominado xWebAdminstration con una versión de módulo de 3.1.2.0 se denominaría `xWebAdministration_3.1.2.0.zip`. Cada versión de un módulo debe incluirse en un solo archivo ZIP.
+Dado que solo hay una versión de un recurso en cada archivo ZIP, no se admite el formato de módulo que se agrega en WMF 5.0 con compatibilidad con varias versiones de módulo en un único directorio. Esto significa que antes de empaquetar los módulos de recursos de DSC para su uso con el servidor de incorporación de cambios, deberá realizar un pequeño cambio en la estructura de directorios. El formato predeterminado de los módulos que contienen recursos de DSC en WMF 5.0 es `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Antes de empaquetar para el servidor de extracción, quite la carpeta **{Versión del módulo}** para que la ruta se quede en `{Module Folder}\DscResources\{DSC Resource Folder}\`. Con este cambio, comprima la carpeta según lo descrito anteriormente y coloque estos archivos ZIP en la carpeta **ModulePath**.
 
 Use `New-DscChecksum {module zip file}` para crear un archivo de suma de comprobación para el módulo que acaba de agregar.
 
 ### <a name="configuration-mof-format"></a>Formato de archivo MOF de configuración
 
-Un archivo de configuración MOF debe emparejarse con un archivo de suma de comprobación para que un LCM de un nodo de destino pueda validar la configuración.
-Para crear una suma de comprobación, llame al cmdlet [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DscChecksum).
-El cmdlet toma un parámetro **Path** que especifica la carpeta donde se encuentra el MOF de configuración.
-El cmdlet crea un archivo de suma de comprobación denominado `ConfigurationMOFName.mof.checksum`, donde `ConfigurationMOFName` es el nombre del archivo mof de configuración.
-Si hay más de un archivo MOF de configuración en la carpeta especificada, se crea una suma de comprobación para cada una de las configuraciones de la carpeta.
-Coloque los archivos MOF y sus archivos asociados de suma de comprobación en la carpeta **ConfigurationPath**.
+Un archivo de configuración MOF debe emparejarse con un archivo de suma de comprobación para que un LCM de un nodo de destino pueda validar la configuración. Para crear una suma de comprobación, llame al cmdlet [New-DscChecksum](/reference/6/PSDesiredStateConfiguration/New-DSCCheckSum.md). El cmdlet toma un parámetro **Path** que especifica la carpeta donde se encuentra el MOF de configuración. El cmdlet crea un archivo de suma de comprobación denominado `ConfigurationMOFName.mof.checksum`, donde `ConfigurationMOFName` es el nombre del archivo mof de configuración. Si hay más de un archivo MOF de configuración en la carpeta especificada, se crea una suma de comprobación para cada una de las configuraciones de la carpeta. Coloque los archivos MOF y sus archivos asociados de suma de comprobación en la carpeta **ConfigurationPath**.
 
 > [!NOTE]
 > Si cambia el archivo MOF de configuración de cualquier manera, también deberá volver a crear el archivo de suma de comprobación.
 
-### <a name="tooling"></a>Herramientas
+### <a name="tooling"></a>Tooling
 
 Con el fin de facilitar la configuración, la validación y la administración del servidor de incorporación de cambios, se incluyen las siguientes herramientas como ejemplos en la versión más reciente del módulo xPSDesiredStateConfiguration:
 
 1. Un módulo que le ayudará a empaquetar los archivos de configuración y los módulos de recursos de DSC para su uso en el servidor de incorporación de cambios.
-   [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1).
+   [PublishModulesAndMofsToPullServer.psm1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetup.psm1).
    Vea los ejemplos siguientes:
 
     ```powershell
@@ -267,12 +248,11 @@ Con el fin de facilitar la configuración, la validación y la administración d
          Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
     ```
 
-1. Un script que valida que el servidor de incorporación de cambios se configura correctamente. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
+1. Un script que valida que el servidor de incorporación de cambios se configura correctamente. [PullServerSetupTests.ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetupTest/DscPullServerSetupTest.ps1).
 
 ## <a name="community-solutions-for-pull-service"></a>Soluciones comunitarias para el servicio de extracción
 
-La comunidad de DSC ha creado varias soluciones para implementar el protocolo del servicio de extracción.
-En entornos locales, estas ofrecen funcionalidades de servicios de extracción y una oportunidad para contribuir con la comunidad con mejoras.
+La comunidad de DSC ha creado varias soluciones para implementar el protocolo del servicio de extracción. En entornos locales, estas ofrecen funcionalidades de servicios de extracción y una oportunidad para contribuir con la comunidad con mejoras.
 
 - [Tug](https://github.com/powershellorg/tug)
 - [DSC-TRÆK](https://github.com/powershellorg/dsc-traek)
@@ -285,10 +265,10 @@ En los temas siguientes se describe en detalle cómo configurar los clientes de 
 - [Configuración de un cliente de extracción de DSC mediante nombres de configuración](pullClientConfigNames.md)
 - [Configuraciones parciales](partialConfigs.md)
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
-- [Información general sobre la configuración de estado deseado de Windows PowerShell](../overview/overview.md)
+- [Información general sobre la configuración de estado deseado de Windows PowerShell](../overview/overview.md)
 - [Establecer configuraciones](enactingConfigurations.md)
 - [Uso de un servidor de informes de DSC](reportServer.md)
-- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol](https://msdn.microsoft.com/library/dn393548.aspx) (Protocolo del modelo de extracción de configuración de estado deseado)
-- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol Errata](https://msdn.microsoft.com/library/mt612824.aspx) (Error del protocolo del modelo de extracción de Desired State Configuration)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol](https://docs.microsoft.com/openspecs/windows_protocols/ms-dscpm/ea744c01-51a2-4000-9ef2-312711dcc8c9) (Protocolo del modelo de extracción de configuración de estado deseado)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol Errata](https://docs.microsoft.com/openspecs/windows_protocols/ms-winerrata/f5fc7ae3-9172-41e8-ac6a-2a5a5b7bfaf5) (Error del protocolo del modelo de extracción de Desired State Configuration)
