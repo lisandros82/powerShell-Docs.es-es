@@ -1,13 +1,13 @@
 ---
-ms.date: 12/14/2018
+ms.date: 01/10/2020
 keywords: powershell, cmdlet
 title: Escritura de módulos portables
-ms.openlocfilehash: 7871f524495c1ce5283b30696a24185d427edebf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 124e6efadfd07b8c5214a5c0446b1589f7142388
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417649"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022249"
 ---
 # <a name="portable-modules"></a>Módulos portables
 
@@ -254,6 +254,45 @@ Ejemplo:
 }
 ```
 
+## <a name="dependency-on-native-libraries"></a>Dependencia de bibliotecas nativas
+
+Los módulos destinados a usarse en diferentes sistemas operativos o arquitecturas de procesador pueden depender de una biblioteca administrada que dependa de algunas bibliotecas nativas.
+
+Antes de PowerShell 7, había que tener código personalizado para cargar la dll nativa adecuada de modo que la biblioteca administrada pudiera encontrarla correctamente.
+
+Con PowerShell 7, los archivos binarios nativos que se van a cargar se buscan en las subcarpetas de la ubicación de la biblioteca administrada situada después de un subconjunto de la notación [Catálogo de identificadores de entorno de ejecución (RID) de .NET][]
+
+```
+managed.dll folder
+                |
+                |--- 'win-x64' folder
+                |       |--- native.dll
+                |
+                |--- 'win-x86' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm64' folder
+                |       |--- native.dll
+                |
+                |--- 'linux-x64' folder
+                |       |--- native.so
+                |
+                |--- 'linux-x86' folder
+                |       |--- native.so
+                |
+                |--- 'linux-arm' folder
+                |       |--- native.so
+                |
+                |--- 'linux-arm64' folder
+                |       |--- native.so
+                |
+                |--- 'osx-x64' folder
+                |       |--- native.dylib
+```
+
 <!-- reference links -->
 [.NET Framework]: /dotnet/framework/
 [.NET Core]: /dotnet/core/
@@ -267,3 +306,4 @@ Ejemplo:
 [Galería de PowerShell]: https://www.powershellgallery.com
 [Analizador de portabilidad de .NET]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support
+[Catálogo de identificadores de entorno de ejecución (RID) de .NET]: https://docs.microsoft.com/dotnet/core/rid-catalog

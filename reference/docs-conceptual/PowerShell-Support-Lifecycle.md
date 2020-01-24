@@ -2,12 +2,12 @@
 title: Ciclo de vida de soporte técnico de PowerShell Core
 description: Directivas que rigen la compatibilidad para PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 57804df830da01bee0f48acc374658b025a46b85
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416305"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022230"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Ciclo de vida de soporte técnico de PowerShell Core
 
@@ -41,7 +41,7 @@ La directiva moderna de ciclo de vida también requiere que Microsoft avise a lo
 
 Por último, se espera que PowerShell Core adoptará el enfoque de mantenimiento a largo plazo. En este enfoque de mantenimiento, solo se requerirían actualizaciones de seguridad y mantenimiento para conservar el soporte técnico en una rama/versión específica de 6.x.
 
-## <a name="supported-platforms"></a>Plataformas admitidas
+## <a name="supported-platforms"></a>Plataformas compatibles
 
 Para confirmar si su plataforma y versión de PowerShell Core se admiten oficialmente, consulte la siguiente tabla.
 
@@ -54,20 +54,22 @@ Las plataformas mencionadas como `Experimental` no se admiten oficialmente, pero
 | Windows 7, 8.1 y 10                            |   Compatible   | Compatible |
 | Windows Server 2008 R2, 2012 R2 y 2016             |   Compatible   | Compatible |
 | [Canal semianual de Windows Server][semi-annual] |   Compatible   | Compatible |
-| Ubuntu 16.04 y 18.04                            |   Compatible   | Compatible |
+| Ubuntu 16.04 y 18.04                            |   Compatible   | Compatible |
 | Ubuntu 18.10 (mediante un paquete Snap)                   |   Comunidad   | Comunidad |
 | Ubuntu 19.04 (mediante un paquete Snap)                   |   Comunidad   | Comunidad |
 | Debian 9                                          |   Compatible   | Compatible |
-| Debian 10                                         | No admitido | Compatible |
+| Debian 10                                         | No compatible | Compatible |
 | CentOS 7                                          |   Compatible   | Compatible |
-| Red Hat Enterprise Linux 7                        |   Compatible   | Compatible |
+| CentOS 8                                          | No compatible | Compatible |
+| Red Hat Enterprise Linux 7                        |   Compatible   | Compatible |
+| Red Hat Enterprise Linux 8                        | No compatible | Compatible |
 | openSUSE 42.3                                     |   Compatible   | Compatible |
 | Fedora 28                                         |   Compatible   | Compatible |
-| Fedora 29, 30                                     | No admitido | Compatible |
+| Fedora 29, 30                                     | No compatible | Compatible |
 | Alpine 3.8                                        |   Ver nota    | Ver nota  |
-| Alpine 3.9 y 3.10                               | No admitido | Ver nota  |
+| Alpine 3.9 y 3.10                               | No compatible | Ver nota  |
 | macOS 10.12+                                      |   Compatible   | Compatible |
-| Arch                                              |   Comunidad   | Comunidad |
+| Arco                                              |   Comunidad   | Comunidad |
 | Raspbian                                          |   Comunidad   | Comunidad |
 | Kali                                              |   Comunidad   | Comunidad |
 | AppImage (funciona en varias plataformas Linux)      |   Comunidad   | Comunidad |
@@ -83,7 +85,7 @@ Las plataformas mencionadas como `Experimental` no se admiten oficialmente, pero
 
 Según la sección [Ciclo de vida de PowerShell Core](#lifecycle-of-powershell-core), en la tabla siguiente se muestran las fechas en las que diversas versiones dejarán de tener soporte técnico.
 
-| Version | Final de la vida útil                   |
+| Versión | Final de la vida útil                   |
 |---------|-------------------------------|
 | 6.0     | 13 de febrero de 2019             |
 | 6.1     | 28 de septiembre de 2019            |
@@ -95,7 +97,7 @@ Cuando una versión de la plataforma llega al final de su vida útil definida po
 
 Por lo tanto, los propietarios de distribución finalizaron el soporte técnico para las versiones siguientes y ya no se admiten.
 
-| Plataforma | Version | Fin de la vida útil                                                                                 |
+| Plataforma | Versión | Fin de la vida útil                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
 | Fedora   | 24      | [Agosto de 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
 | Fedora   | 25      | [Diciembre de 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
