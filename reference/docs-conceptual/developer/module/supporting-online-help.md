@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
-ms.openlocfilehash: 5c5707d1c533e0498c6794b60f4499e530e25813
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cf181e8f26ebd4b9c57b5b0191809211f2471f13
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360664"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995585"
 ---
 # <a name="supporting-online-help"></a>Compatibilidad con la ayuda en línea
 
@@ -56,7 +56,7 @@ El siguiente XML muestra la ubicación correcta del URI. Se recomienda el texto 
 <maml:relatedLinks>
     <maml:navigationLink>
         <maml:linkText>Online version:</maml:linkText>
-        <maml:uri>http://go.microsoft.com/fwlink/?LinkID=113279</maml:uri>
+        <maml:uri>https://go.microsoft.com/fwlink/?LinkID=113279</maml:uri>
     </maml:navigationLink>
     <maml:navigationLink>
         <maml:linkText>about_History</maml:linkText>
@@ -76,7 +76,7 @@ En el caso de los C#cmdlets escritos en, agregue un atributo **HelpUri** a la cl
 En el código siguiente se muestra el atributo HelpUri de la clase de cmdlet `Get-History`.
 
 ```
-[Cmdlet(VerbsCommon.Get, "History", HelpUri = "http://go.microsoft.com/fwlink/?LinkID=001122")]
+[Cmdlet(VerbsCommon.Get, "History", HelpUri = "https://go.microsoft.com/fwlink/?LinkID=001122")]
 ```
 
 ### <a name="adding-a-helpuri-property-to-an-advanced-function"></a>Agregar una propiedad HelpUri a una función avanzada
@@ -89,7 +89,7 @@ En el código siguiente se muestra el atributo HelpUri de la función New-Calend
 
 function New-Calendar {
     [CmdletBinding(SupportsShouldProcess=$true,
-    HelpURI="http://go.microsoft.com/fwlink/?LinkID=01122")]
+    HelpURI="https://go.microsoft.com/fwlink/?LinkID=01122")]
 ```
 
 ### <a name="adding-a-helpuri-attribute-to-a-cim-command"></a>Agregar un atributo HelpUri a un comando CIM
@@ -99,7 +99,7 @@ En el caso de los comandos CIM, agregue un atributo **HelpUri** al elemento **Cm
 En el código siguiente se muestra el atributo HelpUri del comando CIM Start-Debug
 
 ```
-<CmdletMetadata Verb="Debug" HelpUri="http://go.microsoft.com/fwlink/?LinkID=001122"/>
+<CmdletMetadata Verb="Debug" HelpUri="https://go.microsoft.com/fwlink/?LinkID=001122"/>
 ```
 
 ### <a name="adding-a-helpuri-attribute-to-a-workflow"></a>Agregar un atributo HelpUri a un flujo de trabajo
@@ -112,5 +112,5 @@ En el caso de los flujos de trabajo que se escriben en el lenguaje de Windows Po
 En el código siguiente se muestra el. Directiva ExternalHelp en un archivo de flujo de trabajo.
 
 ```powershell
-# .ExternalHelp "http://go.microsoft.com/fwlink/?LinkID=138338"
+# .ExternalHelp "https://go.microsoft.com/fwlink/?LinkID=138338"
 ```

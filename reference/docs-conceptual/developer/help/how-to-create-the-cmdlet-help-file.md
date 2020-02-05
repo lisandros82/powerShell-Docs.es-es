@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
-ms.openlocfilehash: 08e05939f8aee42f2cd502a3da7a528d8460dec1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 186a8ceecea47564503dc181a76cc314033b6d3f
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361204"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76996043"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>Cómo crear el archivo de Ayuda del cmdlet
 
@@ -36,7 +36,7 @@ En esta sección se describe cómo crear un archivo XML válido que contenga con
 
    En la tabla siguiente se muestra el elemento XML para cada nodo, seguido de una descripción de cada nodo.
 
-   |Nodo|Descripción|
+   |Nodo|Description|
    |----------|-----------------|
    |`<details>`|Agrega contenido para las secciones nombre y Sinopsis del tema de ayuda del cmdlet. Para obtener más información, consulte [Agregar el nombre del cmdlet y la Sinopsis](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md).|
    |`<maml:description>`|Agrega contenido para la sección Descripción del tema de ayuda del cmdlet. Para obtener más información, consulte [Cómo agregar la descripción detallada a un tema de ayuda de un cmdlet](./how-to-add-a-cmdlet-description.md).|
@@ -54,9 +54,9 @@ En esta sección se describe cómo crear un archivo XML válido que contenga con
 
 ```xml
 <command:command
-  xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
-  xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
-  xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+  xmlns:maml="https://schemas.microsoft.com/maml/2004/10"
+  xmlns:command="https://schemas.microsoft.com/maml/dev/command/2004/10"
+  xmlns:dev="https://schemas.microsoft.com/maml/dev/2004/10">
   <command:details>
     <!--Add name an synopsis here-->
   </command:details>
@@ -87,7 +87,7 @@ En esta sección se describe cómo crear un archivo XML válido que contenga con
 </command:command>
 ```
 
-## <a name="see-also"></a>Véase también
+## <a name="see-also"></a>Vea también
 
  [Cómo agregar el nombre y la Sinopsis del cmdlet](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)
 

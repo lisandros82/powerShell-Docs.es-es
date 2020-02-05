@@ -2,18 +2,18 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,configuration,setup
 title: Recurso PackageManagement de DSC
-ms.openlocfilehash: dfc23bfabbc45041e15c56a29a77c5bdda430a30
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 28ae8772170bd4559c8a19c3a1df8c9118734857
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71953242"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995977"
 ---
 # <a name="dsc-packagemanagement-resource"></a>Recurso PackageManagement de DSC
 
 Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1
 
-El recurso **PackageManagement** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para instalar o desinstalar paquetes de administración de paquetes, en un nodo de destino. Este recurso requiere el módulo **PackageManagement**, disponible en [http://PowerShellGallery.com](https://PowerShellGallery.com).
+El recurso **PackageManagement** de la configuración de estado deseado (DSC) de Windows PowerShell ofrece un mecanismo para instalar o desinstalar paquetes de administración de paquetes, en un nodo de destino. Este recurso requiere el módulo **PackageManagement**, disponible en [https://PowerShellGallery.com](https://PowerShellGallery.com).
 
 > [!IMPORTANT]
 > El módulo **PackageManagement** debe tener al menos la versión 1.1.7.0 para que la siguiente información de propiedad sea correcta.
@@ -47,7 +47,7 @@ PackageManagement [string] #ResourceName
 |MinimumVersion |Especifica la versión mínima permitida del paquete que desea encontrar. Si no se agrega este parámetro, este recurso busca la versión más alta disponible del paquete que también admite cualquier versión máxima especificada por el parámetro **MaximumVersion**. |
 |ProviderName |Especifica un nombre de proveedor del paquete que se va a dirigir la búsqueda del paquete. Puede obtener los nombres de proveedor del paquete mediante la ejecución del cmdlet `Get-PackageProvider`. |
 |RequiredVersion |Especifica la versión exacta del paquete que desea instalar. Si no se especifica este parámetro, este recurso de DSC instala la versión más reciente disponible del paquete que también admite cualquier versión máxima especificada por el parámetro **MaximumVersion**. |
-|Origen |Especifica el nombre del origen del paquete donde se encuentra el paquete. Puede ser un URI o un origen registrado con `Register-PackageSource` o el recurso de DSC PackageManagementSource. |
+|Source |Especifica el nombre del origen del paquete donde se encuentra el paquete. Puede ser un URI o un origen registrado con `Register-PackageSource` o el recurso de DSC PackageManagementSource. |
 |SourceCredential |Especifica una cuenta de usuario que tenga derechos para instalar un paquete para un proveedor u origen de paquetes especificado. |
 
 ## <a name="additional-parameters"></a>Parámetros adicionales
