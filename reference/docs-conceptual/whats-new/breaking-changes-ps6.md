@@ -1,17 +1,29 @@
 ---
-ms.date: 12/18/2019
+ms.date: 02/03/2020
 keywords: powershell,core
 title: Cambios importantes en PowerShell Core 6.0
-ms.openlocfilehash: dfbbeb5e5bb3d43959ce144afffc5b10193f8b30
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.openlocfilehash: 47ed14cceed86e4dd04a8e0079af00f6a98988ea
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75415703"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995460"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>Cambios importantes en PowerShell Core 6.x
 
 ## <a name="features-no-longer-available-in-powershell-core"></a>Características que ya no están disponibles en PowerShell Core
+
+### <a name="modules-not-shipped-for-powershell-6x"></a>Módulos no distribuidos para PowerShell 6.x
+
+Por diversas razones de compatibilidad, los siguientes módulos no se incluyen en PowerShell 6.
+
+- ISE
+- Microsoft.PowerShell.LocalAccounts
+- Microsoft.PowerShell.ODataUtils
+- Microsoft.PowerShell.Operation.Validation
+- PSScheduledJob
+- PSWorkflow
+- PSWorkflowUtility
 
 ### <a name="powershell-workflow"></a>Flujo de trabajo de PowerShell
 
@@ -40,10 +52,11 @@ Actualmente, esto rompe los módulos `ActiveDirectory` y `DnsClient` en Windows 
 
 Dada la complejidad de admitir dos conjuntos de módulos basados en WMI, quitamos los cmdlets WMI v1 de PowerShell Core:
 
-- `Get-WmiObject`
-- `Invoke-WmiMethod`
 - `Register-WmiEvent`
 - `Set-WmiInstance`
+- `Invoke-WmiMethod`
+- `Get-WmiObject`
+- `Remove-WmiObject`
 
 En su lugar, recomendamos que use los cmdlets de CIM (también conocido como WMI v2), que proporcionan la misma funcionalidad con una nueva funcionalidad y una sintaxis rediseñada:
 
@@ -68,14 +81,51 @@ Debido al uso de API no admitidas, `Microsoft.PowerShell.LocalAccounts` se ha qu
 
 .NET Core no es compatible con Windows Communication Framework, que proporciona servicios para usar el protocolo SOAP. Este cmdlet se quitó porque requiere SOAP.
 
-### <a name="-computer-cmdlets"></a>Cmdlets de `*-Computer`
+### <a name="-transaction-cmdlets-removed"></a>`*-Transaction` cmdlets quitados
+
+Estos cmdlets tenían un uso muy limitado. Se tomó la decisión de dejar de admitirlos.
+
+- `Complete-Transaction`
+- `Get-Transaction`
+- `Start-Transaction`
+- `Undo-Transaction`
+- `Use-Transaction`
+
+### <a name="security-cmdlets-not-available-on-non-windows-platforms"></a>Cmdlets de seguridad no disponibles en plataformas que no son de Windows
+
+- `Get-Acl`
+- `Set-Acl`
+- `Get-AuthenticodeSignature`
+- `Set-AuthenticodeSignature`
+- `Get-CmsMessage`
+- `Protect-CmsMessage`
+- `Unprotect-CmsMessage`
+- `New-FileCatalog`
+- `Test-FileCatalog`
+
+### <a name="-computerand-other-windows-specific-cmdlets"></a>`*-Computer`y otros cmdlets específicos de Windows
 
 Debido al uso de API no admitidas, los cmdlets siguientes se han quitado de PowerShell Core hasta que se encuentre una solución mejor.
 
-- Add-Computer
-- Checkpoint-Computer
-- Remove-Computer
-- Restore-Computer
+- `Get-Clipboard`
+- `Set-Clipboard`
+- `Add-Computer`
+- `Checkpoint-Computer`
+- `Remove-Computer`
+- `Restore-Computer`
+- `Reset-ComputerMachinePassword`
+- `Disable-ComputerRestore`
+- `Enable-ComputerRestore`
+- `Get-ComputerRestorePoint`
+- `Test-ComputerSecureChannel`
+- `Get-ControlPanelItem`
+- `Show-ControlPanelItem`
+- `Get-HotFix`
+- `Clear-RecycleBin`
+- `Update-List`
+- `Out-Printer`
+- `ConvertFrom-String`
+- `Convert-String`
 
 ### <a name="-counter-cmdlets"></a>Cmdlets de `*-Counter`
 
@@ -84,6 +134,31 @@ Debido al uso de API no admitidas, `*-Counter` se ha quitado de PowerShell Core 
 ### <a name="-eventlog-cmdlets"></a>Cmdlets de `*-EventLog`
 
 Debido al uso de API no admitidas, `*-EventLog` se ha quitado de PowerShell Core. hasta que se encuentra una solución mejor. `Get-WinEvent` y `Create-WinEvent` están disponibles para obtener y crear eventos en Windows.
+
+### <a name="cmdlets-that-use-wpf-removed"></a>Cmdlets que usan WPF quitados
+
+Windows Presentation Framework no se admite en CoreCLR. Los siguientes cmdlets se ven afectados:
+
+- `Show-Command`
+- `Out-GridView`
+- Parámetro **showwindow** de `Get-Help`
+
+### <a name="some-dsc-cmdlets-removed"></a>Algunos cmdlets de DSC quitados
+
+- `Get-DscConfiguration`
+- `Publish-DscConfiguration`
+- `Restore-DscConfiguration`
+- `Start-DscConfiguration`
+- `Stop-DscConfiguration`
+- `Test-DscConfiguration`
+- `Update-DscConfiguration`
+- `Remove-DscConfigurationDocument`
+- `Get-DscConfigurationStatus`
+- `Disable-DscDebug`
+- `Enable-DscDebug`
+- `Get-DscLocalConfigurationManager`
+- `Set-DscLocalConfigurationManager`
+- `Invoke-DscResource`
 
 ## <a name="enginelanguage-changes"></a>Cambios en el lenguaje/motor
 

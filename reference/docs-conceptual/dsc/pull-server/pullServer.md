@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: dsc,powershell,configuration,setup
 title: Servicio de extracción de DSC
-ms.openlocfilehash: d71c87e0420a0ee54eca36f1792b43103431233f
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
+ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870819"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885394"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Servicio de extracción de Desired State Configuration
 
@@ -22,6 +22,14 @@ Las opciones actuales del servicio de extracción incluyen:
 - Un servicio de extracción que se ejecuta en Windows Server
 - Soluciones de código abierto mantenidas por la comunidad
 - Un recurso compartido SMB
+
+La escala recomendada para cada solución es la siguiente:
+
+|                   Solución                   |              Nodos de cliente              |
+| -------------------------------------------- | -------------------------------------- |
+| Servidor de extracción de Windows mediante la base de datos MDB/ESENT | Hasta 500 nodos                        |
+| Servidor de extracción de Windows mediante la base de datos SQL       | Hasta 1000 nodos                       |
+| DSC de Azure Automation                         | Escenarios con más de 1000 nodos |
 
 **La solución recomendada**, y la opción que tiene la mayor cantidad de características disponibles, es [DSC de Azure Automation](/azure/automation/automation-dsc-getting-started).
 
@@ -219,7 +227,7 @@ Una vez completada la configuración del servidor de incorporación de cambios, 
 
 Cada módulo de recursos se debe comprimir y se le debe asignar un nombre de acuerdo con el patrón `{Module Name}_{Module Version}.zip`.
 
-Por ejemplo, un módulo denominado xWebAdminstration con una versión de módulo de 3.1.2.0 se denominaría `xWebAdministration_3.1.2.0.zip`. Cada versión de un módulo debe incluirse en un solo archivo ZIP.
+Por ejemplo, un módulo denominado **xWebAdminstration** con una versión de módulo de 3.1.2.0 se denominaría `xWebAdministration_3.1.2.0.zip`. Cada versión de un módulo debe incluirse en un solo archivo ZIP.
 Dado que solo hay una versión de un recurso en cada archivo ZIP, no se admite el formato de módulo que se agrega en WMF 5.0 con compatibilidad con varias versiones de módulo en un único directorio. Esto significa que antes de empaquetar los módulos de recursos de DSC para su uso con el servidor de incorporación de cambios, deberá realizar un pequeño cambio en la estructura de directorios. El formato predeterminado de los módulos que contienen recursos de DSC en WMF 5.0 es `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Antes de empaquetar para el servidor de extracción, quite la carpeta **{Versión del módulo}** para que la ruta se quede en `{Module Folder}\DscResources\{DSC Resource Folder}\`. Con este cambio, comprima la carpeta según lo descrito anteriormente y coloque estos archivos ZIP en la carpeta **ModulePath**.
 
 Use `New-DscChecksum {module zip file}` para crear un archivo de suma de comprobación para el módulo que acaba de agregar.

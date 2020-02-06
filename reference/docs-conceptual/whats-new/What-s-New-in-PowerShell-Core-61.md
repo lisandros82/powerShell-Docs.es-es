@@ -2,19 +2,18 @@
 title: Novedades de PowerShell Core 6.1
 description: Nuevas características y cambios publicados en PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 531259217f2b71213776e7d394616c7790e9aca9
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086133"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995514"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Novedades de PowerShell Core 6.1
 
 Esta es una selección de algunas de las principales características nuevas y los cambios que se han incorporado en PowerShell Core 6.1.
 
-También hay **toneladas** de "cosas aburridas" que hacen que PowerShell sea más rápido y más estable (además de montones y montones de correcciones de errores).
-Si quiere ver una lista completa de los cambios, eche un vistazo a nuestro [registro de cambios en GitHub](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md).
+También hay **toneladas** de "cosas aburridas" que hacen que PowerShell sea más rápido y más estable (además de montones y montones de correcciones de errores). Si quiere ver una lista completa de los cambios, eche un vistazo a nuestro [registro de cambios en GitHub](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md).
 
 Y aunque destacamos algunos nombres al final, queremos dar las gracias a [todos los colaboradores de la comunidad](https://github.com/PowerShell/PowerShell/graphs/contributors) que han hecho posible esta versión.
 
@@ -37,13 +36,11 @@ El paquete de compatibilidad de Windows permite que PowerShell Core use **más d
 
 ## <a name="support-for-application-whitelisting"></a>Compatibilidad con la lista blanca de aplicaciones
 
-PowerShell Core 6.1 incluye paridad con Windows PowerShell 5.1 al ser compatible con la lista blanca de aplicaciones [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) y [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control).
-La creación de listas blancas de aplicaciones permite un control granular de qué archivos binarios se pueden ejecutar mediante el [modo de lenguaje restringido](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/) de PowerShell.
+PowerShell Core 6.1 incluye paridad con Windows PowerShell 5.1 al ser compatible con la lista blanca de aplicaciones [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) y [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control). La creación de listas blancas de aplicaciones permite un control granular de qué archivos binarios se pueden ejecutar mediante el [modo de lenguaje restringido](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/) de PowerShell.
 
 ## <a name="performance-improvements"></a>Mejoras en el rendimiento
 
-En PowerShell Core 6.0 se realizaron algunas mejoras de rendimiento significativas.
-PowerShell Core 6.1 sigue mejorando la velocidad de determinadas operaciones.
+En PowerShell Core 6.0 se realizaron algunas mejoras de rendimiento significativas. PowerShell Core 6.1 sigue mejorando la velocidad de determinadas operaciones.
 
 Por ejemplo, `Group-Object` se ha agilizado en un 66 %:
 
@@ -51,10 +48,10 @@ Por ejemplo, `Group-Object` se ha agilizado en un 66 %:
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
+|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | Tiempo (s)   | 25,178                 | 19,653              | 6,641               |
-| Aceleración (%) | N/A                    | 21,9 %               | 66,2 %               |
+| Aceleración (%) | N/D                    | 21,9 %               | 66,2 %               |
 
 De forma similar, escenarios de ordenación como este han mejorado en más del 15 %:
 
@@ -62,10 +59,10 @@ De forma similar, escenarios de ordenación como este han mejorado en más del 1
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Object }
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
+|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | Tiempo (s)   | 12,170                 | 8,493               | 7,08                |
-| Aceleración (%) | N/A                    | 30,2 %               | 16,6 %               |
+| Aceleración (%) | N/D                    | 30,2 %               | 16,6 %               |
 
 `Import-Csv` también se han agilizado mucho después de una regresión desde Windows PowerShell.
 En este ejemplo se usa un CSV de prueba con 26 616 filas y 6 columnas:
@@ -74,10 +71,10 @@ En este ejemplo se usa un CSV de prueba con 26 616 filas y 6 columnas:
 Measure-Command {$a = Import-Csv foo.csv}
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
+|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
 | Tiempo (s)   | 0,441                  | 1,069               | 0,268                  |
-| Aceleración (%) | N/A                    | -142,4 %             | 74,9 % (39,2 % desde WPS) |
+| Aceleración (%) | N/D                    | -142,4 %             | 74,9 % (39,2 % desde WPS) |
 
 Por último, la conversión de JSON en `PSObject` se ha agilizado en más del 50 % desde Windows PowerShell.
 El ejemplo siguiente usa un archivo JSON de prueba de unos 2 MB:
@@ -86,17 +83,16 @@ El ejemplo siguiente usa un archivo JSON de prueba de unos 2 MB:
 Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
+|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
 | Tiempo (s)   | 0,259                  | 0,577               | 0,125                  |
-| Aceleración (%) | N/A                    | -122,8%             | 78,3 % (51,7 % desde WPS) |
+| Aceleración (%) | N/D                    | -122,8%             | 78,3 % (51,7 % desde WPS) |
 
 ## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Comprobar `system32` para los módulos integrados compatibles en Windows
 
 En la actualización de Windows 10 1809 y Windows Server 2019, actualizamos una serie de módulos de PowerShell integrados para marcarlos como compatibles con PowerShell Core.
 
-Cuando se inicie PowerShell Core 6.1, incluirá automáticamente `$windir\System32` como parte de la variable de entorno `PSModulePath`.
-Pero solo expone módulos a `Get-Module` y `Import-Module` si su `CompatiblePSEdition` está marcado como compatible con `Core`.
+Cuando se inicie PowerShell Core 6.1, incluirá automáticamente `$windir\System32` como parte de la variable de entorno `PSModulePath`. Pero solo expone módulos a `Get-Module` y `Import-Module` si su `CompatiblePSEdition` está marcado como compatible con `Core`.
 
 
 ```powershell
@@ -191,8 +187,8 @@ Gracias a [@markekraus](https://github.com/markekraus), se ha realizado una gran
 y [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke-restmethod).
 
 - [PR #6109](https://github.com/PowerShell/PowerShell/pull/6109) - codificación predeterminada establecida en UTF-8 para respuestas `application-json` predeterminadas
-- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - parámetro `-SkipHeaderValidation` para permitir encabezados `Content-Type` que no son compatibles con el estándar
-- [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - parámetro `Form` para admitir compatibilidad con `multipart/form-data` simplificada
+- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) -parámetro `-SkipHeaderValidation` para permitir encabezados `Content-Type` que no son compatibles con el estándar
+- [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) -parámetro `Form` para admitir compatibilidad con `multipart/form-data` simplificada
 - [PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) - control compatible que distingue entre mayúsculas y minúsculas de las claves de la relación
 - [PR #6447](https://github.com/PowerShell/PowerShell/pull/6447) - adición del parámetro `-Resume` para cmdlets de web
 
@@ -202,9 +198,7 @@ y [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke-r
 
 [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) es una característica de PowerShell e Hyper-V que permite conectarse a una máquina virtual de Hyper-V o un contenedor sin conectividad de red u otros servicios de administración remota.
 
-Antes, PowerShell Direct se conectaba mediante la instancia de Windows PowerShell integrada en el contenedor.
-Ahora, PowerShell Direct intenta primero conectarse usando cualquier `pwsh.exe` disponible en la variable de entorno `PATH`.
-Si `pwsh.exe` no está disponible, PowerShell Direct recurre a usar `powershell.exe`.
+Antes, PowerShell Direct se conectaba mediante la instancia de Windows PowerShell integrada en el contenedor. Ahora, PowerShell Direct intenta primero conectarse usando cualquier `pwsh.exe` disponible en la variable de entorno `PATH`. Si `pwsh.exe` no está disponible, PowerShell Direct recurre a usar `powershell.exe`.
 
 ### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>`Enable-PSRemoting` ahora crea puntos de conexión de comunicación remota independientes para versiones preliminares
 
@@ -262,8 +256,7 @@ Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators A
 
 ### <a name="userhostport-syntax-supported-for-ssh"></a>Sintaxis `user@host:port` para SSH
 
-Los clientes SSH suelen admitir una cadena de conexión en el formato `user@host:port`.
-Al agregar SSH como protocolo para la comunicación remota de PowerShell, se ha agregado compatibilidad con este formato de cadena de conexión:
+Los clientes SSH suelen admitir una cadena de conexión en el formato `user@host:port`. Al agregar SSH como protocolo para la comunicación remota de PowerShell, se ha agregado compatibilidad con este formato de cadena de conexión:
 
 `Enter-PSSession -HostName fooUser@ssh.contoso.com:2222`
 
@@ -305,13 +298,11 @@ Gracias a [@iSazonov](https://github.com/iSazonov), el cmdlet [`Test-Connection`
 
 ### <a name="update-help-as-non-admin"></a>`Update-Help` como no administrador
 
-Por petición popular, `Update-Help` ya no debe ejecutarse como administrador.
-`Update-Help` ahora tiene como valor predeterminado guardar la Ayuda en una carpeta con ámbito de usuario.
+Por petición popular, `Update-Help` ya no debe ejecutarse como administrador. `Update-Help` ahora tiene como valor predeterminado guardar la Ayuda en una carpeta con ámbito de usuario.
 
 ### <a name="new-methodsproperties-on-pscustomobject"></a>Nuevos métodos y propiedades en `PSCustomObject`
 
-Gracias a [@iSazonov](https://github.com/iSazonov), hemos agregado nuevos métodos y propiedades a `PSCustomObject`.
-`PSCustomObject` ahora incluye una propiedad `Count`/`Length` como otros objetos.
+Gracias a [@iSazonov](https://github.com/iSazonov), hemos agregado nuevos métodos y propiedades a `PSCustomObject`. `PSCustomObject` ahora incluye una propiedad `Count`/`Length` como otros objetos.
 
 ```powershell
 $PSCustomObject = [pscustomobject]@{foo = 1}
@@ -353,8 +344,7 @@ foo
 
 ### `Where-Object -Not`
 
-Gracias a @SimonWahlin, hemos agregado el parámetro `-Not` a `Where-Object`.
-Ahora puede filtrar un objeto en la canalización para la no existencia de una propiedad o un valor de propiedad nula o vacía.
+Gracias a @SimonWahlin, hemos agregado el parámetro `-Not` a `Where-Object`. Ahora puede filtrar un objeto en la canalización para la no existencia de una propiedad o un valor de propiedad nula o vacía.
 
 Por ejemplo, este comando devuelve todos los servicios que no tienen los servicios dependientes definidos:
 
@@ -368,8 +358,7 @@ Debido a nuestro cambio a UTF-8 sin marca BOM en PowerShell 6.0, hemos actualiza
 
 ### <a name="conversions-from-psmethod-to-delegate"></a>Conversiones de PSMethod a delegado
 
-Gracias a [@powercode](https://github.com/powercode), ahora se admite la conversión de un `PSMethod` a un delegado.
-Esto permite hacer cosas como pasar `PSMethod` `[M]::DoubleStrLen` como un valor de delegado en `[M]::AggregateString`:
+Gracias a [@powercode](https://github.com/powercode), ahora se admite la conversión de un `PSMethod` a un delegado. Esto permite hacer cosas como pasar `PSMethod` `[M]::DoubleStrLen` como un valor de delegado en `[M]::AggregateString`:
 
 ```powershell
 class M {
@@ -420,8 +409,7 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 
 ### <a name="removal-of-the-more-function"></a>Eliminación de la función `more`
 
-Antes, PowerShell incluía una función en Windows llamada `more` que encapsulaba `more.com`.
-Se ha quitado esa función.
+Antes, PowerShell incluía una función en Windows llamada `more` que encapsulaba `more.com`. Se ha quitado esa función.
 
 Además, se ha cambiado la función `help` para usar `more.com` en Windows o el elemento de paginación del sistema predeterminado especificado por `$env:PAGER` en plataformas que no sean Windows.
 
@@ -484,7 +472,7 @@ Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumbe
 
 Gracias a [@kvprasoon](https://github.com/kvprasoon), ahora tenemos un alias de parámetro `-lp` para todos los cmdlets de PowerShell integrados que tienen un parámetro `-LiteralPath`.
 
-## <a name="breaking-changes"></a>Cambios importantes
+## <a name="breaking-changes"></a>Últimos cambios
 
 ### <a name="msi-based-installation-paths-on-windows"></a>Rutas de acceso de instalación basadas en MSI en Windows
 
@@ -511,8 +499,7 @@ Para obtener más información sobre estos cambios, consulte [PR #6779](https://
 
 ### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>Se quitó `VisualBasic` como lenguaje compatible en Add-Type
 
-Antes, se podía compilar código de Visual Basic mediante el cmdlet `Add-Type`.
-Visual Basic se usó rara vez con `Add-Type`. Hemos quitado esta característica para reducir el tamaño de PowerShell.
+Antes, se podía compilar código de Visual Basic mediante el cmdlet `Add-Type`. Visual Basic se usó rara vez con `Add-Type`. Hemos quitado esta característica para reducir el tamaño de PowerShell.
 
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Se limpiaron los usos de `CommandTypes.Workflow` y `WorkflowInfoCleaned`
 

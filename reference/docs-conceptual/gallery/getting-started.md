@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Introducción a la Galería de PowerShell
-ms.openlocfilehash: ee3fe7d9c65ad1a8f9ffd2ddec0f4ce6659bc3d5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fd4185234136dd9f3e628df50954b6ebff637639
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328466"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995889"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Introducción a la Galería de PowerShell
 
@@ -31,8 +31,8 @@ Puede filtrar los resultados de la Galería mediante los siguientes parámetros:
 - Includes
 - DscResource
 - RoleCapability
-- Comando
-- Filtro
+- Get-Help
+- Filter
 
 Si solo le interesa detectar recursos de DSC específicos en la Galería, puede ejecutar el cmdlet [Find-DscResource][]. Find-DscResource devuelve datos sobre los recursos de DSC contenidos en la Galería. Dado que los recursos de DSC siempre se entregan como parte de un módulo, debe ejecutar [Install-Module][] para instalar dichos recursos de DSC.
 
@@ -68,7 +68,7 @@ Para ello es necesaria una cuenta de administrador. Si agrega el parámetro `-Sc
 
 De forma predeterminada, [Install-Module][] e [Install-Script][] instalan la última versión de un paquete. Para instalar una versión anterior del paquete, agregue el parámetro `-RequiredVersion`.
 
-### <a name="deploy"></a>Implementar
+### <a name="deploy"></a>Implementación
 
 Para implementar un paquete desde la Galería de PowerShell en Azure Automation, haga clic en **Azure Automation** y luego en **Implementar en Azure Automation** en la página de detalles del paquete. Se le redirige al Portal de administración de Azure, donde deberá iniciar sesión con sus credenciales de la cuenta de Azure. Tenga en cuenta que, si se implementan paquetes con dependencias, se implementan todas las dependencias en Azure Automation. El botón Deploy to Azure Automation (Implementar en Azure Automation) se puede deshabilitar mediante la adición de la etiqueta **AzureAutomationNotSupported** a los metadatos del paquete.
 
@@ -76,7 +76,7 @@ Para obtener más información sobre Azure Automation, consulte la documentació
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>Actualizar paquetes desde la Galería de PowerShell
 
-Para actualizar paquetes instalados desde la Galería de PowerShell, ejecute los cmdlets [Update-Module][] o [Update-Script][]. Cuando se ejecuta sin parámetros adicionales, [Update-Module][] intenta actualizar todos los módulos instalado mediante la ejecución de [Install-Module][]. Para actualizar módulos de forma selectiva, agregue el parámetro `-Name`.
+Para actualizar paquetes instalados desde la Galería de PowerShell, ejecute los cmdlets [Update-Module][] o [Update-Script][]. Cuando se ejecuta sin parámetros adicionales, [Update-Module][] intenta actualizar todos los módulos instalados mediante la ejecución de [Install-Module][]. Para actualizar módulos de forma selectiva, agregue el parámetro `-Name`.
 
 Del mismo modo, cuando se ejecuta sin parámetros adicionales, [Update-Script][] también intenta actualizar todos los scripts instalados mediante la ejecución de [Install-Script][]. Para actualizar scripts de forma selectiva, agregue el parámetro `-Name`.
 
@@ -98,3 +98,5 @@ Del mismo modo, para averiguar qué scripts ha instalado desde la Galería de Po
 [Register-PSRepository]: /powershell/module/powershellget/Register-Repository
 [Save-Module]: /powershell/module/powershellget/Save-Module
 [Save-Script]: /powershell/module/powershellget/Save-Script
+[Update-Module]: /powershell/module/powershellget/Update-Module
+[Update-Script]: /powershell/module/powershellget/Update-Script

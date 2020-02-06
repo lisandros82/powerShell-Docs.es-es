@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Preguntas más frecuentes de la Galería de PowerShell
-ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 70e2220bd68b351e0b09dd3c59901104f7874335
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328056"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818131"
 ---
 # <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
@@ -36,9 +36,9 @@ Para obtener más detalles sobre cómo ejecutar estos cmdlets, visite la pestañ
 
 **No es necesario registrarse o iniciar sesión en la Galería para instalar o guardar paquetes.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>"Error al procesar la solicitud. 'La API especificada no es válida o no tiene permisos para acceder al paquete especificado.'. Error en el servidor remoto: [403] Prohibido." al intentar publicar un paquete en la Galería de PowerShell. ¿Qué significa?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>"Error al procesar la solicitud. 'La API especificada no es válida o no tiene permisos para acceder al paquete especificado.'. Error en el servidor remoto: [403] Prohibido." al intentar publicar un paquete en la Galería de PowerShell. ¿Qué implica esto?
 
-Este error puede producirse por los motivos siguientes:
+Este error puede ocurrir debido a uno de los siguientes motivos:
 
 - **La clave de API especificada no es válida.**
      Asegúrese de que ha especificado la clave de API válida de su cuenta. Para obtener la clave API, consulte su página de perfil.
@@ -63,7 +63,7 @@ Esta información se lee como parte del proceso de publicación en el archivo de
 Todos los módulos publicados en la Galería deben tener manifiestos de módulo.
 Pueden publicarse en la Galería todos los módulos que incluyan la siguiente información en su manifiesto:
 
-- Version
+- Versión
 - Descripción
 - Autor
 - Un URI a los términos de licencia del módulo, como parte de la sección **PrivateData** del manifiesto o en el parámetro **LicenseUri** del cmdlet [Publish-Module][].
@@ -84,7 +84,7 @@ Esta información se lee como parte del proceso de publicación en la sección *
 Todos los scripts publicados en la Galería deben tener información de metadatos.
 Pueden publicarse en la Galería todos los scripts que incluyan la siguiente información en la sección PSScriptInfo:
 
-- Version
+- Versión
 - Descripción
 - Autor
 - Un URI a los términos de licencia del script, como parte de la sección **PSScriptInfo** del script o en el parámetro **LicenseUri** del cmdlet [Publish-Script][].
@@ -94,7 +94,7 @@ Pueden publicarse en la Galería todos los scripts que incluyan la siguiente inf
 Escriba lo que quiere buscar en el cuadro de texto. Por ejemplo, si quiere encontrar módulos relacionados con SQL de Azure, escriba "sql de azure". Nuestro motor de búsqueda buscará esas palabras clave en todos los paquetes publicados, incluidos los títulos, las descripciones y los metadatos. Después, en función de una puntuación de calidad ponderada, mostrará las coincidencias más cercanas. También puede buscar por campo específico usando la sintaxis field:"value" en la consulta de búsqueda para los campos siguientes:
 
 - Etiquetas
-- Funciones
+- Functions
 - Cmdlets
 - DscResources
 - PowerShellVersion

@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Funcionalidades de rol de JEA
-ms.openlocfilehash: 613557d03bb481f9280a06ca1506166a18b4dab2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5b5b5977d4fec1ed850f1146fe7c09463908651b
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416779"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818182"
 ---
 # <a name="jea-role-capabilities"></a>Funcionalidades de rol de JEA
 
@@ -157,9 +157,11 @@ Si va a escribir varias funciones personalizadas, resulta más cómodo colocarla
 
 Para que la finalización con tabulación funcione correctamente en las sesiones de JEA, debe incluir la función integrada `tabexpansion2` en la lista **VisibleFunctions**.
 
-## <a name="place-role-capabilities-in-a-module"></a>Colocar funcionalidades de rol en un módulo
+## <a name="make-the-role-capabilities-available-to-a-configuration"></a>Poner las funcionalidades de rol a disposición de una configuración
 
-Para que PowerShell encuentre un archivo de funcionalidad de rol, debe estar almacenado en una carpeta **RoleCapabilities** de un módulo de PowerShell. El módulo se puede almacenar en cualquier carpeta incluida en la variable de entorno `$env:PSModulePath`, pero no se debe colocar en System32 ni en una carpeta donde los usuarios que se conectan y no sean de confianza puedan modificar los archivos. A continuación se muestra un ejemplo de cómo crear un módulo de script de PowerShell básico denominado **ContosoJEA** en la ruta de acceso `$env:ProgramFiles`.
+Antes de PowerShell 6, para que PowerShell encuentre un archivo de funcionalidad de rol, debe estar almacenado en una carpeta **RoleCapabilities** de un módulo de PowerShell. El módulo se puede almacenar en cualquier carpeta incluida en la variable de entorno `$env:PSModulePath`, pero no se debe colocar en `$env:SystemRoot\System32` ni en una carpeta donde los usuarios que no sean de confianza puedan modificar los archivos.
+
+En el siguiente ejemplo se crea un módulo de script de PowerShell llamado **ContosoJEA** en la ruta de acceso `$env:ProgramFiles` para hospedar el archivo de funcionalidades de rol.
 
 ```powershell
 # Create a folder for the module
@@ -178,6 +180,8 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
 Para obtener más información sobre los módulos de PowerShell, vea [Descripción de un módulo de PowerShell](/powershell/scripting/developer/windows-powershell).
+
+A partir de PowerShell 6, la propiedad **RoleDefinitions** se agregó al archivo de configuración de sesión. Esta propiedad le permite especificar la ubicación de un archivo de configuración de sesión para su definición de roles. Consulte los ejemplos en [New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile).
 
 ## <a name="updating-role-capabilities"></a>Actualizar funcionalidades de rol
 

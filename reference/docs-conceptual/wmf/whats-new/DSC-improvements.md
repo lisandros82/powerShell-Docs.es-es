@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Mejoras de la configuración del estado deseado en WMF 5.1
-ms.openlocfilehash: a5efa38ce791a893580316bad7b61a6689153a86
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d9339ec9f316c4a32c5fa6cb2360c077973ee334
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416673"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818114"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Mejoras en la configuración de estado deseado (DSC) en WMF 5.1
 
@@ -299,7 +299,7 @@ De forma similar, la extracción de un módulo cuyo catálogo no esté firmado p
 
 ![Módulo de salida de error de ejemplo](../images/DSC-improvements/PullUnisgnedCatalog.png)
 
-#### <a name="push"></a>Push
+#### <a name="push"></a>Inserción
 
 Una configuración entregada mediante inserción puede alterarse en su origen antes de que se entregue al nodo. El administrador de configuración local lleva a cabo pasos de validación de firmas similares para las configuraciones insertadas o publicadas. A continuación, se muestra un ejemplo completo de validación de firma para la inserción.
 

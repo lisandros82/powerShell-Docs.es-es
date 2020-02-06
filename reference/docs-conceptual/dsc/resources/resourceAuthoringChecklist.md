@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Lista de comprobación de creación de recursos
-ms.openlocfilehash: c0a18169b5e9f6ba0c3848b00725731453763611
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e7401071db9cb149fff572d79568d69a0b8ea004
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71952882"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818148"
 ---
 # <a name="resource-authoring-checklist"></a>Lista de comprobación de creación de recursos
 
@@ -36,7 +36,7 @@ xPSDesiredStateConfiguration
 ## <a name="resource-and-schema-are-correct"></a>El recurso y el esquema son correctos
 
 Compruebe el archivo del esquema del recurso (*. schema.mof). Puede usar el [Diseñador de recursos de DSC](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) como ayuda para desarrollar y probar su esquema.
-Asegúrese de que:
+Asegúrese de lo siguiente:
 
 - Los tipos de propiedad sean correctos (por ejemplo, no use String para propiedades que acepten valores numéricos; debe usar UInt32 u otros tipos numéricos en su lugar).
 - Los atributos de propiedad se especifican correctamente como: ([key], [required], [write], [read])
@@ -130,7 +130,7 @@ Posibles tipos de problemas:
 - Es posible que Credential/Session se comporten de manera diferente porque el agente DSC se ejecuta como un servicio.  Asegúrese de probar todas las características aquí de un extremo a otro.
 - Los errores que produce `Start-DscConfiguration` pueden ser diferentes de los que se muestran al llamar a la función `Set-TargetResource` directamente.
 
-## <a name="test-compatability-on-all-dsc-supported-platforms"></a>Prueba de compatibilidad en todas las plataformas compatibles con DSC
+## <a name="test-compatibility-on-all-dsc-supported-platforms"></a>Prueba de compatibilidad en todas las plataformas compatibles con DSC
 
 El recurso debería funcionar en todas las plataformas compatibles de DSC (Windows Server 2008 R2 y versiones más recientes). Instalar la versión más reciente de WMF (Windows Management Framework) en el sistema operativo para obtener la versión más reciente de DSC. Si el recurso no funciona en algunas de estas plataformas por diseño, debería devolverse un mensaje de error específico. Asimismo, asegúrese de que el recurso comprueba si los cmdlets que está llamando están presentes en una máquina determinada. En Windows Server 2012 se agregó un gran número de cmdlets nuevos que no están disponibles en Windows Server 2008 R2, incluso con WMF instalado.
 

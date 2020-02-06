@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,service,setup
 title: Escritura, compilación y aplicación de una configuración
-ms.openlocfilehash: 8bcd55518b0409b9a4b02ca95f027a0a77eb5300
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: eb61e518762b9f13e617ecd4711bfef7a86814ec
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954002"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818165"
 ---
 > Se aplica a: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -65,7 +65,7 @@ Definir una configuración es parecido a definir una función. El bloque **Node*
 
 La configuración llama a uno de los [recursos](../resources/resources.md), el recurso `File`. Los recursos se encargan de garantizar que el nodo de destino se encuentra en el estado definido por la configuración.
 
-## <a name="compile-the-configuration"></a>Compilación de la configuración
+## <a name="compile-the-configuration"></a>Compilar la configuración
 
 Para que una configuración de DSC se aplique a un nodo, debe compilarse primero en un archivo MOF.
 Al ejecutarse la configuración, como en el caso de una función, se compilará un archivo ".mof" para cada nodo definido por el bloque `Node`.
@@ -108,7 +108,7 @@ Use el código siguiente para ejecutar el cmdlet `Start-DSCConfiguration`. Espec
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 ```
 
-## <a name="test-the-configuration"></a>Probar la configuración
+## <a name="test-the-configuration"></a>Pruebe la configuración.
 
 Cuando el cmdlet `Start-DSCConfiguration` se haya completado, debe ver un archivo "HelloWorld.txt" en la ubicación especificada. Puede comprobar el contenido con el cmdlet [Get-Content](/powershell/module/microsoft.powershell.management/get-content).
 
