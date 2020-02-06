@@ -2,12 +2,12 @@
 title: Novedades de PowerShell Core 6.0
 description: Nuevas características y cambios publicados en PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: a623c5b37d5eef2148792203a3c2ff91a0fab266
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d1bc1ef2676da60062b8bdd57042331f0f245bec
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416761"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995490"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Novedades de PowerShell Core 6.0
 
@@ -15,12 +15,9 @@ ms.locfileid: "74416761"
 
 ## <a name="moved-from-net-framework-to-net-core"></a>Cambio de .NET Framework a .NET Core
 
-PowerShell Core usa [.NET Core 2.0][] como entorno de ejecución.
-.NET Core 2.0 permite que PowerShell Core funcione en varias plataformas (Windows, macOS y Linux).
-PowerShell Core también expone el conjunto de API que ofrece .NET Core 2.0 para su uso en scripts y cmdlets de PowerShell.
+PowerShell Core usa [.NET Core 2.0][] como entorno de ejecución. .NET Core 2.0 permite que PowerShell Core funcione en varias plataformas (Windows, macOS y Linux). PowerShell Core también expone el conjunto de API que ofrece .NET Core 2.0 para su uso en scripts y cmdlets de PowerShell.
 
-Windows PowerShell usaba el entorno de ejecución de .NET Framework para hospedar el motor de PowerShell.
-Esto significa que Windows PowerShell expone el conjunto de API que ofrece .NET Framework.
+Windows PowerShell usaba el entorno de ejecución de .NET Framework para hospedar el motor de PowerShell. Esto significa que Windows PowerShell expone el conjunto de API que ofrece .NET Framework.
 
 Las API que se comparten entre .NET Core y .NET Framework se definen como parte de [.NET Standard][].
 
@@ -36,7 +33,7 @@ PowerShell ahora admite oficialmente macOS y Linux, incluido:
 - Ubuntu 14.04, 16.04 y 17.04
 - Debian 8.7+ y 9
 - CentOS 7
-- Red Hat Enterprise Linux 7
+- Red Hat Enterprise Linux 7
 - OpenSUSE 42.2
 - Fedora 25 y 26
 - macOS 10.12+
@@ -52,13 +49,10 @@ También tenemos versiones experimentales (no compatibles) para las plataformas 
 - Windows en ARM32/ARM64
 - Raspbian (Stretch)
 
-Se ha realizado una serie de cambios en PowerShell Core 6.0 para que funcione mejor en sistemas distintos de Windows.
-Algunos son cambios radicales que también afectan a Windows.
-Otros solo están presentes o son aplicables en instalaciones que no son Windows de PowerShell Core.
+Se ha realizado una serie de cambios en PowerShell Core 6.0 para que funcione mejor en sistemas distintos de Windows. Algunos son cambios radicales que también afectan a Windows. Otros solo están presentes o son aplicables en instalaciones que no son Windows de PowerShell Core.
 
 - Se ha agregado compatibilidad con el uso global de comandos nativos en plataformas Unix.
-- La funcionalidad `more` respeta el valor `$PAGER` de Linux y tiene como valor predeterminado `less`.
-  Esto significa que ahora puede usar caracteres comodín con comandos o binarios nativos (por ejemplo, `ls *.txt`). (#3463)
+- La funcionalidad `more` respeta el valor `$PAGER` de Linux y tiene como valor predeterminado `less`. Esto significa que ahora puede usar caracteres comodín con comandos o binarios nativos (por ejemplo, `ls *.txt`). (#3463)
 - Se agrega automáticamente un carácter de escape a la barra diagonal inversa final cuando se trabaja con argumentos de comandos nativos. (#4965)
 - Omita el modificador `-ExecutionPolicy` cuando ejecute PowerShell en plataformas que no sean Windows, ya que la firma de scripts no se admite actualmente. (#3481)
 - Se ha corregido ConsoleHost para usar `NoEcho` en plataformas Unix. (#3801)
@@ -67,8 +61,7 @@ Otros solo están presentes o son aplicables en instalaciones que no son Windows
 
 ### <a name="logging"></a>Registro
 
-En macOS, PowerShell usa las API `os_log` nativas para registrar información en el [sistema de registro unificado][os_log] de Apple.
-En Linux, PowerShell usa [Syslog][], una solución de registro ubicua.
+En macOS, PowerShell usa las API `os_log` nativas para registrar información en el [sistema de registro unificado][os_log] de Apple. En Linux, PowerShell usa [Syslog][], una solución de registro ubicua.
 
 ### <a name="filesystem"></a>Sistema de archivos
 
@@ -82,8 +75,7 @@ Se ha realizado una serie de cambios en macOS y Linux para admitir caracteres en
 - Compatibilidad con nombres de archivo y carpeta que contienen el carácter de dos puntos en Unix. (#4959)
 - Compatibilidad con nombres de script o rutas de acceso completas que tienen comas. (#4136) (Gracias, [@TimCurwick](https://github.com/TimCurwick)).
 - Se detecta cuándo se usa `-LiteralPath` para suprimir la expansión de caracteres comodín para los cmdlets de navegación. (#5038)
-- Se ha actualizado `Get-ChildItem` para que su funcionamiento se parezca más a `ls -R` de *nix y los comandos nativos `DIR /S` de Windows.
-  `Get-ChildItem` ahora devuelve los vínculos simbólicos que se encuentran durante una búsqueda recursiva y no busca en los directorios que esos vínculos tienen como destino. (#3780)
+- Se ha actualizado `Get-ChildItem` para que su funcionamiento se parezca más a `ls -R` de *nix y los comandos nativos `DIR /S` de Windows. `Get-ChildItem` ahora devuelve los vínculos simbólicos que se encuentran durante una búsqueda recursiva y no busca en los directorios que esos vínculos tienen como destino. (#3780)
 
 ### <a name="case-sensitivity"></a>Distinción entre mayúsculas y minúsculas
 
@@ -95,28 +87,22 @@ Por ejemplo, las variables de entorno distinguen entre mayúsculas y minúsculas
 ## <a name="support-for-side-by-side-installations"></a>Compatibilidad con instalaciones en paralelo
 
 PowerShell Core se instala, se configura y se ejecuta con independencia de Windows PowerShell.
-PowerShell Core tiene un paquete ZIP "portátil".
-Mediante el paquete ZIP, puede instalar cualquier número de versiones en cualquier lugar del disco, incluso de manera local en una aplicación que toma PowerShell como dependencia.
-La instalación en paralelo hace que sea más fácil probar nuevas versiones de PowerShell y migrar scripts existentes con el paso del tiempo.
-Además, la instalación en paralelo permite la compatibilidad con versiones anteriores, ya que los scripts se pueden anclar a las versiones específicas que requieren.
+PowerShell Core tiene un paquete ZIP "portátil". Mediante el paquete ZIP, puede instalar cualquier número de versiones en cualquier lugar del disco, incluso de manera local en una aplicación que toma PowerShell como dependencia.
+La instalación en paralelo hace que sea más fácil probar nuevas versiones de PowerShell y migrar scripts existentes con el paso del tiempo. Además, la instalación en paralelo permite la compatibilidad con versiones anteriores, ya que los scripts se pueden anclar a las versiones específicas que requieren.
 
 > [!NOTE]
 > De forma predeterminada, el instalador basado en MSI de Windows hace una instalación de actualizaciones en contexto.
->
 
 ## <a name="renamed-powershellexe-to-pwshexe"></a>Cambio de nombre de `powershell(.exe)` a `pwsh(.exe)`
 
-El nombre del binario de PowerShell Core se ha cambiado de `powershell(.exe)` a `pwsh(.exe)`.
-Este cambio proporciona una forma determinista de ejecutar PowerShell Core en equipos para admitir instalaciones en paralelo de Windows PowerShell y PowerShell Core.
-`pwsh` es además mucho más corto y fácil de escribir.
+El nombre del binario de PowerShell Core se ha cambiado de `powershell(.exe)` a `pwsh(.exe)`. Este cambio proporciona una forma determinista de ejecutar PowerShell Core en equipos para admitir instalaciones en paralelo de Windows PowerShell y PowerShell Core. `pwsh` es además mucho más corto y fácil de escribir.
 
 Cambios adicionales en `pwsh(.exe)` con respecto a `powershell.exe`:
 
-- Se ha cambiado el primer parámetro posicional de `-Command` a `-File`.
-  Este cambio corrige el uso de `#!` (también conocido como par de caracteres shebang) en los scripts de PowerShell que se ejecutan desde shells que no son de PowerShell en plataformas distintas de Windows.
-  También implica que se pueden ejecutar comandos como `pwsh foo.ps1` o `pwsh fooScript` sin especificar `-File`.
-  Aun así, este cambio requiere que se especifique explícitamente `-c` o `-Command` al intentar ejecutar comandos como `pwsh.exe -Command Get-Command`. (#4019)
-- PowerShell Core acepta el modificador `-i` (o `-Interactive`) para indicar un shell interactivo. (#3558) Esto permite usar PowerShell como shell predeterminado en plataformas Unix.
+- Se ha cambiado el primer parámetro posicional de `-Command` a `-File`. Este cambio corrige el uso de `#!` (también conocido como par de caracteres shebang) en los scripts de PowerShell que se ejecutan desde shells que no son de PowerShell en plataformas distintas de Windows. También implica que se pueden ejecutar comandos como `pwsh foo.ps1` o `pwsh fooScript` sin especificar `-File`. Aun así, este cambio requiere que se especifique explícitamente `-c` o `-Command` al intentar ejecutar comandos como `pwsh.exe -Command Get-Command`.
+  (#4019)
+- PowerShell Core acepta el modificador `-i` (o `-Interactive`) para indicar un shell interactivo.
+  (#3558) Esto permite usar PowerShell como shell predeterminado en plataformas Unix.
 - Se han quitado los parámetros `-importsystemmodules` y `-psconsoleFile` de `pwsh.exe`. (#4995)
 - Se ha cambiado `pwsh -version` y se ha integrado ayuda para `pwsh.exe` para que sea acorde con otras herramientas nativas. (#4958 y #4931) (Gracias, [@iSazonov](https://github.com/iSazonov))
 - Mensajes de error de argumento no válido para `-File` y `-Command` y códigos de salida coherentes con los estándares de Unix (#4573).
@@ -125,19 +111,13 @@ Cambios adicionales en `pwsh(.exe)` con respecto a `powershell.exe`:
 ## <a name="backwards-compatibility-with-windows-powershell"></a>Compatibilidad con versiones anteriores de Windows PowerShell
 
 El objetivo de PowerShell Core es mantener el máximo de compatibilidad con Windows PowerShell.
-PowerShell Core usa [.NET Standard][] 2.0 para proporcionar compatibilidad binaria con los ensamblados de .NET existentes.
-Muchos de los módulos de PowerShell dependen de estos ensamblados (con frecuencia, DLL), y .NET Standard permite que sigan funcionando con .NET Core.
-PowerShell Core también incluye una heurística para buscar en carpetas conocidas, como en la que suele residir en disco la caché global de ensamblados, para localizar dependencias de DLL de .NET Framework.
+PowerShell Core usa [.NET Standard][] 2.0 para proporcionar compatibilidad binaria con los ensamblados de .NET existentes. Muchos de los módulos de PowerShell dependen de estos ensamblados (con frecuencia, DLL), y .NET Standard permite que sigan funcionando con .NET Core. PowerShell Core también incluye una heurística para buscar en carpetas conocidas, como en la que suele residir en disco la caché global de ensamblados, para localizar dependencias de DLL de .NET Framework.
 
-Puede obtener más información sobre .NET Standard en el [blog de .NET][], en este vídeo de [YouTube][] y en estas [preguntas más frecuentes][] de GitHub.
+Puede obtener más información sobre .NET Standard en el [Blog de .NET][], en este vídeo de [YouTube][] y en estas [P+F][] de GitHub.
 
-Se han realizado esfuerzos para asegurarse de que los módulos "integrados" y de lenguaje de PowerShell (como `Microsoft.PowerShell.Management`, `Microsoft.PowerShell.Utility`, etc.) funcionen igual que en Windows PowerShell.
-En muchos casos, con la ayuda de la comunidad, hemos agregado nuevas características y correcciones de errores para estos cmdlets.
-En ocasiones, debido a la falta de una dependencia en niveles subyacentes de .NET, la funcionalidad se ha quitado o no está disponible.
+Se han realizado esfuerzos para asegurarse de que los módulos "integrados" y de lenguaje de PowerShell (como `Microsoft.PowerShell.Management`, `Microsoft.PowerShell.Utility`, etc.) funcionen igual que en Windows PowerShell. En muchos casos, con la ayuda de la comunidad, hemos agregado nuevas características y correcciones de errores para estos cmdlets. En ocasiones, debido a la falta de una dependencia en niveles subyacentes de .NET, la funcionalidad se ha quitado o no está disponible.
 
-La mayoría de los módulos que se incluyen como parte de Windows (por ejemplo, `DnsClient`, `Hyper-V`, `NetTCPIP`, `Storage`, etc.) y otros productos de Microsoft como Azure y Office todavía no se han portado *explícitamente* a .NET Core.
-El equipo de PowerShell está trabajando con estos grupos y equipos de productos para validar y portar sus módulos existentes a PowerShell Core.
-Con .NET Standard y [CDXML][], muchos de estos módulos tradicionales de Windows PowerShell parecen funcionar en PowerShell Core, pero todavía no se han validado ni se admiten formalmente.
+La mayoría de los módulos que se incluyen como parte de Windows (por ejemplo, `DnsClient`, `Hyper-V`, `NetTCPIP`, `Storage`, etc.) y otros productos de Microsoft como Azure y Office todavía no se han portado *explícitamente* a .NET Core. El equipo de PowerShell está trabajando con estos grupos y equipos de productos para validar y portar sus módulos existentes a PowerShell Core. Con .NET Standard y [CDXML][], muchos de estos módulos tradicionales de Windows PowerShell parecen funcionar en PowerShell Core, pero todavía no se han validado ni se admiten formalmente.
 
 Si instala el módulo [`WindowsPSModulePath`][windowspsmodulepath], puede usar módulos de Windows PowerShell si anexa `PSModulePath` de Windows PowerShell a `PSModulePath` de PowerShell Core.
 
@@ -159,29 +139,23 @@ Add-WindowsPSModulePath
 
 PowerShell Core agrega compatibilidad con contenedores de Docker para todas las plataformas principales que admitimos (incluidas varias distribuciones de Linux, Windows Server Core y Nano Server).
 
-Para obtener una lista completa, consulte las etiquetas en [`microsoft/powershell` en Docker Hub][docker-hub].
-Para más información sobre Docker y PowerShell Core, vea [Docker][] en GitHub.
+Para obtener una lista completa, consulte las etiquetas en [`microsoft/powershell` en Docker Hub][docker-hub]. Para más información sobre Docker y PowerShell Core, vea [Docker][] en GitHub.
 
 ## <a name="ssh-based-powershell-remoting"></a>Comunicación remota de PowerShell basada en SSH
 
 El Protocolo de comunicación remota de PowerShell (PSRP) ahora funciona con el protocolo Secure Shell (SSH), además de PSRP tradicional basado en WinRM.
 
-Esto significa que puede usar cmdlets como `Enter-PSSession` y `New-PSSession` y autenticarse a través de SSH.
-Lo único que debe hacer es registrar PowerShell como un subsistema con un servidor SSH basado en OpenSSH. Puede usar sus mecanismos de autenticación basados en SSH existentes (como contraseñas o claves privadas) con la semántica `PSSession` tradicional.
+Esto significa que puede usar cmdlets como `Enter-PSSession` y `New-PSSession` y autenticarse a través de SSH. Lo único que debe hacer es registrar PowerShell como un subsistema con un servidor SSH basado en OpenSSH. Puede usar sus mecanismos de autenticación basados en SSH existentes (como contraseñas o claves privadas) con la semántica `PSSession` tradicional.
 
 Para obtener más información sobre cómo configurar y usar la comunicación remota basada en SSH, vea [Comunicación remota de PowerShell a través de SSH][ssh-remoting].
 
 ## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>La codificación predeterminada es UTF-8 sin marca BOM excepto en el caso de New-ModuleManifest.
 
-Anteriormente, los cmdlets de Windows PowerShell como `Get-Content` y `Set-Content` usaban codificaciones diferentes, como ASCII y UTF-16.
-La discrepancia en los valores predeterminados de codificación causaba problemas cuando se mezclaban cmdlets sin especificar una codificación.
+Anteriormente, los cmdlets de Windows PowerShell como `Get-Content` y `Set-Content` usaban codificaciones diferentes, como ASCII y UTF-16. La discrepancia en los valores predeterminados de codificación causaba problemas cuando se mezclaban cmdlets sin especificar una codificación.
 
-Las plataformas distintas de Windows usan tradicionalmente UTF-8 sin una marca BOM como codificación predeterminada para los archivos de texto.
-Cada vez más aplicaciones y herramientas de Windows abandonan UTF-16 y pasan a la codificación UTF-8 sin una marca BOM.
-PowerShell Core ha cambiado la codificación predeterminada para adaptarse a ecosistemas más amplios.
+Las plataformas distintas de Windows usan tradicionalmente UTF-8 sin una marca BOM como codificación predeterminada para los archivos de texto. Cada vez más aplicaciones y herramientas de Windows abandonan UTF-16 y pasan a la codificación UTF-8 sin una marca BOM. PowerShell Core ha cambiado la codificación predeterminada para adaptarse a ecosistemas más amplios.
 
-Esto significa que todos los cmdlets integrados que usan el parámetro `-Encoding` usan el valor `UTF8NoBOM` de forma predeterminada.
-Los siguientes cmdlets se ven afectados por este cambio:
+Esto significa que todos los cmdlets integrados que usan el parámetro `-Encoding` usan el valor `UTF8NoBOM` de forma predeterminada. Este cambio afecta a los siguientes cmdlets:
 
 - Add-Content
 - Export-Clixml
@@ -205,12 +179,7 @@ El cmdlet `New-ModuleManifest` no tiene parámetro **Encoding**. La codificació
 
 ## <a name="support-backgrounding-of-pipelines-with-ampersand--3360"></a>Compatibilidad con la colocación en segundo plano de canalizaciones con Y comercial (`&`) (#3360)
 
-Cuando se incluye `&` al final de una canalización, esta se ejecuta como un trabajo de PowerShell.
-Cuando una canalización se pasa a segundo plano, se devuelve un objeto de trabajo.
-Una vez que la canalización se ejecuta como un trabajo, se pueden usar todos los cmdlets `*-Job` estándar para administrar el trabajo.
-Las variables (se omiten las específicas del proceso) que se usan en la canalización se copian automáticamente en el trabajo para que funcione `Copy-Item $foo $bar &`.
-El trabajo también se ejecuta en el directorio actual, en lugar del directorio principal del usuario.
-Para más información sobre los trabajos de PowerShell, vea [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).
+Cuando se incluye `&` al final de una canalización, esta se ejecuta como un trabajo de PowerShell. Cuando una canalización se pasa a segundo plano, se devuelve un objeto de trabajo. Una vez que la canalización se ejecuta como un trabajo, se pueden usar todos los cmdlets `*-Job` estándar para administrar el trabajo. Las variables (se omiten las específicas del proceso) que se usan en la canalización se copian automáticamente en el trabajo para que funcione `Copy-Item $foo $bar &`. El trabajo también se ejecuta en el directorio actual, en lugar del directorio principal del usuario. Para más información sobre los trabajos de PowerShell, vea [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).
 
 ## <a name="semantic-versioning"></a>Versionamiento Semántico
 
@@ -238,14 +207,10 @@ Para más información sobre los trabajos de PowerShell, vea [about_Jobs](/power
     En las compilaciones publicadas, probablemente será igual que `PSVersion`.
   - `OS`: se trata de una cadena de versión de sistema operativo devuelta por `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`.
   - `Platform`: la devuelve `[System.Environment]::OSVersion.Platform`. Se establece en `Win32NT` en Windows, en `Unix` en macOS y en `Unix` en Linux.
-- Se ha quitado la propiedad `BuildVersion` de `$PSVersionTable`.
-  Esta propiedad estaba estrechamente ligada a la versión de compilación de Windows.
-  En su lugar, se recomienda usar `GitCommitId` para recuperar la versión de compilación exacta de PowerShell Core. (#3877) (Gracias, [@iSazonov](https://github.com/iSazonov)).
-- Quite la propiedad `ClrVersion` de `$PSVersionTable`.
-  Esta propiedad no es pertinente para .NET Core y solo se ha conservado en .NET Core con fines heredados específicos que son no aplicables a PowerShell.
+- Se ha quitado la propiedad `BuildVersion` de `$PSVersionTable`. Esta propiedad estaba estrechamente ligada a la versión de compilación de Windows. En su lugar, se recomienda usar `GitCommitId` para recuperar la versión de compilación exacta de PowerShell Core. (#3877) (Gracias, [@iSazonov](https://github.com/iSazonov)).
+- Quite la propiedad `ClrVersion` de `$PSVersionTable`. Esta propiedad no es pertinente para .NET Core y solo se ha conservado en .NET Core con fines heredados específicos que son no aplicables a PowerShell.
 - Se han agregado tres nuevas variables automáticas para determinar si PowerShell se está ejecutando en un sistema operativo determinado: `$IsWindows`, `$IsMacOs` y `$IsLinux`.
-- Agregue `GitCommitId` al titular de PowerShell Core.
-  Ahora ya no tiene que ejecutar `$PSVersionTable` al iniciar PowerShell para obtener la versión. (#3916) (Gracias, [@iSazonov](https://github.com/iSazonov)).
+- Agregue `GitCommitId` al titular de PowerShell Core. Ahora ya no tiene que ejecutar `$PSVersionTable` al iniciar PowerShell para obtener la versión. (#3916) (Gracias, [@iSazonov](https://github.com/iSazonov)).
 - Agregue un archivo de configuración JSON denominado `powershell.config.json` en `$PSHome` para almacenar algunos valores de configuración necesarios antes del momento del inicio (por ejemplo, `ExecutionPolicy`).
 - No bloquee la canalización al ejecutar archivos ejecutables de Windows.
 - Se ha habilitado la enumeración de colecciones COM. (#4553)
@@ -277,21 +242,22 @@ Para más información sobre los trabajos de PowerShell, vea [about_Jobs](/power
   - Agregue `-Authentication`, que proporciona tres opciones: Basic, OAuth y Bearer.
   - Agregue `-Token` para obtener el token de portador para las opciones OAuth y Bearer.
   - Agregue `-AllowUnencryptedAuthentication` para omitir la autenticación que se proporciona para todos los esquemas de transporte que no sean HTTPS.
-- Agregue `-ResponseHeadersVariable` a `Invoke-RestMethod` para habilitar la captura de encabezados de respuesta. (#4888) (Gracias, [@markekraus](https://github.com/markekraus)).
+- Agregue `-ResponseHeadersVariable` a `Invoke-RestMethod` para habilitar la captura de encabezados de respuesta.
+  (#4888) (Gracias, [@markekraus](https://github.com/markekraus)).
 - Corrija los cmdlets web para incluir la respuesta HTTP en la excepción cuando el código de estado de respuesta no es correcto. (#3201)
 - Cambie los cmdlets web `UserAgent` de `WindowsPowerShell` a `PowerShell`. (#4914) (Gracias, [@markekraus](https://github.com/markekraus)).
 - Agregue la detección explícita de `ContentType` a `Invoke-RestMethod`. (#4692)
-- Corrija los cmdlets web `-SkipHeaderValidation` para que funcionen con encabezados de agente de usuario no estándares. (#4479 y #4512) (Gracias, [@markekraus](https://github.com/markekraus)).
+- Corrija los cmdlets web `-SkipHeaderValidation` para que funcionen con encabezados de agente de usuario no estándares. (#4479 y
+  #<a name="4512-thanks-markekraushttpsgithubcommarkekraus"></a>4512) (Gracias [@markekraus](https://github.com/markekraus))
 
 ### <a name="json-cmdlets"></a>Cmdlets JSON
 
 - Agregue `-AsHashtable` a `ConvertFrom-Json` para devolver `Hashtable` en su lugar. (#5043) (Gracias, [@bergmeister](https://github.com/bergmeister)).
 - Use un formateador más descriptivo con la salida `ConvertTo-Json`. (#2787) (Gracias, @kittholland).
 - Agregue compatibilidad con la serialización de `Jobject` a `ConvertTo-Json`. (#5141)
-- Corrija `ConvertFrom-Json` para deserializar una matriz de cadenas de la canalización que construyan juntas una cadena JSON completa.
-  Esto corrige algunos casos en los que las líneas nuevas interrumpirían el análisis de JSON. (#3823)
-- Quite el valor `AliasProperty "Count"` definido para `System.Array`.
-  Esto quita la propiedad superflua `Count` de alguna salida `ConvertFrom-Json`. (#3231) (Gracias, [@PetSerAl](https://github.com/PetSerAl)).
+- Corrija `ConvertFrom-Json` para deserializar una matriz de cadenas de la canalización que construyan juntas una cadena JSON completa. Esto corrige algunos casos en los que las líneas nuevas interrumpirían el análisis de JSON.
+  (#3823)
+- Quite el valor `AliasProperty "Count"` definido para `System.Array`. Esto quita la propiedad superflua `Count` de alguna salida `ConvertFrom-Json`. (#3231) (Gracias, [@PetSerAl](https://github.com/PetSerAl)).
 
 ### <a name="csv-cmdlets"></a>Cmdlets CSV
 
@@ -311,7 +277,7 @@ Para más información sobre los trabajos de PowerShell, vea [about_Jobs](/power
 - Actualice `Add-Type` para que admita `CSharpVersion7`. (#3933) (Gracias, [@iSazonov](https://github.com/iSazonov)).
 - Quite el módulo `Microsoft.PowerShell.LocalAccounts` debido al uso de API no admitidas hasta que se encuentre una solución mejor. (#4302)
 - Quite los cmdlets `*-Counter` de `Microsoft.PowerShell.Diagnostics` debido al uso de API no admitidas hasta que se encuentre una solución mejor. (#4303)
-- Agregue compatibilidad con `Invoke-Item -Path <folder>`. (#4262)
+- Se ha agregado compatibilidad con `Invoke-Item -Path <folder>`. (#4262)
 - Agregue los modificadores `-Extension` y `-LeafBase` a `Split-Path` para poder dividir las rutas de acceso entre la extensión de nombre de archivo y el resto del nombre de archivo. (#2721) (Gracias, [@powercode](https://github.com/powercode)).
 - Agregue parámetros `-Top` y `-Bottom` a `Sort-Object` para la ordenación N superior o inferior.
 - Exponga el proceso primario de un proceso mediante la adición de `CodeProperty "Parent"` a `System.Diagnostics.Process`. (#2850) (Gracias, [@powercode](https://github.com/powercode)).
@@ -341,10 +307,11 @@ Para más información sobre los trabajos de PowerShell, vea [about_Jobs](/power
   ```
 
 - Agregue la finalización con tabulación de tabla hash para `-Property` de `Select-Object`. (#3625) (Gracias, [@powercode](https://github.com/powercode)).
-- Habilite la finalización automática de argumentos para `-ExcludeProperty` y `-ExpandProperty` de `Select-Object`. (#3443) (Gracias, [@iSazonov](https://github.com/iSazonov)).
+- Habilite la finalización automática de argumentos para `-ExcludeProperty` y `-ExpandProperty` de `Select-Object`.
+  (#3443) (Gracias, [@iSazonov](https://github.com/iSazonov)).
 - Corrija un error en la finalización con tabulación para realizar una llamada a `native.exe --<tab>` en el completador nativo. (#3633) (Gracias, [@powercode](https://github.com/powercode)).
 
-## <a name="breaking-changes"></a>Cambios importantes
+## <a name="breaking-changes"></a>Últimos cambios
 
 Hemos introducido una serie de cambios importantes en PowerShell Core 6.0.
 Para obtener más información sobre ellos, vea [Cambios importantes en PowerShell Core 6.0][breaking-changes].
@@ -365,8 +332,7 @@ Para obtener más información sobre ellos, vea [Cambios importantes en PowerShe
 
 Hemos realizado *numerosas* mejoras en el rendimiento de PowerShell, incluidos el tiempo de inicio, varios cmdlets integrados y la interacción con binarios nativos.
 
-También se ha corregido una serie de errores de PowerShell Core.
-Para obtener una lista completa de correcciones y cambios, visite nuestro [registro de cambios][] en GitHub.
+También se ha corregido una serie de errores de PowerShell Core. Para obtener una lista completa de correcciones y cambios, visite nuestro [registro de cambios][] en GitHub.
 
 ## <a name="telemetry"></a>Telemetría
 
@@ -374,10 +340,7 @@ Para obtener una lista completa de correcciones y cambios, visite nuestro [regis
   - La plataforma de sistema operativo (`$PSVersionTable.OSDescription`).
   - La versión exacta de PowerShell (`$PSVersionTable.GitCommitId`).
 
-Si quiere dejar de participar en esta telemetría, solo tiene que crear la variable de entorno `POWERSHELL_TELEMETRY_OPTOUT` con uno de estos valores: `true`, `1` o `yes`.
-Al crear la variable se omite toda la telemetría, incluida la anterior a la primera ejecución de PowerShell.
-También tenemos previsto exponer estos datos de telemetría y la información que se obtenga a partir de la telemetría en el [panel de la comunidad][community-dashboard].
-Encontrará más información sobre la forma en que usamos estos datos en esta [entrada de blog][telemetry-blog].
+Si quiere dejar de participar en esta telemetría, solo tiene que crear la variable de entorno `POWERSHELL_TELEMETRY_OPTOUT` con uno de estos valores: `true`, `1` o `yes`. Al crear la variable se omite toda la telemetría, incluida la anterior a la primera ejecución de PowerShell. También tenemos previsto exponer estos datos de telemetría y la información que se obtenga a partir de la telemetría en el [panel de la comunidad][community-dashboard]. Encontrará más información sobre la forma en que usamos estos datos en esta [entrada de blog][telemetry-blog].
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
@@ -386,13 +349,13 @@ Encontrará más información sobre la forma en que usamos estos datos en esta [
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [breaking-changes]: breaking-changes-ps6.md
-[Registro de cambios]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
+[registro de cambios]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://devblogs.microsoft.com/powershell/powershell-open-source-community-dashboard/
 [.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [Blog de .NET]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
-[Preguntas más frecuentes]: https://github.com/dotnet/standard/blob/master/docs/faq.md
+[P+F]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXML]: /previous-versions/windows/desktop/wmi_v2/getting-started-with-cdxml
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [Docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
